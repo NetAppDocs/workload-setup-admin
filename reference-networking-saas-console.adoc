@@ -1,0 +1,88 @@
+---
+sidebar: sidebar
+permalink: reference-networking-saas-console.html
+keywords: networking, urls, endpoints, web browser, console, network, set up networking
+summary: As you use the Workload Factory web-based console that's provided through the SaaS layer, it contacts several endpoints when completing a few administrative tasks. Computers that access the Workload Factory console should have connections to these endpoints.
+---
+
+= Prepare networking for using the Workload Factory console
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+As you use the Workload Factory web-based console that's provided through the SaaS layer, it contacts several endpoints when completing a few administrative tasks. Computers that access the Workload Factory console should have connections to these endpoints.
+
+These endpoints are contacted from a user's computer when completing specific actions from the Workload Factory console. You should also refer to networking requirements for the Connector and for specific Workload Factory services. For details, refer to the related links at the end of this page.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Endpoints
+| Purpose
+
+| 
+\https://console.workload.netapp.com
+\https://*.console.workload.netapp.com
+
+| Your web browser contacts these URLs when you use the Workload Factory web-based console.
+
+| 
+\https://aiq.netapp.com
+
+| Required to access Workload Factory digital advisor.
+
+a|
+AWS services (amazonaws.com):
+
+* CloudFormation
+* Elastic Compute Cloud (EC2)
+* Key Management Service (KMS)
+* Security Token Service (STS)
+* Simple Storage Service (S3)
+
+| Required to deploy a Connector from Workload Factory in AWS. The exact endpoint depends on the region in which you deploy the Connector. https://docs.aws.amazon.com/general/latest/gr/rande.html[Refer to AWS documentation for details.^]
+
+|
+\https://management.azure.com
+
+\https://login.microsoftonline.com
+
+| Required to deploy a Connector from Workload Factory in most Azure regions.
+
+|
+\https://management.microsoftazure.de
+
+\https://login.microsoftonline.de
+| Required to deploy a Connector from Workload Factory in Azure Germany regions.
+
+|
+\https://management.usgovcloudapi.net
+
+\https://login.microsoftonline.com
+
+| Required to deploy a Connector from Workload Factory in Azure US Gov regions.
+
+|
+\https://www.googleapis.com
+
+| Required to deploy a Connector from Workload Factory in Google Cloud.
+
+| \https://signin.b2c.netapp.com
+| Required to update NetApp Support Site (NSS) credentials or to add new NSS credentials to Workload Factory.
+
+|
+\https://netapp-cloud-account.auth0.com
+
+\https://cdn.auth0.com
+
+\https://services.cloud.netapp.com
+| Your web browser connects to these endpoints for centralized user authentication through Workload Factory.
+
+| \https://widget.intercom.io
+| For in-product chat that enables you to talk to NetApp cloud experts.
+
+|===
+
+Beyond these endpoints, you also need to ensure that the Connector has outbound internet access to contact specific endpoints for day-to-day operations. You can find the list of these endpoints by following the links in the next section below.

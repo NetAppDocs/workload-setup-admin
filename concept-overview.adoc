@@ -1,0 +1,87 @@
+---
+sidebar: sidebar
+permalink: concept-overview.html
+keywords: overview, concepts, features, use case, cloud manager, workload, how workload works, supported cloud providers, cloud providers, hyperscalers
+summary: NetApp Workload Factory provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The Workload Factory SaaS platform includes services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
+---
+
+= Learn about Workload Factory
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+NetApp Workload Factory provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The Workload Factory SaaS platform includes services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
+
+== Features
+
+The Workload Factory platform provides four main pillars of data management: storage, mobility, protection, and analysis and control.
+
+Storage:: 
+Discover, deploy, and manage storage, whether it's in AWS, Azure, Google Cloud, or on premises.
+
+* Set up and use https://workload.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
+
+* Set up and use cloud file-storage services:
++
+** https://workload.netapp.com/azure-netapp-files[Azure NetApp Files^]
+** https://workload.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
+** https://workload.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
+
+* Discover and manage https://workload.netapp.com/netapp-on-premises[on-premises storage^]:
+** E-Series systems
+** ONTAP clusters
+** StorageGRID systems
+
+Mobility::
+Move data where it's needed by syncing, copying, tiering, and caching data.
+
+Protection::
+Use automated protection mechanisms to protect data against data loss, unplanned outages, ransomware, and other cyber threats.
+
+Analysis and control::
+Use tools to monitor, map, and optimize your data storage and infrastructure. Gain actionable intelligence to optimize storage health, resiliency, and economics.
+
+https://workload.netapp.com/[Learn more about how you can use Workload Factory to help your organization^]
+
+== Supported cloud providers
+
+Workload Factory enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
+
+== Cost
+
+Pricing for Workload Factory depends on the services that you plan to use. https://workload.netapp.com/pricing[Learn about Workload Factory pricing^]
+
+== How Workload Factory works
+
+Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and Connectors that manage working environments and enable Workload Factory cloud services.
+
+=== Software-as-a-service
+
+Workload Factory is accessible through a https://console.workload.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and Connectors.
+
+=== Workload Factory account
+
+When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+
+link:concept-netapp-accounts.html[Learn more about accounts].
+
+=== Connectors
+
+You don't need a Connector to get started with Workload Factory, but you'll need to create a Connector to unlock all Workload Factory features and services. A Connector enables the management of resources and processes across your on-premises and cloud environments. It's required to manage working environments (for example, Cloud Volumes ONTAP and on-premises ONTAP clusters) and to use many Workload Factory data services.
+
+link:concept-connectors.html[Learn more about Connectors].
+
+=== Restricted mode and private mode 
+
+Workload Factory is also supported in environments that have security and connectivity restrictions. You can use _restricted mode_ or _private mode_ to limit outbound connectivity to the Workload Factory SaaS layer.
+
+link:concept-modes.html[Learn more about Workload Factory deployment modes].
+
+== SOC 2 Type 2 certification
+
+An independent certified public accountant firm and services auditor examined Workload Factory and affirmed that it achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
+
+https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 2 reports^]

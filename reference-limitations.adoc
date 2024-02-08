@@ -1,0 +1,24 @@
+---
+sidebar: sidebar
+permalink: reference-limitations.html
+keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, Workload Factory, Cloud Volumes ONTAP, days, running, Connectors should remain running, imdsv2, httpstokens
+summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+---
+
+= Known limitations
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
+
+These limitations are specific to Workload Factory set up and administration: the Connector, the SaaS platform, and more.
+
+== Connector limitations
+
+=== Default EC2 instance settings should not be changed
+
+When 

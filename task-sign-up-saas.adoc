@@ -1,0 +1,56 @@
+---
+sidebar: sidebar
+permalink: task-sign-up-saas.html
+keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login
+summary: Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
+---
+
+= Sign up to Workload Factory
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/ 
+
+[.lead]
+Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
+
+.About this task
+
+You can sign up to Workload Factory using one of the following options:
+
+* Your existing NetApp Support Site (NSS) credentials
+
+* A NetApp cloud login by specifying your email address and a password
+
+Both options support a federated connection, which enables single sign-on using credentials from your corporate directory (federated identity). You can set up a federation connection after you sign up. link:concept-federation.html[Learn how to use identity federation with Workload Factory].
+
+.Steps
+
+. Open a web browser and go to the https://console.workload.netapp.com[Workload Factory console^]
+
+. If you have a NetApp Support Site account, enter the email address associated with your NSS account directly on the *Log in* page.
++
+You can skip the sign up page if you have an NSS account. Workload Factory will sign you up as part of this initial login.
+
+. If you don't have an NSS account and you want to sign up by creating a NetApp cloud login, select *Sign up*.
+
+. On the *Sign up* page, enter the required information to create a NetApp cloud login.
++
+Note that only English characters are allowed in the sign up form.
+
+. When prompted, review the End User License Agreement and accept the terms.
+
+. On the *Welcome* page, enter a name for your account.
++
+If your business already has an account and you want to join it, then you should close out of Workload Factory and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:task-managing-netapp-accounts.html#add-users[Learn how to add members to an existing account].
++
+An account is the top-level element in NetApp's identity platform. It enables you to add and manage users, roles, permissions, and working environments.
++
+image:screenshot-account-selection.png[A screenshot of the Welcome page that appears when you log in with a new account that doesn't belong to an account.]
+
+. Select *Create Account*.
+
+.Result
+
+You now have a Workload Factory login and an account. In most cases, the next step is to create a Connector, which connects Workload Factory's services to your hybrid cloud environment.

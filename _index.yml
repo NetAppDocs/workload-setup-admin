@@ -1,5 +1,8 @@
 indexpage:
-  lead: # single paragraph, shown on the page
+  title: Workload Factory setup and administration documentation
+  lead: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can administer your Workload Factory accounts, create and manage FSx for ONTAP file systems, optimize your FSx for ONTAP configurations for specific workloads, and more."
+  summary: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can administer your Workload Factory accounts, create and manage FSx for ONTAP file systems, optimize your FSx for ONTAP configurations for specific workloads, and more."
+  keywords: workload factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
   tiles:
     # one or more tile definitions for the page
   - title: # short string (tile title)
