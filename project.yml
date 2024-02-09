@@ -39,7 +39,7 @@ sidebar:
         - title: Log in to Workload Factory
           url: /task-logging-in.html
     - title: Knowledge and support
-        entries:
+      entries:
         - title: Register for support
           url: /task-support-registration.html
         - title: Get help

@@ -4,9 +4,15 @@ indexpage:
   summary: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can administer your Workload Factory accounts, create and manage FSx for ONTAP file systems, optimize your FSx for ONTAP configurations for specific workloads, and more."
   keywords: workload factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
   tiles:
-    # one or more tile definitions for the page
-  - title: # short string (tile title)
-    links:
-      # one or more links on the tile
-      - title: # short string (link title)
-        url: # single file name or external URL
+    - title: Get started
+      links:
+        - title: Learn about Workload Factory
+          url: concept-overview.html
+        - title: Get started
+          url: task-quick-start.html
+    - title: BlueXP accounts
+      links:
+        - title: Learn about Workload Factory accounts
+          url: concept-netapp-accounts.html
+        - title: Manage your Workload Factory account
+          url: task-managing-netapp-accounts.html

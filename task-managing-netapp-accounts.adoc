@@ -1,0 +1,189 @@
+---
+sidebar: sidebar
+permalink: task-managing-netapp-accounts.html
+keywords: account settings, workspaces, Connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, add workspace, setup workspace, workspace, Connector, manage Connector, manage workspace, associate Connector, service account
+summary: When you create a BlueXP account, it only includes a single admin user and a workspace. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, by adding workspaces, and more.
+---
+
+= Manage your Workload Factory account
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you create a Workload Factory account, it only includes a single admin user and a workspace. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, by adding workspaces, and more.
+
+link:concept-netapp-accounts.html[Learn how BlueXP accounts work].
+
+== Manage your account with the Tenancy API
+
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the BlueXP API, which you use to create and manage Cloud Volumes ONTAP working environments.
+
+https://docs.netapp.com/us-en/bluexp-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
+
+== Create and manage users
+
+The user's in your account can access and manage the resources in specific workspaces.
+
+=== Add users
+
+Associate users with your BlueXP account so those users can create and manage working environments in BlueXP.
+
+.Steps
+
+. If the user hasn't already done so, ask the user to go to https://workload.netapp.com/[NetApp Workload Factory website^] and sign up.
+
+. From the top of Workload Factory, select the *Account* drop-down.
++
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of Workload Factory.]
+
+. select *Manage Account* next to the currently selected account.
++
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, select *Associate User*.
+
+. Enter the user's email address and select a role for the user:
++
+* *Account Admin*: Can perform any action in Workload Factory.
+* something else?.
+
+. Select *Associate*.
+
+.Result
+
+The user should receive an email from NetApp Workload Factory titled "Account Association." The email includes the information needed to access BlueXP.
+
+=== Remove users
+
+Disassociating a user makes it so they can no longer access the resources in a Workload Factory account.
+
+.Steps
+
+. From the top of Workload Factory, select the *Account* drop-down and select *Manage Account*.
++
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, select the action menu in the row that corresponds to the user.
++
+image:screenshot_associate_user_workspace.png[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Select *Disassociate User* and select *Disassociate* to confirm.
+
+.Result
+
+The user can no longer access the resources in this BlueXP account.
+
+== Create and manage service accounts
+
+A service account acts as a "user" that can make authorized API calls to Workload Factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time.
+
+You give permissions to a service account by assigning it a role, just like any other Workload Factory user. You can also associate the service account with specific workspaces in order to control the working environments (resources) that the service can access.
+
+When you create the service account, Workload Factory enables you to copy or download a client ID and client secret for the service account. This key pair is used for authentication with Workload Factory.
+
+Note that a refresh token is not required for API operations when using a service account. https://docs.netapp.com/us-en/bluexp-automation/platform/grant_types.html[Learn about refresh tokens^]
+
+=== Create a service account
+
+Create as many service accounts as you need to manage the resources in your working environments.
+
+.Steps
+
+. From the top of BlueXP, select the *Account* drop-down.
++
+image:screenshot-account-settings-menu.png[A screenshot that shows the Account Settings option in the top banner of BlueXP.]
+
+. Select *Manage Account* next to the currently selected account.
++
+image:screenshot-manage-account-settings.png[A screenshot that shows the Manage Account Settings option that's available from the Account drop-down.]
+
+. From the Members tab, select *Create Service Account*.
+
+. Enter a name and select a role. If you chose a role other than Account Admin, choose the workspace to associate with this service account.
+
+. Select *Create*.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by BlueXP. Copy or download the secret and store it safely.
+
+. Select *Close*.
+
+=== Obtain a bearer token for a service account
+
+In order to make API calls to the https://docs.netapp.com/us-en/bluexp-automation/tenancy/overview.html[Tenancy API^], you'll need to obtain a bearer token for a service account.
+
+https://docs.netapp.com/us-en/bluexp-automation/platform/create_service_token.html[Learn how to create a service account token^]
+
+=== Copy the client ID
+
+You can copy a service account's client ID at any time.
+
+.Steps
+
+. From the Members tab, select the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Select *Client ID*.
+
+. The ID is copied to your clipboard.
+
+=== Recreate keys
+
+Recreating the key will delete the existing key for this service account and then create a new key. You won't be able to use the previous key.
+
+.Steps
+
+. From the Members tab, select the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Select *Recreate Key*.
+
+. Select *Recreate* to confirm.
+
+. Copy or download the client ID and client secret.
++
+The client secret is visible only once and is not stored anywhere by BlueXP. Copy or download the secret and store it safely.
+
+. Select *Close*.
+
+=== Delete a service account
+
+Delete a service account if you no longer need to use it.
+
+.Steps
+
+. From the Members tab, select the action menu in the row that corresponds to the service account.
++
+image:screenshot_service_account_actions.gif[A screenshot that shows the action menu that is available when hovering over a user's name in the Users table.]
+
+. Select *Delete*.
+
+. Select *Delete* again to confirm.
+
+== Allow private previews
+
+Allow private previews in your account to get access to new services that are made available as a preview in BlueXP.
+
+Services in private preview are not guaranteed to behave as expected and might sustain outages and be missing functionality.
+
+.Steps
+
+. From the top of BlueXP, select the *Account* drop-down and select *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Private Preview* setting.
+
+== Allow third-party services
+
+Allow third-party services in your account to get access to third-party services that are available in BlueXP. Third-party services are cloud services similar to the services that NetApp offers, but they're managed and supported by third-party companies.
+
+.Steps
+
+. From the top of BlueXP, select the *Account* drop-down and select *Manage Account*.
+
+. In the *Overview* tab, enable the *Allow Third Party Services* setting.
