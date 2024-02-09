@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: concept-overview.html
-keywords: overview, concepts, features, use case, cloud manager, workload, how workload works, supported cloud providers, cloud providers, hyperscalers
+keywords: overview, concepts, features, use case, workloads, how workload factory works
 summary: NetApp Workload Factory provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The Workload Factory SaaS platform includes services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
 ---
 
