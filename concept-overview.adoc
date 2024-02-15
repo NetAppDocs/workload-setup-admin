@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: concept-overview.html
 keywords: overview, concepts, features, use case, workloads, how workload factory works
-summary: NetApp Workload Factory provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The Workload Factory SaaS platform includes services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
+summary: NetApp Workload Factory is a powerful life-cycle management service designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI, and more.
 ---
 
 = Learn about Workload Factory
@@ -13,27 +13,20 @@ summary: NetApp Workload Factory provides your organization with a single contro
 :imagesdir: ./media/
 
 [.lead]
-NetApp Workload Factory provides your organization with a single control plane that helps you build, protect, and govern data across your on-premises and cloud environments. The Workload Factory SaaS platform includes services that provide storage management, data mobility, data protection, and data analysis and control. Management capabilities are provided through a web-based console and APIs.
+NetApp Workload Factory is a powerful life-cycle management service designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI, and more.
+
+Amazon FSx for NetApp ONTAP is an external NFS datastore built on NetApp's ONTAP file system that can be attached to VMware Cloud on AWS vSphere clusters. There's no need to add more hosts to increase available storage; instead, just use FSx for ONTAP volumes as external datastores to complement vSAN datastores. This provides you with a flexible, high-performance, virtualized storage infrastructure that scales independently of compute resources. 
+
+Workload Factory has attained the AWS Well-Architected stamp of approval, and can run entirely on AWS as a dedicated experience.
 
 == Features
 
 The Workload Factory platform provides four main pillars of data management: storage, mobility, protection, and analysis and control.
 
 Storage:: 
-Discover, deploy, and manage storage, whether it's in AWS, Azure, Google Cloud, or on premises.
+Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud.
 
-* Set up and use https://workload.netapp.com/ontap-cloud[Cloud Volumes ONTAP^] for efficient, multi-protocol data management across clouds.
-
-* Set up and use cloud file-storage services:
-+
-** https://workload.netapp.com/azure-netapp-files[Azure NetApp Files^]
 ** https://workload.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
-** https://workload.netapp.com/cloud-volumes-service-for-gcp[Cloud Volumes Service for Google Cloud^]
-
-* Discover and manage https://workload.netapp.com/netapp-on-premises[on-premises storage^]:
-** E-Series systems
-** ONTAP clusters
-** StorageGRID systems
 
 Mobility::
 Move data where it's needed by syncing, copying, tiering, and caching data.
@@ -44,41 +37,56 @@ Use automated protection mechanisms to protect data against data loss, unplanned
 Analysis and control::
 Use tools to monitor, map, and optimize your data storage and infrastructure. Gain actionable intelligence to optimize storage health, resiliency, and economics.
 
-https://workload.netapp.com/[Learn more about how you can use Workload Factory to help your organization^]
+https://workloads.netapp.com/[Learn more about how you can use Workload Factory to help your organization^]
 
-== Supported cloud providers
-
-Workload Factory enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
+//== Supported cloud providers
+//
+//Workload Factory enables you to manage cloud storage and use cloud services in Amazon Web Services, Microsoft Azure, and Google Cloud.
 
 == Cost
 
-Pricing for Workload Factory depends on the services that you plan to use. https://workload.netapp.com/pricing[Learn about Workload Factory pricing^]
+Workload Factory itself does not have a cost - the platform is free to use. The cost that you pay to VMware and to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
+//
+//https://workloads.netapp.com/pricing[Learn about Workload Factory pricing^]
 
 == How Workload Factory works
 
-Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and Connectors that manage working environments and enable Workload Factory cloud services.
+Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and Links that provide segregated connectivity between Workload Factory and an AWS account.
 
 === Software-as-a-service
 
-Workload Factory is accessible through a https://console.workload.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and Connectors.
+Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and Links.
 
 === Workload Factory account
 
-When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize users and resources in isolated _workspaces_.
+When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize users and resources.
 
 link:concept-netapp-accounts.html[Learn more about accounts].
 
-=== Connectors
+=== Connectivity links
 
-You don't need a Connector to get started with Workload Factory, but you'll need to create a Connector to unlock all Workload Factory features and services. A Connector enables the management of resources and processes across your on-premises and cloud environments. It's required to manage working environments (for example, Cloud Volumes ONTAP and on-premises ONTAP clusters) and to use many Workload Factory data services.
+You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links currently leverage AWS Lambda.
 
-link:concept-connectors.html[Learn more about Connectors].
+link:concept-links.html[Learn more about Links].
 
-=== Restricted mode and private mode 
+=== Operational modes 
 
-Workload Factory is also supported in environments that have security and connectivity restrictions. You can use _restricted mode_ or _private mode_ to limit outbound connectivity to the Workload Factory SaaS layer.
+Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
 
-link:concept-modes.html[Learn more about Workload Factory deployment modes].
+* *Basic mode* represents zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.  
+* *Read mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
+* *Automate mode* represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+
+link:concept-modes.html[Learn more about Workload Factory operational modes].
+
+=== Codebox automation
+
+Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by Workload Factory. Codebox is aligned with the Workload Factory operation mode (Basic, Read, Automate) and sets a clear path for execution readiness as well as an automation catalog for quick future reuse. 
+
+Codebox deliver 2 key capabilities:  
+
+* Codebox Viewer shows the IaC that is generated by a specific job flow operation, and is matched by a wizard or conversational chat interfaces. While Codebox Viewer supports color coding and search for easy navigation and analysis, it does not allow editing, but only copying or saving to the Automation Catalog. 
+* Codebox Automation Catalog shows saved IaC jobs, allowing you to easily reference them for future use. Automation catalog jobs are saved and shown in context of the resources that apply to them. 
 
 == SOC 2 Type 2 certification
 
