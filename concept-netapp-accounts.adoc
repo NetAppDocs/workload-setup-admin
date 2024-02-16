@@ -19,15 +19,15 @@ When you first access Workload Factory, you're prompted to select or create an a
 
 image:screenshot-account-selection.png[A screenshot of the Workload Factory setup wizard that prompts you for the Workload Factory account in which you want to create Workload Factory.]
 
-Workload Factory Account Admins can then modify the settings for this account by managing users (members), workspaces, and Connectors:
+Workload Factory Account Admins can then modify the settings for this account by managing users (members):
 
 image:screenshot-account-settings.png["A screenshot that shows the Manage Account widget from which you can manage users, workspaces, and Connectors."]
 
 link:task-managing-netapp-accounts.html[Learn how to manage your Workload Factory account].
 
-== Deployment modes
+== Operational modes
 
-Workload Factory offers the following deployment modes for your account: standard mode, restricted mode, and private mode. These modes support environments that have varying levels of security and connectivity restrictions.
+Workload Factory offers the following operational modes for your account: basic mode, read mode, and automate mode. These modes support environments that have varying levels of security and connectivity restrictions.
 
 link:concept-modes.html[Learn more about Workload Factory deployment modes].
 
@@ -38,42 +38,20 @@ Members are Workload Factory users that you associate with your Workload Factory
 When you associate a user, you assign them a role:
 
 * _Account Admin_: Can perform any action in Workload Factory.
-* _Workspace Admin_: Can create and manage resources in the assigned workspace.
-* _Compliance Viewer_: Can only view compliance information for Workload Factory classification and generate reports for workspaces that they have permission to access.
 
 link:reference-user-roles.html[Learn more about these roles].
 
-== Workspaces
+== Connectivity links
 
-In Workload Factory, a workspace isolates any number of _working environments_ from other users in the account. Workspace Admins can't access the working environments in a workspace unless the Account Admin associates the admin with that workspace.
+A link creates trust relationship and connectivity between Workload Factory and an AWS account. You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. 
 
-A working environment represents a storage system. For example:
-
-* A Cloud Volumes ONTAP system
-* An on-premises ONTAP cluster
-* A Kubernetes cluster
-
-link:task-setting-up-netapp-accounts.html[Learn how to add a workspace].
-
-== Connectors
-
-A Connector executes the actions that Workload Factory needs to perform in order to manage your data infrastructure. The Connector runs on a virtual machine instance that you deploy in your cloud provider or on an on-premises host that you configured.
-
-You can use a Connector with more than one Workload Factory service. For example, if you're using a Connector to manage Cloud Volumes ONTAP, you can use that same Connector with another service like Workload Factory tiering.
-
-link:concept-connectors.html[Learn more about Connectors].
+link:concept-links.html[Learn more about Links].
 
 == Examples
 
 The following examples depict how you might set up your accounts.
 
 NOTE: In both example images that follow, the Connector and the Cloud Volumes ONTAP systems don't actually reside _in_ the Workload Factory account--they're running in a cloud provider. This is a conceptual representation of the relationship between each component.
-
-=== Multiple workspaces
-
-The following example shows an account that uses two workspaces to create isolated environments. The first workspace is for a production environment and the second is for a dev environment.
-
-image:diagram_cloud_central_accounts_one.png[A diagram that shows a single Workload Factory account that contains two workspaces. Each workspace is associated with the same Connector and each has their own Workspace Admin.]
 
 === Multiple accounts
 
