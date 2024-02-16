@@ -6,10 +6,7 @@ summary: Get started with Workload Factory in standard mode by preparing network
 ---
 
 = Getting started workflow
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

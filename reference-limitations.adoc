@@ -6,10 +6,7 @@ summary: Known limitations identify platforms, devices, or functions that are no
 ---
 
 = Known limitations
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

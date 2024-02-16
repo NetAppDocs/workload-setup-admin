@@ -6,10 +6,7 @@ summary: A Workload Factory account provides multi-tenancy for your organization
 ---
 
 = Learn about Workload Factory accounts
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

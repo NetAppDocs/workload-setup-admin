@@ -6,10 +6,7 @@ summary: As you use the Workload Factory web-based console that's provided throu
 ---
 
 = Prepare networking for using the Workload Factory console
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

@@ -6,10 +6,7 @@ summary: "Learn what's new with Workload Factory administration features: Worklo
 ---
 
 = What's new
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

@@ -6,10 +6,7 @@ summary: NetApp Workload Factory is a powerful life-cycle management service des
 ---
 
 = Learn about Workload Factory
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

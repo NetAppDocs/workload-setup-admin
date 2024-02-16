@@ -6,10 +6,7 @@ summary: When you create a BlueXP account, it only includes a single admin user 
 ---
 
 = Manage your Workload Factory account
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

@@ -6,10 +6,7 @@ summary: Now that you've logged in and set up Workload Factory in standard mode,
 ---
 
 = What you can do next
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

@@ -6,10 +6,7 @@ summary: Workload Factory is accessible from a web-based console. When you get s
 ---
 
 = Sign up to Workload Factory
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/ 
 
 [.lead]

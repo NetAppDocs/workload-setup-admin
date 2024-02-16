@@ -6,10 +6,7 @@ summary: Workload Factory provides three operational modes that you can assign f
 ---
 
 = Operational modes
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]

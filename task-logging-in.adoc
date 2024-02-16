@@ -6,10 +6,7 @@ summary: How you log in to Workload Factory depends on the Workload Factory depl
 ---
 
 = Log in to Workload Factory
-:hardbreaks:
-:nofooter:
 :icons: font
-:linkattrs:
 :imagesdir: ./media/
 
 [.lead]
