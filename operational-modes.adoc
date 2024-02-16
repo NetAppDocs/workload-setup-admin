@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: concept-modes.html
+permalink: operational-modes.html
 keywords: modes, zero-trust, full-trust
 summary: Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
 ---

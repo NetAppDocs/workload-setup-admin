@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: concept-netapp-accounts.html
+permalink: workload-factory-accounts.html
 keywords: accounts, links, users, Workload Factory website, admin, Account Admin, Workspace Admin, account settings, users, members, user accounts, what are users, workload factory account, netapp account
 summary: A Workload Factory account provides multi-tenancy for your organization, which enables you to organize users, resources, and workload access using credentials.
 ---
@@ -26,7 +26,7 @@ link:task-managing-netapp-accounts.html[Learn how to manage your Workload Factor
 
 Workload Factory offers the following operational modes for your account: basic mode, read mode, and automate mode. These modes support environments that have varying levels of security and connectivity restrictions.
 
-link:concept-modes.html[Learn more about Workload Factory deployment modes].
+link:operational-modes.html[Learn more about Workload Factory deployment modes].
 
 == Members
 
@@ -36,13 +36,13 @@ When you associate a user, you assign them a role:
 
 * _Account Admin_: Can perform any action in Workload Factory.
 
-link:reference-user-roles.html[Learn more about these roles].
+link:user-roles.html[Learn more about these roles].
 
 == Connectivity links
 
 A link creates trust relationship and connectivity between Workload Factory and an AWS account. You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. 
 
-link:concept-links.html[Learn more about Links].
+link:connectivity-links.html[Learn more about Links].
 
 == Examples
 

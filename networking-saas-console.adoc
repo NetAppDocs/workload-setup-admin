@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: reference-networking-saas-console.html
+permalink: networking-saas-console.html
 keywords: networking, urls, endpoints, web browser, console, network, set up networking
 summary: As you use the Workload Factory web-based console that's provided through the SaaS layer, it contacts several endpoints when completing a few administrative tasks. Computers that access the Workload Factory console should have connections to these endpoints.
 ---

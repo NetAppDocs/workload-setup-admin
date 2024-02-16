@@ -6,6 +6,7 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  rss_page: "whats-new.html"
 sidebar:
   entries:
     - title: Setup and administration docs
@@ -15,37 +16,37 @@ sidebar:
         - title: What's new
           url: /whats-new.html
         - title: Known limitations
-          url: /reference-limitations.html
+          url: /limitations.html
     - title: Get started
       entries:
         - title: Learn the basics
           entries: 
             - title: Workload Factory
-              url: /concept-overview.html
+              url: /workload-factory-overview.html
             - title: Operational modes
-              url: /concept-modes.html
+              url: /operational-modes.html
             - title: Accounts
-              url: /concept-netapp-accounts.html
+              url: /workload-factory-accounts.html
             - title: Links
-              url: /concept-links.html
+              url: /connectivity-links.html
         - title: Get started
           entries:
             - title: Getting started workflow
-              url: /task-quick-start.html
+              url: /quick-start.html
             - title: Prepare networking for using the Workload Factory console
-              url: /reference-networking-saas-console.html
+              url: /networking-saas-console.html
             - title: Sign up to Workload Factory
-              url: /task-sign-up-saas.html
+              url: /sign-up-saas.html
             - title: What you can do next
-              url: /reference-whats-next.html
+              url: /whats-next.html
         - title: Log in to Workload Factory
-          url: /task-logging-in.html
+          url: /logging-in.html
     - title: Knowledge and support
       entries:
         - title: Register for support
-          url: /task-support-registration.html
+          url: /support-registration.html
         - title: Get help
-          url: /task-get-help.html          
+          url: /get-help.html          
     - title: Legal notices
       url: /legal-notices.html
 product-family:

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: reference-limitations.html
-keywords: limitations, active directory, ad, iscsi, key managers, ip address, govcloud, Workload Factory, Cloud Volumes ONTAP, days, running, Connectors should remain running, imdsv2, httpstokens
+permalink: limitations.html
+keywords: limitations, workload factory, fsx for ontap
 summary: Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 ---
 

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
-permalink: task-quick-start.html
-keywords: quick start, standard mode quick start
-summary: Get started with Workload Factory in standard mode by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a Connector, and subscribing to Workload Factory.
+permalink: quick-start.html
+keywords: quick start
+summary: Get started with Workload Factory in standard mode by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a connection link, and subscribing to Workload Factory.
 ---
 
 = Getting started workflow
@@ -10,9 +10,9 @@ summary: Get started with Workload Factory in standard mode by preparing network
 :imagesdir: ./media/
 
 [.lead]
-Get started with Workload Factory in standard mode by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a Connector, and subscribing to Workload Factory.
+Get started with Workload Factory in standard mode by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a connection link, and subscribing to Workload Factory.
 
-In standard mode, Workload Factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:concept-netapp-accounts.html[Workload Factory accounts], link:concept-connectors.html[Connectors], and link:concept-modes.html[deployment modes].
+In standard mode, Workload Factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:workload-factory-accounts.html[Workload Factory accounts], link:conectivity-links.html[connectivity links], and link:operational-modes.html[operational modes].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] link:reference-networking-saas-console.html[Prepare networking for using the Workload Factory console]
 
@@ -37,7 +37,6 @@ A Workload Factory Account Admin can create a Connector in your cloud or on-prem
 
 [role="quick-margin-list"]
 * link:concept-connectors.html[Learn more about when Connectors are required and how they work]
-* link:concept-install-options-aws.html[Learn how to create a Connector in AWS]
 
 [role="quick-margin-para"]
 Note that if you want to use Workload Factory services to manage storage and data in Google Cloud, then the Connector must be running in Google Cloud.

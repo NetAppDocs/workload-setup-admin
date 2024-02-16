@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: reference-whats-next.html
-keywords: standard mode, what you can do
+permalink: whats-next.html
+keywords: what you can do
 summary: Now that you've logged in and set up Workload Factory in standard mode, users can create and discover working environments and use Workload Factory services.
 ---
 
@@ -18,4 +18,4 @@ For help, go to the https://docs.netapp.com/us-en/workload-family/[home page for
 
 .Related link
 
-link:concept-modes.html[Workload Factory deployment modes]
+link:operational-modes.html[Workload Factory operationaal modes]

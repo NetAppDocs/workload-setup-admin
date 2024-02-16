@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: concept-overview.html
+permalink: workload-factory-overview.html
 keywords: overview, concepts, features, use case, workloads, how workload factory works
 summary: NetApp Workload Factory is a powerful life-cycle management service designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI, and more.
 ---
@@ -58,13 +58,13 @@ Workload Factory is accessible through a https://console.workloads.netapp.com[we
 
 When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize users and resources.
 
-link:concept-netapp-accounts.html[Learn more about accounts].
+link:workload-factory-accounts.html[Learn more about accounts].
 
 === Connectivity links
 
 You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links currently leverage AWS Lambda.
 
-link:concept-links.html[Learn more about Links].
+link:connectivity-links.html[Learn more about Links].
 
 === Operational modes 
 
@@ -74,7 +74,7 @@ Workload Factory provides three operational modes that you can assign for users 
 * *Read mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
 * *Automate mode* represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
 
-link:concept-modes.html[Learn more about Workload Factory operational modes].
+link:operational-modes.html[Learn more about Workload Factory operational modes].
 
 === Codebox automation
 

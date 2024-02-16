@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
-permalink: task-logging-in.html
-keywords: logging in, log in, sign in, signing in, cloud central, netapp cloud central, user account, federated, federation, federated login, federation login, login with netapp, log in with netapp, sign up, create account
+permalink: logging-in.html
+keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account
 summary: How you log in to Workload Factory depends on the Workload Factory deployment mode that you're using for your account.
 ---
 

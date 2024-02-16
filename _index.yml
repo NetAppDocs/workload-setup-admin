@@ -7,12 +7,12 @@ indexpage:
     - title: Get started
       links:
         - title: Learn about Workload Factory
-          url: concept-overview.html
+          url: workload-factory-overview.html
         - title: Get started
-          url: task-quick-start.html
+          url: quick-start.html
     - title: BlueXP accounts
       links:
         - title: Learn about Workload Factory accounts
-          url: concept-netapp-accounts.html
+          url: workload-factory-accounts.html
         - title: Manage your Workload Factory account
-          url: task-managing-netapp-accounts.html
+          url: manage-netapp-accounts.html
