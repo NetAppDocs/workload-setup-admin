@@ -1,0 +1,17 @@
+---
+sidebar: sidebar
+permalink: connectivity-links.html
+keywords: links, accounts, 
+summary: A Workload Factory link creates trust relationship and connectivity between Workload Factory and an AWS account. You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services.
+---
+
+= Connectivity links
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+A Workload Factory link creates trust relationship and connectivity between Workload Factory and an AWS account. You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. 
+
+== Examples
+
+The following 

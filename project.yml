@@ -21,14 +21,16 @@ sidebar:
       entries:
         - title: Learn the basics
           entries: 
-            - title: Workload Factory
+            - title: Workload Factory overview
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
             - title: Accounts
               url: /workload-factory-accounts.html
-            - title: Links
+            - title: Connectivity links
               url: /connectivity-links.html
+            - title: Codebox automation
+              url: /codebox-automation.html
         - title: Get started
           entries:
             - title: Getting started workflow
