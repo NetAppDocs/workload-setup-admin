@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: operational-modes.html
-keywords: modes, zero-trust, full-trust
+keywords: modes, zero-trust, full-trust, read, basic, automate
 summary: Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
 ---
 
@@ -14,11 +14,11 @@ Workload Factory provides three operational modes that you can assign for users 
 
 A logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level assigned by the customer. Operational Modes is not a feature per-se, and accordingly does not have a graphical UI representation. The main objective in Operational Modes is to clearly communicate to the user, what Workload Factory can or cannot do.   
 
-*Basic mode*:: Represents zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). This code can be copied and used manually by the user along with their relevant AWS credentials.  
+*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it manually by including your relevant AWS credentials.  
 
-*Read mode*:: Enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
+*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with customer variables (e.g. VPC, security groups, etc.). This allows Workload Factory to assist the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
 
-*Automate mode*:: Represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+*Automate mode*:: Represents a full trust relationship so that Workload Factory get assigned with full permissions. This allows Workload Factory to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
 
 This table lists the features available for each of the modes.
 
