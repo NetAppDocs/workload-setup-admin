@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: logging-in.html
 keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account
-summary: How you log in to Workload Factory depends on the Workload Factory deployment mode that you're using for your account.
+summary: After you sign up to Workload Factory, you can log in from the web-based console to start managing your workloads and storage infrastructure.
 ---
 
 = Log in to Workload Factory
@@ -10,26 +10,18 @@ summary: How you log in to Workload Factory depends on the Workload Factory depl
 :imagesdir: ./media/
 
 [.lead]
-How you log in to Workload Factory depends on the Workload Factory deployment mode that you're using for your account.
-
-// start tabbed area
-
-[role="tabbed-block"]
-====
-
-.Standard mode
---
-After you sign up to Workload Factory, you can log in from the web-based console to start managing your data and storage infrastructure.
+After you sign up to Workload Factory, you can log in from the web-based console to start managing your workloads and storage infrastructure.
 
 .About this task
 
 You can log in to the Workload Factory web-based console using one of the following options:
 
-* Your existing NetApp Support Site (NSS) credentials
 * A NetApp cloud login using your email address and a password
 * A federated connection
+* Your existing NetApp Support Site (NSS) credentials
+
 +
-You can use single sign-on to log in using credentials from your corporate directory (federated identity). link:concept-federation.html[Learn how to use identity federation with Workload Factory].
+You can use single sign-on to log in using credentials from your corporate directory (federated identity). link:federation.html[Learn how to use identity federation with Workload Factory].
 
 .Steps
 
@@ -43,62 +35,11 @@ You can use single sign-on to log in using credentials from your corporate direc
 * Federated user: Enter your federated identity credentials
 * NetApp Support Site account: Enter your NetApp Support Site credentials
 
-.Result
-
-You're now logged in and can start using Workload Factory to manage your hybrid multi-cloud infrastructure.
---
-
-.Restricted mode
---
-When you use Workload Factory in restricted mode, you need to log in to the Workload Factory console from the user interface that runs locally on the Connector.
-
-.About this task
-
-Workload Factory supports logging in with one of the following options when your account is set up in restricted mode:
-
-* A NetApp cloud login using your email address and a password
-* A federated connection
+. If you have successfully logged in in the past, you'll see the Workload Factory home page. Otherwise you'll be directed to the *Account* page.
 +
-You can use single sign-on to log in using credentials from your corporate directory (federated identity). link:concept-federation.html[Learn how to use identity federation with Workload Factory].
-
-.Steps
-
-. Open a web browser and enter the following URL:
-+
-https://_ipaddress_
-+
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host where you installed the Connector. For example, you might need to enter a private IP address from a host that has a connection to the Connector host.
-
-. Enter your user name and password to log in.
+* If you are a member of a single account, click *Continue*.
+* If you are a member of multiple accounts, select the account and click *Continue*.
 
 .Result
 
-You're now logged in and can start using Workload Factory to manage your hybrid multi-cloud infrastructure.
---
-
-.Private mode
---
-When you use Workload Factory in private mode, you need to log in to the Workload Factory console from the user interface that runs locally on the Connector.
-
-.About this task
-
-Private mode supports local user management and access. Authentication is not provided through Workload Factory's cloud service.
-
-.Steps
-
-. Open a web browser and enter the following URL:
-+
-https://_ipaddress_
-+
-_ipaddress_ can be localhost, a private IP address, or a public IP address, depending on the configuration of the host where you installed the Connector. For example, you might need to enter a private IP address from a host that has a connection to the Connector host.
-
-. Enter your user name and password to log in.
-
-.Result
-
-You're now logged in and can start using Workload Factory to manage your hybrid multi-cloud infrastructure.
---
-
-====
-
-// end tabbed area
+You're now logged in and can start using Workload Factory to manage your FSx for ONTAP systems and your workloads.

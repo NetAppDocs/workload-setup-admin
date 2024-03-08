@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: manage-netapp-accounts.html
 keywords: account settings, account admin, users, associate, disassociate, add user, add users, user management, administer, user, management, member, remove user, remove users, remove, delete, account, user account, user accounts, service account
-summary: When you create a BlueXP account, it only includes a single admin user and a workspace. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, by adding workspaces, and more.
+summary: When you create a Workload Factory account, it only includes a single admin user. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, and more.
 ---
 
 = Manage your Workload Factory account
@@ -10,7 +10,7 @@ summary: When you create a BlueXP account, it only includes a single admin user 
 :imagesdir: ./media/
 
 [.lead]
-When you create a Workload Factory account, it only includes a single admin user and a workspace. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, by adding workspaces, and more.
+When you create a Workload Factory account, it only includes a single admin user. You can manage the account to fit your organization's needs by adding users, creating service accounts for automation purposes, and more.
 
 link:workload-factory-accounts.html[Learn how Workload Factory accounts work].
 

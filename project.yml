@@ -43,6 +43,28 @@ sidebar:
               url: /whats-next.html
         - title: Log in to Workload Factory
           url: /logging-in.html
+    - title: Administer Workload Factory
+      entries:
+        - title: Identity federation
+          url: /federation.html
+        - title: Workload Factory accounts
+          entries:
+            - title: Manage your Workload Factory account
+              url: /manage-netapp-accounts.html
+            - title: Create another Workload Factory account
+              url: /create-another-account.html
+        - title: Credentials and permissions
+          entries:  
+            - title: Learn about credentials
+              url: /credentials-overview.html
+            - title: Manage credentials
+              url: /manage-credentials.html
+        - title: Links
+          entries:
+            - title: Find the system ID for Links
+              url: /finding-system-id.html
+            - title: Manage existing Links
+              url: /managing-links.html
     - title: Knowledge and support
       entries:
         - title: Register for support

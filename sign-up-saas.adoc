@@ -32,21 +32,21 @@ You can skip the sign up page if you have an NSS account. Workload Factory will 
 
 . If you don't have an NSS account and you want to sign up by creating a NetApp cloud login, select *Sign up*.
 
-. On the *Sign up* page, enter the required information to create a NetApp cloud login.
+. On the *Sign up* page, enter the required information to create a NetApp cloud login and click *Sign up*.
 +
 Note that only English characters are allowed in the sign up form.
 
 . When prompted, review the End User License Agreement and accept the terms.
 
-. On the *Welcome* page, enter a name for your account.
+. On the *Account* page, enter a name for your account, and optionally select your job description.
++
+An account is the top-level element in NetApp's identity platform. It enables you to add and manage users, roles, and permissions.
 +
 If your business already has an account and you want to join it, then you should close out of Workload Factory and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:manage-netapp-accounts.html#add-users[Learn how to add members to an existing account].
 +
-An account is the top-level element in NetApp's identity platform. It enables you to add and manage users, roles, permissions, and working environments.
-+
-image:screenshot-account-selection.png[A screenshot of the Welcome page that appears when you log in with a new account that doesn't belong to an account.]
+image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
 
-. Select *Create Account*.
+. Click *Create*.
 
 .Result
 
