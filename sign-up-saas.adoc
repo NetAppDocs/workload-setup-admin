@@ -50,4 +50,4 @@ image:screenshot-account-selection.png[A screenshot of the Account page that app
 
 .Result
 
-You now have a Workload Factory login and an account. In most cases, the next step is to create a Connector, which connects Workload Factory's services to your hybrid cloud environment.
+You now have a Workload Factory login and an account. Depending on the operational mode you are planning to use, the next step is to create a connectivity link, which connects Workload Factory's services to your hybrid cloud environment.
