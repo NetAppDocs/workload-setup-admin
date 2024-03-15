@@ -18,20 +18,22 @@ Workload Factory has attained the AWS Well-Architected stamp of approval, and ca
 
 == Features
 
-The Workload Factory platform provides four main pillars of data management: storage, mobility, protection, and analysis and control.
+The Workload Factory platform provides the following major capabilities.
 
-Storage:: 
-Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud.
+Flexible and low cost storage:: 
+Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud. FSx for ONTAP brings the full capabilities of ONTAP to a native AWS managed service delivering a consistent hybrid cloud experience. 
 
-** https://workload.netapp.com/fsx-for-ontap[Amazon FSx for ONTAP^]
+Migrate on-premises vSphere environments to VMware Cloud on AWS::
+The VMware Cloud on AWS onboarding advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments and generate a plan to deploy recommended VM layouts to VMware Cloud on AWS and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
-Optimized workloads::
-Move data where it's needed by syncing, copying, tiering, and caching data.
+Optimized Database deployment::
+End-to-end templatized deployment of Microsoft SQL server/host including AWS resources provisioning, storage provisioning, networking, and OS configurations, ensuring a consistent and error-free setup process.
 
-Storage calculators::
-Use automated protection mechanisms to protect data against data loss, unplanned outages, ransomware, and other cyber threats.
+AI chatbot development::
+Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
 
-https://workloads.netapp.com/[Learn more about how you can use Workload Factory to help your organization^]
+Storage calculators to save costs::
+Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP file systems.
 
 == Supported cloud providers
 
@@ -68,7 +70,9 @@ link:connectivity-links.html[Learn more about Links].
 Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
 
 * *Basic mode* represents zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.  
+
 * *Read mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
+
 * *Automate mode* represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
 
 link:operational-modes.html[Learn more about Workload Factory operational modes].
