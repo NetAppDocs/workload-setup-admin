@@ -10,9 +10,21 @@ indexpage:
           url: workload-factory-overview.html
         - title: Get started
           url: quick-start.html
-    - title: BlueXP accounts
+    - title: Workload Factory accounts
       links:
         - title: Learn about Workload Factory accounts
           url: workload-factory-accounts.html
         - title: Manage your Workload Factory account
           url: manage-netapp-accounts.html
+    - title: Logging in
+      links:
+        - title: Log in to Workload Factory
+          url: log-in.html
+        - title: Using identity federation with Workload Factory
+          url: federation.html
+    - title: Blogs & community
+      links:
+        - title: Workload Factory blogs
+          url: https://bluexp.netapp.com/blog
+        - title: Workload Factory webinars
+          url: https://bluexp.netapp.com/events

@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: logging-in.html
+permalink: log-in.html
 keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account
 summary: After you sign up to Workload Factory, you can log in from the web-based console to start managing your workloads and storage infrastructure.
 ---

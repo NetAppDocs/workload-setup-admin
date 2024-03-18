@@ -42,7 +42,7 @@ sidebar:
             - title: What you can do next
               url: /whats-next.html
         - title: Log in to Workload Factory
-          url: /logging-in.html
+          url: /log-in.html
     - title: Administer Workload Factory
       entries:
         - title: Identity federation
