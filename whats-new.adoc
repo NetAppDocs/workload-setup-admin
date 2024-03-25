@@ -12,10 +12,8 @@ summary: "Learn what's new with Workload Factory administration features: Worklo
 [.lead]
 Learn what's new with Workload Factory administration features: Workload Factory accounts, links, cloud provider credentials, and more.
 
-== 11 April 2024
+== 6 June 2024
 
-=== Connector 3.9.36
+=== Initial release of NetApp Workload Factory
 
-This release includes minor improvements, bug fixes, and support for the Connector in the following cloud regions:
-
-* The I
+NetApp Workload Factory is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI chatbots, and more.
