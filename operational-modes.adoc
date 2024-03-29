@@ -12,47 +12,53 @@ summary: Workload Factory provides three operational modes that you can assign f
 [.lead]
 Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
 
-A logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level assigned by the customer. Operational Modes is not a feature per-se, and accordingly does not have a graphical UI representation. The main objective in Operational Modes is to clearly communicate to the user, what Workload Factory can or cannot do.   
+Operational modes provide a logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level assigned by the customer. The main objective in Operational modes is to clearly communicate to the user, what tasks Workload Factory can or cannot do. 
 
-*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it manually by including your relevant AWS credentials.  
+*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it manually by including your relevant AWS credentials manually.  
 
-*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with customer variables (e.g. VPC, security groups, etc.). This allows Workload Factory to assist the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
+*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with customer variables (e.g. VPC, security groups, etc.). This enables you to execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory. 
 
-*Automate mode*:: Represents a full trust relationship so that Workload Factory get assigned with full permissions. This allows Workload Factory to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+*Automate mode*:: Represents a full trust relationship so that Workload Factory gets assigned with full permissions. This allows Workload Factory to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+
+You can set up your credentials to provide one mode for one workload component and another mode for another component. For example, you can configure automate mode for operations where you are deploying and managing FSx for ONTAP file systems, but only configure read mode for creating and deploying database workloads using Workload Factory.
+
+=== Operational mode features
 
 This table lists the features available for each of the modes.
 
 [options="header",cols="16h,26,26,26"]
 |===
-| Modes
+| Mode
 | Automation
 | AWS resource discovery and auto-complete
 | Progress monitoring
 
 | Basic
-| DYI with skeleton IaC template
+| Partial with skeleton IaC template
 | No
 | No
 
 | Read
-| DYI with populated IaC template
+| Partial with populated IaC template
 | Yes
 | Yes
 
 | Automate
-| Yes
+| Yes, full automation with populated IaC template
 | Yes
 | Yes
 
 |===
+
+=== Operational mode requirements
 
 This table lists the requirements for using these modes.
 
 [options="header",cols="16h,35,35"]
 |===
-| Modes
-| AWS Account Credentials
-| Connectivity Links
+| Mode
+| AWS account credentials
+| Connectivity links
 
 | Basic
 | Not required
@@ -67,7 +73,3 @@ This table lists the requirements for using these modes.
 | Yes
 
 |===
-
-== d
-
-

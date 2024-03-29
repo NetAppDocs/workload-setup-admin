@@ -26,7 +26,7 @@ Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the clo
 Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS onboarding advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments and generate a plan to deploy recommended VM layouts to VMware Cloud on AWS and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
-Optimized Database deployment::
+Optimized database deployment::
 End-to-end templatized deployment of Microsoft SQL server/host including AWS resources provisioning, storage provisioning, networking, and OS configurations, ensuring a consistent and error-free setup process.
 
 AI chatbot development::
@@ -37,7 +37,7 @@ Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon F
 
 == Supported cloud providers
 
-Workload Factory enables you to manage cloud storage and use cloud services in Amazon Web Services.
+Workload Factory enables you to manage cloud storage and use workload capabilities in Amazon Web Services.
 
 == Cost
 
@@ -47,21 +47,21 @@ Workload Factory itself does not have a cost - the platform is free to use. The 
 
 == How Workload Factory works
 
-Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and Links that provide segregated connectivity between Workload Factory and an AWS account.
+Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
 
 === Software-as-a-service
 
-Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and Links.
+Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
 
 === Workload Factory account
 
-When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize users and resources.
+When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize your resources.
 
 link:workload-factory-accounts.html[Learn more about accounts].
 
 === Connectivity links
 
-You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links currently leverage AWS Lambda.
+You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links leverage AWS Lambda.
 
 link:connectivity-links.html[Learn more about Links].
 
