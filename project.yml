@@ -23,10 +23,10 @@ sidebar:
           entries: 
             - title: Workload Factory overview
               url: /workload-factory-overview.html
-            - title: Operational modes
-              url: /operational-modes.html
             - title: Accounts
               url: /workload-factory-accounts.html
+            - title: Operational modes
+              url: /operational-modes.html
             - title: Connectivity links
               url: /connectivity-links.html
             - title: Codebox automation

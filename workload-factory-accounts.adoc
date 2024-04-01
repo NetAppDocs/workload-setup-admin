@@ -42,7 +42,7 @@ link:user-roles.html[Learn more about these roles].
 
 A link creates trust relationship and connectivity between Workload Factory and an AWS account. You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. 
 
-link:connectivity-links.html[Learn more about Links].
+link:connectivity-links.html[Learn more about links].
 
 == Examples
 

@@ -46,12 +46,12 @@ With some code formats you can also click the Download button to save the code i
 
 You can use the Workload Factory REST APIs generated from Codebox...
 
-== Use the Amazon Web Services CLI code from Codebox
+== Use the AWS CLI code from Codebox
 
-You can use the AWS CLI generated from Codebox...
+You can use the Amazon Web Services CLI generated from Codebox...
 
-== Use the Amazon Web Services CloudFormation code from Codebox
+== Use the AWS CloudFormation code from Codebox
 
-You can use the AWS CloudFormation code generated from Codebox...
+You can use the Amazon Web Services CloudFormation code generated from Codebox...
 
 You must have the proper permissions to use CloudFormation
