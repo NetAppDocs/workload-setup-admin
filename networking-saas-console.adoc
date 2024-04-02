@@ -25,11 +25,6 @@ These endpoints are contacted from a user's computer when completing specific ac
 
 | Your web browser contacts these URLs when you use the Workload Factory web-based console.
 
-| 
-\https://aiq.netapp.com
-
-| Required to access Workload Factory digital advisor.
-
 a|
 AWS services (amazonaws.com):
 
@@ -81,5 +76,3 @@ AWS services (amazonaws.com):
 | For in-product chat that enables you to talk to NetApp cloud experts.
 
 |===
-
-Beyond these endpoints, you also need to ensure that the Connector has outbound internet access to contact specific endpoints for day-to-day operations. You can find the list of these endpoints by following the links in the next section below.

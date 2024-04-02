@@ -15,6 +15,8 @@ summary: When you sign up to Workload Factory, you're prompted to create an acco
 [.lead]
 When you sign up to Workload Factory, you're prompted to create an account for your organization. This account might be all that you need, but if your business requires multiple accounts, then you'll need to create additional accounts by using the Tenancy API.
 
+Workload Factory uses the BlueXP tenancy model and APIs.
+
 Use the following API call to create an additional Workload Factory account:
 
 POST `/tenancy/account/{accountName}`

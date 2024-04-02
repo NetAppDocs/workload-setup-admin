@@ -12,10 +12,6 @@ summary: Known limitations identify platforms, devices, or functions that are no
 [.lead]
 Known limitations identify platforms, devices, or functions that are not supported by this release of the product, or that do not interoperate correctly with it. Review these limitations carefully.
 
-These limitations are specific to Workload Factory set up and administration: the Connector, the SaaS platform, and more.
+These limitations are specific to Workload Factory set up and administration.
 
-== Connector limitations
-
-=== Default EC2 instance settings should not be changed
-
-When 
+There are no limitations at the moment.

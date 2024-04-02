@@ -61,10 +61,8 @@ sidebar:
               url: /manage-credentials.html
         - title: Links
           entries:
-            - title: Find the system ID for Links
-              url: /finding-system-id.html
             - title: Manage existing Links
-              url: /managing-links.html
+              url: /manage-links.html
     - title: Knowledge and support
       entries:
         - title: Register for support

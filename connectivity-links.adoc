@@ -16,12 +16,19 @@ Links leverage AWS Lambda. Lambda executes code in response to events and automa
 
 After you have created a link you can associate it with your FSx for ONTAP file systems. Each file system or resource can be associated only to one link, but a link can be associated with many file systems or resources. If necessary, you can disassociate a resource from a link.
 
-You can create a link from your account or you can create one when defining your FSx for ONTAP system.
-
-== Examples
-
-The following 
+You can create a link from your account or you can create one when defining your FSx for ONTAP system. link:manage-links.html[See how to create links] for details.
 
 
+== What you can do without a link
 
-If you need to delete a link, it is deleted only from Workload Factory. You must delete the Lambda from your AWS account.
+Most features in Workload Factory do not require a link. You can perform the following tasks without needing a link:
+
+* this
+* and that
+
+== When a link is required
+
+Workload Factory requires a link to perform some tasks. These tasks include:
+
+* this
+* and that
