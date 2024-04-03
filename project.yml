@@ -61,7 +61,7 @@ sidebar:
               url: /manage-credentials.html
         - title: Links
           entries:
-            - title: Manage existing Links
+            - title: Manage links
               url: /manage-links.html
     - title: Knowledge and support
       entries:
