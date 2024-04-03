@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-next.html
 keywords: what you can do
-summary:Now that you've logged in and set up Workload Factory, you can create and manage FSx for ONTAP file systems, and use Workload Factory capabilities.
+summary: "Now that you've logged in and set up Workload Factory, you can create and manage FSx for ONTAP file systems, and use Workload Factory capabilities."
 ---
 
 = What you can do next
@@ -16,4 +16,4 @@ For help, go to the https://docs.netapp.com/us-en/workload-family/[home page for
 
 .Related link
 
-link:operational-modes.html[Workload Factory operationaal modes]
+link:operational-modes.html[Workload Factory operational modes]
