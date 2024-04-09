@@ -14,9 +14,31 @@ When you create a Workload Factory account, it only includes a single Account Ad
 
 link:workload-factory-accounts.html[Learn how Workload Factory accounts work].
 
+== Switch between accounts
+
+If you are responsible for creating and managing workloads for multiple accounts, you can select the account that you want to manage when you log in, or you can switch between accounts after you have logged in.
+
+.Select account during log in
+
+You can choose the account from the menu during log in.
+
+image:screenshot-select-account.png[A screenshot of how to select different accounts during log in.]
+
+.Switch account after log in
+
+You can switch from one account to another account after you have initially logged in to Workload Factory.
+
+. In the Workload Factory console, select the *Account Settings* icon, and select *Switch account*.
+
+. On the Switch account page, use the Account drop-down menu to select the account you want to switch to.
++
+image:screenshot-switch-account.png[A screenshot of how to switch to a different account.]
+
+. Click *Switch*.
+
 == Manage your account with the Tenancy API
 
-If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API. This API is different than the BlueXP API, which you use to create and manage Cloud Volumes ONTAP working environments.
+If you want to manage your account settings by sending API requests, then you'll need to use the _Tenancy_ API.
 
 https://docs.netapp.com/us-en/bluexp-automation/tenancy/overview.html[View endpoints for the Tenancy API^]
 
