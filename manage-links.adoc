@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: manage-links.html
 keywords: links, accounts, lambda, creating, associating, disassociating, deleting, editing
-summary: You can create and manage links to provide a trust relationship and connectivity between a Workload Factory account and an AWS account.
+summary: You can create and manage links to provide a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain features directly from the ONTAP file system that are not available through the AWS FSx for ONTAP APIs.
 ---
 
 = Manage links
@@ -10,13 +10,16 @@ summary: You can create and manage links to provide a trust relationship and con
 :imagesdir: ./media/
 
 [.lead]
-You can create and manage links to provide a trust relationship and connectivity between a Workload Factory account and an AWS account. 
+You can create and manage links to provide a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain features directly from the ONTAP file system that are not available through the AWS FSx for ONTAP APIs. 
 
-You don't need a link for all Workload Factory operations, but you'll need to create one and associate it with your FSx for ONTAP file systems or other resources to enable all Workload Factory features and workload capabilities. 
+See link:connectivity-links.html[Connectivity links] for details about when a link is and is not needed.
 
 Links leverage AWS Lambda to execute code in response to events and automatically manage the computing resources required by that code. The links that you create are part of your NetApp account and they are associated with an AWS account.
 
-== View the links associated with your account and the associated resources
+You need to have certain permissions to be able to use the Lambda functionality*
+What are the permissions?
+
+== View the links associated with your account
 
 You can view the links that are currently associated with your account. 
 
@@ -28,55 +31,16 @@ image:screenshot-links-button.png[A screenshot showing how to open the links pag
 +
 image:screenshot-view-links.png[A screenshot showing the links that have been defined for this account.]
 
-. To view the FSx for ONTAP file systems or other resources that are using a link, click the *View* button in the Associated resources section.
+. To view the FSx for ONTAP file systems that are associated with a link, click the *View* button in the Associated resources section.
 +
 image:screenshot-view-link-details.png[A screens that shows the FSx for ONTAP systems that are using a specific link.]
 
-. If you need the Amazon Resource Names (ARN) for the link, you can click the _copy_ icon next to the ARN. 
+. If you need the Amazon Resource Name (ARN) for the link, you can click the _copy_ icon next to the ARN field. 
 
 == Create a link
 
-You can create a link from your account or you can create one when defining an FSx for ONTAP file system.
+You can create a link in your account when defining an FSx for ONTAP file system. That link will be used for that file system, and it can be used by other FSx for ONTAP file systems.
 
-The only difference between the two methods is that:
-
-* When you create a link while defining an FSx for ONTAP system, the AWS account used for the link is the same as the account you're using to create the FSx for ONTAP system.
-* When you create a link from the Account menu, you can choose the AWS account that will be used for the link.
-
-// start tabbed area
-
-[role="tabbed-block"]
-====
-
-.Create a link from the Account menu
---
-.Steps
-
-. Select *Links* from the Account menu.
-
-. Click the *Create link* button and the Create link page is displayed.
-
-. Enter the name that you want to use for this link. The name must be unique within your account.
-. Optionally, add any tags that you want to be associated with the resources allocated for this link, for example, an FSx for ONTAP system.
-. If you have added multiple AWS account credentials in your Workload Factory account, select the AWS account where the AWS Lambda service will be created.
-+
-The additional information for Location and Security group are retrieved automatically based on the AWS account you select.
-. Click *Redirect to CloudFormation*.
-+
-The dialog that explains how to create the link from the AWS CloudFormation service is displayed.
-. On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might create IAM resources*.
-. Click *Create stack* and then click *Continue*.
-. Return to the Workload Factory interface and you'll see a dialog showing the progress of the link creation.
-+
-A message displays when the link is complete.
-
-.Result
-
-The link is created. You can associate it with your FSx for ONTAP file systems.
---
-
-.Create a link from the FSx for ONTAP wizard
---
 .Steps
 
 . Click *Associate link* from the FSx for ONTAP wizard.
@@ -84,31 +48,60 @@ The link is created. You can associate it with your FSx for ONTAP file systems.
 . Click the *Create link* button.
 
 . Enter the name that you want to use for this link. The name must be unique within your account.
-. Optionally, add any tags that you want to be associated with the resources allocated for this link, for example, the FSx for ONTAP system.
+. Optionally, add any tags that you want to be associated with this link so you can more easily categorize your resources. For example, you could add a tag that identifies this link as being used by FSx for ONTAP systems.
 +
-The AWS account and the additional information for Location and Security group are retrieved automatically based on the AWS account where you are creating the FSx for ONTAP system.
+The AWS account and the additional information for Account, Location, and Security group are retrieved automatically based on the FSx for ONTAP system.
 . Click *Redirect to CloudFormation*.
 +
 The dialog that explains how to create the link from the AWS CloudFormation service is displayed.
 . Click *Continue* to open the AWS Management Console, and then log in to the AWS account for this FSx for ONTAP system.
 . On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might create IAM resources*.
 . Click *Create stack* and then click *Continue*.
-. Return to the Workload Factory interface and you'll see a dialog showing the progress of the link creation.
 +
-A message displays when the link is complete.
+You can monitor the link create status from the Events page.
+. Return to the Workload Factory interface and you'll see that the link is associated with the FSx for ONTAP system.
 
 .Result
 
-The link you created is associated with the FSx for ONTAP system.  
-====
+The link you created is associated with the FSx for ONTAP system and you can perform some advanced ONTAP operations.
 
 == Edit a link
 
 Can you edit any values?  Like add or remove tags?
 
-== Associate a link to a resource
+. Enter the name that you want to use for this link. The name must be unique within your account.
+. Optionally, add any tags that you want to be associated with this link so you can more easily categorize your resources. For example, you could add a tag that identifies this link as being used by FSx for ONTAP systems.
++
+The AWS account and the additional information for Account, Location, and Security group are retrieved automatically based on the FSx for ONTAP system.
+. Click *Redirect to CloudFormation*.
++
+The dialog that explains how to create the link from the AWS CloudFormation service is displayed.
+. Click *Continue* to open the AWS Management Console, and then log in to the AWS account for this FSx for ONTAP system.
+. On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might create IAM resources*.
+. Click *Create stack* and then click *Continue*.
++
+You can monitor the link create status from the Events page.
+. Return to the Workload Factory interface and you'll see that the link is associated with the FSx for ONTAP system.
 
-After you have created a link you can associate it with your FSx for ONTAP file systems. Each file system or resource can be associated only to one link, but a link can be associated with many file systems or resources. If necessary, you can disassociate a resource from a link.
+.Result
+
+The link you created is associated with the FSx for ONTAP system and you can perform some advanced ONTAP operations.
+
+== Associate a link to an FSx for ONTAP file system
+
+After you have created a link, you can associate it with your FSx for ONTAP file systems. Each file system can be associated to only one link, but a link can be associated with many file systems. 
+
+.Steps
+
+. Click *Associate link* from the Storage page of an FSx for ONTAP system.
+
+. In the Associate link page, click the *Associate an existing link* button.
+
+. Select the link that you want to use from the menu and click *Apply*.
+
+.Result
+
+The link is associated with the FSx for ONTAP system and you can perform advanced ONTAP operations.
 
 == Disassociate a link 
 
