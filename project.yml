@@ -31,6 +31,8 @@ sidebar:
               url: /connectivity-links.html
             - title: Codebox automation
               url: /codebox-automation.html
+            - title: Storage calculators
+              url: /storage-calculators.html
         - title: Get started
           entries:
             - title: Getting started workflow

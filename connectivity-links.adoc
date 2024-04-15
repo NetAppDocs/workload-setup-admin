@@ -28,26 +28,18 @@ There is a minimal charge to your AWS account for each transaction that Lambda p
 
 https://aws.amazon.com/lambda/pricing/[Learn more about the costs related to using AWS Lambda.]
 
-== What you can do without a link
-
-Most features in Workload Factory do not require a link. You can perform the following tasks without needing a link:
-
-* Create FSx for ONTAP file systems.
-* this
-* and that
-
 == When a link is required
 
-Workload Factory requires a link to display some information and to perform some tasks. If you attempt to perform an operation that requires a link and you haven't associated a link with the FSx for ONTAP system, you will see a message that the operation requires a link. You can associate a link at that time so you can perform the operation.
+Workload Factory requires a link to display some information and to perform some tasks. If you attempt to perform an operation that requires a link and you haven't associated a link with the FSx for ONTAP system, you will see a message that the operation requires a link. You can add a new link, or associate the FSx for ONTAP system with an existing link at that time so you can perform the operation.
 
 The features that you can't access without having a link includes:
 
 * Display the version of ONTAP that is installed on an FSx for ONTAP file system.
 * Manage iSCSI volumes on the system.
 * Enable and disable the Autogrow feature for volumes.
-* Manage snapshot policies.
+* Create and manage snapshot policies.
 * Configure replication relationships and replicate volumes between file systems.
-* Configure backup relationships and backup volume data to cloud storage.
+* Configure backup relationships and back up volume data to cloud storage.
 * Clone volumes within a file system.
 * Display additional metrics directly from ONTAP - default metrics are collected by Amazon CloudWatch.
-* more
+* Management of NFS Export policies.
