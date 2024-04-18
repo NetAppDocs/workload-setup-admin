@@ -42,16 +42,72 @@ image:screenshot-codebox-example1.png[A screenshot showing how to create a Micro
 
 With some code formats you can also click the Download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
 
-== Use the REST API code from Codebox
+== Use CloudFormation code from Codebox
+
+You can copy the CloudFormation code generated from Codebox and then launch the Amazon Web Services CloudFormation stack in your AWS account. CloudFormation will perform the actions that you defined in the Workload Factory UI.
+
+The general requirements and steps to use the CloudFormation code is described below. There may be some wording differences depending on whether you are deploying an FSx for ONTAP system, creating credentials, or other Workload Factory action.
+
+.Prerequisites
+
+* You'll need to have credentials to log in to your AWS account.
+* You'll need to have the following user permissions if you plan to add credentials using a CloudFormation stack:
++
+[%collapsible]
+====
+[source,json]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:UpdateStack",
+                "cloudformation:DeleteStack",
+                "cloudformation:DescribeStacks",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeChangeSet",
+                "cloudformation:ExecuteChangeSet",
+                "cloudformation:ListStacks",
+                "cloudformation:ListStackResources",
+                "cloudformation:GetTemplate",
+                "cloudformation:ValidateTemplate",
+                "lambda:InvokeFunction",
+                "iam:PassRole",
+                "iam:CreateRole",
+                "iam:UpdateAssumeRolePolicy",
+                "iam:AttachRolePolicy",
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+====
+
+.Steps
+
+. After you have used the UI to define the operation that you want to perform, copy the code in the Codebox.  
+
+. Click *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
+
+. Open another browser window and log in to the AWS Management Console.
+
+. Click *Continue* from the Redirect to CloudFormation page.
+
+. Log in to the AWS account where the code should be run.
+
+. On the Quick create stack page, under Capabilities, click *I acknowledge that AWS CloudFormation might ...*.
+
+. Click *Create stack*.
+
+. Monitor the progress from AwS or from Workload Factory.
+
+== Use REST API code from Codebox
 
 You can use the Workload Factory REST APIs generated from Codebox...
 
-== Use the AWS CLI code from Codebox
+== Use AWS CLI code from Codebox
 
 You can use the Amazon Web Services CLI generated from Codebox...
-
-== Use the AWS CloudFormation code from Codebox
-
-You can use the Amazon Web Services CloudFormation code generated from Codebox...
-
-You must have the proper permissions to use CloudFormation

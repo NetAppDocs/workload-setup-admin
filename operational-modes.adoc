@@ -12,17 +12,44 @@ summary: Workload Factory provides three operational modes that you can assign f
 [.lead]
 Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
 
-Operational modes provide a logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level assigned by the customer. The main objective in Operational modes is to clearly communicate to the user, what tasks Workload Factory can or cannot do. 
+Operational modes provide a logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level that you assign. The main objective in Operational modes is to clearly communicate which tasks Workload Factory can or cannot do within your AWS account.
 
-*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it manually by including your relevant AWS credentials manually.  
+*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it is AWS by entering your AWS credentials manually.  
 
-*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with customer variables (e.g. VPC, security groups, etc.). This enables you to execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory. 
+*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with your specific variables (for example, VPC, security groups, etc.). This enables you to execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory. 
 
-*Automate mode*:: Represents a full trust relationship so that Workload Factory gets assigned with full permissions. This allows Workload Factory to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+*Automate mode*:: Represents a full trust relationship so that Workload Factory gets assigned with full permissions. This allows Workload Factory to execute and automate operation in AWS on your behalf along with the assigned credentials that have the needed and validated permissions for execution. 
+
+== Operational mode requirements
+
+There is no selector in Workload Factory to identify which mode you are planning to use. TRhe mode is determined 
+
+
+This table lists the requirements for using these modes.
+
+[options="header",cols="16h,35,35"]
+|===
+| Mode
+| AWS account credentials
+| Connectivity links
+
+| Basic
+| Not required
+| Not required
+
+| Read
+| Read-only
+| Not required
+
+| Automate
+| Applicable cloud and/or on-prem ONTAP credentials
+| Yes
+
+|===
 
 You can set up your credentials to provide one mode for one workload component and another mode for another component. For example, you can configure automate mode for operations where you are deploying and managing FSx for ONTAP file systems, but only configure read mode for creating and deploying database workloads using Workload Factory.
 
-=== Operational mode features
+== Operational mode features
 
 This table lists the features available for each of the modes.
 
@@ -46,30 +73,6 @@ This table lists the features available for each of the modes.
 | Automate
 | Yes, full automation with populated IaC template
 | Yes
-| Yes
-
-|===
-
-=== Operational mode requirements
-
-This table lists the requirements for using these modes.
-
-[options="header",cols="16h,35,35"]
-|===
-| Mode
-| AWS account credentials
-| Connectivity links
-
-| Basic
-| Not required
-| Not required
-
-| Read
-| Read-only
-| Not required
-
-| Automate
-| Applicable cloud and/or on-prem ONTAP credentials
 | Yes
 
 |===
