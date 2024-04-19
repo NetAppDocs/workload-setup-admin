@@ -33,7 +33,7 @@ AI chatbot development::
 Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
 
 Storage calculators to save costs::
-Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP file systems.
+Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP file systems. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
 
 == Supported cloud providers
 
@@ -41,29 +41,21 @@ Workload Factory enables you to manage cloud storage and use workload capabiliti
 
 == Cost
 
-Workload Factory itself does not have a cost - the platform is free to use. The cost that you pay to VMware and to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
-//
-//https://workloads.netapp.com/pricing[Learn about Workload Factory pricing^]
+Workload Factory does not have a cost - the platform is free to use. The cost that you pay to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
 
 == How Workload Factory works
 
-Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
+Workload Factory includes a web-based console that's provided through the SaaS layer, user accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
 
 === Software-as-a-service
 
-Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^] and APIs. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
+Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^]. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
 
 === Workload Factory account
 
 When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize your resources.
 
 link:workload-factory-accounts.html[Learn more about accounts].
-
-=== Connectivity links
-
-You don't need a link to get started with Workload Factory, but you'll need to create a link to unlock all Workload Factory features and services. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links leverage AWS Lambda.
-
-link:connectivity-links.html[Learn more about Links].
 
 === Operational modes 
 
@@ -76,6 +68,12 @@ Workload Factory provides three operational modes that you can assign for users 
 * *Automate mode* represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
 
 link:operational-modes.html[Learn more about Workload Factory operational modes].
+
+=== Connectivity links
+
+A Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST APIs that are not available through the Amazon FSx for ONTAP APIs.
+
+link:connectivity-links.html[Learn more about Links].
 
 === Codebox automation
 
