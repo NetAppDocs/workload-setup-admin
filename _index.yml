@@ -16,6 +16,12 @@ indexpage:
           url: workload-factory-accounts.html
         - title: Manage your Workload Factory account
           url: manage-netapp-accounts.html
+        - title: Manage AWS credentials
+          url: manage-credentials.html
+        - title: Configure operational modes
+          url: operational-modes.html
+        - title: Add connectivity links to ONTAP
+          url: connectivity-links.html
     - title: Logging in
       links:
         - title: Log in to Workload Factory

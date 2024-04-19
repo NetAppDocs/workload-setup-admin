@@ -23,7 +23,7 @@ This figure shows the volumes on FSx for Windows File Server systems that have b
 
 image:screenshot-storage-inventory.png[The storage inventory page showing your current inventory of volumes on FSx for Windows File Servers.]
 
-If you haven't added credentials to link your Workload Factory account with an AWS account (called _basic_ mode), you can manually enter the characteristics required for a storage system you are planning to deploy and the storage calculator will determine the best file system based on cost.
+If you haven't added credentials to link your Workload Factory account with an AWS account (called _basic_ mode), you can manually enter the characteristics required for a storage system you are planning to deploy and the storage calculator will determine the best file system based on cost. You can use this method to scope a new FSx for ONTAP system while using automated mode as well.
 
 This figure shows the storage calculator page with a comparison between FSx for ONTAP and Elastic Block Store storage.
 

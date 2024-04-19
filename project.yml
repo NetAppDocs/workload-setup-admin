@@ -41,6 +41,8 @@ sidebar:
               url: /networking-saas-console.html
             - title: Sign up to Workload Factory
               url: /sign-up-saas.html
+            - title: Add AWS credentials
+              url: /add-credentials.html
             - title: What you can do next
               url: /whats-next.html
         - title: Log in to Workload Factory
