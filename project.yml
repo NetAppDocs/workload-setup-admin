@@ -25,6 +25,8 @@ sidebar:
               url: /workload-factory-overview.html
             - title: Accounts
               url: /workload-factory-accounts.html
+            - title: Credentials and permissions
+              url: /credentials-overview.html
             - title: Operational modes
               url: /operational-modes.html
             - title: Connectivity links
@@ -59,8 +61,6 @@ sidebar:
               url: /create-another-account.html
         - title: Credentials and permissions
           entries:  
-            - title: Learn about credentials
-              url: /credentials-overview.html
             - title: Manage credentials
               url: /manage-credentials.html
         - title: Links

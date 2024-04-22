@@ -22,6 +22,12 @@ indexpage:
           url: operational-modes.html
         - title: Add connectivity links to ONTAP
           url: connectivity-links.html
+    - title: Automation using Codebox
+      links:
+        - title: Learn about Codebox
+          url: codebox-automation.html
+        - title: Using Codebox for automation
+          url: using-codebox.html
     - title: Logging in
       links:
         - title: Log in to Workload Factory

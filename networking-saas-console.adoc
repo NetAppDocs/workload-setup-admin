@@ -20,8 +20,8 @@ These endpoints are contacted from a user's computer when completing specific ac
 | Purpose
 
 | 
-\https://console.workload.netapp.com
-\https://*.console.workload.netapp.com
+\https://console.workloads.netapp.com
+\https://*.console.workloads.netapp.com
 
 | Your web browser contacts these URLs when you use the Workload Factory web-based console.
 

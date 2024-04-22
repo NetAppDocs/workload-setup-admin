@@ -24,7 +24,7 @@ Both options support a federated connection, which enables single sign-on using 
 
 .Steps
 
-. Open a web browser and go to the https://console.workload.netapp.com[Workload Factory console^]
+. Open a web browser and go to the https://console.workloads.netapp.com[Workload Factory console^]
 
 . If you have a NetApp Support Site account, enter the email address associated with your NSS account directly on the *Log in* page.
 +
