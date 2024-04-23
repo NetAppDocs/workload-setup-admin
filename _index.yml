@@ -16,24 +16,28 @@ indexpage:
           url: workload-factory-accounts.html
         - title: Manage your Workload Factory account
           url: manage-netapp-accounts.html
-        - title: Manage AWS credentials
+        - title: Manage AWS credentials and permissions
           url: manage-credentials.html
         - title: Configure operational modes
           url: operational-modes.html
         - title: Add connectivity links to ONTAP
           url: connectivity-links.html
-    - title: Automation using Codebox
-      links:
-        - title: Learn about Codebox
-          url: codebox-automation.html
-        - title: Using Codebox for automation
-          url: using-codebox.html
     - title: Logging in
       links:
         - title: Log in to Workload Factory
           url: log-in.html
         - title: Using identity federation with Workload Factory
           url: federation.html
+    - title: Using the storage calculator
+      links:
+        - title: Compare costs when using FSx for ONTAP systems
+          url: storage-calculators.html
+    - title: Automation using Codebox
+      links:
+        - title: Learn about Codebox
+          url: codebox-automation.html
+        - title: Using Codebox for automation
+          url: using-codebox.html
     - title: Blogs & community
       links:
         - title: Workload Factory blogs

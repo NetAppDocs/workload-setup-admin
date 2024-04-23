@@ -39,7 +39,7 @@ sidebar:
           entries:
             - title: Getting started workflow
               url: /quick-start.html
-            - title: Prepare networking for using the Workload Factory console
+            - title: Prepare networking to use Workload Factory
               url: /networking-saas-console.html
             - title: Sign up to Workload Factory
               url: /sign-up-saas.html

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with Workload Factory administration features: Workload Factory accounts, links, and more."
+summary: "Learn what's new with Workload Factory administration features: Workload Factory accounts, cloud provider credentials, Codebox enhancements, links, and more."
 ---
 
 = What's new
@@ -10,9 +10,9 @@ summary: "Learn what's new with Workload Factory administration features: Worklo
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with Workload Factory administration features: Workload Factory accounts, links, cloud provider credentials, and more.
+Learn what's new with Workload Factory administration features: Workload Factory accounts, cloud provider credentials, Codebox enhancements, links, and more.
 
-== 6 June 2024
+== 8 July 2024
 
 === Initial release of NetApp Workload Factory
 

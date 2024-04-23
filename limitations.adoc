@@ -14,4 +14,4 @@ Known limitations identify platforms, devices, or functions that are not support
 
 These limitations are specific to Workload Factory set up and administration.
 
-There are no limitations at the moment.
+There are no limitations at this time.
