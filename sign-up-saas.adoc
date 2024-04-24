@@ -10,4 +10,8 @@ summary: Workload Factory is accessible from a web-based console. When you get s
 :imagesdir: ./media/ 
 
 [.lead]
-include::https://raw.githubusercontent.com/NetAppDocs/workload-family-internal/first-draft/_include/sign-up-saas.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/workload-family-internal/tree/first-draft/_include/sign-up-saas.adoc[]
+
+OR
+
+https://github.com/NetAppDocs/workload-family-internal/tree/first-draft/_include/sign-up-saas.adoc[]
