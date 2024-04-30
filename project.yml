@@ -37,7 +37,7 @@ sidebar:
               url: /storage-calculators.html
         - title: Get started
           entries:
-            - title: Getting started workflow
+            - title: Quick start
               url: /quick-start.html
             - title: Prepare networking to use Workload Factory
               url: /networking-saas-console.html

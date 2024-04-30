@@ -5,7 +5,7 @@ keywords: quick start
 summary: Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a connection link, and subscribing to Workload Factory.
 ---
 
-= Getting started workflow
+= Quick start for setting up Workload Factory
 :icons: font
 :imagesdir: ./media/
 
