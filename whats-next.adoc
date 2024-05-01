@@ -10,9 +10,9 @@ summary: "Now that you've logged in and set up Workload Factory, you can create 
 :imagesdir: ./media/
 
 [.lead]
-Now that you've logged in and set up Workload Factory, you can create and manage FSx for ONTAP file systems, and use other Workload Factory capabilities.
+Now that you've logged in and set up Workload Factory, you can start using several Workload Factory capabilities, such as creating Amazon FSx for ONTAP file systems, deploying databases on FSx for ONTAP systems, and migrating virtual machine configurations to VMware Cloud on AWS using FSx for ONTAP file systems as external datastores.
 
-For help, go to the https://docs.netapp.com/us-en/workload-family/[home page for the Workload Factory documentation^] to view the docs for all Workload Factory services.
+For help, go to the https://docs.netapp.com/us-en/workload-family/[home page for the Workload Factory documentation^] to view the documentation for all Workload Factory capabilities.
 
 //.Related link
 //

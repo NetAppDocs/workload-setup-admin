@@ -12,8 +12,6 @@ summary: Workload Factory is accessible from a web-based console. When you get s
 [.lead]
 Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
 
-//include::https://raw.githubusercontent.com/NetAppDocs/workload-family/main/_include/sign-up-saas.adoc[]
-
 .About this task
 
 You can sign up to Workload Factory using one of the following options:
@@ -34,7 +32,7 @@ You can skip the sign up page if you have an NSS account. Workload Factory will 
 
 . If you don't have an NSS account and you want to sign up by creating a NetApp cloud login, select *Sign up*.
 +
-image:https://raw.githubusercontent.com/NetAppDocs/workload-family-internal/first-draft/media/screenshot-sign-up1.png[A screenshot of the Sign up page where you can add your user name and password for access to Workload Factory.]
+image:screenshot-sign-up1.png[A screenshot of the Sign up page where you can add your user name and password for access to Workload Factory.]
 
 . On the *Sign up* page, enter the required information to create a NetApp cloud login and click *Next*.
 +
@@ -51,7 +49,7 @@ An account is the top-level element in NetApp's identity platform, and it enable
 //+
 //If your business already has an account and you want to join it, then you should close out of Workload Factory and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:manage-netapp-accounts.html#add-users[Learn how to add members to an existing account].
 +
-image:https://raw.githubusercontent.com/NetAppDocs/workload-family-internal/first-draft/media/screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
+image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
 
 . Click *Create* and the Workload Factory home page is displayed.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: quick-start.html
 keywords: quick start
-summary: Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a connection link, and subscribing to Workload Factory.
+summary: Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, and adding credentials so that Workload Factory can manage AWS resources directly.
 ---
 
 = Quick start for setting up Workload Factory
@@ -10,34 +10,43 @@ summary: Get started with Workload Factory by preparing networking for the Workl
 :imagesdir: ./media/
 
 [.lead]
-Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, optionally creating a connection link, and subscribing to Workload Factory.
+Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, and adding credentials so that Workload Factory can manage AWS resources directly.
 
-Workload Factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:workload-factory-accounts.html[Workload Factory accounts], link:connectivity-links.html[connectivity links], and link:operational-modes.html[operational modes].
+Workload Factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:workload-factory-accounts.html[Workload Factory accounts], link:operational-modes.html[operational modes], and link:connectivity-links.html[connectivity links].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] link:networking-saas-console.html[Prepare networking for using the Workload Factory console]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Prepare networking for using the Workload Factory console
 
 [role="quick-margin-para"]
 Computers that access the Workload Factory console should have connections to specific endpoints to complete a few administrative tasks. If your network restricts outbound access, you should ensure that these endpoints are allowed.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] link:sign-up-saas.html[Sign up and create an account]
+[role="quick-margin-para"]
+link:networking-saas-console.html[See the networking and endpoint requirements for using the Workload Factory console].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Sign up and create an account
 
 [role="quick-margin-para"]
-Go to the https://console.workloads.netapp.com[Workload Factory console^] and sign up for an account.
+Go to the https://console.workloads.netapp.com[Workload Factory console^] and sign up for an account. 
 
 [role="quick-margin-para"]
-At this point, you're logged in and can start using several Workload Factory capabilities, such as creating Amazon FSx for ONTAP file systems, deploying databases on FSx for ONTAP systems, and migrating virtual machine configurations in on-premises vSphere environments VMware Cloud on AWS using FSx for ONTAP file systems as external datastores.
- 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] link:add-credentials.html[Add credentials to your account]
+link:sign-up-saas.html[See how to sign up and create an account].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Add credentials to your account
 
 [role="quick-margin-para"]
-This step is optional. You can use Workload Factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to Workload Factory gives your Workload Factory account the permissions needed to create and manage FSx for ONTAP file systems, and deploy and manage specific workloads, such as databases.
-
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] link:manage-links.html[Create a connectivity link]
+This step is optional. You can use Workload Factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to Workload Factory in either "Read" or "Automate" mode gives your Workload Factory account the permissions needed to create and manage FSx for ONTAP file systems, and deploy and manage specific workloads, such as databases.
 
 [role="quick-margin-para"]
-This step is optional. You don't need to use a link to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities. A link creates trust relationship and connectivity between Workload Factory and an AWS account. Links currently leverage AWS Lambda.
+link:add-credentials.html[See how to add credentials to your account].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] link:log-in.html[Log in to Workload Factory]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a connectivity link
 
 [role="quick-margin-para"]
-Log in to Workload Factory.
+This step is optional. You don't need to use links to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities in your ONTAP systems. A link creates trust relationship and connectivity between Workload Factory, your AWS account, and your FSx for ONTAP system. Links currently leverage AWS Lambda.
+
+[role="quick-margin-para"]
+link:manage-links.html#create-a-link[See how to create a link].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png[Five] Log in to Workload Factory
+
+[role="quick-margin-para"]
+link:log-in.html[Log in to Workload Factory].
