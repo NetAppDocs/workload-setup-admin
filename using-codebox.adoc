@@ -16,7 +16,7 @@ Codebox is aligned with the Workload Factory operation modes (Basic, Read, Autom
 
 == How to use Codebox
 
-As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you click the *Create* button at the bottom of the page, click the *copy* button in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
+As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you click the *Create* button at the bottom of the page, click image:button-copy-codebox.png[the copy button] to copy in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
 
 image:screenshot-codebox-example1.png[A screenshot showing how to create a Microsoft SQL server in the UI and the corresponding entries for VPC and availability zones in Codebox.]
 
@@ -70,7 +70,7 @@ Note that the code within a CloudFormation-generated yaml file expires after 7 d
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, copy the code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the code in the Codebox.  
 
 . Click *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
 
