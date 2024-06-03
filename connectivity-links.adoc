@@ -18,7 +18,7 @@ You don't need a link to get started with Workload Factory, but in some cases yo
 
 Links leverage AWS Lambda. Lambda executes code in response to events and automatically manages the computing resources required by that code. The links that you create are part of your NetApp account and they are associated with an AWS account.
 
-After you have created a link you can associate it with your FSx for ONTAP file systems. Each file system can be associated only to one link, but a link can be associated with many file systems. If necessary, you can disassociate a file system from using a link.
+After you have created a link you can associate it with one, or many, FSx for ONTAP file systems. Each file system can be associated only to one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
 
 You create links from the FSx for ONTAP file system pages in Workload Factory. link:manage-links.html[See how to create links] for details.
 
@@ -32,7 +32,7 @@ https://aws.amazon.com/lambda/pricing/[Learn more about the costs related to usi
 
 Workload Factory requires a link to display some information and to perform some tasks. If you attempt to perform an operation that requires a link and you haven't associated a link with the FSx for ONTAP system, you will see a message that the operation requires a link. You can add a new link, or associate the FSx for ONTAP system with an existing link at that time so you can perform the operation.
 
-The features that you can't access without having a link includes:
+The features that require a link include:
 
 * Display the version of ONTAP that is installed on an FSx for ONTAP file system.
 * Manage iSCSI volumes on the system.

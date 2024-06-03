@@ -84,12 +84,31 @@ Note that the code within a CloudFormation-generated yaml file expires after 7 d
 
 . Click *Create stack*.
 
-. Monitor the progress from AwS or from Workload Factory.
+. Monitor the progress from AWS or from Workload Factory.
 
 == Use REST API code from Codebox
 
-You can use the Workload Factory REST APIs generated from Codebox...
+You can use the Workload Factory REST APIs generated from Codebox to deploy and manage your FSx for ONTAP file systems and other AWS resources.
+
+You can run the APIs from any host that supports curl and that has internet connectivity.
+
+Note that the authentication tokens are hidden in Codebox, but they are populated when you copy and paste the API call.
+
+.Steps
+
+. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the API code in the Codebox.  
+
+. Paste the code and run it on your host system.
+
 
 == Use AWS CLI code from Codebox
 
-You can use the Amazon Web Services CLI generated from Codebox...
+You can use the Amazon Web Services CLI generated from Codebox to deploy and manage your FSx for ONTAP file systems and other AWS resources.
+
+.Steps
+
+. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the AWS CLI in the Codebox.  
+
+. Open another browser window and log in to the AWS Management Console.
+
+. Paste the code and run it.
