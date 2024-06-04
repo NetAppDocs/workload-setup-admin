@@ -84,7 +84,7 @@ You'll need to launch an AWS CloudFormation stack in your AWS account to create 
 
 . Click *Associate link* from the FSx for ONTAP wizard.
 
-. Click the *Create link* button.
+. Select *Create a new link* and click *Continue*.
 
 . Enter the name that you want to use for this link. The name must be unique within your account.
 
@@ -94,15 +94,15 @@ The AWS account and the additional information for Account, Location, and Securi
 
 . Click *Redirect to CloudFormation*.
 +
-The dialog that explains how to create the link from the AWS CloudFormation service is displayed.
+A dialog that explains how to create the link from the AWS CloudFormation service is displayed.
 
 . Click *Continue* to open the AWS Management Console, and then log in to the AWS account for this FSx for ONTAP system.
 
 . On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might create IAM resources*.
 
-. Click *Create stack* and then click *Continue*.
+. Select *Create stack* and then click *Continue*.
 +
-You can monitor the link create status from the Events page.
+You can monitor the link creation status from the Events page. This should take no more than 5 minutes.
 
 . Return to the Workload Factory interface and you'll see that the link is associated with the FSx for ONTAP system.
 
@@ -118,15 +118,13 @@ NOTE: You can edit the Lambda network configuration (for example VPC, subnets, a
 
 == Associate a link to an FSx for ONTAP file system
 
-After you have created a link, you can associate it with your FSx for ONTAP file systems. Each file system can be associated to only one link, but a link can be associated with many file systems. 
+After you have created a link, you can associate it with your FSx for ONTAP file systems. Each file system can be associated to only one link in a single NetApp account, but a link can be associated with many file systems. 
 
 .Steps
 
 . Click *Associate link* from the Storage page of an FSx for ONTAP system.
 
-. In the Associate link page, click the *Associate an existing link* button.
-
-. Select the link that you want to use from the menu and click *Apply*.
+. In the Associate link page, select *Associate an existing link*, select the link, and click *Apply*.
 
 .Result
 
