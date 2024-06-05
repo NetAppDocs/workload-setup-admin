@@ -78,7 +78,7 @@ You'll need to launch an AWS CloudFormation stack in your AWS account to create 
 "codestar-connections:GetSyncConfiguration",
 "ecr:BatchGetImage",
 "ecr:GetDownloadUrlForLayer"
-====
+==== 
 
 .Steps
 
@@ -99,6 +99,13 @@ A dialog that explains how to create the link from the AWS CloudFormation servic
 . Click *Continue* to open the AWS Management Console, and then log in to the AWS account for this FSx for ONTAP system.
 
 . On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might create IAM resources*.
++
+Note that three permissions are granted to Lambda when you launch the CloudFormation template. Workload Factory uses these permissions when using links.
++
+[source,json]
+"lambda:InvokeFunction",
+"lambda:GetFunction",
+"lambda:UpdateFunctionCode"
 
 . Select *Create stack* and then click *Continue*.
 +
