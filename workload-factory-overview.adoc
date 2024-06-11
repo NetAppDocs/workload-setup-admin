@@ -21,7 +21,7 @@ Workload Factory has attained the AWS Well-Architected stamp of approval, and ca
 The Workload Factory platform provides the following major capabilities.
 
 Flexible and low cost storage:: 
-Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud. FSx for ONTAP brings the full capabilities of ONTAP to a native AWS managed service delivering a consistent hybrid cloud experience. 
+Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud. FSx for ONTAP brings the full capabilities of ONTAP to a native AWS managed service delivering a consistent hybrid cloud experience.
 
 Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS onboarding advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments and generate a plan to deploy recommended VM layouts to VMware Cloud on AWS and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
@@ -33,7 +33,7 @@ AI chatbot development::
 Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
 
 Storage calculators to save costs::
-Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP file systems. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
+Analyze your current deployments that use Amazon EBS or EFS storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
 
 == Supported cloud providers
 
@@ -41,11 +41,11 @@ Workload Factory enables you to manage cloud storage and use workload capabiliti
 
 == Cost
 
-Workload Factory does not have a cost - the platform is free to use. The cost that you pay to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
+Workload Factory is free to use. The cost that you pay to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
 
 == How Workload Factory works
 
-Workload Factory includes a web-based console that's provided through the SaaS layer, user accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
+Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
 
 === Software-as-a-service
 
@@ -61,27 +61,27 @@ link:workload-factory-accounts.html[Learn more about accounts].
 
 Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
 
-* *Basic mode* represents zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.  
+* *Basic mode* represents a zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.  
 
 * *Read mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards. 
 
-* *Automate mode* represents a full trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution. 
+* *Automate mode* represents a full-trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution.
 
 link:operational-modes.html[Learn more about Workload Factory operational modes].
 
 === Connectivity links
 
-A Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST APIs that are not available through the Amazon FSx for ONTAP APIs.
+A Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
 
 link:connectivity-links.html[Learn more about Links].
 
 === Codebox automation
 
-Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by Workload Factory. Code formats include Workload Factory REST APIs, AWS CLI, and AWS CloudFormation at this time.
+Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps engineers generate the code needed to execute any operation supported by Workload Factory. Code formats include Workload Factory REST API, AWS CLI, and AWS CloudFormation.
 
-Codebox is aligned with the Workload Factory operation modes (Basic, Read, Automate) and sets a clear path for execution readiness as well as an automation catalog for quick future reuse. 
+Codebox is aligned with the Workload Factory operation modes (Basic, Read, and Automate) and sets a clear path for execution readiness as well as an automation catalog for quick future reuse. 
 
-The Codebox Viewer pane shows the IaC that is generated by a specific job flow operation, and is matched by a graphical wizard or conversational chat interface. While Codebox Viewer supports color coding and search for easy navigation and analysis, it does not allow editing - only copying or saving to the Automation Catalog. 
+The Codebox Viewer pane shows the IaC that is generated by a specific job flow operation, and is matched by a graphical wizard or conversational chat interface. While Codebox Viewer supports color coding and search for easy navigation and analysis, it does not allow editing. You can only copy or save to the Automation Catalog. 
 
 link:codebox-automation.html[Learn more about Codebox].
 

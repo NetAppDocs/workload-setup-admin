@@ -5,14 +5,14 @@ keywords: storage calculators, calculators, workload factory, fsx for ontap, fsx
 summary: Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective for you.
 ---
 
-= Storage calculators
+= Learn about storage calculators
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective for you.
+Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
 
-The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance -- required IOPS and required throughput.
+The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
 
 == Provide your system requirements
 
@@ -23,17 +23,17 @@ This figure shows the volumes on FSx for Windows File Server systems that have b
 
 image:screenshot-storage-inventory.png[The storage inventory page showing your current inventory of volumes on FSx for Windows File Servers.]
 
-If you haven't added credentials to link your Workload Factory account with an AWS account (called _basic_ mode), you can manually enter the characteristics required for a storage system you are planning to deploy and the storage calculator will determine the best file system based on cost. You can use this method to scope a new FSx for ONTAP system while using automated mode as well.
+If you haven't added credentials to link your Workload Factory account with an AWS account (called _basic_ mode), you can manually enter the characteristics required for a storage system you are planning to deploy and the storage calculator will determine the best file system based on cost. You can use this method to scope a new FSx for ONTAP file system while using automate mode as well.
 
-This figure shows the storage calculator page with a comparison between FSx for ONTAP and Elastic Block Store storage.
+This figure shows the storage calculator page with a comparison between FSx for ONTAP and EBS storage.
 
 image:screenshot-ebs-calculator.png[The storage calculator page with a comparison between FSx for ONTAP and Elastic Block Store storage.]
 
 == Use the storage calculator
 
-When you click the *Explore savings* button and follow the wizard, the storage calculator displays whether the storage for the workloads on these storage systems would cost less if you used an FSx for ONTAP file system.
+When you select *Explore savings* and follow the wizard, the storage calculator displays whether the storage for the workloads on these storage systems would cost less if you used an FSx for ONTAP file system.
 
-You can also select specific volumes from this page and then click *Explore savings* to compare only those selected volumes.
+You can also select specific volumes from this page and then select *Explore savings* to compare only those selected volumes.
 
 If Workload Factory determines that you could save money by running these workloads on an FSx for ONTAP file system, you can deploy the file system from the calculator directly from Workload Factory. In some cases, Workload Factory may recommend that you deploy multiple file systems based on the amount of storage you are currently using, and based on the performance characteristics of your workloads. 
 

@@ -5,7 +5,7 @@ keywords: modes, zero-trust, full-trust, read, basic, automate
 summary: Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
 ---
 
-= Operational modes
+= Learn about operational modes
 :icons: font
 :imagesdir: ./media/
 
@@ -22,7 +22,7 @@ Operational modes provide a logical organization of the functionality and capabi
 
 == Operational mode features
 
-The features available when using each of the modes grows with each mode.
+The features available using each of the modes grows with each mode.
 
 [options="header",cols="12h,22,22,22,22"]
 |===
@@ -46,7 +46,7 @@ The features available when using each of the modes grows with each mode.
 
 | Automate
 | Full automation
-| Fully complete IaC template with full automation
+| Complete IaC template with full automation
 | Yes
 | Yes
 

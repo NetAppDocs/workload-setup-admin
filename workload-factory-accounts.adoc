@@ -30,8 +30,8 @@ link:manage-netapp-accounts.html[Learn how to manage your Workload Factory accou
 
 == Members
 
-Members are Workload Factory users that you associate with your Workload Factory account. At this time you can create only a single Account Admin user for a single account in the Workload Factory user interface. An Account Admin can perform any action in Workload Factory.
+Members are Workload Factory users that you associate with your Workload Factory account. At this time, you can create only a single Account Admin user for a single account in the Workload Factory user interface. An Account Admin can perform any action in Workload Factory.
 
-Note that Workload Factory uses the BlueXP tenancy model so if your company also uses BlueXP, and you have created multiple users within a single account in BlueXP, those same users will have access to the same account in Workload Factory. It doesn't matter if the BlueXP user was created with the Account Admin, Workspace Admin, or Compliance Viewer role - they will all have Account Admin permissions in Workload Factory. 
+Note that Workload Factory uses the BlueXP tenancy model so if your company also uses BlueXP, and you have created multiple users within a single account in BlueXP, those same users will have access to the same account in Workload Factory. It doesn't matter if the BlueXP user was created with the Account Admin, Workspace Admin, or Compliance Viewer role--they will all have Account Admin permissions in Workload Factory. 
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-netapp-accounts.html[See how to set up and manage BlueXP accounts.]

@@ -33,7 +33,7 @@ link:sign-up-saas.html[See how to sign up and create an account].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Add credentials to your account
 
 [role="quick-margin-para"]
-This step is optional. You can use Workload Factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to Workload Factory in either "Read" or "Automate" mode gives your Workload Factory account the permissions needed to create and manage FSx for ONTAP file systems, and deploy and manage specific workloads, such as databases.
+This step is optional. You can use Workload Factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to Workload Factory in either _Read_ or _Automate_ mode gives your Workload Factory account the permissions needed to create and manage FSx for ONTAP file systems and to deploy and manage specific workloads, such as databases.
 
 [role="quick-margin-para"]
 link:add-credentials.html[See how to add credentials to your account].
@@ -41,7 +41,7 @@ link:add-credentials.html[See how to add credentials to your account].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png[Four] Create a connectivity link
 
 [role="quick-margin-para"]
-This step is optional. You don't need to use links to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities in your ONTAP systems. A link creates trust relationship and connectivity between Workload Factory, your AWS account, and your FSx for ONTAP system. Links currently leverage AWS Lambda.
+This step is optional. You don't need to use links to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities for your FSx for ONTAP file systems. A link creates trust relationship and connectivity between Workload Factory, your AWS account, and your FSx for ONTAP file system. Links currently leverage AWS Lambda.
 
 [role="quick-margin-para"]
 link:manage-links.html#create-a-link[See how to create a link].

@@ -10,9 +10,9 @@ summary: You can use Codebox to generate the code needed to execute any operatio
 :imagesdir: ./media/
 
 [.lead]
-You can use Codebox to generate the code needed to execute any operation supported by Workload Factory. You can generate code that can be consumed and run using Workload Factory REST APIs, AWS CLI, and AWS CloudFormation.
+You can use Codebox to generate the code needed to execute any operation supported by Workload Factory. You can generate code that can be consumed and run using Workload Factory REST APIs, the AWS CLI, and AWS CloudFormation.
 
-Codebox is aligned with the Workload Factory operation modes (Basic, Read, Automate) by populating the appropriate data in the code based on the AWS permissions provided in the Workload Factory account for each user. The code can be used like a template where you can fill in missing information (for example, credentials) or customize certain data before running the code.
+Codebox is aligned with the Workload Factory operation modes (Basic, Read, and Automate) by populating the appropriate data in the code based on the AWS permissions provided in the Workload Factory account for each user. The code can be used like a template where you can fill in missing information (for example, credentials) or customize certain data before running the code.
 
 == How to use Codebox
 
@@ -26,9 +26,9 @@ With some code formats you can also click the Download button to save the code i
 
 You can copy the CloudFormation code generated from Codebox and then launch the Amazon Web Services CloudFormation stack in your AWS account. CloudFormation will perform the actions that you defined in the Workload Factory UI.
 
-The general requirements and steps to use the CloudFormation code is described below. There may be some differences depending on whether you are deploying an FSx for ONTAP system, creating account credentials, or performing other Workload Factory actions.
+The general requirements and steps to use the CloudFormation code is described below. There may be some differences depending on whether you are deploying an FSx for ONTAP file system, creating account credentials, or performing other Workload Factory actions.
 
-Note that the code within a CloudFormation-generated yaml file expires after 7 days for security.
+Note that the code within a CloudFormation-generated YAML file expires after 7 days for security reasons.
 
 .Prerequisites
 

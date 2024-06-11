@@ -30,7 +30,7 @@ indexpage:
           url: federation.html
     - title: Using the storage calculator
       links:
-        - title: Compare costs when using FSx for ONTAP systems
+        - title: Compare costs when using FSx for ONTAP file systems
           url: storage-calculators.html
     - title: Automation using Codebox
       links:
