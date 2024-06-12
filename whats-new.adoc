@@ -12,7 +12,7 @@ summary: "Learn what's new with Workload Factory administration features: Worklo
 [.lead]
 Learn what's new with Workload Factory administration features: Workload Factory accounts, cloud provider credentials, Codebox enhancements, links, and more.
 
-== 8 July 2024
+== 7 July 2024
 
 === Initial release of NetApp Workload Factory
 
