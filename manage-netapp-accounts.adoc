@@ -34,7 +34,7 @@ You can switch from one account to another account after you have initially logg
 +
 image:screenshot-switch-account.png[A screenshot of how to switch to a different account.]
 
-. Click *Switch*.
+. Select *Switch*.
 
 == Manage your account with the Tenancy API
 

@@ -35,14 +35,14 @@ You can use single sign-on to log in using credentials from your corporate direc
 * Federated user: Enter your federated identity credentials
 * NetApp Support Site account: Enter your NetApp Support Site credentials
 
-. Click *Log in*.
+. Select *Log in*.
 +
 If you have successfully logged in in the past, you'll see the Workload Factory home page and you'll be using the default account. 
 +
 If this is the first time that you've logged in, you'll be directed to the *Account* page.
 +
-* If you are a member of a single account, click *Continue*.
-* If you are a member of multiple accounts, select the account and click *Continue*.
+* If you are a member of a single account, select *Continue*.
+* If you are a member of multiple accounts, select the account and select *Continue*.
 
 .Result
 

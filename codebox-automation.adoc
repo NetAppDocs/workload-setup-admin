@@ -22,7 +22,7 @@ Codebox provides two key IaC capabilities:
 
 Additionally, when setting up Workload Factory credentials, Codebox dynamically displays the AWS permissions that are needed to create IAM policies. The permissions are provided for each Workload Factory capability that you plan to use (databases, AI, FSx for ONTAP, and so on), and they are customized based on whether the users of the policy will get read-only permissions or full operate permissions. You just copy the permissions from Codebox and then paste them in the AWS Management Console so that Workload Factory has the correct permissions to manage your workloads.
 
-See how to link:manage-credentials.html[manage credentials] for more information.
+Learn how to link:manage-credentials.html[manage credentials] for more information.
 
 == Supported code formats
 

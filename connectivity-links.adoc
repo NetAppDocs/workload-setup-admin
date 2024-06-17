@@ -20,7 +20,7 @@ Links leverage AWS Lambda. Lambda executes code in response to events and automa
 
 After you have created a link you can associate it with one, or many, FSx for ONTAP file systems. Each file system can be associated only to one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
 
-You create links from the FSx for ONTAP file system pages in Workload Factory. link:manage-links.html[See how to create links] for details.
+You create links from the FSx for ONTAP file system pages in Workload Factory. link:manage-links.html[Learn how to create links] for details.
 
 == Costs
 

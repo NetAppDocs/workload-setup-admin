@@ -16,11 +16,11 @@ Codebox is aligned with the Workload Factory operation modes (Basic, Read, and A
 
 == How to use Codebox
 
-As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you click the *Create* button at the bottom of the page, click image:button-copy-codebox.png[the copy button] to copy in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
+As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you select the *Create* button at the bottom of the page, select image:button-copy-codebox.png[the copy button] to copy in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
 
 image:screenshot-codebox-example1.png[A screenshot showing how to create a Microsoft SQL server in the UI and the corresponding entries for VPC and availability zones in Codebox.]
 
-With some code formats you can also click the Download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
+With some code formats you can also select the Download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
 
 == Use CloudFormation code from Codebox
 
@@ -70,19 +70,19 @@ Note that the code within a CloudFormation-generated YAML file expires after 7 d
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the code in the Codebox.  
 
-. Click *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
+. Select *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
 
 . Open another browser window and log in to the AWS Management Console.
 
-. Click *Continue* from the Redirect to CloudFormation page.
+. Select *Continue* from the Redirect to CloudFormation page.
 
 . Log in to the AWS account where the code should be run.
 
-. On the Quick create stack page, under Capabilities, click *I acknowledge that AWS CloudFormation might ...*.
+. On the Quick create stack page, under Capabilities, select *I acknowledge that AWS CloudFormation might ...*.
 
-. Click *Create stack*.
+. Select *Create stack*.
 
 . Monitor the progress from AWS or from Workload Factory.
 
@@ -96,7 +96,7 @@ Note that the authentication tokens are hidden in Codebox, but they are populate
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the API code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the API code in the Codebox.  
 
 . Paste the code and run it on your host system.
 
@@ -107,7 +107,7 @@ You can use the Amazon Web Services CLI generated from Codebox to deploy and man
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, click image:button-copy-codebox.png[the copy button] to copy the AWS CLI in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the AWS CLI in the Codebox.  
 
 . Open another browser window and log in to the AWS Management Console.
 
