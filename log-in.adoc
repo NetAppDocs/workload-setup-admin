@@ -46,4 +46,4 @@ If this is the first time that you've logged in, you'll be directed to the *Acco
 
 .Result
 
-You're now logged in and can start using Workload Factory to manage your FSx for ONTAP systems and your workloads.
+You're now logged in and can start using Workload Factory to manage your FSx for ONTAP file systems and your workloads.

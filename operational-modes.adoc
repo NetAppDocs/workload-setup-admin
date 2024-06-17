@@ -86,7 +86,7 @@ You can provide these capabilities within a single set of credentials in a Workl
 
 .Example 1
 
-Account users who use the credentials that have been given the following permissions will have full control (automate mode) for creating FSx for ONTAP systems, deploying databases, and viewing other types of AWS storage used in the account.
+Account users who use the credentials that have been given the following permissions will have full control (automate mode) for creating FSx for ONTAP file systems, deploying databases, and viewing other types of AWS storage used in the account.
 
 image:screenshot-credentials1.png[A screenshot showing one set of credentials that provide two types of workload permissions.]
 
@@ -96,8 +96,8 @@ However, they will have no automation controls for creating and deploying VMware
 
 Here the user has created two sets of credentials to allow different operational capabilities depending on which set of credentials have been selected. Typically, each set of credentials is paired to a different AWS account.
 
-The first set of credentials includes permissions that give users full control for creating FSx for ONTAP systems (and the ability to view other types of AWS storage used in the account), but only read permissions when working with VMware workloads.
+The first set of credentials includes permissions that give users full control for creating FSx for ONTAP file systems (and the ability to view other types of AWS storage used in the account), but only read permissions when working with VMware workloads.
 
-The second set of credentials only provide permissions that give users full control for creating FSx for ONTAP systems, and viewing other types of AWS storage used in the account.
+The second set of credentials only provide permissions that give users full control for creating FSx for ONTAP file systems, and viewing other types of AWS storage used in the account.
 
 image:screenshot-credentials2.png[A screenshot showing two sets of credentials that provide different levels of permissions for deploying workloads.]
