@@ -23,16 +23,8 @@ sidebar:
           entries: 
             - title: Workload Factory overview
               url: /workload-factory-overview.html
-            - title: Accounts
-              url: /workload-factory-accounts.html
             - title: Operational modes
               url: /operational-modes.html
-            - title: Connectivity links
-              url: /connectivity-links.html
-            - title: Codebox automation
-              url: /codebox-automation.html
-            - title: Storage calculators
-              url: /storage-calculators.html
         - title: Quick start
           url: /quick-start.html
         - title: Prepare your networking
@@ -49,18 +41,28 @@ sidebar:
           url: /log-in.html
         - title: Identity federation
           url: /federation.html
-        - title: Workload Factory accounts
+        - title: Manage your account
           entries:
-            - title: Manage your Workload Factory account
+            - title: Learn about accounts
+              url: /workload-factory-accounts.html
+            - title: Manage your account
               url: /manage-netapp-accounts.html
-            - title: Create another Workload Factory account
+            - title: Create another account
               url: /create-another-account.html
+        - title: Use links
+          entries:
+            - title: Connectivity links
+              url: /connectivity-links.html
+            - title: Manage links
+              url: /manage-links.html
+        - title: Automate tasks using Codebox
+          entries:
+            - title: Learn about Codebox
+              url: /codebox-automation.html
+            - title: Use Codebox to generate code
+              url: /using-codebox.html
         - title: Remove credentials
           url: /manage-credentials.html
-        - title: Manage links
-          url: /manage-links.html
-        - title: Use the Codebox for automation
-          url: /using-codebox.html
     - title: Knowledge and support
       entries:
         - title: Register for support
