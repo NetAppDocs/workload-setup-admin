@@ -1,26 +1,31 @@
 ---
 sidebar: sidebar
 permalink: operational-modes.html
-keywords: modes, zero-trust, full-trust, read, basic, automate
-summary: Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
+keywords: modes, zero-trust, full-trust, read, basic, automate, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials
+summary: Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies. The operational mode that you use is determined by the level of AWS permissions that you provide to Workload Factory.
 ---
 
-= Learn about operational modes
+= Learn about operational modes and AWS credentials
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access between Workload Factory and your cloud estate based on your IT policies.
+Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies. The operational mode that you use is determined by the level of AWS permissions that you provide to Workload Factory.
+
+== Operational modes
 
 Operational modes provide a logical organization of the functionality and capabilities delivered by Workload Factory, as correlated to the trust level that you assign. The main objective in operational modes is to clearly communicate which tasks Workload Factory can or cannot do within your AWS account.
 
-*Basic mode*:: Represents a zero-trust relationship where no AWS permissions are assigned. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it in AWS by entering your AWS credentials manually.  
+Basic mode:: 
+Represents a zero-trust relationship where no AWS permissions are assigned to Workload Factory. It is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code (IaC). You can copy the code and use it in AWS by entering your AWS credentials manually.  
 
-*Read mode*:: Enhances the experience of Basic mode by adding read-only permissions so that the IaC templates are filled with your specific variables (for example, VPC, security groups, etc.). This enables you to execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory. 
+Read mode:: 
+Enhances the experience of basic mode by adding read-only permissions so that the IaC templates are filled with your specific variables (for example, VPC, security groups, etc.). This enables you to execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory.
 
-*Automate mode*:: Represents a full trust relationship so that Workload Factory gets assigned with full permissions. This allows Workload Factory to execute and automate operations in AWS on your behalf along with the assigned credentials that have the needed permissions for execution. 
+Automate mode:: 
+Represents a full trust relationship so that Workload Factory gets assigned with full permissions. This allows Workload Factory to execute and automate operations in AWS on your behalf along with the assigned credentials that have the needed permissions for execution. 
 
-== Operational mode features
+=== Operational mode features
 
 The features available using each of the modes grows with each mode.
 
@@ -52,7 +57,7 @@ The features available using each of the modes grows with each mode.
 
 |===
 
-== Operational mode requirements
+=== Operational mode requirements
 
 There is no selector that you need to set in Workload Factory to identify which mode you are planning to use. The mode is determined based on the AWS credentials and permissions that you assign to your Workload Factory account.
 
@@ -78,13 +83,13 @@ There is no selector that you need to set in Workload Factory to identify which 
 
 link:connectivity-links.html[Learn more about links.]
 
-== Operational mode examples
+=== Operational mode examples
 
 You can set up your credentials to provide one mode for one workload component and another mode for another component. For example, you can configure automate mode for operations where you are deploying and managing FSx for ONTAP file systems, but only configure read mode for creating and deploying database workloads using Workload Factory.
 
 You can provide these capabilities within a single set of credentials in a Workload Factory account, or you can create multiple sets od credentials when each credential provides unique workload deployment capabilities.
 
-.Example 1
+==== Example 1
 
 Account users who use the credentials that have been given the following permissions will have full control (automate mode) for creating FSx for ONTAP file systems, deploying databases, and viewing other types of AWS storage used in the account.
 
@@ -92,7 +97,7 @@ image:screenshot-credentials1.png[A screenshot showing one set of credentials th
 
 However, they will have no automation controls for creating and deploying VMware workloads (Basic mode) from Workload Factory. If they want to create VMware workloads, they'll need to copy the code from the Codebox, log in to their AWS account manually, and manually populate missing entries in the generated code to use this functionality.
 
-.Example 2
+==== Example 2
 
 Here the user has created two sets of credentials to allow different operational capabilities depending on which set of credentials have been selected. Typically, each set of credentials is paired to a different AWS account.
 
@@ -101,3 +106,23 @@ The first set of credentials includes permissions that give users full control f
 The second set of credentials only provide permissions that give users full control for creating FSx for ONTAP file systems, and viewing other types of AWS storage used in the account.
 
 image:screenshot-credentials2.png[A screenshot showing two sets of credentials that provide different levels of permissions for deploying workloads.]
+
+== AWS credentials
+
+We have designed an AWS assume role credentials registration flow that: 
+
+* Supports a more aligned AWS account permissions by allowing you to specify the workload capabilities that you want to use and providing IAM policy requirements according to those selections.  
+* Allows you to adjust the granted AWS account permissions as you opt-in or opt-out of specific workload capabilities. 
+* Simplifies manual IAM policy creation by providing tailored JSON policy files that you can apply in the AWS console.
+* Further simplifies the credentials registration process by offering users with an automated option for required IAM policy and role creation using AWS CloudFormation stacks.
+* Aligns better with FSx for ONTAP users who strongly prefer to have their credentials stored within the boundaries of the AWS cloud ecosystem by allowing storage of the FSx for ONTAP services credentials in an AWS-based secret management backend.
+
+=== Initial AWS credentials
+
+When you use your first Workload Factory capability, you'll need to create the credentials using the permissions required for the capability. You'll create the credentials in Workload Factory, but you'll need to access the AWS Management Console to create the IAM role and policy. These credentials will be available within your account when using any capability in Workload Factory. 
+
+=== Additional AWS credentials
+
+Adding new AWS credentials to Workload Factory provides additional permissions needed to use additional capabilities, such as FSx for ONTAP file systems, deploy databases on FSx for ONTAP, migrate VMware workloads, and more.
+
+link:manage-credentials.html[Learn how to add AWS credentials to Workload Factory^]

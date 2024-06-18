@@ -125,7 +125,7 @@ You can't edit a link from the Workload Factory interface. If you need to make a
 
 NOTE: You can edit the Lambda network configuration (for example VPC, subnets, and security groups) using the AWS console and the changes will be reflected in links management UI, however these changes can lead to connectivity issues between the Lambda and ONTAP and are not recommended. 
 
-== Associate a link to an FSx for ONTAP file system
+== Associate a link with an FSx for ONTAP file system
 
 After you have created a link, you can associate it with your FSx for ONTAP file systems. Each file system can be associated to only one link in a single NetApp account, but a link can be associated with many file systems. 
 

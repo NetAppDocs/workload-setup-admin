@@ -25,8 +25,6 @@ sidebar:
               url: /workload-factory-overview.html
             - title: Accounts
               url: /workload-factory-accounts.html
-            - title: Credentials and permissions
-              url: /credentials-overview.html
             - title: Operational modes
               url: /operational-modes.html
             - title: Connectivity links
@@ -35,22 +33,20 @@ sidebar:
               url: /codebox-automation.html
             - title: Storage calculators
               url: /storage-calculators.html
-        - title: Get started
-          entries:
-            - title: Quick start
-              url: /quick-start.html
-            - title: Prepare networking to use Workload Factory
-              url: /networking-saas-console.html
-            - title: Sign up to Workload Factory
-              url: /sign-up-saas.html
-            - title: Add AWS credentials
-              url: /add-credentials.html
-            - title: What you can do next
-              url: /whats-next.html
-        - title: Log in to Workload Factory
-          url: /log-in.html
+        - title: Quick start
+          url: /quick-start.html
+        - title: Prepare your networking
+          url: /networking-saas-console.html
+        - title: Sign up to Workload Factory
+          url: /sign-up-saas.html
+        - title: Add AWS credentials
+          url: /add-credentials.html
+        - title: What you can do next
+          url: /whats-next.html
     - title: Administer Workload Factory
       entries:
+        - title: Log in to Workload Factory
+          url: /log-in.html
         - title: Identity federation
           url: /federation.html
         - title: Workload Factory accounts
@@ -59,13 +55,11 @@ sidebar:
               url: /manage-netapp-accounts.html
             - title: Create another Workload Factory account
               url: /create-another-account.html
-        - title: Credentials and permissions
-          entries:  
-            - title: Manage credentials
-              url: /manage-credentials.html
+        - title: Remove credentials
+          url: /manage-credentials.html
         - title: Manage links
           url: /manage-links.html
-        - title: Using Codebox for automation
+        - title: Use the Codebox for automation
           url: /using-codebox.html
     - title: Knowledge and support
       entries:
