@@ -71,7 +71,9 @@ link:operational-modes.html[Learn more about Workload Factory operational modes]
 
 === Connectivity links
 
-A Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+You don't need to use links to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities for your FSx for ONTAP file systems. A link creates trust relationship and connectivity between Workload Factory, your AWS account, and your FSx for ONTAP file system. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+
+Links currently leverage AWS Lambda.
 
 link:connectivity-links.html[Learn more about Links].
 

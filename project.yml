@@ -39,7 +39,7 @@ sidebar:
       entries:
         - title: Log in to Workload Factory
           url: /log-in.html
-        - title: Identity federation
+        - title: Set up identity federation
           url: /federation.html
         - title: Manage your account
           entries:
@@ -49,9 +49,9 @@ sidebar:
               url: /manage-netapp-accounts.html
             - title: Create another account
               url: /create-another-account.html
-        - title: Use links
+        - title: Provide connectivity using links
           entries:
-            - title: Connectivity links
+            - title: Learn about links
               url: /connectivity-links.html
             - title: Manage links
               url: /manage-links.html
