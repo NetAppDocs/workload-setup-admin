@@ -40,6 +40,10 @@ Note that only English characters are allowed in the sign up form.
 
 . Enter the detailed information for your company and select *Sign up*.
 
+. Check your inbox for an email from NetApp that includes instructions to verify your email address.
++
+This step is required before you can log in.
+
 . When prompted, review the End User License Agreement and accept the terms, and select *Continue*.
 
 . On the *Account* page, enter a name for your account, and optionally select your job description.

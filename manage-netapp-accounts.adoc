@@ -18,15 +18,13 @@ link:workload-factory-accounts.html[Learn how Workload Factory accounts work].
 
 If you are responsible for creating and managing workloads for multiple accounts, you can select the account that you want to manage when you log in, or you can switch between accounts after you have logged in.
 
-.Select account during log in
+.Steps to select an account during log in
 
-You can choose the account from the menu during log in.
+. Choose the account from the menu during log in.
 
 image:screenshot-select-account.png[A screenshot of how to select different accounts during log in.]
 
-.Switch account after log in
-
-You can switch from one account to another account after you have initially logged in to Workload Factory.
+.Steps to switch accounts after logging in
 
 . In the Workload Factory console, select the *Account Settings* icon, and select *Switch account*.
 
