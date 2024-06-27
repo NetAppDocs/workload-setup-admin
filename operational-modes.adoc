@@ -125,4 +125,4 @@ Your initial set of AWS credentials can include an IAM policy for one capability
 
 Adding more than one set of AWS credentials to Workload Factory provides additional permissions needed to use additional capabilities, such as FSx for ONTAP file systems, deploy databases on FSx for ONTAP, migrate VMware workloads, and more.
 
-link:manage-credentials.html[Learn how to add AWS credentials to Workload Factory^]
+link:add-credentials.html[Learn how to add AWS credentials to Workload Factory^]
