@@ -83,7 +83,7 @@ You don't need a link to get started with Workload Factory, but in some cases yo
 
 Links currently leverage AWS Lambda.
 
-link:connectivity-links.html[Learn more about Links].
+https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
 
 === Codebox automation
 
@@ -100,6 +100,8 @@ link:codebox-automation.html[Learn more about Codebox].
 Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
 
 The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
+
+https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings using storage calculators^]
 
 === REST APIs
 
