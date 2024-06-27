@@ -12,8 +12,18 @@ summary: "Now that you've logged in and set up Workload Factory, you can create 
 [.lead]
 Now that you've logged in and set up Workload Factory, you can start using several Workload Factory capabilities, such as creating Amazon FSx for ONTAP file systems, deploying databases on FSx for ONTAP file systems, and migrating virtual machine configurations to VMware Cloud on AWS using FSx for ONTAP file systems as external datastores.
 
-For help, go to the https://docs.netapp.com/us-en/workload-family/[home page for the Workload Factory documentation^] to view the documentation for all Workload Factory capabilities.
+* https://docs.netapp.com/us-en/workload-fsx-ontap/index.html[Amazon FSx for NetApp ONTAP^]
++
+Assess and analyze current data estates for potential cost savings by using FSx for ONTAP as the storage infrastructure, provision and templatize FSx for ONTAP deployments based on best practices, and access advanced management capabilities.
 
-//.Related link
-//
-//link:operational-modes.html[Workload Factory operational modes]
+* https://docs.netapp.com/us-en/workload-ai-studio/index.html[GenAI^]
++
+Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to improve the accuracy and uniqueness of your AI applications. Create a RAG knowledge base on FSx for ONTAP with built-in data security and compliance.
+
+* https://docs.netapp.com/us-en/workload-databases/index.html[Database workloads^]
++
+Detect your existing database estate on AWS, assess potential cost savings by moving to FSx for ONTAP, deploy databases end-to-end with built-in best practices for optimization, and automate thin cloning for CI/CD pipelines.
+
+* https://docs.netapp.com/us-en/workload-vmware/index.html[VMware workloads^]
++
+Streamline migrations and operations with smart recommendations and automatic remediation. Deploy efficient backups and robust disaster recovery. Monitor and troubleshoot your VMs.

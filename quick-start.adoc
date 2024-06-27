@@ -32,6 +32,9 @@ link:add-credentials.html[Learn how to add credentials to your account].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Optimize your workloads using FSx for ONTAP
 
+[role="quick-margin-para"]
+Now that you've signed up, created an account, and optionally added AWS credentials, you can start using Workload Factory to optimize your workloads using FSx for ONTAP. Use the links below to follow step-by-step instructions for each type of workload.
+
 [role="quick-margin-list"]
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html[Amazon FSx for NetApp ONTAP^]
 +
