@@ -8,39 +8,19 @@ indexpage:
       links:
         - title: Learn about Workload Factory
           url: workload-factory-overview.html
-        - title: Get started
-          url: quick-start.html
-    - title: Workload Factory accounts
+        - title: Sign up
+          url: sign-up-saas.html
+    - title: Operational modes and credentials
       links:
-        - title: Learn about Workload Factory accounts
-          url: workload-factory-accounts.html
-        - title: Manage your Workload Factory account
-          url: manage-netapp-accounts.html
-        - title: Manage AWS credentials and permissions
-          url: manage-credentials.html
-        - title: Configure operational modes
+        - title: Learn about operational modes
           url: operational-modes.html
-        - title: Add connectivity links to ONTAP
-          url: connectivity-links.html
-    - title: Logging in
-      links:
-        - title: Log in to Workload Factory
-          url: log-in.html
-        - title: Using identity federation with Workload Factory
-          url: federation.html
-    - title: Using the storage calculator
-      links:
-        - title: Compare costs when using FSx for ONTAP file systems
-          url: storage-calculators.html
+        - title: Add AWS credentials
+          url: manage-netapp-accounts.html
+        - title: Remove credentials
+          url: manage-credentials.html
     - title: Automation using Codebox
       links:
         - title: Learn about Codebox
           url: codebox-automation.html
         - title: Using Codebox for automation
           url: using-codebox.html
-    - title: Blogs & community
-      links:
-        - title: Workload Factory blogs
-          url: https://bluexp.netapp.com/blog
-        - title: Workload Factory webinars
-          url: https://bluexp.netapp.com/events

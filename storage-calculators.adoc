@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: storage-calculators.html
 keywords: storage calculators, calculators, workload factory, fsx for ontap, fsx for windows, efs, ebs, storage cost
-summary: Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective for you.
+summary: "Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Amazon Elastic Block Store (EBS), Amazon Elastic File Systems (EFS), and Amazon FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you."
 ---
 
 = Learn about storage calculators
@@ -10,7 +10,7 @@ summary: Workload Factory provides a storage calculator so you can compare the c
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
+Workload Factory provides a storage calculator so you can compare the costs of storage on FSx for ONTAP file systems against Amazon Elastic Block Store (EBS), Amazon Elastic File Systems (EFS), and Amazon FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
 
 The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
 
@@ -31,11 +31,11 @@ image:screenshot-ebs-calculator.png[The storage calculator page with a compariso
 
 == Use the storage calculator
 
-When you select *Explore savings* and follow the wizard, the storage calculator displays whether the storage for the workloads on these storage systems would cost less if you used an FSx for ONTAP file system.
+When you select *Explore savings* and choose an Amazon storage type, you can fill out the storage calculator to determine whether the storage for the workloads on these storage systems would cost less if you used an FSx for ONTAP file system.
 
 You can also select specific volumes from this page and then select *Explore savings* to compare only those selected volumes.
 
-If Workload Factory determines that you could save money by running these workloads on an FSx for ONTAP file system, you can deploy the file system from the calculator directly from Workload Factory. In some cases, Workload Factory may recommend that you deploy multiple file systems based on the amount of storage you are currently using, and based on the performance characteristics of your workloads. 
+If Workload Factory determines that you could save money by running these workloads on an FSx for ONTAP file system, you can deploy the file system from the calculator directly from Workload Factory. In some cases, Workload Factory may recommend that you deploy multiple file systems based on the amount of storage you are currently using, and based on the performance characteristics of your workloads.
 
 == Deploy FSx for ONTAP file systems
 

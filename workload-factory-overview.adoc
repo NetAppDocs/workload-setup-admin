@@ -45,21 +45,27 @@ Workload Factory is free to use. The cost that you pay to Amazon Web Services (A
 
 == How Workload Factory works
 
-Workload Factory includes a web-based console that's provided through the SaaS layer, accounts that provide multi-tenancy, and "links" that provide segregated connectivity between Workload Factory and an AWS account.
+Workload Factory includes a web-based console that's provided through the SaaS layer, an account, operational modes that control access to your cloud estate, links that provide segregated connectivity between Workload Factory and an AWS account, and more.
 
 === Software-as-a-service
 
 Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^]. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
 
-=== Workload Factory account
+=== Account
 
-When you log in to Workload Factory for the first time, you're prompted to create a _Workload Factory account_. This account provides multi-tenancy and enables you to organize your resources.
+When you log in to Workload Factory for the first time, you're prompted to create an account. This account enables you to organize your resources, workloads, and workload access for your organization using credentials.
 
-link:workload-factory-accounts.html[Learn more about accounts].
+image:screenshot-account-selection.png[A screenshot of the Workload Factory setup wizard that prompts you for the Workload Factory account.]
+
+When you create an account, you are the single Account Admin user for that account.
+
+If your organization requires additional account or user management, reach out to us by using the in-product chat.
+
+TIP: If you use NetApp BlueXP, then you'll already belong to an account because Workload Factory leverages BlueXP accounts.
 
 === Operational modes 
 
-Workload Factory provides three operational modes that you can assign for users in your AWS accounts to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
+Workload Factory provides three operational modes that enables you to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
 
 * *Basic mode* represents a zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.
 
@@ -71,7 +77,9 @@ link:operational-modes.html[Learn more about Workload Factory operational modes]
 
 === Connectivity links
 
-You don't need to use links to get started with Workload Factory, but you can create a link to unlock all Workload Factory features and capabilities for your FSx for ONTAP file systems. A link creates trust relationship and connectivity between Workload Factory, your AWS account, and your FSx for ONTAP file system. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+A Workload Factory link creates a trust relationship and connectivity between Workload Factory and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+
+You don't need a link to get started with Workload Factory, but in some cases you'll need to create a link to unlock all Workload Factory features and workload capabilities.
 
 Links currently leverage AWS Lambda.
 

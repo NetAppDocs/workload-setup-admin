@@ -20,8 +20,6 @@ You can sign up to Workload Factory using one of the following options:
 
 * A NetApp cloud login by specifying your email address and a password
 
-Both options support a federated connection, which enables single sign-on using credentials from your corporate directory (federated identity). You can set up a federation connection after you sign up. link:federation.html[Learn how to use identity federation with Workload Factory].
-
 .Steps
 
 . Open a web browser and go to the https://console.workloads.netapp.com[Workload Factory console^]
@@ -49,9 +47,6 @@ This step is required before you can log in.
 . On the *Account* page, enter a name for your account, and optionally select your job description.
 +
 An account is the top-level element in NetApp's identity platform, and it enables you to add and manage permissions and credentials.
-//It enables you to add and manage users, roles, permissions, and credentials.
-//+
-//If your business already has an account and you want to join it, then you should close out of Workload Factory and ask the owner to associate you with the account. After the owner adds you, you can log in and you'll have access to the account. link:manage-netapp-accounts.html#add-users[Learn how to add members to an existing account].
 +
 image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
 

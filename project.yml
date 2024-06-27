@@ -27,8 +27,6 @@ sidebar:
               url: /operational-modes.html
         - title: Quick start
           url: /quick-start.html
-        - title: Prepare your networking
-          url: /networking-saas-console.html
         - title: Sign up to Workload Factory
           url: /sign-up-saas.html
         - title: Add AWS credentials
@@ -39,22 +37,6 @@ sidebar:
       entries:
         - title: Log in to Workload Factory
           url: /log-in.html
-        - title: Set up identity federation
-          url: /federation.html
-        - title: Manage your account
-          entries:
-            - title: Learn about accounts
-              url: /workload-factory-accounts.html
-            - title: Manage your account
-              url: /manage-netapp-accounts.html
-            - title: Create another account
-              url: /create-another-account.html
-        - title: Provide connectivity using links
-          entries:
-            - title: Learn about links
-              url: /connectivity-links.html
-            - title: Manage links
-              url: /manage-links.html
         - title: Automate tasks using Codebox
           entries:
             - title: Learn about Codebox
