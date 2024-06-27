@@ -14,6 +14,6 @@ Learn what's new with Workload Factory administration features: Workload Factory
 
 == 7 July 2024
 
-=== Initial release of NetApp Workload Factory
+=== Initial release of Workload Factory
 
-NetApp Workload Factory is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI chatbots, and more.
+BlueXP Workload Factory for AWS is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI chatbots, and more.

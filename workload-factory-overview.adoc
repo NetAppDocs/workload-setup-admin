@@ -51,7 +51,7 @@ Workload Factory includes a web-based console that's provided through the SaaS l
 
 Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^]. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
 
-=== Account
+=== Accounts
 
 When you log in to Workload Factory for the first time, you're prompted to create an account. This account enables you to organize your resources, workloads, and workload access for your organization using credentials.
 
