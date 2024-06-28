@@ -65,7 +65,7 @@ There is no selector that you need to set in Workload Factory to identify which 
 |===
 | Mode
 | AWS account credentials
-| Connectivity links
+| Link
 
 | Basic
 | Not required
@@ -77,11 +77,11 @@ There is no selector that you need to set in Workload Factory to identify which 
 
 | Automate
 | Read-write credentials 
-| Yes
+| Required
 
 |===
 
-link:connectivity-links.html[Learn more about links.]
+https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
 
 === Operational mode examples
 
