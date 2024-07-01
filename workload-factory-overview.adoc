@@ -115,10 +115,4 @@ There are several benefits when using the Workload Factory REST APIs:
 
 * The Workload Factory web UI uses the same core REST APIs and so there is consistency between the two access paths.
 
-https://console.workloads.netapp.com/api-doc[View the Workload Factory REST API documentation].
-
-== SOC 2 Type 2 certification
-
-An independent certified public accountant firm and services auditor examined Workload Factory and affirmed that it achieved SOC 2 Type 2 reports based on the applicable Trust Services criteria.
-
-https://www.netapp.com/company/trust-center/compliance/soc-2/[View NetApp's SOC 2 reports^]
+https://console.workloads.netapp.com/api-doc[View the Workload Factory REST API documentation^]

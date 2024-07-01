@@ -81,7 +81,7 @@ There is no selector that you need to set in Workload Factory to identify which 
 
 |===
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
+https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about links^]
 
 === Operational mode examples
 
@@ -125,4 +125,4 @@ Your initial set of AWS credentials can include an IAM policy for one capability
 
 Adding more than one set of AWS credentials to Workload Factory provides additional permissions needed to use additional capabilities, such as FSx for ONTAP file systems, deploy databases on FSx for ONTAP, migrate VMware workloads, and more.
 
-link:add-credentials.html[Learn how to add AWS credentials to Workload Factory^]
+link:add-credentials.html[Learn how to add AWS credentials to Workload Factory].
