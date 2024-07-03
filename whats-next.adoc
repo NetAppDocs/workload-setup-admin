@@ -16,7 +16,7 @@ Now that you've logged in and set up Workload Factory, you can start using sever
 +
 Assess and analyze current data estates for potential cost savings by using FSx for ONTAP as the storage infrastructure, provision and templatize FSx for ONTAP deployments based on best practices, and access advanced management capabilities.
 
-* https://docs.netapp.com/us-en/workload-ai-studio/index.html[GenAI^]
+* https://docs.netapp.com/us-en/workload-genai/index.html[GenAI^]
 +
 Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to improve the accuracy and uniqueness of your AI applications. Create a RAG knowledge base on FSx for ONTAP with built-in data security and compliance.
 
