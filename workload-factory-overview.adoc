@@ -14,8 +14,6 @@ NetApp Workload Factory is a powerful life-cycle management platform designed to
 
 Amazon FSx for NetApp ONTAP provides fully managed, AWS-native NFS, SMB/CIFS, and iSCSI storage volumes for mission-critical applications, databases, containers, VMware Cloud datastores, and user files. You can manage FSx for ONTAP through Workload Factory and by using native AWS management tools. 
 
-Workload Factory has attained the AWS Well-Architected stamp of approval, and can run entirely on AWS as a dedicated experience.
-
 == Features
 
 The Workload Factory platform provides the following major capabilities.
