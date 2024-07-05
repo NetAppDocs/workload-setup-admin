@@ -40,7 +40,7 @@ sidebar:
             - title: Learn about Codebox
               url: /codebox-automation.html
             - title: Use Codebox to generate code
-              url: /using-codebox.html
+              url: /use-codebox.html
         - title: Remove credentials
           url: /manage-credentials.html
     - title: Knowledge and support

@@ -30,4 +30,4 @@ The supported code formats include:
 * AWS CLI
 * AWS CloudFormation
 
-link:using-codebox.html[Learn how to use Codebox].
+link:use-codebox.html[Learn how to use Codebox].

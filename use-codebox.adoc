@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: using-codebox.html
+permalink: use-codebox.html
 keywords: codebox, automation, cloudformation, rest api, aws cli, permissions
 summary: You can use Codebox to generate the code needed to execute any operation supported by Workload Factory. You can generate code that can be consumed and run using Workload Factory REST APIs, AWS CLI, and AWS CloudFormation.
 ---
 
-= Using Codebox for automation
+= Use Codebox for automation
 :icons: font
 :imagesdir: ./media/
 
@@ -16,9 +16,9 @@ Codebox is aligned with the Workload Factory operation modes (Basic, Read, and A
 
 == How to use Codebox
 
-As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you select the *Create* button at the bottom of the page, select image:button-copy-codebox.png[the copy button] to copy in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
+As you enter values in the Workload Factory UI wizards, you can see the data update in Codebox as you complete each field. When you complete the wizard, but before you select the *Create* button at the bottom of the page, select image:button-copy-codebox.png[the copy button] to copy in Codebox to capture the code required to build your configuration. For example, this screenshot from creating a new Microsoft SQL Server shows the wizard entries for VPC and availability zones and the equivalent entries in Codebox for a REST API implementation.
 
-image:screenshot-codebox-example1.png[A screenshot showing how to create a Microsoft SQL server in the UI and the corresponding entries for VPC and availability zones in Codebox.]
+image:screenshot-codebox-example1.png[A screenshot showing how to create a Microsoft SQL Server in the UI and the corresponding entries for VPC and availability zones in Codebox.]
 
 With some code formats you can also select the Download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
 
@@ -26,11 +26,11 @@ With some code formats you can also select the Download button to save the code 
 
 You can copy the CloudFormation code generated from Codebox and then launch the Amazon Web Services CloudFormation stack in your AWS account. CloudFormation will perform the actions that you defined in the Workload Factory UI.
 
-The general requirements and steps to use the CloudFormation code is described below. There may be some differences depending on whether you are deploying an FSx for ONTAP file system, creating account credentials, or performing other Workload Factory actions.
+The steps to use the CLoudFormation code might be different depending on whether you are deploying an FSx for ONTAP file system, creating account credentials, or performing other Workload Factory actions.
 
 Note that the code within a CloudFormation-generated YAML file expires after 7 days for security reasons.
 
-.Prerequisites
+.Before you begin
 
 * You'll need to have credentials to log in to your AWS account.
 * You'll need to have the following user permissions to use a CloudFormation stack:
