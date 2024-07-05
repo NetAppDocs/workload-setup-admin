@@ -1,9 +1,26 @@
 indexpage:
-  lead: # single paragraph, shown on the page
+  title: Workload Factory setup and administration documentation
+  lead: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
+  summary: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
+  keywords: workload factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
   tiles:
-    # one or more tile definitions for the page
-  - title: # short string (tile title)
-    links:
-      # one or more links on the tile
-      - title: # short string (link title)
-        url: # single file name or external URL
+    - title: Get started
+      links:
+        - title: Learn about Workload Factory
+          url: workload-factory-overview.html
+        - title: Sign up
+          url: sign-up-saas.html
+    - title: Operational modes and credentials
+      links:
+        - title: Learn about operational modes
+          url: operational-modes.html
+        - title: Add AWS credentials
+          url: add-credentials.html
+        - title: Remove credentials
+          url: manage-credentials.html
+    - title: Automation using Codebox
+      links:
+        - title: Learn about Codebox
+          url: codebox-automation.html
+        - title: Use Codebox for automation
+          url: use-codebox.html
