@@ -103,9 +103,11 @@ Here the user has created two sets of credentials to allow different operational
 
 The first set of credentials includes permissions that give users full control for creating FSx for ONTAP file systems (and the ability to view other types of AWS storage used in the account), but only read permissions when working with VMware workloads.
 
-The second set of credentials only provide permissions that give users full control for creating FSx for ONTAP file systems, and viewing other types of AWS storage used in the account.
+image:screenshot-credentials-comparison-example-1.png[A screenshot showing one set of credentials that provide two types of workload permissions.]
 
-image:screenshot-credentials2.png[A screenshot showing two sets of credentials that provide different levels of permissions for deploying workloads.]
+The second set of credentials only provides permissions that give users full control for creating FSx for ONTAP file systems, and viewing other types of AWS storage used in the account.
+
+image:screenshot-credentials-comparison-example-2.png[A screenshot showing one set of credentials that provide two types of workload permissions.]
 
 == AWS credentials
 
