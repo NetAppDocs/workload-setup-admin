@@ -46,7 +46,7 @@ Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to impro
 
 * https://docs.netapp.com/us-en/workload-databases/index.html[Database workloads^]
 +
-Detect your existing database estate on AWS, assess potential cost savings by moving to FSx for ONTAP, deploy databases end-to-end with built-in best practices for optimization, and automate thin cloning for CI/CD pipelines.
+Detect your existing database estate on AWS, assess potential cost savings with FSx for ONTAP, deploy databases end-to-end with built-in best practices for optimization, and automate thin cloning for CI/CD pipelines.
 
 * https://docs.netapp.com/us-en/workload-vmware/index.html[VMware workloads^]
 +
