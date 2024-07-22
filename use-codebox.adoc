@@ -112,3 +112,20 @@ You can use the Amazon Web Services CLI generated from Codebox to deploy and man
 . Open another browser window and log in to the AWS Management Console.
 
 . Paste the code and run it.
+
+== Use Terraform from Codebox
+
+You can use Terraform to deploy and manage your FSx for ONTAP file systems and other AWS resources. 
+
+.Before you begin
+
+* You'll need a Terraform server to run the commands from. (Add minimum version)
+* You'll need to have credentials to log in to your AWS account.
+
+.Steps
+
+. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the Terraform code in the Codebox.  
+
+. Connect to your server. 
+
+. Paste the code and run it.
