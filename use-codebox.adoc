@@ -70,7 +70,7 @@ Note that the code within a CloudFormation-generated YAML file expires after 7 d
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, copy the code in the Codebox.  
 
 . Select *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
 
@@ -96,7 +96,7 @@ Note that the authentication tokens are hidden in Codebox, but they are populate
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the API code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, copy the API code in the Codebox.  
 
 . Paste the code and run it on your host system.
 
@@ -107,7 +107,7 @@ You can use the Amazon Web Services CLI generated from Codebox to deploy and man
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the AWS CLI in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, copy the AWS CLI in the Codebox.  
 
 . Open another browser window and log in to the AWS Management Console.
 
@@ -119,12 +119,12 @@ You can use Terraform to deploy and manage your FSx for ONTAP file systems and o
 
 .Before you begin
 
-* You'll need a Terraform server to run the commands from. (Add minimum version)
+* You'll need a Terraform server to run the commands from. 
 * You'll need to have credentials to log in to your AWS account.
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, select image:button-copy-codebox.png[the copy button] to copy the Terraform code in the Codebox.  
+. After you have used the UI to define the operation that you want to perform, copy or download the Terraform code in the Codebox.  
 
 . Connect to your server. 
 
