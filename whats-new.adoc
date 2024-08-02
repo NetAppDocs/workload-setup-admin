@@ -12,6 +12,14 @@ summary: "Learn what's new with Workload Factory administration features: cloud 
 [.lead]
 Learn what's new with Workload Factory administration features: cloud provider credentials, Codebox enhancements, and more.
 
+== 4 August 2024
+
+=== Terraform support
+
+Terraform support is available for Amazon FSx for NetApp ONTAP file system deployment and storage VM creation. The setup and admin guide now has instructions for how to use Terraform from the Codebox. 
+
+link:use-codebox.html[Use Terraform from Codebox^]
+
 == 7 July 2024
 
 === Initial release of Workload Factory
