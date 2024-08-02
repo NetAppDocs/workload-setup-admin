@@ -18,7 +18,7 @@ Learn what's new with Workload Factory administration features: cloud provider c
 
 Terraform support is available for Amazon FSx for NetApp ONTAP file system deployment and storage VM creation. The setup and admin guide now has instructions for how to use Terraform from the Codebox. 
 
-link:use-codebox.html[Use Terraform from Codebox^]
+link:use-codebox.html[Use Terraform from Codebox]
 
 == 7 July 2024
 
