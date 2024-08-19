@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: reference-permissions.html
+permalink: permissions-reference.html
 keywords: permissions, actions
 summary: To use Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
 ---
