@@ -23,6 +23,8 @@ sidebar:
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
+            - title: Permissions 
+              url: /permissions-reference.html  
         - title: Quick start
           url: /quick-start.html
         - title: Sign up to Workload Factory
