@@ -15,13 +15,12 @@ summary: To use Workload Factory features and services, you'll need to provide p
 [.lead]
 To use Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
 
-== Links and permissions
-When Workload Factory associates a link in AWS, it attaches a policy to the instance that provides the link with permissions to manage resources and processes within that AWS account. The link uses the permissions to make API calls to several AWS services, including EC2, S3, CloudFormation, IAM, the Key Management Service (KMS), and more.
+== Why use permissions
+When you provide read or automate mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in the Storage workload or knowledge bases in GenAI workload. For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == IAM policies
-The IAM policies available below provide the permissions that a link needs to manage resources and processes within your public cloud environment based on your AWS region.
-OR 
-The IAM policies available below provide the permissions that a link needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available below provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+
 Select your operational mode to view the required policies:
 
 [role="tabbed-block"]
@@ -280,34 +279,40 @@ Select your operational mode to view the required policies:
 =====
 // end tabbed area
 
-== API requests
-The link makes the following API requests for the following reasons.
+== Permissions by workload
+Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
-=== Read mode
+=== Permissions for storage workloads
 
-[cols=3*,options="header"]
+
+=== Permissions for database workloads
+The following table displays the permissions for database workloads. 
+
+[cols=5*,options="header"]
 |===
 
 | Action
 | Purpose
 | Where used
+| Read mode
+| Automate mode
 
-| cloudwatch:GetMetricStatistics | Explore savings for FSx for ONTAP and FSx for Windows in the Inventory, and EBS in Explore savings | Inventory (Detection) and Explore savings  
-| sns:ListTopics | List customer provided topics to subscribe to. Optionally, customers can set triggers for the events | Deployment
-| ec2:DescribeInstances | Get the OS version and state of EC2 instances | Inventory (Detection) and Explore savings
-| ec2:DescribeVpcs | Get the VPCs in selected environment  for filling deployment form | Deployment and Inventory (Detection)
-| ec2:DescribeSubnets | Get the subnets in selected environment  for filling deployment form | Deployment and Inventory (Detection)
-| ec2:DescribeSecurityGroups | Get the security groups in selected environment for filling deployment form | Deployment
-| ec2:DescribeImages | Get the list of supported AMI images according to chosen SQL and Windows version in selected environment for filling deployment form | Deployment
-| ec2:DescribeRegions | Get the regions with FSxN support for filling deployment form | Deployment
-| ec2:DescribeRouteTables | Get the route tables for selected subnets to validate for filling deployment form | Deployment and Inventory (Detection)
-| ec2:DescribeKeyPairs | Get the key pairs to be used for EC2 instance connection | Deployment
-| ec2:DescribeNetworkInterfaces | Get the network interfaces to be used for EC2 instance | Deployment
-| ec2:DescribeInstanceTypes | Get the list of supported EC2 instance types to be used for SQL nodes | Deployment and Explore savings
-| ec2:DescribeVpcEndpoints | Get any existing VPC endpoints before deployments to determine if new endpoints need to be created | Deployment and Inventory (Detection)
-| ec2:DescribeInstanceTypeOfferings | Get instance types available in region for validation nodes (t2.micro/t3.micro) | Deployment
-| ec2:DescribeSnapshots | Get snapshot details of each attached EBS volumes for pricing and savings estimate | Explore savings
-| ec2:DescribeVolumes | Get details of each attached EBS volumes for pricing and savings estimate | Inventory (Detection) and Explore savings
+| cloudwatch:GetMetricStatistics | Explore savings for FSx for ONTAP and FSx for Windows in the Inventory, and EBS in Explore savings | Inventory (Detection) and Explore savings | Yes | Yes  
+| sns:ListTopics | List customer provided topics to subscribe to. Optionally, customers can set triggers for the events | Deployment | Yes | Yes
+| ec2:DescribeInstances | Get the OS version and state of EC2 instances | Inventory (Detection) and Explore savings | Yes | Yes
+| ec2:DescribeVpcs | Get the VPCs in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeSubnets | Get the subnets in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeSecurityGroups | Get the security groups in selected environment for filling deployment form | Deployment | Yes | Yes
+| ec2:DescribeImages | Get the list of supported AMI images according to chosen SQL and Windows version in selected environment for filling deployment form | Deployment | Yes | Yes
+| ec2:DescribeRegions | Get the regions with FSxN support for filling deployment form | Deployment | Yes | Yes
+| ec2:DescribeRouteTables | Get the route tables for selected subnets to validate for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeKeyPairs | Get the key pairs to be used for EC2 instance connection | Deployment | Yes | Yes
+| ec2:DescribeNetworkInterfaces | Get the network interfaces to be used for EC2 instance | Deployment | Yes | Yes
+| ec2:DescribeInstanceTypes | Get the list of supported EC2 instance types to be used for SQL nodes | Deployment and Explore savings | Yes | Yes
+| ec2:DescribeVpcEndpoints | Get any existing VPC endpoints before deployments to determine if new endpoints need to be created | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeInstanceTypeOfferings | Get instance types available in region for validation nodes (t2.micro/t3.micro) | Deployment | Yes | Yes
+| ec2:DescribeSnapshots | Get snapshot details of each attached EBS volumes for pricing and savings estimate | Explore savings | Yes | Yes
+| ec2:DescribeVolumes | Get details of each attached EBS volumes for pricing and savings estimate | Inventory (Detection) and Explore savings | Yes | Yes
 
 |===
 
