@@ -14,14 +14,8 @@ Learn what's new with Workload Factory administration features: cloud provider c
 
 == 4 August 2024
 
-=== Terraform support
-
-Terraform support is available for Amazon FSx for NetApp ONTAP file system deployment and storage VM creation. The setup and admin guide now has instructions for how to use Terraform from the Codebox. 
-
-link:use-codebox.html[Use Terraform from Codebox]
+include::_whatsnew/2024-08-04.adoc[]
 
 == 7 July 2024
 
-=== Initial release of Workload Factory
-
-BlueXP Workload Factory for AWS is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems. Workloads that can be streamlined using Workload Factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI chatbots, and more.
+include::_whatsnew/2024-07-07.adoc[]
