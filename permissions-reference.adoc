@@ -286,6 +286,7 @@ Each workload uses permissions to perform certain tasks in Workload Factory. Scr
 
 === Permissions for storage workloads
 
+No input
 
 === Permissions for database workloads
 The following table displays the permissions for database workloads. 
@@ -384,6 +385,14 @@ The following table displays the permissions for database workloads.
 ... And the list goes on.
 
 |===
+
+=== Permissions for GenAI workloads
+
+No input
+
+=== Permissions for VMware workloads
+
+No input
 
 == Change log
 
