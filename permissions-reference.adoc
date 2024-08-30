@@ -16,7 +16,9 @@ summary: To use Workload Factory features and services, you'll need to provide p
 To use Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
 
 == Why use permissions
-When you provide read or automate mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in the Storage workload or knowledge bases in GenAI workload. For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
+When you provide read or automate mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
+
+For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == IAM policies
 The IAM policies available below provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
@@ -291,14 +293,18 @@ The following table displays the permissions for database workloads.
 [cols=5*,options="header"]
 |===
 
-| Action
 | Purpose
+| Action
 | Where used
 | Read mode
 | Automate mode
 
-| cloudwatch:GetMetricStatistics | Explore savings for FSx for ONTAP and FSx for Windows in the Inventory, and EBS in Explore savings | Inventory (Detection) and Explore savings | Yes | Yes  
-| sns:ListTopics | List customer provided topics to subscribe to. Optionally, customers can set triggers for the events | Deployment | Yes | Yes
+| Get specific AWS CloudWatch metrics for compute, storage, and network cost components for FSx for ONTAP, FSx for Windows File Server 
+| cloudwatch:GetMetricStatistics | Instance detection in the Inventory and cost components in the savings calculator | Yes | Yes
+
+| List and set triggers for events 
+| sns:ListTopics | Deployment | Yes | Yes
+
 | ec2:DescribeInstances | Get the OS version and state of EC2 instances | Inventory (Detection) and Explore savings | Yes | Yes
 | ec2:DescribeVpcs | Get the VPCs in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
 | ec2:DescribeSubnets | Get the subnets in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
