@@ -299,26 +299,89 @@ The following table displays the permissions for database workloads.
 | Read mode
 | Automate mode
 
-| Get specific AWS CloudWatch metrics for compute, storage, and network cost components for FSx for ONTAP, FSx for Windows File Server 
-| cloudwatch:GetMetricStatistics | Instance detection in the Inventory and cost components in the savings calculator | Yes | Yes
+| Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
+| cloudwatch:GetMetricStatistics | Inventory (Detection) and Explore savings | Yes | No
 
 | List and set triggers for events 
-| sns:ListTopics | Deployment | Yes | Yes
+| sns:ListTopics | Deployment | Yes | No
 
-| ec2:DescribeInstances | Get the OS version and state of EC2 instances | Inventory (Detection) and Explore savings | Yes | Yes
-| ec2:DescribeVpcs | Get the VPCs in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeSubnets | Get the subnets in selected environment  for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeSecurityGroups | Get the security groups in selected environment for filling deployment form | Deployment | Yes | Yes
-| ec2:DescribeImages | Get the list of supported AMI images according to chosen SQL and Windows version in selected environment for filling deployment form | Deployment | Yes | Yes
-| ec2:DescribeRegions | Get the regions with FSxN support for filling deployment form | Deployment | Yes | Yes
-| ec2:DescribeRouteTables | Get the route tables for selected subnets to validate for filling deployment form | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeKeyPairs | Get the key pairs to be used for EC2 instance connection | Deployment | Yes | Yes
-| ec2:DescribeNetworkInterfaces | Get the network interfaces to be used for EC2 instance | Deployment | Yes | Yes
-| ec2:DescribeInstanceTypes | Get the list of supported EC2 instance types to be used for SQL nodes | Deployment and Explore savings | Yes | Yes
-| ec2:DescribeVpcEndpoints | Get any existing VPC endpoints before deployments to determine if new endpoints need to be created | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeInstanceTypeOfferings | Get instance types available in region for validation nodes (t2.micro/t3.micro) | Deployment | Yes | Yes
-| ec2:DescribeSnapshots | Get snapshot details of each attached EBS volumes for pricing and savings estimate | Explore savings | Yes | Yes
-| ec2:DescribeVolumes | Get details of each attached EBS volumes for pricing and savings estimate | Inventory (Detection) and Explore savings | Yes | Yes
+.4+| Get details for EC2 instances 
+| ec2:DescribeInstances | Inventory (Detection) and Explore savings | Yes | No
+| ec2:DescribeKeyPairs | Deployment | Yes | No
+| ec2:DescribeNetworkInterfaces | Deployment | Yes | No
+| ec2:DescribeInstanceTypes | Deployment and Explore savings | Yes | No
+
+.6+| Get details to fill in the FSx for ONTAP deployment form
+| ec2:DescribeVpcs | Deployment and Inventory (Detection) | Yes | No
+| ec2:DescribeSubnets | Deployment and Inventory (Detection) | Yes | No
+| ec2:DescribeSecurityGroups | Deployment | Yes | No
+| ec2:DescribeImages | Deployment | Yes | No
+| ec2:DescribeRegions | Deployment | Yes | No
+| ec2:DescribeRouteTables | Deployment and Inventory (Detection) | Yes | No
+
+| Get any existing VPC endpoints to determine if new endpoints need to be created before deployments
+| ec2:DescribeVpcEndpoints | Deployment and Inventory (Detection) | Yes | No
+
+| Get instance types available in region for validation nodes (t2.micro/t3.micro) 
+| ec2:DescribeInstanceTypeOfferings | Deployment | Yes | No
+
+| Get snapshot details of each attached EBS volumes for pricing and savings estimate
+| ec2:DescribeSnapshots | Explore savings | Yes | No
+
+| Get details of each attached EBS volumes for pricing and savings estimate
+| ec2:DescribeVolumes | Inventory (Detection) and Explore savings | Yes | No
+
+.3+| Get KMS key details for FSx for ONTAP file system encryption
+| kms:ListAliases | Deployment | Yes | No
+| kms:ListAliases | Deployment | Yes | No
+| kms:DescribeKey | Deployment | Yes | No
+
+| Get list of CloudFormation stacks running in the environment to check quota limit
+| cloudformation:ListStacks | Deployment | Yes | No
+
+| Get list of AWS managed active directories in the region
+| ds:DescribeDirectories | Deployment | Yes | No
+
+.5+| Get volume, backup, SVM, file systems in AZ, and tags for FSx for ONTAP file system
+| fsx:DescribeVolumes | Inventory(Detection) and Explore Savings | Yes | No
+| fsx:DescribeBackups | Inventory(Detection) and Explore Savings | Yes | No
+| fsx:DescribeStorageVirtualMachines | Deployment, Manage operations, and Inventory (Detection) | Yes | No
+| fsx:DescribeFileSystems | Deployment, Manage operations, Inventory (Detection), and Explore savings | Yes | No
+| fsx:ListTagsForResource | Manage operations | Yes | No
+
+| Get service quota limits for CloudFormation and VPC
+| servicequotas:ListServiceQuotas | Deployment | Yes | No
+
+| Use SSM-based query to get the updated list of FSx for ONTAP supported regions
+| ssm:GetParametersByPath | Deployment | Yes | No
+
+| Poll for SSM response after sending command for manage operations post deployment
+| ssm:GetCommandInvocation | Manage operations, Inventory (Detection), and Explore savings | Yes | No
+
+| Send commands over SSM to EC2 instances 
+| ssm:SendCommand | Manage operations, Inventory (Detection), and Explore savings | Yes | No
+
+| To get the SSM connectivity status on instances post deployment
+| ssm:GetConnectionStatus |  Manage operations and Inventory (Detection) | Yes | No
+
+.4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
+| ssm:GetParameter | Deployment and manage operations | Yes | No
+| ssm:GetParameters | Manage operations | Yes | No
+| ssm:PutParameter | Deployment and manage operations | Yes | No
+| ssm:DeleteParameters | Manage operations | Yes | No
+
+.9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
+| ec2:AllocateAddress | Deployment | Yes | Yes
+| ec2:AllocateHosts | Deployment | Yes | Yes
+| ec2:AssignPrivateIpAddresses | Deployment | Yes | Yes
+| ec2:AssociateAddress | Deployment | Yes | Yes
+| ec2:AssociateRouteTable | Deployment | Yes | Yes
+| ec2:AssociateSubnetCidrBlock | Deployment | Yes | Yes
+| ec2:AssociateVpcCidrBlock | Deployment | Yes | Yes
+| ec2:AttachInternetGateway | Deployment | Yes | Yes
+| ec2:AttachNetworkInterface | Deployment | Yes | Yes
+
+... And the list goes on.
 
 |===
 
