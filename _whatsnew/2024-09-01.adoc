@@ -7,3 +7,5 @@ image:screenshot-rss-subscribe-button.png["Screenshot of Workload Factory consol
 When adding AWS credentials in Workload Factory, you can now select a single permission policy, either read or automate mode, for each workload and storage management. 
 
 image:screenshot-single-permission-policy-support.png["Screenshot of permissions configuration section on the Credentials page where you can select read or automate permissions policies for storage management, AI workloads, databases workloads, and VMware workloads."]
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/add-credentials.html[Add AWS credentials to Workload Factory^]
