@@ -334,7 +334,6 @@ The following table displays the permissions for database workloads.
 
 .3+| Get KMS key details for FSx for ONTAP file system encryption
 | kms:ListAliases | Deployment | Yes | Yes
-| kms:ListAliases | Deployment | Yes | Yes
 | kms:DescribeKey | Deployment | Yes | Yes
 
 | Get list of CloudFormation stacks running in the environment to check quota limit

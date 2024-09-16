@@ -12,6 +12,10 @@ summary: "Learn what's new with Workload Factory administration features: cloud 
 [.lead]
 Learn what's new with Workload Factory administration features: cloud provider credentials, Codebox enhancements, and more.
 
+== 1 September 2024
+
+include::_whatsnew/2024-09-01.adoc[]
+
 == 4 August 2024
 
 include::_whatsnew/2024-08-04.adoc[]
