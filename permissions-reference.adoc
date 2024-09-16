@@ -332,7 +332,7 @@ The following table displays the permissions for database workloads.
 | Get details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeVolumes | Inventory (Detection) and Explore savings | Yes | Yes
 
-.3+| Get KMS key details for FSx for ONTAP file system encryption
+.2+| Get KMS key details for FSx for ONTAP file system encryption
 | kms:ListAliases | Deployment | Yes | Yes
 | kms:DescribeKey | Deployment | Yes | Yes
 
@@ -361,7 +361,7 @@ The following table displays the permissions for database workloads.
 | Send commands over SSM to EC2 instances 
 | ssm:SendCommand | Manage operations, Inventory (Detection), and Explore savings | Yes | Yes
 
-| To get the SSM connectivity status on instances post deployment
+| Get the SSM connectivity status on instances post deployment
 | ssm:GetConnectionStatus |  Manage operations and Inventory (Detection) | Yes | Yes
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
@@ -381,9 +381,191 @@ The following table displays the permissions for database workloads.
 | ec2:AttachInternetGateway | Deployment | No | Yes
 | ec2:AttachNetworkInterface | Deployment | No | Yes
 
-... And the list goes on.
+| Attach EBS volumes required to the SQL nodes for deployment
+| ec2:AttachVolume |  Deployment | No | Yes
+
+.2+| Attach security groups and modify rules for the provisioned nodes
+| ec2:AuthorizeSecurityGroupEgress | Deployment | No | Yes
+| ec2:AuthorizeSecurityGroupIngress | Deployment | No | Yes
+
+| Create EBS volumes required to the SQL nodes for deployment
+| ec2:CreateVolume |  Deployment | No | Yes
+
+.11+| Remove the temporary validation nodes created of type t2.micro and for rollback or retry of failed EC2 SQL nodes
+| ec2:DeleteNetworkInterface | Deployment | No | Yes
+| ec2:DeleteSecurityGroup | Deployment | No | Yes
+| ec2:DeleteTags | Deployment | No | Yes
+| ec2:DeleteVolume | Deployment | No | Yes
+| ec2:DetachNetworkInterface | Deployment | No | Yes
+| ec2:DetachVolume | Deployment | No | Yes
+| ec2:DisassociateAddress | Deployment | No | Yes
+| ec2:DisassociateIamInstanceProfile | Deployment | No | Yes
+| ec2:DisassociateRouteTable | Deployment | No | Yes
+| ec2:DisassociateSubnetCidrBlock | Deployment | No | Yes
+| ec2:DisassociateVpcCidrBlock | Deployment | No | Yes
+
+.7+| Modify attributes for created SQL instances. Only applicable to names that start with WLMDB.
+| ec2:ModifyInstanceAttribute | Deployment | No | Yes
+| ec2:ModifyInstancePlacement | Deployment | No | Yes
+| ec2:ModifyNetworkInterfaceAttribute | Deployment | No | Yes
+| ec2:ModifySubnetAttribute | Deployment | No | Yes
+| ec2:ModifyVolume | Deployment | No | Yes
+| ec2:ModifyVolumeAttribute | Deployment | No | Yes
+| ec2:ModifyVpcAttribute | Deployment | No | Yes
+
+.5+| Disassociate and destroy validation instances
+| ec2:ReleaseAddress | Deployment | No | Yes
+| ec2:ReplaceRoute | Deployment | No | Yes
+| ec2:ReplaceRouteTableAssociation | Deployment | No | Yes
+| ec2:RevokeSecurityGroupEgress | Deployment | No | Yes
+| ec2:RevokeSecurityGroupIngress | Deployment | No | Yes
+
+| Start the deployed instances
+| ec2:StartInstances |  Deployment | No | Yes
+
+| Stop the deployed instances
+| ec2:StopInstances |  Deployment | No | Yes
+
+| Tag custom values for FSxN resources created by WLMDB to get billing details during resource management
+| fsx:TagResource | Deployment and Manage operations | No | Yes
+
+.5+| Create and validate CloudFormation template for deployment
+| cloudformation:CreateStack | Deployment | No | Yes
+| cloudformation:DescribeStackEvents | Deployment | No | Yes
+| cloudformation:DescribeStacks | Deployment | No | Yes
+| cloudformation:ListStacks | Deployment | No | Yes
+| cloudformation:ValidateTemplate | Deployment | No | Yes
+
+| Fetch directories available in the region
+| ds:DescribeDirectories | ? | No | Yes
+
+.2+| Add rules for the Security Group attached to provisioned EC2 instances
+| ec2:AuthorizeSecurityGroupEgress | Deployment | No | Yes
+| ec2:AuthorizeSecurityGroupIngress | Deployment | No | Yes
+Question: Can this one and Attach security groups and modify rules for the provisioned nodes be combined? Same permissions.
+
+.2+| Create nested stack templates for retry and rollback
+| ec2:CreateLaunchTemplate | Deployment | No | Yes
+| ec2:CreateLaunchTemplateVersion | Deployment | No | Yes
+
+.3+| Manage tags and network security on created instances
+| ec2:CreateNetworkInterface | Deployment | No | Yes
+| ec2:CreateSecurityGroup | Deployment | No | Yes
+| ec2:CreateTags | Deployment | No | Yes
+
+| Delete SecurityGroup created temporarily for validation nodes
+| ec2:DeleteSecurityGroup | ? | No | Yes
+
+.2+| Get instance details for provisioning
+| ec2:Describe* | ? | No | Yes
+| ec2:Get* | ? | No | Yes
+
+.2+| Update and remove rules from security groups created during provisioning
+| ec2:RevokeSecurityGroupEgress | ? | No | Yes
+| ec2:RevokeSecurityGroupIngress | ? | No | Yes
+
+| Start the created instances
+| ec2:RunInstances | ? | No | Yes
+
+| Systems Manager uses AWS message delivery service endpoint for API operations
+| ec2messages:* | ? | No | Yes
+
+.3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
+| fsx:CreateFileSystem | ? | No | Yes
+| fsx:CreateStorageVirtualMachine | ?| No | Yes
+| fsx:CreateVolume | ? | No | Yes
+
+.2+| Get FSx for ONTAP details
+| fsx:Describe* | ? | No | Yes
+| fsx:List* | ? | No | Yes
+
+.3+| Get KMS key details and use for FSx for ONTAP encryption
+| kms:CreateGrant | ? | No | Yes
+| kms:Describe* | ?| No | Yes
+| kms:List* | ? | No | Yes
+
+.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+| logs:CreateLogGroup | ? | No | Yes
+| logs:CreateLogStream | ? | No | Yes
+| logs:DescribeLog* | ? | No | Yes
+| logs:GetLog* | ? | No | Yes
+| logs:ListLogDeliveries | ? | No | Yes
+| logs:PutLogEvents | ? | No | Yes
+| logs:TagResource| ? | No | Yes
+
+.4+| Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
+| secretsmanager:CreateSecret | ? | No | Yes
+| secretsmanager:GetSecretValue | ?| No | Yes
+| secretsmanager:ListSecrets | ? | No | Yes
+| servicequotas:ListServiceQuotas | ? | No | Yes
+
+.2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
+| sns:ListTopics | ? | No | Yes
+| sns:Publish | ? | No | Yes
+
+.11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
+| ssm:Describe* | ? | No | Yes
+| ssm:Get* | ? | No | Yes
+| ssm:List* | ? | No | Yes
+| ssm:PutComplianceItems | ? | No | Yes
+| ssm:PutConfigurePackageResult | ? | No | Yes
+| ssm:PutInventory | ? | No | Yes
+| ssm:SendCommand | ? | No | Yes
+| ssm:UpdateAssociationStatus | ? | No | Yes
+| ssm:UpdateInstanceAssociationStatus | ? | No | Yes
+| ssm:UpdateInstanceInformation | ? | No | Yes
+| ssmmessages:* | ? | No | Yes
+
+| Signal CloudFormation stack on success or failure
+| cloudformation:SignalResource | ? | No | Yes
+Question: What do I do with these? 
+
+* arn:aws:cloudformation:*:*:stack/WLMDB*
+* arn:aws:logs:*:*:log-group:WLMDB*
+* arn:aws:secretsmanager:*:*:secret:wlmdb*
+
+| Allow role provided for provisioning to use the secrets created programmatically
+| secretsmanager:PutResourcePolicy | ? | No | Yes
+
+| Tag secrets created by WLMDB deployment
+| secretsmanager:TagResource | ? | No | Yes
+
+| Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
+| iam:AddRoleToInstanceProfile | ? | No | Yes
+
+| Create instance profile for EC2 and attach the created EC2 role.
+| iam:CreateInstanceProfile | ? | No | Yes
+
+| Create EC2 role through template with permissions listed below - Questions: Which permissions? And what about this note - "Need to add condition to allow to a group and allow role to be used only as part of service(EC2 instance profile)"
+| iam:CreateRole | ? | No | Yes
+
+| Create role linked to EC2 service
+| iam:CreateServiceLinkedRole | ? | No | Yes
+
+| Delete instance profile created during deployment specifically for the validation nodes
+| iam:DeleteInstanceProfile | ? | No | Yes
+
+.5+| Get the role and policy details to determine any gaps in permission and validate for deployment
+| iam:GetPolicy | ? | No | Yes
+| iam:GetPolicyVersion | ?| No | Yes
+| iam:GetRole | ? | No | Yes
+| iam:GetRolePolicy | ? | No | Yes
+| iam:GetUser | ? | No | Yes
+
+| Pass the role created to EC2 instance - Question about note: "Restrict with condition of passing to EC2 service"
+| iam:PassRole | ? | No | Yes
+
+| Add policy with required permissions to the EC2 role created
+| iam:PutRolePolicy | ? | No | Yes
+
+| Detach role from the provisioned EC2 instance profile
+| iam:RemoveRoleFromInstanceProfile | ? | No | Yes
+
+| Validate permissions available in the role and compare with required permissions
+| iam:SimulatePrincipalPolicy | ? | No | Yes
 
 |===
+
 
 === Permissions for GenAI workloads
 
