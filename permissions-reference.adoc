@@ -516,18 +516,13 @@ Question: Can this one and Attach security groups and modify rules for the provi
 | ssm:UpdateInstanceInformation | ? | No | Yes
 | ssmmessages:* | ? | No | Yes
 
-| Signal CloudFormation stack on success or failure
+| Signal CloudFormation stack on success or failure. Permission is restricted to resources starting with WLMDB.
 | cloudformation:SignalResource | ? | No | Yes
-Question: What do I do with these? 
 
-* arn:aws:cloudformation:*:*:stack/WLMDB*
-* arn:aws:logs:*:*:log-group:WLMDB*
-* arn:aws:secretsmanager:*:*:secret:wlmdb*
-
-| Allow role provided for provisioning to use the secrets created programmatically
+| Allow role provided for provisioning to use the secrets created programmatically. Permission is restricted to resources starting with WLMDB.
 | secretsmanager:PutResourcePolicy | ? | No | Yes
 
-| Tag secrets created by WLMDB deployment
+| Tag secrets created by WLMDB deployment. Permission is restricted to resources starting with WLMDB.
 | secretsmanager:TagResource | ? | No | Yes
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
