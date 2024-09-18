@@ -365,21 +365,21 @@ The following table displays the permissions for database workloads.
 | ssm:GetConnectionStatus |  Manage operations and Inventory (Detection) | Yes | Yes
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
-| ssm:GetParameter | Deployment and manage operations | Yes | Yes
-| ssm:GetParameters | Manage operations | Yes | Yes
-| ssm:PutParameter | Deployment and manage operations | Yes | Yes
-| ssm:DeleteParameters | Manage operations | Yes | Yes
+| ssm:GetParameter ^1^ | Deployment and manage operations | Yes | Yes
+| ssm:GetParameters ^1^ | Manage operations | Yes | Yes
+| ssm:PutParameter ^1^ | Deployment and manage operations | Yes | Yes
+| ssm:DeleteParameters ^1^ | Manage operations | Yes | Yes
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
-| ec2:AllocateAddress | Deployment | No | Yes
-| ec2:AllocateHosts | Deployment | No | Yes
-| ec2:AssignPrivateIpAddresses | Deployment | No | Yes
-| ec2:AssociateAddress | Deployment | No | Yes
-| ec2:AssociateRouteTable | Deployment | No | Yes
-| ec2:AssociateSubnetCidrBlock | Deployment | No | Yes
-| ec2:AssociateVpcCidrBlock | Deployment | No | Yes
-| ec2:AttachInternetGateway | Deployment | No | Yes
-| ec2:AttachNetworkInterface | Deployment | No | Yes
+| ec2:AllocateAddress ^1^ | Deployment | No | Yes
+| ec2:AllocateHosts  ^1^ | Deployment | No | Yes
+| ec2:AssignPrivateIpAddresses ^1^ | Deployment | No | Yes
+| ec2:AssociateAddress ^1^ | Deployment | No | Yes
+| ec2:AssociateRouteTable ^1^ | Deployment | No | Yes
+| ec2:AssociateSubnetCidrBlock ^1^ | Deployment | No | Yes
+| ec2:AssociateVpcCidrBlock ^1^ | Deployment | No | Yes
+| ec2:AttachInternetGateway ^1^ | Deployment | No | Yes
+| ec2:AttachNetworkInterface ^1^ | Deployment | No | Yes
 
 | Attach EBS volumes required to the SQL nodes for deployment
 | ec2:AttachVolume |  Deployment | No | Yes
@@ -427,7 +427,7 @@ The following table displays the permissions for database workloads.
 | ec2:StopInstances |  Deployment | No | Yes
 
 | Tag custom values for FSxN resources created by WLMDB to get billing details during resource management
-| fsx:TagResource | Deployment and Manage operations | No | Yes
+| fsx:TagResource ^1^ | Deployment and Manage operations | No | Yes
 
 .5+| Create and validate CloudFormation template for deployment
 | cloudformation:CreateStack | Deployment | No | Yes
@@ -516,14 +516,14 @@ Question: Can this one and Attach security groups and modify rules for the provi
 | ssm:UpdateInstanceInformation | ? | No | Yes
 | ssmmessages:* | ? | No | Yes
 
-| Signal CloudFormation stack on success or failure. Permission is restricted to resources starting with WLMDB.
-| cloudformation:SignalResource | ? | No | Yes
+| Signal CloudFormation stack on success or failure. 
+| cloudformation:SignalResource ^1^ | ? | No | Yes
 
-| Allow role provided for provisioning to use the secrets created programmatically. Permission is restricted to resources starting with WLMDB.
-| secretsmanager:PutResourcePolicy | ? | No | Yes
+| Allow role provided for provisioning to use the secrets created programmatically. 
+| secretsmanager:PutResourcePolicy ^1^ | ? | No | Yes
 
-| Tag secrets created by WLMDB deployment. Permission is restricted to resources starting with WLMDB.
-| secretsmanager:TagResource | ? | No | Yes
+| Tag secrets created by WLMDB deployment. 
+| secretsmanager:TagResource ^1^ | ? | No | Yes
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
 | iam:AddRoleToInstanceProfile | ? | No | Yes
@@ -561,6 +561,7 @@ Question: Can this one and Attach security groups and modify rules for the provi
 
 |===
 
+. Permission is restricted to resources starting with WLMDB.
 
 === Permissions for GenAI workloads
 
