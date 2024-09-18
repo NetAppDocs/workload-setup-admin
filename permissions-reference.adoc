@@ -291,6 +291,8 @@ No input
 === Permissions for database workloads
 The following table displays the permissions for database workloads. 
 
+.Table of permissions for database workloads
+====
 [cols=5*,options="header"]
 |===
 
@@ -560,6 +562,7 @@ Question: Can this one and Attach security groups and modify rules for the provi
 | iam:SimulatePrincipalPolicy | ? | No | Yes
 
 |===
+====
 
 . Permission is restricted to resources starting with WLMDB.
 
