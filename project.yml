@@ -37,6 +37,8 @@ sidebar:
       entries:
         - title: Log in to Workload Factory
           url: /log-in.html
+        - title: Manage service accounts
+          url: /manage-service-accounts.html
         - title: Automate tasks using Codebox
           entries:
             - title: Learn about Codebox

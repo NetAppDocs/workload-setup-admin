@@ -57,11 +57,17 @@ When you log in to Workload Factory for the first time, you're prompted to creat
 
 image:screenshot-account-selection.png[A screenshot of the Workload Factory setup wizard that prompts you for the Workload Factory account.]
 
-When you create an account, you are the single Account Admin user for that account.
+When you create an account, you are the single _account admin_ user for that account.
 
 If your organization requires additional account or user management, reach out to us by using the in-product chat.
 
 TIP: If you use NetApp BlueXP, then you'll already belong to an account because Workload Factory leverages BlueXP accounts.
+
+==== Service accounts
+
+A service account acts as a "user" that can make authorized API calls to BlueXP workload factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. Account admins can create and delete multiple service accounts. 
+
+link:manage-service-accounts.html[Learn more about service accounts].
 
 === Operational modes 
 
