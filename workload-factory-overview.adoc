@@ -35,6 +35,9 @@ Leverage your FSx for ONTAP file systems for storing your organizations chatbot 
 Storage calculators to save costs::
 Analyze your current deployments that use Amazon Elastic Block Store (EBS) or Elastic File System (EFS) storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
 
+Service accounts to promote automation::
+Use service accounts to automate BlueXP workload factory operations securely and reliably. Service accounts provide reliable, long-lasting automation without any user management restrictions and are more secure because they only provide API access.
+
 == Supported cloud providers
 
 Workload Factory enables you to manage cloud storage and use workload capabilities in Amazon Web Services.
@@ -65,9 +68,16 @@ TIP: If you use NetApp BlueXP, then you'll already belong to an account because 
 
 ==== Service accounts
 
-A service account acts as a "user" that can make authorized API calls to BlueXP workload factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. Account admins can create and delete multiple service accounts. 
+A service account acts as a "user" that can make authorized API calls to BlueXP workload factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. All account holders in Workload Factory are considered account admins. Account admins can create and delete multiple service accounts. 
 
-link:manage-service-accounts.html[Learn more about service accounts].
+.How service accounts work
+Service accounts use BlueXP multi-tenancy functionality. Service accounts control machine-to-machine access. A service account allows access for automation by providing client ID and client secret identifiers which can be used to generate an access token. An access token makes it possible to automate workload factory in BlueXP operations with API calls. 
+
+Client IDs and secrets are fixed until the account admin decides to change them. There is no password policy associated with service accounts. To use a service account, you'll need the client ID and secret to generate the access token or you won't gain access. Keep in mind that access tokens are short-lived and can only be used for several hours. 
+
+Several service accounts can be associated with a BlueXP workload factory account. 
+
+link:manage-service-accounts.html[Manage service accounts].
 
 === Operational modes 
 
