@@ -73,10 +73,6 @@ A service account acts as a "user" that can make authorized API calls to BlueXP 
 .How service accounts work
 Service accounts use BlueXP multi-tenancy functionality. Service accounts control machine-to-machine access. A service account allows access for automation by providing client ID and client secret identifiers which can be used to generate an access token. An access token makes it possible to automate workload factory in BlueXP operations with API calls. 
 
-Client IDs and secrets are fixed until the account admin decides to change them. There is no password policy associated with service accounts. To use a service account, you'll need the client ID and secret to generate the access token or you won't gain access. Keep in mind that access tokens are short-lived and can only be used for several hours. 
-
-Several service accounts can be associated with a BlueXP workload factory account. 
-
 link:manage-service-accounts.html[Manage service accounts].
 
 === Operational modes 
