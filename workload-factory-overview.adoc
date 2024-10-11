@@ -70,10 +70,9 @@ TIP: If you use NetApp BlueXP, then you'll already belong to an account because 
 
 A service account acts as a "user" that can make authorized API calls to BlueXP workload factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. All account holders in Workload Factory are considered account admins. Account admins can create and delete multiple service accounts. 
 
-.How service accounts work
-Service accounts use BlueXP multi-tenancy functionality. Service accounts control machine-to-machine access. A service account allows access for automation by providing client ID and client secret identifiers which can be used to generate an access token. An access token makes it possible to automate workload factory in BlueXP operations with API calls. 
-
-link:manage-service-accounts.html[Manage service accounts].
+//.How service accounts work
+//Service accounts use BlueXP multi-tenancy functionality. Service accounts control machine-to-machine access. A service account allows access for //////automation by providing client ID and client secret identifiers which can be used to generate an access token. An access token makes it possible to automate workload factory in BlueXP operations with API calls. 
+link:manage-service-accounts.html[Learn how to manage service accounts].
 
 === Operational modes 
 
