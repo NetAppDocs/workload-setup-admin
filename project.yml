@@ -25,6 +25,8 @@ sidebar:
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
+            - title: Console experiences
+              url: /console-experiences.html  
         - title: Quick start
           url: /quick-start.html
         - title: Sign up to Workload Factory

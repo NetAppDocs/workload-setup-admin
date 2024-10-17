@@ -49,7 +49,9 @@ Workload Factory includes a web-based console that's provided through the SaaS l
 
 === Software-as-a-service
 
-Workload Factory is accessible through a https://console.workloads.netapp.com[web-based console^]. This SaaS experience enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
+Workload Factory is accessible through the BlueXP workload factory https://console.workloads.netapp.com[web-based console^] and the BlueXP link:https://console.bluexp.netapp.com[web-based console^]. These SaaS experiences enables you to automatically access the latest features as they're released and to easily switch between your Workload Factory accounts and links.
+
+Learn more about the different link:console-experiences.html[console experiences]. 
 
 === Accounts
 

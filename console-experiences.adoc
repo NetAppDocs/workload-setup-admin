@@ -1,0 +1,30 @@
+---
+sidebar: sidebar
+permalink: console-experiences.html
+keywords: console, consoles, access, saas, workload factory, bluexp, bluexp workload factory
+summary: BlueXP workload factory is accessible via two web-based consoles. 
+---
+
+= Console experiences
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+BlueXP workload factory is accessible via two web-based consoles. Learn how to access BlueXP workload factory using the BlueXP workload factory console and the BlueXP console. 
+
+You can use two consoles to access BlueXP workload factory. 
+
+* BlueXP console: Offers existing BlueXP users with a hybrid experience where you can manage your working environments and workloads in the same place. 
+* Workload Factory console: Offers new and existing customers a dedicated Workload Factory experience focused on workloads running on Amazon FSx for NetApp ONTAP. 
+
+== Access workload factory in the BlueXP console
+
+You can access workload factory from BlueXP. In addition to using BluXP Workload Factory for AWS storage and workload capabilities, you can also access other BlueXP platform services like Copy and Sync, Digital Wallet, and more. 
+
+.Steps
+
+== Access workload factory in the Workload Factory console
+
+You can access workload factory from the Workload Factory console. 
+
+.Steps
