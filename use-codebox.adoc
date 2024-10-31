@@ -126,4 +126,4 @@ You can use Terraform to deploy and manage your FSx for ONTAP file systems and o
 
 . After you have used the user interface to define the operation that you want to perform, download the Terraform code from the Codebox.  
 . Copy the downloaded script archive to the system where Terraform is installed.
-. Extract the zip file and follow the steps in README.md file. 
+. Extract the zip file and follow the steps in the README.md file. 
