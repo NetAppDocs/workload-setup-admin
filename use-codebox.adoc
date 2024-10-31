@@ -119,13 +119,11 @@ You can use Terraform to deploy and manage your FSx for ONTAP file systems and o
 
 .Before you begin
 
-* You'll need a Terraform server to run the commands from. 
+* You'll need a system where Terraform is installed (Windows/Mac/Linux). 
 * You'll need to have credentials to log in to your AWS account.
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, copy or download the Terraform code in the Codebox.  
-
-. Connect to your server. 
-
-. Paste the code and run it.
+. After you have used the user interface to define the operation that you want to perform, download the Terraform code from the Codebox.  
+. Copy the downloaded script archive to the system where Terraform is installed.
+. Extract the zip file and follow the steps in README.md file. 
