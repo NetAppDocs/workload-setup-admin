@@ -21,7 +21,7 @@ sidebar:
       entries:
         - title: Learn the basics
           entries: 
-            - title: Workload Factory overview
+            - title: Workload factory overview
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
@@ -29,15 +29,15 @@ sidebar:
               url: /console-experiences.html  
         - title: Quick start
           url: /quick-start.html
-        - title: Sign up to Workload Factory
+        - title: Sign up to workload factory
           url: /sign-up-saas.html
         - title: Add AWS credentials
           url: /add-credentials.html
         - title: What you can do next
           url: /whats-next.html
-    - title: Administer Workload Factory
+    - title: Administer workload factory
       entries:
-        - title: Log in to Workload Factory
+        - title: Log in to workload factory
           url: /log-in.html
         - title: Automate tasks using Codebox
           entries:
@@ -56,5 +56,5 @@ sidebar:
     - title: Legal notices
       url: /legal-notices.html
 product-family:
-  name: BlueXP Workload Factory for AWS
+  name: BlueXP workload factory
   repo: workload-family
