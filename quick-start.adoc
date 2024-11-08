@@ -5,7 +5,7 @@ keywords: quick start
 summary: Get started with workload factory by preparing networking for the workload factory console, signing up and creating an account, and adding credentials so that workload factory can manage AWS resources directly.
 ---
 
-= Quick start for workload factory
+= Quick start for BlueXP workload factory
 :icons: font
 :imagesdir: ./media/
 
