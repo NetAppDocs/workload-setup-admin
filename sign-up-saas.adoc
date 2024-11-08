@@ -5,12 +5,12 @@ keywords: sign up, signing up, sign in, signing in, login with netapp, log in wi
 summary: Workload factory is accessible from a web-based console. When you get started with workload factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
 ---
 
-= Sign up to workload factory
+= Sign up to BlueXP workload factory
 :icons: font
 :imagesdir: ./media/ 
 
 [.lead]
-Workload factory is accessible from a web-based console. When you get started with workload factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
+BlueXP workload factory is accessible from a web-based console. When you get started with workload factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
 
 .About this task
 
