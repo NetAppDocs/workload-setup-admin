@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: use-codebox.html
 keywords: codebox, automation, cloudformation, rest api, aws cli, permissions
-summary: You can use Codebox to generate the code needed to execute any operation supported by workload factory. You can generate code that can be consumed and run using workload factory REST APIs, AWS CLI, and AWS CloudFormation.
+summary: "You can use Codebox to generate the code needed to execute any operation supported by BlueXP workload factory."
 ---
 
-= Use Codebox for automation
+= Use Codebox for automation in BlueXP workload factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-You can use Codebox to generate the code needed to execute any operation supported by workload factory. You can generate code that can be consumed and run using workload factory REST APIs, the AWS CLI, and AWS CloudFormation.
+You can use Codebox to generate the code needed to execute any operation supported by BlueXP workload factory. You can generate code that can be consumed and run using workload factory REST APIs, the AWS CLI, and AWS CloudFormation.
 
 Codebox is aligned with the workload factory operation modes (Basic, Read, and Automate) by populating the appropriate data in the code based on the AWS permissions provided in the workload factory account for each user. The code can be used like a template where you can fill in missing information (for example, credentials) or customize certain data before running the code.
 

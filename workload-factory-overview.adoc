@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: workload-factory-overview.html
 keywords: overview, concepts, features, use case, workloads, how workload factory works
-summary: BlueXP workload factory is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems. Workloads that can be streamlined using workload factory and FSx for ONTAP include databases, VMware migrations to VMware Cloud on AWS, AI chatbots, and more.
+summary: "BlueXP workload factory is a powerful life-cycle management platform designed to help you optimize your workloads using Amazon FSx for NetApp ONTAP file systems."
 ---
 
-= Learn about workload factory
+= Learn about BlueXP workload factory
 :icons: font
 :imagesdir: ./media/
 

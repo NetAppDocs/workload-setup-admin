@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: log-in.html
 keywords: logging in, log in, sign in, signing in, user account, login with netapp, log in with netapp, sign up, create account
-summary: After you sign up to workload factory, you can log in at any time from the web-based console to start managing your workloads and FSx for ONTAP file systems.
+summary: "After you sign up to workload factory, you can log in at any time from the web-based console to start managing your workloads and FSx for ONTAP file systems."
 ---
 
-= Log in to workload factory
+= Log in to BlueXP workload factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-After you sign up to workload factory, you can log in at any time from the web-based console to start managing your workloads and FSx for ONTAP file systems.
+After you sign up to BlueXP workload factory, you can log in at any time from the web-based console to start managing your workloads and FSx for ONTAP file systems.
 
 .About this task
 

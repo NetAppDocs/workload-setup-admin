@@ -5,7 +5,7 @@ keywords: what's new, features, new, release notes, enhancements, fixes
 summary: "Learn what's new with workload factory administration features: cloud provider credentials, Codebox enhancements, and more."
 ---
 
-= What's new
+= What's new with BlueXP workload factory administration features
 :icons: font
 :imagesdir: ./media/
 
