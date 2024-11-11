@@ -122,7 +122,7 @@ There are several benefits when using the workload factory REST APIs:
 
 * The APIs have been designed based on REST technology and current best practices. The core technologies include HTTP and JSON.
 
-* workload factory authentication is based on the OAuth2 standard. NetApp relies on the Auth0 service implementation.
+* Workload factory authentication is based on the OAuth2 standard. NetApp relies on the Auth0 service implementation.
 
 * The workload factory web-based console uses the same core REST APIs so there is consistency between the two access paths.
 
