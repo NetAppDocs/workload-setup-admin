@@ -1,12 +1,12 @@
 indexpage:
-  title: Workload Factory setup and administration documentation
-  lead: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
-  summary: "Get started with Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
+  title: BlueXP workload factory setup and administration documentation
+  lead: "Get started with BlueXP workload factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in workload factory."
+  summary: "Get started with BlueXP workload factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in workload factory."
   keywords: workload factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
   tiles:
     - title: Get started
       links:
-        - title: Learn about Workload Factory
+        - title: Learn about BlueXP workload factory
           url: workload-factory-overview.html
         - title: Sign up
           url: sign-up-saas.html
