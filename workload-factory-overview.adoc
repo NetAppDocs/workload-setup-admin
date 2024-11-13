@@ -26,8 +26,8 @@ Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the clo
 Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS migration advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments, generate a plan to deploy recommended VM layouts to VMware Cloud on AWS, and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
-Optimized database deployment::
-Deploy Microsoft SQL Servers, databases, and database clones including AWS resources provisioning, storage provisioning, networking, and OS configurations, utilizing optimized deployment configurations ensuring a consistent and error-free setup process.
+Database lifecycle management::
+Analyze costs savings and storage and application benefits when migrating SQL Server databases to Amazon FSx for NetApp ONTAP storage; deploy SQL Servers, databases, and database clones including AWS resources provisioning, storage provisioning, networking, and OS configurations; and continuously optimize SQL Server estates to improve performance, resilience, protection, cost-efficiency, and compliance with best practices.  
 
 AI chatbot development::
 Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
@@ -99,11 +99,12 @@ link:codebox-automation.html[Learn more about Codebox].
 
 === Savings calculators
 
-Workload factory provides a savings calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
+Workload factory provides savings calculators so you can compare the costs of your storage environments or your database workloads on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
 
-The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
+//The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings using storage calculators^]
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings for your storage environments^]
+* link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html[Learn how to explore savings for your database workloads^]
 
 == Tools to use workload factory
 You can use BlueXP workload factory with the following tools:
