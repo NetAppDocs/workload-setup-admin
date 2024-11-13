@@ -27,7 +27,7 @@ Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS migration advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments, generate a plan to deploy recommended VM layouts to VMware Cloud on AWS, and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
 Database lifecycle management::
-Analyze costs savings and storage and application benefits when migrating SQL Server databases to Amazon FSx for NetApp ONTAP storage; deploy SQL Servers, databases, and database clones including AWS resources provisioning, storage provisioning, networking, and OS configurations; and continuously optimize SQL Server estates to improve performance, resilience, protection, cost-efficiency, and compliance with best practices.  
+Analyze costs savings and storage and application benefits when migrating SQL Server databases to Amazon FSx for NetApp ONTAP storage; deploy SQL Servers, databases, and database clones including AWS resources provisioning, storage provisioning, networking, and OS configurations; and continuously optimize SQL Server estates to improve performance, resilience, protection, and cost-efficiency, and comply with best practices.  
 
 AI chatbot development::
 Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
