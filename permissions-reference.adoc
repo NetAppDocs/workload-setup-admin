@@ -440,6 +440,9 @@ The following table displays the permissions for database workloads.
 | cloudformation:ListStacks | Deployment | No | Yes
 | cloudformation:ValidateTemplate | Deployment | No | Yes
 
+| Fetch metrics for compute optimization recommendation
+| cloudwatch:GetMetricStatistics | Explore savings | No | Yes
+
 | Fetch directories available in the region
 | ds:DescribeDirectories | Deployment | No | Yes
 
