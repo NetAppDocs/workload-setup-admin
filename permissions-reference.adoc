@@ -303,16 +303,16 @@ The following table displays the permissions for database workloads.
 | Automate mode
 
 | Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
-| cloudwatch:GetMetricStatistics | Inventory (Detection) and Explore savings | Yes | Yes
+| cloudwatch:GetMetricStatistics | Inventory (Detection) and explore savings | Yes | Yes
 
 | List and set triggers for events 
 | sns:ListTopics | Deployment | Yes | Yes
 
 .4+| Get details for EC2 instances 
-| ec2:DescribeInstances | Inventory (Detection) and Explore savings | Yes | Yes
+| ec2:DescribeInstances | Inventory (Detection) and explore savings | Yes | Yes
 | ec2:DescribeKeyPairs | Deployment | Yes | Yes
 | ec2:DescribeNetworkInterfaces | Deployment | Yes | Yes
-| ec2:DescribeInstanceTypes | Deployment and Explore savings | Yes | Yes
+| ec2:DescribeInstanceTypes | Deployment and explore savings | Yes | Yes
 
 .6+| Get details to fill in the FSx for ONTAP deployment form
 | ec2:DescribeVpcs | Deployment and Inventory (Detection) | Yes | Yes
@@ -334,17 +334,18 @@ The following table displays the permissions for database workloads.
 | Get details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeVolumes | Inventory (Detection) and Explore savings | Yes | Yes
 
-.2+| Get KMS key details for FSx for ONTAP file system encryption
+.3+| Get KMS key details for FSx for ONTAP file system encryption
 | kms:ListAliases | Deployment | Yes | Yes
+| kms:ListKeys | Deployment | Yes | Yes
 | kms:DescribeKey | Deployment | Yes | Yes
 
 | Get list of CloudFormation stacks running in the environment to check quota limit
 | cloudformation:ListStacks | Deployment | Yes | Yes
 
-| Get list of AWS managed active directories in the region
+| Get list of AWS-managed Active Directories in the region
 | ds:DescribeDirectories | Deployment | Yes | Yes
 
-.5+| Get volume, backup, SVM, file systems in AZ, and tags for FSx for ONTAP file system
+.5+| Get lists and details of volumes, backups, SVMs, file systems in AZs, and tags for FSx for ONTAP file system
 | fsx:DescribeVolumes | Inventory(Detection) and Explore Savings | Yes | Yes
 | fsx:DescribeBackups | Inventory(Detection) and Explore Savings | Yes | Yes
 | fsx:DescribeStorageVirtualMachines | Deployment, Manage operations, and Inventory (Detection) | Yes | Yes
@@ -439,7 +440,7 @@ The following table displays the permissions for database workloads.
 | cloudformation:ValidateTemplate | Deployment | No | Yes
 
 | Fetch directories available in the region
-| ds:DescribeDirectories | ? | No | Yes
+| ds:DescribeDirectories | Deployment | No | Yes
 
 .2+| Add rules for the Security Group attached to provisioned EC2 instances
 | ec2:AuthorizeSecurityGroupEgress | Deployment | No | Yes
@@ -456,110 +457,110 @@ Question: Can this one and Attach security groups and modify rules for the provi
 | ec2:CreateTags | Deployment | No | Yes
 
 | Delete SecurityGroup created temporarily for validation nodes
-| ec2:DeleteSecurityGroup | ? | No | Yes
+| ec2:DeleteSecurityGroup | Deployment | No | Yes
 
 .2+| Get instance details for provisioning
-| ec2:Describe* | ? | No | Yes
-| ec2:Get* | ? | No | Yes
-
-.2+| Update and remove rules from security groups created during provisioning
-| ec2:RevokeSecurityGroupEgress | ? | No | Yes
-| ec2:RevokeSecurityGroupIngress | ? | No | Yes
+| ec2:Describe* | Deployment, Inventory (Detection), and Explore savings | No | Yes
+| ec2:Get* | Deployment, Inventory (Detection), and Explore savings | No | Yes
 
 | Start the created instances
-| ec2:RunInstances | ? | No | Yes
+| ec2:RunInstances | Deployment | No | Yes
+
+//.2+| Update and remove rules from security groups created during provisioning
+//| ec2:RevokeSecurityGroupEgress | ? | No | Yes
+//| ec2:RevokeSecurityGroupIngress | ? | No | Yes
 
 | Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:* | ? | No | Yes
+| ec2messages:* | Deployment and inventory (Detection) | No | Yes
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
-| fsx:CreateFileSystem | ? | No | Yes
-| fsx:CreateStorageVirtualMachine | ?| No | Yes
-| fsx:CreateVolume | ? | No | Yes
+| fsx:CreateFileSystem | Deployment | No | Yes
+| fsx:CreateStorageVirtualMachine | Deployment| No | Yes
+| fsx:CreateVolume | Deployment and manage operations | No | Yes
 
 .2+| Get FSx for ONTAP details
-| fsx:Describe* | ? | No | Yes
-| fsx:List* | ? | No | Yes
+| fsx:Describe* | Deployment, inventory (detection), manage operations, and explore savings | No | Yes
+| fsx:List* | Deployment and inventory (detection) | No | Yes
 
-.3+| Get KMS key details and use for FSx for ONTAP encryption
-| kms:CreateGrant | ? | No | Yes
-| kms:Describe* | ?| No | Yes
-| kms:List* | ? | No | Yes
+.4+| Get KMS key details and use for FSx for ONTAP encryption
+| kms:CreateGrant | Deployment | No | Yes
+| kms:Describe* | Deployment | No | Yes
+| kms:List* | Deployment | No | Yes
+| kms:GenerateDataKey | Deployment | No | Yes
 
 .7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
-| logs:CreateLogGroup | ? | No | Yes
-| logs:CreateLogStream | ? | No | Yes
-| logs:DescribeLog* | ? | No | Yes
-| logs:GetLog* | ? | No | Yes
-| logs:ListLogDeliveries | ? | No | Yes
-| logs:PutLogEvents | ? | No | Yes
-| logs:TagResource| ? | No | Yes
+| logs:CreateLogGroup | Deployment | No | Yes
+| logs:CreateLogStream | Deployment | No | Yes
+| logs:DescribeLog* | Deployment | No | Yes
+| logs:GetLog* | Deployment | No | Yes
+| logs:ListLogDeliveries | Deployment | No | Yes
+| logs:PutLogEvents | Deployment and manage operations | No | Yes
+| logs:TagResource| Deployment | No | Yes
 
-.4+| Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
-| secretsmanager:CreateSecret | ? | No | Yes
-| secretsmanager:GetSecretValue | ?| No | Yes
-| secretsmanager:ListSecrets | ? | No | Yes
-| servicequotas:ListServiceQuotas | ? | No | Yes
+| Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
+| servicequotas:ListServiceQuotas | Deployment | No | Yes
 
 .2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
-| sns:ListTopics | ? | No | Yes
-| sns:Publish | ? | No | Yes
+| sns:ListTopics | Deployment | No | Yes
+| sns:Publish | Deployment | No | Yes
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
-| ssm:Describe* | ? | No | Yes
-| ssm:Get* | ? | No | Yes
-| ssm:List* | ? | No | Yes
-| ssm:PutComplianceItems | ? | No | Yes
-| ssm:PutConfigurePackageResult | ? | No | Yes
-| ssm:PutInventory | ? | No | Yes
-| ssm:SendCommand | ? | No | Yes
-| ssm:UpdateAssociationStatus | ? | No | Yes
-| ssm:UpdateInstanceAssociationStatus | ? | No | Yes
-| ssm:UpdateInstanceInformation | ? | No | Yes
-| ssmmessages:* | ? | No | Yes
+| ssm:Describe* | Deployment | No | Yes
+| ssm:Get* | Deployment and manage operations | No | Yes
+| ssm:List* | Deployment | No | Yes
+| ssm:PutComplianceItems | Deployment | No | Yes
+| ssm:PutConfigurePackageResult | Deployment | No | Yes
+| ssm:PutInventory | Deployment | No | Yes
+| ssm:SendCommand | Deployment, inventory (detection), and manage operations | No | Yes
+| ssm:UpdateAssociationStatus | Deployment | No | Yes
+| ssm:UpdateInstanceAssociationStatus | Deployment | No | Yes
+| ssm:UpdateInstanceInformation | Deployment | No | Yes
+| ssmmessages:* | Deployment, inventory (detection), and manage operations | No | Yes
 
 | Signal CloudFormation stack on success or failure. 
-| cloudformation:SignalResource ^1^ | ? | No | Yes
-
-| Allow role provided for provisioning to use the secrets created programmatically. 
-| secretsmanager:PutResourcePolicy ^1^ | ? | No | Yes
-
-| Tag secrets created by WLMDB deployment. 
-| secretsmanager:TagResource ^1^ | ? | No | Yes
+| cloudformation:SignalResource ^1^ | Deployment | No | Yes
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
-| iam:AddRoleToInstanceProfile | ? | No | Yes
+| iam:AddRoleToInstanceProfile | Deployment | No | Yes
 
 | Create instance profile for EC2 and attach the created EC2 role.
-| iam:CreateInstanceProfile | ? | No | Yes
+| iam:CreateInstanceProfile | Deployment | No | Yes
 
-| Create EC2 role through template with permissions listed below - Questions: Which permissions? And what about this note - "Need to add condition to allow to a group and allow role to be used only as part of service(EC2 instance profile)"
-| iam:CreateRole | ? | No | Yes
+| Create EC2 role through template with permissions listed below - *Questions: Which permissions? And what about this note - "Need to add condition to allow to a group and allow role to be used only as part of service(EC2 instance profile)"*
+| iam:CreateRole | Deployment | No | Yes
 
-| Create role linked to EC2 service
-| iam:CreateServiceLinkedRole | ? | No | Yes
+| Create role linked to EC2 service *Question - Do we need to add "iam:CreateServiceLinkedRole limited by
+
+iam:AWSServiceName": "ec2.amazonaws.com"*
+| iam:CreateServiceLinkedRole | Deployment | No | Yes
 
 | Delete instance profile created during deployment specifically for the validation nodes
-| iam:DeleteInstanceProfile | ? | No | Yes
+| iam:DeleteInstanceProfile | Deployment | No | Yes
 
 .5+| Get the role and policy details to determine any gaps in permission and validate for deployment
-| iam:GetPolicy | ? | No | Yes
-| iam:GetPolicyVersion | ?| No | Yes
-| iam:GetRole | ? | No | Yes
-| iam:GetRolePolicy | ? | No | Yes
-| iam:GetUser | ? | No | Yes
+| iam:GetPolicy | Deployment | No | Yes
+| iam:GetPolicyVersion | Deployment | No | Yes
+| iam:GetRole | Deployment | No | Yes
+| iam:GetRolePolicy | Deployment | No | Yes
+| iam:GetUser | Deployment | No | Yes
 
-| Pass the role created to EC2 instance - Question about note: "Restrict with condition of passing to EC2 service"
-| iam:PassRole | ? | No | Yes
+| Pass the role created to EC2 instance  *Question about note: "Restrict with condition of passing to EC2 service"*
+| iam:PassRole | Deployment | No | Yes
 
 | Add policy with required permissions to the EC2 role created
-| iam:PutRolePolicy | ? | No | Yes
+| iam:PutRolePolicy | Deployment | No | Yes
 
 | Detach role from the provisioned EC2 instance profile
-| iam:RemoveRoleFromInstanceProfile | ? | No | Yes
+| iam:RemoveRoleFromInstanceProfile | Deployment | No | Yes
 
 | Validate permissions available in the role and compare with required permissions
-| iam:SimulatePrincipalPolicy | ? | No | Yes
+| iam:SimulatePrincipalPolicy | Deployment | No | Yes
+
+.4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
+| ssm:GetParameter ^1^ | Deployment, inventory (detection), and manage operations | No | Yes
+| ssm:GetParameters ^1^ | Deployment and inventory (detection) | No | Yes
+| ssm:PutParameter^1^ | Deployment and manage operations | No | Yes
+| ssm:DeleteParameters ^1^ | Deployment and manage operations | No | Yes
 
 |===
 ====
