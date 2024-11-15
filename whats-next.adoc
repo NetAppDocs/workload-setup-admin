@@ -2,15 +2,15 @@
 sidebar: sidebar
 permalink: whats-next.html
 keywords: what you can do
-summary: "Now that you've logged in and set up Workload Factory, you can create and manage FSx for ONTAP file systems, and use other Workload Factory capabilities."
+summary: "Now that you've logged in and set up workload factory, you can create and manage FSx for ONTAP file systems, and use other workload factory capabilities."
 ---
 
-= What you can do next
+= What you can do next with BlueXP workload factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Now that you've logged in and set up Workload Factory, you can start using several Workload Factory capabilities, such as creating Amazon FSx for ONTAP file systems, deploying databases on FSx for ONTAP file systems, and migrating virtual machine configurations to VMware Cloud on AWS using FSx for ONTAP file systems as external datastores.
+Now that you've logged in and set up BlueXP workload factory, you can start using several workload factory capabilities, such as creating Amazon FSx for ONTAP file systems, deploying databases on FSx for ONTAP file systems, and migrating virtual machine configurations to VMware Cloud on AWS using FSx for ONTAP file systems as external datastores.
 
 * https://docs.netapp.com/us-en/workload-fsx-ontap/index.html[Amazon FSx for NetApp ONTAP^]
 +
