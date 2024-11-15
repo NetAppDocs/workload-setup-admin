@@ -292,6 +292,7 @@ No input
 The following table displays the permissions for database workloads. 
 
 .Table of permissions for database workloads
+[%collapsible]
 ====
 [cols=5*,options="header"]
 |===
@@ -563,9 +564,8 @@ iam:AWSServiceName": "ec2.amazonaws.com"*
 | ssm:DeleteParameters ^1^ | Deployment and manage operations | No | Yes
 
 |===
-====
-
 . Permission is restricted to resources starting with WLMDB.
+====
 
 === Permissions for GenAI workloads
 
