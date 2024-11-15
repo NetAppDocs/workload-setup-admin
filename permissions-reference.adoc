@@ -545,7 +545,7 @@ iam:AWSServiceName": "ec2.amazonaws.com"*
 | iam:GetRolePolicy | Deployment | No | Yes
 | iam:GetUser | Deployment | No | Yes
 
-| Pass the role created to EC2 instance  *Question about note: "Restrict with condition of passing to EC2 service"*
+| Pass the role created to EC2 instance  *Question about note: "iam:PassRole limited by "iam:PassedToService": "ec2.amazonaws.com"*
 | iam:PassRole | Deployment | No | Yes
 
 | Add policy with required permissions to the EC2 role created
