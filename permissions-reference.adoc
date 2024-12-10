@@ -704,18 +704,28 @@ The following table displays the permissions for database workloads.
 | Operate
 
 .3+| ssm messages permissions are required to send commands to the ai-engine - this permission helps to check the ssm connection to the ai-engine
-| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
-| ec2:AuthorizeSecurityGroupIngress | Deployment | Operate
-| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
+| ssm:SendCommand | Deployment | Operate
+| ssm:GetConnectionStatus | Deployment | Operate
+| ssm:SendCommand | Deployment | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
+.8+| To create ai-engine instance profile during stack creation (on deploy and rebuild operations)
+| iam:CreateRole | Deployment | Operate
+| iam:CreateInstanceProfile | Deployment | Operate
+| iam:AddRoleToInstanceProfile | Deployment | Operate
+| iam:PutRolePolicy | Deployment | Operate
+| iam:GetRolePolicy | Deployment | Operate
+| iam:GetRole | Deployment | Operate
+| iam:TagRole | Deployment | Operate
+| iam:PassRole | Deployment | Operate
+
+| In order to validate the permissions available in the role and compare with required permisisons  (on deploy and rebuild operations)
+| iam:SimulatePrincipalPolicy
+| Deployment
 | Operate
 
 | List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 
