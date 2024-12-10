@@ -548,7 +548,7 @@ iam:AWSServiceName": "ec2.amazonaws.com"*
 | iam:GetRolePolicy | Deployment | No | Yes
 | iam:GetUser | Deployment | No | Yes
 
-| Pass the role created to EC2 instance  *Question about note: "iam:PassRole limited by "iam:PassedToService": "ec2.amazonaws.com"*
+| Pass the role created to EC2 instance  *Question about note: "iam:PassRole limited by "iam:PassedToService": "ec2.amazonaws.com""*
 | iam:PassRole | Deployment | No | Yes
 
 | Add policy with required permissions to the EC2 role created
@@ -572,7 +572,43 @@ iam:AWSServiceName": "ec2.amazonaws.com"*
 
 === Permissions for GenAI workloads
 
-No input
+The following table displays the permissions for database workloads. 
+
+.Table of permissions for database workloads
+[%collapsible]
+====
+[cols=5*,options="header"]
+|===
+
+| Purpose
+| Action
+| Where used
+| Role
+
+
+| To create ai-engine cloudformation stack on deploy and rebuild operations
+| cloudformation:CreateStack
+|
+| Operate
+
+| To create ai-engine cloudformation stack
+| cloudformation:DescribeStacks | Deployment | Operate
+
+.4+| Get details for EC2 instances 
+| ec2:DescribeInstances | Inventory (Detection) and explore savings | Operate
+| ec2:DescribeKeyPairs | Deployment | Operate
+| ec2:DescribeNetworkInterfaces | Deployment | Operate
+| ec2:DescribeInstanceTypes | Deployment and explore savings | Operate
+
+.6+| Get details to fill in the FSx for ONTAP deployment form
+| ec2:DescribeVpcs | Deployment and Inventory (Detection) | Operate
+| ec2:DescribeSubnets | Deployment and Inventory (Detection) | Operate
+| ec2:DescribeSecurityGroups | Deployment | Operate
+| ec2:DescribeImages | Deployment | 
+| ec2:DescribeRegions | Deployment | Operate
+| ec2:DescribeRouteTables | Deployment and Inventory (Detection) | Operate
+
+|===
 
 === Permissions for VMware workloads
 
