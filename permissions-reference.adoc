@@ -585,14 +585,145 @@ The following table displays the permissions for database workloads.
 | Where used
 | Role
 
-
-| To create ai-engine cloudformation stack on deploy and rebuild operations
+| To create AI engine cloudformation stack on deploy and rebuild operations
 | cloudformation:CreateStack
 |
 | Operate
 
-| To create ai-engine cloudformation stack
-| cloudformation:DescribeStacks | Deployment | Operate
+| To create AI engine cloudformation stack
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| To list all region on the ai-engine deployment wizard
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List ai-engine tags to show on the ui
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| To list vpc endpoints before ai-engine stack creation to see if we need to create
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| Create ai-engine security group during the ai-engine stack creation ( on deploy and rebuild operations)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| Allow to tag resources that were created by ai-engine stack creation ( security group, instance ) (on deploy and rebuild operations)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| To list vpcs on the ai-engine deployment aizard
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List route tables in order to add them to the s3 gateway private endpoint  we create during the ai-engine deployment and rebuild
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| To List  key-pairs on the ai-engine deployment wizard
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List vpc-endpoints in order to find which vpc endpoints should be created during the ai-engine deployment
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List instances to find out the ai-engine state
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| To list the images during the ai-engine stack creation on deploy and rebuild operations
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+.2+| To create and update ai-instance and private endpoints security group during the ai-instace stack creation (on deploy and rebuild operations) 
+| ec2:RevokeSecurityGroupEgress | Inventory (Detection) and explore savings | Operate
+| ec2:RevokeSecurityGroupIngress | Deployment | Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| cloudformation:DescribeStacks
+| 
+| Operate
+
+
+
+
+
+
 
 .4+| Get details for EC2 instances 
 | ec2:DescribeInstances | Inventory (Detection) and explore savings | Operate
