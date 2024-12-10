@@ -609,6 +609,7 @@ The following table displays the permissions for database workloads.
 | ec2:DescribeRouteTables | Deployment and Inventory (Detection) | Operate
 
 |===
+====
 
 === Permissions for VMware workloads
 
