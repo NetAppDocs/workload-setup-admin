@@ -577,7 +577,7 @@ The following table displays the permissions for database workloads.
 .Table of permissions for database workloads
 [%collapsible]
 ====
-[cols=5*,options="header"]
+[cols=4*,options="header"]
 |===
 
 | Purpose
