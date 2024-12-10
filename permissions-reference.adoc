@@ -587,17 +587,17 @@ The following table displays the permissions for database workloads.
 
 | To create AI engine cloudformation stack on deploy and rebuild operations
 | cloudformation:CreateStack
-|
+| Deployment
 | Operate
 
 | To create AI engine cloudformation stack
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | To list all region on the ai-engine deployment wizard
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | List ai-engine tags to show on the ui
@@ -612,37 +612,37 @@ The following table displays the permissions for database workloads.
 
 | Create ai-engine security group during the ai-engine stack creation ( on deploy and rebuild operations)
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | Allow to tag resources that were created by ai-engine stack creation ( security group, instance ) (on deploy and rebuild operations)
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | To list vpcs on the ai-engine deployment aizard
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | List route tables in order to add them to the s3 gateway private endpoint  we create during the ai-engine deployment and rebuild
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | To List  key-pairs on the ai-engine deployment wizard
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | List vpc-endpoints in order to find which vpc endpoints should be created during the ai-engine deployment
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 | List instances to find out the ai-engine state
@@ -652,62 +652,61 @@ The following table displays the permissions for database workloads.
 
 | To list the images during the ai-engine stack creation on deploy and rebuild operations
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
 .2+| To create and update ai-instance and private endpoints security group during the ai-instace stack creation (on deploy and rebuild operations) 
-| ec2:RevokeSecurityGroupEgress | Inventory (Detection) and explore savings | Operate
+| ec2:RevokeSecurityGroupEgress | Deployment | Operate
 | ec2:RevokeSecurityGroupIngress | Deployment | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| Run ai-engine during cloudformation stack creation (on deploy and rebuild operations)
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+.2+| Aattach security group and modify rules for the ai-engine during stack creation (on deploy and rebuild operations)
+| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
+| ec2:AuthorizeSecurityGroupIngress | Deployment | Operate
+
+| To understand if bedrock cloudwatch logging is enabled during ai-engine deployment
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+| To initiate chat request to one of the foundation models
 | cloudformation:DescribeStacks
 | 
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| To initiate chat/embedding request to one of the foundation models
 | cloudformation:DescribeStacks
 | 
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| To show the available foundation models in a region
 | cloudformation:DescribeStacks
 | 
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| To find regions that support fsx and bedrock during the ai-engine wizard
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+| To find the latest amazon linux 2023 image for the ai-engine deployment ( on deploy and rebuild operations ) 
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+| ssm messages permissions are required to send commands to the ai-engine - this permission is used to get the response from the command sent to the ai-engine
 | cloudformation:DescribeStacks
 | 
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| 
-| Operate
+.3+| ssm messages permissions are required to send commands to the ai-engine - this permission helps to check the ssm connection to the ai-engine
+| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
+| ec2:AuthorizeSecurityGroupIngress | Deployment | Operate
+| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
 
 | List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
