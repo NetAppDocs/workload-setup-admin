@@ -610,17 +610,17 @@ The following table displays the permissions for database workloads.
 | 
 | Operate
 
-| Create ai-engine security group during the ai-engine stack creation ( on deploy and rebuild operations)
+| Create ai-engine security group during the ai-engine stack creation (on deploy and rebuild operations)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| Allow to tag resources that were created by ai-engine stack creation ( security group, instance ) (on deploy and rebuild operations)
+| Allow to tag resources that were created by ai-engine stack creation (security group, instance) (on deploy and rebuild operations)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To list vpcs on the ai-engine deployment aizard
+| To list vpcs on the ai-engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
@@ -635,7 +635,7 @@ The following table displays the permissions for database workloads.
 | Deployment
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| List security groups during ai-engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
@@ -693,7 +693,7 @@ The following table displays the permissions for database workloads.
 | Deployment
 | Operate
 
-| To find the latest amazon linux 2023 image for the ai-engine deployment ( on deploy and rebuild operations ) 
+| To find the latest amazon linux 2023 image for the ai-engine deployment (on deploy and rebuild operations) 
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
@@ -718,35 +718,78 @@ The following table displays the permissions for database workloads.
 | iam:TagRole | Deployment | Operate
 | iam:PassRole | Deployment | Operate
 
-| In order to validate the permissions available in the role and compare with required permisisons  (on deploy and rebuild operations)
+| In order to validate the permissions available in the role and compare with required permisisons (on deploy and rebuild operations)
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Operate
 
-| List security groups during ai-engine stack creation ( to find security groups on the private endpoints)
+| List security groups during ai-engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
+| To list FSx file systems on create knowledgeBase wizard
+| fsx:DescribeVolumes
+| Knowledge base creation
+| Operate
 
+| To list FSx file system volumes on create knowledgeBase wizard
+| fsx:DescribeFileSystems
+| Knowledge base creation
+| Operate
 
+| To manage KB on the ai-engine during rebuild operation
+|
+|
+|
 
+| To list FSx file system storage virtual machines on create knowledgeBase wizard
+|
+|
+|
 
+| To use for rebuild operation (move the kb to a new instance) 
+|
+|
+|
 
+| To manage KB on the ai-engine during rebuild
+|
+|
+|
 
-.4+| Get details for EC2 instances 
-| ec2:DescribeInstances | Inventory (Detection) and explore savings | Operate
-| ec2:DescribeKeyPairs | Deployment | Operate
-| ec2:DescribeNetworkInterfaces | Deployment | Operate
-| ec2:DescribeInstanceTypes | Deployment and explore savings | Operate
+.2+| To use ssm parameter store to save secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
+| ssm:GetParameter | Deployment | Operate
+| ssm:PutParameter | Deployment | Operate
 
-.6+| Get details to fill in the FSx for ONTAP deployment form
-| ec2:DescribeVpcs | Deployment and Inventory (Detection) | Operate
-| ec2:DescribeSubnets | Deployment and Inventory (Detection) | Operate
-| ec2:DescribeSecurityGroups | Deployment | Operate
-| ec2:DescribeImages | Deployment | 
-| ec2:DescribeRegions | Deployment | Operate
-| ec2:DescribeRouteTables | Deployment and Inventory (Detection) | Operate
+| List log cloudwatch groups- to check if we need to create log group or is it already exists (on deploy and rebuild operations)
+|
+|
+|
+
+.2+|To send the ai-engine logs to cloud watch log group (on deploy and rebuild operations)
+| logs:CreateLogGroup | Deployment | Operate
+| logs:PutRetentionPolicy | Deployment | Operate
+
+| To send the ai-engine logs to cloud watch log group
+| logs:TagResource
+| Troubleshooting
+| Operate
+
+| To  get ssm response from cloudwatch (when the response is too long)
+|
+|
+|
+
+| To get the ssm response from cloudwatch
+|
+|
+|
+
+.3+| To create cloudwatch log group for bedrock logs during the stack reation (on deploy and rebuild operations)
+| logs:CreateLogGroup | Deployment | Operate
+| logs:PutRetentionPolicy | Deployment | Operate
+| logs:TagResource | Deployment | Operate
 
 |===
 ====
