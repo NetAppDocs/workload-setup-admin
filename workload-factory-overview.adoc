@@ -27,8 +27,6 @@ Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS migration advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments, generate a plan to deploy recommended VM layouts to VMware Cloud on AWS, and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
 Database lifecycle management::
-Discover database workloads and analyze costs savings with Amazon FSx for NetApp ONTAP; leverage storage and application benefits when migrating SQL server databases to Amazon FSx for NetApp ONTAP storage; deploy SQL servers, databases, and database clones; and continuously optimize and monitor SQL server estates to improve performance, availability, protection, and cost-efficiency.
-
 Discover database workloads and analyze costs savings with Amazon FSx for NetApp ONTAP; leverage storage and application benefits when migrating SQL server databases to FSx for ONTAP storage; deploy SQL servers, databases, and database clones that implement vendor best practices; use an Infrastructure as Code co-pilot to automate operations; and continuously monitor and optimize SQL server estates to improve performance, availability, protection, and cost-efficiency.
 
 AI chatbot development::
@@ -102,8 +100,6 @@ link:codebox-automation.html[Learn more about Codebox].
 === Savings calculators
 
 Workload factory provides savings calculators so you can compare the costs of your storage environments or your database workloads on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
-
-//The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings for your storage environments^]
 * link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html[Learn how to explore savings for your database workloads^]
