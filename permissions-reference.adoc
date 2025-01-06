@@ -811,7 +811,8 @@ The following table displays the permissions for VMware workloads.
 
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
-| Deployment, inventory
+a| Deployment
+Inventory
 a| View
 Operate
 
@@ -830,7 +831,8 @@ Operate
 
 | Get the availability zones in selected environment
 | ec2:DescribeAvailabilityZones
-| Deployment, inventory
+a| Deployment
+Inventory
 a| View
 Operate
 
@@ -888,8 +890,10 @@ Inventory | Operate
 
 | Used to fetch latest list of Amazon FSx for NetApp ONTAP supported AWS regions
 | ssm:Get*
-a| Deployment
-Management operations
+a| 
+
+* Deployment
+* Management operations
 | Operate
 
 | SimulatePrincipalPolicy is required to do the validation of permissions available in the role and compare with required permisisons
