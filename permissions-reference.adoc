@@ -585,130 +585,130 @@ The following table displays the permissions for database workloads.
 | Where used
 | Role
 
-| To create AI engine cloudformation stack on deploy and rebuild operations
+| Create AI engine cloudformation stack during deploy and rebuild operations
 | cloudformation:CreateStack
 | Deployment
 | Operate
 
-| To create AI engine cloudformation stack
+| Create the AI engine cloudformation stack
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To list all region on the ai-engine deployment wizard
+| List regions for the AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| List ai-engine tags to show on the ui
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| To list vpc endpoints before ai-engine stack creation to see if we need to create
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| Create ai-engine security group during the ai-engine stack creation (on deploy and rebuild operations)
+| Display AI engine tags 
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| Allow to tag resources that were created by ai-engine stack creation (security group, instance) (on deploy and rebuild operations)
+| List VPC endpoints before AI engine stack creation
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To list vpcs on the ai-engine deployment wizard
+| Create an AI engine security group during the AI engine stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| List route tables in order to add them to the s3 gateway private endpoint  we create during the ai-engine deployment and rebuild
+| Tag resources created by AI engine stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To List  key-pairs on the ai-engine deployment wizard
+| List VPCs during AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| List security groups during ai-engine stack creation (to find security groups on the private endpoints)
+| Get route tables during AI engine deployment and rebuild
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| List vpc-endpoints in order to find which vpc endpoints should be created during the ai-engine deployment
+| List key-pairs during AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| List instances to find out the ai-engine state
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| To list the images during the ai-engine stack creation on deploy and rebuild operations
+| List security groups during AI engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-.2+| To create and update ai-instance and private endpoints security group during the ai-instace stack creation (on deploy and rebuild operations) 
+| Get VPC endpoints to determine if any should be created during the AI engine deployment
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+| List instances to find out the AI engine state
+| cloudformation:DescribeStacks
+| Troubleshooting
+| Operate
+
+| List images during the AI engine stack creation during deploy and rebuild operations
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+.2+| To create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
 | ec2:RevokeSecurityGroupEgress | Deployment | Operate
 | ec2:RevokeSecurityGroupIngress | Deployment | Operate
 
-| Run ai-engine during cloudformation stack creation (on deploy and rebuild operations)
+| Run AI engine during cloudformation stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-.2+| Aattach security group and modify rules for the ai-engine during stack creation (on deploy and rebuild operations)
+.2+| Attach security group and modify rules for the AI engine during stack creation during deploy and rebuild operations
 | ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
 | ec2:AuthorizeSecurityGroupIngress | Deployment | Operate
 
-| To understand if bedrock cloudwatch logging is enabled during ai-engine deployment
+| Query Amazon Bedrock / Amazon CloudWatch logging during AI engine deployment
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
 | To initiate chat request to one of the foundation models
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
-| To initiate chat/embedding request to one of the foundation models
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| To show the available foundation models in a region
-| cloudformation:DescribeStacks
-| 
-| Operate
-
-| To find regions that support fsx and bedrock during the ai-engine wizard
+| Begin chat/embedding request for foundation models
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To find the latest amazon linux 2023 image for the ai-engine deployment (on deploy and rebuild operations) 
+| Show the available foundation models in a region
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| ssm messages permissions are required to send commands to the ai-engine - this permission is used to get the response from the command sent to the ai-engine
+| Get regions that support FSx and Bedrock during the AI engine wizard
 | cloudformation:DescribeStacks
-| 
+| Deployment
 | Operate
 
-.3+| ssm messages permissions are required to send commands to the ai-engine - this permission helps to check the ssm connection to the ai-engine
+| Get latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+| Get the SSM response from the command sent to the AI engine
+| cloudformation:DescribeStacks
+| Deployment
+| Operate
+
+.3+| Check the SSM connection to the AI engine
 | ssm:SendCommand | Deployment | Operate
 | ssm:GetConnectionStatus | Deployment | Operate
 | ssm:SendCommand | Deployment | Operate
 
-.8+| To create ai-engine instance profile during stack creation (on deploy and rebuild operations)
+.8+| Create AI engine instance profile during stack creation during deploy and rebuild operations
 | iam:CreateRole | Deployment | Operate
 | iam:CreateInstanceProfile | Deployment | Operate
 | iam:AddRoleToInstanceProfile | Deployment | Operate
@@ -718,75 +718,75 @@ The following table displays the permissions for database workloads.
 | iam:TagRole | Deployment | Operate
 | iam:PassRole | Deployment | Operate
 
-| In order to validate the permissions available in the role and compare with required permisisons (on deploy and rebuild operations)
+| Validate the permissions available in the role and compare with required permissions during deploy and rebuild operations
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Operate
 
-| List security groups during ai-engine stack creation (to find security groups on the private endpoints)
+| List security groups during AI engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
 | Operate
 
-| To list FSx file systems on create knowledgeBase wizard
+| List FSx file systems during the "Create knowledgebase" wizard
 | fsx:DescribeVolumes
 | Knowledge base creation
 | Operate
 
-| To list FSx file system volumes on create knowledgeBase wizard
+| List FSx file system volumes during the "Create knowledgebase" wizard
 | fsx:DescribeFileSystems
 | Knowledge base creation
 | Operate
 
-| To manage KB on the ai-engine during rebuild operation
-|
-|
-|
+| Manage knowledgebase on the AI engine during rebuild operation
+| fsx:ListTagsForResource
+| Troubleshooting
+| Operate
 
-| To list FSx file system storage virtual machines on create knowledgeBase wizard
-|
-|
-|
+| List FSx file system storage virtual machines during the "Create knowledgebase" wizard
+| fsx:DescribeStorageVirtualMachines
+| Deployment
+| Operate
 
-| To use for rebuild operation (move the kb to a new instance) 
-|
-|
-|
+| Move the knowledgebase to a new instance
+| fsx:UntagResource
+| Troubleshooting
+| Operate
 
-| To manage KB on the ai-engine during rebuild
-|
-|
-|
+| Manage knowledgebase on the AI engine during rebuild
+| fsx:TagResource
+| Troubleshooting
+| Operate
 
-.2+| To use ssm parameter store to save secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
+.2+| Save SSM secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
 | ssm:GetParameter | Deployment | Operate
 | ssm:PutParameter | Deployment | Operate
 
-| List log cloudwatch groups- to check if we need to create log group or is it already exists (on deploy and rebuild operations)
-|
-|
-|
+| Verify need to create CloudWatch log group during deploy and rebuild operations
+| logs:DescribeLogGroups
+| Deployment
+| Operate
 
-.2+|To send the ai-engine logs to cloud watch log group (on deploy and rebuild operations)
+.2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Operate
 | logs:PutRetentionPolicy | Deployment | Operate
 
-| To send the ai-engine logs to cloud watch log group
+| Send the AI engine logs to CloudWatch log group
 | logs:TagResource
 | Troubleshooting
 | Operate
 
-| To  get ssm response from cloudwatch (when the response is too long)
-|
-|
-|
+| Get SSM response from CloudWatch (when the response is too long)
+| logs:DescribeLogStreams
+| Troubleshooting
+| Operate
 
-| To get the ssm response from cloudwatch
-|
-|
-|
+| Get the SSM response from CloudWatch
+| logs:GetLogEvents
+| Troubleshooting
+| Operate
 
-.3+| To create cloudwatch log group for bedrock logs during the stack reation (on deploy and rebuild operations)
+.3+| Create CloudWatch log group for Bedrock logs during the stack reation during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Operate
 | logs:PutRetentionPolicy | Deployment | Operate
 | logs:TagResource | Deployment | Operate
