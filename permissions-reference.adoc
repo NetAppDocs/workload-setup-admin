@@ -572,12 +572,12 @@ iam:AWSServiceName": "ec2.amazonaws.com"*
 
 === Permissions for GenAI workloads
 
-The following table displays the permissions for database workloads. 
+The following table displays the permissions for GenAI workloads. 
 
-.Table of permissions for database workloads
+.Table of permissions for GenAI workloads
 [%collapsible]
 ====
-[cols=4*,options="header"]
+[cols="2, 2, 1, 1",options="header"]
 |===
 
 | Purpose
@@ -796,7 +796,9 @@ The following table displays the permissions for database workloads.
 
 === Permissions for VMware workloads
 
-No input
+The following table displays the permissions for VMware workloads. 
+
+.Table of permissions for VMware workloads
 
 == Change log
 
