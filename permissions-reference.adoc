@@ -811,30 +811,36 @@ The following table displays the permissions for VMware workloads.
 
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
-a| Deployment
-Inventory
-a| View
-Operate
-
+a| 
+* Deployment
+* Inventory
+a|
+* View
+* Operate
 | Get the subnets in selected environment to complete deployment form
 | ec2:DescribeSubnets
-a| Deployment
-Inventory
-a| View
-Operate
+a| 
+* Deployment
+* Inventory
+a|
+* View
+* Operate
 
 | Get the security groups in selected environment to complete deployment form
 | ec2:DescribeSecurityGroups
 | Deployment
-a| View
-Operate
+a|
+* View
+* Operate
 
 | Get the availability zones in selected environment
 | ec2:DescribeAvailabilityZones
-a| Deployment
-Inventory
-a| View
-Operate
+a| 
+* Deployment
+* Inventory
+a|
+* View
+* Operate
 
 | Get the regions with Amazon FSx for NetApp ONTAP support
 | ec2:DescribeRegions
@@ -845,37 +851,43 @@ Operate
 | Get KMS keys' aliases to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListAliases 
 | Deployment
-a| View
-Operate
+a|
+* View
+* Operate
 
 | Get KMS keys to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListKeys
 | Deployment
-a| View
-Operate
+a|
+* View
+* Operate
 
 | Get KMS keys expiry details to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:DescribeKey
 | Deployment
-a| View
-Operate
+a|
+* View
+* Operate
 
 | SSM based query is used to get the updated list of Amazon FSx for NetApp ONTAP supported regions
 | ssm:GetParametersByPath
 | Deployment
-a| View
-Operate
+a|
+* View
+* Operate
 
 .3+| Create Amazon FSx for NetApp ONTAP resources required for provisioning
 | fsx:CreateFileSystem | Deployment | Operate
 | fsx:CreateStorageVirtualMachine | Deployment | Operate
-| fsx:CreateVolume a| Deployment
-Management operations | Operate
+| fsx:CreateVolume a|
+* Deployment
+* Management operations | Operate
 
 .2+| Get Amazon FSx for NetApp ONTAP details
 | fsx:Describe* | Deployment, Inventory, Management operations, Explore savings | Operate
-| fsx:List* a| Deployment
-Inventory | Operate
+| fsx:List* a|
+* Deployment
+* Inventory | Operate
 
 .4+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
 | kms:CreateGrant | Deployment | Operate
@@ -891,7 +903,6 @@ Inventory | Operate
 | Used to fetch latest list of Amazon FSx for NetApp ONTAP supported AWS regions
 | ssm:Get*
 a| 
-
 * Deployment
 * Management operations
 | Operate
@@ -905,12 +916,15 @@ a|
 | ssm:GetParameter a| Deployment
 Management operations
 Inventory | Operate
-| ssm:PutParameters a| Deployment
-Inventory | Operate
-| ssm:PutParameter a| Deployment
-Management operations | Operate
-| ssm:DeleteParameters a| Deployment
-Management operations | Operate
+| ssm:PutParameters a|
+* Deployment
+* Inventory | Operate
+| ssm:PutParameter a|
+* Deployment
+* Management operations | Operate
+| ssm:DeleteParameters a|
+* Deployment
+* Management operations | Operate
 
 |===
 ====
