@@ -26,14 +26,17 @@ Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the clo
 Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS migration advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments, generate a plan to deploy recommended VM layouts to VMware Cloud on AWS, and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
-Optimized database deployment::
-Deploy Microsoft SQL Servers, databases, and database clones including AWS resources provisioning, storage provisioning, networking, and OS configurations, utilizing optimized deployment configurations ensuring a consistent and error-free setup process.
+Database lifecycle management::
+Discover database workloads and analyze costs savings with Amazon FSx for NetApp ONTAP; leverage storage and application benefits when migrating SQL server databases to FSx for ONTAP storage; deploy SQL servers, databases, and database clones that implement vendor best practices; use an Infrastructure as Code co-pilot to automate operations; and continuously monitor and optimize SQL server estates to improve performance, availability, protection, and cost-efficiency.
 
 AI chatbot development::
 Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
 
 Savings calculators to save costs::
 Analyze your current deployments that use Amazon Elastic Block Store (EBS) or Elastic File System (EFS) storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
+
+Service accounts to promote automation::
+Use service accounts to automate BlueXP workload factory operations securely and reliably. Service accounts provide reliable, long-lasting automation without any user management restrictions and are more secure because they only provide API access. 
 
 == Supported cloud providers
 
@@ -59,11 +62,19 @@ When you log in to workload factory for the first time, you're prompted to creat
 
 image:screenshot-account-selection.png[A screenshot of the workload factory setup wizard that prompts you for the workload factory account.]
 
-When you create an account, you are the single Account Admin user for that account.
+When you create an account, you are the single _account admin_ user for that account.
 
 If your organization requires additional account or user management, reach out to us by using the in-product chat.
 
 TIP: If you use NetApp BlueXP, then you'll already belong to an account because workload factory leverages BlueXP accounts.
+
+==== Service accounts
+
+A service account acts as a "user" that can make authorized API calls to BlueXP workload factory for automation purposes. This makes it easier to manage automation because you don't need to build automation scripts based on a real person's user account who can leave the company at any time. All account holders in Workload Factory are considered account admins. Account admins can create and delete multiple service accounts. 
+
+//.How service accounts work
+//Service accounts use BlueXP multi-tenancy functionality. Service accounts control machine-to-machine access. A service account allows access for //////automation by providing client ID and client secret identifiers which can be used to generate an access token. An access token makes it possible to automate workload factory in BlueXP operations with API calls. 
+link:manage-service-accounts.html[Learn how to manage service accounts].
 
 === Operational modes 
 
@@ -99,11 +110,10 @@ link:codebox-automation.html[Learn more about Codebox].
 
 === Savings calculators
 
-Workload factory provides a savings calculator so you can compare the costs of storage on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
+Workload factory provides savings calculators so you can compare the costs of your storage environments or your database workloads on FSx for ONTAP file systems against Elastic Block Store (EBS), Elastic File Systems (EFS), and FSx for Windows File Server. Depending on your storage requirements, you might find that FSx for ONTAP file systems are the most cost effective option for you.
 
-The criteria that is compared between the different types of storage systems includes the total required capacity and the total performance, which includes the required IOPS and required throughput.
-
-https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings using storage calculators^]
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/explore-savings.html[Learn how to explore savings for your storage environments^]
+* link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html[Learn how to explore savings for your database workloads^]
 
 == Tools to use workload factory
 You can use BlueXP workload factory with the following tools:
