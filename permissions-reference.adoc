@@ -284,9 +284,9 @@ Select your operational mode to view the required policies:
 == Permissions by workload
 Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
-=== Permissions for storage workloads
+//=== Permissions for storage workloads
 
-No input
+//No input from team
 
 === Permissions for database workloads
 The following table displays the permissions for database workloads. 
@@ -300,7 +300,7 @@ The following table displays the permissions for database workloads.
 | Purpose
 | Action
 | Where used
-| Read mode
+| Mode
 | Automate mode
 
 | Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
