@@ -53,10 +53,12 @@ Select your operational mode to view the required policies:
         "ec2:DescribeInstanceTypeOfferings",
         "ec2:DescribeSnapshots",
         "ec2:DescribeVolumes",
+        "ec2:DescribeAddresses",
         "kms:ListAliases",
         "kms:ListKeys",
         "kms:DescribeKey",
         "cloudformation:ListStacks",
+        "cloudformation:DescribeAccountLimits",
         "ds:DescribeDirectories",
         "fsx:DescribeVolumes",
         "fsx:DescribeBackups",
@@ -66,7 +68,9 @@ Select your operational mode to view the required policies:
         "ssm:GetParametersByPath",
         "ssm:GetCommandInvocation",
         "ssm:SendCommand",
-        "ssm:GetConnectionStatus",
+        "ssm:DescribePatchBaselines",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:ListCommands",
         "fsx:ListTagsForResource"
       ],
       "Resource": [
@@ -502,6 +506,7 @@ a|
 * Manage operations
 * Inventory
 * Explore savings 
+* Optimization
 a| 
 * Read
 * Automate
@@ -511,7 +516,8 @@ a|
 a| 
 * Manage operations
 * Inventory
-* Explore savings 
+* Explore savings
+* Optimization 
 a| 
 * Read
 * Automate
@@ -521,7 +527,29 @@ a|
 a|  
 * Manage operations
 * Inventory
+* Optimization
 a| 
+* Read
+* Automate
+
+| Get the list of available patch baselines for operating system patch assessment
+| ssm:DescribePatchBaselines
+| Optimization
+a|
+* Read
+* Automate
+
+| Get the patching state on Windows EC2 instances for operating system patch assessment 
+| ssm:DescribeInstancePatchStates
+| Optimization
+a|
+* Read
+* Automate
+
+| List commands executed by AWS Patch Manager on EC2 instances for operating system patch management
+| ssm:ListCommands
+| Optimization
+a|
 * Read
 * Automate
 
