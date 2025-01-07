@@ -1064,8 +1064,8 @@ a|
 
 |===
 . Permission is restricted to resources starting with WLMDB.
-. Note: "iam:CreateServiceLinkedRole" limited by "iam:AWSServiceName": "ec2.amazonaws.com"*
-. Note: "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com""*
+. "iam:CreateServiceLinkedRole" limited by "iam:AWSServiceName": "ec2.amazonaws.com"*
+. "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com""*
 ====
 
 === Permissions for GenAI workloads
