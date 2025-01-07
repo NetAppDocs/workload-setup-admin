@@ -294,280 +294,708 @@ The following table displays the permissions for database workloads.
 .Table of permissions for database workloads
 [%collapsible]
 ====
-[cols=5*,options="header"]
+[cols="2, 2, 1, 1",options="header"]
 |===
 
 | Purpose
 | Action
 | Where used
 | Mode
-| Automate mode
 
 | Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
-| cloudwatch:GetMetricStatistics | Inventory (Detection) and explore savings | Yes | Yes
-
+| cloudwatch:GetMetricStatistics 
+a| 
+* Inventory 
+* Explore savings 
+a|
+* Read
+* Automate
 | List and set triggers for events 
-| sns:ListTopics | Deployment | Yes | Yes
+| sns:ListTopics 
+| Deployment 
+a| 
+* Read
+* Automate
 
 .4+| Get details for EC2 instances 
-| ec2:DescribeInstances | Inventory (Detection) and explore savings | Yes | Yes
-| ec2:DescribeKeyPairs | Deployment | Yes | Yes
-| ec2:DescribeNetworkInterfaces | Deployment | Yes | Yes
-| ec2:DescribeInstanceTypes | Deployment and explore savings | Yes | Yes
+| ec2:DescribeInstances 
+a| 
+* Inventory  
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeKeyPairs 
+| Deployment 
+a| 
+* Read
+* Automate
+| ec2:DescribeNetworkInterfaces 
+| Deployment 
+a| 
+* Read
+* Automate 
+| ec2:DescribeInstanceTypes 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
 
 .6+| Get details to fill in the FSx for ONTAP deployment form
-| ec2:DescribeVpcs | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeSubnets | Deployment and Inventory (Detection) | Yes | Yes
-| ec2:DescribeSecurityGroups | Deployment | Yes | Yes
-| ec2:DescribeImages | Deployment | Yes | Yes
-| ec2:DescribeRegions | Deployment | Yes | Yes
-| ec2:DescribeRouteTables | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeVpcs 
+a| 
+* Deployment 
+* Inventory 
+a|
+* Read
+* Automate
+| ec2:DescribeSubnets 
+a| 
+* Deployment 
+* Inventory
+a| 
+* Read
+* Automate
+| ec2:DescribeSecurityGroups 
+| Deployment 
+a| 
+* Read
+* Automate
+| ec2:DescribeImages 
+| Deployment 
+a| 
+* Read
+* Automate
+| ec2:DescribeRegions 
+| Deployment 
+a| 
+* Read
+* Automate
+| ec2:DescribeRouteTables 
+a| 
+* Deployment
+* Inventory
+a|
+* Read
+* Automate
 
 | Get any existing VPC endpoints to determine if new endpoints need to be created before deployments
-| ec2:DescribeVpcEndpoints | Deployment and Inventory (Detection) | Yes | Yes
+| ec2:DescribeVpcEndpoints 
+a| 
+* Deployment 
+* Inventory
+a| 
+* Read
+* Automate
 
 | Get instance types available in region for validation nodes (t2.micro/t3.micro) 
-| ec2:DescribeInstanceTypeOfferings | Deployment | Yes | Yes
+| ec2:DescribeInstanceTypeOfferings 
+| Deployment 
+a| 
+* Read
+* Automate
 
 | Get snapshot details of each attached EBS volumes for pricing and savings estimate
-| ec2:DescribeSnapshots | Explore savings | Yes | Yes
+| ec2:DescribeSnapshots 
+| Explore savings 
+a| 
+* Read
+* Automate
 
 | Get details of each attached EBS volumes for pricing and savings estimate
-| ec2:DescribeVolumes | Inventory (Detection) and Explore savings | Yes | Yes
+| ec2:DescribeVolumes 
+a| 
+* Inventory 
+* Explore savings 
+a| 
+* Read
+* Automate
 
 .3+| Get KMS key details for FSx for ONTAP file system encryption
-| kms:ListAliases | Deployment | Yes | Yes
-| kms:ListKeys | Deployment | Yes | Yes
-| kms:DescribeKey | Deployment | Yes | Yes
+| kms:ListAliases 
+| Deployment 
+a| 
+* Read
+* Automate
+| kms:ListKeys 
+| Deployment 
+a| 
+* Read 
+* Automate
+| kms:DescribeKey 
+| Deployment 
+a| 
+* Read
+* Automate
 
 | Get list of CloudFormation stacks running in the environment to check quota limit
-| cloudformation:ListStacks | Deployment | Yes | Yes
+| cloudformation:ListStacks 
+| Deployment 
+a|
+* Read
+* Automate
 
 | Get list of AWS-managed Active Directories in the region
-| ds:DescribeDirectories | Deployment | Yes | Yes
+| ds:DescribeDirectories 
+| Deployment 
+a| 
+* Read
+* Automate
 
 .5+| Get lists and details of volumes, backups, SVMs, file systems in AZs, and tags for FSx for ONTAP file system
-| fsx:DescribeVolumes | Inventory(Detection) and Explore Savings | Yes | Yes
-| fsx:DescribeBackups | Inventory(Detection) and Explore Savings | Yes | Yes
-| fsx:DescribeStorageVirtualMachines | Deployment, Manage operations, and Inventory (Detection) | Yes | Yes
-| fsx:DescribeFileSystems | Deployment, Manage operations, Inventory (Detection), and Explore savings | Yes | Yes
-| fsx:ListTagsForResource | Manage operations | Yes | Yes
+| fsx:DescribeVolumes 
+a| 
+* Inventory
+* Explore Savings 
+a| 
+* Read
+* Automate
+| fsx:DescribeBackups 
+a| 
+* Inventory
+* Explore Savings 
+a| 
+* Read
+* Automate
+| fsx:DescribeStorageVirtualMachines 
+a| 
+* Deployment
+* Manage operations
+* Inventory
+a| 
+* Read
+* Automate
+| fsx:DescribeFileSystems 
+a| 
+* Deployment
+* Manage operations
+* Inventory
+* Explore savings 
+a|
+* Read
+* Automate
+| fsx:ListTagsForResource 
+| Manage operations 
+a| 
+* Read
+* Automate
 
 | Get service quota limits for CloudFormation and VPC
-| servicequotas:ListServiceQuotas | Deployment | Yes | Yes
+| servicequotas:ListServiceQuotas 
+| Deployment 
+a| 
+* Read
+* Automate
 
 | Use SSM-based query to get the updated list of FSx for ONTAP supported regions
-| ssm:GetParametersByPath | Deployment | Yes | Yes
+| ssm:GetParametersByPath 
+| Deployment 
+a| 
+* Read
+* Automate
 
 | Poll for SSM response after sending command for manage operations post deployment
-| ssm:GetCommandInvocation | Manage operations, Inventory (Detection), and Explore savings | Yes | Yes
+| ssm:GetCommandInvocation 
+a| 
+* Manage operations
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
 
 | Send commands over SSM to EC2 instances 
-| ssm:SendCommand | Manage operations, Inventory (Detection), and Explore savings | Yes | Yes
+| ssm:SendCommand 
+a| 
+* Manage operations
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
 
 | Get the SSM connectivity status on instances post deployment
-| ssm:GetConnectionStatus |  Manage operations and Inventory (Detection) | Yes | Yes
+| ssm:GetConnectionStatus 
+a|  
+* Manage operations
+* Inventory
+a| 
+* Read
+* Automate
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
-| ssm:GetParameter ^1^ | Deployment and manage operations | Yes | Yes
-| ssm:GetParameters ^1^ | Manage operations | Yes | Yes
-| ssm:PutParameter ^1^ | Deployment and manage operations | Yes | Yes
-| ssm:DeleteParameters ^1^ | Manage operations | Yes | Yes
+| ssm:GetParameter ^1^ 
+a| 
+* Deployment
+* Manage operations 
+a| 
+* Read
+* Automate
+| ssm:GetParameters ^1^ 
+| Manage operations 
+a| 
+* Read
+* Automate
+| ssm:PutParameter ^1^ 
+a| 
+* Deployment 
+* Manage operations 
+a| 
+* Read
+* Automate
+| ssm:DeleteParameters ^1^ 
+| Manage operations 
+a| 
+* Read
+* Automate
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
-| ec2:AllocateAddress ^1^ | Deployment | No | Yes
-| ec2:AllocateHosts  ^1^ | Deployment | No | Yes
-| ec2:AssignPrivateIpAddresses ^1^ | Deployment | No | Yes
-| ec2:AssociateAddress ^1^ | Deployment | No | Yes
-| ec2:AssociateRouteTable ^1^ | Deployment | No | Yes
-| ec2:AssociateSubnetCidrBlock ^1^ | Deployment | No | Yes
-| ec2:AssociateVpcCidrBlock ^1^ | Deployment | No | Yes
-| ec2:AttachInternetGateway ^1^ | Deployment | No | Yes
-| ec2:AttachNetworkInterface ^1^ | Deployment | No | Yes
+| ec2:AllocateAddress ^1^ 
+| Deployment 
+| Automate
+
+| ec2:AllocateHosts  ^1^ 
+| Deployment 
+| Automate
+| ec2:AssignPrivateIpAddresses ^1^ 
+| Deployment 
+| Automate
+| ec2:AssociateAddress ^1^ 
+| Deployment 
+| Automate
+| ec2:AssociateRouteTable ^1^ 
+| Deployment 
+| Automate
+| ec2:AssociateSubnetCidrBlock ^1^ 
+| Deployment 
+| Automate
+| ec2:AssociateVpcCidrBlock ^1^ 
+| Deployment 
+| Automate
+| ec2:AttachInternetGateway ^1^ 
+| Deployment 
+| Automate
+| ec2:AttachNetworkInterface ^1^ 
+| Deployment 
+| Automate
 
 | Attach EBS volumes required to the SQL nodes for deployment
-| ec2:AttachVolume |  Deployment | No | Yes
+| ec2:AttachVolume 
+| Deployment 
+| Automate
 
 .2+| Attach security groups and modify rules for the provisioned nodes
-| ec2:AuthorizeSecurityGroupEgress | Deployment | No | Yes
-| ec2:AuthorizeSecurityGroupIngress | Deployment | No | Yes
+| ec2:AuthorizeSecurityGroupEgress 
+| Deployment 
+| Automate
+| ec2:AuthorizeSecurityGroupIngress 
+| Deployment 
+| Automate
 
 | Create EBS volumes required to the SQL nodes for deployment
-| ec2:CreateVolume |  Deployment | No | Yes
+| ec2:CreateVolume 
+| Deployment 
+| Automate
 
 .11+| Remove the temporary validation nodes created of type t2.micro and for rollback or retry of failed EC2 SQL nodes
-| ec2:DeleteNetworkInterface | Deployment | No | Yes
-| ec2:DeleteSecurityGroup | Deployment | No | Yes
-| ec2:DeleteTags | Deployment | No | Yes
-| ec2:DeleteVolume | Deployment | No | Yes
-| ec2:DetachNetworkInterface | Deployment | No | Yes
-| ec2:DetachVolume | Deployment | No | Yes
-| ec2:DisassociateAddress | Deployment | No | Yes
-| ec2:DisassociateIamInstanceProfile | Deployment | No | Yes
-| ec2:DisassociateRouteTable | Deployment | No | Yes
-| ec2:DisassociateSubnetCidrBlock | Deployment | No | Yes
-| ec2:DisassociateVpcCidrBlock | Deployment | No | Yes
+| ec2:DeleteNetworkInterface 
+| Deployment 
+| Automate
+| ec2:DeleteSecurityGroup 
+| Deployment 
+| Automate
+| ec2:DeleteTags 
+| Deployment 
+| Automate
+| ec2:DeleteVolume 
+| Deployment 
+| Automate
+| ec2:DetachNetworkInterface 
+| Deployment 
+| Automate
+| ec2:DetachVolume 
+| Deployment 
+| Automate
+| ec2:DisassociateAddress 
+| Deployment 
+| Automate
+| ec2:DisassociateIamInstanceProfile 
+| Deployment 
+| Automate
+| ec2:DisassociateRouteTable 
+| Deployment 
+| Automate
+| ec2:DisassociateSubnetCidrBlock 
+| Deployment 
+| Automate
+| ec2:DisassociateVpcCidrBlock 
+| Deployment 
+| Automate
 
 .7+| Modify attributes for created SQL instances. Only applicable to names that start with WLMDB.
-| ec2:ModifyInstanceAttribute | Deployment | No | Yes
-| ec2:ModifyInstancePlacement | Deployment | No | Yes
-| ec2:ModifyNetworkInterfaceAttribute | Deployment | No | Yes
-| ec2:ModifySubnetAttribute | Deployment | No | Yes
-| ec2:ModifyVolume | Deployment | No | Yes
-| ec2:ModifyVolumeAttribute | Deployment | No | Yes
-| ec2:ModifyVpcAttribute | Deployment | No | Yes
+| ec2:ModifyInstanceAttribute 
+| Deployment 
+| Automate
+| ec2:ModifyInstancePlacement 
+| Deployment 
+| Automate
+| ec2:ModifyNetworkInterfaceAttribute 
+| Deployment 
+| Automate
+| ec2:ModifySubnetAttribute 
+| Deployment 
+| Automate
+| ec2:ModifyVolume 
+| Deployment 
+| Automate
+| ec2:ModifyVolumeAttribute 
+| Deployment 
+| Automate
+| ec2:ModifyVpcAttribute 
+| Deployment 
+| Automate
 
 .5+| Disassociate and destroy validation instances
-| ec2:ReleaseAddress | Deployment | No | Yes
-| ec2:ReplaceRoute | Deployment | No | Yes
-| ec2:ReplaceRouteTableAssociation | Deployment | No | Yes
-| ec2:RevokeSecurityGroupEgress | Deployment | No | Yes
-| ec2:RevokeSecurityGroupIngress | Deployment | No | Yes
+| ec2:ReleaseAddress 
+| Deployment 
+| Automate
+| ec2:ReplaceRoute 
+| Deployment 
+| Automate
+| ec2:ReplaceRouteTableAssociation 
+| Deployment 
+| Automate
+| ec2:RevokeSecurityGroupEgress 
+| Deployment 
+| Automate
+| ec2:RevokeSecurityGroupIngress 
+| Deployment 
+| Automate
 
 | Start the deployed instances
-| ec2:StartInstances |  Deployment | No | Yes
+| ec2:StartInstances 
+| Deployment 
+| Automate
 
 | Stop the deployed instances
-| ec2:StopInstances |  Deployment | No | Yes
+| ec2:StopInstances 
+| Deployment 
+| Automate
 
 | Tag custom values for Amazon FSx for NetApp ONTAP resources created by WLMDB to get billing details during resource management
-| fsx:TagResource ^1^ | Deployment and Manage operations | No | Yes
+| fsx:TagResource ^1^ 
+a| 
+* Deployment
+* Manage operations 
+| Automate
 
 .5+| Create and validate CloudFormation template for deployment
-| cloudformation:CreateStack | Deployment | No | Yes
-| cloudformation:DescribeStackEvents | Deployment | No | Yes
-| cloudformation:DescribeStacks | Deployment | No | Yes
-| cloudformation:ListStacks | Deployment | No | Yes
-| cloudformation:ValidateTemplate | Deployment | No | Yes
+| cloudformation:CreateStack 
+| Deployment 
+| Automate
+| cloudformation:DescribeStackEvents 
+| Deployment 
+| Automate
+| cloudformation:DescribeStacks 
+| Deployment 
+| Automate
+| cloudformation:ListStacks 
+| Deployment 
+| Automate
+| cloudformation:ValidateTemplate 
+| Deployment 
+| Automate
 
 | Fetch metrics for compute optimization recommendation
-| cloudwatch:GetMetricStatistics | Explore savings | No | Yes
+| cloudwatch:GetMetricStatistics 
+| Explore savings 
+| Automate
 
 | Fetch directories available in the region
-| ds:DescribeDirectories | Deployment | No | Yes
+| ds:DescribeDirectories 
+| Deployment 
+| Automate
 
 .2+| Add rules for the Security Group attached to provisioned EC2 instances
-| ec2:AuthorizeSecurityGroupEgress | Deployment | No | Yes
-| ec2:AuthorizeSecurityGroupIngress | Deployment | No | Yes
-Question: Can this one and Attach security groups and modify rules for the provisioned nodes be combined? Same permissions.
+| ec2:AuthorizeSecurityGroupEgress 
+| Deployment 
+| Automate
+| ec2:AuthorizeSecurityGroupIngress 
+| Deployment 
+| Automate
 
 .2+| Create nested stack templates for retry and rollback
-| ec2:CreateLaunchTemplate | Deployment | No | Yes
-| ec2:CreateLaunchTemplateVersion | Deployment | No | Yes
+| ec2:CreateLaunchTemplate 
+| Deployment 
+| Automate
+| ec2:CreateLaunchTemplateVersion 
+| Deployment 
+| Automate
 
 .3+| Manage tags and network security on created instances
-| ec2:CreateNetworkInterface | Deployment | No | Yes
-| ec2:CreateSecurityGroup | Deployment | No | Yes
-| ec2:CreateTags | Deployment | No | Yes
+| ec2:CreateNetworkInterface 
+| Deployment 
+| Automate
+| ec2:CreateSecurityGroup 
+| Deployment 
+| Automate
+| ec2:CreateTags 
+| Deployment 
+| Automate
 
 | Delete SecurityGroup created temporarily for validation nodes
-| ec2:DeleteSecurityGroup | Deployment | No | Yes
+| ec2:DeleteSecurityGroup 
+| Deployment 
+| Automate
 
 .2+| Get instance details for provisioning
-| ec2:Describe* | Deployment, Inventory (Detection), and Explore savings | No | Yes
-| ec2:Get* | Deployment, Inventory (Detection), and Explore savings | No | Yes
+| ec2:Describe* 
+a| 
+* Deployment
+* Inventory
+* Explore savings 
+| Automate
+| ec2:Get* 
+a| 
+* Deployment
+* Inventory
+* Explore savings 
+| Automate
 
 | Start the created instances
-| ec2:RunInstances | Deployment | No | Yes
+| ec2:RunInstances 
+| Deployment 
+| Automate
 
 //.2+| Update and remove rules from security groups created during provisioning
 //| ec2:RevokeSecurityGroupEgress | ? | No | Yes
 //| ec2:RevokeSecurityGroupIngress | ? | No | Yes
 
 | Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:* | Deployment and inventory (Detection) | No | Yes
+| ec2messages:* 
+a| 
+* Deployment
+*Inventory
+| Automate
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
-| fsx:CreateFileSystem | Deployment | No | Yes
-| fsx:CreateStorageVirtualMachine | Deployment| No | Yes
-| fsx:CreateVolume | Deployment and manage operations | No | Yes
+| fsx:CreateFileSystem 
+| Deployment 
+| Automate
+| fsx:CreateStorageVirtualMachine 
+| Deployment
+| Automate
+| fsx:CreateVolume 
+a| 
+* Deployment
+* Manage operations 
+| Automate
 
 .2+| Get FSx for ONTAP details
-| fsx:Describe* | Deployment, inventory (detection), manage operations, and explore savings | No | Yes
-| fsx:List* | Deployment and inventory (detection) | No | Yes
+| fsx:Describe* 
+a| 
+* Deployment
+* Inventory
+* Manage operations
+* Explore savings 
+| Automate
+| fsx:List* 
+a| 
+* Deployment
+* Inventory 
+| Automate
 
 .4+| Get KMS key details and use for FSx for ONTAP encryption
-| kms:CreateGrant | Deployment | No | Yes
-| kms:Describe* | Deployment | No | Yes
-| kms:List* | Deployment | No | Yes
-| kms:GenerateDataKey | Deployment | No | Yes
+| kms:CreateGrant 
+| Deployment 
+| Automate
+| kms:Describe* 
+| Deployment 
+| Automate
+| kms:List* 
+| Deployment 
+| Automate
+| kms:GenerateDataKey 
+| Deployment 
+| Automate
 
 .7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
-| logs:CreateLogGroup | Deployment | No | Yes
-| logs:CreateLogStream | Deployment | No | Yes
-| logs:DescribeLog* | Deployment | No | Yes
-| logs:GetLog* | Deployment | No | Yes
-| logs:ListLogDeliveries | Deployment | No | Yes
-| logs:PutLogEvents | Deployment and manage operations | No | Yes
-| logs:TagResource| Deployment | No | Yes
+| logs:CreateLogGroup 
+| Deployment 
+| Automate
+| logs:CreateLogStream 
+| Deployment 
+| Automate
+| logs:DescribeLog* 
+| Deployment 
+| Automate
+| logs:GetLog* 
+| Deployment 
+| Automate
+| logs:ListLogDeliveries 
+| Deployment 
+| Automate
+| logs:PutLogEvents 
+a| 
+* Deployment
+* Manage operations 
+| Automate
+| logs:TagResource
+| Deployment 
+| Automate
 
 | Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
-| servicequotas:ListServiceQuotas | Deployment | No | Yes
+| servicequotas:ListServiceQuotas 
+| Deployment 
+| Automate
 
 .2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
-| sns:ListTopics | Deployment | No | Yes
-| sns:Publish | Deployment | No | Yes
+| sns:ListTopics 
+| Deployment 
+| Automate
+| sns:Publish 
+| Deployment 
+| Automate
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
-| ssm:Describe* | Deployment | No | Yes
-| ssm:Get* | Deployment and manage operations | No | Yes
-| ssm:List* | Deployment | No | Yes
-| ssm:PutComplianceItems | Deployment | No | Yes
-| ssm:PutConfigurePackageResult | Deployment | No | Yes
-| ssm:PutInventory | Deployment | No | Yes
-| ssm:SendCommand | Deployment, inventory (detection), and manage operations | No | Yes
-| ssm:UpdateAssociationStatus | Deployment | No | Yes
-| ssm:UpdateInstanceAssociationStatus | Deployment | No | Yes
-| ssm:UpdateInstanceInformation | Deployment | No | Yes
-| ssmmessages:* | Deployment, inventory (detection), and manage operations | No | Yes
+| ssm:Describe* 
+| Deployment 
+| Automate
+| ssm:Get* 
+a| 
+* Deployment
+* Manage operations 
+| Automate
+| ssm:List* 
+| Deployment 
+| Automate
+| ssm:PutComplianceItems 
+| Deployment 
+| Automate
+| ssm:PutConfigurePackageResult 
+| Deployment 
+| Automate
+| ssm:PutInventory 
+| Deployment 
+| Automate
+| ssm:SendCommand 
+a| 
+* Deployment
+* Inventory
+* Manage operations 
+| Automate
+| ssm:UpdateAssociationStatus 
+| Deployment 
+| Automate
+| ssm:UpdateInstanceAssociationStatus 
+| Deployment 
+| Automate
+| ssm:UpdateInstanceInformation 
+| Deployment 
+| Automate
+| ssmmessages:* 
+a| 
+* Deployment
+* Inventory 
+* Manage operations 
+| Automate
 
 | Signal CloudFormation stack on success or failure. 
-| cloudformation:SignalResource ^1^ | Deployment | No | Yes
+| cloudformation:SignalResource ^1^ 
+| Deployment 
+| Automate
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
-| iam:AddRoleToInstanceProfile | Deployment | No | Yes
+| iam:AddRoleToInstanceProfile 
+| Deployment 
+| Automate
 
 | Create instance profile for EC2 and attach the created EC2 role.
-| iam:CreateInstanceProfile | Deployment | No | Yes
+| iam:CreateInstanceProfile 
+| Deployment 
+| Automate
 
-| Create EC2 role through template with permissions listed below - *Questions: Which permissions? And what about this note - "Need to add condition to allow to a group and allow role to be used only as part of service(EC2 instance profile)"*
-| iam:CreateRole | Deployment | No | Yes
+| Create EC2 role through template with permissions listed below  
+| iam:CreateRole 
+| Deployment 
+| Automate
 
-| Create role linked to EC2 service *Question - Do we need to add "iam:CreateServiceLinkedRole limited by
-
-iam:AWSServiceName": "ec2.amazonaws.com"*
-| iam:CreateServiceLinkedRole | Deployment | No | Yes
+| Create role linked to EC2 service
+| iam:CreateServiceLinkedRole ^2^
+| Deployment 
+| Automate
 
 | Delete instance profile created during deployment specifically for the validation nodes
-| iam:DeleteInstanceProfile | Deployment | No | Yes
+| iam:DeleteInstanceProfile 
+| Deployment 
+| Automate
 
 .5+| Get the role and policy details to determine any gaps in permission and validate for deployment
-| iam:GetPolicy | Deployment | No | Yes
-| iam:GetPolicyVersion | Deployment | No | Yes
-| iam:GetRole | Deployment | No | Yes
-| iam:GetRolePolicy | Deployment | No | Yes
-| iam:GetUser | Deployment | No | Yes
+| iam:GetPolicy 
+| Deployment 
+| Automate
+| iam:GetPolicyVersion 
+| Deployment 
+| Automate
+| iam:GetRole 
+| Deployment 
+| Automate
+| iam:GetRolePolicy 
+| Deployment 
+| Automate
+| iam:GetUser 
+| Deployment 
+| Automate
 
-| Pass the role created to EC2 instance  *Question about note: "iam:PassRole limited by "iam:PassedToService": "ec2.amazonaws.com""*
-| iam:PassRole | Deployment | No | Yes
+| Pass the role created to EC2 instance
+| iam:PassRole ^3^
+| Deployment 
+| Automate
 
 | Add policy with required permissions to the EC2 role created
-| iam:PutRolePolicy | Deployment | No | Yes
+| iam:PutRolePolicy 
+| Deployment 
+| Automate
 
 | Detach role from the provisioned EC2 instance profile
-| iam:RemoveRoleFromInstanceProfile | Deployment | No | Yes
+| iam:RemoveRoleFromInstanceProfile 
+| Deployment 
+| Automate
 
 | Validate permissions available in the role and compare with required permissions
-| iam:SimulatePrincipalPolicy | Deployment | No | Yes
+| iam:SimulatePrincipalPolicy 
+| Deployment 
+| Automate
 
 .4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
-| ssm:GetParameter ^1^ | Deployment, inventory (detection), and manage operations | No | Yes
-| ssm:GetParameters ^1^ | Deployment and inventory (detection) | No | Yes
-| ssm:PutParameter^1^ | Deployment and manage operations | No | Yes
-| ssm:DeleteParameters ^1^ | Deployment and manage operations | No | Yes
+| ssm:GetParameter ^1^ 
+a| 
+* Deployment
+* Inventory
+* Manage operations 
+| Automate
+| ssm:GetParameters ^1^ 
+a| 
+* Deployment
+* Inventory
+| Automate
+| ssm:PutParameter^1^ 
+a| 
+* Deployment
+* Manage operations 
+| Automate
+| ssm:DeleteParameters ^1^ 
+a| 
+* Deployment
+* Manage operations 
+| Automate
 
 |===
 . Permission is restricted to resources starting with WLMDB.
+. Note: "iam:CreateServiceLinkedRole" limited by "iam:AWSServiceName": "ec2.amazonaws.com"*
+. Note: "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com""*
 ====
 
 === Permissions for GenAI workloads
