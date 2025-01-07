@@ -1011,213 +1011,213 @@ The following table displays the permissions for GenAI workloads.
 | Purpose
 | Action
 | Where used
-| Role
+| Mode
 
 | Create AI engine cloudformation stack during deploy and rebuild operations
 | cloudformation:CreateStack
 | Deployment
-| Operate
+| Automate
 
 | Create the AI engine cloudformation stack
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List regions for the AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Display AI engine tags 
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List VPC endpoints before AI engine stack creation
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Create an AI engine security group during the AI engine stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Tag resources created by AI engine stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List VPCs during AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Get route tables during AI engine deployment and rebuild
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List key-pairs during AI engine deployment wizard
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List security groups during AI engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Get VPC endpoints to determine if any should be created during the AI engine deployment
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List instances to find out the AI engine state
 | cloudformation:DescribeStacks
 | Troubleshooting
-| Operate
+| Automate
 
 | List images during the AI engine stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 .2+| To create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
-| ec2:RevokeSecurityGroupEgress | Deployment | Operate
-| ec2:RevokeSecurityGroupIngress | Deployment | Operate
+| ec2:RevokeSecurityGroupEgress | Deployment | Automate
+| ec2:RevokeSecurityGroupIngress | Deployment | Automate
 
 | Run AI engine during cloudformation stack creation during deploy and rebuild operations
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 .2+| Attach security group and modify rules for the AI engine during stack creation during deploy and rebuild operations
-| ec2:AuthorizeSecurityGroupEgress | Deployment | Operate
-| ec2:AuthorizeSecurityGroupIngress | Deployment | Operate
+| ec2:AuthorizeSecurityGroupEgress | Deployment | Automate
+| ec2:AuthorizeSecurityGroupIngress | Deployment | Automate
 
 | Query Amazon Bedrock / Amazon CloudWatch logging during AI engine deployment
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | To initiate chat request to one of the foundation models
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Begin chat/embedding request for foundation models
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Show the available foundation models in a region
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Get regions that support FSx and Bedrock during the AI engine wizard
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Get latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | Get the SSM response from the command sent to the AI engine
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 .3+| Check the SSM connection to the AI engine
-| ssm:SendCommand | Deployment | Operate
-| ssm:GetConnectionStatus | Deployment | Operate
-| ssm:SendCommand | Deployment | Operate
+| ssm:SendCommand | Deployment | Automate
+| ssm:GetConnectionStatus | Deployment | Automate
+| ssm:SendCommand | Deployment | Automate
 
 .8+| Create AI engine instance profile during stack creation during deploy and rebuild operations
-| iam:CreateRole | Deployment | Operate
-| iam:CreateInstanceProfile | Deployment | Operate
-| iam:AddRoleToInstanceProfile | Deployment | Operate
-| iam:PutRolePolicy | Deployment | Operate
-| iam:GetRolePolicy | Deployment | Operate
-| iam:GetRole | Deployment | Operate
-| iam:TagRole | Deployment | Operate
-| iam:PassRole | Deployment | Operate
+| iam:CreateRole | Deployment | Automate
+| iam:CreateInstanceProfile | Deployment | Automate
+| iam:AddRoleToInstanceProfile | Deployment | Automate
+| iam:PutRolePolicy | Deployment | Automate
+| iam:GetRolePolicy | Deployment | Automate
+| iam:GetRole | Deployment | Automate
+| iam:TagRole | Deployment | Automate
+| iam:PassRole | Deployment | Automate
 
 | Validate the permissions available in the role and compare with required permissions during deploy and rebuild operations
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Operate
+| Automate
 
 | List security groups during AI engine stack creation (to find security groups on the private endpoints)
 | cloudformation:DescribeStacks
 | Deployment
-| Operate
+| Automate
 
 | List FSx file systems during the "Create knowledgebase" wizard
 | fsx:DescribeVolumes
 | Knowledge base creation
-| Operate
+| Automate
 
 | List FSx file system volumes during the "Create knowledgebase" wizard
 | fsx:DescribeFileSystems
 | Knowledge base creation
-| Operate
+| Automate
 
 | Manage knowledgebase on the AI engine during rebuild operation
 | fsx:ListTagsForResource
 | Troubleshooting
-| Operate
+| Automate
 
 | List FSx file system storage virtual machines during the "Create knowledgebase" wizard
 | fsx:DescribeStorageVirtualMachines
 | Deployment
-| Operate
+| Automate
 
 | Move the knowledgebase to a new instance
 | fsx:UntagResource
 | Troubleshooting
-| Operate
+| Automate
 
 | Manage knowledgebase on the AI engine during rebuild
 | fsx:TagResource
 | Troubleshooting
-| Operate
+| Automate
 
 .2+| Save SSM secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
-| ssm:GetParameter | Deployment | Operate
-| ssm:PutParameter | Deployment | Operate
+| ssm:GetParameter | Deployment | Automate
+| ssm:PutParameter | Deployment | Automate
 
 | Verify need to create CloudWatch log group during deploy and rebuild operations
 | logs:DescribeLogGroups
 | Deployment
-| Operate
+| Automate
 
 .2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
-| logs:CreateLogGroup | Deployment | Operate
-| logs:PutRetentionPolicy | Deployment | Operate
+| logs:CreateLogGroup | Deployment | Automate
+| logs:PutRetentionPolicy | Deployment | Automate
 
 | Send the AI engine logs to CloudWatch log group
 | logs:TagResource
 | Troubleshooting
-| Operate
+| Automate
 
 | Get SSM response from CloudWatch (when the response is too long)
 | logs:DescribeLogStreams
 | Troubleshooting
-| Operate
+| Automate
 
 | Get the SSM response from CloudWatch
 | logs:GetLogEvents
 | Troubleshooting
-| Operate
+| Automate
 
 .3+| Create CloudWatch log group for Bedrock logs during the stack reation during deploy and rebuild operations
-| logs:CreateLogGroup | Deployment | Operate
-| logs:PutRetentionPolicy | Deployment | Operate
-| logs:TagResource | Deployment | Operate
+| logs:CreateLogGroup | Deployment | Automate
+| logs:PutRetentionPolicy | Deployment | Automate
+| logs:TagResource | Deployment | Automate
 
 |===
 ====
@@ -1235,7 +1235,7 @@ The following table displays the permissions for VMware workloads.
 | Purpose
 | Action
 | Where used
-| Role
+| Mode
 
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
@@ -1243,23 +1243,23 @@ a|
 * Deployment
 * Inventory
 a|
-* View
-* Operate
+* Read
+* Automate
 | Get the subnets in selected environment to complete deployment form
 | ec2:DescribeSubnets
 a| 
 * Deployment
 * Inventory
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | Get the security groups in selected environment to complete deployment form
 | ec2:DescribeSecurityGroups
 | Deployment
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | Get the availability zones in selected environment
 | ec2:DescribeAvailabilityZones
@@ -1267,98 +1267,98 @@ a|
 * Deployment
 * Inventory
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | Get the regions with Amazon FSx for NetApp ONTAP support
 | ec2:DescribeRegions
 | Deployment
 a| 
-* View
-* Operate
+* Read
+* Automate
 
 | Get KMS keys' aliases to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListAliases 
 | Deployment
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | Get KMS keys to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListKeys
 | Deployment
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | Get KMS keys expiry details to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:DescribeKey
 | Deployment
 a|
-* View
-* Operate
+* Read
+* Automate
 
 | SSM based query is used to get the updated list of Amazon FSx for NetApp ONTAP supported regions
 | ssm:GetParametersByPath
 | Deployment
 a|
-* View
-* Operate
+* Read
+* Automate
 
 .3+| Create Amazon FSx for NetApp ONTAP resources required for provisioning
-| fsx:CreateFileSystem | Deployment | Operate
-| fsx:CreateStorageVirtualMachine | Deployment | Operate
+| fsx:CreateFileSystem | Deployment | Automate
+| fsx:CreateStorageVirtualMachine | Deployment | Automate
 | fsx:CreateVolume a|
 * Deployment
-* Management operations | Operate
+* Management operations | Automate
 
 .2+| Get Amazon FSx for NetApp ONTAP details
 | fsx:Describe* a| 
 * Deployment
 * Inventory
 * Management operations
-* Explore savings | Operate
+* Explore savings | Automate
 | fsx:List* a|
 * Deployment
-* Inventory | Operate
+* Inventory | Automate
 
 .4+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
-| kms:CreateGrant | Deployment | Operate
-| kms:Describe* | Deployment | Operate
-| kms:List* | Deployment | Operate
-| kms:GenerateDataKey | Deployment | Operate
+| kms:CreateGrant | Deployment | Automate
+| kms:Describe* | Deployment | Automate
+| kms:List* | Deployment | Automate
+| kms:GenerateDataKey | Deployment | Automate
 
 | List customer SNS topics and publish to WLMVMC backend SNS as well as customer SNS if selected
 | sns:Publish
 | Deployment
-| Operate
+| Automate
 
 | Used to fetch latest list of Amazon FSx for NetApp ONTAP supported AWS regions
 | ssm:Get*
 a| 
 * Deployment
 * Management operations
-| Operate
+| Automate
 
 | SimulatePrincipalPolicy is required to do the validation of permissions available in the role and compare with required permisisons
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Operate
+| Automate
 
 .4+| SSM Parameter store is used to save credentials of Amazon FSx for NetApp ONTAP
 | ssm:GetParameter a|
 * Deployment
 * Management operations
-* Inventory | Operate
+* Inventory | Automate
 | ssm:PutParameters a|
 * Deployment
-* Inventory | Operate
+* Inventory | Automate
 | ssm:PutParameter a|
 * Deployment
-* Management operations | Operate
+* Management operations | Automate
 | ssm:DeleteParameters a|
 * Deployment
-* Management operations | Operate
+* Management operations | Automate
 
 |===
 ====
