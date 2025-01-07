@@ -782,7 +782,7 @@ a|
 | Deployment 
 | Automate
 
-| Delete SecurityGroup created temporarily for validation nodes
+| Delete the Security Group created temporarily for validation nodes
 | ec2:DeleteSecurityGroup 
 | Deployment 
 | Automate
@@ -805,10 +805,6 @@ a|
 | ec2:RunInstances 
 | Deployment 
 | Automate
-
-//.2+| Update and remove rules from security groups created during provisioning
-//| ec2:RevokeSecurityGroupEgress | ? | No | Yes
-//| ec2:RevokeSecurityGroupIngress | ? | No | Yes
 
 | Systems Manager uses AWS message delivery service endpoint for API operations
 | ec2messages:* 
@@ -1037,29 +1033,6 @@ a|
 | Validate permissions available in the role and compare with required permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-| Automate
-
-.4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
-| ssm:GetParameter ^1^ 
-a| 
-* Deployment
-* Inventory
-* Manage operations 
-| Automate
-| ssm:GetParameters ^1^ 
-a| 
-* Deployment
-* Inventory
-| Automate
-| ssm:PutParameter^1^ 
-a| 
-* Deployment
-* Manage operations 
-| Automate
-| ssm:DeleteParameters ^1^ 
-a| 
-* Deployment
-* Manage operations 
 | Automate
 
 |===
