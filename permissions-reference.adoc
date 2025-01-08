@@ -1040,7 +1040,7 @@ a|
 
 === Permissions for GenAI workloads
 
-The following table displays the permissions for GenAI workloads. 
+The following table provides details about the permissions for GenAI workloads. 
 
 .Table of permissions for GenAI workloads
 [%collapsible]
@@ -1264,7 +1264,102 @@ The following table displays the permissions for GenAI workloads.
 
 === Permissions for VMware workloads
 
-The following table displays the permissions for VMware workloads. 
+The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+
+Select your operational mode to view the required IAM policies:
+
+[role="tabbed-block"]
+=====
+.Read mode
+--
+[source,json]
+{
+  "Effect": "Allow",
+  "Action": [
+      "ec2:DescribeRegions",
+      "ec2:DescribeAvailabilityZones",
+      "ec2:DescribeVpcs",
+      "ec2:DescribeSecurityGroups",
+      "ec2:DescribeSubnets",
+      "ssm:GetParametersByPath",
+      "kms:DescribeKey",
+      "kms:ListKeys",
+      "kms:ListAliases"
+  ],
+  "Resource": "*"
+}
+--
+
+.Operate mode
+--
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateStack"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateFileSystem",
+        "fsx:DescribeFileSystems",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:CreateVolume",
+        "fsx:DescribeVolumes",
+        "fsx:TagResource",
+        "sns:Publish",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases",
+        "kms:GenerateDataKey",
+        "kms:Decrypt",
+        "kms:CreateGrant"
+        ],
+        "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:RunInstances",
+        "ec2:DescribeInstances",
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:CreateSecurityGroup",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:DescribeImages"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ssm:GetParametersByPath",
+        "ssm:GetParameters"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+--
+=====
+
+The following table provides details about the permissions for VMware workloads. 
 
 .Table of permissions for VMware workloads
 [%collapsible]
