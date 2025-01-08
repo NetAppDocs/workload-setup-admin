@@ -21,16 +21,16 @@ When you provide read or automate mode permissions, workload factory attaches a 
 For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == Permissions by workload
-Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
+Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
 //=== Permissions for storage workloads
 
 //No input from team
 
 === Permissions for database workloads
-The IAM policies available below provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-Select your operational mode to view the required policies:
+Select your operational mode to view the required IAM policies:
 
 [role="tabbed-block"]
 =====
