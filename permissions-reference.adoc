@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: permissions-reference.html
 keywords: permissions, actions
-summary: To use Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
+summary: "To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment." 
 ---
 
-= Permissions for Workload Factory
+= Permissions for BlueXP workload factory
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,15 +13,22 @@ summary: To use Workload Factory features and services, you'll need to provide p
 :imagesdir: ./media/
 
 [.lead]
-To use Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
+To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment. 
 
 == Why use permissions
-When you provide read or automate mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
+When you provide read or automate mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
 
-For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
+For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
-== IAM policies
-The IAM policies available below provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+== Permissions by workload
+Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
+
+//=== Permissions for storage workloads
+
+//No input from team
+
+=== Permissions for database workloads
+The IAM policies available below provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required policies:
 
@@ -292,16 +299,6 @@ Select your operational mode to view the required policies:
 }
 --
 =====
-// end tabbed area
-
-== Permissions by workload
-Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
-
-//=== Permissions for storage workloads
-
-//No input from team
-
-=== Permissions for database workloads
 The following table displays the permissions for database workloads. 
 
 .Table of permissions for database workloads
