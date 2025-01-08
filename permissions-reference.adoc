@@ -1035,7 +1035,7 @@ a|
 |===
 . Permission is restricted to resources starting with WLMDB.
 . "iam:CreateServiceLinkedRole" limited by "iam:AWSServiceName": "ec2.amazonaws.com"*
-. "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com""*
+. "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com"*
 ====
 
 === Permissions for GenAI workloads
@@ -1064,62 +1064,67 @@ The following table displays the permissions for GenAI workloads.
 | Automate
 
 | List regions for the AI engine deployment wizard
-| cloudformation:DescribeStacks
+| ec2:DescribeRegions
 | Deployment
 | Automate
 
 | Display AI engine tags 
-| cloudformation:DescribeStacks
+| ec2:DescribeTags
 | Deployment
 | Automate
 
 | List VPC endpoints before AI engine stack creation
-| cloudformation:DescribeStacks
+| ec2:CreateVpcEndpoint
 | Deployment
 | Automate
 
 | Create an AI engine security group during the AI engine stack creation during deploy and rebuild operations
-| cloudformation:DescribeStacks
+| ec2:CreateSecurityGroup
 | Deployment
 | Automate
 
 | Tag resources created by AI engine stack creation during deploy and rebuild operations
-| cloudformation:DescribeStacks
+| ec2:CreateTags
 | Deployment
 | Automate
 
 | List VPCs during AI engine deployment wizard
-| cloudformation:DescribeStacks
+| ec2:DescribeVpcs
+| Deployment
+| Automate
+
+| To list subnets on the ai-engine deployment wizard
+| ec2:DescribeSubnets
 | Deployment
 | Automate
 
 | Get route tables during AI engine deployment and rebuild
-| cloudformation:DescribeStacks
+| ec2:DescribeRouteTables
 | Deployment
 | Automate
 
 | List key-pairs during AI engine deployment wizard
-| cloudformation:DescribeStacks
+| ec2:DescribeKeyPairs
 | Deployment
 | Automate
 
 | List security groups during AI engine stack creation (to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
+| ec2:DescribeSecurityGroups
 | Deployment
 | Automate
 
 | Get VPC endpoints to determine if any should be created during the AI engine deployment
-| cloudformation:DescribeStacks
+| ec2:DescribeVpcEndpoints
 | Deployment
 | Automate
 
 | List instances to find out the AI engine state
-| cloudformation:DescribeStacks
+| ec2:DescribeInstances
 | Troubleshooting
 | Automate
 
 | List images during the AI engine stack creation during deploy and rebuild operations
-| cloudformation:DescribeStacks
+| ec2:DescribeImages
 | Deployment
 | Automate
 
@@ -1128,7 +1133,7 @@ The following table displays the permissions for GenAI workloads.
 | ec2:RevokeSecurityGroupIngress | Deployment | Automate
 
 | Run AI engine during cloudformation stack creation during deploy and rebuild operations
-| cloudformation:DescribeStacks
+| ec2:RunInstances
 | Deployment
 | Automate
 
@@ -1136,38 +1141,38 @@ The following table displays the permissions for GenAI workloads.
 | ec2:AuthorizeSecurityGroupEgress | Deployment | Automate
 | ec2:AuthorizeSecurityGroupIngress | Deployment | Automate
 
-| Query Amazon Bedrock / Amazon CloudWatch logging during AI engine deployment
-| cloudformation:DescribeStacks
+| Query Amazon Bedrock / Amazon CloudWatch logging status during AI engine deployment
+| bedrock:GetModelInvocationLoggingConfiguration
 | Deployment
 | Automate
 
 | To initiate chat request to one of the foundation models
-| cloudformation:DescribeStacks
+| bedrock:InvokeModelWithResponseStream
 | Deployment
 | Automate
 
 | Begin chat/embedding request for foundation models
-| cloudformation:DescribeStacks
+| bedrock:InvokeModel
 | Deployment
 | Automate
 
 | Show the available foundation models in a region
-| cloudformation:DescribeStacks
+| bedrock:ListFoundationModels
 | Deployment
 | Automate
 
 | Get regions that support FSx and Bedrock during the AI engine wizard
-| cloudformation:DescribeStacks
+| ssm:GetParametersByPath
 | Deployment
 | Automate
 
 | Get latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
-| cloudformation:DescribeStacks
+| ssm:GetParameters
 | Deployment
 | Automate
 
 | Get the SSM response from the command sent to the AI engine
-| cloudformation:DescribeStacks
+| ssm:GetCommandInvocation
 | Deployment
 | Automate
 
@@ -1191,11 +1196,6 @@ The following table displays the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| List security groups during AI engine stack creation (to find security groups on the private endpoints)
-| cloudformation:DescribeStacks
-| Deployment
-| Automate
-
 | List FSx file systems during the "Create knowledgebase" wizard
 | fsx:DescribeVolumes
 | Knowledge base creation
@@ -1206,7 +1206,7 @@ The following table displays the permissions for GenAI workloads.
 | Knowledge base creation
 | Automate
 
-| Manage knowledgebase on the AI engine during rebuild operation
+| Manage knowledgebases on the AI engine during rebuild operations
 | fsx:ListTagsForResource
 | Troubleshooting
 | Automate
