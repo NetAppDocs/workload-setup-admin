@@ -18,7 +18,7 @@ To use BlueXP workload factory features and services, you'll need to provide per
 == Why use permissions
 When you provide read or automate mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
 
-For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If SSM is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
+For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == Permissions by workload
 Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
