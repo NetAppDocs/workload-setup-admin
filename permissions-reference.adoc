@@ -222,7 +222,7 @@ Select your operational mode to view the required IAM policies:
         "ssm:UpdateAssociationStatus",
         "ssm:UpdateInstanceAssociationStatus",
         "ssm:UpdateInstanceInformation",
-        "ssmmessages:*"
+        "ssmmessages:*",
         "compute-optimizer:GetEnrollmentStatus",
         "compute-optimizer:PutRecommendationPreferences",
         "compute-optimizer:GetEffectiveRecommendationPreferences",
@@ -1042,235 +1042,228 @@ a|
 
 The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-Select your operational mode to view the required IAM policies:
+GenAI IAM policies are only available in Operate mode:
 
-[role="tabbed-block"]
-=====
-.Operate mode
---
 [source,json]
 {
-	"operate": {
-		"Version": "2012-10-17",
-		"Statement": [
-			{
-				"Sid": "CloudformationGroup",
-				"Effect": "Allow",
-				"Action": [
-					"cloudformation:CreateStack",
-					"cloudformation:DescribeStacks"
-				],
-				"Resource": "arn:aws:cloudformation:*:*:stack/wlmai*/*"
-			},
-			{
-				"Sid": "EC2Group",
-				"Effect": "Allow",
-				"Action": [
-					"ec2:AuthorizeSecurityGroupEgress",
-					"ec2:AuthorizeSecurityGroupIngress"
-				],
-				"Resource": "*",
-				"Condition": {
-					"StringLike": {
-						"ec2:ResourceTag/aws:cloudformation:stack-name": "wlmai*"
-					}
-				}
-			},
-			{
-				"Sid": "EC2DescribeGroup",
-				"Effect": "Allow",
-				"Action": [
-					"ec2:DescribeRegions",
-					"ec2:DescribeTags",
-					"ec2:CreateVpcEndpoint",
-					"ec2:CreateSecurityGroup",
-					"ec2:CreateTags",
-					"ec2:DescribeVpcs",
-					"ec2:DescribeSubnets",
-					"ec2:DescribeRouteTables",
-					"ec2:DescribeKeyPairs",
-					"ec2:DescribeSecurityGroups",
-					"ec2:DescribeVpcEndpoints",
-					"ec2:DescribeInstances",
-					"ec2:DescribeImages",
-					"ec2:RevokeSecurityGroupEgress",
-					"ec2:RevokeSecurityGroupIngress",
-					"ec2:RunInstances"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "IAMGroup",
-				"Effect": "Allow",
-				"Action": [
-					"iam:CreateRole",
-					"iam:CreateInstanceProfile",
-					"iam:AddRoleToInstanceProfile",
-					"iam:PutRolePolicy",
-					"iam:SimulatePrincipalPolicy",
-					"iam:GetRolePolicy",
-					"iam:GetRole",
-					"iam:TagRole"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "IAMGroup2",
-				"Effect": "Allow",
-				"Action": "iam:PassRole",
-				"Resource": "*",
-				"Condition": {
-					"StringEquals": {
-						"iam:PassedToService": "ec2.amazonaws.com"
-					}
-				}
-			},
-			{
-				"Sid": "FSXNGroup",
-				"Effect": "Allow",
-				"Action": [
-					"fsx:DescribeVolumes",
-					"fsx:DescribeFileSystems",
-					"fsx:DescribeStorageVirtualMachines",
-					"fsx:ListTagsForResource"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "FSXNGroup2",
-				"Effect": "Allow",
-				"Action": [
-					"fsx:UntagResource",
-					"fsx:TagResource"
-				],
-				"Resource": [
-					"arn:aws:fsx:*:*:volume/*/*",
-					"arn:aws:fsx:*:*:storage-virtual-machine/*/*"
-				]
-			},
-			{
-				"Sid": "BedrockGroup",
-				"Effect": "Allow",
-				"Action": [
-					"bedrock:InvokeModelWithResponseStream",
-					"bedrock:InvokeModel",
-					"bedrock:ListFoundationModels",
-					"bedrock:GetModelInvocationLoggingConfiguration"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "SSMParameterStore",
-				"Effect": "Allow",
-				"Action": [
-					"ssm:GetParameter",
-					"ssm:PutParameter"
-				],
-				"Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmai/*"
-			},
-			{
-				"Sid": "SSM",
-				"Effect": "Allow",
-				"Action": [
-					"ssm:GetParameters",
-					"ssm:GetParametersByPath"
-				],
-				"Resource": "arn:aws:ssm:*:*:parameter/aws/service/*"
-			},
-			{
-				"Sid": "SSMMessages",
-				"Effect": "Allow",
-				"Action": [
-					"ssm:GetCommandInvocation"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "SSMCommandDocument",
-				"Effect": "Allow",
-				"Action": [
-					"ssm:SendCommand"
-				],
-				"Resource": [
-					"arn:aws:ssm:*:*:document/AWS-RunShellScript"
-				]
-			},
-			{
-				"Sid": "SSMCommandInstance",
-				"Effect": "Allow",
-				"Action": [
-					"ssm:SendCommand",
-					"ssm:GetConnectionStatus"
-				],
-				"Resource": [
-					"arn:aws:ec2:*:*:instance/*"
-				],
-				"Condition": {
-					"StringLike": {
-						"ssm:resourceTag/aws:cloudformation:stack-name": "wlmai-*"
-					}
-				}
-			},
-			{
-				"Sid": "KMS",
-				"Effect": "Allow",
-				"Action": [
-					"kms:GenerateDataKey",
-					"kms:Decrypt"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "SNS",
-				"Effect": "Allow",
-				"Action": [
-					"sns:Publish"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "CloudWatch",
-				"Effect": "Allow",
-				"Action": [
-					"logs:DescribeLogGroups"
-				],
-				"Resource": "*"
-			},
-			{
-				"Sid": "CloudWatchAiEngine",
-				"Effect": "Allow",
-				"Action": [
-					"logs:CreateLogGroup",
-					"logs:PutRetentionPolicy",
-					"logs:TagResource",
-					"logs:DescribeLogStreams"
-				],
-				"Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*"
-			},
-			{
-				"Sid": "CloudWatchAiEngineLogStream",
-				"Effect": "Allow",
-				"Action": [
-					"logs:GetLogEvents"
-				],
-				"Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
-			},
-			{
-				"Sid": "CloudWatch2",
-				"Effect": "Allow",
-				"Action": [
-					"logs:CreateLogGroup",
-					"logs:PutRetentionPolicy",
-					"logs:TagResource"
-				],
-				"Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
-			}
-		]
-	}
+  "operate": {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Sid": "CloudformationGroup",
+        "Effect": "Allow",
+        "Action": [
+          "cloudformation:CreateStack",
+          "cloudformation:DescribeStacks"
+        ],
+        "Resource": "arn:aws:cloudformation:*:*:stack/wlmai*/*"
+      },
+      {
+        "Sid": "EC2Group",
+        "Effect": "Allow",
+        "Action": [
+          "ec2:AuthorizeSecurityGroupEgress",
+          "ec2:AuthorizeSecurityGroupIngress"
+        ],
+        "Resource": "*",
+        "Condition": {
+          "StringLike": {
+            "ec2:ResourceTag/aws:cloudformation:stack-name": "wlmai*"
+          }
+        }
+      },
+      {
+        "Sid": "EC2DescribeGroup",
+        "Effect": "Allow",
+        "Action": [
+          "ec2:DescribeRegions",
+          "ec2:DescribeTags",
+          "ec2:CreateVpcEndpoint",
+          "ec2:CreateSecurityGroup",
+          "ec2:CreateTags",
+          "ec2:DescribeVpcs",
+          "ec2:DescribeSubnets",
+          "ec2:DescribeRouteTables",
+          "ec2:DescribeKeyPairs",
+          "ec2:DescribeSecurityGroups",
+          "ec2:DescribeVpcEndpoints",
+          "ec2:DescribeInstances",
+          "ec2:DescribeImages",
+          "ec2:RevokeSecurityGroupEgress",
+          "ec2:RevokeSecurityGroupIngress",
+          "ec2:RunInstances"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "IAMGroup",
+        "Effect": "Allow",
+        "Action": [
+          "iam:CreateRole",
+          "iam:CreateInstanceProfile",
+          "iam:AddRoleToInstanceProfile",
+          "iam:PutRolePolicy",
+          "iam:SimulatePrincipalPolicy",
+          "iam:GetRolePolicy",
+          "iam:GetRole",
+          "iam:TagRole"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "IAMGroup2",
+        "Effect": "Allow",
+        "Action": "iam:PassRole",
+        "Resource": "*",
+        "Condition": {
+          "StringEquals": {
+            "iam:PassedToService": "ec2.amazonaws.com"
+          }
+        }
+      },
+      {
+        "Sid": "FSXNGroup",
+        "Effect": "Allow",
+        "Action": [
+          "fsx:DescribeVolumes",
+          "fsx:DescribeFileSystems",
+          "fsx:DescribeStorageVirtualMachines",
+          "fsx:ListTagsForResource"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "FSXNGroup2",
+        "Effect": "Allow",
+        "Action": [
+          "fsx:UntagResource",
+          "fsx:TagResource"
+        ],
+        "Resource": [
+          "arn:aws:fsx:*:*:volume/*/*",
+          "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
+        ]
+      },
+      {
+        "Sid": "BedrockGroup",
+        "Effect": "Allow",
+        "Action": [
+          "bedrock:InvokeModelWithResponseStream",
+          "bedrock:InvokeModel",
+          "bedrock:ListFoundationModels",
+          "bedrock:GetModelInvocationLoggingConfiguration"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "SSMParameterStore",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:GetParameter",
+          "ssm:PutParameter"
+        ],
+        "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmai/*"
+      },
+      {
+        "Sid": "SSM",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:GetParameters",
+          "ssm:GetParametersByPath"
+        ],
+        "Resource": "arn:aws:ssm:*:*:parameter/aws/service/*"
+      },
+      {
+        "Sid": "SSMMessages",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:GetCommandInvocation"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "SSMCommandDocument",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:SendCommand"
+        ],
+        "Resource": [
+          "arn:aws:ssm:*:*:document/AWS-RunShellScript"
+        ]
+      },
+      {
+        "Sid": "SSMCommandInstance",
+        "Effect": "Allow",
+        "Action": [
+          "ssm:SendCommand",
+          "ssm:GetConnectionStatus"
+        ],
+        "Resource": [
+          "arn:aws:ec2:*:*:instance/*"
+        ],
+        "Condition": {
+          "StringLike": {
+            "ssm:resourceTag/aws:cloudformation:stack-name": "wlmai-*"
+          }
+        }
+      },
+      {
+        "Sid": "KMS",
+        "Effect": "Allow",
+        "Action": [
+          "kms:GenerateDataKey",
+          "kms:Decrypt"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "SNS",
+        "Effect": "Allow",
+        "Action": [
+          "sns:Publish"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "CloudWatch",
+        "Effect": "Allow",
+        "Action": [
+          "logs:DescribeLogGroups"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "CloudWatchAiEngine",
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:PutRetentionPolicy",
+          "logs:TagResource",
+          "logs:DescribeLogStreams"
+        ],
+        "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*"
+      },
+      {
+        "Sid": "CloudWatchAiEngineLogStream",
+        "Effect": "Allow",
+        "Action": [
+          "logs:GetLogEvents"
+        ],
+        "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
+      },
+      {
+        "Sid": "CloudWatch2",
+        "Effect": "Allow",
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:PutRetentionPolicy",
+          "logs:TagResource"
+        ],
+        "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+      }
+    ]
+  }
 }
---
-=====
-
 
 The following table provides details about the permissions for GenAI workloads. 
 
@@ -1508,15 +1501,15 @@ Select your operational mode to view the required IAM policies:
 {
   "Effect": "Allow",
   "Action": [
-      "ec2:DescribeRegions",
-      "ec2:DescribeAvailabilityZones",
-      "ec2:DescribeVpcs",
-      "ec2:DescribeSecurityGroups",
-      "ec2:DescribeSubnets",
-      "ssm:GetParametersByPath",
-      "kms:DescribeKey",
-      "kms:ListKeys",
-      "kms:ListAliases"
+    "ec2:DescribeRegions",
+    "ec2:DescribeAvailabilityZones",
+    "ec2:DescribeVpcs",
+    "ec2:DescribeSecurityGroups",
+    "ec2:DescribeSubnets",
+    "ssm:GetParametersByPath",
+    "kms:DescribeKey",
+    "kms:ListKeys",
+    "kms:ListAliases"
   ],
   "Resource": "*"
 }
@@ -1552,8 +1545,8 @@ Select your operational mode to view the required IAM policies:
         "kms:GenerateDataKey",
         "kms:Decrypt",
         "kms:CreateGrant"
-        ],
-        "Resource": "*"
+      ],
+      "Resource": "*"
     },
     {
       "Effect": "Allow",
