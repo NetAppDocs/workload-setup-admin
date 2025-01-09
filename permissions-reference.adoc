@@ -1044,6 +1044,7 @@ The IAM policies for VMware workloads provide the permissions that workload fact
 
 GenAI IAM policies are only available in Operate mode:
 
+.IAM policies for GenAI workloads
 [%collapsible]
 ====
 [source,json]
@@ -1494,6 +1495,7 @@ The IAM policies for VMware workloads provide the permissions that workload fact
 
 Select your operational mode to view the required IAM policies:
 
+.IAM policies for VMware workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
