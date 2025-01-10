@@ -28,7 +28,7 @@ The IAM policies available for Storage provide the permissions that workload fac
 
 Select your operational mode to view the required IAM policies:
 
-.IAM policies per operational mode
+.IAM policies for Storage
 [%collapsible]
 ====
 [role="tabbed-block"]
@@ -322,12 +322,12 @@ a|
 
 ====
 
-=== Permissions for database workloads
-The IAM policies available for database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+=== Permissions for Databases workloads
+The IAM policies available for Databases workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
-.IAM policies per operational mode
+.IAM policies for Databases workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
