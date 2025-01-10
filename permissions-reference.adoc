@@ -23,15 +23,313 @@ For database workloads for example, when workload factory is granted with the re
 == Permissions by workload
 Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
-//=== Permissions for storage workloads
+=== Permissions for storage workloads
+The IAM policies available provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-//No input from team
+Select your operational mode to view the required IAM policies:
+
+.IAM policies per operational mode
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.Read mode
+--
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:Describe*",
+        "fsx:ListTagsForResource",
+        "ec2:Describe*",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+--
+.Automate mode
+--
+[source,json]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:*",
+        "ec2:Describe*",
+        "ec2:CreateTags",
+        "ec2:CreateSecurityGroup",
+        "iam:CreateServiceLinkedRole",
+        "kms:Describe*",
+        "elasticfilesystem:Describe*",
+        "kms:List*",
+        "kms:CreateGrant",
+        "cloudwatch:PutMetricData",
+        "cloudwatch:GetMetricData",
+        "iam:SimulatePrincipalPolicy",
+        "cloudwatch:GetMetricStatistics"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:DeleteSecurityGroup"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "ec2:ResourceTag/AppCreator": "NetappFSxWF"
+        }
+      }
+    }
+  ]
+}
+--
+====
+
+The following table displays the permissions for database workloads. 
+
+.Table of permissions for Storage
+[%collapsible]
+====
+[cols="2, 2, 1, 1",options="header"]
+|===
+
+| Purpose
+| Action
+| Where used
+| Mode
+
+.17+| View and manage FSx for ONTAP resources
+| fsx:CreateFileSystem*
+| Inventory
+| Automate
+| fsx:CreateStorageVirtualMachine*
+| Inventory
+| Automate
+| fsx:DeleteFileSystem*
+| Inventory
+| Automate
+| fsx:DeleteStorageVirtualMachine*
+| Inventory
+| Automate
+| fsx:DescribeFileSystems*
+| Inventory
+| Automate
+| fsx:DescribeStorageVirtualMachines*
+| Inventory
+| Automate
+| fsx:UpdateFileSystem*
+| Inventory
+| Automate
+| fsx:UpdateStorageVirtualMachine*
+| Inventory
+| Automate
+| fsx:CreateVolume*
+| Inventory
+| Automate
+| fsx:DescribeVolumes*
+| Inventory
+| Automate
+| fsx:UpdateVolume*
+| Inventory
+| Automate
+| fsx:DeleteVolume*
+| Inventory
+| Automate
+| fsx:TagResource*
+| Inventory
+| Automate
+| fsx:UntagResource*
+| Inventory
+| Automate
+| fsx:DescribeBackups*
+| Inventory
+| Automate
+| fsx:CreateBackup*
+| Inventory
+| Automate
+| fsx:CreateVolumeFromBackup*
+| Inventory
+| Automate
+
+.5+| Get lists and details of file systems, storage VMs, volumes and backups.  
+| fsx:DescribeFileSystems*
+| ?
+| Read
+| fsx:DescribeStorageVirtualMachines*
+| ?
+| Read
+| fsx:DescribeVolumes*
+| ?
+| Read
+| fsx:DeleteVolume* - *Should this be here?*
+| ?
+| Read
+| fsx:DescribeBackups*
+| ?
+| Read
+
+| List tags for FSx for ONTAP resources
+| fsx:ListTagsForResource
+| ?
+a|
+* Read
+* Automate
+
+.9+| Get details to fill in the FSx for ONTAP file system deployment form
+| ec2:DescribeVpcs 
+a| 
+* Deployment 
+* Explore savings 
+a|
+* Read
+* Automate
+| ec2:DescribeSubnets 
+a| 
+* Deployment 
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeRegions
+a|
+* Deployment 
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeSecurityGroups 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeRouteTables 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeNetworkInterfaces 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeVolumeStatus 
+a| 
+* Deployment
+* Explore savings
+a|
+* Read
+* Automate
+| ec2:DescribeVolumes 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeInstances 
+a| 
+* Deployment
+* Explore savings
+a|
+* Read
+* Automate
+
+| Create security group for an FSx for ONTAP file system
+| ec2:CreateSecurityGroup
+| Deployment
+| Automate
+
+| Add tags to a security group for an FSx for ONTAP file system
+| ec2:CreateTags
+| Deployment
+| Automate
+
+.3+| Get KMS key details and use for FSx for ONTAP encryption
+| kms:CreateGrant 
+| Deployment 
+| Automate
+| kms:Describe* 
+| Deployment 
+| Automate
+| kms:List* 
+| Deployment 
+| Automate
+
+| Describe Elastic File System in the savings calculator
+| elasticfilesystem:Describe*
+| Explore savings
+| Read
+
+| Used to report CloudWatch metrics
+| cloudwatch:PutMetricData
+| Deployment
+| Automate
+
+.2+| Get file system and volume metrics
+| cloudwatch:GetMetricData
+| ?
+a|
+* Read
+* Automate
+| cloudwatch:GetMetricStatistics
+| ?
+a|
+* Read
+* Automate
+
+// Add when available - may be in January 2025 sprint because it is for Databases
+//| Simulate operations
+//| iam:SimulatePrincipalPolicy
+//| ?
+//| Automate
+
+.4+| Used for file system creation
+| ec2:AuthorizeSecurityGroupEgress
+| Deployment
+| Automate
+| ec2:AuthorizeSecurityGroupIngress
+| Deployment
+| Automate
+| ec2:RevokeSecurityGroupIngress
+| Deployment
+| Automate
+| ec2:DeleteSecurityGroup 
+| Deployment
+| Automate
+
+====
 
 === Permissions for database workloads
 The IAM policies available provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
+.IAM policies per operational mode
+[%collapsible]
+====
 [role="tabbed-block"]
 =====
 .Read mode
