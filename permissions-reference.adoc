@@ -76,7 +76,6 @@ Select your operational mode to view the required IAM policies:
         "kms:CreateGrant",
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
-        "iam:SimulatePrincipalPolicy",
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
