@@ -23,8 +23,8 @@ For database workloads for example, when workload factory is granted with the re
 == Permissions by workload
 Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
-=== Permissions for storage workloads
-The IAM policies available provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+=== Permissions for Storage
+The IAM policies available for Storage provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -323,7 +323,7 @@ a|
 ====
 
 === Permissions for database workloads
-The IAM policies available provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -596,7 +596,9 @@ Select your operational mode to view the required IAM policies:
   ]
 }
 --
+=====
 ====
+
 The following table displays the permissions for database workloads. 
 
 .Table of permissions for database workloads
@@ -1335,7 +1337,7 @@ a|
 . Permission is restricted to resources starting with WLMDB.
 . "iam:CreateServiceLinkedRole" limited by "iam:AWSServiceName": "ec2.amazonaws.com"*
 . "iam:PassRole" limited by "iam:PassedToService": "ec2.amazonaws.com"*
-
+====
 
 === Permissions for GenAI workloads
 
