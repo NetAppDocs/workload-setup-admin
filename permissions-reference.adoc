@@ -207,6 +207,7 @@ a|
 
 | List tags for FSx for ONTAP resources
 | fsx:ListTagsForResource
+| Inventory
 a|
 * Read
 * Automate
