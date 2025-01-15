@@ -114,149 +114,12 @@ The following table displays the permissions for Storage.
 | Where used
 | Mode
 
-.17+| View and manage FSx for ONTAP resources
+| Create an FSx for ONTAP file system
 | fsx:CreateFileSystem*
-| Inventory
-| Automate
-| fsx:CreateStorageVirtualMachine*
-| Inventory
-| Automate
-| fsx:DeleteFileSystem*
-| Inventory
-| Automate
-| fsx:DeleteStorageVirtualMachine*
-| Inventory
-| Automate
-| fsx:DescribeFileSystems*
-| Inventory
-| Automate
-| fsx:DescribeStorageVirtualMachines*
-| Inventory
-| Automate
-| fsx:UpdateFileSystem*
-| Inventory
-| Automate
-| fsx:UpdateStorageVirtualMachine*
-| Inventory
-| Automate
-| fsx:CreateVolume*
-| Inventory
-| Automate
-| fsx:DescribeVolumes*
-| Inventory
-| Automate
-| fsx:UpdateVolume*
-| Inventory
-| Automate
-| fsx:DeleteVolume*
-| Inventory
-| Automate
-| fsx:TagResource*
-| Inventory
-| Automate
-| fsx:UntagResource*
-| Inventory
-| Automate
-| fsx:DescribeBackups*
-| Inventory
-| Automate
-| fsx:CreateBackup*
-| Inventory
-| Automate
-| fsx:CreateVolumeFromBackup*
-| Inventory
+| Deployment
 | Automate
 
-.5+| Get lists and details of file systems, storage VMs, volumes and backups.  
-| fsx:DescribeFileSystems*
-| ?
-| Read
-| fsx:DescribeStorageVirtualMachines*
-| ?
-| Read
-| fsx:DescribeVolumes*
-| ?
-| Read
-| fsx:DeleteVolume* - *Should this be here?*
-| ?
-| Read
-| fsx:DescribeBackups*
-| ?
-| Read
-
-| List tags for FSx for ONTAP resources
-| fsx:ListTagsForResource
-| ?
-a|
-* Read
-* Automate
-
-.9+| Get details to fill in the FSx for ONTAP file system deployment form
-| ec2:DescribeVpcs 
-a| 
-* Deployment 
-* Explore savings 
-a|
-* Read
-* Automate
-| ec2:DescribeSubnets 
-a| 
-* Deployment 
-* Explore savings
-a| 
-* Read
-* Automate
-| ec2:DescribeRegions
-a|
-* Deployment 
-* Explore savings
-a| 
-* Read
-* Automate
-| ec2:DescribeSecurityGroups 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeRouteTables 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeNetworkInterfaces 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeVolumeStatus 
-a| 
-* Deployment
-* Explore savings
-a|
-* Read
-* Automate
-| ec2:DescribeVolumes 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeInstances 
-a| 
-* Deployment
-* Explore savings
-a|
-* Read
-* Automate
-
-| Create security group for an FSx for ONTAP file system
+| Create a security group for an FSx for ONTAP file system
 | ec2:CreateSecurityGroup
 | Deployment
 | Automate
@@ -265,6 +128,153 @@ a|
 | ec2:CreateTags
 | Deployment
 | Automate
+
+.2+| Authorize security group egress and ingress for an FSx for ONTAP file system
+| ec2:AuthorizeSecurityGroupEgress
+| Deployment
+| Automate
+| ec2:AuthorizeSecurityGroupIngress
+| Deployment
+| Automate
+
+.+2| Manage security group egress and ingress for an FSx for ONTAP file system
+| ec2:RevokeSecurityGroupIngress
+| Management operations
+| Automate
+| ec2:DeleteSecurityGroup 
+| Management operations
+| Automate
+
+.16+| Create, view, and manage FSx for ONTAP file system resources
+| fsx:CreateVolume*
+| Management operations
+| Automate
+| fsx:TagResource*
+| Management operations
+| Automate
+| fsx:CreateStorageVirtualMachine*
+| Management operations
+| Automate
+| fsx:DeleteFileSystem*
+| Management operations
+| Automate
+| fsx:DeleteStorageVirtualMachine*
+| Management operations
+| Automate
+| fsx:DescribeFileSystems*
+| Inventory
+a| 
+* Read 
+* Automate
+| fsx:DescribeStorageVirtualMachines*
+| Inventory
+a| 
+* Read
+* Automate
+| fsx:UpdateFileSystem*
+| Management operations
+| Automate
+| fsx:UpdateStorageVirtualMachine*
+| Management operations
+| Automate
+| fsx:DescribeVolumes*
+| Inventory
+a| 
+* Read
+* Automate
+| fsx:UpdateVolume*
+| Management operations
+| Automate
+| fsx:DeleteVolume*
+| Management operations
+a| 
+* Read
+* Automate
+| fsx:UntagResource*
+| Management operations
+| Automate
+| fsx:DescribeBackups*
+| Inventory
+a| 
+* Read 
+* Automate
+| fsx:CreateBackup*
+| Management operations
+| Automate
+| fsx:CreateVolumeFromBackup*
+| Management operations
+| Automate
+
+| List tags for FSx for ONTAP resources
+| fsx:ListTagsForResource
+a|
+* Read
+* Automate
+
+.9+| Get details to fill in the FSx for ONTAP file system deployment form
+| ec2:DescribeVpcs 
+a| 
+* Inventory
+* Explore savings 
+a|
+* Read
+* Automate
+| ec2:DescribeSubnets 
+a| 
+* Inventory
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeRegions
+a|
+* Inventory 
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeSecurityGroups 
+a| 
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeRouteTables 
+a| 
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeNetworkInterfaces 
+a| 
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeVolumeStatus 
+a| 
+* Inventory
+* Explore savings
+a|
+* Read
+* Automate
+| ec2:DescribeVolumes 
+a| 
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeInstances 
+a| 
+* Inventory
+* Explore savings
+a|
+* Read
+* Automate
 
 .3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
@@ -282,19 +292,19 @@ a|
 | Explore savings
 | Read
 
-| Used to report CloudWatch metrics
+| Report CloudWatch metrics
 | cloudwatch:PutMetricData
-| Deployment
+| Management operations
 | Automate
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
-| ?
+| Management operations
 a|
 * Read
 * Automate
 | cloudwatch:GetMetricStatistics
-| ?
+| Management operations
 a|
 * Read
 * Automate
@@ -304,20 +314,6 @@ a|
 //| iam:SimulatePrincipalPolicy
 //| ?
 //| Automate
-
-.4+| Used for file system creation
-| ec2:AuthorizeSecurityGroupEgress
-| Deployment
-| Automate
-| ec2:AuthorizeSecurityGroupIngress
-| Deployment
-| Automate
-| ec2:RevokeSecurityGroupIngress
-| Deployment
-| Automate
-| ec2:DeleteSecurityGroup 
-| Deployment
-| Automate
 
 ====
 
