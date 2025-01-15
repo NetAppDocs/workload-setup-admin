@@ -137,7 +137,7 @@ The following table displays the permissions for Storage.
 | Deployment
 | Automate
 
-.+2| Manage security group egress and ingress for an FSx for ONTAP file system
+.2+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
 | Automate
