@@ -187,14 +187,12 @@ a|
 | Automate
 | fsx:DeleteVolume*
 | Management operations
-a| 
-* Read
-* Automate
+| Automate
 | fsx:UntagResource*
 | Management operations
 | Automate
 | fsx:DescribeBackups*
-| Inventory
+| Management operations
 a| 
 * Read 
 * Automate
@@ -212,56 +210,58 @@ a|
 * Read
 * Automate
 
-.9+| Get details to fill in the FSx for ONTAP file system deployment form
+.7+| Get details to fill in the FSx for ONTAP file system deployment form
 | ec2:DescribeVpcs 
 a| 
-* Inventory
+* Deployment
 * Explore savings 
 a|
 * Read
 * Automate
 | ec2:DescribeSubnets 
 a| 
-* Inventory
+* Deployment
 * Explore savings
 a| 
 * Read
 * Automate
 | ec2:DescribeRegions
 a|
-* Inventory 
+* Deployment
 * Explore savings
 a| 
 * Read
 * Automate
 | ec2:DescribeSecurityGroups 
 a| 
-* Inventory
+* Deployment
 * Explore savings 
 a| 
 * Read
 * Automate
 | ec2:DescribeRouteTables 
 a| 
-* Inventory
+* Deployment
 * Explore savings 
 a| 
 * Read
 * Automate
 | ec2:DescribeNetworkInterfaces 
 a| 
-* Inventory
+* Deployment
 * Explore savings 
 a| 
 * Read
 * Automate
 | ec2:DescribeVolumeStatus 
 a| 
-* Inventory
+* Deployment
 * Explore savings
 a|
 * Read
 * Automate
+
+| Get volume details for EC2 instances
 | ec2:DescribeVolumes 
 a| 
 * Inventory
@@ -269,10 +269,10 @@ a|
 a| 
 * Read
 * Automate
+
+| Get details for EC2 instances
 | ec2:DescribeInstances 
-a| 
-* Inventory
-* Explore savings
+| Explore savings
 a|
 * Read
 * Automate
