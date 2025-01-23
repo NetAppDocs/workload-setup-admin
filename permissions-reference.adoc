@@ -1687,6 +1687,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+| Verify access to the foundation model
+| bedrock:GetFoundationModelAvailability
+| Troubleshooting
+| Automate
+
 | Get regions that support FSx and Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
@@ -1784,11 +1789,6 @@ The following table provides details about the permissions for GenAI workloads.
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 | logs:TagResource | Deployment | Automate
-
-| Verify access to the foundation model
-| bedrock:GetFoundationModelAvailability
-| Troubleshooting
-| Automate
 
 |===
 ====
