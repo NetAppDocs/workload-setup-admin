@@ -1689,7 +1689,7 @@ The following table provides details about the permissions for GenAI workloads.
 
 | Verify access to the foundation model
 | bedrock:GetFoundationModelAvailability
-| Troubleshooting
+| Deployment
 | Automate
 
 | Get regions that support FSx and Bedrock during the AI engine wizard
