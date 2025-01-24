@@ -1,0 +1,4 @@
+=== Permissions update for Databases
+The following permission is now available in _read_ mode for Databases: `iam:SimulatePrincipalPolicy`.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html#change-log[Permissions reference change log]
