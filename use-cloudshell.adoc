@@ -1,0 +1,57 @@
+---
+sidebar: sidebar
+permalink: use-cloudshell.html
+keywords: cloudshell, command line, aws cli, ontap cli, bluexp workload factory, workload factory
+summary: "You can use CloudShell from anywhere in the BlueXP workload factory user interface to issue AWS or ONTAP CLI commands."
+---
+
+= Use CloudShell in BlueXP workload factory
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Open CloudShell from anywhere in the BlueXP workload factory user interface to issue AWS or ONTAP CLI commands.
+
+== About this task
+BlueXP workload factory makes CloudShell available from anywhere in the workload factory console. CloudShell allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through workload factory's backend. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP account.
+
+CloudShell features include: 
+
+* Multiple CloudShell sessions: deploy multiple CloudShell sessions at one time to issue several sequences of commands in parallel, 
+* Multiple views: split CloudShell tab sessions so you can see two or more tabs horizontally or vertically, 
+* Session renaming: rename sessions as needed
+* Last session content persistence: re-open the last session if you close it by mistake. 
+
+== Deploy CloudShell
+You can deploy CloudShell from anywhere in the BlueXP workload factory console. You can also deploy CloudShell from Storage from within an FSx for ONTAP file system.
+
+.Steps
+
+tabbed block - anywhere in the BlueXP workload factory console
+. Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
+. Open CloudShell from the top navigation bar.
+. Select credentials and region for the CloudShell session.
+. Enter 'help' to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
+* link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For FSx for ONTAP, select *fsx* commands.
+* link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
+. 
+
+tabbed block - storage
+. Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
+. In *Storage*, select *Go to storage inventory*.
+. In the *FSx for ONTAP* tab, select the three-dot menu of the file system and then select *Open CloudShell terminal*.
+
+Workflows include: 
+
+
+Enter 'help' to view available commands and instructions
+Rename CloudShell terminal tab
+Duplicate CloudShell terminal tab
+Add new tab (Select context: credentials and region)
+Split tabs area so you can see two or more tabs horizontally or vertically
+Close CloudShell sessions
+Close one session 
+Close other tabs
+Close all tabs
+Re-open the last session - use the icon at the top 
+Open multiple CloudShell sessions to issue several sequences of commands in parallel.
