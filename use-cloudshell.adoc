@@ -38,7 +38,7 @@ You can deploy CloudShell from anywhere in the BlueXP workload factory console. 
 [role="tabbed-block"]
 ====
 
-.Deploy CloudShell from anywhere in the BlueXP workload factory console
+.Deploy from workload factory console
 --
 .Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
@@ -54,7 +54,7 @@ image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new Clou
 . Issue commands within the CloudShell session.
 --
 
-.Deploy CloudShell from Storage
+.Deploy from Storage
 --
 .Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
