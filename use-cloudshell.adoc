@@ -10,48 +10,129 @@ summary: "You can use CloudShell from anywhere in the BlueXP workload factory us
 :imagesdir: ./media/
 
 [.lead]
-Open CloudShell from anywhere in the BlueXP workload factory user interface to issue AWS or ONTAP CLI commands.
+Open CloudShell to execute AWS or ONTAP CLI commands from anywhere in the BlueXP workload factory user interface.
 
 == About this task
-BlueXP workload factory makes CloudShell available from anywhere in the workload factory console. CloudShell allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through workload factory's backend. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP account.
+CloudShell allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment from within the BlueXP workload factory user interface. It simulates terminal sessions in the browser, providing terminal features and proxying messages through workload factory's backend. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP account.
+
+//image:screenshot-cloudshell-horizontal-tab-view.png["Screenshot that shows CloudShell horizontal tab view from within the BlueXP workload factory user interface."]
 
 CloudShell features include: 
 
 * Multiple CloudShell sessions: deploy multiple CloudShell sessions at one time to issue several sequences of commands in parallel, 
-* Multiple views: split CloudShell tab sessions so you can see two or more tabs horizontally or vertically, 
+* Multiple views: split CloudShell tab sessions so you can view two or more tabs horizontally or vertically at the same time
 * Session renaming: rename sessions as needed
-* Last session content persistence: re-open the last session if you close it by mistake. 
+* Last session content persistence: re-open the last session if you close it by mistake
+* Settings: change the font size and output type
+
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
+
+== Before you begin
+CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
+
+NOTE: CloudShell is available for any AWS or ONTAP CLI command. However, if you want to work with FSx for ONTAP file systems, make sure issue the following command to work within a specific file system: `using fsx <file-system-name>`.
 
 == Deploy CloudShell
 You can deploy CloudShell from anywhere in the BlueXP workload factory console. You can also deploy CloudShell from Storage from within an FSx for ONTAP file system.
 
-.Steps
+[role="tabbed-block"]
+====
 
-tabbed block - anywhere in the BlueXP workload factory console
+.Deploy CloudShell from anywhere in the BlueXP workload factory console
+--
+.Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
 . Open CloudShell from the top navigation bar.
-. Select credentials and region for the CloudShell session.
-. Enter 'help' to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
-* link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For FSx for ONTAP, select *fsx* commands.
++
+image:screenshot-select-cloudshell-icon.png["Screenshot that shows the CloudShell icon in the top navigation bar."]
+. Select credentials and region for the CloudShell session and then select the arrow to continue.
++
+image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
+. Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
+* link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
-. 
+. Issue commands within the CloudShell session.
+--
 
-tabbed block - storage
+.Deploy CloudShell from Storage
+--
+.Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
 . In *Storage*, select *Go to storage inventory*.
-. In the *FSx for ONTAP* tab, select the three-dot menu of the file system and then select *Open CloudShell terminal*.
+. In the *FSx for ONTAP* tab, select the three-dot menu of the file system and then select *Open CloudShell*.
++
+A CloudShell session opens in the context of the selected file system.
+. Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
+* link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
+* link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
+. Issue commands within the CloudShell session.
+--
+====
 
-Workflows include: 
+== Rename a CloudShell session tab
+You can rename a CloudShell session tab to help you identify the session.
 
+.Steps
+. Select the three-dot menu of the CloudShell session tab.
+. Select *Rename*.
+. Enter a new name for the session tab and then click outside the tab name to set the new name.
 
-Enter 'help' to view available commands and instructions
-Rename CloudShell terminal tab
-Duplicate CloudShell terminal tab
-Add new tab (Select context: credentials and region)
-Split tabs area so you can see two or more tabs horizontally or vertically
-Close CloudShell sessions
-Close one session 
-Close other tabs
-Close all tabs
-Re-open the last session - use the icon at the top 
-Open multiple CloudShell sessions to issue several sequences of commands in parallel.
+.Result
+The new name appears in the CloudShell session tab.
+
+== Duplicate CloudShell session tab
+You can duplicate a CloudShell session tab to create a new session with the same name, credentials, and region. The code from the original tab isn't duplicated in the duplicated tab.
+
+.Steps
+. Select the three-dot menu of the CloudShell session tab.
+. Select *Duplicate*.
+
+.Result
+The new tab appears with the same name as the original tab. 
+
+== Close CloudShell session tabs
+You can close CloudShell tabs one at a time, close other tabs you're not working on, or close all tabs at once.
+
+.Steps
+. Select the three-dot menu of the CloudShell session tab.
+. Select one of the following: 
+.. Select "X" in the CloudShell tab window to close one tab at a time.
+.. Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
+.. Select *Close all tabs* to close all tabs.
+
+.Result
+The selected CloudShell session tabs close.
+
+== Split CloudShell session tabs
+You can split CloudShell session tabs to view two or more tabs at the same time.
+
+.Steps
+Drag and drop CloudShell session tabs to the top, bottom, left, or right of the CloudShell window to split the view.
+
+image:screenshot-cloudshell-split-view.png["Screenshot that shows two CloudShell tabs split horizontally. The tabs appear side by side."]
+
+== Re-open your last CloudShell session
+If by accident you close your CloudShell session, you can re-open it.
+
+.Steps
+. Select the CloudShell icon in the top navigation bar.
+
+image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
+
+.Result
+The latest CloudShell sessions open. 
+
+== Update settings for a CloudShell session 
+
+.Steps
+. Deploy a CloudShell session. 
+. In the CloudShell tab, select the settings icon.
++
+The settings dialog appears. 
+. Update font size and output type as needed.
++
+NOTE: Enriched output applies to JSON objects and table formatting. All other output appears as plain text. 
+. Select *Apply*. 
+
+.Result 
+The CloudShell settings update. 
