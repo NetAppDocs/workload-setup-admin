@@ -117,7 +117,7 @@ If by accident you close your CloudShell session, you can re-open it.
 .Steps
 . Select the CloudShell icon in the top navigation bar.
 
-image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
+image:screenshot-select-cloudshell-icon.png["Screenshot that shows the CloudShell icon in the top navigation bar."]
 
 .Result
 The latest CloudShell sessions open. 
@@ -135,4 +135,4 @@ NOTE: Enriched output applies to JSON objects and table formatting. All other ou
 . Select *Apply*. 
 
 .Result 
-The CloudShell settings update. 
+The CloudShell settings are updated. 
