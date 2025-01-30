@@ -99,9 +99,9 @@ You can close CloudShell tabs one at a time, close other tabs you're not working
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
 . Select one of the following: 
-.. Select "X" in the CloudShell tab window to close one tab at a time.
-.. Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
-.. Select *Close all tabs* to close all tabs.
+* Select "X" in the CloudShell tab window to close one tab at a time.
+* Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
+* Select *Close all tabs* to close all tabs.
 
 .Result
 The selected CloudShell session tabs close.
