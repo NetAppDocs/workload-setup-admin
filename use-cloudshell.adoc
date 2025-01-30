@@ -25,7 +25,9 @@ CloudShell features include:
 * Last session content persistence: re-open the last session if you close it by mistake
 * Settings preferences: change the font size and output type
 
-Diagram of CloudShell tab menu options:
+.Diagram of CloudShell tab menu options:
+This diagram shows the available menu options when you select the three-dot menu of a open CloudShell tab. The options include rename, duplicate, close other tabs, and close all.
++
 image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Before you begin
