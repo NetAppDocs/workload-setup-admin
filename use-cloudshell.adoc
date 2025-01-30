@@ -23,8 +23,9 @@ CloudShell features include:
 * Multiple views: split CloudShell tab sessions so you can view two or more tabs horizontally or vertically at the same time
 * Session renaming: rename sessions as needed
 * Last session content persistence: re-open the last session if you close it by mistake
-* Settings: change the font size and output type
+* Settings preferences: change the font size and output type
 
+Diagram of CloudShell tab menu options:
 image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Before you begin
@@ -106,7 +107,7 @@ The selected CloudShell session tabs close.
 == Split CloudShell session tabs
 You can split CloudShell session tabs to view two or more tabs at the same time.
 
-.Steps
+.Step
 Drag and drop CloudShell session tabs to the top, bottom, left, or right of the CloudShell window to split the view.
 
 image:screenshot-cloudshell-split-view.png["Screenshot that shows two CloudShell tabs split horizontally. The tabs appear side by side."]
@@ -123,6 +124,7 @@ image:screenshot-select-cloudshell-icon.png["Screenshot that shows the CloudShel
 The latest CloudShell sessions open. 
 
 == Update settings for a CloudShell session 
+You can update font and output type settings for CloudShell sessions. 
 
 .Steps
 . Deploy a CloudShell session. 
