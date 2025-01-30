@@ -25,10 +25,6 @@ CloudShell features include:
 * Last session content persistence: re-open the last session if you close it by mistake
 * Settings preferences: change the font size and output type
 
-.Diagram of CloudShell tab menu options:
-This diagram shows the available menu options when you select the three-dot menu of a open CloudShell tab. The options include rename, duplicate, close other tabs, and close all.
-+
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Before you begin
 CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
@@ -77,6 +73,8 @@ You can rename a CloudShell session tab to help you identify the session.
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
++
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select *Rename*.
 . Enter a new name for the session tab and then click outside the tab name to set the new name.
 
@@ -88,6 +86,8 @@ You can duplicate a CloudShell session tab to create a new session with the same
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
++
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select *Duplicate*.
 
 .Result
@@ -98,6 +98,8 @@ You can close CloudShell tabs one at a time, close other tabs you're not working
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
++
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select one of the following: 
 * Select "X" in the CloudShell tab window to close one tab at a time.
 * Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
