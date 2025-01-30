@@ -283,10 +283,14 @@ a|
 | Automate
 | kms:Describe* 
 | Deployment 
-| Automate
+a| 
+* Read
+* Automate
 | kms:List* 
 | Deployment 
-| Automate
+a| 
+* Read
+* Automate
 
 | Describe Elastic File System in the savings calculator
 | elasticfilesystem:Describe*
