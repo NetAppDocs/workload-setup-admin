@@ -1,5 +1,5 @@
 === CloudShell available in BlueXP workload factory console 
-BlueXP workload factory makes CloudShell available from anywhere in the workload factory console. CloudShell allows you to use the AWS and ONTAP credentials you've provided in your BlueXP account and execute AWS CLI commands or ONTAP CLI commands in a shell-like environment.
+CloudShell is available from anywhere in the BlueXP workload factory console. CloudShell allows you to use the AWS and ONTAP credentials that you've provided in your BlueXP account and execute AWS CLI commands or ONTAP CLI commands in a shell-like environment.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/use-cloudshell.html[Use CloudShell]
 
