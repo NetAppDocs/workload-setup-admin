@@ -29,7 +29,11 @@ CloudShell features include:
 == Before you begin
 CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
 
-NOTE: CloudShell is available for any AWS or ONTAP CLI command. However, if you want to work with FSx for ONTAP file systems, make sure issue the following command to work within a specific file system: `using fsx <file-system-name>`.
+NOTE: CloudShell is available for you to execute any AWS or ONTAP CLI command. However, if you want to work within the context of an FSx for ONTAP file system, make sure you issue the following command: `using fsx <file-system-name>`.
+
+The CloudShell tasks shown in this screenshot can be completed by selecting the three-dot menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
++
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Deploy CloudShell
 You can deploy CloudShell from anywhere in the BlueXP workload factory console. You can also deploy CloudShell from Storage from within an FSx for ONTAP file system.
@@ -73,8 +77,6 @@ You can rename a CloudShell session tab to help you identify the session.
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
-+
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select *Rename*.
 . Enter a new name for the session tab and then click outside the tab name to set the new name.
 
@@ -86,8 +88,6 @@ You can duplicate a CloudShell session tab to create a new session with the same
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
-+
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select *Duplicate*.
 
 .Result
@@ -98,8 +98,6 @@ You can close CloudShell tabs one at a time, close other tabs you're not working
 
 .Steps
 . Select the three-dot menu of the CloudShell session tab.
-+
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 . Select one of the following: 
 * Select "X" in the CloudShell tab window to close one tab at a time.
 * Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
