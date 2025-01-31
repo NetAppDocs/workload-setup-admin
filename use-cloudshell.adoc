@@ -31,10 +31,6 @@ CloudShell works in the context of your AWS credentials. To use CloudShell, you 
 
 NOTE: CloudShell is available for you to execute any AWS or ONTAP CLI command. However, if you want to work within the context of an FSx for ONTAP file system, make sure you issue the following command: `using fsx <file-system-name>`.
 
-The CloudShell tasks shown in this screenshot can be completed by selecting the three-dot menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
-+
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
-
 == Deploy CloudShell
 You can deploy CloudShell from anywhere in the BlueXP workload factory console. You can also deploy CloudShell from Storage from within an FSx for ONTAP file system.
 
@@ -71,6 +67,10 @@ A CloudShell session opens in the context of the selected file system.
 . Issue commands within the CloudShell session.
 --
 ====
+
+The CloudShell tasks shown in this screenshot can be completed by selecting the three-dot menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
+
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Rename a CloudShell session tab
 You can rename a CloudShell session tab to help you identify the session.
