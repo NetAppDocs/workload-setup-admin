@@ -22,7 +22,7 @@ include: _whatsnew/2025-02-02.adoc[]
 
 include::_whatsnew/2025-01-22.adoc[]
 
-== 05 January 2025
+== 5 January 2025
 
 include::_whatsnew/2025-01-05.adoc[]
 //end::whats-new[]

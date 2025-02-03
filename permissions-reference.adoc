@@ -1331,7 +1331,9 @@ a|
 | Validate permissions available in the role and compare with required permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-| Automate
+a| 
+* Read
+* Automate
 
 |===
 
@@ -2040,9 +2042,7 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
-//Example: 
-//=== 9 May 2024
 
-//The following permissions is now required for Cloud Volumes ONTAP:
+=== 3 February 2025
 
-//ec2:DescribeAvailabilityZones
+The following permission is now available in _read_ mode for Databases: `iam:SimulatePrincipalPolicy`.
