@@ -114,9 +114,7 @@ image:screenshot-cloudshell-split-view.png["Screenshot that shows two CloudShell
 If by accident you close your CloudShell session, you can re-open it.
 
 .Step
-Select the CloudShell icon in the top navigation bar.
-
-image:screenshot-select-cloudshell-icon.png["Screenshot that shows the CloudShell icon in the top navigation bar."]
+Select the CloudShell icon image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
 
 .Result
 The latest CloudShell sessions open. 
