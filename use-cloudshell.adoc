@@ -39,10 +39,8 @@ You can deploy CloudShell from anywhere in the BlueXP workload factory console. 
 --
 .Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
-. Open CloudShell from the top navigation bar.
-+
-image:screenshot-select-cloudshell-icon.png["Screenshot that shows the CloudShell icon in the top navigation bar."]
-. Select credentials and region for the CloudShell session and then select the arrow to continue.
+. Open CloudShell image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
+. In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
 image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
 . Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
