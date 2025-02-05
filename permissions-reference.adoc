@@ -1727,10 +1727,9 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.3+| Check the SSM connection to the AI engine
+.2+| Check the SSM connection to the AI engine
 | ssm:SendCommand | Deployment | Automate
 | ssm:GetConnectionStatus | Deployment | Automate
-| ssm:SendCommand | Deployment | Automate
 
 .8+| Create AI engine instance profile during stack creation during deploy and rebuild operations
 | iam:CreateRole | Deployment | Automate
@@ -1939,11 +1938,6 @@ The following table provides details about the permissions for VMware workloads.
 
 | Create and validate the CloudFormation template
 | cloudformation:CreateStack
-| Deployment
-| Automate
-
-| Add rules for the security group attached to provisioned EC2 instances
-| ec2:AuthorizeSecurityGroupIngress
 | Deployment
 | Automate
 
