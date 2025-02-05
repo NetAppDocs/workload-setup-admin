@@ -2097,17 +2097,17 @@ The following permission is now available in _read_ mode for Databases: `iam:Sim
 
 The following permissions are now available in _automate_ mode for VMware workloads:
 
-* cloudformation:CreateStack
-* fsx:TagResource
-* kms:Decrypt
-* ec2:DescribeImages
-* ec2:AuthorizeSecurityGroupIngress
-* ec2:CreateSecurityGroup
-* ec2:RunInstances
-* ec2:DescribeInstances
+* `cloudformation:CreateStack`
+* `fsx:TagResource`
+* `kms:Decrypt`
+* `ec2:DescribeImages`
+* `ec2:AuthorizeSecurityGroupIngress`
+* `ec2:CreateSecurityGroup`
+* `ec2:RunInstances`
+* `ec2:DescribeInstances`
 
 The following permissions are now available in _automate_ mode for GenAI workloads:
 
-* kms:GenerateDataKey
-* kms:Decrypt
-* sns:Publish
+* `kms:GenerateDataKey`
+* `kms:Decrypt`
+* `sns:Publish`
