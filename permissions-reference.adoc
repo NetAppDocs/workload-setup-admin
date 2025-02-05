@@ -137,7 +137,7 @@ The following table displays the permissions for Storage.
 | Deployment
 | Automate
 
-| ?
+| Granted role provides communication between FSx for ONTAP and other AWS services
 | iam:CreateServiceLinkedRole
 | Deployment
 | Automate
