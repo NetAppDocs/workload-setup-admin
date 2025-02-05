@@ -1620,6 +1620,15 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+.2+| Publish enrypted events to the WLMAI backend from the ai-engine stack 
+| kms:GenerateDataKey | Deployment | Automate
+| kms:Decrypt  | Deployment | Automate
+
+| To publish events and custom resources to the WLMAI backend from the ai-engine stack
+| sns:Publish 
+| Deployment
+| Automate
+
 | List VPCs during AI engine deployment wizard
 | ec2:DescribeVpcs
 | Deployment
@@ -1698,6 +1707,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+| Verify need to create CloudWatch log group during deploy and rebuild operations
+| logs:DescribeLogGroups
+| Deployment
+| Automate
+
 | Get regions that support FSx and Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
@@ -1766,11 +1780,6 @@ The following table provides details about the permissions for GenAI workloads.
 .2+| Save SSM secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
 | ssm:GetParameter | Deployment | Automate
 | ssm:PutParameter | Deployment | Automate
-
-| Verify need to create CloudWatch log group during deploy and rebuild operations
-| logs:DescribeLogGroups
-| Deployment
-| Automate
 
 .2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
@@ -1913,6 +1922,51 @@ The following table provides details about the permissions for VMware workloads.
 | Where used
 | Mode
 
+| Attach security groups and modify rules for the provisioned nodes
+| ec2:AuthorizeSecurityGroupIngress
+| Deployment
+| Automate
+
+| Create EBS volumes
+| ec2:CreateVolume
+| Deployment
+| Automate
+
+| Tag custom values for FSx for NetApp ONTAP resources created by VMware workloads
+| fsx:TagResource
+| Deployment
+| Automate
+
+| Create and validate the CloudFormation template
+| cloudformation:CreateStack
+| Deployment
+| Automate
+
+| Add rules for the security group attached to provisioned EC2 instances
+| ec2:AuthorizeSecurityGroupIngress
+| Deployment
+| Automate
+
+| Manage tags and network security on created instances
+| ec2:CreateSecurityGroup
+| Deployment
+| Automate
+
+| Start the created instances
+| ec2:RunInstances
+| Deployment
+| Automate
+
+| Get EC2 instance details
+| ec2:DescribeInstances
+| Deployment
+| Automate
+
+| List images during the stack creation during deploy and rebuild operations
+| ec2:DescribeImages
+| Deployment
+| Automate
+
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
 a| 
@@ -2046,3 +2100,20 @@ As permissions are added and removed, we'll note them in the sections below.
 === 3 February 2025
 
 The following permission is now available in _read_ mode for Databases: `iam:SimulatePrincipalPolicy`.
+
+The following permissions are now available in _automate_ mode for VMware workloads:
+
+* cloudformation:CreateStack
+* fsx:TagResource
+* kms:Decrypt
+* ec2:DescribeImages
+* ec2:AuthorizeSecurityGroupIngress
+* ec2:CreateSecurityGroup
+* ec2:RunInstances
+* ec2:DescribeInstances
+
+The following permissions are now available in _automate_ mode for GenAI workloads:
+
+* kms:GenerateDataKey
+* kms:Decrypt
+* sns:Publish
