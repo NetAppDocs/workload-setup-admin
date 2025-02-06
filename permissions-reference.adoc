@@ -1625,6 +1625,15 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+.2+| Publish enrypted events to the WLMAI backend from the ai-engine stack 
+| kms:GenerateDataKey | Deployment | Automate
+| kms:Decrypt  | Deployment | Automate
+
+| To publish events and custom resources to the WLMAI backend from the ai-engine stack
+| sns:Publish 
+| Deployment
+| Automate
+
 | List VPCs during AI engine deployment wizard
 | ec2:DescribeVpcs
 | Deployment
@@ -1703,6 +1712,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+| Verify need to create CloudWatch log group during deploy and rebuild operations
+| logs:DescribeLogGroups
+| Deployment
+| Automate
+
 | Get regions that support FSx and Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
@@ -1718,10 +1732,9 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.3+| Check the SSM connection to the AI engine
+.2+| Check the SSM connection to the AI engine
 | ssm:SendCommand | Deployment | Automate
 | ssm:GetConnectionStatus | Deployment | Automate
-| ssm:SendCommand | Deployment | Automate
 
 .8+| Create AI engine instance profile during stack creation during deploy and rebuild operations
 | iam:CreateRole | Deployment | Automate
@@ -1771,11 +1784,6 @@ The following table provides details about the permissions for GenAI workloads.
 .2+| Save SSM secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
 | ssm:GetParameter | Deployment | Automate
 | ssm:PutParameter | Deployment | Automate
-
-| Verify need to create CloudWatch log group during deploy and rebuild operations
-| logs:DescribeLogGroups
-| Deployment
-| Automate
 
 .2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
@@ -1918,6 +1926,46 @@ The following table provides details about the permissions for VMware workloads.
 | Where used
 | Mode
 
+| Attach security groups and modify rules for the provisioned nodes
+| ec2:AuthorizeSecurityGroupIngress
+| Deployment
+| Automate
+
+| Create EBS volumes
+| ec2:CreateVolume
+| Deployment
+| Automate
+
+| Tag custom values for FSx for NetApp ONTAP resources created by VMware workloads
+| fsx:TagResource
+| Deployment
+| Automate
+
+| Create and validate the CloudFormation template
+| cloudformation:CreateStack
+| Deployment
+| Automate
+
+| Manage tags and network security on created instances
+| ec2:CreateSecurityGroup
+| Deployment
+| Automate
+
+| Start the created instances
+| ec2:RunInstances
+| Deployment
+| Automate
+
+| Get EC2 instance details
+| ec2:DescribeInstances
+| Deployment
+| Automate
+
+| List images during the stack creation during deploy and rebuild operations
+| ec2:DescribeImages
+| Deployment
+| Automate
+
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
 a| 
@@ -2003,10 +2051,11 @@ a|
 * Deployment
 * Inventory | Automate
 
-.4+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
+.5+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
 | kms:CreateGrant | Deployment | Automate
 | kms:Describe* | Deployment | Automate
 | kms:List* | Deployment | Automate
+| kms:Decrypt | Deployment | Automate
 | kms:GenerateDataKey | Deployment | Automate
 
 | List customer SNS topics and publish to WLMVMC backend SNS as well as customer SNS if selected
