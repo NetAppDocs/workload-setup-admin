@@ -2046,10 +2046,11 @@ a|
 * Deployment
 * Inventory | Automate
 
-.4+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
+.5+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
 | kms:CreateGrant | Deployment | Automate
 | kms:Describe* | Deployment | Automate
 | kms:List* | Deployment | Automate
+| kms:Decrypt | Deployment | Automate
 | kms:GenerateDataKey | Deployment | Automate
 
 | List customer SNS topics and publish to WLMVMC backend SNS as well as customer SNS if selected
