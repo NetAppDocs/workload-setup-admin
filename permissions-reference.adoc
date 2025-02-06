@@ -137,6 +137,105 @@ The following table displays the permissions for Storage.
 | Deployment
 | Automate
 
+| Granted role provides communication between FSx for ONTAP and other AWS services
+| iam:CreateServiceLinkedRole
+| Deployment
+| Automate
+
+.7+| Get details to fill in the FSx for ONTAP file system deployment form
+| ec2:DescribeVpcs 
+a| 
+* Deployment
+* Explore savings 
+a|
+* Read
+* Automate
+| ec2:DescribeSubnets 
+a| 
+* Deployment
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeRegions
+a|
+* Deployment
+* Explore savings
+a| 
+* Read
+* Automate
+| ec2:DescribeSecurityGroups 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeRouteTables 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeNetworkInterfaces 
+a| 
+* Deployment
+* Explore savings 
+a| 
+* Read
+* Automate
+| ec2:DescribeVolumeStatus 
+a| 
+* Deployment
+* Explore savings
+a|
+* Read
+* Automate
+
+.3+| Get KMS key details and use for FSx for ONTAP encryption
+| kms:CreateGrant 
+| Deployment 
+| Automate
+| kms:Describe* 
+| Deployment 
+a| 
+* Read
+* Automate
+| kms:List* 
+| Deployment 
+a| 
+* Read
+* Automate
+
+| Get volume details for EC2 instances
+| ec2:DescribeVolumes 
+a| 
+* Inventory
+* Explore savings 
+a| 
+* Read
+* Automate
+
+| Get details for EC2 instances
+| ec2:DescribeInstances 
+| Explore savings
+a|
+* Read
+* Automate
+
+| Describe Elastic File System in the savings calculator
+| elasticfilesystem:Describe*
+| Explore savings
+| Read
+
+| List tags for FSx for ONTAP resources
+| fsx:ListTagsForResource
+| Inventory
+a|
+* Read
+* Automate
+
 .2+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
@@ -202,100 +301,6 @@ a|
 | fsx:CreateVolumeFromBackup*
 | Management operations
 | Automate
-
-| List tags for FSx for ONTAP resources
-| fsx:ListTagsForResource
-| Inventory
-a|
-* Read
-* Automate
-
-.7+| Get details to fill in the FSx for ONTAP file system deployment form
-| ec2:DescribeVpcs 
-a| 
-* Deployment
-* Explore savings 
-a|
-* Read
-* Automate
-| ec2:DescribeSubnets 
-a| 
-* Deployment
-* Explore savings
-a| 
-* Read
-* Automate
-| ec2:DescribeRegions
-a|
-* Deployment
-* Explore savings
-a| 
-* Read
-* Automate
-| ec2:DescribeSecurityGroups 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeRouteTables 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeNetworkInterfaces 
-a| 
-* Deployment
-* Explore savings 
-a| 
-* Read
-* Automate
-| ec2:DescribeVolumeStatus 
-a| 
-* Deployment
-* Explore savings
-a|
-* Read
-* Automate
-
-| Get volume details for EC2 instances
-| ec2:DescribeVolumes 
-a| 
-* Inventory
-* Explore savings 
-a| 
-* Read
-* Automate
-
-| Get details for EC2 instances
-| ec2:DescribeInstances 
-| Explore savings
-a|
-* Read
-* Automate
-
-.3+| Get KMS key details and use for FSx for ONTAP encryption
-| kms:CreateGrant 
-| Deployment 
-| Automate
-| kms:Describe* 
-| Deployment 
-a| 
-* Read
-* Automate
-| kms:List* 
-| Deployment 
-a| 
-* Read
-* Automate
-
-| Describe Elastic File System in the savings calculator
-| elasticfilesystem:Describe*
-| Explore savings
-| Read
 
 | Report CloudWatch metrics
 | cloudwatch:PutMetricData
