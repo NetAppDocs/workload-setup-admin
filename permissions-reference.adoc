@@ -706,6 +706,11 @@ a|
 * Read
 * Automate
 
+| Create VPC endpoints if they don't exist for required services irrespective of public network connectivity on EC2 instances
+| ec2:CreateVpcEndpoint
+| Deployment
+| Automate
+
 | Get instance types available in region for validation nodes (t2.micro/t3.micro) 
 | ec2:DescribeInstanceTypeOfferings 
 | Deployment 
@@ -751,6 +756,13 @@ a|
 | Deployment 
 a|
 * Read
+* Automate
+
+| Check account limits for resources before triggering deployment
+| cloudformation:DescribeAccountLimits
+| Deployment
+a|
+* Read 
 * Automate
 
 | Get list of AWS-managed Active Directories in the region
@@ -864,6 +876,46 @@ a|
 a|
 * Read
 * Automate
+
+| Check if account is enrolled in AWS Compute Optimizer
+| compute-optimizer:GetEnrollmentStatus
+a|
+* Explore savings
+* Optimization
+| Automate
+
+| Update an existing recommendation preference in AWS Compute Optimizer to tailor suggestions for SQL server workloads
+| compute-optimizer:PutRecommendationPreferences
+a|
+* Explore savings
+* Optimization
+| Automate
+
+| Get recommendation preferences that are in effect for a given resource from AWS Compute Optimizer
+| compute-optimizer:GetEffectiveRecommendationPreferences
+a|
+* Explore savings
+* Optimization
+| Automate
+
+| Fetch recommendations that AWS Compute Optimizer generates for Amazon Elastic Compute Cloud (Amazon EC2) instances 
+| compute-optimizer:GetEC2InstanceRecommendations
+a|
+* Explore savings
+* Optimization
+| Automate
+
+.2+| Check for instance association to auto-scaling groups
+| autoscaling:DescribeAutoScalingGroups
+a|
+* Explore savings
+* Optimization
+| Automate
+| autoscaling:DescribeAutoScalingInstances
+a|
+* Explore savings
+* Optimization
+| Automate
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
 | ssm:GetParameter ^1^ 
