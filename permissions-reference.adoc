@@ -1760,7 +1760,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| Gen information about a foundation model
+| Get information about a foundation model
 | bedrock:GetFoundationModel
 | Deployment
 | Automate
@@ -1780,7 +1780,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| Get latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
+| Get the latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
 | ssm:GetParameters
 | Deployment
 | Automate
