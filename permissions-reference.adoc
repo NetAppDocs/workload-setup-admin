@@ -1514,6 +1514,7 @@ GenAI IAM policies are only available in Operate mode:
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
         "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModel",
         "bedrock:GetFoundationModelAvailability",
         "bedrock:GetModelInvocationLoggingConfiguration"
       ],
@@ -1759,6 +1760,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
+| Get information about a foundation model
+| bedrock:GetFoundationModel
+| Deployment
+| Automate
+
 | Verify access to the foundation model
 | bedrock:GetFoundationModelAvailability
 | Deployment
@@ -1774,7 +1780,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| Get latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
+| Get the latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
 | ssm:GetParameters
 | Deployment
 | Automate
@@ -2148,6 +2154,10 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 2 March 2025
+
+The following permission is now available in _read_ mode for Databases: `iam:SimulatePrincipalPolicy`.
 
 === 3 February 2025
 
