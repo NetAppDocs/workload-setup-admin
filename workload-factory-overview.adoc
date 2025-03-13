@@ -98,6 +98,9 @@ Links currently leverage AWS Lambda.
 
 https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
 
+=== Security
+Security for BlueXP workload factory is a top priority for NetApp. All workloads in workload factory run atop Amazon FSx for NetApp ONTAP. In addition to all link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html[AWS security features^], BlueXP workload factory FSx for ONTAP has also received SOC2 Type 1 compliance and is an AWS Well-Architected Framework.
+
 === Codebox automation
 
 Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps engineers generate the code needed to execute any operation supported by workload factory. Code formats include workload factory REST API, AWS CLI, and AWS CloudFormation.
