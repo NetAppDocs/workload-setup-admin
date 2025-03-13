@@ -42,6 +42,9 @@ Use service accounts to automate BlueXP workload factory operations securely and
 
 Workload factory enables you to manage cloud storage and use workload capabilities in Amazon Web Services.
 
+== Security
+Security for BlueXP workload factory is a top priority for NetApp. All workloads in workload factory run atop Amazon FSx for NetApp ONTAP. In addition to all link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html[AWS security features^], BlueXP workload factory FSx for ONTAP has also received SOC2 Type 1 compliance and is an AWS Well-Architected Framework.
+
 == Cost
 
 Workload factory is free to use. The cost that you pay to Amazon Web Services (AWS) depends on the storage and workload services that you plan to deploy. This includes the cost of Amazon FSx for NetApp ONTAP file systems, VMware Cloud on AWS infrastructure, AWS services, and more.
@@ -97,9 +100,6 @@ You don't need a link to get started with workload factory, but in some cases yo
 Links currently leverage AWS Lambda.
 
 https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
-
-=== Security
-Security for BlueXP workload factory is a top priority for NetApp. All workloads in workload factory run atop Amazon FSx for NetApp ONTAP. In addition to all link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html[AWS security features^], BlueXP workload factory FSx for ONTAP has also received SOC2 Type 1 compliance and is an AWS Well-Architected Framework.
 
 === Codebox automation
 
