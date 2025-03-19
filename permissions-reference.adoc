@@ -76,6 +76,7 @@ Select your operational mode to view the required IAM policies:
         "kms:CreateGrant",
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
+        "iam:SimulatePrincipalPolicy",
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
@@ -320,11 +321,6 @@ a|
 * Read
 * Automate
 
-// Add when available - may be in January 2025 sprint because it is for Databases
-//| Simulate operations
-//| iam:SimulatePrincipalPolicy
-//| ?
-//| Automate
 |===
 
 ====
@@ -380,6 +376,7 @@ Select your operational mode to view the required IAM policies:
         "ssm:GetParametersByPath",
         "ssm:GetCommandInvocation",
         "ssm:SendCommand",
+        "ssm:GetConnectionStatus",
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
@@ -399,10 +396,17 @@ Select your operational mode to view the required IAM policies:
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
-
 --
 .Automate mode
 --
@@ -1386,7 +1390,7 @@ a|
 | Deployment 
 | Automate
 
-| Validate permissions available in the role and compare with required permissions
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
 a| 
@@ -1805,7 +1809,7 @@ The following table provides details about the permissions for GenAI workloads.
 | iam:TagRole | Deployment | Automate
 | iam:PassRole | Deployment | Automate
 
-| Validate the permissions available in the role and compare with required permissions during deploy and rebuild operations
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Automate
@@ -2129,7 +2133,7 @@ a|
 * Management operations
 | Automate
 
-| SimulatePrincipalPolicy is required to do the validation of permissions available in the role and compare with required permisisons
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Automate
@@ -2155,6 +2159,9 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 30 March 2025
+Workload factory provides a permissions check by adding the `iam:SimulatePrincipalPolicy` permission to all workload permission policies. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. 
 
 === 2 March 2025
 
