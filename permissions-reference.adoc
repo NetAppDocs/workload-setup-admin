@@ -16,7 +16,7 @@ summary: "To use BlueXP workload factory features and services, you'll need to p
 To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment. 
 
 == Why use permissions
-When you provide read or automate mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
+When you provide Read-only or Read/Write mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
 
 For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
@@ -33,7 +33,7 @@ Select your operational mode to view the required IAM policies:
 ====
 [role="tabbed-block"]
 =====
-.Read mode
+.Read-only mode
 --
 [source,json]
 {
@@ -56,7 +56,7 @@ Select your operational mode to view the required IAM policies:
   ]
 }
 --
-.Automate mode
+.Read/Write mode
 --
 [source,json]
 {
@@ -118,30 +118,30 @@ The following table displays the permissions for Storage.
 | Create an FSx for ONTAP file system
 | fsx:CreateFileSystem*
 | Deployment
-| Automate
+| Read/Write
 
 | Create a security group for an FSx for ONTAP file system
 | ec2:CreateSecurityGroup
 | Deployment
-| Automate
+| Read/Write
 
 | Add tags to a security group for an FSx for ONTAP file system
 | ec2:CreateTags
 | Deployment
-| Automate
+| Read/Write
 
 .2+| Authorize security group egress and ingress for an FSx for ONTAP file system
 | ec2:AuthorizeSecurityGroupEgress
 | Deployment
-| Automate
+| Read/Write
 | ec2:AuthorizeSecurityGroupIngress
 | Deployment
-| Automate
+| Read/Write
 
 | Granted role provides communication between FSx for ONTAP and other AWS services
 | iam:CreateServiceLinkedRole
 | Deployment
-| Automate
+| Read/Write
 
 .7+| Get details to fill in the FSx for ONTAP file system deployment form
 | ec2:DescribeVpcs 
@@ -149,65 +149,65 @@ a|
 * Deployment
 * Explore savings 
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeSubnets 
 a| 
 * Deployment
 * Explore savings
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeRegions
 a|
 * Deployment
 * Explore savings
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeSecurityGroups 
 a| 
 * Deployment
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeRouteTables 
 a| 
 * Deployment
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeNetworkInterfaces 
 a| 
 * Deployment
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeVolumeStatus 
 a| 
 * Deployment
 * Explore savings
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
-| Automate
+| Read/Write
 | kms:Describe* 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | kms:List* 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get volume details for EC2 instances
 | ec2:DescribeVolumes 
@@ -215,116 +215,116 @@ a|
 * Inventory
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get details for EC2 instances
 | ec2:DescribeInstances 
 | Explore savings
 a|
-* Read
-* Automate
+* Read-only-only
+* Read/Write
 
 | Describe Elastic File System in the savings calculator
 | elasticfilesystem:Describe*
 | Explore savings
-| Read
+| Read-only
 
 | List tags for FSx for ONTAP resources
 | fsx:ListTagsForResource
 | Inventory
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .2+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
-| Automate
+| Read/Write
 | ec2:DeleteSecurityGroup 
 | Management operations
-| Automate
+| Read/Write
 
 .16+| Create, view, and manage FSx for ONTAP file system resources
 | fsx:CreateVolume*
 | Management operations
-| Automate
+| Read/Write
 | fsx:TagResource*
 | Management operations
-| Automate
+| Read/Write
 | fsx:CreateStorageVirtualMachine*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DeleteFileSystem*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DeleteStorageVirtualMachine*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DescribeFileSystems*
 | Inventory
 a| 
-* Read 
-* Automate
+* Read-only 
+* Read/Write
 | fsx:DescribeStorageVirtualMachines*
 | Inventory
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:UpdateFileSystem*
 | Management operations
-| Automate
+| Read/Write
 | fsx:UpdateStorageVirtualMachine*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DescribeVolumes*
 | Inventory
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:UpdateVolume*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DeleteVolume*
 | Management operations
-| Automate
+| Read/Write
 | fsx:UntagResource*
 | Management operations
-| Automate
+| Read/Write
 | fsx:DescribeBackups*
 | Management operations
 a| 
-* Read 
-* Automate
+* Read-only 
+* Read/Write
 | fsx:CreateBackup*
 | Management operations
-| Automate
+| Read/Write
 | fsx:CreateVolumeFromBackup*
 | Management operations
-| Automate
+| Read/Write
 
 | Report CloudWatch metrics
 | cloudwatch:PutMetricData
 | Management operations
-| Automate
+| Read/Write
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
 | Management operations
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | cloudwatch:GetMetricStatistics
 | Management operations
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 // Add when available - may be in January 2025 sprint because it is for Databases
 //| Simulate operations
 //| iam:SimulatePrincipalPolicy
 //| ?
-//| Automate
+//| Read/Write
 |===
 
 ====
@@ -339,7 +339,7 @@ Select your operational mode to view the required IAM policies:
 ====
 [role="tabbed-block"]
 =====
-.Read mode
+.Read-only mode
 --
 [source,json]
 {
@@ -404,7 +404,7 @@ Select your operational mode to view the required IAM policies:
 }
 
 --
-.Automate mode
+.Read/Write mode
 --
 [source,json]
 {
@@ -625,14 +625,14 @@ a|
 * Inventory 
 * Explore savings 
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | List and set triggers for events 
 | sns:ListTopics 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .4+| Get details for EC2 instances 
 | ec2:DescribeInstances 
@@ -640,25 +640,25 @@ a|
 * Inventory  
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeKeyPairs 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeNetworkInterfaces 
 | Deployment 
 a| 
-* Read
-* Automate 
+* Read-only
+* Read/Write 
 | ec2:DescribeInstanceTypes 
 a| 
 * Deployment
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .6+| Get details to fill in the FSx for ONTAP deployment form
 | ec2:DescribeVpcs 
@@ -666,37 +666,37 @@ a|
 * Deployment 
 * Inventory 
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeSubnets 
 a| 
 * Deployment 
 * Inventory
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeSecurityGroups 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeImages 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeRegions 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ec2:DescribeRouteTables 
 a| 
 * Deployment
 * Inventory
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get any existing VPC endpoints to determine if new endpoints need to be created before deployments
 | ec2:DescribeVpcEndpoints 
@@ -704,27 +704,27 @@ a|
 * Deployment 
 * Inventory
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Create VPC endpoints if they don't exist for required services irrespective of public network connectivity on EC2 instances
 | ec2:CreateVpcEndpoint
 | Deployment
-| Automate
+| Read/Write
 
 | Get instance types available in region for validation nodes (t2.micro/t3.micro) 
 | ec2:DescribeInstanceTypeOfferings 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get snapshot details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeSnapshots 
 | Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeVolumes 
@@ -732,46 +732,46 @@ a|
 * Inventory 
 * Explore savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .3+| Get KMS key details for FSx for ONTAP file system encryption
 | kms:ListAliases 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | kms:ListKeys 
 | Deployment 
 a| 
-* Read 
-* Automate
+* Read-only 
+* Read/Write
 | kms:DescribeKey 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get list of CloudFormation stacks running in the environment to check quota limit
 | cloudformation:ListStacks 
 | Deployment 
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Check account limits for resources before triggering deployment
 | cloudformation:DescribeAccountLimits
 | Deployment
 a|
-* Read 
-* Automate
+* Read-only 
+* Read/Write
 
 | Get list of AWS-managed Active Directories in the region
 | ds:DescribeDirectories 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .5+| Get lists and details of volumes, backups, SVMs, file systems in AZs, and tags for FSx for ONTAP file system
 | fsx:DescribeVolumes 
@@ -779,23 +779,23 @@ a|
 * Inventory
 * Explore Savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:DescribeBackups 
 a| 
 * Inventory
 * Explore Savings 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:DescribeStorageVirtualMachines 
 a| 
 * Deployment
 * Manage operations
 * Inventory
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:DescribeFileSystems 
 a| 
 * Deployment
@@ -803,27 +803,27 @@ a|
 * Inventory
 * Explore savings 
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | fsx:ListTagsForResource 
 | Manage operations 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get service quota limits for CloudFormation and VPC
 | servicequotas:ListServiceQuotas 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Use SSM-based query to get the updated list of FSx for ONTAP supported regions
 | ssm:GetParametersByPath 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Poll for SSM response after sending command for manage operations post deployment
 | ssm:GetCommandInvocation 
@@ -833,8 +833,8 @@ a|
 * Explore savings 
 * Optimization
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Send commands over SSM to EC2 instances 
 | ssm:SendCommand 
@@ -844,8 +844,8 @@ a|
 * Explore savings
 * Optimization 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the SSM connectivity status on instances post deployment
 | ssm:GetConnectionStatus 
@@ -854,69 +854,69 @@ a|
 * Inventory
 * Optimization
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the list of available patch baselines for operating system patch assessment
 | ssm:DescribePatchBaselines
 | Optimization
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the patching state on Windows EC2 instances for operating system patch assessment 
 | ssm:DescribeInstancePatchStates
 | Optimization
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | List commands executed by AWS Patch Manager on EC2 instances for operating system patch management
 | ssm:ListCommands
 | Optimization
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Check if account is enrolled in AWS Compute Optimizer
 | compute-optimizer:GetEnrollmentStatus
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 
 | Update an existing recommendation preference in AWS Compute Optimizer to tailor suggestion for SQL server workloads
 | compute-optimizer:PutRecommendationPreferences
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 
 | Get recommendation preferences that are in effect for a given resource from AWS Compute Optimizer
 | compute-optimizer:GetEffectiveRecommendationPreferences
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 
 | Fetch recommendations that AWS Compute Optimizer generates for Amazon Elastic Compute Cloud (Amazon EC2) instances 
 | compute-optimizer:GetEC2InstanceRecommendations
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 
 .2+| Check for instance association to auto-scaling groups
 | autoscaling:DescribeAutoScalingGroups
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 | autoscaling:DescribeAutoScalingInstances
 a|
 * Explore savings
 * Optimization
-| Automate
+| Read/Write
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
 | ssm:GetParameter ^1^ 
@@ -924,224 +924,224 @@ a|
 * Deployment
 * Manage operations 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ssm:GetParameters ^1^ 
 | Manage operations 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ssm:PutParameter ^1^ 
 a| 
 * Deployment 
 * Manage operations 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 | ssm:DeleteParameters ^1^ 
 | Manage operations 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
 | ec2:AllocateAddress ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 
 | ec2:AllocateHosts  ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AssignPrivateIpAddresses ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AssociateAddress ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AssociateRouteTable ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AssociateSubnetCidrBlock ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AssociateVpcCidrBlock ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AttachInternetGateway ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AttachNetworkInterface ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 
 | Attach EBS volumes required to the SQL nodes for deployment
 | ec2:AttachVolume 
 | Deployment 
-| Automate
+| Read/Write
 
 .2+| Attach security groups and modify rules for the provisioned nodes
 | ec2:AuthorizeSecurityGroupEgress 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AuthorizeSecurityGroupIngress 
 | Deployment 
-| Automate
+| Read/Write
 
 | Create EBS volumes required to the SQL nodes for deployment
 | ec2:CreateVolume 
 | Deployment 
-| Automate
+| Read/Write
 
 .11+| Remove the temporary validation nodes created of type t2.micro and for rollback or retry of failed EC2 SQL nodes
 | ec2:DeleteNetworkInterface 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DeleteSecurityGroup 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DeleteTags 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DeleteVolume 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DetachNetworkInterface 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DetachVolume 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DisassociateAddress 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DisassociateIamInstanceProfile 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DisassociateRouteTable 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DisassociateSubnetCidrBlock 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:DisassociateVpcCidrBlock 
 | Deployment 
-| Automate
+| Read/Write
 
 .7+| Modify attributes for created SQL instances. Only applicable to names that start with WLMDB.
 | ec2:ModifyInstanceAttribute 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifyInstancePlacement 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifyNetworkInterfaceAttribute 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifySubnetAttribute 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifyVolume 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifyVolumeAttribute 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ModifyVpcAttribute 
 | Deployment 
-| Automate
+| Read/Write
 
 .5+| Disassociate and destroy validation instances
 | ec2:ReleaseAddress 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ReplaceRoute 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:ReplaceRouteTableAssociation 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:RevokeSecurityGroupEgress 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:RevokeSecurityGroupIngress 
 | Deployment 
-| Automate
+| Read/Write
 
 | Start the deployed instances
 | ec2:StartInstances 
 | Deployment 
-| Automate
+| Read/Write
 
 | Stop the deployed instances
 | ec2:StopInstances 
 | Deployment 
-| Automate
+| Read/Write
 
 | Tag custom values for Amazon FSx for NetApp ONTAP resources created by WLMDB to get billing details during resource management
 | fsx:TagResource ^1^ 
 a| 
 * Deployment
 * Manage operations 
-| Automate
+| Read/Write
 
 .5+| Create and validate CloudFormation template for deployment
 | cloudformation:CreateStack 
 | Deployment 
-| Automate
+| Read/Write
 | cloudformation:DescribeStackEvents 
 | Deployment 
-| Automate
+| Read/Write
 | cloudformation:DescribeStacks 
 | Deployment 
-| Automate
+| Read/Write
 | cloudformation:ListStacks 
 | Deployment 
-| Automate
+| Read/Write
 | cloudformation:ValidateTemplate 
 | Deployment 
-| Automate
+| Read/Write
 
 | Fetch metrics for compute optimization recommendation
 | cloudwatch:GetMetricStatistics 
 | Explore savings 
-| Automate
+| Read/Write
 
 | Fetch directories available in the region
 | ds:DescribeDirectories 
 | Deployment 
-| Automate
+| Read/Write
 
 .2+| Add rules for the Security Group attached to provisioned EC2 instances
 | ec2:AuthorizeSecurityGroupEgress 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:AuthorizeSecurityGroupIngress 
 | Deployment 
-| Automate
+| Read/Write
 
 .2+| Create nested stack templates for retry and rollback
 | ec2:CreateLaunchTemplate 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:CreateLaunchTemplateVersion 
 | Deployment 
-| Automate
+| Read/Write
 
 .3+| Manage tags and network security on created instances
 | ec2:CreateNetworkInterface 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:CreateSecurityGroup 
 | Deployment 
-| Automate
+| Read/Write
 | ec2:CreateTags 
 | Deployment 
-| Automate
+| Read/Write
 
 | Delete the Security Group created temporarily for validation nodes
 | ec2:DeleteSecurityGroup 
 | Deployment 
-| Automate
+| Read/Write
 
 .2+| Get instance details for provisioning
 | ec2:Describe* 
@@ -1149,38 +1149,38 @@ a|
 * Deployment
 * Inventory
 * Explore savings 
-| Automate
+| Read/Write
 | ec2:Get* 
 a| 
 * Deployment
 * Inventory
 * Explore savings 
-| Automate
+| Read/Write
 
 | Start the created instances
 | ec2:RunInstances 
 | Deployment 
-| Automate
+| Read/Write
 
 | Systems Manager uses AWS message delivery service endpoint for API operations
 | ec2messages:* 
 a| 
 * Deployment
 *Inventory
-| Automate
+| Read/Write
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
 | fsx:CreateFileSystem 
 | Deployment 
-| Automate
+| Read/Write
 | fsx:CreateStorageVirtualMachine 
 | Deployment
-| Automate
+| Read/Write
 | fsx:CreateVolume 
 a| 
 * Deployment
 * Manage operations 
-| Automate
+| Read/Write
 
 .2+| Get FSx for ONTAP details
 | fsx:Describe* 
@@ -1189,117 +1189,117 @@ a|
 * Inventory
 * Manage operations
 * Explore savings 
-| Automate
+| Read/Write
 | fsx:List* 
 a| 
 * Deployment
 * Inventory 
-| Automate
+| Read/Write
 
 | Resize FSx for ONTAP file system to remediate file system headroom
 | fsx:UpdateFilesystem
 | Optimization
-| Automate
+| Read/Write
 
 | Resize volumes to remediate log and TempDB drive sizes
 | fsx:UpdateVolume
 | Optimization
-| Automate
+| Read/Write
 
 .4+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
-| Automate
+| Read/Write
 | kms:Describe* 
 | Deployment 
-| Automate
+| Read/Write
 | kms:List* 
 | Deployment 
-| Automate
+| Read/Write
 | kms:GenerateDataKey 
 | Deployment 
-| Automate
+| Read/Write
 
 .7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
-| Automate
+| Read/Write
 | logs:CreateLogStream 
 | Deployment 
-| Automate
+| Read/Write
 | logs:DescribeLog* 
 | Deployment 
-| Automate
+| Read/Write
 | logs:GetLog* 
 | Deployment 
-| Automate
+| Read/Write
 | logs:ListLogDeliveries 
 | Deployment 
-| Automate
+| Read/Write
 | logs:PutLogEvents 
 a| 
 * Deployment
 * Manage operations 
-| Automate
+| Read/Write
 | logs:TagResource
 | Deployment 
-| Automate
+| Read/Write
 
 | Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
 | servicequotas:ListServiceQuotas 
 | Deployment 
-| Automate
+| Read/Write
 
 .2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
 | sns:ListTopics 
 | Deployment 
-| Automate
+| Read/Write
 | sns:Publish 
 | Deployment 
-| Automate
+| Read/Write
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
 | ssm:Describe* 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:Get* 
 a| 
 * Deployment
 * Manage operations 
-| Automate
+| Read/Write
 | ssm:List* 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:PutComplianceItems 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:PutConfigurePackageResult 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:PutInventory 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:SendCommand 
 a| 
 * Deployment
 * Inventory
 * Manage operations 
-| Automate
+| Read/Write
 | ssm:UpdateAssociationStatus 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:UpdateInstanceAssociationStatus 
 | Deployment 
-| Automate
+| Read/Write
 | ssm:UpdateInstanceInformation 
 | Deployment 
-| Automate
+| Read/Write
 | ssmmessages:* 
 a| 
 * Deployment
 * Inventory 
 * Manage operations 
-| Automate
+| Read/Write
 
 .4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
 | ssm:GetParameter ^1^
@@ -1307,91 +1307,91 @@ a|
 * Deployment
 * Manage operations
 * Inventory
-| Automate
+| Read/Write
 | ssm:GetParameters ^1^
 a|
 * Deployment
 * Inventory
-| Automate
+| Read/Write
 | ssm:PutParameter ^1^
 a|
 * Deployment
 * Manage operations
-| Automate
+| Read/Write
 | ssm:DeleteParameters ^1^
 a|  
 * Deployment
 * Manage operations
-| Automate 
+| Read/Write 
 
 | Signal CloudFormation stack on success or failure. 
 | cloudformation:SignalResource ^1^ 
 | Deployment 
-| Automate
+| Read/Write
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
 | iam:AddRoleToInstanceProfile 
 | Deployment 
-| Automate
+| Read/Write
 
 | Create instance profile for EC2 and attach the created EC2 role.
 | iam:CreateInstanceProfile 
 | Deployment 
-| Automate
+| Read/Write
 
 | Create EC2 role through template with permissions listed below  
 | iam:CreateRole 
 | Deployment 
-| Automate
+| Read/Write
 
 | Create role linked to EC2 service
 | iam:CreateServiceLinkedRole ^2^
 | Deployment 
-| Automate
+| Read/Write
 
 | Delete instance profile created during deployment specifically for the validation nodes
 | iam:DeleteInstanceProfile 
 | Deployment 
-| Automate
+| Read/Write
 
 .5+| Get the role and policy details to determine any gaps in permission and validate for deployment
 | iam:GetPolicy 
 | Deployment 
-| Automate
+| Read/Write
 | iam:GetPolicyVersion 
 | Deployment 
-| Automate
+| Read/Write
 | iam:GetRole 
 | Deployment 
-| Automate
+| Read/Write
 | iam:GetRolePolicy 
 | Deployment 
-| Automate
+| Read/Write
 | iam:GetUser 
 | Deployment 
-| Automate
+| Read/Write
 
 | Pass the role created to EC2 instance
 | iam:PassRole ^3^
 | Deployment 
-| Automate
+| Read/Write
 
 | Add policy with required permissions to the EC2 role created
 | iam:PutRolePolicy 
 | Deployment 
-| Automate
+| Read/Write
 
 | Detach role from the provisioned EC2 instance profile
 | iam:RemoveRoleFromInstanceProfile 
 | Deployment 
-| Automate
+| Read/Write
 
 | Validate permissions available in the role and compare with required permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 |===
 
@@ -1404,7 +1404,7 @@ a|
 
 The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-GenAI IAM policies are only available in Operate mode:
+GenAI IAM policies are only available in Read/Write mode:
 
 .IAM policies for GenAI workloads
 [%collapsible]
@@ -1647,226 +1647,226 @@ The following table provides details about the permissions for GenAI workloads.
 | Create AI engine cloudformation stack during deploy and rebuild operations
 | cloudformation:CreateStack
 | Deployment
-| Automate
+| Read/Write
 
 | Create the AI engine cloudformation stack
 | cloudformation:DescribeStacks
 | Deployment
-| Automate
+| Read/Write
 
 | List regions for the AI engine deployment wizard
 | ec2:DescribeRegions
 | Deployment
-| Automate
+| Read/Write
 
 | Display AI engine tags 
 | ec2:DescribeTags
 | Deployment
-| Automate
+| Read/Write
 
 | List VPC endpoints before AI engine stack creation
 | ec2:CreateVpcEndpoint
 | Deployment
-| Automate
+| Read/Write
 
 | Create an AI engine security group during the AI engine stack creation during deploy and rebuild operations
 | ec2:CreateSecurityGroup
 | Deployment
-| Automate
+| Read/Write
 
 | Tag resources created by AI engine stack creation during deploy and rebuild operations
 | ec2:CreateTags
 | Deployment
-| Automate
+| Read/Write
 
 .2+| Publish enrypted events to the WLMAI backend from the ai-engine stack 
-| kms:GenerateDataKey | Deployment | Automate
-| kms:Decrypt  | Deployment | Automate
+| kms:GenerateDataKey | Deployment | Read/Write
+| kms:Decrypt  | Deployment | Read/Write
 
 | To publish events and custom resources to the WLMAI backend from the ai-engine stack
 | sns:Publish 
 | Deployment
-| Automate
+| Read/Write
 
 | List VPCs during AI engine deployment wizard
 | ec2:DescribeVpcs
 | Deployment
-| Automate
+| Read/Write
 
 | To list subnets on the ai-engine deployment wizard
 | ec2:DescribeSubnets
 | Deployment
-| Automate
+| Read/Write
 
 | Get route tables during AI engine deployment and rebuild
 | ec2:DescribeRouteTables
 | Deployment
-| Automate
+| Read/Write
 
 | List key-pairs during AI engine deployment wizard
 | ec2:DescribeKeyPairs
 | Deployment
-| Automate
+| Read/Write
 
 | List security groups during AI engine stack creation (to find security groups on the private endpoints)
 | ec2:DescribeSecurityGroups
 | Deployment
-| Automate
+| Read/Write
 
 | Get VPC endpoints to determine if any should be created during the AI engine deployment
 | ec2:DescribeVpcEndpoints
 | Deployment
-| Automate
+| Read/Write
 
 | List instances to find out the AI engine state
 | ec2:DescribeInstances
 | Troubleshooting
-| Automate
+| Read/Write
 
 | List images during the AI engine stack creation during deploy and rebuild operations
 | ec2:DescribeImages
 | Deployment
-| Automate
+| Read/Write
 
 .2+| To create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
-| ec2:RevokeSecurityGroupEgress | Deployment | Automate
-| ec2:RevokeSecurityGroupIngress | Deployment | Automate
+| ec2:RevokeSecurityGroupEgress | Deployment | Read/Write
+| ec2:RevokeSecurityGroupIngress | Deployment | Read/Write
 
 | Run AI engine during cloudformation stack creation during deploy and rebuild operations
 | ec2:RunInstances
 | Deployment
-| Automate
+| Read/Write
 
 .2+| Attach security group and modify rules for the AI engine during stack creation during deploy and rebuild operations
-| ec2:AuthorizeSecurityGroupEgress | Deployment | Automate
-| ec2:AuthorizeSecurityGroupIngress | Deployment | Automate
+| ec2:AuthorizeSecurityGroupEgress | Deployment | Read/Write
+| ec2:AuthorizeSecurityGroupIngress | Deployment | Read/Write
 
 | Query Amazon Bedrock / Amazon CloudWatch logging status during AI engine deployment
 | bedrock:GetModelInvocationLoggingConfiguration
 | Deployment
-| Automate
+| Read/Write
 
 | To initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
-| Automate
+| Read/Write
 
 | Begin chat/embedding request for foundation models
 | bedrock:InvokeModel
 | Deployment
-| Automate
+| Read/Write
 
 | Show the available foundation models in a region
 | bedrock:ListFoundationModels
 | Deployment
-| Automate
+| Read/Write
 
 | Get information about a foundation model
 | bedrock:GetFoundationModel
 | Deployment
-| Automate
+| Read/Write
 
 | Verify access to the foundation model
 | bedrock:GetFoundationModelAvailability
 | Deployment
-| Automate
+| Read/Write
 
 | Verify need to create CloudWatch log group during deploy and rebuild operations
 | logs:DescribeLogGroups
 | Deployment
-| Automate
+| Read/Write
 
 | Get regions that support FSx and Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
-| Automate
+| Read/Write
 
 | Get the latest Amazon Linux image for the AI engine deployment during deploy and rebuild operations 
 | ssm:GetParameters
 | Deployment
-| Automate
+| Read/Write
 
 | Get the SSM response from the command sent to the AI engine
 | ssm:GetCommandInvocation
 | Deployment
-| Automate
+| Read/Write
 
 .2+| Check the SSM connection to the AI engine
-| ssm:SendCommand | Deployment | Automate
-| ssm:GetConnectionStatus | Deployment | Automate
+| ssm:SendCommand | Deployment | Read/Write
+| ssm:GetConnectionStatus | Deployment | Read/Write
 
 .8+| Create AI engine instance profile during stack creation during deploy and rebuild operations
-| iam:CreateRole | Deployment | Automate
-| iam:CreateInstanceProfile | Deployment | Automate
-| iam:AddRoleToInstanceProfile | Deployment | Automate
-| iam:PutRolePolicy | Deployment | Automate
-| iam:GetRolePolicy | Deployment | Automate
-| iam:GetRole | Deployment | Automate
-| iam:TagRole | Deployment | Automate
-| iam:PassRole | Deployment | Automate
+| iam:CreateRole | Deployment | Read/Write
+| iam:CreateInstanceProfile | Deployment | Read/Write
+| iam:AddRoleToInstanceProfile | Deployment | Read/Write
+| iam:PutRolePolicy | Deployment | Read/Write
+| iam:GetRolePolicy | Deployment | Read/Write
+| iam:GetRole | Deployment | Read/Write
+| iam:TagRole | Deployment | Read/Write
+| iam:PassRole | Deployment | Read/Write
 
 | Validate the permissions available in the role and compare with required permissions during deploy and rebuild operations
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Automate
+| Read/Write
 
 | List FSx file systems during the "Create knowledgebase" wizard
 | fsx:DescribeVolumes
 | Knowledge base creation
-| Automate
+| Read/Write
 
 | List FSx file system volumes during the "Create knowledgebase" wizard
 | fsx:DescribeFileSystems
 | Knowledge base creation
-| Automate
+| Read/Write
 
 | Manage knowledgebases on the AI engine during rebuild operations
 | fsx:ListTagsForResource
 | Troubleshooting
-| Automate
+| Read/Write
 
 | List FSx file system storage virtual machines during the "Create knowledgebase" wizard
 | fsx:DescribeStorageVirtualMachines
 | Deployment
-| Automate
+| Read/Write
 
 | Move the knowledgebase to a new instance
 | fsx:UntagResource
 | Troubleshooting
-| Automate
+| Read/Write
 
 | Manage knowledgebase on the AI engine during rebuild
 | fsx:TagResource
 | Troubleshooting
-| Automate
+| Read/Write
 
 .2+| Save SSM secrets (ECR token, CIFS credentials, tenancy service accounts keys) in a secure way 
-| ssm:GetParameter | Deployment | Automate
-| ssm:PutParameter | Deployment | Automate
+| ssm:GetParameter | Deployment | Read/Write
+| ssm:PutParameter | Deployment | Read/Write
 
 .2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
-| logs:CreateLogGroup | Deployment | Automate
-| logs:PutRetentionPolicy | Deployment | Automate
+| logs:CreateLogGroup | Deployment | Read/Write
+| logs:PutRetentionPolicy | Deployment | Read/Write
 
 | Send the AI engine logs to CloudWatch log group
 | logs:TagResource
 | Troubleshooting
-| Automate
+| Read/Write
 
 | Get SSM response from CloudWatch (when the response is too long)
 | logs:DescribeLogStreams
 | Troubleshooting
-| Automate
+| Read/Write
 
 | Get the SSM response from CloudWatch
 | logs:GetLogEvents
 | Troubleshooting
-| Automate
+| Read/Write
 
 .3+| Create CloudWatch log group for Bedrock logs during the stack reation during deploy and rebuild operations
-| logs:CreateLogGroup | Deployment | Automate
-| logs:PutRetentionPolicy | Deployment | Automate
-| logs:TagResource | Deployment | Automate
+| logs:CreateLogGroup | Deployment | Read/Write
+| logs:PutRetentionPolicy | Deployment | Read/Write
+| logs:TagResource | Deployment | Read/Write
 
 |===
 ====
@@ -1882,7 +1882,7 @@ Select your operational mode to view the required IAM policies:
 ====
 [role="tabbed-block"]
 =====
-.Read mode
+.Read-only mode
 --
 [source,json]
 {
@@ -1988,42 +1988,42 @@ The following table provides details about the permissions for VMware workloads.
 | Attach security groups and modify rules for the provisioned nodes
 | ec2:AuthorizeSecurityGroupIngress
 | Deployment
-| Automate
+| Read/Write
 
 | Create EBS volumes
 | ec2:CreateVolume
 | Deployment
-| Automate
+| Read/Write
 
 | Tag custom values for FSx for NetApp ONTAP resources created by VMware workloads
 | fsx:TagResource
 | Deployment
-| Automate
+| Read/Write
 
 | Create and validate the CloudFormation template
 | cloudformation:CreateStack
 | Deployment
-| Automate
+| Read/Write
 
 | Manage tags and network security on created instances
 | ec2:CreateSecurityGroup
 | Deployment
-| Automate
+| Read/Write
 
 | Start the created instances
 | ec2:RunInstances
 | Deployment
-| Automate
+| Read/Write
 
 | Get EC2 instance details
 | ec2:DescribeInstances
 | Deployment
-| Automate
+| Read/Write
 
 | List images during the stack creation during deploy and rebuild operations
 | ec2:DescribeImages
 | Deployment
-| Automate
+| Read/Write
 
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
@@ -2031,23 +2031,23 @@ a|
 * Deployment
 * Inventory
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 | Get the subnets in selected environment to complete deployment form
 | ec2:DescribeSubnets
 a| 
 * Deployment
 * Inventory
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the security groups in selected environment to complete deployment form
 | ec2:DescribeSecurityGroups
 | Deployment
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the availability zones in selected environment
 | ec2:DescribeAvailabilityZones
@@ -2055,99 +2055,99 @@ a|
 * Deployment
 * Inventory
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get the regions with Amazon FSx for NetApp ONTAP support
 | ec2:DescribeRegions
 | Deployment
 a| 
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get KMS keys' aliases to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListAliases 
 | Deployment
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get KMS keys to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListKeys
 | Deployment
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | Get KMS keys expiry details to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:DescribeKey
 | Deployment
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 | SSM based query is used to get the updated list of Amazon FSx for NetApp ONTAP supported regions
 | ssm:GetParametersByPath
 | Deployment
 a|
-* Read
-* Automate
+* Read-only
+* Read/Write
 
 .3+| Create Amazon FSx for NetApp ONTAP resources required for provisioning
-| fsx:CreateFileSystem | Deployment | Automate
-| fsx:CreateStorageVirtualMachine | Deployment | Automate
+| fsx:CreateFileSystem | Deployment | Read/Write
+| fsx:CreateStorageVirtualMachine | Deployment | Read/Write
 | fsx:CreateVolume a|
 * Deployment
-* Management operations | Automate
+* Management operations | Read/Write
 
 .2+| Get Amazon FSx for NetApp ONTAP details
 | fsx:Describe* a| 
 * Deployment
 * Inventory
 * Management operations
-* Explore savings | Automate
+* Explore savings | Read/Write
 | fsx:List* a|
 * Deployment
-* Inventory | Automate
+* Inventory | Read/Write
 
 .5+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
-| kms:CreateGrant | Deployment | Automate
-| kms:Describe* | Deployment | Automate
-| kms:List* | Deployment | Automate
-| kms:Decrypt | Deployment | Automate
-| kms:GenerateDataKey | Deployment | Automate
+| kms:CreateGrant | Deployment | Read/Write
+| kms:Describe* | Deployment | Read/Write
+| kms:List* | Deployment | Read/Write
+| kms:Decrypt | Deployment | Read/Write
+| kms:GenerateDataKey | Deployment | Read/Write
 
 | List customer SNS topics and publish to WLMVMC backend SNS as well as customer SNS if selected
 | sns:Publish
 | Deployment
-| Automate
+| Read/Write
 
 | Used to fetch latest list of Amazon FSx for NetApp ONTAP supported AWS regions
 | ssm:Get*
 a| 
 * Deployment
 * Management operations
-| Automate
+| Read/Write
 
 | SimulatePrincipalPolicy is required to do the validation of permissions available in the role and compare with required permisisons
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Automate
+| Read/Write
 
 .4+| SSM Parameter store is used to save credentials of Amazon FSx for NetApp ONTAP
 | ssm:GetParameter a|
 * Deployment
 * Management operations
-* Inventory | Automate
+* Inventory | Read/Write
 | ssm:PutParameters a|
 * Deployment
-* Inventory | Automate
+* Inventory | Read/Write
 | ssm:PutParameter a|
 * Deployment
-* Management operations | Automate
+* Management operations | Read/Write
 | ssm:DeleteParameters a|
 * Deployment
-* Management operations | Automate
+* Management operations | Read/Write
 |===
 
 ====
