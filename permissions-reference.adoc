@@ -1906,7 +1906,7 @@ Select your operational mode to view the required IAM policies:
 }
 --
 
-.Operate mode
+.Automate mode
 --
 [source,json]
 {
