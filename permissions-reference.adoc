@@ -1464,10 +1464,10 @@ GenAI IAM policies are only available in Operate mode:
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
+        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
-        "iam:SimulatePrincipalPolicy",
         "iam:GetRolePolicy",
         "iam:GetRole",
         "iam:TagRole"
@@ -1507,19 +1507,6 @@ GenAI IAM policies are only available in Operate mode:
         "arn:aws:fsx:*:*:volume/*/*",
         "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
       ]
-    },
-    {
-      "Sid": "BedrockGroup",
-      "Effect": "Allow",
-      "Action": [
-        "bedrock:InvokeModelWithResponseStream",
-        "bedrock:InvokeModel",
-        "bedrock:ListFoundationModels",
-        "bedrock:GetFoundationModel",
-        "bedrock:GetFoundationModelAvailability",
-        "bedrock:GetModelInvocationLoggingConfiguration"
-      ],
-      "Resource": "*"
     },
     {
       "Sid": "SSMParameterStore",
@@ -1618,7 +1605,21 @@ GenAI IAM policies are only available in Operate mode:
       "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
     },
     {
-      "Sid": "CloudWatch2",
+      "Sid": "BedrockGroup",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
+        "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetModelInvocationLoggingConfiguration",
+        "bedrock:PutModelInvocationLoggingConfiguration",
+        "bedrock:ListInferenceProfiles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchBedrock",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -1626,6 +1627,22 @@ GenAI IAM policies are only available in Operate mode:
         "logs:TagResource"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+    },
+    {
+      "Sid": "BedrockLoggingAttachRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -1679,11 +1696,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.2+| Publish enrypted events to the WLMAI backend from the ai-engine stack 
+.2+| Publish encrypted events to the WLMAI backend from the AI engine stack 
 | kms:GenerateDataKey | Deployment | Automate
 | kms:Decrypt  | Deployment | Automate
 
-| To publish events and custom resources to the WLMAI backend from the ai-engine stack
+| Publish events and custom resources to the WLMAI backend from the ai-engine stack
 | sns:Publish 
 | Deployment
 | Automate
@@ -1693,7 +1710,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| To list subnets on the ai-engine deployment wizard
+| List subnets on the ai-engine deployment wizard
 | ec2:DescribeSubnets
 | Deployment
 | Automate
@@ -1728,7 +1745,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.2+| To create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
+.2+| Create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
 | ec2:RevokeSecurityGroupEgress | Deployment | Automate
 | ec2:RevokeSecurityGroupIngress | Deployment | Automate
 
@@ -1746,7 +1763,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| To initiate chat request to one of the foundation models
+| Initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
 | Automate
@@ -1761,22 +1778,17 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| Get information about a foundation model
-| bedrock:GetFoundationModel
-| Deployment
-| Automate
-
 | Verify access to the foundation model
 | bedrock:GetFoundationModelAvailability
 | Deployment
 | Automate
 
-| Verify need to create CloudWatch log group during deploy and rebuild operations
+| Verify need to create Amazon CloudWatch log group during deploy and rebuild operations
 | logs:DescribeLogGroups
 | Deployment
 | Automate
 
-| Get regions that support FSx and Bedrock during the AI engine wizard
+| Get regions that support FSx and Amazon Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
 | Automate
@@ -1844,29 +1856,54 @@ The following table provides details about the permissions for GenAI workloads.
 | ssm:GetParameter | Deployment | Automate
 | ssm:PutParameter | Deployment | Automate
 
-.2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
+.2+|Send the AI engine logs to Amazon CloudWatch log group during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 
-| Send the AI engine logs to CloudWatch log group
+| Send the AI engine logs to Amazon CloudWatch log group
 | logs:TagResource
 | Troubleshooting
 | Automate
 
-| Get SSM response from CloudWatch (when the response is too long)
+| Get SSM response from Amazon CloudWatch (when the response is too long)
 | logs:DescribeLogStreams
 | Troubleshooting
 | Automate
 
-| Get the SSM response from CloudWatch
+| Get the SSM response from Amazon CloudWatch
 | logs:GetLogEvents
 | Troubleshooting
 | Automate
 
-.3+| Create CloudWatch log group for Bedrock logs during the stack reation during deploy and rebuild operations
+.3+| Create Amazon CloudWatch log group for Amazon Bedrock logs during the stack reation during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 | logs:TagResource | Deployment | Automate
+
+| Send bedrock logs to Amazon CloudWatch
+| bedrock:PutModelInvocationLoggingConfiguration
+| Troubleshooting
+| Read/Write
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:AttachRolePolicy
+| Troubleshooting
+| Read/Write
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:PassRole
+| Troubleshooting
+| Read/Write
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:createPolicy
+| Troubleshooting
+| Read/Write
+
+| List inference profiles for the model
+| bedrock:ListInferenceProfiles
+| Troubleshooting
+| Read/Write
 
 |===
 ====
@@ -2155,6 +2192,18 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 30 March 2025
+
+The following permissions arenow available in _Read/Write_ mode for GenAI:
+
+* bedrock:PutModelInvocationLoggingConfiguration
+* iam:AttachRolePolicy
+* iam:PassRole
+* iam:createPolicy
+* bedrock:ListInferenceProfiles
+
+The following permission has been removed from _Read/Write_ mode for GenAI: Bedrock:GetFoundationModel
 
 === 2 March 2025
 
