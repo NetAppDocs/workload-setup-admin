@@ -2180,7 +2180,7 @@ a|
 As permissions are added and removed, we'll note them in the sections below.
 
 === 30 March 2025
-You can now manage the `iam:SimulatePrincipalPolicy` permission from the workload factory console when adding additional AWS account credentials or adding a new workload capability by enabling the automatic permissions check. Enabling the check adds the `iam:SimulatePrincipalPolicy` permission to all workload permission policies. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
+The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the workload factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
 
 === 2 March 2025
 
