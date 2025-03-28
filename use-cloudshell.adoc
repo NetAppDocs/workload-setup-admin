@@ -48,7 +48,7 @@ image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new Clou
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
 +
-If an error occurs after issuing an ONTAP CLI command, select ... to get an AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution.
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 
 .Deploy from Storage
@@ -64,7 +64,7 @@ A CloudShell session opens in the context of the selected file system.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
 +
-If an error occurs after issuing an ONTAP CLI command, select ... to get an AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution.
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 ====
 
