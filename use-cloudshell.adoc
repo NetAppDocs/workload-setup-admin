@@ -22,7 +22,7 @@ CloudShell features include:
 * Session renaming: rename sessions as needed
 * Last session content persistence: re-open the last session if you close it by mistake
 * Settings preferences: change the font size and output type
-
+* AI-generated error responses for ONTAP CLI commands
 
 == Before you begin
 CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
@@ -47,6 +47,8 @@ image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new Clou
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
++
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 
 .Deploy from Storage
@@ -61,6 +63,8 @@ A CloudShell session opens in the context of the selected file system.
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
++
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 ====
 
@@ -134,3 +138,4 @@ NOTE: Enriched output applies to JSON objects and table formatting. All other ou
 
 .Result 
 The CloudShell settings are updated. 
+
