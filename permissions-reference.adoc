@@ -52,6 +52,13 @@ Select your operational mode to view the required IAM policies:
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -1890,19 +1897,31 @@ Select your operational mode to view the required IAM policies:
 --
 [source,json]
 {
-  "Effect": "Allow",
-  "Action": [
-    "ec2:DescribeRegions",
-    "ec2:DescribeAvailabilityZones",
-    "ec2:DescribeVpcs",
-    "ec2:DescribeSecurityGroups",
-    "ec2:DescribeSubnets",
-    "ssm:GetParametersByPath",
-    "kms:DescribeKey",
-    "kms:ListKeys",
-    "kms:ListAliases"
-  ],
-  "Resource": "*"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ssm:GetParametersByPath",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 --
 
@@ -2161,7 +2180,7 @@ a|
 As permissions are added and removed, we'll note them in the sections below.
 
 === 30 March 2025
-You have the ability to manage the `iam:SimulatePrincipalPolicy` permission from the workload factory console when you add additional AWS account credentials or add a new workload capability such as the GenAI workload. Workload factory provides a permissions check by adding the `iam:SimulatePrincipalPolicy` permission to all workload permission policies. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. 
+You can now manage the `iam:SimulatePrincipalPolicy` permission from the workload factory console when adding additional AWS account credentials or adding a new workload capability by enabling the automatic permissions check. Enabling the check adds the `iam:SimulatePrincipalPolicy` permission to all workload permission policies. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
 
 === 2 March 2025
 
