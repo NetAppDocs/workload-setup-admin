@@ -22,7 +22,53 @@ CloudShell features include:
 * Session renaming: rename sessions as needed
 * Last session content persistence: re-open the last session if you close it by mistake
 * Settings preferences: change the font size and output type
+* AI-generated error responses for ONTAP CLI commands
 
+=== CloudShell commands
+Within the CloudShell GUI interface, you can enter `help` to view available CloudShell commands. After you issue the `help` command, the following reference appears. 
+
+Description:::
+ 
+NetApp CloudShell is a GUI interface built into BlueXP workload factory enables you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through the backend in workload factory. It enables you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP Account.
+ 
+Available commands:::
+ 
+* `clear`
+* `help`
+* `[--fsx <fsxId>] <ontap-command> [parameters]`
+* `aws <aws-command> <aws-sub-command> [parameters]`
+ 
+Context:::
+
+Each terminal session runs in a specific context: credentials, region, and optionally FSx for ONTAP file system.
++ 
+All AWS commands execute in the provided context. AWS commands will only succeed if the provided credentials have permissions in the specified region.
++ 
+You can specify ONTAP commands with an optional `fsxId`. If you provide an `fsxId` with an individual ONTAP command, then this ID overrides the ID in the context. If the terminal session doesn't have an FSx for ONTAP file system ID context, then you must provide `fsxId` with each ONTAP command.
++ 
+To update different context specifics, do the following:
+* To change credentials: "using credentials <credentialId>"
+* To change region: "using region <regionCode>"
+* To change FSx for ONTAP file system: "using fsx <fileSystemId>"
+ 
+Showing Items:::
+
+* To show available credentials: "show credentials"
+* To show available regions: "show regions"
+* To show command history: "show history"
+ 
+Variables:::
+The following are examples of setting and using variables. If a variable value contains spaces, you should set it inside quotes.
++
+* To set a variable: $<variable> = <value>
+* To use a variable: $<variable>
+* Example setting a variable: $svm1 = svm123
+* Example using a variable: --fsx FileSystem-1 volumes show --vserver $svm1
+* Example setting a variable with string value $comment1 = "A comment with spaces"
+ 
+Operators:::
+ 
+Shell operators such as pipe `|`, background execution `&`, and redirection `>` aren't supported. Command execution fails if you include these operators.
 
 == Before you begin
 CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
@@ -43,10 +89,12 @@ You can deploy CloudShell from anywhere in the BlueXP workload factory console. 
 . In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
 image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
-. Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
+. Enter `help` to view available <<CloudShell commands,CloudShell commands>> and instructions or refer to the following CLI reference documents for available commands:
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
++
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 
 .Deploy from Storage
@@ -61,6 +109,8 @@ A CloudShell session opens in the context of the selected file system.
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
 . Issue commands within the CloudShell session.
++
+If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 ====
 
@@ -134,3 +184,4 @@ NOTE: Enriched output applies to JSON objects and table formatting. All other ou
 
 .Result 
 The CloudShell settings are updated. 
+

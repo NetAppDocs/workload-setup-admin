@@ -52,6 +52,13 @@ Select your operational mode to view the required IAM policies:
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -76,6 +83,7 @@ Select your operational mode to view the required IAM policies:
         "kms:CreateGrant",
         "cloudwatch:PutMetricData",
         "cloudwatch:GetMetricData",
+        "iam:SimulatePrincipalPolicy",
         "cloudwatch:GetMetricStatistics"
       ],
       "Resource": "*"
@@ -320,11 +328,6 @@ a|
 * Read
 * Automate
 
-// Add when available - may be in January 2025 sprint because it is for Databases
-//| Simulate operations
-//| iam:SimulatePrincipalPolicy
-//| ?
-//| Automate
 |===
 
 ====
@@ -380,6 +383,7 @@ Select your operational mode to view the required IAM policies:
         "ssm:GetParametersByPath",
         "ssm:GetCommandInvocation",
         "ssm:SendCommand",
+        "ssm:GetConnectionStatus",
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
@@ -399,10 +403,17 @@ Select your operational mode to view the required IAM policies:
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Sid": "IAMGroup",
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
-
 --
 .Automate mode
 --
@@ -1386,7 +1397,7 @@ a|
 | Deployment 
 | Automate
 
-| Validate permissions available in the role and compare with required permissions
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
 a| 
@@ -1464,10 +1475,10 @@ GenAI IAM policies are only available in Operate mode:
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
+        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
-        "iam:SimulatePrincipalPolicy",
         "iam:GetRolePolicy",
         "iam:GetRole",
         "iam:TagRole"
@@ -1507,19 +1518,6 @@ GenAI IAM policies are only available in Operate mode:
         "arn:aws:fsx:*:*:volume/*/*",
         "arn:aws:fsx:*:*:storage-virtual-machine/*/*"
       ]
-    },
-    {
-      "Sid": "BedrockGroup",
-      "Effect": "Allow",
-      "Action": [
-        "bedrock:InvokeModelWithResponseStream",
-        "bedrock:InvokeModel",
-        "bedrock:ListFoundationModels",
-        "bedrock:GetFoundationModel",
-        "bedrock:GetFoundationModelAvailability",
-        "bedrock:GetModelInvocationLoggingConfiguration"
-      ],
-      "Resource": "*"
     },
     {
       "Sid": "SSMParameterStore",
@@ -1618,7 +1616,21 @@ GenAI IAM policies are only available in Operate mode:
       "Resource": "arn:aws:logs:*:*:log-group:/netapp/wlmai*:*"
     },
     {
-      "Sid": "CloudWatch2",
+      "Sid": "BedrockGroup",
+      "Effect": "Allow",
+      "Action": [
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
+        "bedrock:ListFoundationModels",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:GetModelInvocationLoggingConfiguration",
+        "bedrock:PutModelInvocationLoggingConfiguration",
+        "bedrock:ListInferenceProfiles"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudWatchBedrock",
       "Effect": "Allow",
       "Action": [
         "logs:CreateLogGroup",
@@ -1626,6 +1638,22 @@ GenAI IAM policies are only available in Operate mode:
         "logs:TagResource"
       ],
       "Resource": "arn:aws:logs:*:*:log-group:/aws/bedrock*"
+    },
+    {
+      "Sid": "BedrockLoggingAttachRole",
+      "Effect": "Allow",
+      "Action": [
+        "iam:AttachRolePolicy",
+        "iam:PassRole"
+      ],
+      "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -1679,11 +1707,11 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.2+| Publish enrypted events to the WLMAI backend from the ai-engine stack 
+.2+| Publish encrypted events to the WLMAI backend from the AI engine stack 
 | kms:GenerateDataKey | Deployment | Automate
 | kms:Decrypt  | Deployment | Automate
 
-| To publish events and custom resources to the WLMAI backend from the ai-engine stack
+| Publish events and custom resources to the WLMAI backend from the ai-engine stack
 | sns:Publish 
 | Deployment
 | Automate
@@ -1693,7 +1721,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| To list subnets on the ai-engine deployment wizard
+| List subnets on the ai-engine deployment wizard
 | ec2:DescribeSubnets
 | Deployment
 | Automate
@@ -1728,7 +1756,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-.2+| To create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
+.2+| Create and update AI instance and private endpoint security group during the AI instance stack creation during on deploy and rebuild operations
 | ec2:RevokeSecurityGroupEgress | Deployment | Automate
 | ec2:RevokeSecurityGroupIngress | Deployment | Automate
 
@@ -1746,7 +1774,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| To initiate chat request to one of the foundation models
+| Initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
 | Automate
@@ -1761,22 +1789,17 @@ The following table provides details about the permissions for GenAI workloads.
 | Deployment
 | Automate
 
-| Get information about a foundation model
-| bedrock:GetFoundationModel
-| Deployment
-| Automate
-
 | Verify access to the foundation model
 | bedrock:GetFoundationModelAvailability
 | Deployment
 | Automate
 
-| Verify need to create CloudWatch log group during deploy and rebuild operations
+| Verify need to create Amazon CloudWatch log group during deploy and rebuild operations
 | logs:DescribeLogGroups
 | Deployment
 | Automate
 
-| Get regions that support FSx and Bedrock during the AI engine wizard
+| Get regions that support FSx and Amazon Bedrock during the AI engine wizard
 | ssm:GetParametersByPath
 | Deployment
 | Automate
@@ -1805,27 +1828,27 @@ The following table provides details about the permissions for GenAI workloads.
 | iam:TagRole | Deployment | Automate
 | iam:PassRole | Deployment | Automate
 
-| Validate the permissions available in the role and compare with required permissions during deploy and rebuild operations
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Automate
 
-| List FSx file systems during the "Create knowledgebase" wizard
+| List FSx for ONTAP file systems during the "Create knowledgebase" wizard
 | fsx:DescribeVolumes
 | Knowledge base creation
 | Automate
 
-| List FSx file system volumes during the "Create knowledgebase" wizard
+| List FSx for ONTAP file system volumes during the "Create knowledgebase" wizard
 | fsx:DescribeFileSystems
 | Knowledge base creation
 | Automate
 
-| Manage knowledgebases on the AI engine during rebuild operations
+| Manage knowledge bases on the AI engine during rebuild operations
 | fsx:ListTagsForResource
 | Troubleshooting
 | Automate
 
-| List FSx file system storage virtual machines during the "Create knowledgebase" wizard
+| List FSx for ONTAP file system storage virtual machines during the "Create knowledgebase" wizard
 | fsx:DescribeStorageVirtualMachines
 | Deployment
 | Automate
@@ -1844,29 +1867,54 @@ The following table provides details about the permissions for GenAI workloads.
 | ssm:GetParameter | Deployment | Automate
 | ssm:PutParameter | Deployment | Automate
 
-.2+|Send the AI engine logs to CloudWatch log group during deploy and rebuild operations
+.2+|Send the AI engine logs to Amazon CloudWatch log group during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 
-| Send the AI engine logs to CloudWatch log group
+| Send the AI engine logs to Amazon CloudWatch log group
 | logs:TagResource
 | Troubleshooting
 | Automate
 
-| Get SSM response from CloudWatch (when the response is too long)
+| Get SSM response from Amazon CloudWatch (when the response is too long)
 | logs:DescribeLogStreams
 | Troubleshooting
 | Automate
 
-| Get the SSM response from CloudWatch
+| Get the SSM response from Amazon CloudWatch
 | logs:GetLogEvents
 | Troubleshooting
 | Automate
 
-.3+| Create CloudWatch log group for Bedrock logs during the stack reation during deploy and rebuild operations
+.3+| Create Amazon CloudWatch log group for Amazon Bedrock logs during the stack reation during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 | logs:TagResource | Deployment | Automate
+
+| Send bedrock logs to Amazon CloudWatch
+| bedrock:PutModelInvocationLoggingConfiguration
+| Troubleshooting
+| Automate
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:AttachRolePolicy
+| Troubleshooting
+| Automate
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:PassRole
+| Troubleshooting
+| Automate
+
+| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
+| iam:createPolicy
+| Troubleshooting
+| Automate
+
+| List inference profiles for the model
+| bedrock:ListInferenceProfiles
+| Troubleshooting
+| Automate
 
 |===
 ====
@@ -1886,23 +1934,35 @@ Select your operational mode to view the required IAM policies:
 --
 [source,json]
 {
-  "Effect": "Allow",
-  "Action": [
-    "ec2:DescribeRegions",
-    "ec2:DescribeAvailabilityZones",
-    "ec2:DescribeVpcs",
-    "ec2:DescribeSecurityGroups",
-    "ec2:DescribeSubnets",
-    "ssm:GetParametersByPath",
-    "kms:DescribeKey",
-    "kms:ListKeys",
-    "kms:ListAliases"
-  ],
-  "Resource": "*"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeRegions",
+        "ec2:DescribeAvailabilityZones",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSubnets",
+        "ssm:GetParametersByPath",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 --
 
-.Operate mode
+.Automate mode
 --
 [source,json]
 {
@@ -2129,7 +2189,7 @@ a|
 * Management operations
 | Automate
 
-| SimulatePrincipalPolicy is required to do the validation of permissions available in the role and compare with required permisisons
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
 | Automate
@@ -2155,6 +2215,23 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 30 March 2025
+
+==== GenAI workload permissions update
+
+The following permissions are now available in _automate mode_ for GenAI:
+
+* `bedrock:PutModelInvocationLoggingConfiguration`
+* `iam:AttachRolePolicy`
+* `iam:PassRole`
+* `iam:createPolicy`
+* `bedrock:ListInferenceProfiles`
+
+The following permission has been removed from _automate mode_ for GenAI: `Bedrock:GetFoundationModel`.
+
+==== iam:SimulatePrincipalPolicy permission update
+The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the workload factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
 
 === 2 March 2025
 
