@@ -2228,7 +2228,7 @@ The following permissions are now available in _automate mode_ for GenAI:
 * `iam:createPolicy`
 * `bedrock:ListInferenceProfiles`
 
-The following permission has been removed from _automate mode_ for GenAI: `Bedrock:GetFoundationModel`
+The following permission has been removed from _automate mode_ for GenAI: `Bedrock:GetFoundationModel`.
 
 ==== iam:SimulatePrincipalPolicy permission update
 The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the workload factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
