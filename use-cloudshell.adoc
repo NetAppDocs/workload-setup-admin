@@ -29,7 +29,7 @@ Within the CloudShell GUI interface, you can enter `help` to view available Clou
 
 Description:::
  
-NetApp CloudShell is a GUI interface built into BlueXP workload factory that allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through the backend in workload factory. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP Account.
+NetApp CloudShell is a GUI interface built into BlueXP workload factory enables you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through the backend in workload factory. It enables you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP Account.
  
 Available commands:::
  
@@ -40,11 +40,11 @@ Available commands:::
  
 Context:::
 
-Each terminal session runs in a specific context (credentials, region, and optionally FSx for ONTAP file system).
+Each terminal session runs in a specific context: credentials, region, and optionally FSx for ONTAP file system.
 + 
 All AWS commands execute in the provided context. AWS commands will only succeed if the provided credentials have permissions in the specified region.
 + 
-ONTAP commands can be specified with an optional `fsxId`. If an `fsxId` is provided with an individual ONTAP command, this ID will override the ID in the context. If the terminal session doesn't have an FSx for ONTAP file system ID context, then `fsxId` must be passed with each ontap command.
+You can specify ONTAP commands with an optional `fsxId`. If you provide an `fsxId` with an individual ONTAP command, then this ID overrides the ID in the context. If the terminal session doesn't have an FSx for ONTAP file system ID context, then you must provide `fsxId` with each ONTAP command.
 + 
 To update different context specifics, do the following:
 * To change credentials: "using credentials <credentialId>"
@@ -58,7 +58,7 @@ Showing Items:::
 * To show command history: "show history"
  
 Variables:::
-The following are examples of setting and using variables. If a variable value contains spaces, it should be set inside quotes.
+The following are examples of setting and using variables. If a variable value contains spaces, you should set it inside quotes.
 +
 * To set a variable: $<variable> = <value>
 * To use a variable: $<variable>
@@ -68,7 +68,7 @@ The following are examples of setting and using variables. If a variable value c
  
 Operators:::
  
-Shell operators such as pipe `|`, background execution `&`, and redirection `>` aren't supported. Including these operators in a command will result in failure to execute the command.
+Shell operators such as pipe `|`, background execution `&`, and redirection `>` aren't supported. Command execution fails if you include these operators.
 
 == Before you begin
 CloudShell works in the context of your AWS credentials. To use CloudShell, you must provide at least one AWS credential.
