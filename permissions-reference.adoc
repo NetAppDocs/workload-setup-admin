@@ -387,6 +387,7 @@ Select your operational mode to view the required IAM policies:
         "ssm:DescribePatchBaselines",
         "ssm:DescribeInstancePatchStates",
         "ssm:ListCommands",
+        "ssm:DescribeInstanceInformation",
         "fsx:ListTagsForResource"
       ],
       "Resource": [
@@ -405,7 +406,6 @@ Select your operational mode to view the required IAM policies:
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
-      "Sid": "IAMGroup",
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -867,6 +867,11 @@ a|
 a| 
 * Read
 * Automate
+
+| Fetch SSM association status for a group of managed EC2 instances (SQL nodes)
+| ssm:DescribeInstanceInformation
+| Inventory
+| Read
 
 | Get the list of available patch baselines for operating system patch assessment
 | ssm:DescribePatchBaselines
@@ -2215,6 +2220,9 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 2 April 2025
+The following permission is now available in _read mode_ for Databases: 'ssm:DescribeInstanceInformation'.
 
 === 30 March 2025
 
