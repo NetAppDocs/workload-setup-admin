@@ -901,7 +901,7 @@ a|
 * Optimization
 | Automate
 
-| Update an existing recommendation preference in AWS Compute Optimizer to tailor suggestion for SQL server workloads
+| Update an existing recommendation preference in AWS Compute Optimizer to tailor suggestions for SQL server workloads
 | compute-optimizer:PutRecommendationPreferences
 a|
 * Explore savings
