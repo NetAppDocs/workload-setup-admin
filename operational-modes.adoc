@@ -25,7 +25,7 @@ Enhances the experience of basic mode by adding read-only permissions so that th
 Automate mode:: 
 Represents a full trust relationship so that workload factory gets assigned with full permissions. This allows workload factory to execute and automate operations in AWS on your behalf along with the assigned credentials that have the needed permissions for execution. 
 
-Learn more about link:https://review.docs.netapp.com/us-en/workload-setup-admin_simulation-permission-update/permissions-reference.html[permissions for BlueXP workload factory].
+Learn more about link:https://docs.netapp.com/us-en/workload-setup-admin_simulation-permission-update/permissions-reference.html[permissions for BlueXP workload factory].
 
 === Operational mode features
 
