@@ -13,6 +13,10 @@ summary: "Learn what's new with workload factory administration features: cloud 
 Learn what's new with workload factory administration features: cloud provider credentials, Codebox enhancements, and more.
 
 //tag::whats-new[]
+== 30 March 2025
+
+include::_whatsnew/2025-03-30.adoc[]
+
 
 == 02 February 2025
 
@@ -21,11 +25,11 @@ include::_whatsnew/2025-02-02.adoc[]
 == 22 January 2025
 
 include::_whatsnew/2025-01-22.adoc[]
+//end::whats-new[]
 
 == 5 January 2025
 
 include::_whatsnew/2025-01-05.adoc[]
-//end::whats-new[]
 
 == 11 November 2024
 
