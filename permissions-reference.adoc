@@ -1424,8 +1424,9 @@ GenAI IAM policies are only available in Operate mode:
 
 .IAM policies for GenAI workloads
 [%collapsible]
-====
+=======
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -1480,7 +1481,6 @@ GenAI IAM policies are only available in Operate mode:
       "Effect": "Allow",
       "Action": [
         "iam:CreateRole",
-        "iam:CreatePolicy",
         "iam:CreateInstanceProfile",
         "iam:AddRoleToInstanceProfile",
         "iam:PutRolePolicy",
@@ -1654,6 +1654,22 @@ GenAI IAM policies are only available in Operate mode:
       "Resource": "arn:aws:iam::*:role/NetApp_AI_Bedrock*"
     },
     {
+      "Sid": "BedrockLoggingIamOperations",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreatePolicy"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "QBusiness",
+      "Effect": "Allow",
+      "Action": [
+        "qbusiness:ListApplications"
+      ],
+      "Resource": "*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -1662,6 +1678,7 @@ GenAI IAM policies are only available in Operate mode:
     }
   ]
 }
+----
 ====
 
 The following table provides details about the permissions for GenAI workloads. 
@@ -1750,6 +1767,11 @@ The following table provides details about the permissions for GenAI workloads.
 | ec2:DescribeVpcEndpoints
 | Deployment
 | Automate
+
+| List the Amazon Q Business applications
+| qbusiness:ListApplications
+| Deployment
+| Read/Write
 
 | List instances to find out the AI engine state
 | ec2:DescribeInstances
@@ -1891,7 +1913,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Troubleshooting
 | Automate
 
-.3+| Create Amazon CloudWatch log group for Amazon Bedrock logs during the stack reation during deploy and rebuild operations
+.3+| Create an Amazon CloudWatch log group for Amazon Bedrock logs during the stack creation during deploy and rebuild operations
 | logs:CreateLogGroup | Deployment | Automate
 | logs:PutRetentionPolicy | Deployment | Automate
 | logs:TagResource | Deployment | Automate
@@ -1938,6 +1960,7 @@ Select your operational mode to view the required IAM policies:
 .Read mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -1965,11 +1988,13 @@ Select your operational mode to view the required IAM policies:
     }
   ]
 }
+----
 --
 
 .Automate mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -2033,6 +2058,7 @@ Select your operational mode to view the required IAM policies:
     }
   ]
 }
+----
 --
 =====
 ====
@@ -2220,6 +2246,9 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 4 May 2025
+The following permission is now available in _Read/Write_ mode for GenAI: `qbusiness:ListApplications`.
 
 === 2 April 2025
 The following permission is now available in _read mode_ for Databases: `ssm:DescribeInstanceInformation`.
