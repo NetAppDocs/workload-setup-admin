@@ -1,0 +1,2 @@
+=== Updated permissions terminology
+The workload factory user interface and documentation now use "Read-only" to refer to read permissions and "Read-Write" to refer to automate permissions.
