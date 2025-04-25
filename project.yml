@@ -21,7 +21,7 @@ sidebar:
       entries:
         - title: Learn the basics
           entries: 
-            - title: Workload factory overview
+            - title: Learn about BlueXP workload factory
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
