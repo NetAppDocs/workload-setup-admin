@@ -1424,7 +1424,7 @@ GenAI IAM policies are only available in Operate mode:
 
 .IAM policies for GenAI workloads
 [%collapsible]
-=======
+====
 [source,json]
 ----
 {
