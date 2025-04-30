@@ -1,0 +1,2 @@
+=== CloudShell autocomplete support
+When using BlueXP workload factory CloudShell, you can start typing a command and press the Tab key to view available options. If multiple possibilities exist, the CLI will display a list of suggestions. This feature enhances productivity by minimizing errors and speeding up command execution.

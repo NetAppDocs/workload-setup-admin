@@ -24,6 +24,9 @@ CloudShell features include:
 * Settings preferences: change the font size and output type
 * AI-generated error responses for ONTAP CLI commands
 
+
+In addition, autocomplete support is available. Start typing a command and use the *Tab* key to view available options.
+
 === CloudShell commands
 Within the CloudShell GUI interface, you can enter `help` to view available CloudShell commands. After you issue the `help` command, the following reference appears. 
 
