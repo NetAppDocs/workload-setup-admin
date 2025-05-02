@@ -36,6 +36,7 @@ Select your operational mode to view the required IAM policies:
 .Read mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -62,10 +63,12 @@ Select your operational mode to view the required IAM policies:
     }
   ]
 }
+----
 --
 .Automate mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -106,6 +109,7 @@ Select your operational mode to view the required IAM policies:
     }
   ]
 }
+----
 --
 =====
 ====
@@ -345,6 +349,7 @@ Select your operational mode to view the required IAM policies:
 .Read mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -406,6 +411,15 @@ Select your operational mode to view the required IAM policies:
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
     },
     {
+      "Sid": "SSMResponseCloudWatch",
+      "Effect": "Allow",
+      "Action": [
+        "logs:GetLogEvents",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -414,10 +428,12 @@ Select your operational mode to view the required IAM policies:
     }
   ]
 }
+----
 --
 .Automate mode
 --
 [source,json]
+----
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -573,8 +589,7 @@ Select your operational mode to view the required IAM policies:
         "iam:GetRolePolicy",
         "iam:GetUser",
         "iam:PutRolePolicy",
-        "iam:RemoveRoleFromInstanceProfile",
-        "iam:SimulatePrincipalPolicy"
+        "iam:RemoveRoleFromInstanceProfile"
       ],
       "Resource": "*"
     },
@@ -610,9 +625,17 @@ Select your operational mode to view the required IAM policies:
         "ssm:DeleteParameters"
       ],
       "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
+----
 --
 =====
 ====
