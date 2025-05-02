@@ -630,6 +630,15 @@ The following table displays the permissions for database workloads.
 | Where used
 | Mode
 
+| Workload factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation.
+| logs:GetLogEvents 
+a| 
+* Storage assessment 
+* Inventory
+a| 
+* Read-only
+* Read/Write
+
 | Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
 | cloudwatch:GetMetricStatistics 
 a| 
@@ -2249,6 +2258,8 @@ As permissions are added and removed, we'll note them in the sections below.
 
 === 4 May 2025
 The following permission is now available in _Read/Write_ mode for GenAI: `qbusiness:ListApplications`.
+
+The following permission is now available in _Read-only_ mode for Databases: `logs:GetLogEvents`.
 
 === 2 April 2025
 The following permission is now available in _read mode_ for Databases: `ssm:DescribeInstanceInformation`.
