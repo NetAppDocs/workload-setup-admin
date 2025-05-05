@@ -2295,7 +2295,7 @@ The following permission is now available in _Read/Write_ mode for GenAI: `qbusi
 The following permission is now available in _Read-only_ mode for Databases: `logs:GetLogEvents`.
 
 === 2 April 2025
-The following permission is now available in _read mode_ for Databases: `ssm:DescribeInstanceInformation`.
+The following permission is now available in _Read-only_ mode for Databases: `ssm:DescribeInstanceInformation`.
 
 === 30 March 2025
 
@@ -2320,4 +2320,4 @@ The following permission is now available in _Read/Write_ mode for GenAI: `bedro
 
 === 3 February 2025
 
-The following permission is now available in _read_ mode for Databases: `iam:SimulatePrincipalPolicy`.
+The following permission is now available in _Read-only_ mode for Databases: `iam:SimulatePrincipalPolicy`.
