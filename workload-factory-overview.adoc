@@ -82,9 +82,9 @@ Workload factory provides three operational modes that enables you to carefully 
 
 * *Basic mode* represents a zero-trust relationship and is designed for early exploration of workload factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.
 
-* *Read mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards.
+* *Read-only mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards.
 
-* *Automate mode* represents a full-trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution.
+* *Read/Write mode* represents a full-trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution.
 
 link:operational-modes.html[Learn more about workload factory operational modes].
 
