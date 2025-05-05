@@ -23,6 +23,7 @@ CloudShell features include:
 * Last session content persistence: re-open the last session if you close it by mistake
 * Settings preferences: change the font size and output type
 * AI-generated error responses for ONTAP CLI commands
+* Autocomplete support: start typing a command and use the *Tab* key to view available options
 
 === CloudShell commands
 Within the CloudShell GUI interface, you can enter `help` to view available CloudShell commands. After you issue the `help` command, the following reference appears. 
