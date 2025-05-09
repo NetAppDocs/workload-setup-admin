@@ -10,14 +10,15 @@ summary: You can configure workload factory to send notifications to a person or
 :imagesdir: ./media/
 
 [.lead]
-You can configure workload factory to send notifications to a person or another application when certain types of events happen. Workload factory publishes notifications to Amazon SNS topics, and subscribers to the topic receive the notifications.
+You can configure workload factory to send notifications to an Amazon SNS topic when certain types of events happen. After workload factory publishes a notification to an Amazon SNS topic, subscribers (such as an individual or another application) to the topic receive the notifications.
+
+== Configure workload factory notifications
 
 .About this task
 
-* You need to configure Amazon SNS through either the Amazon SNS console, or using the AWS CLI.
-* The cost for sending notifications is per message, and determined by Amazon.
+* You need to configure Amazon SNS and create Amazon SNS topics through either the Amazon SNS console, or using the AWS CLI.
 * Workload factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received.
-* You can configure notifications from the BlueXP console or from the workload factory console.
+* You can configure workload factory notifications using the BlueXP console or the workload factory console.
 
 [role="tabbed-block"]
 ====
@@ -34,6 +35,8 @@ You can configure workload factory to send notifications to a person or another 
 . Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to BlueXP.
 . Select *Enable SNS notifications*.
 . Follow the instructions to configure Amazon SNS from the Amazon SNS console.
++
+After you create the topic, copy the topic ARN and enter it in the *SNS topic ARN* field in the *Notification setup* dialog. 
 . After you verify the configuration by sending a test notification, select *Apply*.
 
 .Result
@@ -55,3 +58,6 @@ Workload factory is configured to send notifications to the Amazon SNS topic tha
 Workload factory is configured to send notifications to the Amazon SNS topic that you specified.
 --
 ====
+
+== Subscribe to the Amazon SNS topic
+After you configure workload factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from workload factory.
