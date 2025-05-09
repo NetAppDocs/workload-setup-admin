@@ -41,7 +41,6 @@ After you create the topic, copy the topic ARN and enter it in the *SNS topic AR
 
 .Result
 Workload factory is configured to send notifications to the Amazon SNS topic that you specified.
-.  
 --
 .Configure notifications from workload factory console
 --
