@@ -10,7 +10,7 @@ summary: You can configure workload factory to send notifications to a person or
 :imagesdir: ./media/
 
 [.lead]
-You can configure workload factory to send notifications to an Amazon SNS topic when certain types of events happen. After workload factory publishes a notification to an Amazon SNS topic, subscribers (such as an individual or another application) to the topic receive the notifications.
+You can configure workload factory to send notifications to an Amazon SNS topic when certain types of events happen. After workload factory publishes a notification to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications.
 
 == Configure workload factory notifications
 
