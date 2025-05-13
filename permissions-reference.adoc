@@ -1307,7 +1307,7 @@ a|
 * Inventory
 | Read-only
 
-| Allows workload factory to set a one-day retention policy for log groups created by workload factory to avoid unnecessary accumulation of log streams for SSM command outputs
+| Allow workload factory to set a one-day retention policy for log groups created by workload factory to avoid unnecessary accumulation of log streams for SSM command outputs
 | logs:PutRetentionPolicy
 a| 
 * Storage assessment (Optimization)
