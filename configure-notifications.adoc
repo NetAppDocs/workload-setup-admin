@@ -10,16 +10,15 @@ summary: You can configure workload factory to send notifications to a person or
 :imagesdir: ./media/
 
 [.lead]
-You can configure workload factory to send notifications to the BlueXP notifications service or to an Amazon SNS topic. Notifications sent to the BlueXP notifications service appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure workload factory to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Configure workload factory notifications
-Configure workload factory notifications using the BlueXP console or the workload factory console. If you use the BlueXP console, you can configure workload factory to send notifications to the BlueXP notifications service or to an Amazon SNS topic. You can configure BlueXP notifications from the *Alerts and notifications settings* area in BlueXP.
+Configure workload factory notifications using the BlueXP console or the workload factory console. If you use the BlueXP console, you can configure workload factory to send notifications to BlueXP alerts or to an Amazon SNS topic. You can configure BlueXP alerts from the *Alerts and notifications settings* area in BlueXP.
 
-.About this task
+.Before you begin
 
 * You need to configure Amazon SNS and create Amazon SNS topics through either the Amazon SNS console, or using the AWS CLI.
-* Workload factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received.
-* You can configure workload factory notifications using the BlueXP console or the workload factory console.
+* Note that workload factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received, so consider this if you have critical or emergency notifications.
 
 [role="tabbed-block"]
 ====
@@ -33,7 +32,7 @@ Configure workload factory notifications using the BlueXP console or the workloa
 . Select *Home* to view all workloads or select one workload like *Storage* or *Databases*. 
 . From the workload factory menu bar, select the configuration menu.
 . In the menu, select *Workload Factory notification setup*.
-. Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to the BlueXP notifications service.
+. Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to BlueXP alerts.
 . Select *Enable SNS notifications*.
 . Follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
