@@ -10,9 +10,10 @@ summary: You can configure workload factory to send notifications to a person or
 :imagesdir: ./media/
 
 [.lead]
-You can configure workload factory to send notifications to BlueXP or an Amazon SNS topic when certain types of events happen. Notifications sent to BlueXP appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure workload factory to send notifications to the BlueXP notifications service or to an Amazon SNS topic. Notifications sent to the BlueXP notifications service appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Configure workload factory notifications
+Configure workload factory notifications using the BlueXP console or the workload factory console. If you use the BlueXP console, you can configure workload factory to send notifications to the BlueXP notifications service or to an Amazon SNS topic. You can configure BlueXP notifications from the *Alerts and notifications settings* area in BlueXP.
 
 .About this task
 
@@ -32,7 +33,7 @@ You can configure workload factory to send notifications to BlueXP or an Amazon 
 . Select *Home* to view all workloads or select one workload like *Storage* or *Databases*. 
 . From the workload factory menu bar, select the configuration menu.
 . In the menu, select *Workload Factory notification setup*.
-. Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to BlueXP.
+. Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to the BlueXP notifications service.
 . Select *Enable SNS notifications*.
 . Follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
