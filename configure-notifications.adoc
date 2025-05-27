@@ -2,22 +2,22 @@
 sidebar: sidebar
 permalink: configure-notifications.html
 keywords: amazon, sns, notification, topic, notifications
-summary: You can configure workload factory to send notifications to a person or another application when certain types of events happen. 
+summary: You can configure BlueXP workload factory to send notifications to a person or another application when certain types of events happen. 
 ---
 
-= Configure notifications
+= Configure BlueXP workload factory notifications
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-You can configure workload factory to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure BlueXP workload factory to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Configure workload factory notifications
 Configure workload factory notifications using the BlueXP console or the workload factory console. If you use the BlueXP console, you can configure workload factory to send notifications to BlueXP alerts or to an Amazon SNS topic. You can configure BlueXP alerts from the *Alerts and notifications settings* area in BlueXP.
 
 .Before you begin
 
-* You need to configure Amazon SNS and create Amazon SNS topics through either the Amazon SNS console, or using the AWS CLI.
+* You need to configure Amazon SNS and create Amazon SNS topics using either the Amazon SNS console or the AWS CLI.
 * Note that workload factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received, so consider this if you have critical or emergency notifications.
 
 [role="tabbed-block"]
