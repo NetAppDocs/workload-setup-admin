@@ -1725,6 +1725,14 @@ GenAI IAM policies are only available in Read/Write mode:
       "Resource": "*"
     },
     {
+      "Sid": "S3",
+      "Effect": "Allow",
+      "Action": [
+        "s3:ListAllMyBuckets"
+      ],
+      "Resource": "*"
+    },
+    {
       "Effect": "Allow",
       "Action": [
         "iam:SimulatePrincipalPolicy"
@@ -1766,6 +1774,11 @@ The following table provides details about the permissions for GenAI workloads.
 
 | Display AI engine tags 
 | ec2:DescribeTags
+| Deployment
+| Read/Write
+
+| List S3 buckets
+| s3:ListAllMyBuckets
 | Deployment
 | Read/Write
 
@@ -2306,6 +2319,9 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 3 June 2025
+The following permission is now available in _Read/Write_ mode for GenAI: `s3:ListAllMyBuckets`.
 
 === 4 May 2025
 The following permission is now available in _Read/Write_ mode for GenAI: `qbusiness:ListApplications`.
