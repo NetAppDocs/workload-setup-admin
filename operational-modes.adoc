@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: operational-modes.html
-keywords: modes, zero-trust, full-trust, read, basic, automate, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials
-summary: Workload factory provides three operational modes that enable you to carefully control access between workload factory and your cloud estate based on your IT policies. The operational mode that you use is determined by the level of AWS permissions that you provide to workload factory.
+keywords: modes, zero-trust, full-trust, read-only, basic, read/write, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials
+summary: "Workload factory provides three operational modes that enable you to carefully control access between workload factory and your cloud estate based on your IT policies." 
 ---
 
 = Learn about operational modes and AWS credentials
@@ -78,7 +78,7 @@ There is no selector that you need to set in workload factory to identify which 
 | Not required
 
 | Read/Write
-| Read-write credentials 
+| Read/write credentials 
 | Required
 
 |===
@@ -87,13 +87,13 @@ https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more 
 
 === Operational mode examples
 
-You can set up your credentials to provide one mode for one workload component and another mode for another component. For example, you can configure Read/Write mode for operations where you are deploying and managing FSx for ONTAP file systems, but only configure read mode for creating and deploying database workloads using workload factory.
+You can set up your credentials to provide one mode for one workload component and another mode for another component. For example, you can configure read/write mode for operations where you are deploying and managing FSx for ONTAP file systems, but only configure read-only mode for creating and deploying database workloads using workload factory.
 
 You can provide these capabilities within a single set of credentials in a workload factory account, or you can create multiple sets of credentials when each credential provides unique workload deployment capabilities.
 
 ==== Example 1
 
-Account users who use the credentials that have been given the following permissions will have full control (Read/Write mode) for creating FSx for ONTAP file systems, deploying databases, and viewing other types of AWS storage used in the account.
+Account users who use the credentials that have been given the following permissions will have full control (read/write mode) for creating FSx for ONTAP file systems, deploying databases, and viewing other types of AWS storage used in the account.
 
 image:screenshot-credentials1.png[A screenshot showing one set of credentials that provide two types of workload permissions.]
 
@@ -103,7 +103,7 @@ However, they will have no automation controls for creating and deploying VMware
 
 Here the user has created two sets of credentials to allow different operational capabilities depending on which set of credentials has been selected. Typically, each set of credentials is paired to a different AWS account.
 
-The first set of credentials includes permissions that give users full control for creating FSx for ONTAP file systems (and the ability to view other types of AWS storage used in the account), but only read permissions when working with VMware workloads.
+The first set of credentials includes permissions that give users full control for creating FSx for ONTAP file systems (and the ability to view other types of AWS storage used in the account), but only read-only permissions when working with VMware workloads.
 
 image:screenshot-credentials-comparison-example-1.png[A screenshot showing one set of credentials that provide two types of workload permissions.]
 
