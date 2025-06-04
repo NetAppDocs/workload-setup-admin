@@ -116,7 +116,7 @@ Workload factory provides savings calculators so you can compare the costs of yo
 * link:https://docs.netapp.com/us-en/workload-databases/explore-savings.html[Learn how to explore savings for your database workloads^]
 
 //Cross-repo include for Tools section
-https://raw.githubusercontent.com/NetAppDocs/workload-family/main/_include/learn-about-tools.adoc[]
+include::https://raw.githubusercontent.com/NetAppDocs/workload-family/main/_include/learn-about-tools.adoc[]
 
 === REST APIs
 
