@@ -60,3 +60,19 @@ Workload factory is configured to send notifications to the Amazon SNS topic tha
 
 == Subscribe to the Amazon SNS topic
 After you configure workload factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from workload factory.
+
+== Filter notifications
+You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the BlueXP notifications settings for BlueXP notifications.
+
+=== Filter Amazon SNS notifications
+When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive.
+
+For more information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
+
+For examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
+
+=== Filter BlueXP notifications
+You can use the BlueXP alerts and notifications settings to filter the alerts and notifications that you receive in BlueXP by severity level, such as Critical, Info, or Warning. 
+
+For more information about filtering notifications in BlueXP, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#filter-notifications[BlueXP documentation^].
+
