@@ -23,8 +23,8 @@ Workload factory sends notifications for the following events:
 | Failed replication relationship creation
 | A replication relationship has failed to create. For more information, go to Tracker.
 
-| FSX for NetApp ONTAP filesystem creation failure
-| We wanted to inform you that a FSXn Creation process has failed. For more details, go to Workload Factory tracker.
+| FSX for ONTAP filesystem creation failure
+| We wanted to inform you that a FSX for ONTAP Creation process has failed. For more details, go to Workload Factory tracker.
 
 | Some database instances in your account are not well-architected
 | All Microsoft SQL Server instances in your account <account-name> have been analyzed for well-architected issues. Well-architected instances: <number of well-architected instances>, Not optimized instances: <number of not optimized instances>. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
