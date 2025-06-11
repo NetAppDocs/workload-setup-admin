@@ -53,7 +53,7 @@ Workload factory sends notifications for the following events:
 | FSx for ONTAP, DB host
 
 | Microsoft SQL Server/PostgreSQL server deployment failed
-| The deployment of the Microsoft SQL Server/PostgreSQL host failed. For more information, go to Job monitoring.
+| The deployment of the Microsoft SQL Server/PostgreSQL host failed. For more information, go to job monitoring.
 | Deployment
 |
 | Databases
