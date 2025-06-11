@@ -15,19 +15,49 @@ You can configure the BlueXP workload factory notification service to send notif
 == Notification types and messages
 Workload factory sends notifications for the following events:
 
-[cols=2*,options="header,autowidth"]
+[cols=6*,options="header,autowidth"]
 |===
 | Event
 | Description
+| Notification type
+| Severity
+| Workload
+| Resource type
 
 | Failed replication relationship creation
 | A replication relationship has failed to create. For more information, go to Tracker.
+| Replication
+| Critical
+| Storage
+| FSx for ONTAP
 
 | FSX for ONTAP filesystem creation failure
 | We wanted to inform you that a FSX for ONTAP Creation process has failed. For more details, go to Workload Factory tracker.
+| FSx for ONTAP file system action
+| Critical
+| Storage
+| FSx for ONTAP
 
 | Some database instances in your account are not well-architected
 | All Microsoft SQL Server instances in your account <account-name> have been analyzed for well-architected issues. Well-architected instances: <number of well-architected instances>, Not optimized instances: <number of not optimized instances>. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
+| Well-architected
+| Recommendation
+| Databases
+| Microsoft SQL Server instance
+
+| Microsoft SQL Server/PostgreSQL server deployment succeeded
+| The deployment of the Microsoft SQL Server/PostgreSQL host succeeded. For more information, go to Job monitoring.
+| Deployment
+|
+| Databases
+| FSx for ONTAP, DB host
+
+| Microsoft SQL Server/PostgreSQL server deployment failed
+| The deployment of the Microsoft SQL Server/PostgreSQL host failed. For more information, go to Job monitoring.
+| Deployment
+|
+| Databases
+| FSx for ONTAP, DB host
 
 |===
 
