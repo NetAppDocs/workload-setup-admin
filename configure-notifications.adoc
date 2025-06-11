@@ -25,28 +25,28 @@ Workload factory sends notifications for the following events:
 | Resource type
 
 | Failed replication relationship creation
-| A replication relationship has failed to create. For more information, go to Tracker.
+| A replication relationship creation process has failed. For more information, go to the workload factory Tracker.
 | Replication
 | Critical
 | Storage
 | FSx for ONTAP
 
 | FSX for ONTAP filesystem creation failure
-| We wanted to inform you that a FSX for ONTAP Creation process has failed. For more details, go to Workload Factory tracker.
+| An FSx for ONTAP filesystem creation process has failed. For more information, go to the workload factory Tracker.
 | FSx for ONTAP file system action
 | Critical
 | Storage
 | FSx for ONTAP
 
 | Some database instances in your account are not well-architected
-| All Microsoft SQL Server instances in your account <account-name> have been analyzed for well-architected issues. Well-architected instances: <number of well-architected instances>, Not optimized instances: <number of not optimized instances>. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
+| All Microsoft SQL Server instances in your account have been analyzed for well-architected issues. The description for this event gives the number of well-architected instances and unoptimized instances. Review well-architected status findings and recommendations in the Databases inventory from the workload factory console.
 | Well-architected
 | Recommendation
 | Databases
 | Microsoft SQL Server instance
 
 | Microsoft SQL Server/PostgreSQL server deployment succeeded
-| The deployment of the Microsoft SQL Server/PostgreSQL host succeeded. For more information, go to Job monitoring.
+| The deployment of the Microsoft SQL Server/PostgreSQL host succeeded. For more information, go to job monitoring.
 | Deployment
 |
 | Databases
