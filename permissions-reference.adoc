@@ -341,12 +341,12 @@ a|
 
 ====
 
-=== Permissions for Databases workloads
-The IAM policies available for Databases workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+=== Permissions for Database workloads
+The IAM policies available for Database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
-.IAM policies for Databases workloads
+.IAM policies for Database workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
