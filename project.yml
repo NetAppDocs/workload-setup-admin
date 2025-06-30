@@ -43,6 +43,8 @@ sidebar:
           url: /log-in.html
         - title: Manage service accounts
           url: /manage-service-accounts.html
+        - title: Configure notifications
+          url: /configure-notifications.html
         - title: Automate tasks using Codebox
           entries:
             - title: Learn about Codebox
