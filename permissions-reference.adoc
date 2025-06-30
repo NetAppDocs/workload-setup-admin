@@ -341,12 +341,12 @@ a|
 
 ====
 
-=== Permissions for Databases workloads
-The IAM policies available for Databases workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+=== Permissions for Database workloads
+The IAM policies available for Database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
-.IAM policies for Databases workloads
+.IAM policies for Database workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
@@ -363,6 +363,7 @@ Select your operational mode to view the required IAM policies:
       "Effect": "Allow",
       "Action": [
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "sns:ListTopics",
         "ec2:DescribeInstances",
         "ec2:DescribeVpcs",
@@ -660,7 +661,7 @@ The following table displays the permissions for database workloads.
 | Where used
 | Mode
 
-| Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server
+| Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server and for compute optimization recommendation
 | cloudwatch:GetMetricStatistics 
 a| 
 * Inventory 
@@ -668,6 +669,12 @@ a|
 a|
 * Read-only
 * Read/Write
+
+| Gather performance metrics saved to Amazon CloudWatch from registered SQL nodes. Data generates in performance trend charts on the manage instance screen for registered SQL instances.
+| cloudwatch:GetMetricData
+| Inventory
+| Read-only
+
 | List and set triggers for events 
 | sns:ListTopics 
 | Deployment 
@@ -1145,11 +1152,6 @@ a|
 | Read/Write
 | cloudformation:ValidateTemplate 
 | Deployment 
-| Read/Write
-
-| Fetch metrics for compute optimization recommendation
-| cloudwatch:GetMetricStatistics 
-| Explore savings 
 | Read/Write
 
 | Fetch directories available in the region
@@ -2320,13 +2322,16 @@ a|
 
 As permissions are added and removed, we'll note them in the sections below.
 
+=== 29 June 2025
+The following permission is now available in _read-only_ mode for Databases: `cloudwatch:GetMetricData`.
+
 === 3 June 2025
-The following permission is now available in _Read/Write_ mode for GenAI: `s3:ListAllMyBuckets`.
+The following permission is now available in _read/write_ mode for GenAI: `s3:ListAllMyBuckets`.
 
 === 4 May 2025
-The following permission is now available in _Read/Write_ mode for GenAI: `qbusiness:ListApplications`.
+The following permission is now available in _read/write_ mode for GenAI: `qbusiness:ListApplications`.
 
-The following permissions are now available in _Read-only_ mode for Databases: 
+The following permissions are now available in _read-only_ mode for Databases: 
 
 * `logs:GetLogEvents`
 * `logs:DescribeLogGroups`
