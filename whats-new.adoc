@@ -24,11 +24,11 @@ include::_whatsnew/2025-05-04.adoc[]
 == 30 March 2025
 
 include::_whatsnew/2025-03-30.adoc[]
-//end::whats-new[]
 
 == 02 February 2025
 
 include::_whatsnew/2025-02-02.adoc[]
+//end::whats-new[]
 
 == 22 January 2025
 
