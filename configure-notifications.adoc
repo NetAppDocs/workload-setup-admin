@@ -5,7 +5,7 @@ keywords: amazon, sns, notification, topic, notifications, notifications service
 summary: You can configure BlueXP workload factory to send notifications to a person or another application when certain types of events happen. 
 ---
 
-= Configure BlueXP workload factory notifications
+= Configure BlueXP workload factory notifications 
 :icons: font
 :imagesdir: ./media/
 
