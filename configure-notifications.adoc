@@ -136,7 +136,7 @@ You can filter Amazon SNS notifications by the following criteria:
 ** Well-architected
 ** Deployment
 
-For example, the following JSON filter policy filters notifications to include only those that are related to Microsoft SQL Server instances and have a severity of "Recommendation":
+For example, the following JSON filter policy filters notifications to reject those that are related to Microsoft SQL Server instances and have a severity of "Recommendation":
 [source,json]
 ----
 {
