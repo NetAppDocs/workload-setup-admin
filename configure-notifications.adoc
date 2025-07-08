@@ -17,6 +17,7 @@ Workload factory sends notifications for the following events:
 
 [cols=6*,options="header,autowidth"]
 |===
+
 | Event
 | Description
 | Notification type
@@ -118,9 +119,41 @@ You can reduce unnecessary notification traffic and target specific notification
 === Filter Amazon SNS notifications
 When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive.
 
-For more information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
+You can filter Amazon SNS notifications by the following criteria:
 
-For examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
+* *Resource type*: The type of product that the notification is about. For example:
+** FSx for ONTAP
+** Microsoft SQL Server instance
+* *Workload*: The workload factory workload that the notification originated from. For example:
+** Storage
+** Databases
+** VMware
+* *Severity*: How severe the notification is. For example: 
+** Recommendation
+** Success
+** Error
+* *Notification type*: The notification type. For example:
+** Well-architected
+** Deployment
+
+For example, the following JSON filter policy filters notifications to include only those that are related to Microsoft SQL Server instances and have a severity of "Recommendation":
+[source,json]
+----
+{
+  "resource_type": ["Microsoft SQL Server instance"],
+  "severity": ["Recommendation"]
+}
+----
+
+For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
+
+For further information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
+
+
+
+
+
+
 
 === Filter BlueXP notifications
 You can use the BlueXP alerts and notifications settings to filter the alerts and notifications that you receive in BlueXP by severity level, such as Critical, Info, or Warning. 
