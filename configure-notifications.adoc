@@ -136,14 +136,32 @@ You can filter Amazon SNS notifications by the following criteria:
 ** Well-architected
 ** Deployment
 
-For example, the following JSON filter policy filters notifications to reject those that are related to Microsoft SQL Server instances and have a severity of "Recommendation":
+.Steps
+
+. In the Amazon SNS console, edit the subscription details for the SNS topic.
+. In the *Subscription filter policy* area, select to filter by *Message attributes*.
+. Enable the *Subscription filter policy* option.
+. Enter a JSON filter policy in the *JSON editor* box.
++
+For example, the following JSON filter policy accepts notifications that are related to the Storage workloadMicrosoft SQL Server instances and have a severity of "Recommendation":
++
 [source,json]
 ----
 {
-  "resource_type": ["Microsoft SQL Server instance"],
-  "severity": ["Recommendation"]
+  "accountId": [
+    "account-a",
+    "account-b"
+  ],
+  "resourceType": [
+    "FSx for ONTAP",
+    "type-b"
+  ],
+  "workload": [
+    "wf-fsx"
+  ]
 }
 ----
+. Select *Save changes*.
 
 For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
 
