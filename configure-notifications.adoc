@@ -117,7 +117,7 @@ After you configure workload factory to send notifications to a topic, follow th
 You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the BlueXP notifications settings for BlueXP notifications.
 
 === Filter Amazon SNS notifications
-When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive.
+When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive. Filter policies cause Amazon SNS to deliver only the notifications that match the filter policy to the subscriber.
 
 You can filter Amazon SNS notifications by the following criteria:
 
@@ -143,14 +143,13 @@ You can filter Amazon SNS notifications by the following criteria:
 . Enable the *Subscription filter policy* option.
 . Enter a JSON filter policy in the *JSON editor* box.
 +
-For example, the following JSON filter policy accepts notifications that are related to the Storage workloadMicrosoft SQL Server instances and have a severity of "Recommendation":
+For example, the following JSON filter policy accepts notifications that are related to the Storage workload and are associated with the account "account-a":
 +
 [source,json]
 ----
 {
   "accountId": [
-    "account-a",
-    "account-b"
+    "account-a"
   ],
   "resourceType": [
     "FSx for ONTAP",
