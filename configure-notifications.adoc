@@ -167,11 +167,6 @@ For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/
 For further information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
 
 
-
-
-
-
-
 === Filter BlueXP notifications
 You can use the BlueXP alerts and notifications settings to filter the alerts and notifications that you receive in BlueXP by severity level, such as Critical, Info, or Warning. 
 
