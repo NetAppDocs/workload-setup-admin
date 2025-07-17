@@ -121,20 +121,47 @@ When you subscribe to an Amazon SNS topic, you receive all notifications publish
 
 You can filter Amazon SNS notifications by the following criteria:
 
-* *Resource type*: The type of product addressed by the notification. For example:
-** FSx for ONTAP
-** Microsoft SQL Server instance
-* *Workload*: The workload factory workload that the notification originated from. For example:
-** Storage
-** Databases
-** VMware
-* *Severity*: The severity of the notification. For example: 
-** Recommendation
-** Success
-** Error
-* *Notification type*: The notification type. For example:
-** Well-architected
-** Deployment
+[cols=3*,options="header,autowidth"]
+|===
+
+| Description
+| Filter policy field name
+| Possible values
+
+| Resource type
+| `resourceType`
+a|
+
+* FSx for ONTAP
+* `Microsoft SQL Server instance`
+
+| Workload
+| `workload`
+a| 
+
+* `WLMDB`
+* `WLMAI`
+* `WLMVMC`
+
+| Priority
+| `priority`
+a|
+
+* `Success`
+* `Info`
+* `Recommendation`
+* `Warning`
+* `Error`
+* `Critical`
+
+| Notification type
+| `notificationType`
+a|
+
+* `Well-architected`
+* `Deployment`
+
+|===
 
 .Steps
 
