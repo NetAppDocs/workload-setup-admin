@@ -132,7 +132,7 @@ You can filter Amazon SNS notifications by the following criteria:
 | `resourceType`
 a|
 
-* FSx for ONTAP
+* `FSx for ONTAP`
 * `Microsoft SQL Server instance`
 
 | Workload
