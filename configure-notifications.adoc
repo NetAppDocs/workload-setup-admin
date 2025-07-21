@@ -135,7 +135,7 @@ a|
 * `DB`
 * `Microsoft SQL Server host`
 * `PostgreSQL Server host`
-* `Test resource type`
+//* `Test resource type`
 
 
 | Workload
@@ -143,7 +143,7 @@ a|
 a| 
 
 * `FSX`
-* `Test workload`
+//* `Test workload`
 * `WLMDB`
 //* `WLMAI`
 //* `WLMVMC`
@@ -164,7 +164,7 @@ a|
 a|
 
 * `Deployment`
-* `Test notification type`
+//* `Test notification type`
 * `Well-architected`
 
 |===
