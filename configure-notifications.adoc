@@ -176,7 +176,7 @@ a|
 . Enable the *Subscription filter policy* option.
 . Enter a JSON filter policy in the *JSON editor* box.
 +
-For example, the following JSON filter policy accepts notifications that are related to the Storage workload and are associated with the account "account-a":
+For example, the following JSON filter policy accepts notifications from the Microsoft SQL Server resource that are related to the WLMDB workload, have a priority of Success or Error, and provide details on Well-architected status:
 +
 [source,json]
 ----
@@ -185,11 +185,17 @@ For example, the following JSON filter policy accepts notifications that are rel
     "account-a"
   ],
   "resourceType": [
-    "FSx for ONTAP",
-    "type-b"
+    "Microsoft SQL Server host"
   ],
   "workload": [
-    "wf-fsx"
+    "WLMDB"
+  ],
+  "priority": [
+    "Success",
+    "Error"
+  ],
+  "notificationType": [
+    "Well-architected"
   ]
 }
 ----
