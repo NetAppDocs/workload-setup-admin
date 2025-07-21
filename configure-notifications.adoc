@@ -132,16 +132,21 @@ You can filter Amazon SNS notifications by the following criteria:
 | `resourceType`
 a|
 
-* `FSx for ONTAP`
-* `Microsoft SQL Server instance`
+* `DB`
+* `Microsoft SQL Server host`
+* `PostgreSQL Server host`
+* `Test resource type`
+
 
 | Workload
 | `workload`
 a| 
 
+* `FSX`
+* `Test workload`
 * `WLMDB`
-* `WLMAI`
-* `WLMVMC`
+//* `WLMAI`
+//* `WLMVMC`
 
 | Priority
 | `priority`
@@ -158,8 +163,9 @@ a|
 | `notificationType`
 a|
 
-* `Well-architected`
 * `Deployment`
+* `Test notification type`
+* `Well-architected`
 
 |===
 
