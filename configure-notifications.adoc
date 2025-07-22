@@ -140,11 +140,10 @@ a|
 
 | Workload
 | `workload`
-a| 
+| `WLMDB`
 
-* `FSX`
+//* `FSX`
 //* `Test workload`
-* `WLMDB`
 //* `WLMAI`
 //* `WLMVMC`
 
