@@ -1,6 +1,5 @@
 settings:
   name: Setup and administration
-  platform: cloud
   internal:
     pdf_enabled: true
   prod:
@@ -21,7 +20,7 @@ sidebar:
       entries:
         - title: Learn the basics
           entries: 
-            - title: Workload factory overview
+            - title: Learn about BlueXP workload factory
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
@@ -43,6 +42,8 @@ sidebar:
           url: /log-in.html
         - title: Manage service accounts
           url: /manage-service-accounts.html
+        - title: Configure notifications
+          url: /configure-notifications.html
         - title: Automate tasks using Codebox
           entries:
             - title: Learn about Codebox
@@ -64,3 +65,4 @@ sidebar:
 product-family:
   name: BlueXP workload factory
   repo: workload-family
+  
