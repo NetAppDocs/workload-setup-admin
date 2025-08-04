@@ -17,6 +17,7 @@ Workload factory sends notifications for the following events:
 
 [cols=6*,options="header,autowidth"]
 |===
+
 | Event
 | Description
 | Notification type
@@ -116,11 +117,93 @@ After you configure workload factory to send notifications to a topic, follow th
 You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the BlueXP notifications settings for BlueXP notifications.
 
 === Filter Amazon SNS notifications
-When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive.
+When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive. Filter policies cause Amazon SNS to deliver only the notifications that match the filter policy to the subscriber.
 
-For more information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
+You can filter Amazon SNS notifications by the following criteria:
 
-For examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
+[cols=3*,options="header,autowidth"]
+|===
+
+| Description
+| Filter policy field name
+| Possible values
+
+| Resource type
+| `resourceType`
+a|
+
+* `DB`
+* `Microsoft SQL Server host`
+* `PostgreSQL Server host`
+//* `Test resource type`
+
+
+| Workload
+| `workload`
+| `WLMDB`
+
+//* `FSX`
+//* `Test workload`
+//* `WLMAI`
+//* `WLMVMC`
+
+| Priority
+| `priority`
+a|
+
+* `Success`
+* `Info`
+* `Recommendation`
+* `Warning`
+* `Error`
+* `Critical`
+
+| Notification type
+| `notificationType`
+a|
+
+* `Deployment`
+//* `Test notification type`
+* `Well-architected`
+
+|===
+
+.Steps
+
+. In the Amazon SNS console, edit the subscription details for the SNS topic.
+. In the *Subscription filter policy* area, select to filter by *Message attributes*.
+. Enable the *Subscription filter policy* option.
+. Enter a JSON filter policy in the *JSON editor* box.
++
+For example, the following JSON filter policy accepts notifications from the Microsoft SQL Server resource that are related to the WLMDB workload, have a priority of Success or Error, and provide details on Well-architected status:
++
+[source,json]
+----
+{
+  "accountId": [
+    "account-a"
+  ],
+  "resourceType": [
+    "Microsoft SQL Server host"
+  ],
+  "workload": [
+    "WLMDB"
+  ],
+  "priority": [
+    "Success",
+    "Error"
+  ],
+  "notificationType": [
+    "Well-architected"
+  ]
+}
+----
+. Select *Save changes*.
+
+For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/latest/dg/example-filter-policies.html[Amazon SNS example filter policies^].
+
+For further information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
+
 
 === Filter BlueXP notifications
 You can use the BlueXP alerts and notifications settings to filter the alerts and notifications that you receive in BlueXP by severity level, such as Critical, Info, or Warning. 
