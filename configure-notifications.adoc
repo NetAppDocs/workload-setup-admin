@@ -46,6 +46,20 @@ Workload factory sends notifications for the following events:
 | Databases
 | FSx for ONTAP, DB host
 
+| Failed replication relationship creation
+| A SnapMirror replication relationship creation has failed. For more information, go to Tracker.
+| Replication
+| Critical
+| General storage
+| FSx for ONTAP
+
+| FSx for ONTAP creation failure
+| An FSx for ONTAP file system creation process has failed. For more information, go to Tracker.
+| FSx for ONTAP file system action
+| Critical
+| General storage
+| FSx for ONTAP
+
 |===
 
 ////
