@@ -1,0 +1,86 @@
+---
+sidebar: sidebar
+permalink: well-architected-workloads.html
+keywords: well-architected, best practices, well-architected file system, Amazon FSx for NetApp ONTAP, FSx for ONTAP
+summary: "Workload factory scans workload configurations for reliability, security, operational excellence, cost optimization, and performance efficiency, providing insights and recommendations to help you achieve operational excellence." 
+---
+= Build and operate well-architected workloads
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Workload factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage configurations that align with the AWS Well-Architected Framework. Workload factory provides daily analysis of your FSx for ONTAP file systems and categorizes configurations based on the key pillars of the AWS Well-Architected Framework. By automating this process, workload factory minimizes human error and ensures consistency in storage management.
+
+== How it works
+
+The AWS Well-Architected Framework provides a consistent approach for evaluating cloud architectures against best practices. It helps organizations build and operate reliable, secure, efficient, and cost-effective systems on AWS. Workload factory focuses on the following pillars of the framework: _reliability_, _security_, _operational excellence_, _cost optimization_, and _performance efficiency_. 
+
+Workload factory supports these concepts by providing an in-depth view into ONTAP configuration best practices for storage management. Specifically, the Storage workload within workload factory analyzes storage configurations for compliance with the pillars of the AWS Well-Architected Framework, and provides recommendations and remediation for suboptimal configurations. From the well-architected status dashboard in Storage, you'll find insights that help you implement well-architected best practices to deliver optimal performance and reliability for your FSx for ONTAP file systems.  
+
+Automating this intricate process with workload factory eliminates the risk of human error and ensures uniformity in storage management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure. 
+
+== Best practices and recommendations
+Workload factory provides a set of best practices and recommendations for operating well-architected file system configurations. These recommendations are categorized by pillar. Each pillar contains specific configuration recommendations that help you achieve the desired outcomes for your file system configurations.
+
+=== Reliability 
+Reliability ensures that workloads perform their intended functions correctly and consistently, even when there are disruptions. 
+ 
+* *Schedule FSx for ONTAP backups* 
++
+Backing up your volumes helps support data retention and compliance needs. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your data. 
+
+* *Schedule local snapshots* 
++
+Schedule local snapshots for efficient backup and quick restores. Snapshots are instant, point-in-time images of your volumes. S
+
+* *Set up data replication* 
++
+To extend data reliability, data can be replicated to an FSx for ONTAP file system in the same region or in another region. Set up data replication to support migration, disaster recovery, and long-term retention across file systems. 
+
+* *Increase SSD capacity threshold* 
++
+The SSD storage tier capacity should not exceed 80% utilization on an ongoing basis. This might impact data reads and writes to your capacity pool storage tier and impact the throughput capacity of your file system. Running out of capacity might result in data volumes becoming read-only, and services trying to write new data might fail. 
+
+* *Match labels to ensure data reliability* 
++
+The snapshot policy labels of the source volume and the replication policy labels must match to ensure data reliability. 
+
+* *Increase file capacity threshold* 
++
+Workload factory recommends raising the volume capacity limit. Low file capacity (inodes) prevents writing additional data to the volume. Workload factory recommends staying below 80% utilization of the available file capacity on an ongoing basis. Available file capacity is required to create new files in the volume. 
+
+=== Security 
+Security emphasizes protecting data, systems, and assets through risk assessments and mitigation strategies. 
+
+* *Enable ARP/AI* 
++
+Workload factory recommends enabling NetApp Autonomous Ransomware protection with AI (ARP/AI) for all volumes to enhance cyber resiliency and ensure active protection against evolving ransomware threats. 
+
+=== Operational excellence
+Operational excellence focuses on delivering the most optimal architecture and business value. 
+
+* *Enable automatic capacity management* 
++
+Automatic capacity management should be enabled to regularly ensure that the SSD tier doesn't exceed the threshold. 
+
+=== Cost optimization
+Cost optimization aims to deliver business value while minimizing costs.
+
+* *Optimize TCO by tiering cold data* 
++
+Cold data tiering should be enabled to reduce SSD storage tier utilization. Applying a tiering policy to every volume is recommended. FSx for ONTAP scans the data continuously to detect cold data and move it to the capacity storage pool tier without disruption. 
+
+* *Enable storage efficiencies* 
++
+Storage efficiencies should be enabled - compaction, compression, and deduplication - to optimize storage utilization and reduce the SSD tier cost. 
+
+== Get started with Workload Factory to detect and correct misconfigurations 
+
+Get started with workload factory by signing up and creating an account, adding credentials, and establishing connectivity so that workload factory can manage AWS resources directly, and then optimize your workloads by using Amazon FSx for NetApp ONTAP. 
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick start]
+
+.Related information
+
+* link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html[Implement well-architected FSx for ONTAP file systems^] 
+* link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html[Implement well-architected database workloads^]
