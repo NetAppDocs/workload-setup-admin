@@ -33,21 +33,6 @@ link:add-credentials.html[Learn how to add credentials to your account].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Optimize your workloads using FSx for ONTAP
 
 [role="quick-margin-para"]
-Now that you've signed up, created an account, and optionally added AWS credentials, you can start using workload factory to optimize your workloads using FSx for ONTAP. Use the links below to follow step-by-step instructions for each type of workload.
+After you've signed up, created an account, and optionally added AWS credentials, you can start using workload factory to optimize your workloads using FSx for ONTAP. 
 
-[role="quick-margin-list"]
-* https://docs.netapp.com/us-en/workload-fsx-ontap/index.html[Amazon FSx for NetApp ONTAP^]
-+
-Assess and analyze current data estates for potential cost savings by using FSx for ONTAP as the storage infrastructure, provision and templatize FSx for ONTAP deployments based on best practices, and access advanced management capabilities.
-
-* https://docs.netapp.com/us-en/workload-genai/index.html[GenAI^]
-+
-Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to improve the accuracy and uniqueness of your AI applications. Create a RAG knowledge base on FSx for ONTAP with built-in data security and compliance.
-
-* https://docs.netapp.com/us-en/workload-databases/index.html[Database workloads^]
-+
-Detect your existing database estate on AWS, assess potential cost savings with FSx for ONTAP, deploy databases end-to-end with built-in best practices for optimization, and automate thin cloning for CI/CD pipelines.
-
-* https://docs.netapp.com/us-en/workload-vmware/index.html[VMware workloads^]
-+
-Streamline migrations and operations with smart recommendations and automatic remediation. Deploy efficient backups and robust disaster recovery. Monitor and troubleshoot your VMs.
+link:whats-next.html[Find ways to optimize your workloads with FSx for ONTAP]
