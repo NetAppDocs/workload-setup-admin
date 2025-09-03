@@ -35,4 +35,5 @@ link:add-credentials.html[Learn how to add credentials to your account].
 [role="quick-margin-para"]
 After you've signed up, created an account, and optionally added AWS credentials, you can start using workload factory to optimize your workloads using FSx for ONTAP. 
 
-link:whats-next.html[Find ways to optimize your workloads with FSx for ONTAP]
+[role="quick-margin-para"]
+link:whats-next.html[Optimize your workloads with FSx for ONTAP].
