@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: codebox-automation.html
 keywords: codebox, automation
-summary: "Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by Workload Factory." 
+summary: "Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by NetApp Workload Factory." 
 ---
 
 = Learn about codebox automation
@@ -10,7 +10,7 @@ summary: "Codebox is an Infrastructure as Code (IaC) co-pilot that helps develop
 :imagesdir: ./media/
 
 [.lead]
-Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by Workload Factory. Codebox is aligned with the Workload Factory operation modes (_basic_, _read-only_, and _read/write_) and it sets a clear path for execution readiness as well as providing an automation catalog for quick future reuse.
+Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by NetApp Workload Factory. Codebox is aligned with the Workload Factory operation modes (_basic_, _read-only_, and _read/write_) and it sets a clear path for execution readiness as well as providing an automation catalog for quick future reuse.
 
 == Codebox capabilities
 
@@ -30,4 +30,8 @@ The supported code formats include:
 * AWS CLI
 * AWS CloudFormation
 
+== Related information
+
 link:use-codebox.html[Learn how to use Codebox].
+
+link:https://console.workloads.netapp.com/api-doc[Workload Factory REST API documentation^].

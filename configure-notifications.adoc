@@ -10,7 +10,7 @@ summary: You can configure NetApp Workload Factory to send notifications to a pe
 :imagesdir: ./media/
 
 [.lead]
-You can configure the NetApp Workload Factory notification service to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure the NetApp Workload Factory notification service to send notifications as alerts in the NetApp Console or to an Amazon SNS topic. Notifications sent as alerts appear in NetApp Console when you have a Console agent or link deployed. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Notification types and messages
 Workload Factory sends notifications for the following events:
@@ -79,7 +79,7 @@ Workload Factory sends notifications for the following events:
 ////
 
 == Configure Workload Factory notifications
-Configure Workload Factory notifications using the BlueXP console or the Workload Factory console. If you use the BlueXP console, you can configure Workload Factory to send notifications to BlueXP alerts or to an Amazon SNS topic. You can configure BlueXP alerts from the *Alerts and notifications settings* area in BlueXP.
+Configure Workload Factory notifications using the NetApp Console or the Workload Factory console. If you use the NetApp Console, you can configure Workload Factory to send notifications as alerts in the NetApp Console or to an Amazon SNS topic. You can configure notifications from the *Notifications settings* in the NetApp Console.
 
 .Before you begin
 
@@ -89,20 +89,18 @@ Configure Workload Factory notifications using the BlueXP console or the Workloa
 [role="tabbed-block"]
 ====
 
-.Configure notifications from the BlueXP console
+.Configure notifications from NetApp Console
 --
 .Steps
 
-. Log in to the link:https://console.bluexp.netapp.com[BlueXP console^].
-. Select *Workloads* from the left navigation. 
-. Select *Home* to view all workloads or select one workload like *Storage* or *Databases*. 
-. From the Workload Factory menu bar, select the configuration menu.
-. In the menu, select *Workload Factory notification setup*.
-. Optional: Select *Enable BlueXP notifications* to configure Workload Factory to send notifications to BlueXP alerts.
-. Select *Enable SNS notifications*.
-. Follow the instructions to configure Amazon SNS from the Amazon SNS console.
+. Log in to the link:https://console.netapp.com[NetApp Console^].
+. From the NetApp Console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
+. On the Notifications setup page, do the following:
+.. Optional: Select *Enable NetApp Console notifications* to configure Workload Factory to send notifications in the NetApp Console.
+.. Select *Enable SNS notifications*.
+.. Follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
-After you create the topic, copy the topic ARN and enter it in the *SNS topic ARN* field in the *Notification setup* dialog. 
+After you create the topic, copy the topic ARN and enter it in the *SNS topic ARN* field on the *Notifications setup* page.
 . After you verify the configuration by sending a test notification, select *Apply*.
 
 .Result
@@ -113,8 +111,7 @@ Workload Factory is configured to send notifications to the Amazon SNS topic tha
 .Steps
 
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
-. Open the account menu from the top navigation bar.
-. In the menu, select *Notification setup*.
+. From the Workload Factory console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
 . Select *Enable SNS notifications*.
 . Follow the instructions to configure Amazon SNS from the Amazon SNS console.
 . After you verify the configuration by sending a test notification, select *Apply*.
@@ -128,7 +125,7 @@ Workload Factory is configured to send notifications to the Amazon SNS topic tha
 After you configure Workload Factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from Workload Factory.
 
 == Filter notifications
-You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the BlueXP notifications settings for BlueXP notifications.
+You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the notifications settings in the NetApp Console.
 
 === Filter Amazon SNS notifications
 When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive. Filter policies cause Amazon SNS to deliver only the notifications that match the filter policy to the subscriber.

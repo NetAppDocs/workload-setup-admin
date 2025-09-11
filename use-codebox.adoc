@@ -20,13 +20,13 @@ As you enter values in the Workload Factory UI wizards, you can see the data upd
 
 image:screenshot-codebox-example1.png[A screenshot showing how to create a Microsoft SQL Server in the UI and the corresponding entries for VPC and availability zones in Codebox.]
 
-With some code formats you can also select the Download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
+With some code formats you can also select the download button to save the code in a file that you can bring to another system. If required, you can edit the code after it has been downloaded so that you can adapt it to other AWS accounts.
 
 == Use CloudFormation code from Codebox
 
 You can copy the CloudFormation code generated from Codebox and then launch the Amazon Web Services CloudFormation stack in your AWS account. CloudFormation will perform the actions that you defined in the Workload Factory UI.
 
-The steps to use the CLoudFormation code might be different depending on whether you are deploying an FSx for ONTAP file system, creating account credentials, or performing other Workload Factory actions.
+The steps to use the CloudFormation code might be different depending on whether you are deploying an FSx for ONTAP file system, creating account credentials, or performing other Workload Factory actions.
 
 Note that the code within a CloudFormation-generated YAML file expires after 7 days for security reasons.
 
@@ -70,7 +70,7 @@ Note that the code within a CloudFormation-generated YAML file expires after 7 d
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, copy the code in the Codebox.  
+. After you have used the Workload Factory console to define the operation that you want to perform, copy the code in the Codebox.  
 
 . Select *Redirect to CloudFormation* and the Redirect to CloudFormation page is displayed.
 
@@ -96,7 +96,7 @@ Note that the authentication tokens are hidden in Codebox, but they are populate
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, copy the API code in the Codebox.  
+. After you have used the Workload Factory console to define the operation that you want to perform, copy the API code in the Codebox.  
 
 . Paste the code and run it on your host system.
 
@@ -107,7 +107,7 @@ You can use the Amazon Web Services CLI generated from Codebox to deploy and man
 
 .Steps
 
-. After you have used the UI to define the operation that you want to perform, copy the AWS CLI in the Codebox.  
+. After you have used the Workload Factory console to define the operation that you want to perform, copy the AWS CLI in the Codebox.  
 
 . Open another browser window and log in to the AWS Management Console.
 
@@ -124,6 +124,6 @@ You can use Terraform to deploy and manage your FSx for ONTAP file systems and o
 
 .Steps
 
-. After you have used the user interface to define the operation that you want to perform, download the Terraform code from the Codebox.  
+. After you have used the Workload Factory console to define the operation that you want to perform, download the Terraform code from the Codebox.  
 . Copy the downloaded script archive to the system where Terraform is installed.
 . Extract the zip file and follow the steps in the README.md file. 

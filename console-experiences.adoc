@@ -17,13 +17,11 @@ NetApp Workload Factory is accessible via two web-based consoles. Learn how to a
 
 == Access Workload Factory in the NetApp Console
 
-You can access Workload Factory from the NetApp Console. In addition to using NetApp Workload Factory for AWS storage and workload capabilities, you can also access other data services like Copy and Sync, Digital Wallet, and more.
+You can access Workload Factory from the NetApp Console. In addition to using Workload Factory for AWS storage and workload capabilities, you can also access other data services like NetApp Copy and Sync, NetApp Digital Wallet, and more.
 
 .Steps
 . Log in to the link:https://console.netapp.com[NetApp Console^].
-. Select *Workloads* from the left navigation. 
-. Select *Home* to view all workloads or select one workload like *Storage* or *Databases*. 
-. Select an option to get started in the workload. 
+. From the NetApp Console menu, select *Workloads* and then *Overview* to view all workloads or select one workload like *Storage* or *Databases* to get started. 
 
 == Access Workload Factory in the Workload Factory console
 
@@ -31,4 +29,4 @@ You can access Workload Factory from the Workload Factory console.
 
 .Steps
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
-. Navigate to the workload you'd like to use and select an option to get started.
+. From the Workload Factory console menu, select *Overview* to view all workloads or select one workload like *Storage* or *Databases* to get startedS. 
