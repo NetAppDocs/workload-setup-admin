@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: operational-modes.html
 keywords: modes, zero-trust, full-trust, read-only, basic, read/write, aws, aws accounts, keys, multiple accounts, permissions, aws permissions, policy, policies, credentials
-summary: "Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies." 
+summary: "NetApp Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies." 
 ---
 
 = Learn about operational modes and AWS credentials
@@ -10,7 +10,7 @@ summary: "Workload Factory provides three operational modes that enable you to c
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies. The operational mode that you use is determined by the level of AWS permissions that you provide to Workload Factory.
+NetApp Workload Factory provides three operational modes that enable you to carefully control access between Workload Factory and your cloud estate based on your IT policies. The operational mode that you use is determined by the level of AWS permissions that you provide to Workload Factory.
 
 == Operational modes
 
