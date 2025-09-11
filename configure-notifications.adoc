@@ -2,18 +2,18 @@
 sidebar: sidebar
 permalink: configure-notifications.html
 keywords: amazon, sns, notification, topic, notifications, notifications service, alerts
-summary: You can configure BlueXP workload factory to send notifications to a person or another application when certain types of events happen. 
+summary: You can configure NetApp Workload Factory to send notifications to a person or another application when certain types of events happen. 
 ---
 
-= Configure BlueXP workload factory notifications 
+= Configure NetApp Workload Factory notifications 
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-You can configure the BlueXP workload factory notification service to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When workload factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure the NetApp Workload Factory notification service to send notifications to the BlueXP alerts service or to an Amazon SNS topic. Notifications sent to BlueXP alerts appear in the BlueXP alerts panel. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Notification types and messages
-Workload factory sends notifications for the following events:
+Workload Factory sends notifications for the following events:
 
 [cols=6*,options="header,autowidth"]
 |===
@@ -26,7 +26,7 @@ Workload factory sends notifications for the following events:
 | Resource type
 
 | Some database instances in your account are not well-architected
-| All Microsoft SQL Server instances in your account have been analyzed for well-architected issues. The description for this event gives the number of well-architected instances and unoptimized instances. Review well-architected status findings and recommendations in the Databases inventory from the workload factory console.
+| All Microsoft SQL Server instances in your account have been analyzed for well-architected issues. The description for this event gives the number of well-architected instances and unoptimized instances. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
 | Well-architected
 | Recommendation
 | Databases
@@ -64,27 +64,27 @@ Workload factory sends notifications for the following events:
 
 ////
 | Failed replication relationship creation
-| A replication relationship creation process has failed. For more information, go to the workload factory Tracker.
+| A replication relationship creation process has failed. For more information, go to the Workload Factory Tracker.
 | Replication
 | Critical
 | Storage
 | FSx for ONTAP
 
 | FSX for ONTAP filesystem creation failure
-| An FSx for ONTAP filesystem creation process has failed. For more information, go to the workload factory Tracker.
+| An FSx for ONTAP filesystem creation process has failed. For more information, go to the Workload Factory Tracker.
 | FSx for ONTAP file system action
 | Critical
 | Storage
 | FSx for ONTAP
 ////
 
-== Configure workload factory notifications
-Configure workload factory notifications using the BlueXP console or the workload factory console. If you use the BlueXP console, you can configure workload factory to send notifications to BlueXP alerts or to an Amazon SNS topic. You can configure BlueXP alerts from the *Alerts and notifications settings* area in BlueXP.
+== Configure Workload Factory notifications
+Configure Workload Factory notifications using the BlueXP console or the Workload Factory console. If you use the BlueXP console, you can configure Workload Factory to send notifications to BlueXP alerts or to an Amazon SNS topic. You can configure BlueXP alerts from the *Alerts and notifications settings* area in BlueXP.
 
 .Before you begin
 
 * You need to configure Amazon SNS and create Amazon SNS topics using either the Amazon SNS console or the AWS CLI.
-* Note that workload factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received, so consider this if you have critical or emergency notifications.
+* Note that Workload Factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received, so consider this if you have critical or emergency notifications.
 
 [role="tabbed-block"]
 ====
@@ -96,9 +96,9 @@ Configure workload factory notifications using the BlueXP console or the workloa
 . Log in to the link:https://console.bluexp.netapp.com[BlueXP console^].
 . Select *Workloads* from the left navigation. 
 . Select *Home* to view all workloads or select one workload like *Storage* or *Databases*. 
-. From the workload factory menu bar, select the configuration menu.
+. From the Workload Factory menu bar, select the configuration menu.
 . In the menu, select *Workload Factory notification setup*.
-. Optional: Select *Enable BlueXP notifications* to configure workload factory to send notifications to BlueXP alerts.
+. Optional: Select *Enable BlueXP notifications* to configure Workload Factory to send notifications to BlueXP alerts.
 . Select *Enable SNS notifications*.
 . Follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
@@ -106,13 +106,13 @@ After you create the topic, copy the topic ARN and enter it in the *SNS topic AR
 . After you verify the configuration by sending a test notification, select *Apply*.
 
 .Result
-Workload factory is configured to send notifications to the Amazon SNS topic that you specified.
+Workload Factory is configured to send notifications to the Amazon SNS topic that you specified.
 --
-.Configure notifications from workload factory console
+.Configure notifications from Workload Factory console
 --
 .Steps
 
-. Log in to the link:https://console.workloads.netapp.com[workload factory console^].
+. Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
 . Open the account menu from the top navigation bar.
 . In the menu, select *Notification setup*.
 . Select *Enable SNS notifications*.
@@ -120,12 +120,12 @@ Workload factory is configured to send notifications to the Amazon SNS topic tha
 . After you verify the configuration by sending a test notification, select *Apply*.
 
 .Result
-Workload factory is configured to send notifications to the Amazon SNS topic that you specified.
+Workload Factory is configured to send notifications to the Amazon SNS topic that you specified.
 --
 ====
 
 == Subscribe to the Amazon SNS topic
-After you configure workload factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from workload factory.
+After you configure Workload Factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from Workload Factory.
 
 == Filter notifications
 You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the BlueXP notifications settings for BlueXP notifications.
@@ -219,8 +219,8 @@ For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/
 For further information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
 
 
-=== Filter BlueXP notifications
-You can use the BlueXP alerts and notifications settings to filter the alerts and notifications that you receive in BlueXP by severity level, such as Critical, Info, or Warning. 
+=== Filter notifications in the NetApp Console
+You can use the NetApp Console notifications settings to filter notifications that you receive in the Console by severity level, such as Critical, Info, or Warning.
 
-For more information about filtering notifications in BlueXP, refer to the https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#filter-notifications[BlueXP documentation^].
+For more information about filtering notifications in the Console, refer to the https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications[NetApp Console documentation^].
 

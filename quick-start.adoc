@@ -2,30 +2,30 @@
 sidebar: sidebar
 permalink: quick-start.html
 keywords: quick start
-summary: Get started with workload factory by preparing networking for the workload factory console, signing up and creating an account, and adding credentials so that workload factory can manage AWS resources directly.
+summary: Get started with Workload Factory by preparing networking for the Workload Factory console, signing up and creating an account, and adding credentials so that Workload Factory can manage AWS resources directly.
 ---
 
-= Quick start for BlueXP workload factory
+= Quick start for NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Get started with workload factory by signing up and creating an account, adding credentials so that workload factory can manage AWS resources directly, and then optimize your workloads by using Amazon FSx for NetApp ONTAP.
+Get started with Workload Factory by signing up and creating an account, adding credentials so that Workload Factory can manage AWS resources directly, and then optimize your workloads by using Amazon FSx for NetApp ONTAP.
 
-Workload factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:workload-factory-overview.html[workload factory] and  link:operational-modes.html[operational modes].
+Workload Factory is accessible to users as a cloud service from the web-based console. Before you get started, you should have an understanding of link:workload-factory-overview.html[Workload Factory] and  link:operational-modes.html[operational modes].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png[One] Sign up and create an account
 
 [role="quick-margin-para"]
-Go to the https://console.workloads.netapp.com[workload factory console^], sign up, and create an account. 
+Go to the https://console.workloads.netapp.com[Workload Factory console^], sign up, and create an account. 
 
 [role="quick-margin-para"]
 link:sign-up-saas.html[Learn how to sign up and create an account].
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Add AWS credentials to workload factory 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png[Two] Add AWS credentials to Workload Factory 
 
 [role="quick-margin-para"]
-This step is optional. You can use workload factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to workload factory in either _read-only_ mode or _read/write_ mode gives your workload factory account the permissions needed to create and manage FSx for ONTAP file systems and to deploy and manage specific workloads, such as databases and GenAI.
+This step is optional. You can use Workload Factory in _Basic_ mode without adding credentials to access your AWS account. Adding AWS credentials to Workload Factory in either _read-only_ mode or _read/write_ mode gives your Workload Factory account the permissions needed to create and manage FSx for ONTAP file systems and to deploy and manage specific workloads, such as databases and GenAI.
 
 [role="quick-margin-para"]
 link:add-credentials.html[Learn how to add credentials to your account].
@@ -33,7 +33,7 @@ link:add-credentials.html[Learn how to add credentials to your account].
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png[Three] Optimize your workloads using FSx for ONTAP
 
 [role="quick-margin-para"]
-After you've signed up, created an account, and optionally added AWS credentials, you can start using workload factory to optimize your workloads using FSx for ONTAP. 
+After you've signed up, created an account, and optionally added AWS credentials, you can start using Workload Factory to optimize your workloads using FSx for ONTAP. 
 
 [role="quick-margin-para"]
 link:whats-next.html[Optimize your workloads with FSx for ONTAP].
