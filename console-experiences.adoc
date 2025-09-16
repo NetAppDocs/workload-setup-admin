@@ -21,12 +21,12 @@ You can access Workload Factory from the NetApp Console. In addition to using Wo
 
 .Steps
 . Log in to the link:https://console.netapp.com[NetApp Console^].
-. From the NetApp Console menu, select *Workloads* and then *Overview* to view all workloads or select one workload like *Storage* or *Databases* to get started. 
+. From the NetApp Console menu, select *Workloads* and then *Overview*. 
 
 == Access Workload Factory in the Workload Factory console
 
 You can access Workload Factory from the Workload Factory console. 
 
-.Steps
+.Step
+
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
-. From the Workload Factory console menu, select *Overview* to view all workloads or select one workload like *Storage* or *Databases* to get started. 
