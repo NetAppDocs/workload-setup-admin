@@ -85,7 +85,7 @@ You can deploy CloudShell from anywhere in the NetApp Workload Factory console. 
 --
 .Steps
 . Log in to the https://console.workloads.netapp.com[Workload Factory console^].
-. Open CloudShell image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
+. From the menu, select *Administration* and then *CloudShell*.
 . In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
 image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
@@ -101,10 +101,11 @@ If an error occurs after issuing an ONTAP CLI command, select the light bulb ico
 --
 .Steps
 . Log in to the link:https://console.netapp.com[NetApp Console^].
-. From the menu, select *Workloads* and then *Storage*.
-. In the *FSx for ONTAP* tab, select the three-dot menu of the file system and then select *Open CloudShell*.
+. From the menu, select *Workloads* and then *Administration*.
+. From the Administration menu, select *CloudShell*.
+. In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
-A CloudShell session opens in the context of the selected file system.
+image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
 . Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
@@ -159,15 +160,6 @@ You can split CloudShell session tabs to view two or more tabs at the same time.
 Drag and drop CloudShell session tabs to the top, bottom, left, or right of the CloudShell window to split the view.
 
 image:screenshot-cloudshell-split-view.png["Screenshot that shows two CloudShell tabs split horizontally. The tabs appear side by side."]
-
-== Re-open your last CloudShell session
-If by accident you close your CloudShell session, you can re-open it.
-
-.Step
-Select the CloudShell icon image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
-
-.Result
-The latest CloudShell sessions open. 
 
 == Update settings for a CloudShell session 
 You can update font and output type settings for CloudShell sessions. 
