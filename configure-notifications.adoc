@@ -60,6 +60,20 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP
 
+| Automatic SSD capacity or inodes increase failure
+| 
+| Capacity management
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
+| Issues detected for FSx for ONTAP file systems
+| 
+| Well-architected analysis
+| Recommendation
+| General storage
+| FSx for ONTAP file systems
+
 |===
 
 ////
