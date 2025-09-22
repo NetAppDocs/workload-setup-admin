@@ -60,37 +60,28 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP
 
-| Automatic SSD capacity or inodes increase failure
-| 
+| Automatic SSD capacity or inodes increase success
+| During a recent automatic capacity management update, the FSx for ONTAP file system either increased SSD capacity or volume inodes successfully. For more information, go to Tracker.
 | Capacity management
 | Critical
 | General storage
 | FSx for ONTAP file systems
 
-| Issues detected for FSx for ONTAP file systems
-| 
+| Automatic SSD capacity or inodes increase failure
+| During a recent automatic capacity management update, the FSx for ONTAP file system failed to increase SSD capacity or volume inodes. For more information, go to Tracker.
+| Capacity management
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
+| FSx for ONTAP issue detected
+| All FSx for ONTAP file systems have been analyzed for well-architected issues. The scan detected one or more issues. For more information, review the well-architected analysis from the Storage dashboard in the Workload Factory console.
 | Well-architected analysis
 | Recommendation
 | General storage
 | FSx for ONTAP file systems
 
 |===
-
-////
-| Failed replication relationship creation
-| A replication relationship creation process has failed. For more information, go to the Workload Factory Tracker.
-| Replication
-| Critical
-| Storage
-| FSx for ONTAP
-
-| FSX for ONTAP filesystem creation failure
-| An FSx for ONTAP filesystem creation process has failed. For more information, go to the Workload Factory Tracker.
-| FSx for ONTAP file system action
-| Critical
-| Storage
-| FSx for ONTAP
-////
 
 == Configure Workload Factory notifications
 Configure Workload Factory notifications using the NetApp Console or the Workload Factory console. If you use the NetApp Console, you can configure Workload Factory to send notifications as alerts in the NetApp Console or to an Amazon SNS topic. You can configure notifications from the *Notifications settings* in the NetApp Console.
