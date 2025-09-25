@@ -2,17 +2,21 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with workload factory administration features: cloud provider credentials, Codebox enhancements, and more."
+summary: "Learn what's new with Workload Factory administration features: cloud provider credentials, Codebox enhancements, and more."
 ---
 
-= What's new with BlueXP workload factory administration features
+= What's new with NetApp Workload Factory administration features
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with workload factory administration features: cloud provider credentials, Codebox enhancements, and more.
+Learn what's new with Workload Factory administration features: cloud provider credentials, Codebox enhancements, and more.
 
 //tag::whats-new[]
+== 06 October 2025
+
+include::_whatsnew/2025-10-06.adoc[]
+
 == 29 June 2025
 
 include::_whatsnew/2025-06-29.adoc[]
@@ -20,6 +24,7 @@ include::_whatsnew/2025-06-29.adoc[]
 == 04 May 2025
 
 include::_whatsnew/2025-05-04.adoc[]
+//end::whats-new[]
 
 == 30 March 2025
 
@@ -28,7 +33,6 @@ include::_whatsnew/2025-03-30.adoc[]
 == 02 February 2025
 
 include::_whatsnew/2025-02-02.adoc[]
-//end::whats-new[]
 
 == 22 January 2025
 

@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: permissions-reference.html
 keywords: permissions, actions
-summary: "To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment." 
+summary: "To use NetApp Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment." 
 ---
 
-= Permissions for BlueXP workload factory
+= Permissions for NetApp Workload Factory
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,18 +13,18 @@ summary: "To use BlueXP workload factory features and services, you'll need to p
 :imagesdir: ./media/
 
 [.lead]
-To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment. 
+To use NetApp Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
 
 == Why use permissions
-When you provide _read-only_ or _read/write_ mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
+When you provide _read-only_ or _read/write_ mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
 
-For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
+For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == Permissions by workload
-Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
+Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
 === Permissions for Storage
-The IAM policies available for Storage provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for Storage provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -342,7 +342,7 @@ a|
 ====
 
 === Permissions for Database workloads
-The IAM policies available for Database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for Database workloads provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -1293,7 +1293,7 @@ a|
 | Deployment 
 | Read/Write
 
-| Workload factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation
+| Workload Factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation
 | logs:GetLogEvents 
 a| 
 * Storage assessment (Optimization) 
@@ -1302,14 +1302,14 @@ a|
 * Read-only
 * Read/Write
 
-| Allow workload factory to get current log groups and check that retention is set for log groups created by workload factory
+| Allow Workload Factory to get current log groups and check that retention is set for log groups created by Workload Factory
 | logs:DescribeLogGroups
 a| 
 * Storage assessment (Optimization) 
 * Inventory
 | Read-only
 
-| Allow workload factory to set a one-day retention policy for log groups created by workload factory to avoid unnecessary accumulation of log streams for SSM command outputs
+| Allow Workload Factory to set a one-day retention policy for log groups created by Workload Factory to avoid unnecessary accumulation of log streams for SSM command outputs
 | logs:PutRetentionPolicy
 a| 
 * Storage assessment (Optimization)
@@ -1475,7 +1475,7 @@ a|
 
 === Permissions for GenAI workloads
 
-The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 GenAI IAM policies are only available in _read/write_ mode:
 
@@ -1998,7 +1998,7 @@ The following table provides details about the permissions for GenAI workloads.
 
 === Permissions for VMware workloads
 
-The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -2342,7 +2342,7 @@ The following permissions are now available in _read/write mode_ for GenAI:
 The following permission has been removed from _read/write mode_ for GenAI: `Bedrock:GetFoundationModel`.
 
 ==== iam:SimulatePrincipalPolicy permission update
-The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the workload factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
+The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the Workload Factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from Workload Factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
 
 === 2 March 2025
 
