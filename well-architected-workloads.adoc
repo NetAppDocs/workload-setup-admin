@@ -9,21 +9,17 @@ summary: "Workload Factory scans workload configurations for reliability, securi
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage configurations that align with the AWS Well-Architected Framework. Workload Factory provides daily analysis of your FSx for ONTAP file systems and categorizes configurations based on the key pillars of the AWS Well-Architected Framework. By automating this process, workload factory minimizes human error and ensures consistency in storage management.
+Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage configurations that align with the AWS Well-Architected Framework. Workload Factory provides daily analysis of your FSx for ONTAP file systems and categorizes configurations based on the key pillars of the AWS Well-Architected Framework. By automating this process, Workload Factory minimizes human error and ensures consistency in workload management.
 
-== How it works
+== How it works 
 
-The AWS Well-Architected Framework provides a consistent approach for evaluating cloud architectures against best practices. It helps organizations build and operate reliable, secure, efficient, and cost-effective systems on AWS. Workload Factory focuses on the following pillars of the framework: _reliability_, _security_, _operational excellence_, _cost optimization_, and _performance efficiency_. 
+Workload Factory analyzes Amazon FSx for NetApp ONTAP file systems, Microsoft SQL Server, and Oracle database deployments daily. The daily analysis provides the well-architected status, and insights and recommendations with options to automatically fix configuration issues so that your file system meets best practices.
 
-Workload Factory simplifies the difficult task of manually applying best practices to large storage or database environments; it streamlines this process by combining analysis and remediation of all relevant configurations from the Workload Factory console. The well-architected analysis eliminates the risk of human error and ensures uniformity in storage and database management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure.
+You have options to review the recommendations for configuration issues with your file systems and fix the issues within the workload factory console.
 
-=== How it works for Storage
+== Why it matters
 
-Workload Factory supports these concepts by providing an in-depth view into ONTAP configuration best practices for storage management. Specifically, the Storage workload within Workload Factory analyzes storage configurations for compliance with the pillars of the AWS Well-Architected Framework, and provides recommendations and remediation for suboptimal configurations. From the well-architected status dashboard in Storage, you'll find insights that help you implement well-architected best practices to deliver optimal performance and reliability for your FSx for ONTAP file systems.
-
-=== How it works for Databases
-
-Workload Factory assesses Microsoft SQL Server and Oracle database configurations and settings related to storage sizing, storage layout, storage configuration, compute, application (SQL Server), and resiliency. The recommendations are based on a combination of best practices for database storage running on Amazon FSx for NetApp ONTAP, and for Microsoft SQL Server database environments, and for Oracle database environments. 
+Workload Factory simplifies the difficult task of manually applying best practices to large storage or database environments; it streamlines this process by combining analysis and remediation of all relevant configurations from the Workload Factory console. The well-architected analysis eliminates the risk of human error and ensures uniformity in storage and database management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure. 
 
 == Get started with Workload Factory to detect and correct misconfigurations 
 
@@ -31,8 +27,11 @@ Get started with Workload Factory by signing up and creating an account, adding 
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick start]
 
-== Best practices and recommendations
-Workload Factory provides a set of best practices and recommendations for operating well-architected file system configurations and database workloads. These recommendations are categorized by pillar. Each pillar contains specific configuration recommendations that help you achieve the desired outcomes for your configurations.
+== Best practices and recommendations for Storage workloads
+
+Workload Factory provides an in-depth view into ONTAP configuration best practices for storage management. Specifically, the Storage workload within Workload Factory analyzes storage configurations for compliance with the pillars of the AWS Well-Architected Framework, and provides recommendations and remediation for suboptimal configurations. From the well-architected status dashboard in Storage, you'll find insights that help you implement well-architected best practices to deliver optimal performance and reliability for your FSx for ONTAP file systems.
+
+The well-architected analysis categorizes configurations in the following pillars of the framework: _reliability_, _security_, _operational excellence_, _cost optimization_, and _performance efficiency_.
 
 === Reliability 
 Reliability ensures that workloads perform their intended functions correctly and consistently, even when there are disruptions. 
@@ -98,8 +97,9 @@ Cold data tiering should be enabled to reduce SSD storage tier utilization. Appl
 +
 Storage efficiencies should be enabled - compaction, compression, and deduplication - to optimize storage utilization and reduce the SSD tier cost. 
 
-== Best practices and recommendations for well-architected database workloads
-Workload Factory provides a set of best practices and recommendations for operating well-architected database workloads. 
+== Best practices and recommendations for database workloads
+
+Workload Factory provides a set of best practices and recommendations for operating well-architected database workloads. The well-architected analysis assesses Microsoft SQL Server and Oracle Database configurations and settings related to storage sizing, storage layout, storage configuration, compute, application (SQL Server), and resiliency. 
 
 === Storage sizing for database workloads
 
