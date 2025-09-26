@@ -29,7 +29,7 @@ Get started with Workload Factory by signing up and creating an account, adding 
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick start]
 
-== Best practices and recommendations for Storage workloads
+== Best practices and recommendations for storage workloads
 
 Workload Factory provides an in-depth view into ONTAP configuration best practices for storage management. Specifically, the Storage workload within Workload Factory analyzes storage configurations for compliance with the pillars of the AWS Well-Architected Framework, and provides recommendations and remediation for suboptimal configurations. From the well-architected status dashboard in Storage, you'll find insights that help you implement well-architected best practices to deliver optimal performance and reliability for your FSx for ONTAP file systems.
 
