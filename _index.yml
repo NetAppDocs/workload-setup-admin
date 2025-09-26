@@ -1,13 +1,13 @@
 indexpage:
-  title: BlueXP workload factory setup and administration documentation
-  lead: "Get started with BlueXP workload factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in workload factory."
-  summary: "Get started with BlueXP workload factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in workload factory."
-  keywords: workload factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
+  title: NetApp Workload Factory setup and administration documentation
+  lead: "Get started with NetApp Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
+  summary: "Get started with NetApp Workload Factory so you can get the most of your workloads when using Amazon FSx for NetApp ONTAP. After set up is complete, you can create, optimize, and manage FSx for ONTAP file systems for your workloads, explore cost savings with FSx for ONTAP, use the built-in Infrastructure-as-Code co-pilot for automation across platforms, and manage your workloads in Workload Factory."
+  keywords: Workload Factory, fsx, account, credentials, users, permissions, log in, calculator, codebox
   tiles:
     - title: Get started
       links:
-        - title: Learn about BlueXP workload factory
-          url: /workload-factory-overview.html
+        - title: Learn about NetApp Workload Factory
+          url: workload-factory-overview.html
         - title: Sign up
           url: /sign-up-saas.html
     - title: Operational modes and credentials
@@ -34,9 +34,9 @@ indexpage:
          url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
     - title: Blogs & community
       links:
-        - title: NetApp Community 
-          url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
-        - title: BlueXP blogs 
-          url: https://bluexp.netapp.com/blog
-        - title: Cloud webinars 
-          url: https://bluexp.netapp.com/events     
+        - title: NetApp Console
+          url: https://www.netapp.com/console
+        - title: NetApp Data Services
+          url: https://www.netapp.com/data-services/
+        - title: NetApp Community
+          url: https://community.netapp.com/
