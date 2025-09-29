@@ -115,15 +115,15 @@ If an error occurs after issuing an ONTAP CLI command, select the light bulb ico
 --
 ====
 
-The CloudShell tasks shown in this screenshot can be completed by selecting the three-dot menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
+The CloudShell tasks shown in this screenshot can be completed by selecting the actions menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
 
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab actions menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Rename a CloudShell session tab
 You can rename a CloudShell session tab to help you identify the session.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select *Rename*.
 . Enter a new name for the session tab and then click outside the tab name to set the new name.
 
@@ -134,7 +134,7 @@ The new name appears in the CloudShell session tab.
 You can duplicate a CloudShell session tab to create a new session with the same name, credentials, and region. The code from the original tab isn't duplicated in the duplicated tab.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select *Duplicate*.
 
 .Result
@@ -144,7 +144,7 @@ The new tab appears with the same name as the original tab.
 You can close CloudShell tabs one at a time, close other tabs you're not working on, or close all tabs at once.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select one of the following: 
 * Select "X" in the CloudShell tab window to close one tab at a time.
 * Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
