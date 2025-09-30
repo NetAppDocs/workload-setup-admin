@@ -445,7 +445,7 @@ Select your operational mode to view the required IAM policies:
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "EC2Group",
+      "Sid": "EC2TagGroup",
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
@@ -517,6 +517,7 @@ Select your operational mode to view the required IAM policies:
         "cloudformation:ValidateTemplate",
         "cloudformation:DescribeAccountLimits",
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "ds:DescribeDirectories",
         "ec2:CreateLaunchTemplate",
         "ec2:CreateLaunchTemplateVersion",
@@ -524,27 +525,50 @@ Select your operational mode to view the required IAM policies:
         "ec2:CreateSecurityGroup",
         "ec2:CreateTags",
         "ec2:CreateVpcEndpoint",
-        "ec2:Describe*",
-        "ec2:Get*",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeLaunchTemplates",
         "ec2:RunInstances",
         "ec2:ModifyVpcAttribute",
-        "ec2messages:*",
         "fsx:CreateFileSystem",
         "fsx:UpdateFileSystem",
         "fsx:CreateStorageVirtualMachine",
         "fsx:CreateVolume",
         "fsx:UpdateVolume",
-        "fsx:Describe*",
-        "fsx:List*",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeFileSystemAliases",
+        "fsx:DescribeBackups",
+        "fsx:ListTagsForResource",
         "kms:CreateGrant",
-        "kms:Describe*",
-        "kms:List*",
+        "kms:DescribeKey",
+        "kms:DescribeCustomKeyStores",
+        "kms:ListAliases",
+        "kms:ListKeys",
         "kms:GenerateDataKey",
         "kms:Decrypt",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:DescribeLog*",
-        "logs:GetLog*",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "logs:GetLogGroupFields",
+        "logs:GetLogRecord",
         "logs:ListLogDeliveries",
         "logs:PutLogEvents",
         "logs:TagResource",
@@ -552,9 +576,13 @@ Select your operational mode to view the required IAM policies:
         "servicequotas:ListServiceQuotas",
         "sns:ListTopics",
         "sns:Publish",
-        "ssm:Describe*",
-        "ssm:Get*",
-        "ssm:List*",
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:DescribePatchBaselines",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
         "ssm:PutComplianceItems",
         "ssm:PutConfigurePackageResult",
         "ssm:PutInventory",
@@ -562,13 +590,23 @@ Select your operational mode to view the required IAM policies:
         "ssm:UpdateAssociationStatus",
         "ssm:UpdateInstanceAssociationStatus",
         "ssm:UpdateInstanceInformation",
-        "ssmmessages:*",
+        "ssmmessages:CreateControlChannel",
+        "ssmmessages:CreateDataChannel",
+        "ssmmessages:OpenControlChannel",
+        "ssmmessages:OpenDataChannel",
         "compute-optimizer:GetEnrollmentStatus",
         "compute-optimizer:PutRecommendationPreferences",
         "compute-optimizer:GetEffectiveRecommendationPreferences",
         "compute-optimizer:GetEC2InstanceRecommendations",
         "autoscaling:DescribeAutoScalingGroups",
-        "autoscaling:DescribeAutoScalingInstances"
+        "autoscaling:DescribeAutoScalingInstances",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:ListInferenceProfiles",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser"
       ],
       "Resource": "*"
     },
@@ -584,28 +622,28 @@ Select your operational mode to view the required IAM policies:
       ]
     },
     {
-      "Sid": "IAMGroup",
+      "Sid": "IAMGroup1",
       "Effect": "Allow",
       "Action": [
         "iam:AddRoleToInstanceProfile",
         "iam:CreateInstanceProfile",
-        "iam:CreateRole",
         "iam:DeleteInstanceProfile",
-        "iam:GetPolicy",
-        "iam:GetPolicyVersion",
-        "iam:GetRole",
-        "iam:GetRolePolicy",
-        "iam:GetUser",
         "iam:PutRolePolicy",
         "iam:RemoveRoleFromInstanceProfile"
       ],
-      "Resource": "*"
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ]
     },
     {
-      "Sid": "IAMGroup1",
+      "Sid": "IAMGroup2",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringLike": {
           "iam:AWSServiceName": "ec2.amazonaws.com"
@@ -613,15 +651,24 @@ Select your operational mode to view the required IAM policies:
       }
     },
     {
-      "Sid": "IAMGroup2",
+      "Sid": "IAMGroup3",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "ec2.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "IAMGroup4",
+      "Effect": "Allow",
+      "Action": "iam:CreateRole",
+      "Resource": "arn:aws:iam::*:role/WLMDB*"
     },
     {
       "Sid": "SSMParameterStore",
