@@ -1253,17 +1253,6 @@ Deployment
 | Deployment 
 | Read/Write
 
-.2+| Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:GetEndpoint 
-a| 
-Deployment
-| Read/Write
-|ec2messages:GetMessages
-a|
-Deployment
-| Read/Write
-
-
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
 | fsx:CreateFileSystem 
 | Deployment 
