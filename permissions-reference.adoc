@@ -1192,17 +1192,13 @@ a|
 | Read/Write
 
 .2+| Get instance details for provisioning
-| ec2:Describe* 
+| ec2:DescribeAddresses 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment 
 | Read/Write
-| ec2:Get* 
+| ec2:DescribeLaunchTemplates 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment
 | Read/Write
 
 | Start the created instances
@@ -1210,12 +1206,16 @@ a|
 | Deployment 
 | Read/Write
 
-| Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:* 
+.2+| Systems Manager uses AWS message delivery service endpoint for API operations
+| ec2messages:GetEndpoint 
 a| 
-* Deployment
-*Inventory
+Deployment
 | Read/Write
+|ec2messages:GetMessages
+a|
+Deployment
+| Read/Write
+
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
 | fsx:CreateFileSystem 
@@ -1231,17 +1231,9 @@ a|
 | Read/Write
 
 .2+| Get FSx for ONTAP details
-| fsx:Describe* 
+| fsx:DescribeFileSystemAliases 
 a| 
-* Deployment
-* Inventory
-* Manage operations
-* Explore savings 
-| Read/Write
-| fsx:List* 
-a| 
-* Deployment
-* Inventory 
+Deployment
 | Read/Write
 
 | Resize FSx for ONTAP file system to remediate file system headroom
@@ -1254,32 +1246,34 @@ a|
 | Optimization
 | Read/Write
 
-.4+| Get KMS key details and use for FSx for ONTAP encryption
+.3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
 | Read/Write
-| kms:Describe* 
-| Deployment 
-| Read/Write
-| kms:List* 
+| kms:DescribeCustomKeyStores
 | Deployment 
 | Read/Write
 | kms:GenerateDataKey 
 | Deployment 
 | Read/Write
 
-.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+.8+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
 | Read/Write
 | logs:CreateLogStream 
 | Deployment 
 | Read/Write
-| logs:DescribeLog* 
+| logs:DescribeLogStreams
+a|
+* Deployment
+* Assessment
+| Read/Write
+| logs:GetLogGroupFields 
 | Deployment 
 | Read/Write
-| logs:GetLog* 
-| Deployment 
+| logs:GetLogRecord
+| Deployment
 | Read/Write
 | logs:ListLogDeliveries 
 | Deployment 
@@ -1332,17 +1326,6 @@ a|
 | Read/Write
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
-| ssm:Describe* 
-| Deployment 
-| Read/Write
-| ssm:Get* 
-a| 
-* Deployment
-* Manage operations 
-| Read/Write
-| ssm:List* 
-| Deployment 
-| Read/Write
 | ssm:PutComplianceItems 
 | Deployment 
 | Read/Write
@@ -1367,11 +1350,17 @@ a|
 | ssm:UpdateInstanceInformation 
 | Deployment 
 | Read/Write
-| ssmmessages:* 
-a| 
-* Deployment
-* Inventory 
-* Manage operations 
+| ssmmessages:CreateControlChannel 
+| Deployment
+| Read/Write
+| ssmmessages:CreateDataChannel 
+| Deployment
+| Read/Write
+| ssmmessages:OpenControlChannel
+| Deployment
+| Read/Write
+| ssmmessages:OpenDataChannel
+| Deployment
 | Read/Write
 
 .4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
