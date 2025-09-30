@@ -2,5 +2,5 @@
  
 BlueXP has been renamed and redesigned to better reflect the role it has in managing your data infrastructure. As a result, BlueXP workload factory has been renamed to NetApp Workload Factory.
 
-=== Ask Me AI assistant integration with MCP
-Ask Me, Workload Factory's AI assistant, is integrated with the Model Context Protocol (MCP), an open-source standard that enables AI systems to interface with external environments in a structured and secure way. Available from the Workload Factory console, Ask Me can answer questions about managing and operating FSx for ONTAP file systems. With MCP integration, Ask Me can dynamically query MCP-connected API tools to retrieve context-specific data from your storage estate and generate responses that are specific to your environment.
+=== Ask Me integration with MCP
+Ask Me, Workload Factory's AI assistant, is integrated with the Model Context Protocol (MCP). Using MCP, Ask Me securely interfaces with external environments and queries API tools to deliver responses tailored to your specific storage environment.
