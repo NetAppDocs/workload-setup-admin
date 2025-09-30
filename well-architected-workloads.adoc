@@ -157,7 +157,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 * *ONTAP configuration*
 +
-[cols="1,1,2", options="header"]
+[cols="1,1,2" options="header"]
 |===
 | Entity
 | Setting
@@ -165,7 +165,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | Volume
 | Thin provisioning (-space-guarantee = none)
-.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize and space management options for your FSx ONTAP volumes and LUNs.
+.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize and space management options for your FSx ONTAP volumes and LUNs
 
 If not configured properly:
 
@@ -253,10 +253,10 @@ Whenever possible, apply the latest patches to ensure security and stability. Ap
 +
 Accurate configuration of receive side scaling (RSS) is essential for optimal network performance in Microsoft SQL Server instances. RSS distributes network processing across multiple processors, preventing bottlenecks and enhancing system performance. Workload Factory recommends the following settings for RSS settings:
 +
-* Disable TCP Offloading Features: Ensure all TCP offloading features are disabled. 
-* Number of Receive Queues: Set to 8 if vCPUs > 8. Set to the number of vCPUs if vCPUs ≤ 8. 
-* RSS Profile: Set to NUMAStatic. 
-* Base Processor Number: Set to 2. 
+** Disable TCP Offloading Features: Ensure all TCP offloading features are disabled. 
+** Number of Receive Queues: Set to 8 if vCPUs > 8. Set to the number of vCPUs if vCPUs ≤ 8. 
+** RSS Profile: Set to NUMAStatic. 
+** Base Processor Number: Set to 2. 
 +
 Following these settings will improve the performance and reliability of your Microsoft SQL Server instances. We suggest that you test the recommended settings to determine performance improvements before making changes to your production environment. 
 
@@ -291,13 +291,6 @@ Schedule local snapshots for efficient backup and quick restores. Snapshots are 
 * *Cross-region replication* 
 +
 Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends configuring cross-region replication for disaster recovery and compliance requirements. 
-
-
-== Get started with Workload Factory to detect and correct misconfigurations 
-
-Get started with Workload Factory by signing up and creating an account, adding credentials, and establishing connectivity so that Workload Factory can manage AWS resources directly, and then optimize your workloads by using Amazon FSx for NetApp ONTAP. 
-
-link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick start]
 
 == Related information
 
