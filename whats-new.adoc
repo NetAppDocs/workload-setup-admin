@@ -17,6 +17,10 @@ Learn what's new with Workload Factory administration features: cloud provider c
 
 include::_whatsnew/2025-10-06.adoc[]
 
+== 05 October 2025
+
+include::_whatsnew/2025-10-05.adoc[]
+
 == 29 June 2025
 
 include::_whatsnew/2025-06-29.adoc[]
