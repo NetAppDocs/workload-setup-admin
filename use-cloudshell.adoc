@@ -1,19 +1,19 @@
 ---
 sidebar: sidebar
 permalink: use-cloudshell.html
-keywords: cloudshell, command line, aws cli, ontap cli, bluexp workload factory, workload factory
-summary: "You can use CloudShell from anywhere in the BlueXP workload factory user interface to issue AWS or ONTAP CLI commands."
+keywords: cloudshell, command line, aws cli, ontap cli, NetApp Workload Factory, Workload Factory
+summary: "You can use CloudShell from anywhere in the NetApp Workload Factory user interface to issue AWS or ONTAP CLI commands."
 ---
 
-= Use CloudShell in BlueXP workload factory
+= Use CloudShell in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Open CloudShell to execute AWS or ONTAP CLI commands from anywhere in the BlueXP workload factory user interface.
+Open CloudShell to execute AWS or ONTAP CLI commands from anywhere in the NetApp Workload Factory console.
 
 == About this task
-CloudShell allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment from within the BlueXP workload factory user interface. It simulates terminal sessions in the browser, providing terminal features and proxying messages through workload factory's backend. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP account.
+CloudShell allows you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment from within the Workload Factory console. It simulates terminal sessions in the browser, providing terminal features and proxying messages through Workload Factory's backend. It allows you to use the AWS credentials and ONTAP credentials that you have provided in your NetApp account.
 
 CloudShell features include: 
 
@@ -25,21 +25,20 @@ CloudShell features include:
 * AI-generated error responses for ONTAP CLI commands
 * Autocomplete support: start typing a command and use the *Tab* key to view available options
 
-=== CloudShell commands
+== CloudShell commands
 Within the CloudShell GUI interface, you can enter `help` to view available CloudShell commands. After you issue the `help` command, the following reference appears. 
 
-Description:::
+.Description
+NetApp CloudShell is a GUI interface built into NetApp Workload Factory enables you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through the backend in Workload Factory. It enables you to use the AWS credentials and ONTAP credentials that you have provided in your NetApp account.
  
-NetApp CloudShell is a GUI interface built into BlueXP workload factory enables you to execute AWS CLI commands or ONTAP CLI commands in a shell-like environment. It simulates terminal sessions in the browser, providing terminal features and proxying messages through the backend in workload factory. It enables you to use the AWS credentials and ONTAP credentials that you have provided in your BlueXP Account.
- 
-Available commands:::
+.Available commands
  
 * `clear`
 * `help`
 * `[--fsx <fsxId>] <ontap-command> [parameters]`
 * `aws <aws-command> <aws-sub-command> [parameters]`
  
-Context:::
+.Context
 
 Each terminal session runs in a specific context: credentials, region, and optionally FSx for ONTAP file system.
 + 
@@ -52,13 +51,13 @@ To update different context specifics, do the following:
 * To change region: "using region <regionCode>"
 * To change FSx for ONTAP file system: "using fsx <fileSystemId>"
  
-Showing Items:::
+.Showing Items
 
 * To show available credentials: "show credentials"
 * To show available regions: "show regions"
 * To show command history: "show history"
  
-Variables:::
+.Variables
 The following are examples of setting and using variables. If a variable value contains spaces, you should set it inside quotes.
 +
 * To set a variable: $<variable> = <value>
@@ -67,7 +66,7 @@ The following are examples of setting and using variables. If a variable value c
 * Example using a variable: --fsx FileSystem-1 volumes show --vserver $svm1
 * Example setting a variable with string value $comment1 = "A comment with spaces"
  
-Operators:::
+.Operators
  
 Shell operators such as pipe `|`, background execution `&`, and redirection `>` aren't supported. Command execution fails if you include these operators.
 
@@ -77,16 +76,16 @@ CloudShell works in the context of your AWS credentials. To use CloudShell, you 
 NOTE: CloudShell is available for you to execute any AWS or ONTAP CLI command. However, if you want to work within the context of an FSx for ONTAP file system, make sure you issue the following command: `using fsx <file-system-name>`.
 
 == Deploy CloudShell
-You can deploy CloudShell from anywhere in the BlueXP workload factory console. You can also deploy CloudShell from Storage from within an FSx for ONTAP file system.
+You can deploy CloudShell from anywhere in the NetApp Workload Factory console. You can also deploy CloudShell from the NetApp Console.
 
 [role="tabbed-block"]
 ====
 
-.Deploy from workload factory console
+.Deploy from Workload Factory console
 --
 .Steps
-. Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
-. Open CloudShell image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
+. Log in to the https://console.workloads.netapp.com[Workload Factory console^].
+. From the menu, select *Administration* and then *CloudShell*.
 . In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
 image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
@@ -98,14 +97,15 @@ image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new Clou
 If an error occurs after issuing an ONTAP CLI command, select the light bulb icon to get a brief AI-generated error response with a description of the failure, the cause of the failure, and a detailed resolution. Select *Read more* for more details.
 --
 
-.Deploy from Storage
+.Deploy from the NetApp Console
 --
 .Steps
-. Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
-. In *Storage*, select *Go to storage inventory*.
-. In the *FSx for ONTAP* tab, select the three-dot menu of the file system and then select *Open CloudShell*.
+. Log in to the link:https://console.netapp.com[NetApp Console^].
+. From the menu, select *Workloads* and then *Administration*.
+. From the Administration menu, select *CloudShell*.
+. In the CloudShell window, select credentials and region for the CloudShell session and then select the arrow to continue.
 +
-A CloudShell session opens in the context of the selected file system.
+image:screenshot-deploy-cloudshell-session.png["Screenshot that shows a new CloudShell session."]
 . Enter `help` to view available CloudShell commands and instructions or refer to the following CLI reference documents for available commands:
 * link:https://docs.aws.amazon.com/cli/latest/reference/[AWS CLI reference^]: For commands related to FSx for ONTAP, select *fsx*.
 * link:https://docs.netapp.com/us-en/ontap-cli/[ONTAP CLI reference^]
@@ -115,15 +115,15 @@ If an error occurs after issuing an ONTAP CLI command, select the light bulb ico
 --
 ====
 
-The CloudShell tasks shown in this screenshot can be completed by selecting the three-dot menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
+The CloudShell tasks shown in this screenshot can be completed by selecting the actions menu of an open CloudShell session tab. The instructions for each of these tasks follows. 
 
-image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab three-dot menu with options like rename, duplicate, close other tabs, and close all."]
+image:screenshot-cloudshell-tab-menu.png["Screenshot that shows CloudShell tab actions menu with options like rename, duplicate, close other tabs, and close all."]
 
 == Rename a CloudShell session tab
 You can rename a CloudShell session tab to help you identify the session.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select *Rename*.
 . Enter a new name for the session tab and then click outside the tab name to set the new name.
 
@@ -134,7 +134,7 @@ The new name appears in the CloudShell session tab.
 You can duplicate a CloudShell session tab to create a new session with the same name, credentials, and region. The code from the original tab isn't duplicated in the duplicated tab.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select *Duplicate*.
 
 .Result
@@ -144,7 +144,7 @@ The new tab appears with the same name as the original tab.
 You can close CloudShell tabs one at a time, close other tabs you're not working on, or close all tabs at once.
 
 .Steps
-. Select the three-dot menu of the CloudShell session tab.
+. Select the actions menu of the CloudShell session tab.
 . Select one of the following: 
 * Select "X" in the CloudShell tab window to close one tab at a time.
 * Select *Close other tabs* to close all other tabs that are open except the one you're working on. 
@@ -160,15 +160,6 @@ You can split CloudShell session tabs to view two or more tabs at the same time.
 Drag and drop CloudShell session tabs to the top, bottom, left, or right of the CloudShell window to split the view.
 
 image:screenshot-cloudshell-split-view.png["Screenshot that shows two CloudShell tabs split horizontally. The tabs appear side by side."]
-
-== Re-open your last CloudShell session
-If by accident you close your CloudShell session, you can re-open it.
-
-.Step
-Select the CloudShell icon image:cloudshell-icon.png["Screenshot of the cloudshell icon"] from the top navigation bar.
-
-.Result
-The latest CloudShell sessions open. 
 
 == Update settings for a CloudShell session 
 You can update font and output type settings for CloudShell sessions. 
