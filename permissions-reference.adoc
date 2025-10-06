@@ -2,10 +2,10 @@
 sidebar: sidebar
 permalink: permissions-reference.html
 keywords: permissions, actions
-summary: "To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment." 
+summary: "To use NetApp Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment." 
 ---
 
-= Permissions for BlueXP workload factory
+= Permissions for NetApp Workload Factory
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,18 +13,18 @@ summary: "To use BlueXP workload factory features and services, you'll need to p
 :imagesdir: ./media/
 
 [.lead]
-To use BlueXP workload factory features and services, you'll need to provide permissions so that workload factory can perform operations in your cloud environment. 
+To use NetApp Workload Factory features and services, you'll need to provide permissions so that Workload Factory can perform operations in your cloud environment. 
 
 == Why use permissions
-When you provide _read-only_ or _read/write_ mode permissions, workload factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows workload factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
+When you provide _read-only_ or _read/write_ mode permissions, Workload Factory attaches a policy to the instance with permissions to manage resources and processes within that AWS account. This allows Workload Factory to execute various operations starting from discovery of your storage environments to deploying AWS resources such as file systems in storage management or knowledge bases for GenAI workloads. 
 
-For database workloads for example, when workload factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, workload factory can access the Windows machine and verify whether SQL Server software is installed or not.
+For database workloads for example, when Workload Factory is granted with the required permissions, it scans all EC2 instances in a given account and region, and filters all Windows-based machines. If AWS Systems Manager (SSM) Agent is installed and running on the host and System Manager networking is configured properly, Workload Factory can access the Windows machine and verify whether SQL Server software is installed or not.
 
 == Permissions by workload
-Each workload uses permissions to perform certain tasks in workload factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
+Each workload uses permissions to perform certain tasks in Workload Factory. Scroll to the workload you use to view the list of permissions, their purpose, where they are used, and which modes support them. 
 
 === Permissions for Storage
-The IAM policies available for Storage provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for Storage provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -342,7 +342,7 @@ a|
 ====
 
 === Permissions for Database workloads
-The IAM policies available for Database workloads provide the permissions that workload factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for Database workloads provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -445,7 +445,7 @@ Select your operational mode to view the required IAM policies:
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "EC2Group",
+      "Sid": "EC2TagGroup",
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
@@ -517,6 +517,7 @@ Select your operational mode to view the required IAM policies:
         "cloudformation:ValidateTemplate",
         "cloudformation:DescribeAccountLimits",
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "ds:DescribeDirectories",
         "ec2:CreateLaunchTemplate",
         "ec2:CreateLaunchTemplateVersion",
@@ -524,27 +525,50 @@ Select your operational mode to view the required IAM policies:
         "ec2:CreateSecurityGroup",
         "ec2:CreateTags",
         "ec2:CreateVpcEndpoint",
-        "ec2:Describe*",
-        "ec2:Get*",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeLaunchTemplates",
         "ec2:RunInstances",
         "ec2:ModifyVpcAttribute",
-        "ec2messages:*",
         "fsx:CreateFileSystem",
         "fsx:UpdateFileSystem",
         "fsx:CreateStorageVirtualMachine",
         "fsx:CreateVolume",
         "fsx:UpdateVolume",
-        "fsx:Describe*",
-        "fsx:List*",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeFileSystemAliases",
+        "fsx:DescribeBackups",
+        "fsx:ListTagsForResource",
         "kms:CreateGrant",
-        "kms:Describe*",
-        "kms:List*",
+        "kms:DescribeKey",
+        "kms:DescribeCustomKeyStores",
+        "kms:ListAliases",
+        "kms:ListKeys",
         "kms:GenerateDataKey",
         "kms:Decrypt",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:DescribeLog*",
-        "logs:GetLog*",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "logs:GetLogGroupFields",
+        "logs:GetLogRecord",
         "logs:ListLogDeliveries",
         "logs:PutLogEvents",
         "logs:TagResource",
@@ -552,9 +576,13 @@ Select your operational mode to view the required IAM policies:
         "servicequotas:ListServiceQuotas",
         "sns:ListTopics",
         "sns:Publish",
-        "ssm:Describe*",
-        "ssm:Get*",
-        "ssm:List*",
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:DescribePatchBaselines",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
         "ssm:PutComplianceItems",
         "ssm:PutConfigurePackageResult",
         "ssm:PutInventory",
@@ -562,13 +590,23 @@ Select your operational mode to view the required IAM policies:
         "ssm:UpdateAssociationStatus",
         "ssm:UpdateInstanceAssociationStatus",
         "ssm:UpdateInstanceInformation",
-        "ssmmessages:*",
+        "ssmmessages:CreateControlChannel",
+        "ssmmessages:CreateDataChannel",
+        "ssmmessages:OpenControlChannel",
+        "ssmmessages:OpenDataChannel",
         "compute-optimizer:GetEnrollmentStatus",
         "compute-optimizer:PutRecommendationPreferences",
         "compute-optimizer:GetEffectiveRecommendationPreferences",
         "compute-optimizer:GetEC2InstanceRecommendations",
         "autoscaling:DescribeAutoScalingGroups",
-        "autoscaling:DescribeAutoScalingInstances"
+        "autoscaling:DescribeAutoScalingInstances",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:ListInferenceProfiles",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser"
       ],
       "Resource": "*"
     },
@@ -584,28 +622,28 @@ Select your operational mode to view the required IAM policies:
       ]
     },
     {
-      "Sid": "IAMGroup",
+      "Sid": "IAMGroup1",
       "Effect": "Allow",
       "Action": [
         "iam:AddRoleToInstanceProfile",
         "iam:CreateInstanceProfile",
-        "iam:CreateRole",
         "iam:DeleteInstanceProfile",
-        "iam:GetPolicy",
-        "iam:GetPolicyVersion",
-        "iam:GetRole",
-        "iam:GetRolePolicy",
-        "iam:GetUser",
         "iam:PutRolePolicy",
         "iam:RemoveRoleFromInstanceProfile"
       ],
-      "Resource": "*"
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ]
     },
     {
-      "Sid": "IAMGroup1",
+      "Sid": "IAMGroup2",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringLike": {
           "iam:AWSServiceName": "ec2.amazonaws.com"
@@ -613,15 +651,24 @@ Select your operational mode to view the required IAM policies:
       }
     },
     {
-      "Sid": "IAMGroup2",
+      "Sid": "IAMGroup3",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "ec2.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "IAMGroup4",
+      "Effect": "Allow",
+      "Action": "iam:CreateRole",
+      "Resource": "arn:aws:iam::*:role/WLMDB*"
     },
     {
       "Sid": "SSMParameterStore",
@@ -1192,29 +1239,18 @@ a|
 | Read/Write
 
 .2+| Get instance details for provisioning
-| ec2:Describe* 
+| ec2:DescribeAddresses 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment 
 | Read/Write
-| ec2:Get* 
+| ec2:DescribeLaunchTemplates 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment
 | Read/Write
 
 | Start the created instances
 | ec2:RunInstances 
 | Deployment 
-| Read/Write
-
-| Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:* 
-a| 
-* Deployment
-*Inventory
 | Read/Write
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
@@ -1231,17 +1267,9 @@ a|
 | Read/Write
 
 .2+| Get FSx for ONTAP details
-| fsx:Describe* 
+| fsx:DescribeFileSystemAliases 
 a| 
-* Deployment
-* Inventory
-* Manage operations
-* Explore savings 
-| Read/Write
-| fsx:List* 
-a| 
-* Deployment
-* Inventory 
+Deployment
 | Read/Write
 
 | Resize FSx for ONTAP file system to remediate file system headroom
@@ -1254,32 +1282,34 @@ a|
 | Optimization
 | Read/Write
 
-.4+| Get KMS key details and use for FSx for ONTAP encryption
+.3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
 | Read/Write
-| kms:Describe* 
-| Deployment 
-| Read/Write
-| kms:List* 
+| kms:DescribeCustomKeyStores
 | Deployment 
 | Read/Write
 | kms:GenerateDataKey 
 | Deployment 
 | Read/Write
 
-.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+.8+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
 | Read/Write
 | logs:CreateLogStream 
 | Deployment 
 | Read/Write
-| logs:DescribeLog* 
+| logs:DescribeLogStreams
+a|
+* Deployment
+* Assessment
+| Read/Write
+| logs:GetLogGroupFields 
 | Deployment 
 | Read/Write
-| logs:GetLog* 
-| Deployment 
+| logs:GetLogRecord
+| Deployment
 | Read/Write
 | logs:ListLogDeliveries 
 | Deployment 
@@ -1293,7 +1323,7 @@ a|
 | Deployment 
 | Read/Write
 
-| Workload factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation
+| Workload Factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation
 | logs:GetLogEvents 
 a| 
 * Storage assessment (Optimization) 
@@ -1302,14 +1332,14 @@ a|
 * Read-only
 * Read/Write
 
-| Allow workload factory to get current log groups and check that retention is set for log groups created by workload factory
+| Allow Workload Factory to get current log groups and check that retention is set for log groups created by Workload Factory
 | logs:DescribeLogGroups
 a| 
 * Storage assessment (Optimization) 
 * Inventory
 | Read-only
 
-| Allow workload factory to set a one-day retention policy for log groups created by workload factory to avoid unnecessary accumulation of log streams for SSM command outputs
+| Allow Workload Factory to set a one-day retention policy for log groups created by Workload Factory to avoid unnecessary accumulation of log streams for SSM command outputs
 | logs:PutRetentionPolicy
 a| 
 * Storage assessment (Optimization)
@@ -1332,17 +1362,6 @@ a|
 | Read/Write
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
-| ssm:Describe* 
-| Deployment 
-| Read/Write
-| ssm:Get* 
-a| 
-* Deployment
-* Manage operations 
-| Read/Write
-| ssm:List* 
-| Deployment 
-| Read/Write
 | ssm:PutComplianceItems 
 | Deployment 
 | Read/Write
@@ -1367,11 +1386,17 @@ a|
 | ssm:UpdateInstanceInformation 
 | Deployment 
 | Read/Write
-| ssmmessages:* 
-a| 
-* Deployment
-* Inventory 
-* Manage operations 
+| ssmmessages:CreateControlChannel 
+| Deployment
+| Read/Write
+| ssmmessages:CreateDataChannel 
+| Deployment
+| Read/Write
+| ssmmessages:OpenControlChannel
+| Deployment
+| Read/Write
+| ssmmessages:OpenDataChannel
+| Deployment
 | Read/Write
 
 .4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
@@ -1475,7 +1500,7 @@ a|
 
 === Permissions for GenAI workloads
 
-The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 GenAI IAM policies are only available in _read/write_ mode:
 
@@ -1866,11 +1891,6 @@ The following table provides details about the permissions for GenAI workloads.
 | ec2:AuthorizeSecurityGroupEgress | Deployment | Read/Write
 | ec2:AuthorizeSecurityGroupIngress | Deployment | Read/Write
 
-| Query Amazon Bedrock / Amazon CloudWatch logging status during AI engine deployment
-| bedrock:GetModelInvocationLoggingConfiguration
-| Deployment
-| Read/Write
-
 | Initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
@@ -1993,26 +2013,6 @@ The following table provides details about the permissions for GenAI workloads.
 | logs:PutRetentionPolicy | Deployment | Read/Write
 | logs:TagResource | Deployment | Read/Write
 
-| Send bedrock logs to Amazon CloudWatch
-| bedrock:PutModelInvocationLoggingConfiguration
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:AttachRolePolicy
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:PassRole
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:createPolicy
-| Troubleshooting
-| Read/Write
-
 | List inference profiles for the model
 | bedrock:ListInferenceProfiles
 | Troubleshooting
@@ -2023,7 +2023,7 @@ The following table provides details about the permissions for GenAI workloads.
 
 === Permissions for VMware workloads
 
-The IAM policies for VMware workloads provide the permissions that workload factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
 Select your operational mode to view the required IAM policies:
 
@@ -2322,6 +2322,16 @@ a|
 
 As permissions are added and removed, we'll note them in the sections below.
 
+=== 5 October 2025
+
+The following permissions were removed from GenAI and are now handled by the GenAI engine:
+
+* `bedrock:GetModelInvocationLoggingConfiguration`
+* `bedrock:PutModelInvocationLoggingConfiguration`
+* `iam:AttachRolePolicy`
+* `iam:PassRole`
+* `iam:CreatePolicy`
+
 === 29 June 2025
 The following permission is now available in _read-only_ mode for Databases: `cloudwatch:GetMetricData`.
 
@@ -2357,7 +2367,7 @@ The following permissions are now available in _read/write mode_ for GenAI:
 The following permission has been removed from _read/write mode_ for GenAI: `Bedrock:GetFoundationModel`.
 
 ==== iam:SimulatePrincipalPolicy permission update
-The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the workload factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from workload factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
+The `iam:SimulatePrincipalPolicy` permission is part of all workload permission policies if you enable the automatic permissions check when adding additional AWS account credentials or adding a new workload capability from the Workload Factory console. The permission simulates workload operations and checks if you have the required AWS account permissions before deploying resources from Workload Factory. Enabling this check reduces the time and effort that you might need to clean up resources from failed operations and to add in missing permissions.
 
 === 2 March 2025
 

@@ -20,7 +20,7 @@ sidebar:
       entries:
         - title: Learn the basics
           entries: 
-            - title: Learn about BlueXP workload factory
+            - title: Learn about NetApp Workload Factory
               url: /workload-factory-overview.html
             - title: Operational modes
               url: /operational-modes.html
@@ -30,15 +30,15 @@ sidebar:
               url: /permissions-reference.html  
         - title: Quick start
           url: /quick-start.html
-        - title: Sign up to workload factory
+        - title: Sign up to Workload Factory
           url: /sign-up-saas.html
         - title: Add AWS credentials
           url: /add-credentials.html
-        - title: Optimize workloads with workload factory
+        - title: Optimize workloads with Workload Factory
           url: /whats-next.html
-    - title: Administer workload factory
+    - title: Administer Workload Factory
       entries:
-        - title: Log in to workload factory
+        - title: Log in to Workload Factory
           url: /log-in.html
         - title: Manage service accounts
           url: /manage-service-accounts.html
@@ -63,6 +63,6 @@ sidebar:
     - title: Legal notices
       url: /legal-notices.html
 product-family:
-  name: BlueXP workload factory
+  name: NetApp Workload Factory
   repo: workload-family
   
