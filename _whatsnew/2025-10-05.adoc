@@ -1,4 +1,4 @@
-=== New notifications for Storage
+=== New notification for Storage
 
 The NetApp Workload Factory notification service includes the notification for well-architected issues for Storage.
 
