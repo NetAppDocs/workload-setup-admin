@@ -1866,11 +1866,6 @@ The following table provides details about the permissions for GenAI workloads.
 | ec2:AuthorizeSecurityGroupEgress | Deployment | Read/Write
 | ec2:AuthorizeSecurityGroupIngress | Deployment | Read/Write
 
-| Query Amazon Bedrock / Amazon CloudWatch logging status during AI engine deployment
-| bedrock:GetModelInvocationLoggingConfiguration
-| Deployment
-| Read/Write
-
 | Initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
@@ -1992,26 +1987,6 @@ The following table provides details about the permissions for GenAI workloads.
 | logs:CreateLogGroup | Deployment | Read/Write
 | logs:PutRetentionPolicy | Deployment | Read/Write
 | logs:TagResource | Deployment | Read/Write
-
-| Send bedrock logs to Amazon CloudWatch
-| bedrock:PutModelInvocationLoggingConfiguration
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:AttachRolePolicy
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:PassRole
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:createPolicy
-| Troubleshooting
-| Read/Write
 
 | List inference profiles for the model
 | bedrock:ListInferenceProfiles
@@ -2321,6 +2296,16 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 5 October 2025
+
+The following permissions were removed from GenAI and are now handled by the GenAI engine:
+
+* `bedrock:GetModelInvocationLoggingConfiguration`
+* `bedrock:PutModelInvocationLoggingConfiguration`
+* `iam:AttachRolePolicy`
+* `iam:PassRole`
+* `iam:CreatePolicy`
 
 === 29 June 2025
 The following permission is now available in _read-only_ mode for Databases: `cloudwatch:GetMetricData`.
