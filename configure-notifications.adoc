@@ -60,6 +60,20 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP
 
+| Automatic SSD capacity or inodes increase success
+| During a recent automatic capacity management update, the FSx for ONTAP file system either increased SSD capacity or volume inodes successfully. For more information, go to Tracker.
+| Capacity management
+| Success
+| General storage
+| FSx for ONTAP file 
+
+| Automatic SSD capacity or inodes increase failure
+| During a recent automatic capacity management update, the FSx for ONTAP file system failed to increase SSD capacity or volume inodes. For more information, go to Tracker.
+| Capacity management
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
 | FSx for ONTAP issue detected
 | All FSx for ONTAP file systems have been analyzed for well-architected issues. The scan detected one or more issues. For more information, review the well-architected analysis from the Storage dashboard in the Workload Factory console.
 | Well-architected analysis
