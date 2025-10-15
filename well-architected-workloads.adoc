@@ -165,9 +165,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | Volume
 | Thin provisioning (-space-guarantee = none)
-.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize and space management options for your FSx ONTAP volumes and LUNs
-
-If not configured properly:
+.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize and space management options for your FSx ONTAP volumes and LUNs. If not configured properly:
 
 * Over-provisioning risks: Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning.
 
@@ -178,29 +176,29 @@ If not configured properly:
 * Inefficient space utilization: Without space reclamation, deleted data occupies space, reducing efficiency.
 
 | Volume
-| Autosize on
+a| Autosize on
 
 | Volume
-| Autosize-mode = grow
+a| Autosize-mode = grow
 
 | Volume
-| Fractional reserve = 0%
+a| Fractional reserve = 0%
 
 | Volume
-| Snapshot copy reserve = 0%
+a| Snapshot copy reserve = 0%
 
 | Volume
-| Snapshot autodelete (volume/oldest first)
+a| Snapshot autodelete (volume/oldest first)
 
 | Volume
-| Space-mgmt-try-first = volume_grow
+a| Space-mgmt-try-first = volume_grow
 
 | Volume
 | Tiering-policy = snapshot-only
 .2+| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days. 
 
 | Volume
-| Tiering-minimum-cooling-days = 7
+a| Tiering-minimum-cooling-days = 7
 
 | LUN
 | OS type = windows_2008
@@ -228,10 +226,10 @@ If not configured properly:
 .3+|To ensure optimal uptime and data access consistency for MSSQL databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, it is recommended to enable and configure Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails. 
 
 | Microsoft Multipath I/O (MPIO)
-| Policy = Round Robin
+a| Policy = Round Robin
 
 | Microsoft Multipath I/O (MPIO)
-| Number of sessions = 5
+a| Number of sessions = 5
 
 | Allocation unit size 
 | NTFS allocation unit size = 64K 
