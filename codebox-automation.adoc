@@ -29,6 +29,7 @@ The supported code formats include:
 * Workload Factory REST APIs
 * AWS CLI
 * AWS CloudFormation
+* Terraform
 
 == Related information
 
