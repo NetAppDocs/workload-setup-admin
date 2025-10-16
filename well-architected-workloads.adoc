@@ -157,7 +157,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 * *ONTAP configuration*
 +
-[cols="1,1,2" options="header"]
+[cols="1,1,2a" options="header"]
 |===
 | Entity
 | Setting
