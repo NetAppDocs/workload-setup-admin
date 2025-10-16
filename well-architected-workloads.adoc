@@ -176,29 +176,29 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 * Inefficient space utilization: Without space reclamation, deleted data occupies space, reducing efficiency.
 
 | Volume
-a| Autosize on
+| Autosize on
 
 | Volume
-a| Autosize-mode = grow
+| Autosize-mode = grow
 
 | Volume
-a| Fractional reserve = 0%
+| Fractional reserve = 0%
 
 | Volume
-a| Snapshot copy reserve = 0%
+| Snapshot copy reserve = 0%
 
 | Volume
-a| Snapshot autodelete (volume/oldest first)
+| Snapshot autodelete (volume/oldest first)
 
 | Volume
-a| Space-mgmt-try-first = volume_grow
+| Space-mgmt-try-first = volume_grow
 
 | Volume
 | Tiering-policy = snapshot-only
 .2+| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days. 
 
 | Volume
-a| Tiering-minimum-cooling-days = 7
+| Tiering-minimum-cooling-days = 7
 
 | LUN
 | OS type = windows_2008
@@ -226,10 +226,10 @@ a| Tiering-minimum-cooling-days = 7
 .3+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
 
 | Microsoft Multipath I/O (MPIO)
-a| Policy = Round Robin
+| Policy = Round Robin
 
 | Microsoft Multipath I/O (MPIO)
-a| Number of sessions = 5
+| Number of sessions = 5
 
 | Allocation unit size 
 | NTFS allocation unit size = 64K 
