@@ -82,14 +82,14 @@ Workload Factory sends notifications for the following events:
 | FSx for ONTAP file systems
 
 | Automatic capacity management event for FSx for ONTAP
-| FSx for ONTAP file system SSD performance tier reached the warning threshold capacity/percentage total.
+| The SSD performance tier for the FSx for ONTAP file system reached the warning threshold capacity/percentage total.
 | Capacity management
 | Warning
 | General storage
 | FSx for ONTAP file systems
 
 | Automatic inodes management event for FSx for ONTAP
-| FSx for ONTAP volume inode count reached the warning threshold count/percentage total.
+| The inode count for the FSx for ONTAP volume reached the warning threshold count/percentage total.
 | Capacity management
 | Warning
 | General storage
