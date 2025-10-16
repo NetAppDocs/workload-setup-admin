@@ -215,7 +215,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 * *Windows storage configuration*
 +
-[cols=3*, options="header"]
+[cols=1a,1a,2a, options="header"]
 |===
 | Entity
 | Setting
