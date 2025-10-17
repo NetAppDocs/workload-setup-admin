@@ -157,7 +157,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 * *ONTAP configuration*
 +
-[cols="1a,1a,2a", options="header,autowidth"]
+[cols="1a,1a,2a", options="header"]
 |===
 | Entity
 | Setting
@@ -165,15 +165,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | Volume
 | Thin provisioning (-space-guarantee = none)
-.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx ONTAP volumes and LUNs. If not configured properly:
-
-* Over-provisioning risks: Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning.
-
-* Increased storage costs: Static allocation results in paying for unused capacity, increasing expenses.
-
-* Limited scalability: Lack of dynamic allocation hampers scalability and flexibility, impacting performance.
-
-* Inefficient space utilization: Without space reclamation, deleted data occupies space, reducing efficiency.
+.7+| optimize
 
 | Volume
 | Autosize on
@@ -213,9 +205,19 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | This option ensures that FSx for ONTAP notifies the EC2 host when the volume is full and cannot accept writes. This setting also allows FSx for ONTAP to automatically reclaim space when SQL Server on the EC2 host deletes data. If disabled, write failures are possible and space might be inefficiently utilized.
 |===
 
+First table spanned text: To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx ONTAP volumes and LUNs. If not configured properly:
+
+* Over-provisioning risks: Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning.
+
+* Increased storage costs: Static allocation results in paying for unused capacity, increasing expenses.
+
+* Limited scalability: Lack of dynamic allocation hampers scalability and flexibility, impacting performance.
+
+* Inefficient space utilization: Without space reclamation, deleted data occupies space, reducing efficiency.
+
 * *Windows storage configuration*
 + 
-[cols="1a,1a,2a", options="header,autowidth"]
+[cols="1a,1a,2a", options="header"]
 |===
 | Entity
 | Setting
@@ -223,7 +225,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | Microsoft Multipath I/O (MPIO)
 | Status = Enabled
-.3+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
+.3+| ensure
 
 | Microsoft Multipath I/O (MPIO)
 | Policy = Round Robin
@@ -236,6 +238,8 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Set NTFS allocation unit size to 64K to better utilize disk space, reduce fragmentation, and improve file read/write performance. Failure to configure this properly might lead to inefficient disk usage and degraded performance. 
 
 |===
+
+Second table spanned text: To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
 
 === Compute
 
