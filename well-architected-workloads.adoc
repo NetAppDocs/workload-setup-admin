@@ -222,12 +222,14 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Recommendation
 
 | Microsoft Multipath I/O (MPIO)
-.3+| 
-+
-* Status = Enabled
-* Policy = Round Robin
-* Number of sessions = 5
+| Status = Enabled
 .3+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
+
+| Microsoft Multipath I/O (MPIO)
+| Policy = Round Robin
+
+| Microsoft Multipath I/O (MPIO)
+| Number of sessions = 5
 
 | Allocation unit size 
 | NTFS allocation unit size = 64K 
