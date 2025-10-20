@@ -348,7 +348,13 @@ a|
 ====
 
 === Permissions for Database workloads
-The IAM policies available for Database workloads provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+The IAM policies available for Database workloads provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment.
+
+Databases has the following permission policies to choose from:
+
+* *View, planning, and analysis*: View the inventory of database resources, learn about the health of your resources, review the well-architected analysis for your database configurations, and explore savings, get error log analysis, and explores savings.
+* *Operations and remediation*: Perform operational tasks for your database resources and fix issues for database configurations and the underlying FSx for ONTAP file system storage. 
+* *Database host creation*: Deploy database hosts and the underlying FSx for ONTAP file system storage according to best practices.
 
 Select your operational mode to view the required IAM policies:
 
