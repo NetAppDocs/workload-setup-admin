@@ -955,8 +955,6 @@ a|
 | ec2:AttachNetworkInterface ^1^ 
 | Deployment 
 | Database host creation
-| Deployment 
-| Database host creation
 
 | Attach EBS volumes required to the SQL nodes for deployment
 | ec2:AttachVolume 
