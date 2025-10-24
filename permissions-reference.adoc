@@ -1360,10 +1360,9 @@ a|
 * Manage operations 
 | Read/Write
 
-.2+| Get FSx for ONTAP details
+| Get FSx for ONTAP details
 | fsx:DescribeFileSystemAliases 
-a| 
-Deployment
+| Deployment
 | Read/Write
 
 | Resize FSx for ONTAP file system to remediate file system headroom
