@@ -445,7 +445,7 @@ Select your operational mode to view the required IAM policies:
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "EC2Group",
+      "Sid": "EC2TagGroup",
       "Effect": "Allow",
       "Action": [
         "ec2:AllocateAddress",
@@ -517,6 +517,7 @@ Select your operational mode to view the required IAM policies:
         "cloudformation:ValidateTemplate",
         "cloudformation:DescribeAccountLimits",
         "cloudwatch:GetMetricStatistics",
+        "cloudwatch:GetMetricData",
         "ds:DescribeDirectories",
         "ec2:CreateLaunchTemplate",
         "ec2:CreateLaunchTemplateVersion",
@@ -524,27 +525,50 @@ Select your operational mode to view the required IAM policies:
         "ec2:CreateSecurityGroup",
         "ec2:CreateTags",
         "ec2:CreateVpcEndpoint",
-        "ec2:Describe*",
-        "ec2:Get*",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeImages",
+        "ec2:DescribeKeyPairs",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeTags",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeRegions",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeInstanceTypes",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeInstanceTypeOfferings",
+        "ec2:DescribeSnapshots",
+        "ec2:DescribeLaunchTemplates",
         "ec2:RunInstances",
         "ec2:ModifyVpcAttribute",
-        "ec2messages:*",
         "fsx:CreateFileSystem",
         "fsx:UpdateFileSystem",
         "fsx:CreateStorageVirtualMachine",
         "fsx:CreateVolume",
         "fsx:UpdateVolume",
-        "fsx:Describe*",
-        "fsx:List*",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes",
+        "fsx:DescribeFileSystemAliases",
+        "fsx:DescribeBackups",
+        "fsx:ListTagsForResource",
         "kms:CreateGrant",
-        "kms:Describe*",
-        "kms:List*",
+        "kms:DescribeKey",
+        "kms:DescribeCustomKeyStores",
+        "kms:ListAliases",
+        "kms:ListKeys",
         "kms:GenerateDataKey",
         "kms:Decrypt",
         "logs:CreateLogGroup",
         "logs:CreateLogStream",
-        "logs:DescribeLog*",
-        "logs:GetLog*",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:GetLogEvents",
+        "logs:GetLogGroupFields",
+        "logs:GetLogRecord",
         "logs:ListLogDeliveries",
         "logs:PutLogEvents",
         "logs:TagResource",
@@ -552,9 +576,13 @@ Select your operational mode to view the required IAM policies:
         "servicequotas:ListServiceQuotas",
         "sns:ListTopics",
         "sns:Publish",
-        "ssm:Describe*",
-        "ssm:Get*",
-        "ssm:List*",
+        "ssm:DescribeInstanceInformation",
+        "ssm:DescribeInstancePatchStates",
+        "ssm:DescribePatchBaselines",
+        "ssm:GetParametersByPath",
+        "ssm:GetCommandInvocation",
+        "ssm:GetConnectionStatus",
+        "ssm:ListCommands",
         "ssm:PutComplianceItems",
         "ssm:PutConfigurePackageResult",
         "ssm:PutInventory",
@@ -562,13 +590,23 @@ Select your operational mode to view the required IAM policies:
         "ssm:UpdateAssociationStatus",
         "ssm:UpdateInstanceAssociationStatus",
         "ssm:UpdateInstanceInformation",
-        "ssmmessages:*",
+        "ssmmessages:CreateControlChannel",
+        "ssmmessages:CreateDataChannel",
+        "ssmmessages:OpenControlChannel",
+        "ssmmessages:OpenDataChannel",
         "compute-optimizer:GetEnrollmentStatus",
         "compute-optimizer:PutRecommendationPreferences",
         "compute-optimizer:GetEffectiveRecommendationPreferences",
         "compute-optimizer:GetEC2InstanceRecommendations",
         "autoscaling:DescribeAutoScalingGroups",
-        "autoscaling:DescribeAutoScalingInstances"
+        "autoscaling:DescribeAutoScalingInstances",
+        "bedrock:GetFoundationModelAvailability",
+        "bedrock:ListInferenceProfiles",
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:GetRole",
+        "iam:GetRolePolicy",
+        "iam:GetUser"
       ],
       "Resource": "*"
     },
@@ -584,28 +622,28 @@ Select your operational mode to view the required IAM policies:
       ]
     },
     {
-      "Sid": "IAMGroup",
+      "Sid": "IAMGroup1",
       "Effect": "Allow",
       "Action": [
         "iam:AddRoleToInstanceProfile",
         "iam:CreateInstanceProfile",
-        "iam:CreateRole",
         "iam:DeleteInstanceProfile",
-        "iam:GetPolicy",
-        "iam:GetPolicyVersion",
-        "iam:GetRole",
-        "iam:GetRolePolicy",
-        "iam:GetUser",
         "iam:PutRolePolicy",
         "iam:RemoveRoleFromInstanceProfile"
       ],
-      "Resource": "*"
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ]
     },
     {
-      "Sid": "IAMGroup1",
+      "Sid": "IAMGroup2",
       "Effect": "Allow",
       "Action": "iam:CreateServiceLinkedRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringLike": {
           "iam:AWSServiceName": "ec2.amazonaws.com"
@@ -613,15 +651,24 @@ Select your operational mode to view the required IAM policies:
       }
     },
     {
-      "Sid": "IAMGroup2",
+      "Sid": "IAMGroup3",
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "*",
+      "Resource": [
+        "arn:aws:iam::*:instance-profile/*",
+        "arn:aws:iam::*:role/WLMDB*"
+      ],
       "Condition": {
         "StringEquals": {
           "iam:PassedToService": "ec2.amazonaws.com"
         }
       }
+    },
+    {
+      "Sid": "IAMGroup4",
+      "Effect": "Allow",
+      "Action": "iam:CreateRole",
+      "Resource": "arn:aws:iam::*:role/WLMDB*"
     },
     {
       "Sid": "SSMParameterStore",
@@ -1192,29 +1239,18 @@ a|
 | Read/Write
 
 .2+| Get instance details for provisioning
-| ec2:Describe* 
+| ec2:DescribeAddresses 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment 
 | Read/Write
-| ec2:Get* 
+| ec2:DescribeLaunchTemplates 
 a| 
-* Deployment
-* Inventory
-* Explore savings 
+Deployment
 | Read/Write
 
 | Start the created instances
 | ec2:RunInstances 
 | Deployment 
-| Read/Write
-
-| Systems Manager uses AWS message delivery service endpoint for API operations
-| ec2messages:* 
-a| 
-* Deployment
-*Inventory
 | Read/Write
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
@@ -1230,18 +1266,9 @@ a|
 * Manage operations 
 | Read/Write
 
-.2+| Get FSx for ONTAP details
-| fsx:Describe* 
-a| 
-* Deployment
-* Inventory
-* Manage operations
-* Explore savings 
-| Read/Write
-| fsx:List* 
-a| 
-* Deployment
-* Inventory 
+| Get FSx for ONTAP details
+| fsx:DescribeFileSystemAliases 
+| Deployment
 | Read/Write
 
 | Resize FSx for ONTAP file system to remediate file system headroom
@@ -1254,32 +1281,34 @@ a|
 | Optimization
 | Read/Write
 
-.4+| Get KMS key details and use for FSx for ONTAP encryption
+.3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
 | Read/Write
-| kms:Describe* 
-| Deployment 
-| Read/Write
-| kms:List* 
+| kms:DescribeCustomKeyStores
 | Deployment 
 | Read/Write
 | kms:GenerateDataKey 
 | Deployment 
 | Read/Write
 
-.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+.8+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
 | Read/Write
 | logs:CreateLogStream 
 | Deployment 
 | Read/Write
-| logs:DescribeLog* 
+| logs:DescribeLogStreams
+a|
+* Deployment
+* Assessment
+| Read/Write
+| logs:GetLogGroupFields 
 | Deployment 
 | Read/Write
-| logs:GetLog* 
-| Deployment 
+| logs:GetLogRecord
+| Deployment
 | Read/Write
 | logs:ListLogDeliveries 
 | Deployment 
@@ -1332,17 +1361,6 @@ a|
 | Read/Write
 
 .11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
-| ssm:Describe* 
-| Deployment 
-| Read/Write
-| ssm:Get* 
-a| 
-* Deployment
-* Manage operations 
-| Read/Write
-| ssm:List* 
-| Deployment 
-| Read/Write
 | ssm:PutComplianceItems 
 | Deployment 
 | Read/Write
@@ -1367,11 +1385,17 @@ a|
 | ssm:UpdateInstanceInformation 
 | Deployment 
 | Read/Write
-| ssmmessages:* 
-a| 
-* Deployment
-* Inventory 
-* Manage operations 
+| ssmmessages:CreateControlChannel 
+| Deployment
+| Read/Write
+| ssmmessages:CreateDataChannel 
+| Deployment
+| Read/Write
+| ssmmessages:OpenControlChannel
+| Deployment
+| Read/Write
+| ssmmessages:OpenDataChannel
+| Deployment
 | Read/Write
 
 .4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
@@ -1866,11 +1890,6 @@ The following table provides details about the permissions for GenAI workloads.
 | ec2:AuthorizeSecurityGroupEgress | Deployment | Read/Write
 | ec2:AuthorizeSecurityGroupIngress | Deployment | Read/Write
 
-| Query Amazon Bedrock / Amazon CloudWatch logging status during AI engine deployment
-| bedrock:GetModelInvocationLoggingConfiguration
-| Deployment
-| Read/Write
-
 | Initiate chat request to one of the foundation models
 | bedrock:InvokeModelWithResponseStream
 | Deployment
@@ -1992,26 +2011,6 @@ The following table provides details about the permissions for GenAI workloads.
 | logs:CreateLogGroup | Deployment | Read/Write
 | logs:PutRetentionPolicy | Deployment | Read/Write
 | logs:TagResource | Deployment | Read/Write
-
-| Send bedrock logs to Amazon CloudWatch
-| bedrock:PutModelInvocationLoggingConfiguration
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:AttachRolePolicy
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:PassRole
-| Troubleshooting
-| Read/Write
-
-| Create the role that enables sending Amazon Bedrock logs to Amazon CloudWatch
-| iam:createPolicy
-| Troubleshooting
-| Read/Write
 
 | List inference profiles for the model
 | bedrock:ListInferenceProfiles
@@ -2321,6 +2320,16 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 5 October 2025
+
+The following permissions were removed from GenAI and are now handled by the GenAI engine:
+
+* `bedrock:GetModelInvocationLoggingConfiguration`
+* `bedrock:PutModelInvocationLoggingConfiguration`
+* `iam:AttachRolePolicy`
+* `iam:PassRole`
+* `iam:CreatePolicy`
 
 === 29 June 2025
 The following permission is now available in _read-only_ mode for Databases: `cloudwatch:GetMetricData`.
