@@ -996,7 +996,6 @@ a|
 | ec2:DisassociateAddress 
 | Deployment 
 | Database host creation
-| Read/Write
 | ec2:DisassociateIamInstanceProfile 
 | Deployment 
 | Database host creation
