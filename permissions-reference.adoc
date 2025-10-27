@@ -264,7 +264,7 @@ a|
 .4+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
-| Read/Write
+| File system creation and deletion
 | kms:DescribeKey 
 | Deployment 
 | File system creation and deletion
@@ -300,10 +300,10 @@ a|
 .2+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
-| Read/Write
+| File system creation and deletion
 | ec2:DeleteSecurityGroup 
 | Management operations
-| Read/Write
+| File system creation and deletion
 
 .16+| Create, view, and manage FSx for ONTAP file system resources
 | fsx:CreateVolume
@@ -372,7 +372,7 @@ a|
 | Simulate operations
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Read/Write
+| View, planning, and analysis
 |===
 
 ====
