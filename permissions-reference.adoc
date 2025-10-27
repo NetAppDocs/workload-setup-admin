@@ -680,11 +680,6 @@ a|
 | Inventory
 | View, planning, and analysis
 
-| List and set triggers for events 
-| sns:ListTopics 
-| Deployment 
-| View, planning, and analysis
-
 .4+| Get details for EC2 instances 
 | ec2:DescribeInstances 
 a| 
@@ -739,7 +734,7 @@ a|
 | Create VPC endpoints if they don't exist for required services irrespective of public network connectivity on EC2 instances
 | ec2:CreateVpcEndpoint
 | Deployment
-| Read/Write
+| Database host creation
 
 | Get instance types available in region for validation nodes (t2.micro/t3.micro) 
 | ec2:DescribeInstanceTypeOfferings 
@@ -812,7 +807,7 @@ a|
 | Manage operations 
 | View, planning, and analysis
 
-| Get service quota limits for CloudFormation and VPC
+| Get service quota limits for CloudFormation and VPC / Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
 | servicequotas:ListServiceQuotas 
 | Deployment 
 | View, planning, and analysis
@@ -831,7 +826,7 @@ a|
 * Optimization
 | View, planning, and analysis
 
-| Send commands over SSM to EC2 instances 
+| Send commands over SSM to EC2 instances for discovery and management
 | ssm:SendCommand 
 a| 
 * Manage operations
@@ -913,9 +908,13 @@ a|
 a| 
 * Deployment
 * Manage operations 
+* Inventory
 | View, planning, and analysis
 | ssm:GetParameters ^1^ 
-| Manage operations 
+a| 
+* Deployment
+* Manage operations 
+* Inventory
 | View, planning, and analysis
 | ssm:PutParameter ^1^ 
 a| 
@@ -923,7 +922,9 @@ a|
 * Manage operations 
 | View, planning, and analysis
 | ssm:DeleteParameters ^1^ 
-| Manage operations 
+a| 
+* Deployment
+* Manage operations 
 | View, planning, and analysis
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
@@ -961,7 +962,7 @@ a|
 | Deployment 
 | Database host creation
 
-.2+| Attach security groups and modify rules for the provisioned nodes
+.2+| Attach security groups and modify rules to provisioned EC2 instances
 | ec2:AuthorizeSecurityGroupEgress 
 | Deployment 
 | Database host creation
@@ -1078,23 +1079,10 @@ a|
 | Database host creation
 | cloudformation:ListStacks 
 | Deployment 
-| Read/Write
+| View, planning, and analysis
 | cloudformation:ValidateTemplate 
 | Deployment 
 | Database host creation
-
-| Fetch directories available in the region
-| ds:DescribeDirectories 
-| Deployment 
-| Read/Write
-
-.2+| Add rules for the Security Group attached to provisioned EC2 instances
-| ec2:AuthorizeSecurityGroupEgress 
-| Deployment 
-| Read/Write
-| ec2:AuthorizeSecurityGroupIngress 
-| Deployment 
-| Read/Write
 
 .2+| Create nested stack templates for retry and rollback
 | ec2:CreateLaunchTemplate 
@@ -1115,25 +1103,18 @@ a|
 | Deployment 
 | Database host creation
 
-| Delete the Security Group created temporarily for validation nodes
-| ec2:DeleteSecurityGroup 
-| Deployment 
-| Read/Write
-
 .2+| Get instance details for provisioning
 | ec2:DescribeAddresses 
-a| 
-Deployment 
-| Read/Write
+| Deployment 
+| View, planning, and analysis
 | ec2:DescribeLaunchTemplates 
-a| 
-Deployment
-| Read/Write
+| Deployment
+| View, planning, and analysis
 
 | Start the created instances
 | ec2:RunInstances 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
 | fsx:CreateFileSystem 
@@ -1174,18 +1155,13 @@ a|
 | Deployment 
 | Database host creation
 
-.8+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
 | Database host creation
 | logs:CreateLogStream 
 | Deployment 
 | Database host creation
-| logs:DescribeLogStreams
-a|
-* Deployment
-* Assessment
-| Read/Write
 | logs:GetLogGroupFields 
 | Deployment 
 | Database host creation
@@ -1225,20 +1201,15 @@ a|
 * Inventory
 | View, planning, and analysis
 
-| Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
-| servicequotas:ListServiceQuotas 
-| Deployment 
-| Read/Write
-
 .2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
 | sns:ListTopics 
 | Deployment 
-| Read/Write
+| View, planning, and analysis
 | sns:Publish 
 | Deployment 
 | Database host creation
 
-.11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
+.10+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
 | ssm:PutComplianceItems 
 | Deployment 
 | Database host creation
@@ -1248,12 +1219,6 @@ a|
 | ssm:PutInventory 
 | Deployment 
 | Database host creation
-| ssm:SendCommand 
-a| 
-* Deployment
-* Inventory
-* Manage operations 
-| Read/Write
 | ssm:UpdateAssociationStatus 
 | Deployment 
 | Database host creation
@@ -1275,29 +1240,6 @@ a|
 | ssmmessages:OpenDataChannel
 | Deployment
 | Database host creation
-
-.4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
-| ssm:GetParameter ^1^
-a|
-* Deployment
-* Manage operations
-* Inventory
-| Read/Write
-| ssm:GetParameters ^1^
-a|
-* Deployment
-* Inventory
-| Read/Write
-| ssm:PutParameter ^1^
-a|
-* Deployment
-* Manage operations
-| Read/Write
-| ssm:DeleteParameters ^1^
-a|  
-* Deployment
-* Manage operations
-| Read/Write 
 
 | Signal CloudFormation stack on success or failure. 
 | cloudformation:SignalResource ^1^ 
@@ -1367,6 +1309,16 @@ a|
 a| 
 * Read-only
 * Read/Write
+
+| Get the foundation models available for error log analysis
+| bedrock:GetFoundationModelAvailability
+| Error log analysis
+| View, planning, and analysis
+
+| List interface profiles available in Amazon Bedrock for error log analysis
+| bedrock:ListInferenceProfiles
+| Error log analysis
+| View, planning, and analysis
 
 |===
 
