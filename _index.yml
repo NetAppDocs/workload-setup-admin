@@ -10,10 +10,6 @@ indexpage:
           url: workload-factory-overview.html
         - title: Sign up
           url: sign-up-saas.html
-    - title: Operational modes and credentials
-      links:
-        - title: Learn about operational modes
-          url: operational-modes.html
         - title: Add AWS credentials
           url: add-credentials.html
         - title: Remove credentials

@@ -1342,7 +1342,9 @@ a|
 
 The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-GenAI IAM policies are only available in _read/write_ mode:
+GenAI IAM policies are only available with _read/write_ permissions:
+
+* *Read/Write*: executes and automates operations in AWS on your behalf along with the assigned credentials that have the needed and validated permissions for execution.
 
 .IAM policies for GenAI workloads
 [%collapsible]
@@ -1622,7 +1624,7 @@ The following table provides details about the permissions for GenAI workloads.
 | Purpose
 | Action
 | Where used
-| Mode
+| Permission policy
 
 | Create AI engine cloudformation stack during deploy and rebuild operations
 | cloudformation:CreateStack
@@ -1865,14 +1867,20 @@ The following table provides details about the permissions for GenAI workloads.
 
 The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
 
-Select your operational mode to view the required IAM policies:
+VMware has the following permission policies to choose from:
+
+* *Read-only*: detects various resources and tools, and helps to complete relevant wizards. Enables IaC templates to be filled with your specific variables (for example, VPC, security groups, etc.) so that you can execute the IaC directly from your AWS account without providing any modify permissions to Workload Factory.
+
+* *Read/Write*: executes and automates operations in AWS on your behalf along with the assigned credentials that have the needed and validated permissions for execution.
+
+Select the permission policy to view the required IAM policies:
 
 .IAM policies for VMware workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
 =====
-.Read-only mode
+.Read-only permissions
 --
 [source,json]
 ----
@@ -1906,7 +1914,7 @@ Select your operational mode to view the required IAM policies:
 ----
 --
 
-.Read/Write mode
+.Read/Write permissions
 --
 [source,json]
 ----
@@ -1989,7 +1997,7 @@ The following table provides details about the permissions for VMware workloads.
 | Purpose
 | Action
 | Where used
-| Mode
+| Permission policy
 
 | Attach security groups and modify rules for the provisioned nodes
 | ec2:AuthorizeSecurityGroupIngress
