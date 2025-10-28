@@ -1306,9 +1306,8 @@ a|
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| All 
+
 
 | Get the foundation models available for error log analysis
 | bedrock:GetFoundationModelAvailability
