@@ -12,8 +12,8 @@ indexpage:
           url: sign-up-saas.html
         - title: Add AWS credentials
           url: add-credentials.html
-        - title: Remove credentials
-          url: manage-credentials.html
+        - title: Permissions for Workload Factory
+          url: permissions-reference.html 
     - title: Automation using Codebox
       links:
         - title: Learn about Codebox
