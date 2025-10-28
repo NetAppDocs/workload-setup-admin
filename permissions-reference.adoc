@@ -363,344 +363,304 @@ Select your operational mode to view the required IAM policies:
 ====
 [role="tabbed-block"]
 =====
-.Read-only mode
+.View, planning, and analysis
 --
 [source,json]
 ----
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "CommonGroup",
-      "Effect": "Allow",
-      "Action": [
-        "cloudwatch:GetMetricStatistics",
-        "cloudwatch:GetMetricData",
-        "sns:ListTopics",
-        "ec2:DescribeInstances",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeSubnets",
-        "ec2:DescribeSecurityGroups",
-        "ec2:DescribeImages",
-        "ec2:DescribeRegions",
-        "ec2:DescribeRouteTables",
-        "ec2:DescribeKeyPairs",
-        "ec2:DescribeNetworkInterfaces",
-        "ec2:DescribeInstanceTypes",
-        "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeInstanceTypeOfferings",
-        "ec2:DescribeSnapshots",
-        "ec2:DescribeVolumes",
-        "ec2:DescribeAddresses",
-        "kms:ListAliases",
-        "kms:ListKeys",
-        "kms:DescribeKey",
-        "cloudformation:ListStacks",
-        "cloudformation:DescribeAccountLimits",
-        "ds:DescribeDirectories",
-        "fsx:DescribeVolumes",
-        "fsx:DescribeBackups",
-        "fsx:DescribeStorageVirtualMachines",
-        "fsx:DescribeFileSystems",
-        "servicequotas:ListServiceQuotas",
-        "ssm:GetParametersByPath",
-        "ssm:GetCommandInvocation",
-        "ssm:SendCommand",
-        "ssm:GetConnectionStatus",
-        "ssm:DescribePatchBaselines",
-        "ssm:DescribeInstancePatchStates",
-        "ssm:ListCommands",
-        "ssm:DescribeInstanceInformation",
-        "fsx:ListTagsForResource"
-        "logs:DescribeLogGroups"
-      ],
-      "Resource": [
-        "*"
-      ]
-    },
-    {
-      "Sid": "SSMParameterStore",
-      "Effect": "Allow",
-      "Action": [
-        "ssm:GetParameter",
-        "ssm:GetParameters",
-        "ssm:PutParameter",
-        "ssm:DeleteParameters"
-      ],
-      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
-    },
-    {
-      "Sid": "SSMResponseCloudWatch",
-      "Effect": "Allow",
-      "Action": [
-        "logs:GetLogEvents",
-        "logs:PutRetentionPolicy"
-      ],
-      "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CommonGroup",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:GetMetricStatistics",
+                "cloudwatch:GetMetricData",
+                "sns:ListTopics",
+                "ec2:DescribeInstances",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeImages",
+                "ec2:DescribeRegions",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeInstanceTypes",
+                "ec2:DescribeVpcEndpoints",
+                "ec2:DescribeInstanceTypeOfferings",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeAddresses",
+                "kms:ListAliases",
+                "kms:ListKeys",
+                "kms:DescribeKey",
+                "cloudformation:ListStacks",
+                "cloudformation:DescribeAccountLimits",
+                "ds:DescribeDirectories",
+                "fsx:DescribeVolumes",
+                "fsx:DescribeBackups",
+                "fsx:DescribeStorageVirtualMachines",
+                "fsx:DescribeFileSystems",
+                "servicequotas:ListServiceQuotas",
+                "ssm:GetParametersByPath",
+                "ssm:GetCommandInvocation",
+                "ssm:SendCommand",
+                "ssm:GetConnectionStatus",
+                "ssm:DescribePatchBaselines",
+                "ssm:DescribeInstancePatchStates",
+                "ssm:ListCommands",
+                "ssm:DescribeInstanceInformation",
+                "fsx:ListTagsForResource",
+                "logs:DescribeLogGroups",
+                "bedrock:GetFoundationModelAvailability",
+                "bedrock:ListInferenceProfiles"
+            ],
+            "Resource": [
+                "*"
+            ]
+        },
+        {
+            "Sid": "SSMParameterStore",
+            "Effect": "Allow",
+            "Action": [
+                "ssm:GetParameter",
+                "ssm:GetParameters",
+                "ssm:PutParameter",
+                "ssm:DeleteParameters"
+            ],
+            "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
+        },
+        {
+            "Sid": "SSMResponseCloudWatch",
+            "Effect": "Allow",
+            "Action": [
+                "logs:GetLogEvents",
+                "logs:PutRetentionPolicy"
+            ],
+            "Resource": "arn:aws:logs:*:*:log-group:netapp/wlmdb/*"
+        }
+    ]
 }
 ----
 --
-.Read/Write mode
+.Operations and remediation
+--
+[source,json]
+----
+[
+    {
+        "Sid": "FSxRemediation",
+        "Effect": "Allow",
+        "Action": [
+            "fsx:UpdateFileSystem",
+            "fsx:UpdateVolume"
+        ],
+        "Resource": "*"
+    },
+    {
+        "Sid": "EC2Remediation",
+        "Effect": "Allow",
+        "Action": [
+            "ec2:StartInstances",
+            "ec2:ModifyInstanceAttribute",
+            "ec2:StopInstances"
+        ],
+        "Resource": "*",
+        "Condition": {
+            "StringLike": {
+                "ec2:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+            }
+        }
+    }
+]
+----
+--
+.Database host creation
 --
 [source,json]
 ----
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "EC2TagGroup",
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AllocateAddress",
-        "ec2:AllocateHosts",
-        "ec2:AssignPrivateIpAddresses",
-        "ec2:AssociateAddress",
-        "ec2:AssociateRouteTable",
-        "ec2:AssociateSubnetCidrBlock",
-        "ec2:AssociateVpcCidrBlock",
-        "ec2:AttachInternetGateway",
-        "ec2:AttachNetworkInterface",
-        "ec2:AttachVolume",
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:CreateVolume",
-        "ec2:DeleteNetworkInterface",
-        "ec2:DeleteSecurityGroup",
-        "ec2:DeleteTags",
-        "ec2:DeleteVolume",
-        "ec2:DetachNetworkInterface",
-        "ec2:DetachVolume",
-        "ec2:DisassociateAddress",
-        "ec2:DisassociateIamInstanceProfile",
-        "ec2:DisassociateRouteTable",
-        "ec2:DisassociateSubnetCidrBlock",
-        "ec2:DisassociateVpcCidrBlock",
-        "ec2:ModifyInstanceAttribute",
-        "ec2:ModifyInstancePlacement",
-        "ec2:ModifyNetworkInterfaceAttribute",
-        "ec2:ModifySubnetAttribute",
-        "ec2:ModifyVolume",
-        "ec2:ModifyVolumeAttribute",
-        "ec2:ReleaseAddress",
-        "ec2:ReplaceRoute",
-        "ec2:ReplaceRouteTableAssociation",
-        "ec2:RevokeSecurityGroupEgress",
-        "ec2:RevokeSecurityGroupIngress",
-        "ec2:StartInstances",
-        "ec2:StopInstances"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringLike": {
-          "ec2:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2TagGroup",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AllocateAddress",
+                "ec2:AllocateHosts",
+                "ec2:AssignPrivateIpAddresses",
+                "ec2:AssociateAddress",
+                "ec2:AssociateRouteTable",
+                "ec2:AssociateSubnetCidrBlock",
+                "ec2:AssociateVpcCidrBlock",
+                "ec2:AttachInternetGateway",
+                "ec2:AttachNetworkInterface",
+                "ec2:AttachVolume",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:CreateVolume",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteTags",
+                "ec2:DeleteVolume",
+                "ec2:DetachNetworkInterface",
+                "ec2:DetachVolume",
+                "ec2:DisassociateAddress",
+                "ec2:DisassociateIamInstanceProfile",
+                "ec2:DisassociateRouteTable",
+                "ec2:DisassociateSubnetCidrBlock",
+                "ec2:DisassociateVpcCidrBlock",
+                "ec2:ModifyInstancePlacement",
+                "ec2:ModifyNetworkInterfaceAttribute",
+                "ec2:ModifySubnetAttribute",
+                "ec2:ModifyVolume",
+                "ec2:ModifyVolumeAttribute",
+                "ec2:ReleaseAddress",
+                "ec2:ReplaceRoute",
+                "ec2:ReplaceRouteTableAssociation",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:RevokeSecurityGroupIngress"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "ec2:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+                }
+            }
+        },
+        {
+            "Sid": "FSxNGroup",
+            "Effect": "Allow",
+            "Action": [
+                "fsx:TagResource"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringLike": {
+                    "aws:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
+                }
+            }
+        },
+        {
+            "Sid": "CreationGroup",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:CreateStack",
+                "cloudformation:DescribeStackEvents",
+                "cloudformation:DescribeStacks",
+                "cloudformation:ValidateTemplate",
+                "ec2:CreateLaunchTemplate",
+                "ec2:CreateLaunchTemplateVersion",
+                "ec2:CreateNetworkInterface",
+                "ec2:CreateSecurityGroup",
+                "ec2:CreateTags",
+                "ec2:CreateVpcEndpoint",
+                "ec2:RunInstances",
+                "ec2:DescribeTags",
+                "ec2:DescribeLaunchTemplates",
+                "ec2:ModifyVpcAttribute",
+                "fsx:CreateFileSystem",
+                "fsx:CreateStorageVirtualMachine",
+                "fsx:CreateVolume",
+                "fsx:DescribeFileSystemAliases",
+                "kms:CreateGrant",
+                "kms:DescribeCustomKeyStores",
+                "kms:GenerateDataKey",
+                "kms:Decrypt",
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:GetLogGroupFields",
+                "logs:GetLogRecord",
+                "logs:ListLogDeliveries",
+                "logs:PutLogEvents",
+                "logs:TagResource",
+                "sns:Publish",
+                "ssm:PutComplianceItems",
+                "ssm:PutConfigurePackageResult",
+                "ssm:PutInventory",
+                "ssm:UpdateAssociationStatus",
+                "ssm:UpdateInstanceAssociationStatus",
+                "ssm:UpdateInstanceInformation",
+                "ssmmessages:CreateControlChannel",
+                "ssmmessages:CreateDataChannel",
+                "ssmmessages:OpenControlChannel",
+                "ssmmessages:OpenDataChannel",
+                "compute-optimizer:GetEnrollmentStatus",
+                "compute-optimizer:PutRecommendationPreferences",
+                "compute-optimizer:GetEffectiveRecommendationPreferences",
+                "compute-optimizer:GetEC2InstanceRecommendations",
+                "autoscaling:DescribeAutoScalingGroups",
+                "autoscaling:DescribeAutoScalingInstances",
+                "iam:GetPolicy",
+                "iam:GetPolicyVersion",
+                "iam:GetRole",
+                "iam:GetRolePolicy",
+                "iam:GetUser"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "ArnGroup",
+            "Effect": "Allow",
+            "Action": [
+                "cloudformation:SignalResource"
+            ],
+            "Resource": [
+                "arn:aws:cloudformation:*:*:stack/WLMDB*",
+                "arn:aws:logs:*:*:log-group:WLMDB*"
+            ]
+        },
+        {
+            "Sid": "IAMGroup1",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AddRoleToInstanceProfile",
+                "iam:CreateInstanceProfile",
+                "iam:DeleteInstanceProfile",
+                "iam:PutRolePolicy",
+                "iam:RemoveRoleFromInstanceProfile"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:instance-profile/*",
+                "arn:aws:iam::*:role/WLMDB*"
+            ]
+        },
+        {
+            "Sid": "IAMGroup2",
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": [
+                "arn:aws:iam::*:instance-profile/*",
+                "arn:aws:iam::*:role/WLMDB*"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "iam:AWSServiceName": "ec2.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "IAMGroup3",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": [
+                "arn:aws:iam::*:instance-profile/*",
+                "arn:aws:iam::*:role/WLMDB*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "ec2.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "IAMGroup4",
+            "Effect": "Allow",
+            "Action": "iam:CreateRole",
+            "Resource": "arn:aws:iam::*:role/WLMDB*"
         }
-      }
-    },
-    {
-      "Sid": "FSxNGroup",
-      "Effect": "Allow",
-      "Action": [
-        "fsx:TagResource"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "StringLike": {
-          "aws:ResourceTag/aws:cloudformation:stack-name": "WLMDB*"
-        }
-      }
-    },
-    {
-      "Sid": "CommonGroup",
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:CreateStack",
-        "cloudformation:DescribeStackEvents",
-        "cloudformation:DescribeStacks",
-        "cloudformation:ListStacks",
-        "cloudformation:ValidateTemplate",
-        "cloudformation:DescribeAccountLimits",
-        "cloudwatch:GetMetricStatistics",
-        "cloudwatch:GetMetricData",
-        "ds:DescribeDirectories",
-        "ec2:CreateLaunchTemplate",
-        "ec2:CreateLaunchTemplateVersion",
-        "ec2:CreateNetworkInterface",
-        "ec2:CreateSecurityGroup",
-        "ec2:CreateTags",
-        "ec2:CreateVpcEndpoint",
-        "ec2:DescribeInstances",
-        "ec2:DescribeVolumes",
-        "ec2:DescribeSecurityGroups",
-        "ec2:DescribeImages",
-        "ec2:DescribeKeyPairs",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeSubnets",
-        "ec2:DescribeTags",
-        "ec2:DescribeAddresses",
-        "ec2:DescribeNetworkInterfaces",
-        "ec2:DescribeRegions",
-        "ec2:DescribeRouteTables",
-        "ec2:DescribeInstanceTypes",
-        "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeInstanceTypeOfferings",
-        "ec2:DescribeSnapshots",
-        "ec2:DescribeLaunchTemplates",
-        "ec2:RunInstances",
-        "ec2:ModifyVpcAttribute",
-        "fsx:CreateFileSystem",
-        "fsx:UpdateFileSystem",
-        "fsx:CreateStorageVirtualMachine",
-        "fsx:CreateVolume",
-        "fsx:UpdateVolume",
-        "fsx:DescribeFileSystems",
-        "fsx:DescribeStorageVirtualMachines",
-        "fsx:DescribeVolumes",
-        "fsx:DescribeFileSystemAliases",
-        "fsx:DescribeBackups",
-        "fsx:ListTagsForResource",
-        "kms:CreateGrant",
-        "kms:DescribeKey",
-        "kms:DescribeCustomKeyStores",
-        "kms:ListAliases",
-        "kms:ListKeys",
-        "kms:GenerateDataKey",
-        "kms:Decrypt",
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:DescribeLogGroups",
-        "logs:DescribeLogStreams",
-        "logs:GetLogEvents",
-        "logs:GetLogGroupFields",
-        "logs:GetLogRecord",
-        "logs:ListLogDeliveries",
-        "logs:PutLogEvents",
-        "logs:TagResource",
-        "logs:PutRetentionPolicy",
-        "servicequotas:ListServiceQuotas",
-        "sns:ListTopics",
-        "sns:Publish",
-        "ssm:DescribeInstanceInformation",
-        "ssm:DescribeInstancePatchStates",
-        "ssm:DescribePatchBaselines",
-        "ssm:GetParametersByPath",
-        "ssm:GetCommandInvocation",
-        "ssm:GetConnectionStatus",
-        "ssm:ListCommands",
-        "ssm:PutComplianceItems",
-        "ssm:PutConfigurePackageResult",
-        "ssm:PutInventory",
-        "ssm:SendCommand",
-        "ssm:UpdateAssociationStatus",
-        "ssm:UpdateInstanceAssociationStatus",
-        "ssm:UpdateInstanceInformation",
-        "ssmmessages:CreateControlChannel",
-        "ssmmessages:CreateDataChannel",
-        "ssmmessages:OpenControlChannel",
-        "ssmmessages:OpenDataChannel",
-        "compute-optimizer:GetEnrollmentStatus",
-        "compute-optimizer:PutRecommendationPreferences",
-        "compute-optimizer:GetEffectiveRecommendationPreferences",
-        "compute-optimizer:GetEC2InstanceRecommendations",
-        "autoscaling:DescribeAutoScalingGroups",
-        "autoscaling:DescribeAutoScalingInstances",
-        "bedrock:GetFoundationModelAvailability",
-        "bedrock:ListInferenceProfiles",
-        "iam:GetPolicy",
-        "iam:GetPolicyVersion",
-        "iam:GetRole",
-        "iam:GetRolePolicy",
-        "iam:GetUser"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "ArnGroup",
-      "Effect": "Allow",
-      "Action": [
-        "cloudformation:SignalResource"
-      ],
-      "Resource": [
-        "arn:aws:cloudformation:*:*:stack/WLMDB*",
-        "arn:aws:logs:*:*:log-group:WLMDB*"
-      ]
-    },
-    {
-      "Sid": "IAMGroup1",
-      "Effect": "Allow",
-      "Action": [
-        "iam:AddRoleToInstanceProfile",
-        "iam:CreateInstanceProfile",
-        "iam:DeleteInstanceProfile",
-        "iam:PutRolePolicy",
-        "iam:RemoveRoleFromInstanceProfile"
-      ],
-      "Resource": [
-        "arn:aws:iam::*:instance-profile/*",
-        "arn:aws:iam::*:role/WLMDB*"
-      ]
-    },
-    {
-      "Sid": "IAMGroup2",
-      "Effect": "Allow",
-      "Action": "iam:CreateServiceLinkedRole",
-      "Resource": [
-        "arn:aws:iam::*:instance-profile/*",
-        "arn:aws:iam::*:role/WLMDB*"
-      ],
-      "Condition": {
-        "StringLike": {
-          "iam:AWSServiceName": "ec2.amazonaws.com"
-        }
-      }
-    },
-    {
-      "Sid": "IAMGroup3",
-      "Effect": "Allow",
-      "Action": "iam:PassRole",
-      "Resource": [
-        "arn:aws:iam::*:instance-profile/*",
-        "arn:aws:iam::*:role/WLMDB*"
-      ],
-      "Condition": {
-        "StringEquals": {
-          "iam:PassedToService": "ec2.amazonaws.com"
-        }
-      }
-    },
-    {
-      "Sid": "IAMGroup4",
-      "Effect": "Allow",
-      "Action": "iam:CreateRole",
-      "Resource": "arn:aws:iam::*:role/WLMDB*"
-    },
-    {
-      "Sid": "SSMParameterStore",
-      "Effect": "Allow",
-      "Action": [
-        "ssm:GetParameter",
-        "ssm:GetParameters",
-        "ssm:PutParameter",
-        "ssm:DeleteParameters"
-      ],
-      "Resource": "arn:aws:ssm:*:*:parameter/netapp/wlmdb/*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Resource": "*"
-    }
-  ]
+    ]
 }
 ----
 --
@@ -718,219 +678,156 @@ The following table displays the permissions for database workloads.
 | Purpose
 | Action
 | Where used
-| Mode
+| Permission policy
 
 | Get metric statistics for FSx for ONTAP, EBS, and FSx for Windows File Server and for compute optimization recommendation
 | cloudwatch:GetMetricStatistics 
 a| 
 * Inventory 
 * Explore savings 
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Gather performance metrics saved to Amazon CloudWatch from registered SQL nodes. Data generates in performance trend charts on the manage instance screen for registered SQL instances.
 | cloudwatch:GetMetricData
 | Inventory
-| Read-only
-
-| List and set triggers for events 
-| sns:ListTopics 
-| Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 .4+| Get details for EC2 instances 
 | ec2:DescribeInstances 
 a| 
 * Inventory  
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeKeyPairs 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeNetworkInterfaces 
 | Deployment 
-a| 
-* Read-only
-* Read/Write 
+| View, planning, and analysis 
 | ec2:DescribeInstanceTypes 
 a| 
 * Deployment
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 .6+| Get details to fill in the FSx for ONTAP deployment form
 | ec2:DescribeVpcs 
 a| 
 * Deployment 
 * Inventory 
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeSubnets 
 a| 
 * Deployment 
 * Inventory
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeSecurityGroups 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeImages 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeRegions 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ec2:DescribeRouteTables 
 a| 
 * Deployment
 * Inventory
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get any existing VPC endpoints to determine if new endpoints need to be created before deployments
 | ec2:DescribeVpcEndpoints 
 a| 
 * Deployment 
 * Inventory
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Create VPC endpoints if they don't exist for required services irrespective of public network connectivity on EC2 instances
 | ec2:CreateVpcEndpoint
 | Deployment
-| Read/Write
+| Database host creation
 
 | Get instance types available in region for validation nodes (t2.micro/t3.micro) 
 | ec2:DescribeInstanceTypeOfferings 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get snapshot details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeSnapshots 
 | Explore savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get details of each attached EBS volumes for pricing and savings estimate
 | ec2:DescribeVolumes 
 a| 
 * Inventory 
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 .3+| Get KMS key details for FSx for ONTAP file system encryption
 | kms:ListAliases 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | kms:ListKeys 
 | Deployment 
-a| 
-* Read-only 
-* Read/Write
+| View, planning, and analysis
 | kms:DescribeKey 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get list of CloudFormation stacks running in the environment to check quota limit
 | cloudformation:ListStacks 
 | Deployment 
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Check account limits for resources before triggering deployment
 | cloudformation:DescribeAccountLimits
 | Deployment
-a|
-* Read-only 
-* Read/Write
+| View, planning, and analysis
 
 | Get list of AWS-managed Active Directories in the region
 | ds:DescribeDirectories 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 .5+| Get lists and details of volumes, backups, SVMs, file systems in AZs, and tags for FSx for ONTAP file system
 | fsx:DescribeVolumes 
 a| 
 * Inventory
 * Explore Savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | fsx:DescribeBackups 
 a| 
 * Inventory
 * Explore Savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | fsx:DescribeStorageVirtualMachines 
 a| 
 * Deployment
 * Manage operations
 * Inventory
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | fsx:DescribeFileSystems 
 a| 
 * Deployment
 * Manage operations
 * Inventory
 * Explore savings 
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | fsx:ListTagsForResource 
 | Manage operations 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
-| Get service quota limits for CloudFormation and VPC
+| Get service quota limits for CloudFormation and VPC / Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
 | servicequotas:ListServiceQuotas 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Use SSM-based query to get the updated list of FSx for ONTAP supported regions
 | ssm:GetParametersByPath 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Poll for SSM response after sending command for manage operations post deployment
 | ssm:GetCommandInvocation 
@@ -939,20 +836,16 @@ a|
 * Inventory
 * Explore savings 
 * Optimization
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
-| Send commands over SSM to EC2 instances 
+| Send commands over SSM to EC2 instances for discovery and management
 | ssm:SendCommand 
 a| 
 * Manage operations
 * Inventory
 * Explore savings
 * Optimization 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get the SSM connectivity status on instances post deployment
 | ssm:GetConnectionStatus 
@@ -960,547 +853,483 @@ a|
 * Manage operations
 * Inventory
 * Optimization
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Fetch SSM association status for a group of managed EC2 instances (SQL nodes)
 | ssm:DescribeInstanceInformation
 | Inventory
-| Read
+| View, planning, and analysis
 
 | Get the list of available patch baselines for operating system patch assessment
 | ssm:DescribePatchBaselines
 | Optimization
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get the patching state on Windows EC2 instances for operating system patch assessment 
 | ssm:DescribeInstancePatchStates
 | Optimization
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | List commands executed by AWS Patch Manager on EC2 instances for operating system patch management
 | ssm:ListCommands
 | Optimization
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Check if account is enrolled in AWS Compute Optimizer
 | compute-optimizer:GetEnrollmentStatus
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 
 | Update an existing recommendation preference in AWS Compute Optimizer to tailor suggestions for SQL server workloads
 | compute-optimizer:PutRecommendationPreferences
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 
 | Get recommendation preferences that are in effect for a given resource from AWS Compute Optimizer
 | compute-optimizer:GetEffectiveRecommendationPreferences
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 
 | Fetch recommendations that AWS Compute Optimizer generates for Amazon Elastic Compute Cloud (Amazon EC2) instances 
 | compute-optimizer:GetEC2InstanceRecommendations
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 
 .2+| Check for instance association to auto-scaling groups
 | autoscaling:DescribeAutoScalingGroups
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 | autoscaling:DescribeAutoScalingInstances
 a|
 * Explore savings
 * Optimization
-| Read/Write
+| Database host creation
 
 .4+| Get, list, create, and delete SSM parameters for AD, FSx for ONTAP, and SQL user credentials used during deployment or managed in your AWS account
 | ssm:GetParameter ^1^ 
 a| 
 * Deployment
 * Manage operations 
-a| 
-* Read-only
-* Read/Write
+* Inventory
+| View, planning, and analysis
 | ssm:GetParameters ^1^ 
-| Manage operations 
 a| 
-* Read-only
-* Read/Write
+* Deployment
+* Manage operations 
+* Inventory
+| View, planning, and analysis
 | ssm:PutParameter ^1^ 
 a| 
 * Deployment 
 * Manage operations 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | ssm:DeleteParameters ^1^ 
-| Manage operations 
 a| 
-* Read-only
-* Read/Write
+* Deployment
+* Manage operations 
+| View, planning, and analysis
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
 | ec2:AllocateAddress ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | ec2:AllocateHosts  ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AssignPrivateIpAddresses ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AssociateAddress ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AssociateRouteTable ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AssociateSubnetCidrBlock ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AssociateVpcCidrBlock ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AttachInternetGateway ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AttachNetworkInterface ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Attach EBS volumes required to the SQL nodes for deployment
 | ec2:AttachVolume 
 | Deployment 
-| Read/Write
+| Database host creation
 
-.2+| Attach security groups and modify rules for the provisioned nodes
+.2+| Attach security groups and modify rules to provisioned EC2 instances
 | ec2:AuthorizeSecurityGroupEgress 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:AuthorizeSecurityGroupIngress 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Create EBS volumes required to the SQL nodes for deployment
 | ec2:CreateVolume 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .11+| Remove the temporary validation nodes created of type t2.micro and for rollback or retry of failed EC2 SQL nodes
 | ec2:DeleteNetworkInterface 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DeleteSecurityGroup 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DeleteTags 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DeleteVolume 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DetachNetworkInterface 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DetachVolume 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DisassociateAddress 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DisassociateIamInstanceProfile 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DisassociateRouteTable 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DisassociateSubnetCidrBlock 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:DisassociateVpcCidrBlock 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .7+| Modify attributes for created SQL instances. Only applicable to names that start with WLMDB.
 | ec2:ModifyInstanceAttribute 
 | Deployment 
-| Read/Write
+| Operations and remediation
 | ec2:ModifyInstancePlacement 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ModifyNetworkInterfaceAttribute 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ModifySubnetAttribute 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ModifyVolume 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ModifyVolumeAttribute 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ModifyVpcAttribute 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .5+| Disassociate and destroy validation instances
 | ec2:ReleaseAddress 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ReplaceRoute 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:ReplaceRouteTableAssociation 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:RevokeSecurityGroupEgress 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:RevokeSecurityGroupIngress 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Start the deployed instances
 | ec2:StartInstances 
 | Deployment 
-| Read/Write
+| Operations and remediation
 
 | Stop the deployed instances
 | ec2:StopInstances 
 | Deployment 
-| Read/Write
+| Operations and remediation
 
 | Tag custom values for Amazon FSx for NetApp ONTAP resources created by WLMDB to get billing details during resource management
 | fsx:TagResource ^1^ 
 a| 
 * Deployment
 * Manage operations 
-| Read/Write
+| Database host creation
 
 .5+| Create and validate CloudFormation template for deployment
 | cloudformation:CreateStack 
 | Deployment 
-| Read/Write
+| Database host creation
 | cloudformation:DescribeStackEvents 
 | Deployment 
-| Read/Write
+| Database host creation
 | cloudformation:DescribeStacks 
 | Deployment 
-| Read/Write
+| Database host creation
 | cloudformation:ListStacks 
 | Deployment 
-| Read/Write
+| View, planning, and analysis
 | cloudformation:ValidateTemplate 
 | Deployment 
-| Read/Write
-
-| Fetch directories available in the region
-| ds:DescribeDirectories 
-| Deployment 
-| Read/Write
-
-.2+| Add rules for the Security Group attached to provisioned EC2 instances
-| ec2:AuthorizeSecurityGroupEgress 
-| Deployment 
-| Read/Write
-| ec2:AuthorizeSecurityGroupIngress 
-| Deployment 
-| Read/Write
+| Database host creation
 
 .2+| Create nested stack templates for retry and rollback
 | ec2:CreateLaunchTemplate 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:CreateLaunchTemplateVersion 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .3+| Manage tags and network security on created instances
 | ec2:CreateNetworkInterface 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:CreateSecurityGroup 
 | Deployment 
-| Read/Write
+| Database host creation
 | ec2:CreateTags 
 | Deployment 
-| Read/Write
-
-| Delete the Security Group created temporarily for validation nodes
-| ec2:DeleteSecurityGroup 
-| Deployment 
-| Read/Write
+| Database host creation
 
 .2+| Get instance details for provisioning
 | ec2:DescribeAddresses 
-a| 
-Deployment 
-| Read/Write
+| Deployment 
+| View, planning, and analysis
 | ec2:DescribeLaunchTemplates 
-a| 
-Deployment
-| Read/Write
+| Deployment
+| View, planning, and analysis
 
 | Start the created instances
 | ec2:RunInstances 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .3+| Create FSx for ONTAP resources required for provisioning. For existing FSx for ONTAP systems, a new SVM is created to host SQL volumes.
 | fsx:CreateFileSystem 
 | Deployment 
-| Read/Write
+| Database host creation
 | fsx:CreateStorageVirtualMachine 
 | Deployment
-| Read/Write
+| Database host creation
 | fsx:CreateVolume 
 a| 
 * Deployment
 * Manage operations 
-| Read/Write
+| Database host creation
 
 | Get FSx for ONTAP details
 | fsx:DescribeFileSystemAliases 
 | Deployment
-| Read/Write
+| Database host creation
 
 | Resize FSx for ONTAP file system to remediate file system headroom
 | fsx:UpdateFilesystem
 | Optimization
-| Read/Write
+| Operations and remediation
 
 | Resize volumes to remediate log and TempDB drive sizes
 | fsx:UpdateVolume
 | Optimization
-| Read/Write
+| Operations and remediation
 
 .3+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
-| Read/Write
+| Database host creation
 | kms:DescribeCustomKeyStores
 | Deployment 
-| Read/Write
+| Database host creation
 | kms:GenerateDataKey 
 | Deployment 
-| Read/Write
+| Database host creation
 
-.8+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
+.7+| Create CloudWatch logs for validation and provisioning scripts running on EC2 instances
 | logs:CreateLogGroup 
 | Deployment 
-| Read/Write
+| Database host creation
 | logs:CreateLogStream 
 | Deployment 
-| Read/Write
-| logs:DescribeLogStreams
-a|
-* Deployment
-* Assessment
-| Read/Write
+| Database host creation
 | logs:GetLogGroupFields 
 | Deployment 
-| Read/Write
+| Database host creation
 | logs:GetLogRecord
 | Deployment
-| Read/Write
+| Database host creation
 | logs:ListLogDeliveries 
 | Deployment 
-| Read/Write
+| Database host creation
 | logs:PutLogEvents 
 a| 
 * Deployment
 * Manage operations 
-| Read/Write
+| Database host creation
 | logs:TagResource
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Workload Factory switches to Amazon CloudWatch logs for the SQL instance upon encountering SSM output truncation
 | logs:GetLogEvents 
 a| 
 * Storage assessment (Optimization) 
 * Inventory
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Allow Workload Factory to get current log groups and check that retention is set for log groups created by Workload Factory
 | logs:DescribeLogGroups
 a| 
 * Storage assessment (Optimization) 
 * Inventory
-| Read-only
+| View, planning, and analysis
 
 | Allow Workload Factory to set a one-day retention policy for log groups created by Workload Factory to avoid unnecessary accumulation of log streams for SSM command outputs
 | logs:PutRetentionPolicy
 a| 
 * Storage assessment (Optimization)
 * Inventory
-a| 
-* Read-only
-* Read/Write
-
-| Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
-| servicequotas:ListServiceQuotas 
-| Deployment 
-| Read/Write
+| View, planning, and analysis
 
 .2+| List customer SNS topics and publish to WLMDB backend SNS as well as customer SNS if selected
 | sns:ListTopics 
 | Deployment 
-| Read/Write
+| View, planning, and analysis
 | sns:Publish 
 | Deployment 
-| Read/Write
+| Database host creation
 
-.11+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
+.10+| Required SSM permissions to run the discovery script on provisioned SQL instances and to fetch latest list of FSx for ONTAP supported AWS regions.
 | ssm:PutComplianceItems 
 | Deployment 
-| Read/Write
+| Database host creation
 | ssm:PutConfigurePackageResult 
 | Deployment 
-| Read/Write
+| Database host creation
 | ssm:PutInventory 
 | Deployment 
-| Read/Write
-| ssm:SendCommand 
-a| 
-* Deployment
-* Inventory
-* Manage operations 
-| Read/Write
+| Database host creation
 | ssm:UpdateAssociationStatus 
 | Deployment 
-| Read/Write
+| Database host creation
 | ssm:UpdateInstanceAssociationStatus 
 | Deployment 
-| Read/Write
+| Database host creation
 | ssm:UpdateInstanceInformation 
 | Deployment 
-| Read/Write
+| Database host creation
 | ssmmessages:CreateControlChannel 
 | Deployment
-| Read/Write
+| Database host creation
 | ssmmessages:CreateDataChannel 
 | Deployment
-| Read/Write
+| Database host creation
 | ssmmessages:OpenControlChannel
 | Deployment
-| Read/Write
+| Database host creation
 | ssmmessages:OpenDataChannel
 | Deployment
-| Read/Write
-
-.4+| Save credentials for FSx for ONTAP, Active Directory, and SQL user (only for SQL user authentication)
-| ssm:GetParameter ^1^
-a|
-* Deployment
-* Manage operations
-* Inventory
-| Read/Write
-| ssm:GetParameters ^1^
-a|
-* Deployment
-* Inventory
-| Read/Write
-| ssm:PutParameter ^1^
-a|
-* Deployment
-* Manage operations
-| Read/Write
-| ssm:DeleteParameters ^1^
-a|  
-* Deployment
-* Manage operations
-| Read/Write 
+| Database host creation
 
 | Signal CloudFormation stack on success or failure. 
 | cloudformation:SignalResource ^1^ 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Add EC2 role created by template to the instance profile of EC2 to allow scripts on EC2 to access the required resources for deployment.
 | iam:AddRoleToInstanceProfile 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Create instance profile for EC2 and attach the created EC2 role.
 | iam:CreateInstanceProfile 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Create EC2 role through template with permissions listed below  
 | iam:CreateRole 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Create role linked to EC2 service
 | iam:CreateServiceLinkedRole ^2^
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Delete instance profile created during deployment specifically for the validation nodes
 | iam:DeleteInstanceProfile 
 | Deployment 
-| Read/Write
+| Database host creation
 
 .5+| Get the role and policy details to determine any gaps in permission and validate for deployment
 | iam:GetPolicy 
 | Deployment 
-| Read/Write
+| Database host creation
 | iam:GetPolicyVersion 
 | Deployment 
-| Read/Write
+| Database host creation
 | iam:GetRole 
 | Deployment 
-| Read/Write
+| Database host creation
 | iam:GetRolePolicy 
 | Deployment 
-| Read/Write
+| Database host creation
 | iam:GetUser 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Pass the role created to EC2 instance
 | iam:PassRole ^3^
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Add policy with required permissions to the EC2 role created
 | iam:PutRolePolicy 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Detach role from the provisioned EC2 instance profile
 | iam:RemoveRoleFromInstanceProfile 
 | Deployment 
-| Read/Write
+| Database host creation
 
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| All 
+
+
+| Get the foundation models available for error log analysis
+| bedrock:GetFoundationModelAvailability
+| Error log analysis
+| View, planning, and analysis
+
+| List interface profiles available in Amazon Bedrock for error log analysis
+| bedrock:ListInferenceProfiles
+| Error log analysis
+| View, planning, and analysis
 
 |===
 
