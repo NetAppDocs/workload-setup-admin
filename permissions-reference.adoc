@@ -368,11 +368,10 @@ a|
 | Management operations
 | View, planning, and analysis
 
-
-| Simulate operations
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
-| View, planning, and analysis
+| All
 |===
 
 ====
