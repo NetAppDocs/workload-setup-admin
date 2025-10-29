@@ -39,7 +39,7 @@ View the required IAM policies:
 ====
 [role="tabbed-block"]
 =====
-.Read-only mode
+.View, planning, and analysis
 --
 [source,json]
 ----
@@ -49,14 +49,22 @@ View the required IAM policies:
     {
       "Effect": "Allow",
       "Action": [
-        "fsx:Describe*",
+        "fsx:DescribeFileSystems",
+        "fsx:DescribeStorageVirtualMachines",
+        "fsx:DescribeVolumes",
         "fsx:ListTagsForResource",
-        "ec2:Describe*",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
+        "fsx:DescribeBackups",
+        "fsx:DescribeSharedVpcConfiguration",
         "cloudwatch:GetMetricData",
-        "cloudwatch:GetMetricStatistics"
+        "cloudwatch:GetMetricStatistics",
+        "ec2:DescribeInstances",
+        "ec2:DescribeVolumes",
+        "elasticfilesystem:DescribeFileSystems",
+        "ce:GetCostAndUsage",
+        "ce:GetTags",
+        "ce:GetCostAndUsageWithResources",
+        "ce:GetCostForecast",
+        "ce:GetUsageForecast"
       ],
       "Resource": "*"
     },
@@ -71,7 +79,7 @@ View the required IAM policies:
 }
 ----
 --
-.Read/Write mode
+.Operations and remediation
 --
 [source,json]
 ----
@@ -81,19 +89,62 @@ View the required IAM policies:
     {
       "Effect": "Allow",
       "Action": [
-        "fsx:*",
-        "ec2:Describe*",
-        "ec2:CreateTags",
-        "ec2:CreateSecurityGroup",
-        "iam:CreateServiceLinkedRole",
-        "kms:Describe*",
-        "elasticfilesystem:Describe*",
-        "kms:List*",
+        "fsx:CreateVolume",
+        "fsx:DeleteVolume",
+        "fsx:UpdateFileSystem",
+        "fsx:UpdateStorageVirtualMachine",
+        "fsx:UpdateVolume",
+        "fsx:CreateBackup",
+        "fsx:CreateVolumeFromBackup",
+        "fsx:DeleteBackup",
+        "fsx:TagResource",
+        "fsx:UntagResource",
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:ListInferenceProfiles",
+        "bedrock:GetInferenceProfile"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+----
+--
+.File system creation and deletion
+--
+[source,json]
+----
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "fsx:CreateFileSystem",
+        "fsx:CreateStorageVirtualMachine",
+        "fsx:DeleteFileSystem",
+        "fsx:DeleteStorageVirtualMachine",
+        "fsx:TagResource",
+        "fsx:UntagResource",
         "kms:CreateGrant",
-        "cloudwatch:PutMetricData",
-        "cloudwatch:GetMetricData",
-        "iam:SimulatePrincipalPolicy",
-        "cloudwatch:GetMetricStatistics"
+        "iam:CreateServiceLinkedRole",
+        "ec2:CreateSecurityGroup",
+        "ec2:CreateTags",
+        "ec2:DescribeVpcs",
+        "ec2:DescribeSubnets",
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeRouteTables",
+        "ec2:DescribeNetworkInterfaces",
+        "ec2:DescribeVolumeStatus",
+        "kms:DescribeKey",
+        "kms:ListKeys",
+        "kms:ListAliases"
       ],
       "Resource": "*"
     },
@@ -112,6 +163,13 @@ View the required IAM policies:
           "ec2:ResourceTag/AppCreator": "NetappFSxWF"
         }
       }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "iam:SimulatePrincipalPolicy"
+      ],
+      "Resource": "*"
     }
   ]
 }
@@ -134,209 +192,169 @@ The following table displays the permissions for Storage.
 | Permission policy
 
 | Create an FSx for ONTAP file system
-| fsx:CreateFileSystem*
+| fsx:CreateFileSystem
 | Deployment
-| Read/Write
+| File system creation and deletion
 
 | Create a security group for an FSx for ONTAP file system
 | ec2:CreateSecurityGroup
 | Deployment
-| Read/Write
+| File system creation and deletion
 
 | Add tags to a security group for an FSx for ONTAP file system
 | ec2:CreateTags
 | Deployment
-| Read/Write
+| File system creation and deletion
 
 .2+| Authorize security group egress and ingress for an FSx for ONTAP file system
 | ec2:AuthorizeSecurityGroupEgress
 | Deployment
-| Read/Write
+| File system creation and deletion
 | ec2:AuthorizeSecurityGroupIngress
 | Deployment
-| Read/Write
+| File system creation and deletion
 
 | Granted role provides communication between FSx for ONTAP and other AWS services
 | iam:CreateServiceLinkedRole
 | Deployment
-| Read/Write
+| File system creation and deletion
 
-.7+| Get details to fill in the FSx for ONTAP file system deployment form
+.6+| Get details to fill in the FSx for ONTAP file system deployment form
 | ec2:DescribeVpcs 
 a| 
 * Deployment
 * Explore savings 
-a|
-* Read-only
-* Read/Write
+| File system creation and deletion
 | ec2:DescribeSubnets 
 a| 
 * Deployment
 * Explore savings
-a| 
-* Read-only
-* Read/Write
-| ec2:DescribeRegions
-a|
-* Deployment
-* Explore savings
-a| 
-* Read-only
-* Read/Write
+| File system creation and deletion
 | ec2:DescribeSecurityGroups 
 a| 
 * Deployment
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| File system creation and deletion
 | ec2:DescribeRouteTables 
 a| 
 * Deployment
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| File system creation and deletion
 | ec2:DescribeNetworkInterfaces 
 a| 
 * Deployment
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| File system creation and deletion
 | ec2:DescribeVolumeStatus 
 a| 
 * Deployment
 * Explore savings
-a|
-* Read-only
-* Read/Write
+| File system creation and deletion
 
-.3+| Get KMS key details and use for FSx for ONTAP encryption
+.4+| Get KMS key details and use for FSx for ONTAP encryption
 | kms:CreateGrant 
 | Deployment 
-| Read/Write
-| kms:Describe* 
+| File system creation and deletion
+| kms:DescribeKey 
 | Deployment 
-a| 
-* Read-only
-* Read/Write
-| kms:List* 
+| File system creation and deletion
+| kms:ListKeys
 | Deployment 
-a| 
-* Read-only
-* Read/Write
+| File system creation and deletion
+| kms:ListAliases
+| Deployment
+| File system creation and deletion
 
 | Get volume details for EC2 instances
 | ec2:DescribeVolumes 
 a| 
 * Inventory
 * Explore savings 
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get details for EC2 instances
 | ec2:DescribeInstances 
 | Explore savings
-a|
-* Read-only-only
-* Read/Write
+| View, planning, and analysis
 
 | Describe Elastic File System in the savings calculator
-| elasticfilesystem:Describe*
+| Elasticfilesystem:DescribeFileSystems
 | Explore savings
-| Read-only
+| View, planning, and analysis
 
 | List tags for FSx for ONTAP resources
 | fsx:ListTagsForResource
 | Inventory
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 .2+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
-| Read/Write
+| File system creation and deletion
 | ec2:DeleteSecurityGroup 
 | Management operations
-| Read/Write
+| File system creation and deletion
 
-.16+| Create, view, and manage FSx for ONTAP file system resources
-| fsx:CreateVolume*
+.17+| Create, view, and manage FSx for ONTAP file system resources
+| fsx:CreateVolume
 | Management operations
-| Read/Write
-| fsx:TagResource*
+| Operations and remediation
+| fsx:TagResource
 | Management operations
-| Read/Write
-| fsx:CreateStorageVirtualMachine*
+| Operations and remediation
+| fsx:CreateStorageVirtualMachine
 | Management operations
-| Read/Write
-| fsx:DeleteFileSystem*
+| File system creation and deletion
+| fsx:DeleteFileSystem
 | Management operations
-| Read/Write
-| fsx:DeleteStorageVirtualMachine*
+| File system creation and deletion
+| fsx:DeleteStorageVirtualMachine
 | Management operations
-| Read/Write
-| fsx:DescribeFileSystems*
+| View, planning, and analysis
+| fsx:DescribeFileSystems
 | Inventory
-a| 
-* Read-only 
-* Read/Write
-| fsx:DescribeStorageVirtualMachines*
+| View, planning, and analysis
+| fsx:DescribeStorageVirtualMachines
 | Inventory
-a| 
-* Read-only
-* Read/Write
-| fsx:UpdateFileSystem*
-| Management operations
-| Read/Write
-| fsx:UpdateStorageVirtualMachine*
-| Management operations
-| Read/Write
-| fsx:DescribeVolumes*
+| View, planning, and analysis
+| fsx:DescribeSharedVpcConfiguration
 | Inventory
-a| 
-* Read-only
-* Read/Write
-| fsx:UpdateVolume*
+| View, planning, and analysis
+| fsx:UpdateFileSystem
 | Management operations
-| Read/Write
-| fsx:DeleteVolume*
+| Operations and remediation
+| fsx:UpdateStorageVirtualMachine
 | Management operations
-| Read/Write
-| fsx:UntagResource*
+| Operations and remediation
+| fsx:DescribeVolumes
+| Inventory
+| View, planning, and analysis
+| fsx:UpdateVolume
 | Management operations
-| Read/Write
-| fsx:DescribeBackups*
+| Operations and remediation
+| fsx:DeleteVolume
 | Management operations
-a| 
-* Read-only 
-* Read/Write
-| fsx:CreateBackup*
+| Operations and remediation
+| fsx:UntagResource
 | Management operations
-| Read/Write
-| fsx:CreateVolumeFromBackup*
+| Operations and remediation
+| fsx:DescribeBackups
 | Management operations
-| Read/Write
-
-| Report CloudWatch metrics
-| cloudwatch:PutMetricData
+| View, planning, and analysis
+| fsx:CreateBackup
 | Management operations
-| Read/Write
+| Operations and remediation
+| fsx:CreateVolumeFromBackup
+| Management operations
+| Operations and remediation
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
 | Management operations
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | cloudwatch:GetMetricStatistics
 | Management operations
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
