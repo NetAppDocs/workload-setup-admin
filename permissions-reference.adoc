@@ -222,7 +222,7 @@ The following table displays the permissions for Storage.
 | Deployment
 | File system creation and deletion
 
-.7+| Get details to fill in the FSx for ONTAP file system deployment form
+.6+| Get details to fill in the FSx for ONTAP file system deployment form
 | ec2:DescribeVpcs 
 a| 
 * Deployment
@@ -233,13 +233,6 @@ a|
 * Deployment
 * Explore savings
 | File system creation and deletion
-| ec2:DescribeRegions
-a|
-* Deployment
-* Explore savings
-a| 
-* Read-only
-* Read/Write
 | ec2:DescribeSecurityGroups 
 a| 
 * Deployment
@@ -288,9 +281,9 @@ a|
 | View, planning, and analysis
 
 | Describe Elastic File System in the savings calculator
-| elasticfilesystem:Describe*
+| Elasticfilesystem:DescribeFileSystems
 | Explore savings
-| Read-only
+| View, planning, and analysis
 
 | List tags for FSx for ONTAP resources
 | fsx:ListTagsForResource
@@ -305,7 +298,7 @@ a|
 | Management operations
 | File system creation and deletion
 
-.16+| Create, view, and manage FSx for ONTAP file system resources
+.17+| Create, view, and manage FSx for ONTAP file system resources
 | fsx:CreateVolume
 | Management operations
 | Operations and remediation
@@ -325,6 +318,9 @@ a|
 | Inventory
 | View, planning, and analysis
 | fsx:DescribeStorageVirtualMachines
+| Inventory
+| View, planning, and analysis
+| fsx:DescribeSharedVpcConfiguration
 | Inventory
 | View, planning, and analysis
 | fsx:UpdateFileSystem
@@ -354,11 +350,6 @@ a|
 | fsx:CreateVolumeFromBackup
 | Management operations
 | Operations and remediation
-
-| Report CloudWatch metrics
-| cloudwatch:PutMetricData
-| Management operations
-| Read/Write
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
