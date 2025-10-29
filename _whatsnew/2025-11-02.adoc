@@ -12,6 +12,6 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.
 
 === Threshold warnings for automatic capacity and inode management
 
-Automatic capacity and inode management can be set up with a warning threshold that triggers a notification from the Workload Factory notification service. To use this feature, you must enable the Workload Factory notification service first.
+Automatic capacity and inode management for Storage can be set up with a warning threshold that triggers a notification from the Workload Factory notification service. To use this feature, you must enable the Workload Factory notification service first.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html[Configure notifications for NetApp Workload Factory]
