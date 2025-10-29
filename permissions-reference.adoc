@@ -55,7 +55,6 @@ View the required IAM policies:
         "fsx:ListTagsForResource",
         "fsx:DescribeBackups",
         "fsx:DescribeSharedVpcConfiguration",
-        "fsx:DescribeS3AccessPointAttachments",
         "cloudwatch:GetMetricData",
         "cloudwatch:GetMetricStatistics",
         "ec2:DescribeInstances",
@@ -65,10 +64,7 @@ View the required IAM policies:
         "ce:GetTags",
         "ce:GetCostAndUsageWithResources",
         "ce:GetCostForecast",
-        "ce:GetUsageForecast",
-        "bedrock:InvokeModelWithResponseStream",
-        "bedrock:ListInferenceProfiles",
-        "bedrock:GetInferenceProfile"
+        "ce:GetUsageForecast"
       ],
       "Resource": "*"
     },
@@ -103,8 +99,9 @@ View the required IAM policies:
         "fsx:DeleteBackup",
         "fsx:TagResource",
         "fsx:UntagResource",
-        "fsx:DetachAndDeleteS3AccessPoint",
-        "s3:DeleteAccessPoint"
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:ListInferenceProfiles",
+        "bedrock:GetInferenceProfile"
       ],
       "Resource": "*"
     },
