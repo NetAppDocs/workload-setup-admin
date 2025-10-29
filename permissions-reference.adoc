@@ -338,11 +338,10 @@ a|
 * Read-only
 * Read/Write
 
-// Add when available - may be in January 2025 sprint because it is for Databases
-//| Simulate operations
-//| iam:SimulatePrincipalPolicy
-//| ?
-//| Read/Write
+| Simulate workload operations to validate available permissions and compare with required AWS account permissions
+| iam:SimulatePrincipalPolicy 
+| Deployment 
+| All 
 |===
 
 ====
