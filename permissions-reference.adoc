@@ -2022,16 +2022,17 @@ The following table provides details about the permissions for GenAI workloads.
 
 === Permissions for VMware workloads
 
-The IAM policies for VMware workloads provide the permissions that Workload Factory for VMware needs to manage resources and processes within your public cloud environment based on the operational mode you operate in.
+VMware workloads has the following permission policies to choose from:
 
-Select your operational mode to view the required IAM policies:
+* View, planning, and analysis: View the inventory of EVS virtualization environments, get the well-architected analysis for your systems, and explore savings.
+* Datastore deployment and connectivity: Deploy recommended VM layouts to Amazon EVS, Amazon EC2, or VMware Cloud on AWS vSphere clusters and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
 .IAM policies for VMware workloads
 [%collapsible]
 ====
 [role="tabbed-block"]
 =====
-.Read-only mode
+.View, planning, and analysis
 --
 [source,json]
 ----
@@ -2046,10 +2047,14 @@ Select your operational mode to view the required IAM policies:
         "ec2:DescribeVpcs",
         "ec2:DescribeSecurityGroups",
         "ec2:DescribeSubnets",
-        "ssm:GetParametersByPath",
+        "ec2:DescribeDhcpOptions",
         "kms:DescribeKey",
         "kms:ListKeys",
-        "kms:ListAliases"
+        "kms:ListAliases",
+        "secretsmanager:ListSecrets",
+        "evs:ListEnvironments",
+        "evs:GetEnvironment",
+        "evs:ListEnvironmentVlans"
       ],
       "Resource": "*"
     },
@@ -2065,7 +2070,7 @@ Select your operational mode to view the required IAM policies:
 ----
 --
 
-.Read/Write mode
+.Datastore deployment and connectivity
 --
 [source,json]
 ----
@@ -2090,9 +2095,6 @@ Select your operational mode to view the required IAM policies:
         "fsx:DescribeVolumes",
         "fsx:TagResource",
         "sns:Publish",
-        "kms:DescribeKey",
-        "kms:ListKeys",
-        "kms:ListAliases",
         "kms:GenerateDataKey",
         "kms:Decrypt",
         "kms:CreateGrant"
@@ -2102,24 +2104,11 @@ Select your operational mode to view the required IAM policies:
     {
       "Effect": "Allow",
       "Action": [
-        "ec2:DescribeSubnets",
-        "ec2:DescribeSecurityGroups",
         "ec2:RunInstances",
         "ec2:DescribeInstances",
-        "ec2:DescribeRegions",
-        "ec2:DescribeAvailabilityZones",
-        "ec2:DescribeVpcs",
         "ec2:CreateSecurityGroup",
         "ec2:AuthorizeSecurityGroupIngress",
         "ec2:DescribeImages"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ssm:GetParametersByPath",
-        "ssm:GetParameters"
       ],
       "Resource": "*"
     },
@@ -2148,171 +2137,150 @@ The following table provides details about the permissions for VMware workloads.
 | Purpose
 | Action
 | Where used
-| Mode
+| Permission policy
 
 | Attach security groups and modify rules for the provisioned nodes
 | ec2:AuthorizeSecurityGroupIngress
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Create EBS volumes
-| ec2:CreateVolume
+| fsx:CreateVolume
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Tag custom values for FSx for NetApp ONTAP resources created by VMware workloads
 | fsx:TagResource
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Create and validate the CloudFormation template
 | cloudformation:CreateStack
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Manage tags and network security on created instances
 | ec2:CreateSecurityGroup
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Start the created instances
 | ec2:RunInstances
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | Get EC2 instance details
 | ec2:DescribeInstances
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
 
 | List images during the stack creation during deploy and rebuild operations
 | ec2:DescribeImages
 | Deployment
-| Read/Write
+| Datastore deployment and connectivity
+
+| View configuration details of DHCP options sets associated with VPCs
+| ec2:DescribeDhcpOptions
+| Inventory
+| View, planning, and analysis
 
 | Get the VPCs in the selected environment to complete deployment form
 | ec2:DescribeVpcs
 a| 
 * Deployment
 * Inventory
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 | Get the subnets in selected environment to complete deployment form
 | ec2:DescribeSubnets
 a| 
 * Deployment
 * Inventory
-a|
-* Read-only
-* Read/Write
-
+| View, planning, and analysis
 | Get the security groups in selected environment to complete deployment form
 | ec2:DescribeSecurityGroups
 | Deployment
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get the availability zones in selected environment
 | ec2:DescribeAvailabilityZones
 a| 
 * Deployment
 * Inventory
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get the regions with Amazon FSx for NetApp ONTAP support
 | ec2:DescribeRegions
 | Deployment
-a| 
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get KMS keys' aliases to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListAliases 
 | Deployment
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get KMS keys to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:ListKeys
 | Deployment
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
 | Get KMS keys expiry details to be used for Amazon FSx for NetApp ONTAP encryption
 | kms:DescribeKey
 | Deployment
-a|
-* Read-only
-* Read/Write
+| View, planning, and analysis
 
-| SSM based query is used to get the updated list of Amazon FSx for NetApp ONTAP supported regions
-| ssm:GetParametersByPath
-| Deployment
-a|
-* Read-only
-* Read/Write
+| List secrets in AWS Secrets Manager
+| secretsmanager:ListSecrets
+| Inventory
+| View, planning, and analysis
+
+| Get a list of environments from Amazon EVS
+| evs:ListEnvironments
+| Inventory
+| View, planning, and analysis
+
+| Get detailed information about a specific Amazon EVS environment
+| evs:GetEnvironment
+| Inventory
+| View, planning, and analysis
+
+| List Vlans associated with an Amazon EVS environment
+| evs:ListEnvironmentVlans
+| Inventory
+| View, planning, and analysis
+
 
 .3+| Create Amazon FSx for NetApp ONTAP resources required for provisioning
-| fsx:CreateFileSystem | Deployment | Read/Write
-| fsx:CreateStorageVirtualMachine | Deployment | Read/Write
+| fsx:CreateFileSystem | Deployment | Datastore deployment and connectivity
+| fsx:CreateStorageVirtualMachine | Deployment | Datastore deployment and connectivity
 | fsx:CreateVolume a|
 * Deployment
-* Management operations | Read/Write
+* Management operations | Datastore deployment and connectivity
 
 .2+| Get Amazon FSx for NetApp ONTAP details
 | fsx:Describe* a| 
 * Deployment
 * Inventory
 * Management operations
-* Explore savings | Read/Write
-| fsx:List* a|
-* Deployment
-* Inventory | Read/Write
+* Explore savings | Datastore deployment and connectivity
 
 .5+| Get KMS key details and use for Amazon FSx for NetApp ONTAP encryption
-| kms:CreateGrant | Deployment | Read/Write
-| kms:Describe* | Deployment | Read/Write
-| kms:List* | Deployment | Read/Write
-| kms:Decrypt | Deployment | Read/Write
-| kms:GenerateDataKey | Deployment | Read/Write
+| kms:CreateGrant | Deployment | Datastore deployment and connectivity
+| kms:Describe* | Deployment | View, planning, and analysis
+| kms:List* | Deployment | View, planning, and analysis
+| kms:Decrypt | Deployment | Datastore deployment and connectivity
+| kms:GenerateDataKey | Deployment | Datastore deployment and connectivity
 
 | List customer SNS topics and publish to WLMVMC backend SNS as well as customer SNS if selected
 | sns:Publish
 | Deployment
-| Read/Write
-
-| Used to fetch latest list of Amazon FSx for NetApp ONTAP supported AWS regions
-| ssm:Get*
-a| 
-* Deployment
-* Management operations
-| Read/Write
+| Datastore deployment and connectivity
 
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy
 | Deployment
-| Read/Write
-
-.4+| SSM Parameter store is used to save credentials of Amazon FSx for NetApp ONTAP
-| ssm:GetParameter a|
-* Deployment
-* Management operations
-* Inventory | Read/Write
-| ssm:PutParameters a|
-* Deployment
-* Inventory | Read/Write
-| ssm:PutParameter a|
-* Deployment
-* Management operations | Read/Write
-| ssm:DeleteParameters a|
-* Deployment
-* Management operations | Read/Write
+a| 
+* Datastore deployment and connectivity
+* View, planning, and analysis
 |===
 
 ====
