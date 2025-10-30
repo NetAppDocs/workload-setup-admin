@@ -2024,8 +2024,8 @@ The following table provides details about the permissions for GenAI workloads.
 
 VMware workloads has the following permission policies to choose from:
 
-* View, planning, and analysis: View the inventory of EVS virtualization environments, get the well-architected analysis for your systems, and explore savings.
-* Datastore deployment and connectivity: Deploy recommended VM layouts to Amazon EVS, Amazon EC2, or VMware Cloud on AWS vSphere clusters and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
+* *View, planning, and analysis*: View the inventory of EVS virtualization environments, get the well-architected analysis for your systems, and explore savings.
+* *Datastore deployment and connectivity*: Deploy recommended VM layouts to Amazon EVS, Amazon EC2, or VMware Cloud on AWS vSphere clusters and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
 .IAM policies for VMware workloads
 [%collapsible]
@@ -2171,12 +2171,12 @@ The following table provides details about the permissions for VMware workloads.
 
 | Get EC2 instance details
 | ec2:DescribeInstances
-| Deployment
+| Inventory
 | Datastore deployment and connectivity
 
 | List images during the stack creation during deploy and rebuild operations
 | ec2:DescribeImages
-| Deployment
+| Inventory
 | Datastore deployment and connectivity
 
 | View configuration details of DHCP options sets associated with VPCs
@@ -2256,7 +2256,7 @@ a|
 * Deployment
 * Management operations | Datastore deployment and connectivity
 
-.2+| Get Amazon FSx for NetApp ONTAP details
+| Get Amazon FSx for NetApp ONTAP details
 | fsx:Describe* a| 
 * Deployment
 * Inventory
