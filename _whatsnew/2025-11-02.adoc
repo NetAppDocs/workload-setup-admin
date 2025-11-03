@@ -1,6 +1,6 @@
 === Permissions update
 
-In this release, we have made significant updates to permission policies for Storage, Database workloads, and VMware workloads to enhance security and user control. You can customize your permission settings more granularly, adding or dismissing permissions as you see fit. 
+In this release, we have made significant updates to permission policies for Storage, Database, and VMware workloads to enhance security and user control. You can customize your permission settings more granularly, adding or dismissing permissions as you see fit.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html[Permissions reference for Workload Factory]
 
