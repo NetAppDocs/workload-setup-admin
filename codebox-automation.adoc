@@ -10,7 +10,7 @@ summary: "Codebox is an Infrastructure as Code (IaC) co-pilot that helps develop
 :imagesdir: ./media/
 
 [.lead]
-Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by NetApp Workload Factory. Codebox is aligned with the Workload Factory operation modes (_basic_, _read-only_, and _read/write_) and it sets a clear path for execution readiness as well as providing an automation catalog for quick future reuse.
+Codebox is an Infrastructure as Code (IaC) co-pilot that helps developers and DevOps generate the code needed to execute any operation supported by NetApp Workload Factory. Codebox is aligned with the Workload Factory permission policies and it sets a clear path for execution readiness as well as providing an automation catalog for quick future reuse.
 
 == Codebox capabilities
 
@@ -20,7 +20,7 @@ Codebox provides two key IaC capabilities:
 
 * _Codebox Automation Catalog_ shows all saved IaC jobs, allowing you to easily reference them for future use. Automation catalog jobs are saved as templates and shown in context of the resources that apply to them. 
 
-Additionally, when setting up Workload Factory credentials, Codebox dynamically displays the AWS permissions that are needed to create IAM policies. The permissions are provided for each Workload Factory capability that you plan to use (databases, AI, FSx for ONTAP, and so on), and they are customized based on whether the users of the policy will get _read-only_ permissions or full _read/write_ permissions. You just copy the permissions from Codebox and then paste them in the AWS Management Console so that Workload Factory has the correct permissions to manage your workloads.
+Additionally, when setting up Workload Factory credentials, Codebox dynamically displays the AWS permissions that are needed to create IAM policies. The permissions are provided for each Workload Factory capability that you plan to use (databases, AI, FSx for ONTAP, and so on), and they are customizable. You just copy the permissions from Codebox and then paste them in the AWS Management Console so that Workload Factory has the correct permissions to manage your workloads.
 
 == Supported code formats
 
