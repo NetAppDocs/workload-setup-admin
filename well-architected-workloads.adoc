@@ -115,9 +115,9 @@ To optimize storage performance, provision file system capacity as 1.35 times of
 +
 File system headroom percentages are as follows: 
 +
-** Under-provisioned: less than 35% 
+** Under-provisioned: < 35% 
 ** Optimized: 35-100% 
-** Over-provisioned: greater than 100% 
+** Over-provisioned: > 100% 
 
 * *Log drive size*
 +
@@ -125,9 +125,9 @@ Ensure accurate sizing and regular monitoring of the SQL Server log drive to pre
 +
 Log drive size percentages are as follows: 
 +
-** Under-provisioned: less than 20% 
+** Under-provisioned: < 20% 
 ** Optimized: 20-30% 
-** Over-provisioned: greater than 30% 
+** Over-provisioned: > 30% 
 
 * *TempDB drive size*
 +
@@ -135,9 +135,9 @@ Ensure accurate sizing and regular monitoring of the SQL Server TempDB to optimi
 +
 TempDB drive size percentages are as follows: 
 +
-** Under-provisioned: less than 10% 
+** Under-provisioned: < 10% 
 ** Optimized: 10-20% 
-** Over-provisioned: greater than 20% 
+** Over-provisioned: > 20% 
 
 === Storage layout
 
