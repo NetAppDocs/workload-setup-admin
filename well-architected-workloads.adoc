@@ -164,32 +164,21 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Recommendation
 
 | Volume
-| Thin provisioning (-space-guarantee = none)
-.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx for ONTAP volumes. Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning; static allocation results in paying for unused capacity, increasing expenses; lack of dynamic allocation hampers scalability and flexibility, impacting performance; and without space reclamation, deleted data occupies space, reducing efficiency.
-| Volume
-| Autosize on
+| 
+* Thin provisioning (-space-guarantee = none)
+* Autosize on
+* Autosize-mode = grow
+* Fractional reserve = 0%
+* Snapshot copy reserve = 0%    
+* Snapshot autodelete (volume/oldest first)
+* Space-mgmt-try-first = volume_grow
+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx for ONTAP volumes. Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning; static allocation results in paying for unused capacity, increasing expenses; lack of dynamic allocation hampers scalability and flexibility, impacting performance; and without space reclamation, deleted data occupies space, reducing efficiency.
 
 | Volume
-| Autosize-mode = grow
-
-| Volume
-| Fractional reserve = 0%
-
-| Volume
-| Snapshot copy reserve = 0%
-
-| Volume
-| Snapshot autodelete (volume/oldest first)
-
-| Volume
-| Space-mgmt-try-first = volume_grow
-
-| Volume
-| Tiering-policy = snapshot-only
-.2+| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days.
-
-| Volume
-| Tiering-minimum-cooling-days = 7 
+| 
+* Tiering-policy = snapshot-only
+* Tiering-minimum-cooling-days = 7 
+| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days.
 
 | LUN
 | OS type = windows_2008
@@ -213,15 +202,11 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Recommendation
 
 | Microsoft Multipath I/O (MPIO)
-| Status = Enabled
-.3+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
-
-| Microsoft Multipath I/O (MPIO)
-| Policy = Round Robin
-
-| Microsoft Multipath I/O (MPIO)
-| Number of sessions = 5
-
+| 
+* Status = Enabled
+* Policy = Round Robin
+* Number of sessions = 5
+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
 
 | Allocation unit size 
 | NTFS allocation unit size = 64K 
