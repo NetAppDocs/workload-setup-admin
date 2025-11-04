@@ -9,7 +9,9 @@ indexpage:
         - title: Learn about NetApp Workload Factory
           url: workload-factory-overview.html
         - title: Sign up
-          url: sign-up-saas.html
+          url: /sign-up-saas.html
+    - title: Credentials and permissions
+      links:
         - title: Add AWS credentials
           url: add-credentials.html
         - title: Permissions for Workload Factory
