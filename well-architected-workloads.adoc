@@ -115,9 +115,9 @@ To optimize storage performance, provision file system capacity as 1.35 times of
 +
 File system headroom percentages are as follows: 
 +
-** Under-provisioned: <35% 
+** Under-provisioned: less than 35% 
 ** Optimized: 35-100% 
-** Over-provisioned: >100% 
+** Over-provisioned: greater than 100% 
 
 * *Log drive size*
 +
@@ -125,9 +125,9 @@ Ensure accurate sizing and regular monitoring of the SQL Server log drive to pre
 +
 Log drive size percentages are as follows: 
 +
-** Under-provisioned: <20% 
+** Under-provisioned: less than 20% 
 ** Optimized: 20-30% 
-** Over-provisioned: >30% 
+** Over-provisioned: greater than 30% 
 
 * *TempDB drive size*
 +
@@ -135,9 +135,9 @@ Ensure accurate sizing and regular monitoring of the SQL Server TempDB to optimi
 +
 TempDB drive size percentages are as follows: 
 +
-** Under-provisioned: <10% 
+** Under-provisioned: less than 10% 
 ** Optimized: 10-20% 
-** Over-provisioned: >20%
+** Over-provisioned: greater than 20% 
 
 === Storage layout
 
@@ -164,32 +164,36 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Recommendation
 
 | Volume
-| 
-* Autosize on
-* Autosize-mode = grow
-* Fractional reserve = 0%
-* Snapshot copy reserve = 0%
-* Snapshot autodelete (volume/oldest first)
-* Space-mgmt-try-first = volume_grow
-| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx ONTAP volumes and LUNs. If not configured properly:
-
-* Over-provisioning risks: Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning.
-
-* Increased storage costs: Static allocation results in paying for unused capacity, increasing expenses.
-
-* Limited scalability: Lack of dynamic allocation hampers scalability and flexibility, impacting performance.
-
-* Inefficient space utilization: Without space reclamation, deleted data occupies space, reducing efficiency.
+| Thin provisioning (-space-guarantee = none)
+.7+| To optimize storage efficiency and cost-effectiveness, configure thin provisioning, autosize, and space management options for your FSx for ONTAP volumes. Without thin provisioning, storage is allocated upfront, leading to inefficient use and higher costs due to over-provisioning; static allocation results in paying for unused capacity, increasing expenses; lack of dynamic allocation hampers scalability and flexibility, impacting performance; and without space reclamation, deleted data occupies space, reducing efficiency.
+| Volume
+| Autosize on
 
 | Volume
-| 
-* Tiering-policy = snapshot-only
-* Tiering-minimum-cooling-days = 7
-| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days. 
+| Autosize-mode = grow
+
+| Volume
+| Fractional reserve = 0%
+
+| Volume
+| Snapshot copy reserve = 0%
+
+| Volume
+| Snapshot autodelete (volume/oldest first)
+
+| Volume
+| Space-mgmt-try-first = volume_grow
+
+| Volume
+| Tiering-policy = snapshot-only
+.2+| For optimal database performance and cost efficiency, Workload Factory recommends moving only snapshots to the capacity tier. This strategy ensures high performance while reducing costs. It is especially recommended to tier snapshots that are older than 7 days.
+
+| Volume
+| Tiering-minimum-cooling-days = 7 
 
 | LUN
 | OS type = windows_2008
-| ONTAP LUN OS type value shall match the operating system partitioning scheme to achieve I/O alignment. Incorrect configuration may result in suboptimal performance.
+| ONTAP LUN OS type value should match the operating system partitioning scheme to achieve I/O alignment. Incorrect configuration may result in suboptimal performance.
 
 | LUN
 | Space reservation enabled
@@ -209,11 +213,14 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 | Recommendation
 
 | Microsoft Multipath I/O (MPIO)
-| 
-* Status = Enabled
-* Policy = Round Robin
-* Number of sessions = 5
-| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
+| Status = Enabled
+.3+| To ensure optimal uptime and data access consistency for Microsoft SQL Server databases on EC2 with underlying LUNs provisioned in FSx for ONTAP, Workload Factory recommends enabling and configuring Multipath I/O (MPIO). MPIO provides multiple paths to FSx for ONTAP, enhancing both resiliency and performance. This best practice protects against potential data loss or downtime by maintaining data access even if a component fails.
+
+| Microsoft Multipath I/O (MPIO)
+| Policy = Round Robin
+
+| Microsoft Multipath I/O (MPIO)
+| Number of sessions = 5
 
 
 | Allocation unit size 
@@ -230,11 +237,11 @@ To ensure optimal performance and cost efficiency for your SQL Server EC2 instan
 
 * *Operating system patch*
 +
-Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL server databases from vulnerabilities and significantly improves overall system reliability. 
+Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL Server databases from vulnerabilities and significantly improves overall system reliability. 
 
 * *Network adapter settings*
 +
-Accurate configuration of receive side scaling (RSS) is essential for optimal network performance in Microsoft SQL Server instances. RSS distributes network processing across multiple processors, preventing bottlenecks and enhancing system performance. Workload Factory recommends the following settings for RSS settings:
+Accurate configuration of receive side scaling (RSS) is essential for optimal network performance in Microsoft SQL Server instances. RSS distributes network processing across multiple processors, preventing bottlenecks and enhancing system performance. Workload Factory recommends the following RSS settings:
 +
 ** Disable TCP Offloading Features: Ensure all TCP offloading features are disabled. 
 ** Number of Receive Queues: Set to 8 if vCPUs > 8. Set to the number of vCPUs if vCPUs ≤ 8. 
@@ -265,7 +272,7 @@ Set the Maximum Degree of Parallelism (MAXDOP) to optimize query performance by 
 
 * *Schedule FSx for ONTAP backups* 
 +
-Databases: Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your SQL Server data.
+Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your SQL Server data.
 
 * *Schedule local snapshots* 
 +

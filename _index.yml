@@ -22,12 +22,12 @@ indexpage:
           url: /use-codebox.html
     - title: Well-architected workloads
       links: 
-       - title: Build and operate well-architected workloads
-         url: /well-architected-workloads.html
-       - title: Implement well-architected FSx for ONTAP file systems 
-         url: https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html
-       - title: Implement well-architected database workloads
-         url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
+        - title: Build and operate well-architected workloads
+          url: /well-architected-workloads.html
+        - title: Implement well-architected FSx for ONTAP file systems 
+          url: https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html
+        - title: Implement well-architected database workloads
+          url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
     - title: Blogs & community
       links:
         - title: NetApp Console
