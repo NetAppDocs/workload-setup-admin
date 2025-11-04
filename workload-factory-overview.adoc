@@ -83,17 +83,11 @@ A service account acts as a "user" that can make authorized API calls to NetApp 
 
 link:manage-service-accounts.html[Learn how to manage service accounts].
 
-=== Operational modes 
+=== Permissions
 
-Workload Factory provides three operational modes that enables you to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
+Workload Factory provides flexible permission policies that enables you to carefully control access to your cloud estate, and assign incremental trust to Workload Factory based on your IT policies.
 
-* *Basic mode* represents a zero-trust relationship and is designed for early exploration of Workload Factory and usage of the various wizards to create the needed Infrastructure as Code. This code can be copied and used manually by the user along with their relevant AWS credentials.
-
-* *Read-only mode* enhances the experience of Basic mode by assisting the user in detecting various resources and tools, and consequently, helping to complete relevant wizards.
-
-* *Read/Write mode* represents a full-trust relationship and is designed to execute and automate on behalf of the user along with the assigned credentials that have the needed and validated permissions for execution.
-
-link:operational-modes.html[Learn more about Workload Factory operational modes].
+link:permissions-reference.html[Learn more about Workload Factory permission policies].
 
 === Connectivity links
 

@@ -9,15 +9,11 @@ indexpage:
         - title: Learn about NetApp Workload Factory
           url: workload-factory-overview.html
         - title: Sign up
-          url: /sign-up-saas.html
-    - title: Operational modes and credentials
-      links:
-        - title: Learn about operational modes
-          url: /operational-modes.html
+          url: sign-up-saas.html
         - title: Add AWS credentials
-          url: /add-credentials.html
-        - title: Remove credentials
-          url: /manage-credentials.html
+          url: add-credentials.html
+        - title: Permissions for Workload Factory
+          url: permissions-reference.html 
     - title: Automation using Codebox
       links:
         - title: Learn about Codebox
