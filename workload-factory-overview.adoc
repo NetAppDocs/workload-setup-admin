@@ -119,6 +119,11 @@ Workload Factory provides savings calculators so you can compare the costs of yo
 //Cross-repo include for Tools section
 include::https://raw.githubusercontent.com/NetAppDocs/workload-family/main/_include/learn-about-tools.adoc[]
 
+=== Well-architected workloads
+Workload Factory helps you maintain and operate reliable, secure, efficient, and cost-effective storage and database configurations that align with the AWS Well-Architected Framework. Workload Factory scans FSx for ONTAP file systems, SQL Server, and Oracle database deployments daily to provide insights into potential misconfigurations and recommends either manual or automated actions for fixing issues. 
+
+link:well-architected-workloads.html[Learn more about well-architected workloads^]
+
 === REST APIs
 
 Workload Factory enables you to optimize, automate, and operate your FSx for ONTAP file systems for specific workloads. Each workload exposes an associated REST API. Collectively, these workloads and APIs form a flexible and extensible development platform you can use to administer your FSx for ONTAP file systems. 
