@@ -287,11 +287,14 @@ a|
 | Inventory
 | View, planning, and analysis
 
-.2+| Manage security group egress and ingress for an FSx for ONTAP file system
+.3+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
 | File system creation and deletion
-| ec2:DeleteSecurityGroup 
+| ec2: RevokeSecurityGroupEgress
+| Management operations
+| File system creation and deletion 
+ec2:DeleteSecurityGroup 
 | Management operations
 | File system creation and deletion
 
