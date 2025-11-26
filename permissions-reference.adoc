@@ -359,7 +359,15 @@ a|
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-| All 
+| All
+
+.2+| Get cost and usage data for FSx for ONTAP file systems from AWS Cost Explorer
+| ce:GetCostAndUsage
+| Cost and usage analysis
+| View, planning, and analysis
+| ce:GetTags
+| Cost and usage analysis
+| View, planning, and analysis
 |===
 
 ====
