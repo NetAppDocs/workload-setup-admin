@@ -294,7 +294,7 @@ a|
 | ec2: RevokeSecurityGroupEgress
 | Management operations
 | File system creation and deletion 
-ec2:DeleteSecurityGroup 
+| ec2:DeleteSecurityGroup 
 | Management operations
 | File system creation and deletion
 
