@@ -100,6 +100,7 @@ View the required IAM policies:
         "fsx:TagResource",
         "fsx:UntagResource",
         "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
         "bedrock:GetInferenceProfile"
       ],
@@ -287,15 +288,18 @@ a|
 | Inventory
 | View, planning, and analysis
 
-.2+| Manage security group egress and ingress for an FSx for ONTAP file system
+.3+| Manage security group egress and ingress for an FSx for ONTAP file system
 | ec2:RevokeSecurityGroupIngress
 | Management operations
 | File system creation and deletion
+| ec2: RevokeSecurityGroupEgress
+| Management operations
+| File system creation and deletion 
 | ec2:DeleteSecurityGroup 
 | Management operations
 | File system creation and deletion
 
-.17+| Create, view, and manage FSx for ONTAP file system resources
+.18+| Create, view, and manage FSx for ONTAP file system resources
 | fsx:CreateVolume
 | Management operations
 | Operations and remediation
@@ -347,6 +351,9 @@ a|
 | fsx:CreateVolumeFromBackup
 | Management operations
 | Operations and remediation
+| fsx:DeleteBackup
+| Management operations
+| Operations and remediation
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
@@ -359,7 +366,29 @@ a|
 | Simulate workload operations to validate available permissions and compare with required AWS account permissions
 | iam:SimulatePrincipalPolicy 
 | Deployment 
-| All 
+| All
+
+.4+| Fetch FSx for ONTAP EMS events
+| bedrock:ListInferenceProfiles
+| FSx for ONTAP EMS analysis
+| Operations and remediation
+| bedrock:GetInferenceProfile
+| FSx for ONTAP EMS analysis
+| Operations and remediation
+| bedrock:InvokeModelWihResponseStream
+| FSx for ONTAP EMS analysis
+| Operations and remediation
+| bedrock:InvokeModel
+| FSx for ONTAP EMS analysis
+| Operations and remediation
+
+.2+| Get cost and usage data for FSx for ONTAP file systems from AWS Cost Explorer
+| ce:GetCostAndUsage
+| Cost and usage analysis
+| View, planning, and analysis
+| ce:GetTags
+| Cost and usage analysis
+| View, planning, and analysis
 |===
 
 ====
@@ -2150,6 +2179,15 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 27 November 2025
+
+The following permissions were added to the Storage workload: 
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
 
 === 2 November 2025
 
