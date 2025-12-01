@@ -299,7 +299,7 @@ a|
 | Management operations
 | File system creation and deletion
 
-.17+| Create, view, and manage FSx for ONTAP file system resources
+.18+| Create, view, and manage FSx for ONTAP file system resources
 | fsx:CreateVolume
 | Management operations
 | Operations and remediation
@@ -351,6 +351,9 @@ a|
 | fsx:CreateVolumeFromBackup
 | Management operations
 | Operations and remediation
+| fsx:DeleteBackup
+| Management operations
+| Operations and remediation
 
 .2+| Get file system and volume metrics
 | cloudwatch:GetMetricData
@@ -367,16 +370,16 @@ a|
 
 .4+| Fetch FSx for ONTAP EMS events
 | bedrock:ListInferenceProfiles
-| Management operations
+| FSx for ONTAP EMS analysis
 | Operations and remediation
 | bedrock:GetInferenceProfile
-| Management operations
+| FSx for ONTAP EMS analysis
 | Operations and remediation
 | bedrock:InvokeModelWihResponseStream
-| Management operations
+| FSx for ONTAP EMS analysis
 | Operations and remediation
 | bedrock:InvokeModel
-| Management operations
+| FSx for ONTAP EMS analysis
 | Operations and remediation
 
 .2+| Get cost and usage data for FSx for ONTAP file systems from AWS Cost Explorer

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: console-experiences.html
-keywords: console, consoles, access, saas, Workload Factory, bluexp, NetApp Workload Factory, NetApp Console
+keywords: console, consoles, access, saas, Workload Factory, NetApp Workload Factory, NetApp Console
 summary: "NetApp Workload Factory is accessible via two web-based consoles." 
 ---
 
