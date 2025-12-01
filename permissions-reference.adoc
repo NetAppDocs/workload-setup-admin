@@ -2177,6 +2177,15 @@ a|
 
 As permissions are added and removed, we'll note them in the sections below.
 
+=== 27 November 2025
+
+The following permissions were added to the Storage workload: 
+
+* `bedrock:ListInferenceProfiles`
+* `bedrock:GetInferenceProfile`
+* `bedrock:InvokeModelWithResponseStream`
+* `bedrock:InvokeModel`
+
 === 2 November 2025
 
 The permission policies "read-only" and "read/write" have been replaced in Storage, Database workloads, and VMware workloads to provide more granularity and flexibility in assigning permissions.
