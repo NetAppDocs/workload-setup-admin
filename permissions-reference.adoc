@@ -100,6 +100,7 @@ View the required IAM policies:
         "fsx:TagResource",
         "fsx:UntagResource",
         "bedrock:InvokeModelWithResponseStream",
+        "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
         "bedrock:GetInferenceProfile"
       ],
@@ -363,6 +364,20 @@ a|
 | iam:SimulatePrincipalPolicy 
 | Deployment 
 | All
+
+.4+| Fetch FSx for ONTAP EMS events
+| bedrock:ListInferenceProfiles
+| Management operations
+| Operations and remediation
+| bedrock:GetInferenceProfile
+| Management operations
+| Operations and remediation
+| bedrock:InvokeModelWihResponseStream
+| Management operations
+| Operations and remediation
+| bedrock:InvokeModel
+| Management operations
+| Operations and remediation
 
 .2+| Get cost and usage data for FSx for ONTAP file systems from AWS Cost Explorer
 | ce:GetCostAndUsage
