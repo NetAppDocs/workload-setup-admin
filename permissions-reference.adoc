@@ -368,7 +368,7 @@ a|
 | Deployment 
 | All
 
-.4+| Fetch FSx for ONTAP EMS events
+.4+| Provide AI-based insights for FSx for ONTAP events
 | bedrock:ListInferenceProfiles
 | FSx for ONTAP EMS analysis
 | Operations and remediation
