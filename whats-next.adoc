@@ -28,6 +28,6 @@ Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to impro
 +
 Streamline migrations and operations with smart recommendations and automatic remediation. Deploy efficient backups and robust disaster recovery. Monitor and troubleshoot your VMs.
 
-* https://docs.netapp.com/us-en/workload-eda/index.html[EDA workloads^]
+* https://docs.netapp.com/us-en/workload-builders/index.html[EDA workloads^]
 +
 Optimize FSx for ONTAP across multiple file system to boost performance and reduce operational costs through automated storage parameter management.
