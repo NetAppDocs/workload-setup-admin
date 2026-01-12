@@ -73,7 +73,7 @@ Security emphasizes protecting data, systems, and assets through risk assessment
 +
 NetApp Autonomous Ransomware Protection with AI (ARP/AI) enhances cyber resiliency and ensures active protection for volumes against evolving ransomware threats. Workload Factory recommends enabling ARP/AI for all volumes.
 
-* *Unauthorized access to volume*
+* *Unauthorized access to volumes*
 +
 Volumes serving application data using iSCSI should not allow NAS access in parallel. Workload Factory recommends that volumes accessed via the iSCSI protocol should be restricted to any additional protocols.
 
@@ -88,6 +88,14 @@ Automatic capacity management should be enabled to regularly ensure that the SSD
 +
 Workload Factory recommends that volume capacity doesn't exceed 80% utilization on an ongoing basis. This might impact data reads and writes to your application. Volume capacity increases can be manual or automatic using the volume autogrow feature. 
 
+* *Volume utilization nearing full*
++
+When a volume is nearing full capacity, Workload Factory recommends taking action to increase the volume capacity to avoid potential application disruptions.
+
+* *Cache relationship write mode*
++
+For optimal performance, Workload Factory recommends the cache relationship write mode that best suits your workload. Write-around mode provides better performance for read-heavy workloads with small files, whereas write-back mode provides better performance for write-heavy workloads with large files.
+
 === Cost optimization
 Cost optimization aims to deliver business value while minimizing costs.
 
@@ -98,6 +106,10 @@ Cold data tiering should be enabled to reduce SSD storage tier utilization. Appl
 * *Enable storage efficiencies* 
 +
 Storage efficiencies should be enabled - compaction, compression, and deduplication - to optimize storage utilization and reduce the SSD tier cost. 
+
+* *Unnecessary snapshot and backup deletion*
++
+Snapshots and backups that are no longer needed should be deleted to reduce costs.
 
 == Best practices and recommendations for database workloads
 
