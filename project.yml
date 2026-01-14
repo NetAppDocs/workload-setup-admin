@@ -40,8 +40,6 @@ sidebar:
           url: /log-in.html
         - title: Manage service accounts
           url: /manage-service-accounts.html
-        - title: Build and operate well-architected workloads
-          url: /well-architected-workloads.html
         - title: Configure notifications
           url: /configure-notifications.html
         - title: Automate tasks using Codebox
