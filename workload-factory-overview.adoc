@@ -47,7 +47,7 @@ Workload Factory enables you to manage cloud storage and use workload capabiliti
 
 == Security
 
-Security for NetApp Workload Factory is a top priority for NetApp. All workloads in Workload Factory run atop Amazon FSx for NetApp ONTAP. In addition to all link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html[AWS security features^], NetApp Workload Factory has received link:https://netapp-security.trustshare.com/certifications/soc2type_1?documentId=84d4110a-3fc7-4d0c-9c65-b9f0d034c058[SOC2 Type 1 compliance^]. 
+Security for NetApp Workload Factory is a top priority for NetApp. All workloads in Workload Factory run atop Amazon FSx for NetApp ONTAP. In addition to all link:https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/security.html[AWS security features^], NetApp Workload Factory has received link:https://trust.netapp.com/[SOC2 Type 1 compliance, SOC2 Type 2 compliance, and HIPAA compliance^]. 
 
 Amazon FSx for NetApp ONTAP for NetApp Workload Factory is an link:https://aws.amazon.com/solutions/guidance/deploying-enterprise-apps-with-netapp-bluexp-workload-factory-for-aws-and-amazon-fsx-for-netapp-ontap/[AWS solution for deploying enterprise apps^] that was created with well-architected best practices in mind. 
 
