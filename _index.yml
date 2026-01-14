@@ -9,9 +9,7 @@ indexpage:
         - title: Learn about NetApp Workload Factory
           url: workload-factory-overview.html
         - title: Sign up
-          url: /sign-up-saas.html
-    - title: Credentials and permissions
-      links:
+          url: sign-up-saas.html
         - title: Add AWS credentials
           url: add-credentials.html
         - title: Permissions for Workload Factory
@@ -19,24 +17,9 @@ indexpage:
     - title: Automation using Codebox
       links:
         - title: Learn about Codebox
-          url: /codebox-automation.html
+          url: codebox-automation.html
         - title: Use Codebox for automation
-          url: /use-codebox.html
-    - title: Well-architected workloads
-      links: 
-        - title: Build and operate well-architected workloads
-          url: /well-architected-workloads.html
-        - title: Implement well-architected FSx for ONTAP file systems 
-          url: https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html
-        - title: Implement well-architected database workloads
-          url: https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html
-    - title: Analyze workloads
-      links:
-        - title: Analyze error logs for database workloads
-          url: https://docs.netapp.com/us-en/workload-databases/analyze-error-logs.html
-        - title: View and analyze EMS events for storage workloads
-          url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
-    
+          url: use-codebox.html
     - title: Blogs & community
       links:
         - title: NetApp Console
