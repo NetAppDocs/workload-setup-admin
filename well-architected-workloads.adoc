@@ -9,7 +9,7 @@ summary: "Workload Factory scans workload configurations for reliability, securi
 :imagesdir: ./media/
 
 [.lead]
-Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage and database configurations that align with the AWS Well-Architected Framework. Workload Factory provides daily analysis of your FSx for ONTAP file systems and categorizes configurations based on the key pillars of the AWS Well-Architected Framework. By automating this process, Workload Factory minimizes human error and ensures consistency in workload management.
+Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage and database configurations that align with the AWS Well-Architected Framework. Workload Factory provides daily analysis of your storage and database workloads, recommendations, and automatic fixes to promote healthy workload operations. By automating this process, Workload Factory minimizes human error and ensures consistency in workload management.
 
 == How it works 
 
@@ -21,7 +21,7 @@ Because requirements for storage and database workloads vary, you can dismiss th
 
 == Why it matters
 
-Workload Factory simplifies the difficult task of manually applying best practices to large storage or database environments; it streamlines this process by combining analysis and remediation for suboptimal configurations from the Workload Factory console. The well-architected analysis eliminates the risk of human error and ensures uniformity in storage and database management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure. 
+Workload Factory simplifies the difficult task of manually applying best practices to large storage or database environments; it streamlines this process by combining analysis and remediation for suboptimal configurations from the Workload Factory console. Fixes applied within the Workload Factory console eliminate the risk of human error and ensure uniformity in storage and database management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure. 
 
 == Get started with Workload Factory to detect and correct misconfigurations 
 
@@ -115,7 +115,7 @@ Snapshots and backups that are no longer needed should be deleted to reduce cost
 
 Workload Factory provides a set of best practices and recommendations for operating well-architected database workloads. The well-architected analysis assesses Microsoft SQL Server and Oracle Database configurations and settings related to storage sizing, storage layout, storage configuration, compute, application (SQL Server), and resiliency. 
 
-=== Storage sizing for database workloads
+=== Storage sizing
 
 * *Storage tier*
 +
