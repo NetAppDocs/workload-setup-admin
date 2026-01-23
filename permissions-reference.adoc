@@ -2202,6 +2202,28 @@ a|
 
 As permissions are added and removed, we'll note them in the sections below.
 
+=== 1 February 2025
+
+The following permissions were added to the Storage workload: 
+
+* `s3tables:CreateTableBucket`
+* `s3tables:ListTables`
+* `s3tables:GetTable`
+* `s3tables:GetTableMetadataLocation`
+* `s3tables:CreateTable`
+* `s3tables:GetNamespace`
+* `s3tables:PutTableData`
+* `s3tables:CreateNamespace`
+* `s3tables:GetTableData`
+* `s3tables:ListNamespaces`
+* `s3tables:ListTableBuckets`
+* `s3tables:GetTableBucket`
+* `s3tables:UpdateTableMetadataLocation`
+* `s3tables:ListTagsForResource`
+* `s3tables:TagResource`
+* `s3:GetObjectTagging`
+* `s3:ListBucket`
+
 === 27 November 2025
 
 The following permissions were added to the Storage workload: 
