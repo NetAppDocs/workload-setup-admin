@@ -411,6 +411,21 @@ a|
 | ce:GetTags
 | Cost and usage analysis
 | View, planning, and analysis
+
+| Allow adding tags to an S3 access point
+| s3:TagResource 
+| Deployment and management operations
+| Operations and remediation
+
+| Allow listing and viewing tags attached to an S3 access point
+| s3:ListTagsForResource
+| Management operations
+| Operations and remediation
+
+| Allow removing tags to an S3 access point
+| s3:UntagResource 
+| Management operations
+| Operations and remediation
 |===
 
 ====
@@ -2206,6 +2221,9 @@ As permissions are added and removed, we'll note them in the sections below.
 
 The following permissions were added to the Storage workload: 
 
+* `s3:TagResource` 
+* `s3:ListTagsForResource`  
+* `s3:UntagResource` 
 * `s3tables:CreateTableBucket`
 * `s3tables:ListTables`
 * `s3tables:GetTable`
