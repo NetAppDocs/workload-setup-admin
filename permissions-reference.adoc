@@ -62,9 +62,6 @@ View the required IAM policies:
         "elasticfilesystem:DescribeFileSystems",
         "ce:GetCostAndUsage",
         "ce:GetTags",
-        "ce:GetCostAndUsageWithResources",
-        "ce:GetCostForecast",
-        "ce:GetUsageForecast"
       ],
       "Resource": "*"
     },
