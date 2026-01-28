@@ -409,21 +409,21 @@ a|
 | Cost and usage analysis
 | View, planning, and analysis
 
+|Provision an S3 access point for an FSx for ONTAP file system
+|s3:CreateAccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Remove an S3 access point
+|s3:DeleteAccessPoint
+|S3 access point management
+|Operations and remediation
+
 |Add tags to an S3 access point
 |s3:TagResource
 a|
 * Deployment and 
 * Management operations
-|Operations and remediation
-
-|Provision S3 access point for FSx for ONTAP file system
-|s3:CreateAccessPoint
-|S3 access point management
-|Operations and remediation
-
-|Remove S3 access point
-|s3:DeleteAccessPoint
-|S3 access point management
 |Operations and remediation
 
 |List and view tags on an S3 access point
@@ -474,7 +474,7 @@ s3tables:GetNamespace
 
 |Read table data (select, scan)
 |s3tables:GetTableData
-|S3 Access Points
+|S3 table data operations
 |Operations and remediation
 
 |Write table data (insert)
