@@ -17,11 +17,11 @@ Workload Factory analyzes Amazon FSx for NetApp ONTAP file systems, Microsoft SQ
 
 After the daily analysis completes, configurations appear as "optimized" or "not optimized" in the Well-architected dashboard for the deployment. You'll find the total optimization score, configuration issues by category, and a list of configuration issues and recommendations. You can review the recommendations for configuration issues. Some issues can be fixed automatically by Workload Factory, while others require manual intervention. In this case, Workload Factory provides detailed instructions to help you implement the recommended changes.
 
-Because requirements for storage and database workloads vary, you can dismiss the analysis of specific configurations that don't apply to your environments. This helps you avoid unnecessary alerts and inaccurate optimization results. When you dismiss a specific configuration analysis, Workload Factory does not include the configuration in the total optimization score.
+You can dismiss the analysis of configurations that do not apply to your environments. This avoids unnecessary alerts and inaccurate optimization results. When you dismiss a specific configuration analysis, Workload Factory does not include the configuration in the total optimization score.
 
 == Why it matters
 
-Workload Factory streamlines applying best practices to large storage or database environments by combining analysis and remediation. Fixes applied in the Workload Factory console reduce human error and ensure uniform management. Automation ensures configurations are applied correctly and maintained, preserving performance and reliability across your workload infrastructures.
+Workload Factory applies best practices to large storage or database environments by combining ongoing assessment with recommendation insights and remediation. Automated fixes reduce human error, ensure uniform management, and maintain performance and reliability. Fixes applied in the Workload Factory console reduce human error and ensure uniform management. Automation ensures configurations are applied correctly and maintained, preserving performance and reliability across your workload infrastructures.
 
 == Get started with Workload Factory to detect and correct misconfigurations 
 
@@ -31,7 +31,7 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick s
 
 == Best practices and recommendations for storage workloads
 
-Workload Factory assesses storage configurations to provide an in-depth view of ONTAP configuration best practices and for compliance with the AWS Well-Architected Framework. The assessment also recommends improvements and remediation.  
+Workload Factory assesses storage configurations to provide an in-depth view of ONTAP configuration best practices and for compliance with the AWS Well-Architected Framework. The assessment also recommends improvements and fixes.  
 
 The well-architected analysis categorizes configurations in the following pillars of the framework: _reliability_, _security_, _operational excellence_, _cost optimization_, and _performance efficiency_.
 
@@ -97,7 +97,7 @@ When a volume is nearing full capacity, Workload Factory recommends taking actio
 For optimal performance, Workload Factory recommends the cache relationship write mode that best suits your workload. Write-around mode provides better performance for read-heavy workloads with small files, whereas write-back mode provides better performance for write-heavy workloads with large files.
 
 === Cost optimization
-Cost optimization aims to deliver business value while minimizing costs.
+Cost optimization helps you get the most value for your business while keeping costs low.
 
 * *Optimize TCO by tiering cold data* 
 +
@@ -119,7 +119,7 @@ Workload Factory provides a set of best practices and recommendations for operat
 
 * *Storage tier*
 +
-For optimal storage performance, provision FSx for ONTAP volumes on the primary SSD tier. Using the capacity pool tier might result in slower performance and higher latency. 
+For best storage performance, create FSx for ONTAP volumes on the primary SSD tier. Using the capacity pool tier might make performance slower and increase latency.
 
 * *File system headroom*
 +
@@ -155,11 +155,11 @@ TempDB drive size percentages are as follows:
 
 * *Data files (.mdf) placement*
 +
-Separating data and log files onto different drives improves performance by allowing simultaneous I/O activity, independent backup schedules, and improved restore functionality. We recommend separating data and log LUN paths into different volumes for smaller databases. This separation is required when there is more than one large database (> 500 GiB). 
+Separate data and log files onto different drives to improve performance, enable independent backup schedules, and improve restore functionality. For smaller databases, separate data and log LUN paths into different volumes. This separation is required for more than one large database (> 500 GiB).
 
 * *Log files (.ldf) placement*
 +
-Separating data and log files onto different drives improves performance by allowing simultaneous I/O activity, independent backup schedules, and improved restore functionality. We recommend separating data and log LUN paths into different volumes for smaller databases. This separation is required when there is more than one large database (> 500 GiB). 
+Separate data and log files onto different drives to improve performance, enable independent backup schedules, and improve restore functionality. For smaller databases, separate data and log LUN paths into different volumes. This separation is required for more than one large database (> 500 GiB). 
 
 * *TempDB placement*
 +
@@ -234,7 +234,7 @@ To ensure optimal performance and cost efficiency for your SQL Server EC2 instan
 
 * *Operating system patch*
 +
-Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL Server databases from vulnerabilities and significantly improves overall system reliability. 
+Workload Factory recommends applying the latest patches to ensure security, protect SQL Server databases from vulnerabilities, and improve system reliability. 
 
 * *Network adapter settings*
 +
@@ -259,7 +259,7 @@ Optimized: A license is considered "optimized" when the commercial software lice
 
 * *Microsoft SQL Server patch*
 +
-Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL Server databases from vulnerabilities and significantly improves overall system reliability. 
+Workload Factory recommends applying the latest patches to ensure security, protect SQL Server databases from vulnerabilities, and improve system reliability. 
 
 * *MAXDOP*
 +
@@ -269,7 +269,7 @@ Set the Maximum Degree of Parallelism (MAXDOP) to optimize query performance by 
 
 * *Schedule FSx for ONTAP backups* 
 +
-Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your SQL Server data.
+Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to set up automatic backups and retention for your SQL Server data.
 
 * *Schedule local snapshots* 
 +
