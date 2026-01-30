@@ -279,7 +279,28 @@ Schedule local snapshots for efficient backup and quick restores. Snapshots are 
 +
 Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends configuring cross-region replication for disaster recovery and compliance requirements. 
 
+== Best practices and recommendations for EVS workloads
+
+Workload Factory provides best practices and recommendations for operating well-architected Amazon Elastic VMware Service (EVS) workloads. The well-architected analysis assesses EVS configurations to help ensure your VMware environments are optimized for reliability, security, operational excellence, cost optimization, and performance efficiency. From the well-architected status tab in VMware, you'll find insights and recommendations to help implement well-architected best practices for your EVS environments.
+
+The well-architected analysis categorizes configurations in the following pillars of the framework: _reliability_ and _security_.
+
+=== Reliability
+Reliability ensures that workloads perform their intended functions correctly and consistently, even when there are disruptions.
+
+* *EVS environment resiliency*
++
+Ensure that your EVS cluster nodes are properly distributed across partition placement groups. All nodes should be members of a single partition placement group configured with four or more partitions. Proper partition placement ensures that your EVS cluster nodes are distributed across multiple fault-isolated hardware partitions within an AWS availability zone. Misalignment can result in significant loss of processing power or downtime if a partition fails.
+
+=== Security 
+Security emphasizes protecting data, systems, and assets through risk assessments and mitigation strategies.
+
+* *Cluster node management*
++
+Ensure that your EVS cluster nodes have appropriate EC2 stop and termination protection configured. EVS ESXi nodes should be managed exclusively using vCenter or other VMware-level management tools. Without proper EC2-level protections, nodes could be accidentally stopped or terminated from the EC2 console, which can lead to virtual machine data unavailability or data loss.
+
 == Related information
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html[Implement well-architected FSx for ONTAP file systems^] 
 * link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html[Implement well-architected database workloads^]
+* link:https://docs.netapp.com/us-en/workload-vmware/view-evs-well-architected.html[Implement well-architected EVS configurations^]
