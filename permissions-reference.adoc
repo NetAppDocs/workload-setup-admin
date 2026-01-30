@@ -484,17 +484,12 @@ s3tables:GetNamespace
 
 |List tags on an inventory table (get FSx for ONTAP, storage VM, volume IDs)
 |s3tables:ListTagsForResource
-|S3 tag operations
+|S3 table tag operations
 |Operations and remediation
 
 |Tag an inventory table for Workload Factory lookup
 |s3tables:TagResource
-|S3 tag operations
-|Operations and remediation
-
-|Retrieve object user metadata via access point
-|s3:GetObject
-|S3 object operations
+|S3 table tag operations
 |Operations and remediation
 
 |Retrieve object tagging via access point
@@ -2317,6 +2312,15 @@ The following permissions were added to the Storage workload:
 * `s3tables:TagResource`
 * `s3:GetObjectTagging`
 * `s3:ListBucket`
+
+=== 04 December 2025
+
+The following permissions were added to the Storage workload: 
+
+* `fsx:CreateAndAttachS3AccessPoint`
+* `fsx:DetachAndDeleteS3AccessPoint`
+* `s3:CreateAccessPoint`
+* `s3:DeleteAccessPoint`
 
 === 27 November 2025
 
