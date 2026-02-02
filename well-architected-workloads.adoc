@@ -13,25 +13,25 @@ Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, h
 
 == How it works 
 
-Workload Factory analyzes Amazon FSx for NetApp ONTAP file systems, Microsoft SQL Server, and Oracle database deployments daily. The daily analysis provides the well-architected status, and insights and recommendations with options to automatically fix configuration issues so that your deployments meet best practices and operate efficiently.
+Workload Factory analyzes Amazon FSx for NetApp ONTAP file systems, Microsoft SQL Server, and Oracle database deployments daily. The analysis provides well-architected status, insights, and recommendations. You can automatically fix configuration issues to meet best practices and operate efficiently.
 
 After the daily analysis completes, configurations appear as "optimized" or "not optimized" in the Well-architected dashboard for the deployment. You'll find the total optimization score, configuration issues by category, and a list of configuration issues and recommendations. You can review the recommendations for configuration issues. Some issues can be fixed automatically by Workload Factory, while others require manual intervention. In this case, Workload Factory provides detailed instructions to help you implement the recommended changes.
 
-Because requirements for storage and database workloads vary, you can dismiss the analysis of specific configurations that don't apply to your environments. This helps you avoid unnecessary alerts and inaccurate optimization results. When a specific configuration analysis is dismissed, the configuration isn't included in the total optimization score.
+You can dismiss the analysis of configurations that do not apply to your environments. This avoids unnecessary alerts and inaccurate optimization results. When you dismiss a specific configuration analysis, Workload Factory does not include the configuration in the total optimization score.
 
 == Why it matters
 
-Workload Factory simplifies the difficult task of manually applying best practices to large storage or database environments; it streamlines this process by combining analysis and remediation for suboptimal configurations from the Workload Factory console. Fixes applied within the Workload Factory console eliminate the risk of human error and ensure uniformity in storage and database management. By leveraging automation, you can guarantee that the configurations are applied correctly every time and preserved this way over time, thus maintaining the high standards of performance and reliability across your entire storage infrastructure. 
+Workload Factory applies best practices to large storage or database environments by combining ongoing assessment with recommendation insights and remediation. Automated fixes reduce human error, ensure uniform management, and maintain performance and reliability. Fixes applied in the Workload Factory console reduce human error and ensure uniform management. Automation ensures configurations are applied correctly and maintained, preserving performance and reliability across your workload infrastructures.
 
 == Get started with Workload Factory to detect and correct misconfigurations 
 
-Get started with Workload Factory by signing up and creating an account, adding credentials, and establishing connectivity so that Workload Factory can manage AWS resources directly, and then optimize your workloads by using Amazon FSx for NetApp ONTAP. 
+To get started with Workload Factory, sign up, add credentials, and establish connectivity to manage AWS resources and optimize workloads using Amazon FSx for NetApp ONTAP.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/quick-start.html[Quick start]
 
 == Best practices and recommendations for storage workloads
 
-Workload Factory provides an in-depth view into ONTAP configuration best practices for storage management. Specifically, the Storage workload within Workload Factory analyzes storage configurations for compliance with the pillars of the AWS Well-Architected Framework, and provides recommendations and remediation for suboptimal configurations. From the well-architected status dashboard in Storage, you'll find insights that help you implement well-architected best practices to deliver optimal performance and reliability for your FSx for ONTAP file systems.
+Workload Factory assesses storage configurations to provide an in-depth view of ONTAP configuration best practices and for compliance with the AWS Well-Architected Framework. The assessment also recommends improvements and fixes.  
 
 The well-architected analysis categorizes configurations in the following pillars of the framework: _reliability_, _security_, _operational excellence_, _cost optimization_, and _performance efficiency_.
 
@@ -40,7 +40,7 @@ Reliability ensures that workloads perform their intended functions correctly an
  
 * *Schedule FSx for ONTAP backups*
 +
-FSx for ONTAP: Backing up your volumes helps support data retention and compliance needs. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your data.
+FSx for ONTAP: Backing up your volumes helps support data retention and compliance needs. Use FSx for ONTAP backup to set up automated backups and retention for your data.
 
 * *Schedule local snapshots*
 +
@@ -48,7 +48,7 @@ Schedule local snapshots for efficient backup and quick restores. Snapshots are 
 
 * *Cross-region replication*
 +
-Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends configuring cross-region replication for disaster recovery and compliance requirements. 
+Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends setting up cross-region replication to help with disaster recovery and compliance. 
 
 * *Set up data replication*
 +
@@ -71,7 +71,7 @@ Security emphasizes protecting data, systems, and assets through risk assessment
 
 * *Enable ARP/AI* 
 +
-NetApp Autonomous Ransomware Protection with AI (ARP/AI) enhances cyber resiliency and ensures active protection for volumes against evolving ransomware threats. Workload Factory recommends enabling ARP/AI for all volumes.
+NetApp Autonomous Ransomware Protection with AI (ARP/AI) helps protect your volumes from ransomware threats. Workload Factory recommends enabling ARP/AI for all volumes.
 
 * *Unauthorized access to volumes*
 +
@@ -96,8 +96,16 @@ When a volume is nearing full capacity, Workload Factory recommends taking actio
 +
 For optimal performance, Workload Factory recommends the cache relationship write mode that best suits your workload. Write-around mode provides better performance for read-heavy workloads with small files, whereas write-back mode provides better performance for write-heavy workloads with large files.
 
+* *Optimize cache volume size*
++
+Workload Factory recommends enabling volume autosize and scrubbing on cache volumes to maintain optimal size and focus the cache on hot data for peak efficiency.
+
+* *Storage VM logical reporting*
++
+Workload Factory recommends that the default reporting setting is set to logical for a storage VM to provide better visibility into storage usage at the volume level.
+
 === Cost optimization
-Cost optimization aims to deliver business value while minimizing costs.
+Cost optimization helps you get the most value for your business while keeping costs low.
 
 * *Optimize TCO by tiering cold data* 
 +
@@ -111,6 +119,10 @@ Storage efficiencies should be enabled - compaction, compression, and deduplicat
 +
 Snapshots and backups that are no longer needed should be deleted to reduce costs.
 
+* *Orphaned block devices*
++
+After a block device isn't used for seven days, Workload Factory recommends archiving block device data or deleting the unused block device to reduce costs. 
+
 == Best practices and recommendations for database workloads
 
 Workload Factory provides a set of best practices and recommendations for operating well-architected database workloads. The well-architected analysis assesses Microsoft SQL Server and Oracle Database configurations and settings related to storage sizing, storage layout, storage configuration, compute, application (SQL Server), and resiliency. 
@@ -119,11 +131,11 @@ Workload Factory provides a set of best practices and recommendations for operat
 
 * *Storage tier*
 +
-For optimal storage performance, provision FSx for ONTAP volumes on the primary SSD tier. Using the capacity pool tier may result in slower performance and higher latency. 
+For best storage performance, create FSx for ONTAP volumes on the primary SSD tier. Using the capacity pool tier might make performance slower and increase latency.
 
 * *File system headroom*
 +
-To optimize storage performance, provision file system capacity as 1.35 times of total size of provisioned volume. 
+To optimize storage performance, set the file system capacity to 1.35 times the total size of your volumes. 
 +
 File system headroom percentages are as follows: 
 +
@@ -155,11 +167,11 @@ TempDB drive size percentages are as follows:
 
 * *Data files (.mdf) placement*
 +
-Separating data and log files onto different drives improves performance by allowing simultaneous I/O activity, independent backup schedules, and improved restore functionality. We recommend separating data and log LUN paths into different volumes for smaller databases. This separation is required when there is more than one large database (> 500 GiB). 
+Separate data and log files onto different drives to improve performance, enable independent backup schedules, and improve restore functionality. For smaller databases, separate data and log LUN paths into different volumes. This separation is required for more than one large database (> 500 GiB).
 
 * *Log files (.ldf) placement*
 +
-Separating data and log files onto different drives improves performance by allowing simultaneous I/O activity, independent backup schedules, and improved restore functionality. We recommend separating data and log LUN paths into different volumes for smaller databases. This separation is required when there is more than one large database (> 500 GiB). 
+Separate data and log files onto different drives to improve performance, enable independent backup schedules, and improve restore functionality. For smaller databases, separate data and log LUN paths into different volumes. This separation is required for more than one large database (> 500 GiB). 
 
 * *TempDB placement*
 +
@@ -194,7 +206,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | LUN
 | OS type = windows_2008
-| ONTAP LUN OS type value should match the operating system partitioning scheme to achieve I/O alignment. Incorrect configuration may result in suboptimal performance.
+| ONTAP LUN OS type value should match the operating system partitioning scheme to achieve I/O alignment. Incorrect configuration might result in suboptimal performance.
 
 | LUN
 | Space reservation enabled
@@ -222,7 +234,7 @@ Isolate TempDB I/O and avoid I/O contention from other databases by placing Temp
 
 | Allocation unit size 
 | NTFS allocation unit size = 64K 
-| Set NTFS allocation unit size to 64K to better utilize disk space, reduce fragmentation, and improve file read/write performance. Failure to configure this properly might lead to inefficient disk usage and degraded performance. 
+| Set NTFS allocation unit size to 64K to better use disk space, reduce fragmentation, and improve file read/write performance. Failure to configure this properly might lead to inefficient disk usage and degraded performance. 
 
 |===
 
@@ -234,7 +246,7 @@ To ensure optimal performance and cost efficiency for your SQL Server EC2 instan
 
 * *Operating system patch*
 +
-Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL Server databases from vulnerabilities and significantly improves overall system reliability. 
+Workload Factory recommends applying the latest patches to ensure security, protect SQL Server databases from vulnerabilities, and improve system reliability. 
 
 * *Network adapter settings*
 +
@@ -259,7 +271,7 @@ Optimized: A license is considered "optimized" when the commercial software lice
 
 * *Microsoft SQL Server patch*
 +
-Whenever possible, apply the latest patches to ensure security and stability. Applying the latest patch helps protect your SQL Server databases from vulnerabilities and significantly improves overall system reliability. 
+Workload Factory recommends applying the latest patches to ensure security, protect SQL Server databases from vulnerabilities, and improve system reliability. 
 
 * *MAXDOP*
 +
@@ -269,7 +281,7 @@ Set the Maximum Degree of Parallelism (MAXDOP) to optimize query performance by 
 
 * *Schedule FSx for ONTAP backups* 
 +
-Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to implement a centrally managed, automated backup and retention strategy for your SQL Server data.
+Backing up your Microsoft SQL Server volumes is crucial for supporting your data retention and compliance requirements. Use FSx for ONTAP backup to set up automatic backups and retention for your SQL Server data.
 
 * *Schedule local snapshots* 
 +
@@ -277,9 +289,30 @@ Schedule local snapshots for efficient backup and quick restores. Snapshots are 
 
 * *Cross-region replication* 
 +
-Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends configuring cross-region replication for disaster recovery and compliance requirements. 
+Cross-region replication ensures that your data is replicated to another AWS region, providing enhanced data durability and availability. Workload Factory recommends setting up cross-region replication to help with disaster recovery and compliance.
+
+== Best practices and recommendations for EVS workloads
+
+Workload Factory provides best practices and recommendations for operating well-architected Amazon Elastic VMware Service (EVS) workloads. The well-architected analysis assesses EVS configurations to help ensure your VMware environments are optimized for reliability, security, operational excellence, cost optimization, and performance efficiency. From the well-architected status tab in VMware, you'll find insights and recommendations to help implement well-architected best practices for your EVS environments.
+
+The well-architected analysis categorizes configurations in the following pillars of the framework: _reliability_ and _security_.
+
+=== Reliability
+Reliability ensures that workloads perform their intended functions correctly and consistently, even when there are disruptions.
+
+* *EVS environment resiliency*
++
+Ensure that your EVS cluster nodes are properly distributed across partition placement groups. All nodes should be members of a single partition placement group configured with four or more partitions. Proper partition placement ensures that your EVS cluster nodes are distributed across multiple fault-isolated hardware partitions within an AWS availability zone. Misalignment can result in significant loss of processing power or downtime if a partition fails.
+
+=== Security 
+Security emphasizes protecting data, systems, and assets through risk assessments and mitigation strategies.
+
+* *Cluster node management*
++
+Ensure that your EVS cluster nodes have appropriate EC2 stop and termination protection configured. EVS ESXi nodes should be managed exclusively using vCenter or other VMware-level management tools. Without proper EC2-level protections, nodes could be accidentally stopped or terminated from the EC2 console, which can lead to virtual machine data unavailability or data loss.
 
 == Related information
 
 * link:https://docs.netapp.com/us-en/workload-fsx-ontap/improve-configurations.html[Implement well-architected FSx for ONTAP file systems^] 
 * link:https://docs.netapp.com/us-en/workload-databases/optimize-configurations.html[Implement well-architected database workloads^]
+* link:https://docs.netapp.com/us-en/workload-vmware/view-evs-well-architected.html[Implement well-architected EVS configurations^]
