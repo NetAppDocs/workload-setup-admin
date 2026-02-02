@@ -409,12 +409,22 @@ a|
 | Cost and usage analysis
 | View, planning, and analysis
 
-|Provision an S3 access point for an FSx for ONTAP file system
+|Create an S3 access point and attaches it to an FSx for ONTAP file system
+|fsx:CreateAndAttachS3AccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Detaches an S3 access point from an FSx for ONTAP file system and deletes it
+|fsx:DetachAndDeleteS3AccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Create an S3 access point for simplified bucket access management
 |s3:CreateAccessPoint
 |S3 access point management
 |Operations and remediation
 
-|Remove an S3 access point
+|Delete an S3 access point
 |s3:DeleteAccessPoint
 |S3 access point management
 |Operations and remediation
