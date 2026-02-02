@@ -431,19 +431,17 @@ a|
 
 |Add tags to an S3 access point
 |s3:TagResource
-a|
-* Deployment and 
-* Management operations
+|S3 access point management
 |Operations and remediation
 
 |List and view tags on an S3 access point
 |s3:ListTagsForResource
-|Management operations
+|S3 access point management
 |Operations and remediation
 
 |Remove tags from an S3 access point
 |s3:UntagResource
-|Management operations
+|S3 access point management
 |Operations and remediation
 
 |Discover objects in an S3 access point bucket
