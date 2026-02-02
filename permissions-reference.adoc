@@ -62,9 +62,6 @@ View the required IAM policies:
         "elasticfilesystem:DescribeFileSystems",
         "ce:GetCostAndUsage",
         "ce:GetTags",
-        "ce:GetCostAndUsageWithResources",
-        "ce:GetCostForecast",
-        "ce:GetUsageForecast"
       ],
       "Resource": "*"
     },
@@ -99,10 +96,32 @@ View the required IAM policies:
         "fsx:DeleteBackup",
         "fsx:TagResource",
         "fsx:UntagResource",
+        "fsx:CreateAndAttachS3AccessPoint",
+        "fsx:DetachAndDeleteS3AccessPoint",
+        "s3:CreateAccessPoint",
+        "s3:DeleteAccessPoint",
+        "s3:GetObjectTagging",
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
         "bedrock:ListInferenceProfiles",
-        "bedrock:GetInferenceProfile"
+        "bedrock:GetInferenceProfile",
+        "s3tables:CreateTableBucket",
+        "s3tables:ListTables",
+        "s3tables:GetTable",
+        "s3tables:GetTableMetadataLocation",
+        "s3tables:CreateTable",
+        "s3tables:GetNamespace",
+        "s3tables:PutTableData",
+        "s3tables:CreateNamespace",
+        "s3tables:GetTableData",
+        "s3tables:ListNamespaces",
+        "s3tables:ListTableBuckets",
+        "s3tables:GetTableBucket",
+        "s3tables:UpdateTableMetadataLocation",
+        "s3tables:ListTagsForResource",
+        "s3tables:TagResource",
+        "s3:GetObjectTagging",
+        "s3:ListBucket"
       ],
       "Resource": "*"
     },
@@ -389,6 +408,103 @@ a|
 | ce:GetTags
 | Cost and usage analysis
 | View, planning, and analysis
+
+|Create an S3 access point and attaches it to an FSx for ONTAP file system
+|fsx:CreateAndAttachS3AccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Detach an S3 access point from an FSx for ONTAP file system and delete it
+|fsx:DetachAndDeleteS3AccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Create an S3 access point for simplified bucket access management
+|s3:CreateAccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Delete an S3 access point
+|s3:DeleteAccessPoint
+|S3 access point management
+|Operations and remediation
+
+|Add tags to an S3 access point
+|s3:TagResource
+|S3 access point management
+|Operations and remediation
+
+|List and view tags on an S3 access point
+|s3:ListTagsForResource
+|S3 access point management
+|Operations and remediation
+
+|Remove tags from an S3 access point
+|s3:UntagResource
+|S3 access point management
+|Operations and remediation
+
+|Discover objects in an S3 access point bucket
+|s3:ListBucket
+|S3 bucket operations
+|Operations and remediation
+
+|List, create, and describe S3 table buckets
+|s3tables:ListTableBuckets  
+s3tables:CreateTableBucket  
+s3tables:GetTableBucket
+|S3 table bucket management
+|Operations and remediation
+
+|List, create, and retrieve S3 tables
+|s3tables:ListTables  
+s3tables:CreateTable  
+s3tables:GetTable
+|S3 table operations
+|Operations and remediation
+
+|Read table metadata location
+|s3tables:GetTableMetadataLocation
+|S3 table metadata operations
+|Operations and remediation
+
+|Update table metadata location
+|s3tables:UpdateTableMetadataLocation
+|S3 table metadata operations
+|Operations and remediation
+
+|List, create, and retrieve table namespaces
+|s3tables:ListNamespaces  
+s3tables:CreateNamespace  
+s3tables:GetNamespace
+|S3 namespace operations
+|Operations and remediation
+
+|Read table data (select, scan)
+|s3tables:GetTableData
+|S3 table data operations
+|Operations and remediation
+
+|Write table data (insert)
+|s3tables:PutTableData
+|S3 table data operations
+|Operations and remediation
+
+|List tags on an inventory table (get FSx for ONTAP, storage VM, volume IDs)
+|s3tables:ListTagsForResource
+|S3 table tag operations
+|Operations and remediation
+
+|Tag an inventory table for Workload Factory lookup
+|s3tables:TagResource
+|S3 table tag operations
+|Operations and remediation
+
+|Retrieve object tagging via access point
+|s3:GetObjectTagging
+|S3 object operations
+|Operations and remediation
+
 |===
 
 ====
@@ -851,18 +967,18 @@ a|
 | fsx:DescribeStorageVirtualMachines 
 a| 
 * Deployment
-* Manage operations
+* Management operations
 * Inventory
 | View, planning, and analysis
 | fsx:DescribeFileSystems 
 a| 
 * Deployment
-* Manage operations
+* Management operations
 * Inventory
 * Explore savings 
 | View, planning, and analysis
 | fsx:ListTagsForResource 
-| Manage operations 
+| Management operations 
 | View, planning, and analysis
 
 | Get service quota limits for CloudFormation and VPC / Create secrets in a user account for the credentials provided for SQL, domain, and FSx for ONTAP
@@ -875,10 +991,10 @@ a|
 | Deployment 
 | View, planning, and analysis
 
-| Poll for SSM response after sending command for manage operations post deployment
+| Poll for SSM response after sending command for management operations post deployment
 | ssm:GetCommandInvocation 
 a| 
-* Manage operations
+* Management operations
 * Inventory
 * Explore savings 
 * Optimization
@@ -887,7 +1003,7 @@ a|
 | Send commands over SSM to EC2 instances for discovery and management
 | ssm:SendCommand 
 a| 
-* Manage operations
+* Management operations
 * Inventory
 * Explore savings
 * Optimization 
@@ -896,7 +1012,7 @@ a|
 | Get the SSM connectivity status on instances post deployment
 | ssm:GetConnectionStatus 
 a|  
-* Manage operations
+* Management operations
 * Inventory
 * Optimization
 | View, planning, and analysis
@@ -965,24 +1081,24 @@ a|
 | ssm:GetParameter ^1^ 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 * Inventory
 | View, planning, and analysis
 | ssm:GetParameters ^1^ 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 * Inventory
 | View, planning, and analysis
 | ssm:PutParameter ^1^ 
 a| 
 * Deployment 
-* Manage operations 
+* Management operations 
 | View, planning, and analysis
 | ssm:DeleteParameters ^1^ 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 | View, planning, and analysis
 
 .9+| Associate network resources to SQL nodes and validation nodes, and add additional secondary IPs to SQL nodes
@@ -1122,7 +1238,7 @@ a|
 | fsx:TagResource ^1^ 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 | Database host creation
 
 .5+| Create and validate CloudFormation template for deployment
@@ -1184,7 +1300,7 @@ a|
 | fsx:CreateVolume 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 | Database host creation
 
 | Get FSx for ONTAP details
@@ -1232,7 +1348,7 @@ a|
 | logs:PutLogEvents 
 a| 
 * Deployment
-* Manage operations 
+* Management operations 
 | Database host creation
 | logs:TagResource
 | Deployment 
@@ -2179,6 +2295,40 @@ a|
 == Change log
 
 As permissions are added and removed, we'll note them in the sections below.
+
+=== 1 February 2025
+
+The following permissions were added to the Storage workload: 
+
+* `s3:TagResource` 
+* `s3:ListTagsForResource`  
+* `s3:UntagResource` 
+* `s3tables:CreateTableBucket`
+* `s3tables:ListTables`
+* `s3tables:GetTable`
+* `s3tables:GetTableMetadataLocation`
+* `s3tables:CreateTable`
+* `s3tables:GetNamespace`
+* `s3tables:PutTableData`
+* `s3tables:CreateNamespace`
+* `s3tables:GetTableData`
+* `s3tables:ListNamespaces`
+* `s3tables:ListTableBuckets`
+* `s3tables:GetTableBucket`
+* `s3tables:UpdateTableMetadataLocation`
+* `s3tables:ListTagsForResource`
+* `s3tables:TagResource`
+* `s3:GetObjectTagging`
+* `s3:ListBucket`
+
+=== 04 December 2025
+
+The following permissions were added to the Storage workload: 
+
+* `fsx:CreateAndAttachS3AccessPoint`
+* `fsx:DetachAndDeleteS3AccessPoint`
+* `s3:CreateAccessPoint`
+* `s3:DeleteAccessPoint`
 
 === 27 November 2025
 
