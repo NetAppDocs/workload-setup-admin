@@ -414,7 +414,7 @@ a|
 |S3 access point management
 |Operations and remediation
 
-|Detaches an S3 access point from an FSx for ONTAP file system and deletes it
+|Detach an S3 access point from an FSx for ONTAP file system and delete it
 |fsx:DetachAndDeleteS3AccessPoint
 |S3 access point management
 |Operations and remediation
