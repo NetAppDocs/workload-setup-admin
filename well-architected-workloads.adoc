@@ -96,6 +96,14 @@ When a volume is nearing full capacity, Workload Factory recommends taking actio
 +
 For optimal performance, Workload Factory recommends the cache relationship write mode that best suits your workload. Write-around mode provides better performance for read-heavy workloads with small files, whereas write-back mode provides better performance for write-heavy workloads with large files.
 
+* *Optimize cache volume size*
++
+Workload Factory recommends enabling volume autosize and scrubbing on cache volumes to maintain optimal size and focus the cache on hot data for peak efficiency.
+
+* *Storage VM logical reporting*
++
+Workload Factory recommends that the default reporting setting is set to logical for a storage VM to provide better visibility into storage usage at the volume level.
+
 === Cost optimization
 Cost optimization helps you get the most value for your business while keeping costs low.
 
@@ -110,6 +118,10 @@ Storage efficiencies should be enabled - compaction, compression, and deduplicat
 * *Unnecessary snapshot and backup deletion*
 +
 Snapshots and backups that are no longer needed should be deleted to reduce costs.
+
+* *Orphaned block devices*
++
+After a block device isn't used for seven days, Workload Factory recommends archiving block device data or deleting the unused block device to reduce costs. 
 
 == Best practices and recommendations for database workloads
 
