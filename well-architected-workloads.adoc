@@ -385,35 +385,8 @@ The following configurations should be configured as recommended for optimal per
 
 * *Operating system*
 +
-The following configurations should be configured as recommended for optimal operating system performance specifically for Oracle databases.
-+ 
-** *NFS protocol*
+The NFS and iSCSI protocol configurations should be configured as recommended for optimal operating system performance specifically for Oracle databases.
 
-*** TCP slot table
-*** NFS mount options - database files
-*** NFS mount options - ADR home
-*** NFS caching options
-*** dNFS enablement
-*** dNFS consistent IP resolution
-*** dNFS configuration file
-*** dNFS `nosharedcache` option
-
-+
-** *ASM/iSCSI protocol*
-
-*** Multipath I/O
-*** Host utilities
-*** Multipath I/O sessions
-*** Transparent hugepages
-*** iSCSI replacement timeout
-*** Multipath friendly names
-*** TCP advanced options
-*** File system I/O options
-*** Multiblock read count
-*** Multipath config file
-*** ASM setup
-*** ASM external redundancy
-*** ASMLib logical block size alignment
 
 == Best practices and recommendations for EVS workloads
 
