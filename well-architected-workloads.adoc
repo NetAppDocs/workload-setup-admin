@@ -119,7 +119,7 @@ Storage efficiencies should be enabled - compaction, compression, and deduplicat
 +
 Snapshots and backups that are no longer needed should be deleted to reduce costs.
 
-* *Orphaned block devices*
+* *Inactive block devices*
 +
 After a block device isn't used for seven days, Workload Factory recommends archiving block device data or deleting the unused block device to reduce costs. 
 
