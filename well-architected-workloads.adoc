@@ -11,17 +11,7 @@ summary: "Workload Factory scans workload configurations for reliability, securi
 [.lead]
 Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, helps you maintain and operate reliable, secure, efficient, and cost-effective storage and database configurations that align with the AWS Well-Architected Framework. Workload Factory provides daily analysis of your storage and database workloads, recommendations, and automatic fixes to promote healthy workload operations. By automating this process, Workload Factory minimizes human error and ensures consistency in workload management.
 
-== How it works 
-
-Workload Factory analyzes Amazon FSx for NetApp ONTAP file systems, Microsoft SQL Server, and Oracle database deployments daily. The analysis provides well-architected status, insights, and recommendations. You can automatically fix configuration issues to meet best practices and operate efficiently.
-
-After the daily analysis completes, configurations appear as "optimized" or "not optimized" in the Well-architected dashboard for the deployment. You'll find the total optimization score, configuration issues by category, and a list of configuration issues and recommendations. You can review the recommendations for configuration issues. Some issues can be fixed automatically by Workload Factory, while others require manual intervention. In this case, Workload Factory provides detailed instructions to help you implement the recommended changes.
-
-You can dismiss the analysis of configurations that do not apply to your environments. This avoids unnecessary alerts and inaccurate optimization results. When you dismiss a specific configuration analysis, Workload Factory does not include the configuration in the total optimization score.
-
-== Why it matters
-
-Workload Factory applies best practices to large storage or database environments by combining ongoing assessment with recommendation insights and remediation. Automated fixes applied in the Workload Factory console reduce human error, ensure uniform management, and preserve performance and reliability across your workload infrastructures.
+include::_include/well-architected-workloads.adoc[]
 
 == Get started with Workload Factory to detect and correct misconfigurations 
 
