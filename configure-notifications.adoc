@@ -95,6 +95,13 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP file systems
 
+| Suspicious volume activity detected in FSx for ONTAP file system
+| NetApp Autonomous Ransomware Protection with AI (ARP/AI) detected suspected volume activity.
+| Ransomware protection
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
 |===
 
 == Configure Workload Factory notifications
