@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: configure-notifications.html
-keywords: amazon, sns, notification, topic, notifications, notifications service, alerts
+keywords: amazon, sns, notification, topic, notifications, notifications service, alerts, email, email notifications, console notifications, filter, filtering
 summary: You can configure NetApp Workload Factory to send notifications to a person or another application when certain types of events happen. 
 ---
 
@@ -10,7 +10,7 @@ summary: You can configure NetApp Workload Factory to send notifications to a pe
 :imagesdir: ./media/
 
 [.lead]
-You can configure the NetApp Workload Factory notification service to send notifications as alerts in the NetApp Console or to an Amazon SNS topic. Notifications sent as alerts appear in NetApp Console when you have a Console agent or link deployed. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
+You can configure the NetApp Workload Factory notification service to send notifications as alerts in NetApp Console, to any email addresses associated with the account, or to an Amazon SNS topic. Notifications sent as alerts appear in NetApp Console when you have a Console agent or link deployed. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
 == Notification types and messages
 Workload Factory sends notifications for the following events:
@@ -102,12 +102,34 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP file systems
 
+| Latency threshold breach detected
+| One or more volumes in the FSx for ONTAP cluster exceeded the latency threshold.
+| Performance monitoring
+| Warning
+| EDA
+| FSx for ONTAP file systems
+
 |===
 
 == Configure Workload Factory notifications
-Configure Workload Factory notifications using the NetApp Console or the Workload Factory console. If you use the NetApp Console, you can configure Workload Factory to send notifications as alerts in the NetApp Console or to an Amazon SNS topic. You can configure notifications from the *Notifications settings* in the NetApp Console.
+You can configure Workload Factory notifications using NetApp Console or the Workload Factory console. 
+
+Options for receiving notifications include:
+
+=== NetApp Console
+* *Notifications*: Configure Workload Factory to send notifications that appear under the bell icon in NetApp Console. 
+* *Email*: Enable email notifications in NetApp Console to receive notifications to any email addresses associated with the account without requiring Amazon SNS configuration.
+* *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic.
+
+=== Workload Factory console
+* *Email*: Enable email notifications in the Workload Factory console to receive notifications to any email addresses associated with the account without requiring Amazon SNS configuration.
+* *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic using the Workload Factory console.
+
+IMPORTANT: When you configure notifications in NetApp Console, it takes ownership of notification delivery and the Workload Factory console notification options are disabled and displayed in read-only mode. A tooltip states that notifications are managed from NetApp Console. You can then manage notifications only from NetApp Console.
 
 .Before you begin
+
+The following prerequisites apply only when configuring Amazon SNS notifications:
 
 * You need to configure Amazon SNS and create Amazon SNS topics using either the Amazon SNS console or the AWS CLI.
 * Note that Workload Factory supports the *Standard* topic type. This type of topic does not ensure that notifications are sent to subscribers in the order in which they were received, so consider this if you have critical or emergency notifications.
@@ -121,29 +143,28 @@ Configure Workload Factory notifications using the NetApp Console or the Workloa
 
 . Log in to the link:https://console.netapp.com[NetApp Console^].
 . From the NetApp Console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
-. On the Notifications setup page, do the following:
-.. Optional: Select *Enable NetApp Console notifications* to configure Workload Factory to send notifications in the NetApp Console.
-.. Select *Enable SNS notifications*.
-.. Follow the instructions to configure Amazon SNS from the Amazon SNS console.
+. On the Notifications setup page, enable one or more of the following notification types:
+.. *NetApp Console notifications*: Select *Enable NetApp Console notifications* to configure Workload Factory to send notifications in NetApp Console.
+.. *Email notifications*: Select *Enable email notifications* to configure Workload Factory to send notifications to any email addresses associated with the account.
+.. *Amazon SNS notifications*: Select *Enable SNS notifications*, then follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
 After you create the topic, copy the topic ARN and enter it in the *SNS topic ARN* field on the *Notifications setup* page.
 . After you verify the configuration by sending a test notification, select *Apply*.
-
-.Result
-Workload Factory is configured to send notifications to the Amazon SNS topic that you specified.
 --
+[[wf-console-email-notifications]]
 .Configure notifications from Workload Factory console
 --
+
 .Steps
 
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
 . From the Workload Factory console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
-. Select *Enable SNS notifications*.
-. Follow the instructions to configure Amazon SNS from the Amazon SNS console.
-. After you verify the configuration by sending a test notification, select *Apply*.
-
-.Result
-Workload Factory is configured to send notifications to the Amazon SNS topic that you specified.
+. Enable one or more of the following notification types:
++
+* *Email notifications*: Select *Enable email notifications*. Any email addresses associated with the account are displayed in read-only mode.
+* *Amazon SNS notifications*: Select *Enable SNS notifications*, then follow the instructions to configure Amazon SNS from the Amazon SNS console.
++
+After you verify the configuration by sending a test notification, select *Apply*.
 --
 ====
 
@@ -151,7 +172,7 @@ Workload Factory is configured to send notifications to the Amazon SNS topic tha
 After you configure Workload Factory to send notifications to a topic, follow the https://docs.aws.amazon.com/sns/latest/dg/sns-create-subscribe-endpoint-to-topic.html[instructions] in the Amazon SNS documentation to subscribe to the topic so that you can receive notifications from Workload Factory.
 
 == Filter notifications
-You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the notifications settings in the NetApp Console.
+You can reduce unnecessary notification traffic and target specific notification types for specific users by applying filters to the notifications. You can do this using an Amazon SNS policy for SNS notifications, and using the notifications settings in NetApp Console.
 
 === Filter Amazon SNS notifications
 When you subscribe to an Amazon SNS topic, you receive all notifications published to that topic by default. If you want to receive only specific notifications from the topic, you can use a filter policy to control which notifications you receive. Filter policies cause Amazon SNS to deliver only the notifications that match the filter policy to the subscriber.
@@ -242,8 +263,8 @@ For other examples of filter policies, refer to https://docs.aws.amazon.com/sns/
 For further information about creating filter policies, refer to the https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html[Amazon SNS documentation^].
 
 
-=== Filter notifications in the NetApp Console
-You can use the NetApp Console notifications settings to filter notifications that you receive in the Console by severity level, such as Critical, Info, or Warning.
+=== Filter notifications in NetApp Console
+You can use NetApp Console notifications settings to filter notifications that you receive in the Console by severity level, such as Critical, Info, or Warning.
 
 For more information about filtering notifications in the Console, refer to the https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications[NetApp Console documentation^].
 
