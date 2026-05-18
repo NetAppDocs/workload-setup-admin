@@ -50,8 +50,7 @@ This step is required before you can log in.
 +
 image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
 +
-Do the following: 
-+
+
 .. Enter a name for the account.
 .. Optionally, make the account an AWS GovCloud (US) account. This account type uses only AWS GovCloud (US) endpoints and regions for setup and operations. Credentials and secrets remain in GovCloud. This selection is permanent.
 .. Optionally, provide a job description for the account.
