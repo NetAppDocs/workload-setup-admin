@@ -116,6 +116,13 @@ Workload Factory sends notifications for the following events:
 | General storage
 | FSx for ONTAP file systems
 
+| Replication delay
+| Replication is taking longer than expected.
+| Replication
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
 |===
 
 == Configure Workload Factory notifications
