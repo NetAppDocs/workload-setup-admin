@@ -140,7 +140,7 @@ There are several benefits when using the Workload Factory REST APIs:
 
 https://console.workloads.netapp.com/api-doc[View the Workload Factory REST API documentation^]
 
-=== Region support
+== Region support
 
 The following AWS regions are not supported:
 
