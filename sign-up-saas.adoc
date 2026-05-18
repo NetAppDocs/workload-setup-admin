@@ -46,11 +46,15 @@ This step is required before you can log in.
 
 . When prompted, review the End User License Agreement and accept the terms, and select *Continue*.
 
-. On the *Account* page, enter a name for your account, and optionally select your job description.
-+
-An account is the top-level element in NetApp's identity platform, and it enables you to add and manage permissions and credentials.
+. On the *Account* page, create an account. An account is the top-level element in NetApp's identity platform, and it lets you add and manage permissions and credentials.
 +
 image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
++
+Do the following: 
++
+.. Enter a name for the account.
+.. Optionally, make the account an AWS GovCloud (US) account. This account type uses only AWS GovCloud (US) endpoints and regions for setup and operations. Credentials and secrets remain in GovCloud. This selection is permanent.
+.. Optionally, provide a job description for the account.
 
 . Select *Create* and the Workload Factory home page is displayed.
 
