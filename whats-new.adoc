@@ -12,6 +12,10 @@ summary: "Learn what's new with Workload Factory administration features like cl
 [.lead]
 Learn what's new with Workload Factory administration features like cloud provider credentials, Codebox enhancements, and more.
 
+== 31 May 2026
+
+include::_whatsnew/2026-05-31.adoc[]
+
 == 03 May 2026
 
 include::_whatsnew/2026-05-03.adoc[]
