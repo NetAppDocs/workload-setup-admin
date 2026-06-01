@@ -48,7 +48,7 @@ This step is required before you can log in.
 
 . On the *Account* page, create an account. An account is the top-level element in NetApp's identity platform, and it lets you add and manage permissions and credentials.
 +
-image:screenshot-account-selection.png[A screenshot of the Account page that appears when you log in with a new account.]
+image:screenshot-account-selection-govcloud.png[A screenshot of the Account page that appears when you log in with a new account.]
 +
 
 .. Enter a name for the account.
