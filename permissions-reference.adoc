@@ -29,6 +29,11 @@ The IAM policies available for Storage provide the permissions that Workload Fac
 Storage has the following permission policies to choose from:
 
 * *View, planning, and analysis*: View FSx for ONTAP file systems, learn about system health, get the well-architected analysis for your systems, and explore savings.
++
+The following permissions are not required for AWS GovCloud users. 
++
+** `ce:GetCostAndUsage`
+** `ce:GetTags`
 * *Operations and remediation*: Perform operational tasks like adjust file system capacity and fix issues for your file system configurations.
 * *File system creation and deletion*: Create and delete FSx for ONTAP file systems and storage VMs.
 
