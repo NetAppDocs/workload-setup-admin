@@ -1,0 +1,73 @@
+---
+sidebar: sidebar
+permalink: create-custom-dashboard.html
+keywords: create dashboard, custom dashboard, AI dashboard, dashboard creation, personalized dashboard
+summary: "Create a custom dashboard using AI-guided prompts to monitor what matters most to your workloads and operational priorities."
+---
+
+= Create a custom dashboard
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Create custom dashboards by describing what you want to monitor in plain language. The AI guides you through the setup so your dashboards match your work and priorities.
+
+.Before you begin
+
+* You need permission to access the resources you want to monitor on your dashboard.
+* Set up your workloads in Workload Factory before creating dashboards to monitor them.
+
+.About this task
+
+Custom dashboards use an AI-guided dialog to understand what you want to visualize. You describe your monitoring needs in natural language, and the system asks clarifying questions to ensure the dashboard meets your requirements. 
+
+Dashboard creation could take more than 3 seconds, and a progress indicator displays while your dashboard is being generated. Once created, you can refresh the dashboard to see updated data.
+
+Remember that custom dashboards are read-only by design and cannot make changes to your storage or workload configurations.
+
+== Create a dashboard
+
+.Steps
+
+. In the Workload Factory console, select *Workloads Overview* > *Custom dashboards*.
++
+If this is your first dashboard, you'll see a blank screen with tips to help you get started.
+
+. Select *Create dashboard*.
+
+. In the AI dialog, describe what you want to monitor.
++
+Describe what you want to monitor in plain language. The AI will ask a few questions to better understand your needs.
++
+*Sample prompts to get you started:*
++
+* *Disaster recovery monitoring*: "I am setting up a disaster recovery solution in AWS for my on-premises systems. I want to see a complete list of my on-prem resources and the status of each one at the disaster recovery site in the US East region, including whether it is configured, active, and healthy."
++
+* *Multi-region capacity and cost*: "I manage storage across several cloud regions and applications. I want clear visibility into how much storage I have allocated, how much is being used, and what it costs, with details for each region and each application."
++
+* *Storage protection compliance*: "I am setting up a new storage protection strategy based on my organization's standards. Show me all file systems and whether they meet these requirements:
+
+** Database workloads: 12 daily snapshots per volume and 2 tamper-proof snapshots per week.  
+** NFS and SMB shares: 7 daily snapshots per volume and 1 tamper-proof snapshot per week.  
+** ARP must be enabled on all volumes.
+
+Also add a dashboard widget that lists all volumes that do not meet these requirements."
+
+. Respond to the AI's clarifying questions.
++
+The AI may ask you to choose from several options to better understand what you need. Answer each question to help it define your dashboard.
+
+. Review the dashboard preview and select *Create* to confirm.
++
+Your answers are used to create your custom dashboard. A progress bar shows while it's being created.
+
+. After setup finishes, the dashboard opens with the widgets you set up. It also shows a Refresh button and a “Last updated” time so you can see when the data was last loaded.
+
+.Result
+
+Your custom dashboard is now in the dashboard catalog. All users in your Workload Factory account can access and view it.
+
+== What's next
+
+* link:manage-custom-dashboards.html[Manage your custom dashboards] - edit, refresh, or delete dashboards
+* link:troubleshoot-custom-dashboards.html[Troubleshoot custom dashboards] - resolve common issues

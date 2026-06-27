@@ -1,0 +1,81 @@
+---
+sidebar: sidebar
+permalink: troubleshoot-custom-dashboards.html
+keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading
+summary: "Resolve common issues with custom dashboards including creation failures, data loading problems, and access issues."
+---
+
+= Troubleshoot custom dashboards
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Use this information to resolve common issues you might encounter when creating or using custom dashboards.
+
+== Dashboard creation failed
+
+**Problem:** You see the error message “Failed to understand request and generate code” when creating a dashboard.
+
+**Cause:** The system could not understand your request or could not create the visualization from your prompt.
+
+**Solution:** Try the following:
+
+- Rewrite your request with clearer details about what you want to monitor.
+- Start with one of the sample prompts in **link:create-custom-dashboard.html[Create a custom dashboard].
+- Break complex monitoring needs into several simpler dashboards.
+- Specify the workloads, metrics, time ranges, or dimensions you want to track.
+
+== Dashboard failed to load data
+
+**Problem:** The dashboard was created, but it shows errors when loading data.
+
+**Cause:** This usually happens because of permission problems or unavailable data sources.
+
+**Solution:**
+
+* **Check permissions:** Make sure your Workload Factory account has read access to the workloads and resources used by the dashboard. Review the permissions requirements in link:learn-about-custom-dashboards.html[Learn about custom dashboards].
+* **Verify credentials:** Confirm that your AWS credentials are valid and have not expired. See link:add-aws-credentials.html[Add AWS credentials] for details.
+* **Confirm workload configuration:** Ensure the workloads you want to monitor are correctly configured in Workload Factory and are currently running.
+
+== Dashboard not loading or loading slowly
+
+**Problem:** The dashboard loads slowly or some widgets do not appear.
+
+**Cause:** Slow loading can be caused by network issues, large amounts of data, or temporary service delays.
+
+**Solution:**
+
+* **Check your internet connection:** Make sure your internet connection is stable.
+* **Refresh your browser:** Try refreshing the page to see if the dashboard loads correctly.
+* **Clear your browser cache and cookies:** This can help resolve loading issues caused by outdated or corrupted data.
+* **Wait and try again:** If the problem continues, wait a few minutes and try again.
+
+== Cannot edit dashboard
+
+**Problem:** When you try to edit a dashboard, you see the message “Currently being edited by [user name].”
+
+**Cause:** Another user in your Workload Factory account is editing the dashboard. Only one user can edit a dashboard at a time.
+
+**Solution:**
+
+* Wait for the other user to finish and save their changes.
+* Contact the person shown in the message to coordinate editing.
+* If the user is no longer editing but the lock remains, ask them to close the edit window to release the lock.
+
+== Missing dashboards
+
+**Problem:** A dashboard you created is no longer listed in the dashboard catalog.
+
+**Cause:** Another user in your Workload Factory account may have deleted it.
+
+**Solution:**
+
+* Make sure you are logged into the correct Workload Factory account.
+* Ask other users in your account if someone deleted the dashboard.
+* If necessary, recreate the dashboard using the original requirements.
+
+All users in a Workload Factory account can view and delete custom dashboards. Coordinate with your team when managing shared dashboards.
+
+== Additional help
+
+If you continue to experience issues with custom dashboards, see link:get-help.html[Get help] for information about contacting NetApp support.
