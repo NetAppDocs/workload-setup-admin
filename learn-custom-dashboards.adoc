@@ -16,10 +16,6 @@ As a cloud and storage admin, custom dashboards give you a clear view of the sys
 
 Custom dashboards use AI to create personalized views of your Workload Factory environment. You simply describe what you want to monitor in plain language, and the system automatically builds visual charts based on your needs.
 
-=== Performance and access
-
-Creating a dashboard usually takes more than 3 seconds, and a progress indicator appears during this time. After it is created, the dashboard opens in under 3 seconds. Each widget loads separately to help the dashboard run faster.
-
 Everyone in your Workload Factory account can view all custom dashboards. This shared setup helps teams collaborate and see the same operational information across your organization.
 
 === Permissions
@@ -63,12 +59,19 @@ The AI-guided dialog helps you define:
 * Views by region, workload, or other categories  
 * Rules or requirements you need to track and show
 
-After creation, you can:
+=== Sample prompts
 
-* Refresh dashboard data to see the latest information  
-* Edit dashboards to change what they show  
-* Delete dashboards you no longer need  
-* View dashboard details, including who created it and when it was last updated
+The following examples show how to describe your monitoring needs in plain language:
+
+* *Disaster recovery monitoring*: "I am setting up a disaster recovery solution in AWS for my on-premises systems. I want to see a complete list of my on-prem resources and the status of each one at the disaster recovery site in the US East region, including whether it is configured, active, and healthy."
+
+* *Multi-region capacity and cost*: "I manage storage across several cloud regions and applications. I want clear visibility into how much storage I have allocated, how much is being used, and what it costs, with details for each region and each application."
+
+* *Storage protection compliance*: "I am setting up a new storage protection strategy based on my organization's standards. Show me all file systems and whether they meet these requirements:
++
+** Database workloads: 12 daily snapshots per volume and 2 tamper-proof snapshots per week.  
+** NFS and SMB shares: 7 daily snapshots per volume and 1 tamper-proof snapshot per week.  
+** ARP must be enabled on all volumes."
 
 == Next steps
 

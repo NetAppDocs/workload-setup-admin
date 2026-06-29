@@ -18,7 +18,7 @@ You must have at least one custom dashboard in your Workload Factory account.
 
 .About this task
 
-All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name, the last modified date, and whether someone is currently editing it.
+All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name, the creation date, and whether someone is currently editing it.
 
 Custom dashboards are read-only. They cannot change your storage or workload settings. You can edit the dashboard itself, but not the resources it monitors.
 
@@ -27,27 +27,15 @@ Custom dashboards are read-only. They cannot change your storage or workload set
 .Steps
 
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
-. From the menu, select *Workloads Overview* and then *Credentials*.
+. From the menu, select *Workloads Overview* and then *Custom dashboards*.
 +
 The dashboard catalog shows all custom dashboards in your Workload Factory account.
 
 . Review the dashboard list.
-+
-Each dashboard shows:
-- Dashboard name and description  
-- Creator name  
-- Last modified date  
-- Who is currently editing it (if anyone)
 
 == Refresh dashboard data
 
 Dashboard data loads when you open a dashboard. You can refresh it to see the latest information.
-
-.Steps
-
-. Open the dashboard you want to refresh.
-
-. Select Refresh.
 
 The dashboard reloads data from your workloads. The last updated time changes to show when the data was refreshed.
 
@@ -57,7 +45,9 @@ You can edit a dashboard to change what it shows, including the metrics and char
 
 .Steps
 
-. In the dashboard catalog, select the edit icon for the dashboard you want to change.
+. In the *Custom dashboards* page, locate the dashboard you want to edit.
+
+. From the *Actions* drop-down menu for that dashboard, select *Edit dashboard*.
 +
 If another user is editing the dashboard, you will see a message such as “Currently being edited by [user name].” Wait for them to finish or coordinate with them.
 
@@ -65,7 +55,7 @@ If another user is editing the dashboard, you will see a message such as “Curr
 +
 This process is similar to creating a new dashboard. You can change the workloads, metrics, or time ranges the dashboard tracks.
 
-. Review the changes and select **Apply**.
+. Review the changes and select **Save**.
 
 .Result
 
@@ -77,7 +67,9 @@ Delete dashboards you no longer need. This action is permanent and cannot be und
 
 .Steps
 
-. In the dashboard catalog, select the delete icon for the dashboard you want to remove.
+. In the *Custom dashboards* page, locate the dashboard you want to remove.
+
+. From the *Actions* drop-down menu for that dashboard, select *Delete*.
 
 . Confirm the deletion.
 
