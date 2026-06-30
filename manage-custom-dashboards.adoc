@@ -12,15 +12,15 @@ summary: "Access your dashboard catalog to view, edit, refresh, and delete custo
 [.lead]
 Manage your custom dashboards from the dashboard catalog. From there, you can view details, refresh data, edit dashboard settings, or delete dashboards you no longer need.
 
-.Before you begin
-
-You must have at least one custom dashboard in your Workload Factory account.
-
 .About this task
 
 All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name, the creation date, and whether someone is currently editing it.
 
 Custom dashboards are read-only. They cannot change your storage or workload settings. You can edit the dashboard itself, but not the resources it monitors.
+
+.Before you begin
+
+You must have at least one custom dashboard in your Workload Factory account.
 
 == Access the dashboard catalog
 
@@ -47,7 +47,7 @@ You can edit a dashboard to change what it shows, including the metrics and char
 
 . In the *Custom dashboards* page, locate the dashboard you want to edit.
 
-. From the *Actions* drop-down menu for that dashboard, select *Edit dashboard*.
+. From the *Actions* menu for that dashboard, select *Edit dashboard*.
 +
 If another user is editing the dashboard, you will see a message such as “Currently being edited by [user name].” Wait for them to finish or coordinate with them.
 
@@ -77,7 +77,7 @@ Delete dashboards you no longer need. This action is permanent and cannot be und
 
 The dashboard is permanently removed from your Workload Factory account, and all users lose access to it.
 
-== What's next
+== Related information
 
 * link:create-custom-dashboard.html[Create additional custom dashboards]
 * link:troubleshoot-custom-dashboards.html[Troubleshoot custom dashboards]

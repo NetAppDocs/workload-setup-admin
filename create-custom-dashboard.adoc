@@ -10,12 +10,7 @@ summary: "Create a custom dashboard using AI-guided prompts to monitor what matt
 :imagesdir: ./media/
 
 [.lead]
-Create custom dashboards by describing what you want to monitor in plain language. The AI guides you through the setup so your dashboards match your work and priorities.
-
-.Before you begin
-
-* You need permission to access the resources you want to monitor on your dashboard.
-* Set up your workloads in Workload Factory before creating dashboards to monitor them.
+Create custom dashboards by describing what you want to monitor in plain language. The AI guides you through the setup so your dashboards match your workloads and priorities.
 
 .About this task
 
@@ -24,6 +19,11 @@ Custom dashboards use an AI-guided dialog to understand what you want to visuali
 Once created, you can refresh the dashboard to see updated data.
 
 Remember that custom dashboards are read-only by design and cannot make changes to your storage or workload configurations.
+
+.Before you begin
+
+* You need permission to access the resources you want to monitor on your dashboard.
+* Set up your workloads in Workload Factory before creating dashboards to monitor them.
 
 == Create a dashboard
 
@@ -51,6 +51,7 @@ The AI might ask you to choose from several options to better understand what yo
 
 Your custom dashboard is now in the dashboard catalog. All users in your Workload Factory account can access and view it.
 
+.What's next
 After creation, you can:
 
 * Refresh dashboard data to see the latest information  
@@ -58,7 +59,6 @@ After creation, you can:
 * Delete dashboards you no longer need  
 * View dashboard details, including who created it and when it was last updated
 
-== What's next
-
+== Related information
 * link:manage-custom-dashboards.html[Manage your custom dashboards]
 * link:troubleshoot-custom-dashboards.html[Troubleshoot custom dashboards]

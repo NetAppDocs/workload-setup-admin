@@ -16,6 +16,27 @@ Custom dashboards use AI to create personalized views of your Workload Factory e
 
 Everyone in your Workload Factory account can view all custom dashboards. This shared setup helps teams collaborate and see the same operational information across your organization.
 
+== Why use custom dashboards
+
+Workload Factory users manage many workloads, environments, and priorities, but standard dashboards only show preset views. Custom dashboards help solve several operational challenges:
+
+* *Answer key questions quickly*: Focus on the most important questions or gaps in your understanding instead of general system statistics.
+* *Monitor what matters now*: Track the metrics that match your current priorities, not a fixed set of health indicators.
+* *Link technical data to business results*: Show how system performance affects operations and business goals.
+* *Avoid switching between tools*: View all relevant information in one place—no need to switch between tools, pages, or exports.
+
+== What you can do with custom dashboards
+
+During setup, the AI-guided dialog helps you define:
+
+* Workloads and resources to monitor  
+* Key metrics that matter for your work  
+* Time ranges and periods to compare  
+* Views by region, workload, or other categories  
+* Rules or requirements you need to track and show
+
+== Considerations and limitations
+
 === Permissions
 
 To create or view custom dashboards, you need the correct AWS IAM permissions for the resources you want to monitor. Make sure the Workload Factory account has read access to the data sources used by the dashboards.
@@ -37,25 +58,6 @@ The following limitations currently apply to custom dashboards:
 === Demo environment
 
 If you're using a Workload Factory demo account, some prebuilt dashboards are available. They help you see what custom dashboards can do. Each dashboard shows a common monitoring need: disaster recovery status, capacity and costs across regions, and whether storage protection rules are being followed.
-
-== Why use custom dashboards
-
-Workload Factory users manage many workloads, environments, and priorities, but standard dashboards only show the vendor's preset views. Custom dashboards help solve several operational challenges:
-
-* *Answer key questions quickly*: Focus on the most important questions or gaps in your understanding instead of general system statistics.
-* *Monitor what matters now*: Track the metrics that match your current priorities, not a fixed set of health indicators.
-* *Link technical data to business results*: Show how system performance affects operations and business goals.
-* *Avoid switching between tools*: See all the relevant information in one place instead of jumping between different tools, views, or exports.
-
-== What you can do with custom dashboards
-
-The AI-guided dialog helps you define:
-
-* Workloads and resources to monitor  
-* Key metrics that matter for your work  
-* Time ranges and periods to compare  
-* Views by region, workload, or other categories  
-* Rules or requirements you need to track and show
 
 === Sample prompts
 
