@@ -21,7 +21,7 @@ Use this information to resolve common issues you might encounter when creating 
 **Solution:** Try the following:
 
 - Rewrite your request with clearer details about what you want to monitor.
-- Start with one of the sample prompts in **link:create-custom-dashboard.html[Create a custom dashboard].
+- Start with one of the sample prompts in link:create-custom-dashboard.html[Create a custom dashboard].
 - Break complex monitoring needs into several simpler dashboards.
 - Specify the workloads, metrics, time ranges, or dimensions you want to track.
 

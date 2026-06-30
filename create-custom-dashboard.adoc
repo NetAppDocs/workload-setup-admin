@@ -21,7 +21,7 @@ Create custom dashboards by describing what you want to monitor in plain languag
 
 Custom dashboards use an AI-guided dialog to understand what you want to visualize. You describe your monitoring needs in natural language, and the system asks clarifying questions to ensure the dashboard meets your requirements. 
 
-Creating a dashboard could take more than 3 seconds, and a progress indicator displays while your dashboard is being generated. Once created, you can refresh the dashboard to see updated data.
+Once created, you can refresh the dashboard to see updated data.
 
 Remember that custom dashboards are read-only by design and cannot make changes to your storage or workload configurations.
 
@@ -29,7 +29,8 @@ Remember that custom dashboards are read-only by design and cannot make changes 
 
 .Steps
 
-. In the Workload Factory console, select *Workloads Overview* > *Custom dashboards*.
+. Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
+. Select the menu image:workloads-menu-icon.png[The hamburger menu icon is used to navigate to workloads like storage, eda, ai, databases, vmware, and administration.] and then select *Workloads Overview* > *Custom dashboards*.
 +
 If this is your first dashboard, you'll see a blank screen with sample prompts to help you get started. You can select *Copy prompt* to copy a sample prompt into the AI dialog text box.
 
@@ -57,5 +58,5 @@ After creation, you can:
 
 == What's next
 
-* link:manage-custom-dashboards.html[Manage your custom dashboards] - edit, refresh, or delete dashboards
-* link:troubleshoot-custom-dashboards.html[Troubleshoot custom dashboards] - resolve common issues
+* link:manage-custom-dashboards.html[Manage your custom dashboards]
+* link:troubleshoot-custom-dashboards.html[Troubleshoot custom dashboards]

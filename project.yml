@@ -46,13 +46,13 @@ sidebar:
           url: /configure-notifications.html
         - title: Custom dashboards
           entries:
-            - title: Overview
+            - title: Learn about custom dashboards
               url: /learn-custom-dashboards.html
             - title: Create a custom dashboard
               url: /create-custom-dashboard.html
             - title: Manage custom dashboards
               url: /manage-custom-dashboards.html
-            - title: Troubleshooting
+            - title: Troubleshoot custom dashboards
               url: /troubleshoot-custom-dashboards.html
         - title: Automate tasks using Codebox
           entries:
