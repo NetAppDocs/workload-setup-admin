@@ -33,8 +33,8 @@ Use this information to resolve common issues you might encounter when creating 
 
 **Solution:**
 
-* **Check permissions:** Make sure your Workload Factory account has read access to the workloads and resources used by the dashboard. Review the permissions requirements in link:learn-about-custom-dashboards.html[Learn about custom dashboards].
-* **Verify credentials:** Confirm that your AWS credentials are valid and have not expired. See link:add-aws-credentials.html[Add AWS credentials] for details.
+* **Check permissions:** Make sure your Workload Factory account has read access to the workloads and resources used by the dashboard. Review the permissions requirements in link:learn-custom-dashboards.html#permissions[Permissions].
+* **Verify credentials:** Confirm that your AWS credentials are valid and have not expired. See link:add-credentials.html[Add AWS credentials] for details.
 * **Confirm workload configuration:** Ensure the workloads you want to monitor are correctly configured in Workload Factory and are currently running.
 
 == Dashboard not loading or loading slowly

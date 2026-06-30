@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with Workload Factory administration features: cloud provider credentials, Codebox enhancements, and more."
+summary: Learn what's new with Workload Factory administration features including cloud provider credentials, Codebox enhancements, and more.
 ---
 
 = What's new with NetApp Workload Factory administration features
