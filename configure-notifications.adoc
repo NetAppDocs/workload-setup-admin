@@ -109,6 +109,20 @@ Workload Factory sends notifications for the following events:
 | EDA
 | FSx for ONTAP file systems
 
+| Monthly cost report
+| Monthly cost summary for your account, showing spending trends, unusual changes, and the best savings opportunities for FSx for ONTAP file systems.
+| Cost report
+| Recommendation
+| General storage
+| FSx for ONTAP file systems
+
+| Replication delay
+| Replication is taking longer than expected.
+| Replication
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
 |===
 
 == Configure Workload Factory notifications
