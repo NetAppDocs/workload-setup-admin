@@ -38,7 +38,7 @@ indexpage:
           url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
     - title: Custom dashboards
       links:
-        - title: Custom dashboards overview
+        - title: Learn about custom dashboards
           url: /learn-custom-dashboards.html
         - title: Create a custom dashboard
           url: /create-custom-dashboard.html
