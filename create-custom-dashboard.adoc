@@ -39,6 +39,8 @@ If this is your first dashboard, you'll see a blank screen with sample prompts t
 +
 Describe it in plain language. The AI will ask a few questions to better understand your needs. 
 
+. Select image:arrow.png[The menu icon is used to begin generating dashboards., width=18].
+
 . Respond to the AI's clarifying questions.
 +
 The AI might ask you to choose from several options to better understand what you need. Answer each question and select *Continue*, or select *Skip* to move past optional questions.
