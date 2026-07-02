@@ -103,6 +103,9 @@ View the required IAM policies:
         "fsx:DetachAndDeleteS3AccessPoint",
         "s3:CreateAccessPoint",
         "s3:DeleteAccessPoint",
+        "s3:TagResource",
+        "s3:UntagResource",
+        "s3:ListTagsForResource",
         "s3:GetObjectTagging",
         "bedrock:InvokeModelWithResponseStream",
         "bedrock:InvokeModel",
@@ -127,6 +130,19 @@ View the required IAM policies:
         "s3:ListBucket"
       ],
       "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "cloudtrail:PutEventSelectors",
+        "cloudtrail:GetEventSelectors"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "aws:ResourceTag/netapp-fsx-s3-metadata": "journal"
+        }
+      }
     },
     {
       "Effect": "Allow",
@@ -506,6 +522,16 @@ s3tables:GetNamespace
 |Retrieve object tagging via access point
 |s3:GetObjectTagging
 |S3 object operations
+|Operations and remediation
+
+|Retrieve the current event selector configuration of your AWS CloudTrail trail
+|cloudtrail:GetEventSelectors
+|S3 access point journal operations
+|Operations and remediation
+
+|Configure or update the AWS CloudTrail event selectors by enabling or disabling the association between the FSx for ONTAP S3 access point and your CloudTrail trail
+|cloudtrail:PutEventSelectors
+|S3 access point journal operations
 |Operations and remediation
 
 |===
