@@ -524,12 +524,12 @@ s3tables:GetNamespace
 |S3 object operations
 |Operations and remediation
 
-|Retrieve the current event selector configuration of your AWS CloudTrail trail
+|Retrieve the current event selector configuration of the AWS CloudTrail trail
 |cloudtrail:GetEventSelectors
 |S3 access point journal operations
 |Operations and remediation
 
-|Configure or update the AWS CloudTrail event selectors by enabling or disabling the association between the FSx for ONTAP S3 access point and your CloudTrail trail
+|Configure or update the AWS CloudTrail event selectors by enabling or disabling the association between the FSx for ONTAP S3 access point and the CloudTrail trail
 |cloudtrail:PutEventSelectors
 |S3 access point journal operations
 |Operations and remediation
