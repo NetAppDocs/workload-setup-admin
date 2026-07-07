@@ -44,6 +44,16 @@ sidebar:
           url: /well-architected-workloads.html  
         - title: Configure notifications
           url: /configure-notifications.html
+        - title: Custom dashboards
+          entries:
+            - title: Learn about custom dashboards
+              url: /learn-custom-dashboards.html
+            - title: Create a custom dashboard
+              url: /create-custom-dashboard.html
+            - title: Manage custom dashboards
+              url: /manage-custom-dashboards.html
+            - title: Troubleshoot custom dashboards
+              url: /troubleshoot-custom-dashboards.html
         - title: Automate tasks using Codebox
           entries:
             - title: Learn about Codebox

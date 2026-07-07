@@ -35,7 +35,15 @@ indexpage:
         - title: Analyze error logs for database workloads
           url: https://docs.netapp.com/us-en/workload-databases/analyze-error-logs.html
         - title: View and analyze EMS events for storage workloads
-          url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html            
+          url: https://docs.netapp.com/us-en/workload-fsx-ontap/analyze-events.html
+    - title: Custom dashboards
+      links:
+        - title: Learn about custom dashboards
+          url: /learn-custom-dashboards.html
+        - title: Create a custom dashboard
+          url: /create-custom-dashboard.html
+        - title: Manage custom dashboards
+          url: /manage-custom-dashboards.html
     - title: Blogs & community
       links:
         - title: NetApp Console
