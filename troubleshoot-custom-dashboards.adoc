@@ -33,9 +33,8 @@ Use this information to resolve common issues you might encounter when creating 
 
 **Solution:**
 
-* **Check permissions:** Make sure your Workload Factory account has read access to the workloads and resources used by the dashboard. Review the permissions requirements in link:learn-custom-dashboards.html#permissions[Permissions].
+* **Check permissions:** Make sure your Workload Factory account has read access to the workloads and resources used by the dashboard. Review the permissions requirements in link:learn-custom-dashboards.html#aws-credentials-and-permissions[AWS credentials and permissions].
 * **Verify credentials:** Confirm that your AWS credentials are valid and have not expired. See link:add-credentials.html[Add AWS credentials] for details.
-* **Confirm workload configuration:** Ensure the workloads you want to monitor are correctly configured in Workload Factory and are currently running.
 
 == Dashboard not loading or loading slowly
 
@@ -50,9 +49,10 @@ Use this information to resolve common issues you might encounter when creating 
 * **Clear your browser cache and cookies:** This can help resolve loading issues caused by outdated or corrupted data.
 * **Wait and try again:** If the problem continues, wait a few minutes and try again.
 
+////
 == Cannot edit dashboard
 
-**Problem:** When you try to edit a dashboard, you see the message “Currently being edited by [user name].”
+**Problem:** When you try to edit a dashboard, you see the message "Currently being edited by [user name]."
 
 **Cause:** Another user in your Workload Factory account is editing the dashboard. Only one user can edit a dashboard at a time.
 
@@ -61,6 +61,7 @@ Use this information to resolve common issues you might encounter when creating 
 * Wait for the other user to finish and save their changes.
 * Contact the person shown in the message to coordinate editing.
 * If the user is no longer editing but the lock remains, ask them to close the edit window to release the lock.
+////
 
 == Missing dashboards
 

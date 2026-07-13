@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar
 permalink: manage-custom-dashboards.html
-keywords: manage dashboards, edit dashboard, delete dashboard, refresh dashboard, dashboard catalog
-summary: "Access your dashboard catalog to view, edit, refresh, and delete custom dashboards in Workload Factory."
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog
+summary: "Access your dashboard catalog to view, refresh, and delete custom dashboards in Workload Factory."
 ---
 
 = Manage custom dashboards
@@ -10,13 +10,13 @@ summary: "Access your dashboard catalog to view, edit, refresh, and delete custo
 :imagesdir: ./media/
 
 [.lead]
-Manage your custom dashboards from the dashboard catalog. From there, you can view details, refresh data, edit dashboard settings, or delete dashboards you no longer need.
+Manage your custom dashboards from the dashboard catalog. From there, you can view details, refresh data, or delete dashboards you no longer need.
 
 .About this task
 
-All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name, the creation date, and whether someone is currently editing it.
+All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name and the creation date.
 
-Custom dashboards are read-only. They cannot change your storage or workload settings. You can edit the dashboard itself, but not the resources it monitors.
+Custom dashboards are read-only. They cannot change your storage or workload settings. 
 
 .Before you begin
 
@@ -39,7 +39,8 @@ Dashboard data loads when you open a dashboard. You can refresh it to see the la
 
 The dashboard reloads data from your workloads. The last updated time changes to show when the data was refreshed.
 
-== Edit a dashboard
+////
+    
 
 You can edit a dashboard to change what it shows, including the metrics and charts.
 
@@ -60,6 +61,7 @@ This process is similar to creating a new dashboard. You can change the workload
 .Result
 
 The dashboard updates with your changes. The last modified date also updates.
+////
 
 == Delete a dashboard
 
