@@ -20,11 +20,6 @@ Once created, you can refresh the dashboard to see updated data.
 
 Remember that custom dashboards are read-only by design and cannot make changes to your storage or workload configurations.
 
-.Before you begin
-
-* You need permission to access the resources you want to monitor on your dashboard.
-* Set up your workloads in Workload Factory before creating dashboards to monitor them.
-
 == Create a dashboard
 
 .Steps
@@ -55,7 +50,6 @@ Your custom dashboard is now in the dashboard catalog. All users in your Workloa
 After creation, you can:
 
 * Refresh dashboard data to see the latest information  
-* Edit dashboards to change what they show  
 * Delete dashboards you no longer need  
 * View dashboard details, including who created it and when it was last updated
 

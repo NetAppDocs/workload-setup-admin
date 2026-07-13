@@ -37,11 +37,17 @@ During setup, the AI-guided dialog helps you define:
 
 == Considerations and limitations
 
-=== Permissions
+=== AWS credentials and permissions
 
 To create or view custom dashboards, you need the correct AWS IAM permissions for the resources you want to monitor. Make sure the Workload Factory account has read access to the data sources used by the dashboards.
 
 link:add-credentials.html[Learn how to add AWS credentials and set up IAM permissions^].
+
+=== Link to FSx for ONTAP
+
+Workload Factory requires a Link to connect to FSx for ONTAP file systems. A Link creates a trust relationship and connectivity between Workload Factory and one or more FSx for ONTAP file systems. This enables you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+
+https://docs.netapp.com/us-en/workload-fsx-ontap/create-link.html[Learn how to create a link^].
 
 === Read-only design
 
@@ -52,8 +58,6 @@ Custom dashboards are read-only. They cannot change your storage or workload set
 The following limitations currently apply to custom dashboards:
 
 * You cannot share dashboards outside your Workload Factory account
-* Only one user can edit a dashboard at a time
-* Concurrent editing is not supported
 
 === Demo environment
 
