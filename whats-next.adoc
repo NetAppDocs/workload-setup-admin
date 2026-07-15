@@ -20,10 +20,6 @@ Assess and analyze current data estates for potential cost savings by using FSx 
 +
 Detect your existing database estate on AWS, assess potential cost savings by moving to FSx for ONTAP, deploy databases end-to-end with built-in best practices for optimization, and automate thin cloning for CI/CD pipelines.
 
-* https://docs.netapp.com/us-en/workload-genai/index.html[GenAI^]
-+
-Deploy and manage a Retrieval-Augmented Generation (RAG) infrastructure to improve the accuracy and uniqueness of your AI applications. Create a RAG knowledge base on FSx for ONTAP with built-in data security and compliance.
-
 * https://docs.netapp.com/us-en/workload-vmware/index.html[VMware workloads^]
 +
 Streamline migrations and operations with smart recommendations and automatic remediation. Deploy efficient backups and robust disaster recovery. Monitor and troubleshoot your VMs.
