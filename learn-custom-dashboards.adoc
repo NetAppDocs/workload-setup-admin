@@ -41,6 +41,8 @@ During setup, the AI-guided dialog helps you define:
 
 To create or view custom dashboards, you need the correct AWS IAM permissions for the resources you want to monitor. Make sure the Workload Factory account has read access to the data sources used by the dashboards.
 
+To build dashboards, Workload Factory uses read-only AWS credentials. These credentials allow only read actions, such as `fsx:DescribeVolumes` and `fsx:DescribeFileSystems`, for the following services: EC2, FSx, CloudWatch, Resource Groups Tagging API, Backup, CloudWatch Logs, KMS, and EFS.
+
 link:add-credentials.html[Learn how to add AWS credentials and set up IAM permissions^].
 
 === Link to FSx for ONTAP

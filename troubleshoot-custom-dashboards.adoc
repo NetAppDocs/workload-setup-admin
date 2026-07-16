@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: troubleshoot-custom-dashboards.html
 keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, failed to load, dashboard not loading
-summary: "Resolve common issues with custom dashboards including creation failures, data loading problems, and access issues."
+summary: "Fix common problems with custom dashboards, including setup failures, data loading issues, and access problems."
 ---
 
 = Troubleshoot custom dashboards
@@ -67,7 +67,7 @@ Use this information to resolve common issues you might encounter when creating 
 
 **Problem:** A dashboard you created is no longer listed in the dashboard catalog.
 
-**Cause:** Another user in your Workload Factory account may have deleted it.
+**Cause:** Another user in your Workload Factory account might have deleted it.
 
 **Solution:**
 
