@@ -97,7 +97,7 @@ You don't need a link to get started with Workload Factory, but in some cases yo
 
 Links currently leverage AWS Lambda.
 
-https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about Links^]
+https://docs.netapp.com/us-en/workload-fsx-ontap/links-overview.html[Learn more about links^]
 
 === Codebox automation
 
