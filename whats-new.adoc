@@ -12,6 +12,16 @@ summary: "Learn what's new with Workload Factory administration features like cl
 [.lead]
 Learn what's new with Workload Factory administration features like cloud provider credentials, Codebox enhancements, and more.
 
+// START: Gen AI features administration addition (2026-07-17)
+== 03 August 2026
+
+include::_whatsnew/2026-08-03.adoc[]
+
+== 05 July 2026
+
+include::_whatsnew/2026-07-05.adoc[]
+// END: Gen AI features administration addition (2026-07-17)
+
 == 31 May 2026
 
 include::_whatsnew/2026-05-31.adoc[]
