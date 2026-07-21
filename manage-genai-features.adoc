@@ -1,4 +1,4 @@
-// START: New file for Gen AI features administration (2026-07-17)
+
 ---
 sidebar: sidebar
 permalink: manage-genai-features.html
@@ -133,4 +133,3 @@ Termination behavior may vary by feature. See the feature-specific documentation
 * link:learn-custom-dashboards.html[Learn about Custom dashboards]
 * link:add-credentials.html[Add AWS credentials]
 * link:permissions-reference.html[Permissions reference]
-// END: New file for Gen AI features administration (2026-07-17)

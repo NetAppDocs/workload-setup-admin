@@ -20,9 +20,7 @@ Once created, you can refresh the dashboard to see updated data.
 
 Remember that custom dashboards are read-only by design and cannot make changes to your storage or workload configurations.
 
-// START: Gen AI features administration addition (2026-07-17)
-NOTE: If your account admin has turned off AI features, you’ll see a message and won’t be able to create dashboards. Contact your administrator or link:manage-genai-features.html[learn about Gen AI administration].
-// END: Gen AI features administration addition (2026-07-17)
+NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to create dashboards. Contact your administrator or link:manage-genai-features.html[learn about Gen AI administration].
 
 == Create a dashboard
 

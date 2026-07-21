@@ -1,4 +1,4 @@
-=== Gen AI features administration
+=== AI features administration
 
 As a Workload Factory administrator, you can control access to AI features across your organization.
 
