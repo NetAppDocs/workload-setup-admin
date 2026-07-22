@@ -3,7 +3,8 @@
 sidebar: sidebar
 permalink: manage-genai-features.html
 keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, sam, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration
-summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities, use NetApp-managed AWS Bedrock, or bring your own model with custom AWS Bedrock configuration.
+summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities or use NetApp-managed AWS Bedrock.
+//, or bring your own model with custom AWS Bedrock configuration.
 ---
 
 = Manage AI features
@@ -14,47 +15,39 @@ summary: "Control access to Bedrock-based AI features in Workload Factory. You c
 :imagesdir: ./media/
 
 [.lead]
-Control access to AI features in Workload Factory. You can turn off AI features, use AWS Bedrock managed by NetApp, or use your own model with a custom AWS Bedrock setup.
+Control access to AI features in Workload Factory. You can turn off AI features or use AWS Bedrock managed by NetApp. 
+//, or use your own model with a custom AWS Bedrock setup.
 
 == About AI features
 
-Workload Factory includes several AI-powered features that enhance your experience:
+Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, custom dashboards, and analyzers for EMS, database logs, and latency.
 
-* *Ask Me*: AI assistant for managing and operating FSx for ONTAP file systems
-* *Custom dashboards*: AI-powered dashboards tailored to your workload priorities
-* *Rules builder*: Create intelligent automation rules for your workloads
-* *CloudShell AI*: AI-enhanced command-line assistance
-* *SAM*: Smart automation and management capabilities
-* *EMS Analyzer*: Analyze Event Management System events with AI insights
-* *DB Log Analyzer*: Intelligent database log analysis
-* *Latency analyzer*: AI-powered performance analysis
-
-As a Workload Factory administrator, you can control how these features use AI on the Gen AI Features Administration page.
+As a Workload Factory administrator, you can control how these features use AI on the AI settings page.
 
 == Configuration options
 
 Choose from these setup options:
 
-NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service with Anthropic models. This option is recommended for most users.
+NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service. This option is recommended for most users.
 +
 * Your data is not used to train models
 * Monthly usage credits are shared across your organization
 * No additional AWS setup is required
 
-Customer-managed Bedrock:: Set up your own AWS Bedrock instance and choose a model or inference profile.
-+
-* Use your own AWS Bedrock resources  
-* Choose and configure your own models  
-* Requires additional AWS IAM permissions  
-* You are responsible for AWS Bedrock costs
+//Customer-managed Bedrock:: Set up your own AWS Bedrock instance and choose a model or inference profile.
+//+
+//* Use your own AWS Bedrock resources  
+//* Choose and configure your own models  
+//* Requires additional AWS IAM permissions  
+//* You are responsible for AWS Bedrock costs
 
 GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, analyzers, custom dashboards, rules builder, or other AI-powered tools.
 
 == Before you begin
 
-* You must be an account admin to set up AI features.
+* We recommend that an account admin set up AI features.
 
-* For custom setup, add AWS credentials with the required IAM permissions to Workload Factory.
+//* For custom setup, add AWS credentials with the required IAM permissions to Workload Factory.
 
 == Configure AI features
 
@@ -67,24 +60,24 @@ GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, 
 . On the *AI settings* page, select your preferred configuration:
 
 * *NetApp-managed Bedrock (Recommended)*: Use NetApp-managed AWS Bedrock.
-* *Customer-managed Bedrock*: Use your own AWS Bedrock instance.
+//* *Customer-managed Bedrock*: Use your own AWS Bedrock instance.
 * *Gen AI features off*: Turn off all AI features.
 
-. If you selected *Customer-managed Bedrock*, complete the additional configuration:
+//. If you selected *Customer-managed Bedrock*, complete the additional configuration:
 
-.. In the *Connect your AWS account* section, select your AWS credentials and the AWS region where your Bedrock instance is located.
+//.. In the *Connect your AWS account* section, select your AWS credentials and the AWS region where your Bedrock instance is located.
 
-.. In the *Inference Profile ARN or ID* field, enter the ARN or identifier for your Bedrock inference profile or model.
+//.. In the *Inference Profile ARN or ID* field, enter the ARN or identifier for your Bedrock inference profile or model.
 
-.. Select *Validate Connection* to verify that Workload Factory can connect to your Bedrock instance.
-+
-A notification shows whether the connection was successful.
+//.. Select *Validate Connection* to verify that Workload Factory can connect to your Bedrock instance.
+//+
+//A notification shows whether the connection was successful.
 
 . Select *Save preferences*.
 
 .Result
 
-Your settings are saved and applied immediately to all AI features in Workload Factory. The page shows who last updated the settings and when.
+Your settings are saved and applied immediately to all AI features in Workload Factory. You can view in Tracker who last updated the settings and when.
 
 If AI features are turned off, users see a message when they try to use AI-powered features. The interface remains visible and clearly shows that the feature is unavailable.
 
@@ -96,12 +89,12 @@ NetApp manages budget controls for AI features when using the default, NetApp-ma
 
 Each account has a monthly spending limit for each AI feature when using NetApp-managed Bedrock.
 
-=== When budget is exceeded
+=== When budget is reached
 
-If your account goes over the monthly budget limit, Workload Factory will:
+If your account reaches the monthly budget limit, Workload Factory will:
 
 * Turn off AI features and gray out related parts of the interface
-* Show this message at the top of affected pages: “Monthly AI credits reached. Contact NetApp Support.”
+* Show this message as a tooltip: “Monthly AI credits reached. Contact NetApp Support.”
 * Log usage for tracking purposes
 
 === Request additional credits
