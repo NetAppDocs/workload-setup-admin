@@ -40,9 +40,9 @@ Use service accounts to automate NetApp Workload Factory operations securely and
 
 Ask Me AI assistant::
 Ask the AI assistant questions about managing and operating FSx for ONTAP file systems. Using the Model Context Protocol (MCP), Ask Me securely interfaces with external environments and queries API tools to deliver responses tailored to your specific storage environment.
-// START: Gen AI features administration addition (2026-07-17)
-Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant will not be available.link:manage-genai-features.html[Learn about managing AI features].
-// END: Gen AI features administration addition (2026-07-17) 
+
+NOTE: Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant will not be available. link:manage-genai-features.html[Learn about managing AI features].
+
 
 == Supported cloud providers
 
