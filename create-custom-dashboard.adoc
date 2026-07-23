@@ -44,13 +44,18 @@ The AI might ask you to choose from several options to better understand what yo
 
 . After answering all questions, select *Continue* to create your dashboard.
 
+Your dashboard is being created. This might  take a moment.
+
 .Result
 
-Your custom dashboard is now in the dashboard catalog. All users in your Workload Factory account can access and view it.
+Your custom dashboard is created and added to the dashboard catalog. By default, the dashboard is private and only visible to you. You can change the visibility to public if you want to share it with other users in your Workload Factory account. link:manage-custom-dashboards.html#change-dashboard-visibility[Learn how to change dashboard visibility].
+
+You'll get a notification when your dashboard is ready. If it can't be created, you'll get a notification with a link to try again. link:configure-notifications.html[Learn about configuring notifications].
 
 .What's next
 After creation, you can:
 
+* Change dashboard visibility to share with your team
 * Refresh dashboard data to see the latest information  
 * Delete dashboards you no longer need  
 * View dashboard details, including who created it and when it was last updated
