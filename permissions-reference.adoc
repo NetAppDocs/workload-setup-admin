@@ -23,11 +23,6 @@ For database workloads for example, when Workload Factory is granted with the re
 == Permissions by workload
 Each workload uses permissions to perform certain tasks in Workload Factory. Permissions are bundled into set permission policies. Scroll to the workload you use to learn about the permission policies, copiable JSON for the permission policies, and a table that lists all permissions, their purpose, where they are used, and which permission policies support them. 
 
-//[NOTE]
-//====
-//To use custom AI settings with your own AWS Bedrock model, add the required Bedrock permissions to your IAM policy. link:manage-genai-features.html[Learn more about managing AI features].
-//====
-
 === Permissions for Storage
 The IAM policies available for Storage provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment.
 
@@ -424,20 +419,6 @@ a|
 | bedrock:InvokeModel
 | FSx for ONTAP EMS analysis
 | Operations and remediation
-
-//.4+| Enable custom configuration for AI features using your own AWS Bedrock instance
-//| bedrock:ListInferenceProfiles
-//| Custom AI features configuration
-//| View, planning, and analysis
-//| bedrock:GetInferenceProfile
-//| Custom AI features configuration
-//| View, planning, and analysis
-//| bedrock:InvokeModel
-//| Custom AI features configuration
-//| View, planning, and analysis
-//| bedrock:InvokeModelWithResponseStream
-//| Custom AI features configuration
-//| View, planning, and analysis
 
 .2+| Get cost and usage data for FSx for ONTAP file systems from AWS Cost Explorer
 | ce:GetCostAndUsage

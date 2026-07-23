@@ -31,7 +31,6 @@ As a Workload Factory administrator, you can control access to AI features acros
 You can:
 
 * Use NetApp-managed Bedrock (recommended and enabled by default, with monthly credit limits)
-//* Use your own AWS Bedrock setup with custom configuration
 * Turn off all AI features
 
 AI features include Ask Me, custom dashboards, rule builder, and analyzers for EMS, database logs, and latency.
@@ -39,6 +38,5 @@ AI features include Ask Me, custom dashboards, rule builder, and analyzers for E
 The new administration page lets you manage these settings in one place.
 
 If AI features are turned off, users will see a message that AI is unavailable. 
-// Using your own AWS Bedrock configuration requires additional AWS IAM permissions for Bedrock access.
 
 link:manage-genai-features.html[Learn about managing AI features]
