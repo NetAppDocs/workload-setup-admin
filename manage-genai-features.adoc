@@ -1,4 +1,3 @@
-
 ---
 sidebar: sidebar
 permalink: manage-genai-features.html
