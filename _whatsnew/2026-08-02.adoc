@@ -2,4 +2,14 @@
 
 We have improved the onboarding experience in the Workload Factory console to provide a more guided and intuitive setup process for new users. The updated experience helps you quickly add credentials and associate a link with your FSx for ONTAP file systems. Select *Get started* from any workload on the home page to begin the onboarding process. 
 
-//add screenshot    
+//add screenshot   
+
+=== Updated IAM permission policies for Databases
+
+Permissions for Databases were updated to improve feature access and limit SSM access where unnecessary.
+
+The view, planning, and analysis permissions are limited to the AWS SSM documents related to Databases. With these permissions, you can view hosts, instances, and databases. You can also run an on-demand well-architected analysis of your resources. 
+
+The operations and remediation permissions allow you to make changes to your resources, analyze error logs, and apply recommended actions based on the well-architected analysis.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html[Permissions reference]
