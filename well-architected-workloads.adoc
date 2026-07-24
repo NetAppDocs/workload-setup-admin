@@ -13,9 +13,6 @@ Workload Factory, the NetApp management suite for Amazon FSx for NetApp ONTAP, h
 
 include::_include/well-architected-workloads.adoc[]
 
-You can also create custom rules in plain language to validate your environments against your organization's standards and NetApp best practices. Test rules with a dry run, then schedule them to run across your environments.
-link:https://docs.netapp.com/us-en/workload-well-architected/learn-custom-rules.html[Learn more about custom rules^].
-
 == Get started with Workload Factory to detect and fix workload misconfigurations 
 
 To get started with Workload Factory, sign up, add credentials, and establish connectivity to manage AWS resources and optimize workloads using Amazon FSx for NetApp ONTAP.
