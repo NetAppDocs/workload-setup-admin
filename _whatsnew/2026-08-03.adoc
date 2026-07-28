@@ -1,6 +1,6 @@
 === Custom dashboards
 
-* **Notifications for custom dashboards**
+==== Notifications for custom dashboards
 
 Workload Factory now notifies you when your custom dashboard is ready or if creation fails.
 
@@ -12,7 +12,7 @@ link:create-custom-dashboard.html[Learn how to create custom dashboards]
 
 link:configure-notifications.html[Learn about configuring notifications]
 
-* **Private and public custom dashboards**
+==== Private and public custom dashboards
 
 Custom dashboards now include share settings. You can keep a dashboard private or share it with your team.
 
