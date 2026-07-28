@@ -4,7 +4,7 @@
 
 Workload Factory now notifies you when your custom dashboard is ready or if creation fails.
 
-After you create a custom dashboard, you'll get a notification with a direct link to view it. If creation fails, you'll get a notification with a link to try again using your original prompt.
+After you create a custom dashboard, you'll get a notification with a direct link to view it. If creation fails, you'll get a notification with a link to the custom dashboard inventory to try again.
 
 This helps you know when your dashboard is ready and makes it easy to review or recreate it.
 
@@ -14,28 +14,26 @@ link:configure-notifications.html[Learn about configuring notifications]
 
 * **Private and public custom dashboards**
 
-Custom dashboards now include visibility settings. You can keep a dashboard private or share it with your team.
+Custom dashboards now include share settings. You can keep a dashboard private or share it with your team.
 
 New dashboards are private by default and visible only to you. You can make a dashboard public at any time to share it with everyone in your Workload Factory account.
 
-Each dashboard card shows a visibility label — Private or Public — so you can quickly see which dashboards are shared.
+Each dashboard card shows a Private or Public label so you can quickly see which dashboards are shared.
 
 link:learn-custom-dashboards.html#dashboard-visibility-and-sharing[Learn about dashboard visibility and sharing]
 
-link:manage-custom-dashboards.html#change-dashboard-visibility[Learn how to change dashboard visibility]
+link:manage-custom-dashboards.html#change-dashboard-visibility[Learn how to share dashboards]
 
 === AI features administration
 
-As a Workload Factory administrator, you can control access to AI features across your organization.
-
-You can:
+You can control access to AI features across your organization with the following settings in Workload Factory administration.
 
 * Use NetApp-managed Bedrock (recommended and enabled by default, with monthly credit limits)
 * Turn off all AI features
 
-AI features include Ask Me, custom dashboards, rule builder, and analyzers for EMS, database logs, and latency.
-
 The new administration page lets you manage these settings in one place.
+
+AI features include Ask Me, custom dashboards, rule builder, and analyzers for EMS, database logs, and volume latency.
 
 If AI features are turned off, users will see a message that AI is unavailable. 
 
