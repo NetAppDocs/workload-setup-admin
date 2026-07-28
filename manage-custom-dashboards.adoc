@@ -10,7 +10,7 @@ summary: "Access your dashboard catalog to view, refresh, and delete custom dash
 :imagesdir: ./media/
 
 [.lead]
-Manage your custom dashboards from the dashboard catalog. From there, you can view details, refresh data, or delete dashboards you no longer need.
+Manage your custom dashboards from the dashboard catalog. From there, you can view details, share dashboards, refresh data, or delete dashboards you no longer need.
 
 .About this task
 
