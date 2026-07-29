@@ -1,9 +1,3 @@
-=== New onboarding experience in Workload Factory console
-
-We have improved the onboarding experience in the Workload Factory console to provide a more guided and intuitive setup process for new users. The updated experience helps you quickly add credentials and associate a link with your FSx for ONTAP file systems. Select *Get started* from any workload on the home page to begin the onboarding process. 
-
-//add screenshot   
-
 === Updated IAM permission policies for Databases
 
 Permissions for Databases were updated to improve feature access and limit SSM access where unnecessary.
