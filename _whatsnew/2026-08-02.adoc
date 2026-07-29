@@ -2,9 +2,9 @@
 
 Permissions for Databases were updated to improve feature access and limit SSM access where unnecessary.
 
-The view, planning, and analysis permissions are limited to the AWS SSM documents related to Databases. With these permissions, you can view hosts, instances, and databases. You can also run an on-demand well-architected analysis of your resources. 
+The view, planning, and analysis permissions are limited to AWS SSM documents. With these permissions, you can view hosts, instances, and databases. You can also run a basic on-demand well-architected analysis of your resources. 
 
-The operations and remediation permissions allow you to make changes to your resources, analyze error logs, and apply recommended actions based on the well-architected analysis.
+The operations and remediation permissions allow you to make changes to your resources, analyze error logs, get a comprehensive well-architected analysis of your resources and fix configuration issues.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/permissions-reference.html[Permissions reference]
 
