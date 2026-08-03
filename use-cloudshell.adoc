@@ -25,6 +25,8 @@ CloudShell features include:
 * AI-generated error responses for ONTAP CLI commands
 * Autocomplete support: start typing a command and use the *Tab* key to view available options
 
+NOTE: If your account administrator has turned off AI features, AI-generated error responses will not be available. link:manage-genai-features.html[Learn about managing AI features].
+
 == CloudShell commands
 Within the CloudShell GUI interface, you can enter `help` to view available CloudShell commands. After you issue the `help` command, the following reference appears. 
 

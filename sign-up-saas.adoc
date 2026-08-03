@@ -53,6 +53,8 @@ image:screenshot-account-selection-govcloud.png[A screenshot of the Account page
 
 .. Enter a name for the account.
 .. Optionally, make the account an AWS GovCloud (US) account. This account type uses only AWS GovCloud (US) endpoints and regions for setup and operations. Credentials and secrets remain in GovCloud. This selection is permanent.
++
+NOTE: Workload Factory's AI features use AWS Bedrock services hosted in public AWS regions. If your security policies do not allow connections to public region services, you can turn off AI features in the Administration settings. link:manage-genai-features.html[Learn about managing AI features].
 .. Optionally, provide a job description for the account.
 
 . Select *Create* and the Workload Factory home page is displayed.
