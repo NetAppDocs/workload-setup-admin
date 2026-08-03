@@ -8,6 +8,10 @@ You can dismiss the analysis of configurations that do not apply to your environ
 
 You can also create custom rules in plain language to validate your environments against your organization's standards and NetApp best practices. Test rules with a dry run, then schedule them to run across your environments. link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html[Learn more about custom rules^].
 
+You can also create custom rules in plain language to validate your environments against your organization's standards and NetApp best practices. Test rules with a dry run, then schedule them to run across your environments.
+
+link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html[Learn more about custom rules^].
+
 == Why it matters
 
 Workload Factory applies best practices to large storage, database, and VMware environments by combining ongoing assessment with recommendation insights and remediation. Automated fixes applied in the Workload Factory console reduce human error, ensure uniform management, and preserve performance and reliability across your workload infrastructures.
