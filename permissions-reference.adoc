@@ -1880,9 +1880,9 @@ As permissions are added and removed, we'll note them in the sections below.
 
 Permissions for Databases were updated to improve feature access and limit SSM access where unnecessary.
 
-The view, planning, and analysis permissions are limited to the AWS SSM documents related to Databases. With these permissions, you can view hosts, instances, and databases. You can also run an on-demand well-architected analysis of your resources. 
+The view, planning, and analysis permissions are limited to the AWS SSM documents. With these permissions, you can view hosts, instances, and databases. You can also run a basic on-demand well-architected analysis of your resources. 
 
-The operations and remediation permissions allow you to make changes to your resources, analyze error logs, and apply recommended actions based on the well-architected analysis.
+The operations and remediation permissions allow you to get a comprehensive well-architected assessment, apply recommended actions based on the well-architected analysis, make changes to your resources, and analyze error logs.
 
 === 1 February 2026
 
