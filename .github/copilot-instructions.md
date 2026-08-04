@@ -55,3 +55,9 @@ Perform an operation in the Workload Factory console wizard → View generated I
 
 **Use CloudShell:**
 Open CloudShell from the Administration menu → Select credentials and region → Issue AWS CLI or ONTAP CLI commands → Optionally set FSx context with `using fsx <fileSystemId>` for ONTAP commands
+
+**Configure notifications:**
+Go to Administration → Notifications setup (from Workload Factory console or NetApp Console) → Enable notification types (Console alerts, email, or Amazon SNS) → Send a test notification → Apply
+
+**Create a custom dashboard:**
+Go to Workloads Overview → Custom dashboards → Select Create new dashboard → Describe monitoring needs in plain language in the AI dialog → Respond to clarifying questions → Continue to create the dashboard
