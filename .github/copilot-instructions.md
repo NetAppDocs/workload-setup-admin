@@ -25,13 +25,12 @@ NetApp Workload Factory is a cloud-based lifecycle management platform that help
 **Key concepts:**
 - A *workload* is a combination of resources, code, and services designed to serve a business goal; Workload Factory supports workloads for storage, databases, VMware, and EDA
 - *Permission policies* are IAM policies bundled by workload and permission level (for example, *View, planning, and analysis*; *Operations and remediation*; *File system creation and deletion*); each workload has its own policy set
-- *Operational modes* control access to the cloud estate: *basic*, *read-only*, and *read/write*
 - Credentials can be added *manually* (IAM policy and role created in AWS console) or *automatically* (via AWS CloudFormation stack); GovCloud credentials must be added manually
 - The *Automation Catalog* stores saved Codebox IaC jobs as reusable templates
 
 **Naming conventions and terminology:**
 - *FSx for ONTAP* refers to Amazon FSx for NetApp ONTAP; always use this abbreviated form after the first use
-- *Workload Factory* (not "WF" or "workload factory") is the product name; always capitalize both words
+- *NetApp Workload Factory* is the full product name; *Workload Factory* is the accepted short name; always capitalize both words in the short name
 - *Codebox* is a single word, capitalized
 - *CloudShell* is a single word, capitalized
 - *IAM role* and *IAM policy* follow AWS capitalization conventions
