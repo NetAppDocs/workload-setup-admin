@@ -10,13 +10,13 @@ summary: "Access your dashboard catalog to view, refresh, and delete custom dash
 :imagesdir: ./media/
 
 [.lead]
-Manage your custom dashboards from the dashboard catalog. From there, you can view details, refresh data, or delete dashboards you no longer need.
+Manage your custom dashboards from the dashboard catalog. From there, you can view details, share dashboards, refresh data, or delete dashboards you no longer need.
 
 .About this task
 
-All users in your Workload Factory account can access all custom dashboards. Each dashboard shows basic details such as the creator's name and the creation date.
+You can view and manage custom dashboards from the dashboard catalog. Private dashboards are only visible to you, while public dashboards are visible to all users in your Workload Factory account. Each dashboard shows basic details such as the creator’s name, the creation date, and a visibility label (Private or Public).
 
-Custom dashboards are read-only. They cannot change your storage or workload settings. 
+Custom dashboards are read-only. They cannot change your storage or workload settings.
 
 .Before you begin
 
@@ -32,6 +32,23 @@ You must have at least one custom dashboard in your Workload Factory account.
 The dashboard catalog shows all custom dashboards in your Workload Factory account.
 
 . Review the dashboard list.
+
+== Change dashboard visibility
+
+Make a dashboard public to share it with your team. Make it private to stop sharing it.
+
+.Steps
+
+. In the *Custom dashboards* page, locate the dashboard you want to update.
+
+. From the *Actions* drop-down menu image:icon-action.png[The three-dot icon that opens the actions menu] for that dashboard, select one of the following:
++
+* *Share dashboard* - Makes the dashboard visible to all users in your Workload Factory account
+* *Change to private dashboard* - Makes the dashboard visible only to you
+
+.Result
+
+The dashboard updates immediately. The visibility label on the dashboard card shows the current status.
 
 == Refresh dashboard data
 

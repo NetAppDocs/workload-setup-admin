@@ -1,0 +1,106 @@
+---
+sidebar: sidebar
+permalink: manage-genai-features.html
+keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration
+summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities or use NetApp-managed AWS Bedrock."
+---
+
+= Manage AI features
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Control access to AI features in Workload Factory. You can turn off AI features or use AWS Bedrock managed by NetApp. 
+
+== About AI features
+
+Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, custom dashboards, and analyzers for EMS, database logs, and latency.
+
+As a Workload Factory administrator, you can control how these features use AI on the AI settings page.
+
+== Configuration options
+
+Choose from these setup options:
+
+NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service. This option is recommended for most users.
++
+* Your data is not used to train models
+* Monthly usage credits are shared across your organization
+* No additional AWS setup is required
+
+GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, analyzers, custom dashboards, rules builder, or other AI-powered tools.
+
+== Before you begin
+
+* We recommend that an account admin set up AI features.
+
+== Configure AI features
+
+.Steps
+
+. Log in using one of the link:console-experiences.html[console experiences^].
+
+. From the menu, select *Administration* and then *AI settings*.
+
+. On the *AI settings* page, select your preferred configuration:
+
+* *NetApp-managed Bedrock (Recommended)*: Use NetApp-managed AWS Bedrock.
+
+* *Gen AI features off*: Turn off all AI features.
+
+. Select *Save preferences*.
+
+.Result
+
+Your settings are saved and applied immediately to all AI features in Workload Factory. You can view in Tracker who last updated the settings and when.
+
+If AI features are turned off, users see a message when they try to use AI-powered features. The interface remains visible and clearly shows that the feature is unavailable.
+
+== Budget controls and credit limits
+
+NetApp manages budget controls for AI features when using the default, NetApp-managed configuration.
+
+=== Monthly credit limits
+
+Each account has a monthly spending limit for each AI feature when using NetApp-managed Bedrock.
+
+=== When budget is reached
+
+If your account reaches the monthly budget limit, Workload Factory will:
+
+* Turn off AI features and gray out related parts of the interface
+* Show this message as a tooltip: “Monthly AI credits reached. Contact NetApp Support.”
+* Log usage for tracking purposes
+
+=== Request additional credits
+
+If you need more AI credits, contact your NetApp representative. They can adjust your credit limit based on your needs.
+
+[TIP]
+====
+To contact your NetApp representative about credit limits, use the in-product chat or visit the link:get-help.html[Get help] page.
+====
+
+== GovCloud considerations
+
+If you create a Workload Factory account in AWS GovCloud (US), note that AI features use AWS Bedrock services in public AWS Regions by default.
+
+If your security requirements do not allow connections to public AWS Region services, you can disable AI features.
+
+link:sign-up-saas.html[Learn about creating GovCloud accounts].
+
+== Impact on existing sessions
+
+When you change AI settings, any active AI sessions are softly terminated. Current workflows can finish, but new requests use the updated settings.
+
+Termination behavior may vary by feature. See the feature-specific documentation for details.
+
+== Related information
+
+* link:workload-factory-overview.html[Learn about Workload Factory features]
+* link:learn-custom-dashboards.html[Learn about Custom dashboards]
+* link:add-credentials.html[Add AWS credentials]
+* link:permissions-reference.html[Permissions reference]
