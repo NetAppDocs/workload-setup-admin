@@ -3,7 +3,7 @@
 ### Repository overview
 Product: NetApp Workload Factory
 
-NetApp Workload Factory is a cloud-based lifecycle management platform that helps users optimize workloads using Amazon FSx for NetApp ONTAP file systems. It is delivered as a SaaS console and supports workloads including databases, VMware migrations, AI chatbots, and general storage management on AWS.
+NetApp Workload Factory is a cloud-based lifecycle management platform that helps users optimize workloads using Amazon FSx for NetApp ONTAP file systems. It is delivered as a SaaS console and supports workloads including databases, VMware migrations, EDA projects, and general storage management on AWS.
 
 ### Repository structure
 - `_include/` – Shared AsciiDoc content fragments included across pages
