@@ -6,28 +6,6 @@ Product: NetApp Workload Factory
 NetApp Workload Factory is a cloud-based lifecycle management platform that helps users optimize workloads using Amazon FSx for NetApp ONTAP file systems. It is delivered as a SaaS console and supports workloads including databases, VMware migrations, AI chatbots, and general storage management on AWS.
 
 ### Repository structure
-- `workload-factory-overview.adoc` – Product overview covering features, architecture, key concepts (accounts, links, Codebox, permissions), and supported AWS regions
-- `quick-start.adoc` – Getting started guide: sign up, add credentials, start using FSx for ONTAP
-- `sign-up-saas.adoc` – Account creation and sign-up steps for the SaaS console
-- `add-credentials.adoc` – Adding AWS credentials manually or via CloudFormation to grant Workload Factory permissions to manage AWS resources
-- `manage-credentials.adoc` – Managing existing AWS credentials in a Workload Factory account
-- `permissions-reference.adoc` – Reference for IAM permission policies by workload (Storage, Databases, VMware, GenAI, Setup), including copiable JSON
-- `codebox-automation.adoc` – Overview of the Codebox IaC co-pilot feature and supported code formats
-- `use-codebox.adoc` – How to use Codebox to generate and save automation code
-- `use-cloudshell.adoc` – Using CloudShell within the Workload Factory console to issue AWS CLI and ONTAP CLI commands
-- `console-experiences.adoc` – Differences between the Workload Factory console and the NetApp Console access paths
-- `log-in.adoc` – Logging in to Workload Factory
-- `manage-service-accounts.adoc` – Creating and managing service accounts for API automation
-- `configure-notifications.adoc` – Configuring Workload Factory notification settings
-- `well-architected-workloads.adoc` – Well-architected analysis feature for FSx for ONTAP, SQL Server, and Oracle deployments
-- `whats-new.adoc` – Release notes for Workload Factory administration features
-- `whats-next.adoc` – Post-setup guidance pointing to workload-specific documentation
-- `support-registration.adoc` – Registering for NetApp support
-- `get-help.adoc` – Getting help and contacting support
-- `create-custom-dashboard.adoc` – Creating custom dashboards in Workload Factory
-- `learn-custom-dashboards.adoc` – Overview of custom dashboard capabilities
-- `manage-custom-dashboards.adoc` – Managing existing custom dashboards
-- `troubleshoot-custom-dashboards.adoc` – Troubleshooting custom dashboards
 - `_include/` – Shared AsciiDoc content fragments included across pages
 - `_whatsnew/` – Individual release note files included by `whats-new.adoc`
 - `media/` – Screenshots and images referenced in documentation
