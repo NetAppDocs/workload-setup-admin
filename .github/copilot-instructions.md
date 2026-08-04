@@ -35,7 +35,6 @@ NetApp Workload Factory is a cloud-based lifecycle management platform that help
 - *CloudShell* is a single word, capitalized
 - *IAM role* and *IAM policy* follow AWS capitalization conventions
 - *ARN* = Amazon Resource Name (used when registering IAM roles)
-- The plural *credentials* refers to a set of AWS IAM role-based access keys registered in Workload Factory, not individual access key pairs
 - *Link* (capitalized in context) refers specifically to the Workload Factory connectivity component using AWS Lambda, not a generic hyperlink
 - Permission policy levels use title case: *View, planning, and analysis*; *Operations and remediation*; *File system creation and deletion*
 
