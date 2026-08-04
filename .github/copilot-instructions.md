@@ -23,7 +23,7 @@ NetApp Workload Factory is a cloud-based lifecycle management platform that help
 - *Well-architected analysis* performs daily scans of FSx for ONTAP, SQL Server, and Oracle deployments and surfaces misconfigurations with remediation options
 
 **Key concepts:**
-- A *workload* is a combination of resources, code, and services designed to serve a business goal; Workload Factory supports workloads for storage, databases, VMware, and GenAI
+- A *workload* is a combination of resources, code, and services designed to serve a business goal; Workload Factory supports workloads for storage, databases, VMware, and EDA
 - *Permission policies* are IAM policies bundled by workload and permission level (for example, *View, planning, and analysis*; *Operations and remediation*; *File system creation and deletion*); each workload has its own policy set
 - *Operational modes* control access to the cloud estate: *basic*, *read-only*, and *read/write*
 - Credentials can be added *manually* (IAM policy and role created in AWS console) or *automatically* (via AWS CloudFormation stack); GovCloud credentials must be added manually
