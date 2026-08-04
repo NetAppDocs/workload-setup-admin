@@ -122,6 +122,19 @@ Workload Factory sends notifications for the following events:
 | Critical
 | General storage
 | FSx for ONTAP file systems
+| Custom dashboard creation succeeded
+| Your custom dashboard has been successfully created and is ready to view.
+| Custom Dashboards
+| Success
+| General storage
+| Workload Factory account
+
+| Custom dashboard creation failed
+| Workload Factory was unable to create your custom dashboard. Try creating the dashboard again.
+| Custom Dashboards
+| Error
+| General storage
+| Workload Factory account
 
 |===
 

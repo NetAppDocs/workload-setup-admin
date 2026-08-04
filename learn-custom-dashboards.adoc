@@ -16,6 +16,8 @@ Custom dashboards use AI to create personalized views of your Workload Factory e
 
 Everyone in your Workload Factory account can view all custom dashboards. This shared setup helps teams collaborate and see the same operational information across your organization.
 
+NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to create dashboards. Contact your administrator or link:manage-genai-features.html[learn about AI administration].
+
 == Why use custom dashboards
 
 Workload Factory users manage many workloads, environments, and priorities, but standard dashboards only show preset views. Custom dashboards help solve several operational challenges:
@@ -34,6 +36,17 @@ During setup, the AI-guided dialog helps you define:
 * Time ranges and periods to compare  
 * Views by region, workload, or other categories  
 * Rules or requirements you need to track and show
+
+== View and share dashboards
+
+New dashboards are private by default, so only you can see them. You can make a dashboard public at any time to share it with your team.
+
+* *Private dashboards*: Only you can view these dashboards. Use them for personal monitoring, testing, or work in progress.
+* *Public dashboards*: Everyone in your Workload Factory account can view these dashboards. Use them to share monitoring views and keep your team aligned on workloads, priorities, and business goals.
+
+Each dashboard card shows whether the dashboard is private or public, so you can quickly see which dashboards are shared.
+
+link:manage-custom-dashboards.html#change-dashboard-visibility[Learn how to change dashboard visibility].
 
 == Considerations and limitations
 
@@ -59,7 +72,7 @@ Custom dashboards are read-only. They cannot change your storage or workload set
 
 The following limitations currently apply to custom dashboards:
 
-* You cannot share dashboards outside your Workload Factory account
+* You cannot share dashboards outside your Workload Factory account. All dashboard sharing is limited to users within the same Workload Factory account.
 
 === Demo environment
 
