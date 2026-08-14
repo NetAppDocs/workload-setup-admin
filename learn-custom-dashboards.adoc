@@ -5,7 +5,7 @@ keywords: custom dashboards, dashboards, personalized dashboards, AI dashboards,
 summary: "Create AI-powered dashboards personalized to your workloads and priorities for enhanced operational visibility without being constrained by predefined views."
 ---
 
-= Learn about custom dashboards in Workload Factory
+= Learn about custom dashboards in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 

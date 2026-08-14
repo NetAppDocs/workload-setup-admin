@@ -5,7 +5,7 @@ keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules build
 summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities or use NetApp-managed AWS Bedrock."
 ---
 
-= Manage AI features in Workload Factory
+= Manage AI features in NetApp Workload Factory
 :hardbreaks:
 :nofooter:
 :icons: font

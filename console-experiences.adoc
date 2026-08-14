@@ -5,7 +5,7 @@ keywords: console, consoles, access, saas, Workload Factory, NetApp Workload Fac
 summary: "NetApp Workload Factory is accessible via two web-based consoles." 
 ---
 
-= Workload Factory console experiences
+= Console experiences for NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
