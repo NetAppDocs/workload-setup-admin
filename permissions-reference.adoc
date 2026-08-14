@@ -538,7 +538,7 @@ s3tables:GetNamespace
 
 ====
 
-=== Impacts of removing permissions from Storage IAM policies
+==== Impacts of removing permissions from Storage IAM policies
 For security reasons, you may want to remove some permissions from the Storage IAM policies. The following tables describe the impact of removing permissions from each policy.
 
 [%collapsible]
