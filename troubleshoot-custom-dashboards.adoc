@@ -5,7 +5,7 @@ keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, 
 summary: "Fix common problems with custom dashboards, including setup failures, data loading issues, and access problems."
 ---
 
-= Troubleshoot custom dashboards
+= Troubleshoot custom dashboards in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
