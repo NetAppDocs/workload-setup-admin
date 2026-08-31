@@ -1,0 +1,106 @@
+---
+sidebar: sidebar
+permalink: learn-agent.html
+keywords: agent, ai agent, sam, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agent settings
+summary: "Learn how AI agents for Workload Factory can analyze your environment, identify risks and ways to improve performance, and take actions for you with your approval."
+---
+
+= Learn about the AI agents in NetApp Workload Factory
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+AI agents help you manage your Workload Factory resources. They analyze your environment, identify risks and ways to improve performance, answer questions, and, with your permission, take actions for you.
+
+AI agents also improve the Ask Me experience by connecting more deeply to your Workload Factory environment using your configured credentials.
+
+NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to use the agents. Contact your administrator or link:manage-genai-features.html[learn about AI administration].
+
+== Why use AI agents
+
+AI agents help you manage and optimize your Workload Factory environment more effectively:
+
+* *Get environment-aware insights*: AI agents use your Workload Factory credentials to provide insights specific to your FSx for ONTAP file systems, databases, and other resources.
+* *Identify risks and opportunities*: AI agents analyze your environment to find setup problems, ways to improve performance, and potential issues before they affect your workloads.
+* *Get answers without context switching*: Ask questions about your environment and get answers based on your actual resource settings, without switching between tools or checking multiple dashboards.
+* *Troubleshoot issues quickly*: AI agents can identify problems and suggest fixes based on your setup.
+* *Automate actions with approval*: When you turn on read-write mode, AI agents can take actions for you, but only after you approve each one.
+
+== Access the AI agents
+
+From the Ask Me homepage:: On the Ask Me landing page, select  *Explore Agents*. The AI agents side panel opens with a welcome message introducing the agents' capabilities.
+
+From the agents redirection links:: When using **Ask Me** or other features, you might see links that redirect you to the agents for more advanced assistance.
+
+The first time you open the agents from **Explore Agents**, you'll see a welcome message introducing the agents and what they can do. You'll also see this message the first time you open the agents from any other entry point.
+
+== How AI agents work
+
+=== AI agents that understand credentials
+
+The agents use credentials that are configured in both link:manage-agent-settings.html[Agents settings] and your Global Filters:
+
+* In Agents settings, you select which of your AWS credentials the agents can use.
+* The agents only access credentials that are selected in both Agents settings and your current Global Filters. //what does that even mean???
+* If no credentials are set up, the agents can still be used but cannot access environment-specific information.
+
+If a credential is selected in your Global Filters but not enabled for agents access in Agents settings, you'll see a message:
+
+____
+Some credentials selected in the Global Filters are not enabled for agents access.
+
+To use them with the agents, update your selection in *Agents settings*.
+____
+
+You can access Agents settings at any time from *Administration* < *Settings* < *Agents* to manage credential access.
+
+=== Read-only experience for AI agents (default)
+
+By default, the agents operate in read-only mode. In this mode, the agents can:
+
+* Answer questions about your environment
+* Analyze your FSx for ONTAP file systems, databases, and workloads
+* Identify risks, misconfigurations, and optimization opportunities
+* Provide recommendations for improving performance, availability, protection, and cost-efficiency
+* Troubleshoot issues and suggest remediation steps
+
+The agents cannot perform actions or make changes to your resources when in read-only mode.
+
+If you request an action that needs write access, the agent will explain that it can't perform the action in read-only mode and will provide a link to Agents settings, where you can enable additional permissions.
+
+=== Read-write experience for AI agents (opt-in)
+
+You can enable read-write capabilities in link:manage-agent-settings.html[Agents settings]. When you opt in to read-write mode, the agents can perform supported actions on your behalf.
+
+Before executing any write operation, the agents must:
+
+* Summarize the requested action and its expected impact. 
+* Wait for your approval before proceeding.
+
+No write operation can be performed without your approval. You must select *Approve* before the agents can execute the action.
+
+If you do not approve the action, it will not run. This approval process applies to all agents experiences, including Slack integrations and the NetApp Console.
+
+== What users see when AI agents have no data or activity
+
+If you haven't added AWS credentials to your Workload Factory account, you can still use the agents. However, they can't analyze your resources or provide insights specific to your environment.
+
+The agents can help you add credentials and answer general questions about Workload Factory features and best practices.
+
+link:add-credentials.html[Learn how to add AWS credentials].
+
+== Considerations and limitations
+
+=== AWS credentials and permissions
+
+To use the agents, configure AWS credentials in your Workload Factory account and grant the required IAM permissions for the resources the agents will access.
+
+By default, the agents have read-only access. If you enable read-write mode, you must also grant IAM permissions that allow the agents to make changes to the AWS services they manage.
+
+link:add-credentials.html[Learn how to add AWS credentials and set up IAM permissions^].
+
+=== Data usage and privacy
+
+Your data is not used to train AI models. The agents use your credentials to securely access your AWS resources through standard AWS APIs and respond based on your actual environment.
+
+All agent activity follows NetApp's privacy policies and AWS security controls.
