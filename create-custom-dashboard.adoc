@@ -5,7 +5,7 @@ keywords: create dashboard, custom dashboard, AI dashboard, dashboard creation, 
 summary: "Create a custom dashboard using AI-guided prompts to monitor what matters most to your workloads and operational priorities."
 ---
 
-= Create a custom dashboard
+= Create a custom dashboard in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 

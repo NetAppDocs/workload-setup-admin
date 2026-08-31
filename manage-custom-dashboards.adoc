@@ -5,7 +5,7 @@ keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard cata
 summary: "Access your dashboard catalog to view, refresh, and delete custom dashboards in Workload Factory."
 ---
 
-= Manage custom dashboards
+= Manage custom dashboards in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
