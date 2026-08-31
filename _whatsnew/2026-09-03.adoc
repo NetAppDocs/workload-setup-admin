@@ -6,6 +6,6 @@ Access AI agents through the new Explore Agents section in **Ask Me**. By defaul
 
 Use **Agents settings** to choose which credentials the agents can access, add custom instructions, and adjust response detail levels.
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/learn-agent.html[Learn about AI agents]
+link:learn-agent.html[Learn about AI agents]
 
-link:https://docs.netapp.com/us-en/workload-setup-admin/manage-agent-settings.html[Manage agents settings]
+link:manage-agent-settings.html[Manage agents settings]
