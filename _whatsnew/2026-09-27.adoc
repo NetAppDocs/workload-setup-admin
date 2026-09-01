@@ -1,0 +1,4 @@
+=== Notifications update    
+NetApp Console notifications are now enabled by default. NetApp Console users will automatically receive Workload Factory notifications without additional configuration.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.html[Workload Factory notifications]
