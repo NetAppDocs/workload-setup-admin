@@ -186,9 +186,8 @@ After you create the topic, copy the topic ARN and enter it in the *SNS topic AR
 
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
 . From the Workload Factory console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
-. Enable one or more of the following notification types:
-+
-* *Email notifications*: Select *Enable email notifications*. Any email addresses associated with the account are displayed in read-only mode.
+
+* *Email notifications*: To receive email notifications, configure notification recipients and severity preferences in link:link:https://console.netapp.com[NetApp Console^] notification settings. 
 * *Amazon SNS notifications*: Select *Enable SNS notifications*, then follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
 After you verify the configuration by sending a test notification, select *Apply*.
