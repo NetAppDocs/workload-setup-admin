@@ -79,6 +79,8 @@ Before executing any write operation, the agents must:
 * Summarize the requested action and its expected impact. 
 * Wait for your approval before proceeding.
 
+In NetApp Console, you can view approved read-write agent actions in Tracker under *Agent*. For more details, see link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/use/task-monitor-operations.html#track-and-monitor-operations[Monitor operations with Tracker^].
+
 No write operation can be performed without your approval. You must select *Approve* before the agents can execute the action.
 
 If you do not approve the action, it will not run. This approval process applies to all agents experiences, including Slack integrations and the NetApp Console.

@@ -46,7 +46,7 @@ The agents' operation mode determines what actions the agents can perform:
 
 Read-only mode (default):: The agents can view and analyze your data, but they cannot change your resources. They can answer questions, identify risks, provide recommendations, and help troubleshoot issues.
 
-Read-write mode:: The agents can take actions for you using the credentials you choose. Before taking any action, they show you a summary and wait for your approval. They will not take any action without your approval.
+Read-write mode:: The agents can take actions for you using the credentials you choose. Before taking any action, they show you a summary and wait for your approval. They will not take any action without your approval. In NetApp Console, you can view approved read-write agent actions in Tracker under *Agent*. For more details, see link:https://docs.netapp.com/us-en/storage-management-fsx-ontap/use/task-monitor-operations.html#track-and-monitor-operations[Monitor operations with Tracker^].
 
 .Steps
 
