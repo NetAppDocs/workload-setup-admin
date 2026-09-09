@@ -141,6 +141,8 @@ Workload Factory sends notifications for the following events:
 == Configure Workload Factory notifications
 You can configure Workload Factory notifications using NetApp Console or the Workload Factory console. 
 
+IMPORTANT: When you configure notifications in NetApp Console, it takes ownership of notification delivery and the Workload Factory console notification options are disabled and displayed in read-only mode. A tooltip states that notifications are managed from NetApp Console. You can then manage notifications only from NetApp Console.
+
 Options for receiving notifications include:
 
 === NetApp Console
@@ -149,10 +151,7 @@ Options for receiving notifications include:
 * *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic.
 
 === Workload Factory console
-* *Email*: Enable email notifications in the Workload Factory console to receive notifications to any email addresses associated with the account without requiring Amazon SNS configuration.
-* *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic using the Workload Factory console.
-
-IMPORTANT: When you configure notifications in NetApp Console, it takes ownership of notification delivery and the Workload Factory console notification options are disabled and displayed in read-only mode. A tooltip states that notifications are managed from NetApp Console. You can then manage notifications only from NetApp Console.
+*Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic using the Workload Factory console.
 
 .Before you begin
 
