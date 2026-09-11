@@ -23,14 +23,17 @@ The Workload Factory platform provides the following major capabilities.
 Flexible and low cost storage:: 
 Discover, deploy, and manage Amazon FSx for NetApp ONTAP file systems in the cloud. FSx for ONTAP brings the full capabilities of ONTAP to a native AWS managed service delivering a consistent hybrid cloud experience.
 
+Lambda link connectivity::
+Use Lambda link connectivity to create a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. Links let you monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API. 
+
 Migrate on-premises vSphere environments to VMware Cloud on AWS::
 The VMware Cloud on AWS migration advisor enables you to analyze your current virtual machine configurations in on-premises vSphere environments, generate a plan to deploy recommended VM layouts to VMware Cloud on AWS, and use customized Amazon FSx for NetApp ONTAP file systems as external datastores.
 
 Database lifecycle management::
 Discover database workloads and analyze costs savings with Amazon FSx for NetApp ONTAP; leverage storage and application benefits when migrating SQL server databases to FSx for ONTAP storage; deploy SQL servers, databases, and database clones that implement vendor best practices; use an Infrastructure as Code co-pilot to automate operations; and continuously monitor and optimize SQL server estates to improve performance, availability, protection, and cost-efficiency.
 
-AI chatbot development::
-Leverage your FSx for ONTAP file systems for storing your organizations chatbot sources and the AI Engine databases. This allows you to embed your organization's unstructured data into an enterprise chatbot application.
+EDA storage operations::
+Streamline your Electronic Design Automation (EDA) storage operations in NetApp Workload Factory by optimizing performance, integrating with your IaC to automate storage parameters, and ensuring operational health.
 
 Savings calculators to save costs::
 Analyze your current deployments that use Amazon Elastic Block Store (EBS) or Elastic File System (EFS) storage, or Amazon FSx for Windows File Server, to see how much money you can save by moving to Amazon FSx for NetApp ONTAP. You can also use the calculator to perform a "what if" scenario for a future deployment that you're planning.
