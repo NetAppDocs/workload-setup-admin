@@ -6,7 +6,7 @@ summary: Workload Factory is accessible from a web-based console. When you get s
 ---
 = Sign up and log in to NetApp Workload Factory
 :icons: font
-:imagesdir: ../media/ 
+:imagesdir: ./media/ 
 
 [.lead]
 NetApp Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
