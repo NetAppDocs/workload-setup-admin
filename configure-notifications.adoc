@@ -12,132 +12,6 @@ summary: You can configure NetApp Workload Factory to send notifications to a pe
 [.lead]
 You can configure the NetApp Workload Factory notification service to send notifications as alerts in NetApp Console, to any email addresses associated with the account, or to an Amazon SNS topic. Notifications sent as alerts appear in NetApp Console when you have a Console agent or link deployed. When Workload Factory publishes notifications to an Amazon SNS topic, subscribers to the topic (such as people or other applications) receive the notifications at the endpoints configured for the topic (such as email or SMS messages).
 
-== Notification types and messages
-Workload Factory sends notifications for the following events:
-
-[cols=6*,options="header,autowidth"]
-|===
-
-| Event
-| Description
-| Notification type
-| Severity
-| Workload
-| Resource type
-
-| Some database instances in your account are not well-architected
-| All Microsoft SQL Server instances in your account have been analyzed for well-architected issues. The description for this event gives the number of well-architected instances and unoptimized instances. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
-| Well-architected
-| Recommendation
-| Databases
-| Microsoft SQL Server instance
-
-| Microsoft SQL Server/PostgreSQL server deployment succeeded
-| The deployment of the Microsoft SQL Server or PostgreSQL host succeeded. For more information, go to job monitoring.
-| Deployment
-| Success
-| Databases
-| FSx for ONTAP, DB host
-
-| Microsoft SQL Server/PostgreSQL server deployment failed
-| The deployment of the Microsoft SQL Server or PostgreSQL host failed. For more information, go to job monitoring.
-| Deployment
-| Error
-| Databases
-| FSx for ONTAP, DB host
-
-| Failed replication relationship creation
-| A SnapMirror replication relationship creation has failed. For more information, go to Tracker.
-| Replication
-| Critical
-| General storage
-| FSx for ONTAP
-
-| FSx for ONTAP creation failure
-| An FSx for ONTAP file system creation process has failed. For more information, go to Tracker.
-| FSx for ONTAP file system action
-| Critical
-| General storage
-| FSx for ONTAP
-
-| Automatic SSD capacity or inodes increase success
-| During a recent automatic capacity management update, the FSx for ONTAP file system either increased SSD capacity or volume inodes successfully. For more information, go to Tracker.
-| Capacity management
-| Success
-| General storage
-| FSx for ONTAP file 
-
-| Automatic SSD capacity or inodes increase failure
-| During a recent automatic capacity management update, the FSx for ONTAP file system failed to increase SSD capacity or volume inodes. For more information, go to Tracker.
-| Capacity management
-| Critical
-| General storage
-| FSx for ONTAP file systems
-
-| FSx for ONTAP issue detected
-| All FSx for ONTAP file systems have been analyzed for well-architected issues. The scan detected one or more issues. For more information, review the well-architected analysis from the Storage dashboard in the Workload Factory console.
-| Well-architected analysis
-| Recommendation
-| General storage
-| FSx for ONTAP file systems
-
-| Automatic capacity management event for FSx for ONTAP
-| The SSD performance tier for the FSx for ONTAP file system reached the warning threshold capacity/percentage total.
-| Capacity management
-| Warning
-| General storage
-| FSx for ONTAP file systems
-
-| Automatic inodes management event for FSx for ONTAP
-| The inode count for the FSx for ONTAP volume reached the warning threshold count/percentage total.
-| Capacity management
-| Warning
-| General storage
-| FSx for ONTAP file systems
-
-| Suspicious volume activity detected in FSx for ONTAP file system
-| NetApp Autonomous Ransomware Protection with AI (ARP/AI) detected suspicious volume activity.
-| Ransomware protection
-| Critical
-| General storage
-| FSx for ONTAP file systems
-
-| Latency threshold breach detected
-| One or more volumes in the FSx for ONTAP cluster exceeded the latency threshold.
-| Performance monitoring
-| Warning
-| EDA
-| FSx for ONTAP file systems
-
-| Monthly cost report
-| Monthly cost summary for your account, showing spending trends, unusual changes, and the best savings opportunities for FSx for ONTAP file systems.
-| Cost report
-| Recommendation
-| General storage
-| FSx for ONTAP file systems
-
-| Replication delay
-| Replication is taking longer than expected.
-| Replication
-| Critical
-| General storage
-| FSx for ONTAP file systems
-| Custom dashboard creation succeeded
-| Your custom dashboard has been successfully created and is ready to view.
-| Custom Dashboards
-| Success
-| General storage
-| Workload Factory account
-
-| Custom dashboard creation failed
-| Workload Factory was unable to create your custom dashboard. Try creating the dashboard again.
-| Custom Dashboards
-| Error
-| General storage
-| Workload Factory account
-
-|===
-
 == Configure Workload Factory notifications
 You can configure Workload Factory notifications using NetApp Console or the Workload Factory console. 
 
@@ -295,3 +169,128 @@ You can use NetApp Console notifications settings to filter notifications that y
 
 For more information about filtering notifications in the Console, refer to the https://docs.netapp.com/us-en/console-setup-admin/task-monitor-cm-operations.html#filter-notifications[NetApp Console documentation^].
 
+== Notification types and messages
+Workload Factory sends notifications for the following events:
+
+[cols=6*,options="header,autowidth"]
+|===
+
+| Event
+| Description
+| Notification type
+| Severity
+| Workload
+| Resource type
+
+| Some database instances in your account are not well-architected
+| All Microsoft SQL Server instances in your account have been analyzed for well-architected issues. The description for this event gives the number of well-architected instances and unoptimized instances. Review well-architected status findings and recommendations in the Databases inventory from the Workload Factory console.
+| Well-architected
+| Recommendation
+| Databases
+| Microsoft SQL Server instance
+
+| Microsoft SQL Server/PostgreSQL server deployment succeeded
+| The deployment of the Microsoft SQL Server or PostgreSQL host succeeded. For more information, go to job monitoring.
+| Deployment
+| Success
+| Databases
+| FSx for ONTAP, DB host
+
+| Microsoft SQL Server/PostgreSQL server deployment failed
+| The deployment of the Microsoft SQL Server or PostgreSQL host failed. For more information, go to job monitoring.
+| Deployment
+| Error
+| Databases
+| FSx for ONTAP, DB host
+
+| Failed replication relationship creation
+| A SnapMirror replication relationship creation has failed. For more information, go to Tracker.
+| Replication
+| Critical
+| General storage
+| FSx for ONTAP
+
+| FSx for ONTAP creation failure
+| An FSx for ONTAP file system creation process has failed. For more information, go to Tracker.
+| FSx for ONTAP file system action
+| Critical
+| General storage
+| FSx for ONTAP
+
+| Automatic SSD capacity or inodes increase success
+| During a recent automatic capacity management update, the FSx for ONTAP file system either increased SSD capacity or volume inodes successfully. For more information, go to Tracker.
+| Capacity management
+| Success
+| General storage
+| FSx for ONTAP file 
+
+| Automatic SSD capacity or inodes increase failure
+| During a recent automatic capacity management update, the FSx for ONTAP file system failed to increase SSD capacity or volume inodes. For more information, go to Tracker.
+| Capacity management
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
+| FSx for ONTAP issue detected
+| All FSx for ONTAP file systems have been analyzed for well-architected issues. The scan detected one or more issues. For more information, review the well-architected analysis from the Storage dashboard in the Workload Factory console.
+| Well-architected analysis
+| Recommendation
+| General storage
+| FSx for ONTAP file systems
+
+| Automatic capacity management event for FSx for ONTAP
+| The SSD performance tier for the FSx for ONTAP file system reached the warning threshold capacity/percentage total.
+| Capacity management
+| Warning
+| General storage
+| FSx for ONTAP file systems
+
+| Automatic inodes management event for FSx for ONTAP
+| The inode count for the FSx for ONTAP volume reached the warning threshold count/percentage total.
+| Capacity management
+| Warning
+| General storage
+| FSx for ONTAP file systems
+
+| Suspicious volume activity detected in FSx for ONTAP file system
+| NetApp Autonomous Ransomware Protection with AI (ARP/AI) detected suspicious volume activity.
+| Ransomware protection
+| Critical
+| General storage
+| FSx for ONTAP file systems
+
+| Latency threshold breach detected
+| One or more volumes in the FSx for ONTAP cluster exceeded the latency threshold.
+| Performance monitoring
+| Warning
+| EDA
+| FSx for ONTAP file systems
+
+| Monthly cost report
+| Monthly cost summary for your account, showing spending trends, unusual changes, and the best savings opportunities for FSx for ONTAP file systems.
+| Cost report
+| Recommendation
+| General storage
+| FSx for ONTAP file systems
+
+| Replication delay
+| Replication is taking longer than expected.
+| Replication
+| Critical
+| General storage
+| FSx for ONTAP file systems
+| Custom dashboard creation succeeded
+| Your custom dashboard has been successfully created and is ready to view.
+| Custom Dashboards
+| Success
+| General storage
+| Workload Factory account
+
+| Custom dashboard creation failed
+| Workload Factory was unable to create your custom dashboard. Try creating the dashboard again.
+| Custom Dashboards
+| Error
+| General storage
+| Workload Factory account
+
+|===

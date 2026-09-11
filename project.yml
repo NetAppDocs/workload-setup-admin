@@ -28,7 +28,7 @@ sidebar:
               url: /permissions-reference.html  
         - title: Quick start
           url: /quick-start.html
-        - title: Sign up to Workload Factory
+        - title: Sign up and log in to Workload Factory
           url: /sign-up-saas.html
         - title: Add AWS credentials
           url: /add-credentials.html
@@ -36,8 +36,14 @@ sidebar:
           url: /whats-next.html
     - title: Administer Workload Factory
       entries:
-        - title: Log in to Workload Factory
-          url: /log-in.html
+        - title: Links
+          entries: 
+            - title: Learn about links
+              url: /links-overview.html
+            - title: Connect to a file system with a link
+              url: /create-link.html
+            - title: Manage links
+              url: /manage-links.html 
         - title: Manage service accounts
           url: /manage-service-accounts.html
         - title: Build and operate well-architected workloads
