@@ -19,6 +19,8 @@ Configure how the AI agents operate in your Workload Factory environment. You ca
 
 Agents settings is where you configure how AI agents behave. You can access Agents settings from the Administration menu or by using links in the agents chat experience.
 
+You can review AI agent settings events in Tracker. link:monitor-operations.html[Learn how to monitor operations with Tracker].
+
 NOTE: If your account admin has turned off AI features, the AI agents will not be available. link:manage-genai-features.html[Learn about managing AI features].
 
 == Before you begin

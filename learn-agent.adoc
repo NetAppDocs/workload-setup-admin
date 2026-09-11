@@ -56,6 +56,8 @@ ____
 
 You can access Agents settings at any time from *Administration* < *Settings* < *Agents* to manage credential access.
 
+You can review AI agent settings events in Tracker. link:monitor-operations.html[Learn how to monitor operations with Tracker]. 
+
 === Read-only experience for AI agents (default)
 
 By default, the agents operate in read-only mode. In this mode, the agents can:
