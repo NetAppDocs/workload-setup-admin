@@ -1,13 +1,12 @@
 ---
 sidebar: sidebar
-permalink: sign-up-saas.html
+permalink: sign-up-and-log-in.html
 keywords: sign up, signing up, sign in, signing in, login with netapp, log in with netapp, create account, account, log in with nss, nss, nss login
 summary: Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
 ---
-
-= Sign up to NetApp Workload Factory
+= Sign up and log in to NetApp Workload Factory
 :icons: font
-:imagesdir: ./media/ 
+:imagesdir: ../media/ 
 
 [.lead]
 NetApp Workload Factory is accessible from a web-based console. When you get started with Workload Factory, your first step is to sign up using your existing NetApp Support Site credentials or by creating a NetApp cloud login.
@@ -72,3 +71,36 @@ Refer to NetApp Console documentation to link:https://docs.netapp.com/us-en/cons
 .Result
 
 The invited user will receive an email with instructions to join your Workload Factory account.
+
+== Log in to NetApp Workload Factory
+After you sign up to NetApp Workload Factory, you can log in at any time from the web-based console to start managing your workloads and FSx for ONTAP file systems.
+
+You can log in to the Workload Factory web-based console using one of the following options:
+
+* Your existing NetApp Support Site (NSS) credentials
+* A NetApp cloud login using your email address and a password
+
+.Steps
+
+. Open a web browser and go to the https://console.workloads.netapp.com[Workload Factory console^].
+
+. On the *Log in* page, enter the email address that's associated with your login.
+
+. Depending on the authentication method associated with your login, you'll be prompted to enter your credentials:
++
+* NetApp cloud credentials: Enter your password
+* Federated user: Enter your federated identity credentials
+* NetApp Support Site account: Enter your NetApp Support Site credentials
+
+. Select *Log in*.
++
+If you have successfully logged in in the past, you'll see the Workload Factory home page and you'll be using the default account. 
++
+If this is the first time that you've logged in, you'll be directed to the *Account* page.
++
+* If you are a member of a single account, select *Continue*.
+* If you are a member of multiple accounts, select the account and select *Continue*.
+
+.Result
+
+You're now logged in and can start using Workload Factory to manage FSx for ONTAP file systems and your workloads.

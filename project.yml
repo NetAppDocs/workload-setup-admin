@@ -38,6 +38,14 @@ sidebar:
       entries:
         - title: Log in to Workload Factory
           url: /log-in.html
+        - title: Use links
+          entries: 
+            - title: Learn about links
+              url: /links-overview.html
+            - title: Connect to a file system with a link
+              url: /create-link.html
+            - title: Manage links
+              url: /manage-links.html 
         - title: Manage service accounts
           url: /manage-service-accounts.html
         - title: Build and operate well-architected workloads
