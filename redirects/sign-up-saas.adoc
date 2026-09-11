@@ -1,0 +1,4 @@
+---
+permalink: sign-up-saas.html
+redirect: workload-setup-admin/sign-up-and-log-in.html
+---
