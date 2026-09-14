@@ -1,0 +1,11 @@
+=== AI agents for Workload Factory
+
+Meet your AI assistant for storage operations. AI agents use your Workload Factory credentials to provide insights about your environment, helping you identify risks, improve workloads, and troubleshoot issues without leaving Workload Factory.
+
+Access AI agents through the new Explore Agents section in **Ask Me**. By default, the agents work in read-only mode and provide recommendations and analysis.
+
+Use **Agents settings** to choose whether agents run in read-only or read-write mode, select which credentials they can access, add custom instructions, and adjust response detail levels.
+
+link:learn-agent.html[Learn about AI agents]
+
+link:manage-agent-settings.html[Manage agents settings]
