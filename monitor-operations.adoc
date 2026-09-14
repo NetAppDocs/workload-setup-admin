@@ -10,4 +10,5 @@ summary: "Track FSx for ONTAP, credentials, and link operations and monitor job 
 
 [.lead]
 
+// Refer to include file monitor-operations.doc for content. This content is reused in the workload-fsx-ontap repo. 
 include::_include/monitor-operations.adoc[]
