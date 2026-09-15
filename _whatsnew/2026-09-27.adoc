@@ -1,0 +1,9 @@
+=== Customer-managed Bedrock for AI features
+
+Workload Factory now supports customer-managed AWS Bedrock for AI features let your organization use its own model.
+
+On the AI Settings page, account administrators can connect to customer-managed Bedrock, select the AWS credentials linked to the Workload Factory IAM role, and choose the model or inference profile to use.
+
+After you connect, Workload Factory displays a notification showing whether the connection was successful.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html[Learn about managing AI features]
