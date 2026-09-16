@@ -33,10 +33,7 @@ NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service.
 
 Customer-managed Bedrock:: Use your own AWS Bedrock configuration.
 +
-* Select the AWS credentials and region associated with the Workload Factory IAM role
-* Provide the inference profile or model that you want to use
-* For best results, NetApp recommends using Anthropic Claude Sonnet 4.5 or Claude 6 with your Amazon Bedrock configuration
-* Workload Factory shows a notification indicating whether the connection succeeds or fails
+* For best results, NetApp recommends using Anthropic Claude Sonnet 4.5 or 4.6 with your Amazon Bedrock configuration
 
 GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, analyzers, custom dashboards, rules builder, or other AI-powered tools.
 
@@ -59,8 +56,12 @@ Important: Add the required permissions to the AWS policy for the credentials li
 
 * *NetApp-managed Bedrock (Recommended)*: Use NetApp-managed AWS Bedrock.
 
-* *Customer-managed Bedrock*: Select the AWS credentials and region to use, and then enter or select the inference profile or model for your AWS Bedrock instance. After you validate the connection, Workload Factory displays a notification to confirm whether the connection was successful.
-If the connection attempt fails, review the notification details, update the AWS policy or model settings as needed, and try again.
+* *Customer-managed Bedrock*: 
++
+.. Select the AWS credentials and region associated with the Workload Factory IAM role
+.. Provide the inference profile that you want to use
++
+Workload Factory shows a notification indicating whether the connection succeeds or fails
 
 * *Gen AI features off*: Turn off all AI features.
 

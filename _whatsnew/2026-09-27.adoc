@@ -1,10 +1,10 @@
 === Customer-managed Bedrock for AI features
 
-Workload Factory now supports customer-managed AWS Bedrock for AI features let your organization use its own model.
+Workload Factory now supports customer-managed AWS Bedrock for AI features to let your organization use its own model.
 
 On the AI Settings page, account administrators can connect to customer-managed Bedrock, select the AWS credentials linked to the Workload Factory IAM role, and choose the model or inference profile to use.
 
-After you connect, Workload Factory displays a notification showing whether the connection was successful.
+After you connect, Workload Factory lets you know whether the connection was successful.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html[Learn about managing AI features]
 
@@ -12,8 +12,8 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.ht
 
 Workload Factory now lets you edit custom dashboards from the dashboard catalog.
 
-From the *Custom dashboards* page, you can open the *Edit dashboard* action and update what the dashboard shows, including workloads, metrics, charts, and time ranges.
+On the Custom Dashboards page, select Edit Dashboard to change the dashboard's metrics, charts, and time range.
 
-If another user is already editing the dashboard, Workload Factory shows a message so you can wait or coordinate before making changes.
+Only the dashboard owner can edit the dashboard. Other users will not see your changes until you save them.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html[Learn how to manage custom dashboards]
