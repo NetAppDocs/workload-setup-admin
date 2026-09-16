@@ -35,6 +35,7 @@ Customer-managed Bedrock:: Use your own AWS Bedrock configuration.
 +
 * Select the AWS credentials and region associated with the Workload Factory IAM role
 * Provide the inference profile or model that you want to use
+* For best results, NetApp recommends using Anthropic Claude Sonnet 4.5 or Claude 6 with your Amazon Bedrock configuration
 * Workload Factory shows a notification indicating whether the connection succeeds or fails
 
 GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, analyzers, custom dashboards, rules builder, or other AI-powered tools.
