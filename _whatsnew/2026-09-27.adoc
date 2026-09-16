@@ -7,3 +7,13 @@ On the AI Settings page, account administrators can connect to customer-managed 
 After you connect, Workload Factory displays a notification showing whether the connection was successful.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html[Learn about managing AI features]
+
+=== Edit custom dashboards
+
+Workload Factory now lets you edit custom dashboards from the dashboard catalog.
+
+From the *Custom dashboards* page, you can open the *Edit dashboard* action and update what the dashboard shows, including workloads, metrics, charts, and time ranges.
+
+If another user is already editing the dashboard, Workload Factory shows a message so you can wait or coordinate before making changes.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html[Learn how to manage custom dashboards]
