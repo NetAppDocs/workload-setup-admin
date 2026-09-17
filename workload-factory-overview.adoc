@@ -39,7 +39,7 @@ Service accounts to promote automation::
 Use service accounts to automate NetApp Workload Factory operations securely and reliably. Service accounts provide reliable, long-lasting automation without any user management restrictions and are more secure because they only provide API access.
 
 Ask Me AI assistant::
-Ask the AI assistant questions about managing and operating FSx for ONTAP file systems. Using the Model Context Protocol (MCP), Ask Me securely interfaces with external environments and queries API tools to deliver responses tailored to your specific storage environment.
+Ask the AI assistant questions about managing and operating FSx for ONTAP and on-premises ONTAP file systems. Using the Model Context Protocol (MCP), Ask Me securely interfaces with external environments and queries API tools to deliver responses tailored to your specific storage environment. You can also tailor a prompt in chat to create scheduled tasks. For example, 
 
 AI agents::
 AI agents improve Ask Me by using your connected accounts to provide insights about your environment. Open the “Explore Agents” section in Ask Me to get quick answers, spot risks and opportunities to improve, troubleshoot problems, and receive recommendations. By default, agents can only view information. They can also take actions for you if you explicitly approve them. link:learn-agent.html[Learn about the AI agents].
