@@ -47,7 +47,7 @@ Example prompts:
 * List all accessible AWS FSx file systems every hour to keep an up-to-date inventory.
 
 AI agents::
-AI agents improve Ask Me by using your connected accounts to provide insights about your environment. Open the “Explore Agents” section in Ask Me to get quick answers, spot risks and opportunities to improve, troubleshoot problems, and receive recommendations. By default, agents can only view information. In read-write mode, they can take actions across AWS, ONTAP, and supported APIs only after you explicitly approve them. You can also select multiple credentials across AWS accounts, add custom prompts, and adjust response detail levels to see more reasoning and tool-use details, including in Slack. link:learn-agent.html[Learn about the AI agents].
+AI agents help Ask Me give you insights using your connected accounts. Open the “Explore Agents” section in Ask Me to get quick answers, identify risks and opportunities, troubleshoot issues, and receive recommendations. By default, agents can only view information. In read-write mode, they can take actions across AWS, ONTAP, and supported APIs only after you approve them. You can also use credentials from multiple AWS accounts, add custom prompts, and choose how much detail to include in responses, including reasoning and tool activity in Slack. link:learn-agent.html[Learn about the AI agents].
 
 NOTE: Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant and AI agents will not be available. link:manage-genai-features.html[Learn about managing AI features].
 
