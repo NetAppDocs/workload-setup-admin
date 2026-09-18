@@ -40,7 +40,7 @@ Use service accounts to automate NetApp Workload Factory operations securely and
 
 Ask Me AI assistant::
 Ask the AI assistant questions about managing and running FSx for ONTAP and on-premises ONTAP file systems. Ask Me securely connects to your environment and uses APIs to provide answers based on your storage setup. You can also create scheduled tasks directly in chat.
-
++
 Example prompts:
 
 * Check the health and lifecycle status of all FSx for NetApp ONTAP file systems every hour to catch issues early.
