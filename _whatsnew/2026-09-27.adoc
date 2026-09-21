@@ -31,7 +31,7 @@ Use *Agents settings* to control how agents work. You can:
 
 Additional controls give you more visibility and control. In read-write mode, agents must get your approval before making changes to AWS, ONTAP, or supported APIs. You can also choose how much detail to see in responses, including information about the agent's reasoning and, in Slack, its tool activity.
 
-Agents also support multi-account environments and easier setup. A single agent can securely work across multiple AWS accounts using multiple credentials. Automatic provisioning simplifies deployment, and custom prompts help tailor agent behavior to your organization's needs.
+Agents also support multi-account environments and easier setup. A single agent can securely work across multiple AWS accounts using multiple credentials. 
 
 link:learn-agent.html[Learn about AI agents]
 
