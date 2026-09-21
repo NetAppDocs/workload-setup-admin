@@ -8,6 +8,10 @@ After you connect, Workload Factory lets you know whether the connection was suc
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.html[Learn about managing AI features]
 
+=== Customer-managed Bedrock support for classification
+
+Workload Factory now lets customers use their own Amazon Bedrock setup for workload tagging classification. Customers can provide their own Bedrock endpoint and credentials so classification requests run through their own Bedrock configuration.
+
 === Edit custom dashboards
 
 Workload Factory now lets you edit custom dashboards from the dashboard catalog.
