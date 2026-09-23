@@ -10,7 +10,7 @@ summary: "Access your dashboard catalog to view, refresh, and delete custom dash
 :imagesdir: ./media/
 
 [.lead]
-Manage your custom dashboards from the dashboard catalog. From there, you can view details, edit or share dashboards, refresh data, or delete dashboards you no longer need.
+Manage your custom dashboards from the dashboard catalog. From there, you can view details, share dashboards, refresh data, or delete dashboards you no longer need.
 
 .About this task
 
@@ -56,28 +56,6 @@ Dashboard data loads when you open a dashboard. You can refresh it to see the la
 
 The dashboard reloads data from your workloads. 
 //The last updated time changes to show when the data was refreshed.
-    
-== Edit dashboard
-
-You can edit a dashboard to change what it shows, including the metrics and charts.
-
-Note: Only owners of a dashboard can edit it. 
-
-.Steps
-
-. In the *Custom dashboards* page, locate the dashboard you want to edit.
-
-. From the *Actions* menu for that dashboard, select *Edit dashboard*..
-
-. In the AI dialog, describe the changes you want to make.
-+
-This process is similar to creating a new dashboard. You can change the workloads, metrics, or time ranges the dashboard tracks.
-
-. Review the changes and select **Save**.
-
-.Result
-
-The dashboard updates with your changes. The last modified date also updates.
 
 == Delete a dashboard
 

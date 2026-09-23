@@ -57,7 +57,6 @@ After creation, you can:
 
 * Change dashboard visibility to share with your team
 * Refresh dashboard data to see the latest information  
-* Edit dashboards to change what they show, including the metrics and charts
 * Delete dashboards you no longer need  
 * View dashboard details, including who created it and when it was last updated
 
