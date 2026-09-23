@@ -11,13 +11,3 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/manage-genai-features.ht
 === Customer-managed Bedrock support for classification
 
 Workload Factory now lets customers use their own Amazon Bedrock setup for workload tagging classification. Customers can provide their own Bedrock endpoint and credentials so classification requests run through their own Bedrock configuration.
-
-=== Edit custom dashboards
-
-Workload Factory now lets you edit custom dashboards from the dashboard catalog.
-
-On the Custom Dashboards page, select Edit Dashboard to change the dashboard's metrics, charts, and time range.
-
-Only the dashboard owner can edit the dashboard. Other users will not see your changes until you save them.
-
-link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html[Learn how to manage custom dashboards]
