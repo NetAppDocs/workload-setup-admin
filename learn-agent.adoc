@@ -25,7 +25,6 @@ AI agents help you manage and optimize your Workload Factory environment more ef
 * *Get answers without context switching*: Ask questions about your environment and get answers based on your actual resource settings, without switching between tools or checking multiple dashboards.
 * *Troubleshoot issues quickly*: AI agents can identify problems and suggest fixes based on your setup.
 * *Automate actions with approval*: When you turn on read-write mode, AI agents can take actions for you, but only after you approve each one.
-* *Monitor on schedule*: Ask agents to check something every hour, day, or week and send updates in the chat. You can view past updates in your chat history.
 * *Work with ONTAP systems*: AI agents support both cloud-based FSx for ONTAP and on-premises ONTAP environments.
 
 == Access the AI agents

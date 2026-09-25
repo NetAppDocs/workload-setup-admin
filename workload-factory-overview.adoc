@@ -39,7 +39,7 @@ Service accounts to promote automation::
 Use service accounts to automate NetApp Workload Factory operations securely and reliably. Service accounts provide reliable, long-lasting automation without any user management restrictions and are more secure because they only provide API access.
 
 Ask Me AI assistant::
-Ask the AI assistant questions about managing and running FSx for ONTAP and on-premises ONTAP file systems. Ask Me securely connects to your environment and uses APIs to provide answers based on your storage setup. You can also create scheduled tasks directly in chat.
+Ask the AI assistant questions about managing and running FSx for ONTAP and on-premises ONTAP file systems. Ask Me securely connects to your environment and uses APIs to provide answers based on your storage setup.
 +
 Example prompts:
 
