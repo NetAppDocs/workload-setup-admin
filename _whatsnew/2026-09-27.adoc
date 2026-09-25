@@ -6,3 +6,11 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/configure-notifications.
 === Link creation notification email
 
 Workload Factory now reminds you to complete link association after you successfully add credentials. While credentials enable resource discovery, advanced ONTAP features require link association with the discovered file systems. You'll receive the email notification once a week on Monday. After you complete the link association, the notifications stop.
+
+=== Lambda link version notifications and upgrade guidance
+
+Workload Factory now alerts you when a Lambda link is not using the latest available image. If automatic upgrades are not supported for a link, the notification shows when a newer version is available.
+
+You can view upgrade instructions from the Links page. The instructions explain how to manually update the Lambda link image and enable automatic upgrades when available. Keeping links up to date gives you access to the latest features, fixes known issues, and applies recent security updates.
+
+You also get an alert in the FSx for ONTAP dashboard when a newer link version is available for a link that does not support automatic upgrades.
