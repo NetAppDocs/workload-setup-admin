@@ -47,7 +47,8 @@ Example prompts:
 * List all accessible AWS FSx file systems every hour to keep an up-to-date inventory.
 
 AI agents::
-AI agents help Ask Me give you insights using your connected accounts. Open the “Explore Agents” section in Ask Me to get quick answers, identify risks and opportunities, troubleshoot issues, and receive recommendations. By default, agents can only view information. In read-write mode, they can take actions across AWS, ONTAP, and supported APIs only after you approve them. You can also use credentials from multiple AWS accounts, add custom prompts, and choose how much detail to include in responses, including reasoning and tool activity in Slack. link:learn-agent.html[Learn about the AI agents].
+Workload Factory AIOps uses AI to analyze your environment and recommend improvements. If you approve, it can also take actions using the credentials and permissions you set up. 
+The AI agents help Ask Me give you insights using your connected accounts. Open the “Explore Agents” section in Ask Me to get quick answers, identify risks and opportunities, troubleshoot issues, and receive recommendations. By default, agents can only view information. In read-write mode, they can take actions across AWS, ONTAP, and supported APIs only after you approve them. You can also use credentials from multiple AWS accounts, add custom prompts, and choose how much detail to include in responses, including reasoning and tool activity in Slack. link:learn-agent.html[Learn about the AI agents].
 
 NOTE: Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant and AI agents will not be available. link:manage-genai-features.html[Learn about managing AI features].
 
