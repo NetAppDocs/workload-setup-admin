@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: learn-agent.html
-keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agent settings
+keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agents settings
 summary: "Learn how AI agents for Workload Factory can analyze your environment, identify risks and ways to improve performance, and take actions for you with your approval."
 ---
 
@@ -52,7 +52,7 @@ Your current scope includes:
 * *Credentials*: Which credentials agents can use.
 * *Regions*: Which AWS regions agents can access.
 
-Filters in Workload Factory set the scope for the current page, such as the AWS accounts and regions in view. Agent settings control which credentials agents are allowed to use within that scope. Access to resources also depends on the IAM permissions assigned to those credentials.
+Filters in Workload Factory set the scope for the current page, such as the AWS accounts and regions in view. Agents settings control which credentials agents are allowed to use within that scope. Access to resources also depends on the IAM permissions assigned to those credentials.
 
 NOTE: Selecting a credential in *Agents settings* does not grant additional AWS permissions. Make sure the credentials have the IAM permissions required for agents to access the resources you want them to analyze or manage.
 
@@ -66,7 +66,7 @@ By default, the agents operate in read-only mode. In this mode, they can:
 * Provide recommendations for improving performance, availability, protection, and cost-efficiency
 * Troubleshoot issues and suggest remediation steps
 
-They can't change resources in read-only mode. If you request an action that needs write access, the agent explains the limitation and links to Agent settings.
+They can't change resources in read-only mode. If you request an action that needs write access, the agent explains the limitation and links to Agents settings.
 
 === Read-write mode (opt-in)
 

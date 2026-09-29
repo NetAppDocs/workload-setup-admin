@@ -48,14 +48,12 @@ sidebar:
           url: /monitor-operations.html
         - title: Manage AI features
           url: /manage-genai-features.html
-        - title: Settings
+        - title: Workload Factory AIOps
           entries:
-            - title: Agents
-              entries:
-                - title: Learn about the AI Agent
-                  url: /learn-agent.html
-                - title: Manage Agent Settings
-                  url: /manage-agent-settings.html
+            - title: Learn about AI agents
+              url: /learn-agent.html
+            - title: Manage AI agents settings
+              url: /manage-agent-settings.html
         - title: Custom dashboards
           entries:
             - title: Learn about custom dashboards

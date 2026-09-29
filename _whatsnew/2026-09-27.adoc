@@ -5,6 +5,7 @@ Workload Factory AIOps uses AI to analyze your environment and recommend improve
 Access AI agents in the new *Explore Agents* section in Ask Me. By default, agents run in read-only mode and provide recommendations and analysis.
 
 Use *Agents settings* to control how agents work. You can:
+
 * Choose read-only or read-write mode
 * Select which credentials agents can use
 * Add custom instructions
@@ -21,10 +22,12 @@ link:manage-agent-settings.html[Manage agents settings]
 === Scheduled tasks in Ask Me
 You can now tailor a prompt in Ask Me chat to create scheduled tasks.
 Use scheduled tasks to ask Ask Me to run recurring checks and send updates in chat based on the schedule you define.
-+
+
 Example prompts:
+
 * Check the health and lifecycle status of all FSx for NetApp ONTAP file systems every hour to catch issues early.
 * List all accessible AWS FSx file systems every hour to keep an up-to-date inventory.
+
 link:workload-factory-overview.html#features[Learn more about Ask Me]
 
 === ONTAP support in Ask Me

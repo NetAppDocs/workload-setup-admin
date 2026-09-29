@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: manage-agent-settings.html
-keywords: agent settings, aiops, agent configuration, ai agent, agent mode, credentials, read-only, read-write, custom prompt, verbose, slack integration
+keywords: agents settings, aiops, agent configuration, ai agent, agent mode, credentials, read-only, read-write, custom prompt, verbose, slack integration
 summary: "Set up AI agents settings such as operating mode, access permissions, custom instructions, and response detail levels to control how agents work in your Workload Factory environment."
 ---
 
@@ -29,7 +29,7 @@ NOTE: If your account admin has turned off AI features, the AI agents will not b
 . Log in using one of the link:console-experiences.html[console experiences^].
 
 . Access Agents settings using one of these methods:
-* From the menu, select *Administration*, *Settings*, and then *Agents*.
+* From the menu, select *Administration*, *Agents*, and then *Settings*.
 * From the agents chat experience, select the link to *Agents settings*.
 
 == Set up agents operation mode
@@ -46,7 +46,7 @@ Read-write mode:: The agents can take actions for you using the credentials you 
 
 .Steps
 
-. From the menu, select *Administration*, *Settings*, and then *Agents*.
+. From the menu, select *Administration*, *Agents*, and then *Settings*.
 . On the *Agents settings* page, go to the *Agents mode* section.
 . Select the operation mode.
 . Select *Apply*.
