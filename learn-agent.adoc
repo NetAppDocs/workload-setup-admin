@@ -48,6 +48,7 @@ Agents can access resources only when they are included in your current Workload
 By default, all credentials are selected, but you can reduce this to a subset of your configured credentials.
 
 Your current scope includes:
+
 * *AWS accounts*: Which AWS accounts agents can access.
 * *Credentials*: Which credentials agents can use.
 * *Regions*: Which AWS regions agents can access.
