@@ -61,11 +61,11 @@ NOTE: Selecting a credential in *Agents settings* does not grant additional AWS 
 
 By default, the agents operate in read-only mode. In this mode, they can:
 
-* Answer questions about your environment
-* Analyze your FSx for ONTAP file systems, databases, and workloads
-* Identify risks, misconfigurations, and optimization opportunities
-* Provide recommendations for improving performance, availability, protection, and cost-efficiency
-* Troubleshoot issues and suggest remediation steps
+* Answer questions about your environment.
+* Analyze your FSx for ONTAP file systems, databases, and workloads.
+* Identify risks, misconfigurations, and optimization opportunities.
+* Provide recommendations for improving performance, availability, protection, and cost-efficiency.
+* Troubleshoot issues and suggest remediation steps.
 
 They can't change resources in read-only mode. If you request an action that needs write access, the agent explains the limitation and links to Agents settings.
 

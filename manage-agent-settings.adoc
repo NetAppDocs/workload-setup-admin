@@ -65,7 +65,7 @@ You can select none, one, some, or all of your configured credentials. If you se
 
 . From the *Credentials name* dropdown, select which credentials the agents can use.
 +
-If no credentials are configured, you'll see an option to add credentials. Select *Add credentials* to set up AWS credentials for your Workload Factory account.
+If no credentials are configured, you'll see an option to add credentials for your Workload Factory account.
 
 . Select *Apply*.
 
