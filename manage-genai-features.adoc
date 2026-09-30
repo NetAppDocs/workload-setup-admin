@@ -17,7 +17,7 @@ Control access to AI features in Workload Factory. You can turn off AI features 
 
 == About AI features
 
-Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, custom dashboards, and analyzers for EMS, database logs, and latency.
+Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, AI agents, custom dashboards, Rule builder, and analyzers for EMS, database logs, and latency.
 
 As a Workload Factory administrator, you can control how these features use AI on the AI settings page.
 
@@ -31,7 +31,7 @@ NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service.
 * Monthly usage credits are shared across your organization
 * No additional AWS setup is required
 
-GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, analyzers, custom dashboards, rules builder, or other AI-powered tools.
+GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, the AI Agent, analyzers, custom dashboards, rules builder, or other AI-powered tools.
 
 == Before you begin
 
