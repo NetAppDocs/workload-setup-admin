@@ -15,6 +15,8 @@ You can configure the NetApp Workload Factory notification service to send notif
 == Configure Workload Factory notifications
 You can configure Workload Factory notifications using NetApp Console or the Workload Factory console. 
 
+IMPORTANT: When you configure notifications in NetApp Console, it takes ownership of notification delivery and the Workload Factory console notification options are disabled and displayed in read-only mode. A tooltip states that notifications are managed from NetApp Console. You can then manage notifications only from NetApp Console.
+
 Options for receiving notifications include:
 
 === NetApp Console
@@ -23,10 +25,7 @@ Options for receiving notifications include:
 * *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic.
 
 === Workload Factory console
-* *Email*: Enable email notifications in the Workload Factory console to receive notifications to any email addresses associated with the account without requiring Amazon SNS configuration.
-* *Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic using the Workload Factory console.
-
-IMPORTANT: When you configure notifications in NetApp Console, it takes ownership of notification delivery and the Workload Factory console notification options are disabled and displayed in read-only mode. A tooltip states that notifications are managed from NetApp Console. You can then manage notifications only from NetApp Console.
+*Amazon SNS*: Configure Workload Factory to send notifications to an Amazon SNS topic using the Workload Factory console.
 
 .Before you begin
 
@@ -60,9 +59,8 @@ After you create the topic, copy the topic ARN and enter it in the *SNS topic AR
 
 . Log in to the link:https://console.workloads.netapp.com[Workload Factory console^].
 . From the Workload Factory console menu, select *Workloads*, *Administration*, and then *Notifications setup*.
-. Enable one or more of the following notification types:
-+
-* *Email notifications*: Select *Enable email notifications*. Any email addresses associated with the account are displayed in read-only mode.
+
+* *Email notifications*: To receive email notifications, configure notification recipients and severity preferences in link:link:https://console.netapp.com[NetApp Console^] notification settings. 
 * *Amazon SNS notifications*: Select *Enable SNS notifications*, then follow the instructions to configure Amazon SNS from the Amazon SNS console.
 +
 After you verify the configuration by sending a test notification, select *Apply*.

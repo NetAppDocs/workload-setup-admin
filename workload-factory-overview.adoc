@@ -42,9 +42,18 @@ Service accounts to promote automation::
 Use service accounts to automate NetApp Workload Factory operations securely and reliably. Service accounts provide reliable, long-lasting automation without any user management restrictions and are more secure because they only provide API access.
 
 Ask Me AI assistant::
-Ask the AI assistant questions about managing and operating FSx for ONTAP file systems. Using the Model Context Protocol (MCP), Ask Me securely interfaces with external environments and queries API tools to deliver responses tailored to your specific storage environment.
+Ask the AI assistant questions about managing and running FSx for ONTAP and on-premises ONTAP file systems. Ask Me securely connects to your environment and uses APIs to provide answers based on your storage setup.
++
+Example prompts:
 
-NOTE: Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant will not be available. link:manage-genai-features.html[Learn about managing AI features].
+* Check the health and lifecycle status of all FSx for NetApp ONTAP file systems every hour to catch issues early.
+* List all accessible AWS FSx file systems every hour to keep an up-to-date inventory.
+
+AI agents::
+Workload Factory AIOps uses AI to analyze your environment and recommend improvements. If you approve, it can also take actions using the credentials and permissions you set up. 
+The AI agents help Ask Me give you insights using your connected accounts. Open the “Explore Agents” section in Ask Me to get quick answers, identify risks and opportunities, troubleshoot issues, and receive recommendations. By default, agents can only view information. In read-write mode, they can take actions across AWS, ONTAP, and supported APIs only after you approve them. You can also use credentials from multiple AWS accounts, add custom prompts, and choose how much detail to include in responses, including reasoning and tool activity in Slack. link:learn-agent.html[Learn about the AI agents].
+
+NOTE: Account administrators can turn AI features on or off. If an administrator turns them off, the Ask Me AI assistant and AI agents will not be available. link:manage-genai-features.html[Learn about managing AI features].
 
 
 == Supported cloud providers

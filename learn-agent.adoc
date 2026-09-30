@@ -1,0 +1,80 @@
+---
+sidebar: sidebar
+permalink: learn-agent.html
+keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read-write, agents settings
+summary: "Learn how AI agents for Workload Factory can analyze your environment, identify risks and ways to improve performance, and take actions for you with your approval."
+---
+
+= Learn about the AI agents in NetApp Workload Factory
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+Workload Factory AIOps uses AI to analyze your environment and recommend improvements. If you approve, it can also take actions using the credentials and permissions you set up.
+
+NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to use the agents. Contact your administrator or link:manage-genai-features.html[learn about AI administration].
+
+== Before you begin
+
+Make sure your Workload Factory account has AWS credentials and the IAM permissions agents need for the resources they access. If you enable read-write mode, those permissions must also allow supported changes.
+
+link:add-credentials.html[Learn how to add AWS credentials and set up IAM permissions^].
+
+== Data usage and privacy
+
+Your data is not used to train AI models. Agents use your credentials to securely access AWS resources through standard AWS APIs and respond based on your actual environment. All agent activity follows NetApp privacy policies and AWS security controls.
+
+== Why use AI agents
+
+AI agents help you work more efficiently in Workload Factory:
+
+* Get answers and recommendations based on your environment.
+* Identify risks and optimization opportunities.
+* Troubleshoot issues and take approved actions in one workflow.
+* Run scheduled checks and receive updates in chat history.
+* Work across FSx for ONTAP and on-premises ONTAP environments.
+
+== Access the AI agents
+
+From the Ask Me homepage:: On the Ask Me landing page, select  *Explore Agents*. The AI agents side panel opens with a welcome message introducing the agents' capabilities.
+
+From the agents redirection links:: When using **Ask Me** or other features, you might see links that redirect you to the agents for more advanced assistance.
+
+== How AI agents work
+
+=== How agents access your environment
+
+Agents can access resources only when they are included in your current Workload Factory scope and supported by the credentials selected in link:manage-agent-settings.html[Agents settings]. Agents can operate only where both controls apply. The resources they can access also depend on the permissions assigned to their AWS credentials.
+By default, all credentials are selected, but you can reduce this to a subset of your configured credentials.
+
+Your current scope includes:
+
+* *AWS accounts*: Which AWS accounts agents can access.
+* *Credentials*: Which credentials agents can use.
+* *Regions*: Which AWS regions agents can access.
+
+Filters in Workload Factory set the scope for the current page, such as the AWS accounts and regions in view. Agents settings control which credentials agents are allowed to use within that scope. Access to resources also depends on the IAM permissions assigned to those credentials.
+
+NOTE: Selecting a credential in *Agents settings* does not grant additional AWS permissions. Make sure the credentials have the IAM permissions required for agents to access the resources you want them to analyze or manage.
+
+=== Read-only mode (default)
+
+By default, the agents operate in read-only mode. In this mode, they can:
+
+* Answer questions about your environment.
+* Analyze your FSx for ONTAP file systems, databases, and workloads.
+* Identify risks, misconfigurations, and optimization opportunities.
+* Provide recommendations for improving performance, availability, protection, and cost-efficiency.
+* Troubleshoot issues and suggest remediation steps.
+
+They can't change resources in read-only mode. If you request an action that needs write access, the agent explains the limitation and links to Agents settings.
+
+=== Read-write mode (opt-in)
+
+You can enable read-write capabilities in link:manage-agent-settings.html[Agents settings]. In this mode, agents explain each supported action and require your approval before making any changes.
+
+This approval process applies to all agent experiences, including Slack integrations and NetApp Console.
+
+== What users see when AI agents have no data or activity
+
+If agents don't have credentials, they can still provide general guidance. However, they can't review your resources or give insights specific to your environment.
