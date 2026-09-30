@@ -1,0 +1,122 @@
+---
+sidebar: sidebar
+permalink: manage-agent-settings.html
+keywords: agents settings, aiops, agent configuration, ai agent, agent mode, credentials, read-only, read-write, custom prompt, verbose, slack integration
+summary: "Set up AI agents settings such as operating mode, access permissions, custom instructions, and response detail levels to control how agents work in your Workload Factory environment."
+---
+
+= Manage AI agents settings in NetApp Workload Factory
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Set up how AI agents work in your Workload Factory environment. You can choose how agents operate, decide which credentials they can use, add custom prompts, and adjust response detail levels.
+
+== Before you begin
+
+* We recommend that an account admin set up agents settings.
+* Before you enable read-write mode, make sure you understand the security risks of allowing agents to take actions for you.
+
+NOTE: If your account admin has turned off AI features, the AI agents will not be available. link:manage-genai-features.html[Learn about managing AI features].
+
+== Access Agents settings
+
+.Steps
+
+. Log in using one of the link:console-experiences.html[console experiences^].
+
+. Access Agents settings using one of these methods:
+* From the menu, select *Administration*, *Settings*, and then *Agents*.
+* From the agents chat experience, select the link to *Agents settings*.
+
+== Set up agents operation mode
+
+Choose whether the agents operate in read-only mode or read-write mode.
+
+.About this task
+
+The agents' operation mode determines what actions the agents can perform:
+
+Read-only mode (default):: The agents can view and analyze your data, but they cannot change your resources. They can answer questions, identify risks, provide recommendations, and help troubleshoot issues.
+
+Read-write mode:: The agents can take actions for you using the credentials you choose. Before taking any action, they show you a summary and wait for your approval. They will not take any action without your approval. 
+
+.Steps
+
+. From the menu, select *Administration*, *Settings*, and then *Agents*.
+. On the *Agents settings* page, go to the *Agents mode* section.
+. Select the operation mode.
+. Select *Apply*.
+
+== Select credentials for agents access
+
+Choose which AWS credentials agents can use to access your cloud environment. By default, all credentials are selected, but you can reduce this to a subset of your configured credentials.
+
+.About this task
+
+You can select none, one, some, or all of your configured credentials. If you select no credentials, agents can answer general questions but cannot analyze resources in your environment.
+
+.Steps
+
+. On the *Agents settings* page, go to  the *Credentials* section.
+
+. From the *Credentials name* dropdown, select which credentials the agents can use.
++
+If no credentials are configured, you'll see an option to add credentials for your Workload Factory account.
+
+. Select *Apply*.
+
+== Slack integration
+
+You can connect the agents to Slack and interact with them directly in your Slack workspace.
+
+For information about setting up Slack integration, visit the Slack integration documentation or contact your NetApp representative about the agents.
+
+== Add a custom prompt
+
+Add custom guidelines, preferences, or rules for the agents to follow when responding to your requests.
+
+.About this task
+
+A custom prompt helps guide how agents respond so they follow your organization's policies, language, and workflows. It applies to every agent's interaction.
+
+The custom prompt field is empty by default. You can add, modify, or remove the custom prompt at any time.
+
+.Steps
+
+. On the *Agents settings* page, go to the *Custom prompt* section.
+
+. In the text field, enter your custom guidelines for the agents.
++
+For example, you can define naming rules, preferred response formats, or company policies the agents should follow.
+
+. Select *Apply*.
+
+.Result
+
+Agents will use your custom prompt along with their built-in features when responding to your requests.
+
+To change or remove the custom prompt, return to this page, edit the text box, and select *Apply*.
+
+== Configure verbosity options
+
+Choose how much detail agents share about their reasoning and tool use.
+
+.About this task
+
+Verbosity options let you see more information about how the agents arrive at their responses and which tools they use to gather information:
+
+Verbose reasoning:: When enabled, agents explain how they reach their answers and make decisions. This helps you understand why they recommend certain actions or reach specific conclusions.
+
+Verbose tools detailing:: When enabled, the agents show which tools and APIs they use to collect data and perform analysis. This helps you understand how they interact with your environment.
+
+Both options are off by default to keep responses concise. Turn them on when you need more transparency or are troubleshooting agents behavior.
+
+.Steps
+
+. On the *Agents settings* page, go to the *Verbosity level* section.
+. Select the verbosity options you want to enable.
+. Select *Apply*.
