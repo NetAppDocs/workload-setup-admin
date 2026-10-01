@@ -14,7 +14,7 @@ Learn what's new with Workload Factory administration features like cloud provid
 
 == 30 September 2026
 
-include::_whatsnew/2026-09-27.adoc[]
+include::_whatsnew/2026-09-30.adoc[]
 
 == 30 August 2026
 
