@@ -32,7 +32,7 @@ AI agents help you work more efficiently in Workload Factory:
 * Identify risks and optimization opportunities.
 * Troubleshoot issues and take approved actions in one workflow.
 * Run scheduled checks and receive updates in chat history.
-* Work across FSx for ONTAP and on-premises ONTAP environments.
+* Work across FSx for ONTAP and Google Cloud NetApp Volumes environments.
 
 == Access the AI agents
 
