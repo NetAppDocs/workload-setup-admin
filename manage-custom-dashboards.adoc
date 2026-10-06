@@ -54,20 +54,20 @@ The dashboard updates immediately. The visibility label on the dashboard card sh
 
 Dashboard data loads when you open a dashboard. You can refresh it to see the latest information.
 
-The dashboard reloads data from your workloads. The last updated time changes to show when the data was refreshed.
+The dashboard reloads data from your workloads. 
+//The last updated time changes to show when the data was refreshed.
 
-////
-    
+== Edit dashboards
 
-You can edit a dashboard to change what it shows, including the metrics and charts.
+You can edit a dashboard to change what it shows, including the metrics, charts, and time ranges.
+
+NOTE: Only the dashboard creator can edit the dashboard. While you are editing, other users cannot see your changes until you save them.
 
 .Steps
 
 . In the *Custom dashboards* page, locate the dashboard you want to edit.
 
 . From the *Actions* menu for that dashboard, select *Edit dashboard*.
-+
-If another user is editing the dashboard, you will see a message such as “Currently being edited by [user name].” Wait for them to finish or coordinate with them.
 
 . In the AI dialog, describe the changes you want to make.
 +
