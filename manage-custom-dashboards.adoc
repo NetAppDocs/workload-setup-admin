@@ -78,7 +78,6 @@ This process is similar to creating a new dashboard. You can change the workload
 .Result
 
 The dashboard updates with your changes. The last modified date also updates.
-////
 
 == Delete a dashboard
 
