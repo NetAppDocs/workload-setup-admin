@@ -47,6 +47,7 @@ The features that require a link include:
 * Clone creation and management, for instant, in-place, data cloning
 * Displaying additional metrics directly from ONTAP such as the ONTAP version
 * Displaying storage VM and cluster LIF details including roles, endpoints, nodes, IP addresses, and status
+* Component breakdown for latency events
 
 == Related information
 
