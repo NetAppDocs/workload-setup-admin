@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: manage-genai-features.html
 keywords: gen ai, generative ai, bedrock, ask me, custom dashboards, rules builder, cloudshell ai, ems analyzer, db log analyzer, latency analyzer, byom, bring your own model, administration
-summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities or use NetApp-managed AWS Bedrock."
+summary: "Control access to Bedrock-based AI features in Workload Factory. You can turn off AI capabilities or use NetApp-managed or customer-managed Bedrock."
 ---
 
 = Manage AI features in NetApp Workload Factory
@@ -13,7 +13,7 @@ summary: "Control access to Bedrock-based AI features in Workload Factory. You c
 :imagesdir: ./media/
 
 [.lead]
-Control access to AI features in Workload Factory. You can turn off AI features or use AWS Bedrock managed by NetApp. 
+Control access to AI features in Workload Factory. You can turn off AI features or use AWS Bedrock managed by NetApp or your organization.
 
 == About AI features
 
@@ -31,11 +31,18 @@ NetApp-managed Bedrock (Recommended):: Use a NetApp-managed AWS Bedrock service.
 * Monthly usage credits are shared across your organization
 * No additional AWS setup is required
 
+Customer-managed Bedrock:: Use your own AWS Bedrock configuration.
++
+* For best results, NetApp recommends using Anthropic Claude Sonnet 4.5 or 4.6 with your Amazon Bedrock configuration
+
 GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, the AI Agent, analyzers, custom dashboards, rules builder, or other AI-powered tools.
 
 == Before you begin
 
 * We recommend that an account admin set up AI features.
+* If you use customer-managed Bedrock, update the AWS policy for the credentials linked to the Workload Factory IAM role.
+
+NOTE: Add the required permissions to the AWS policy for the credentials linked to the Workload Factory IAM role.
 
 == Configure AI features
 
@@ -43,15 +50,23 @@ GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, 
 
 . Log in using one of the link:console-experiences.html[console experiences^].
 
-. From the menu, select *Administration* and then *AI settings*.
+. From the menu, select *Administration* > *Settings* > *AI tools*.
 
-. On the *AI settings* page, select your preferred configuration:
+. On the *AI tools* page, select your preferred configuration:
 
 * *NetApp-managed Bedrock (Recommended)*: Use NetApp-managed AWS Bedrock.
 
-* *Gen AI features off*: Turn off all AI features.
+* *Customer-managed Bedrock*: 
++
+.. Select the AWS credentials and region associated with the Workload Factory IAM role
+.. Provide the inference profile that you want to use
+.. Select *Validate configuration*.
++
+Workload Factory shows a notification indicating whether the connection succeeds or fails
 
-. Select *Save preferences*.
+* *GenAI features off*: Turn off all AI features.
+
+. Select *Save changes*.
 
 .Result
 
@@ -61,7 +76,7 @@ If AI features are turned off, users see a message when they try to use AI-power
 
 == Budget controls and credit limits
 
-NetApp manages budget controls for AI features when using the default, NetApp-managed configuration.
+NetApp manages budget controls for AI features only when you use the default, NetApp-managed configuration.
 
 === Monthly credit limits
 
