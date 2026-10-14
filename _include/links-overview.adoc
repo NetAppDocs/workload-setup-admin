@@ -47,5 +47,9 @@ The features that require a link include:
 * Clone creation and management, for instant, in-place, data cloning
 * Displaying additional metrics directly from ONTAP such as the ONTAP version
 * Displaying storage VM and cluster LIF details including roles, endpoints, nodes, IP addresses, and status
+* Component breakdown for latency events
 
-Learn how to link:create-link.html[connect a link to an FSx for ONTAP file system]. 
+== Related information
+
+* link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html[Connect a link to an FSx for ONTAP file system]
+* link:https://docs.netapp.com/us-en/workload-setup-admin/manage-links.html[Manage links]

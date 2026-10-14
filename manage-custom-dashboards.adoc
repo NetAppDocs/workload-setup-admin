@@ -57,6 +57,28 @@ Dashboard data loads when you open a dashboard. You can refresh it to see the la
 The dashboard reloads data from your workloads. 
 //The last updated time changes to show when the data was refreshed.
 
+== Edit dashboards
+
+You can edit a dashboard to change what it shows, including the metrics, charts, and time ranges.
+
+NOTE: Only the dashboard creator can edit the dashboard. While you are editing, other users cannot see your changes until you save them.
+
+.Steps
+
+. In the *Custom dashboards* page, locate the dashboard you want to edit.
+
+. From the *Actions* menu for that dashboard, select *Edit dashboard*.
+
+. In the AI dialog, describe the changes you want to make.
++
+This process is similar to creating a new dashboard. You can change the workloads, metrics, or time ranges the dashboard tracks.
+
+. Review the changes and select **Save**.
+
+.Result
+
+The dashboard updates with your changes. The last modified date also updates.
+
 == Delete a dashboard
 
 Delete dashboards you no longer need. This action is permanent and cannot be undone.
