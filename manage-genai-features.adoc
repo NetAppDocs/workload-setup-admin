@@ -42,7 +42,7 @@ GenAI features off:: Turns off all AI features. Users can no longer use Ask Me, 
 * We recommend that an account admin set up AI features.
 * If you use customer-managed Bedrock, update the AWS policy for the credentials linked to the Workload Factory IAM role.
 
-Important: Add the required permissions to the AWS policy for the credentials linked to the Workload Factory IAM role.
+NOTE: Add the required permissions to the AWS policy for the credentials linked to the Workload Factory IAM role.
 
 == Configure AI features
 
@@ -50,9 +50,9 @@ Important: Add the required permissions to the AWS policy for the credentials li
 
 . Log in using one of the link:console-experiences.html[console experiences^].
 
-. From the menu, select *Administration* and then *AI settings*.
+. From the menu, select *Administration* > *Settings* > *AI tools*.
 
-. On the *AI settings* page, select your preferred configuration:
+. On the *AI tools* page, select your preferred configuration:
 
 * *NetApp-managed Bedrock (Recommended)*: Use NetApp-managed AWS Bedrock.
 
@@ -60,10 +60,11 @@ Important: Add the required permissions to the AWS policy for the credentials li
 +
 .. Select the AWS credentials and region associated with the Workload Factory IAM role
 .. Provide the inference profile that you want to use
+.. Select *Validate configuration*.
 +
 Workload Factory shows a notification indicating whether the connection succeeds or fails
 
-* *Gen AI features off*: Turn off all AI features.
+* *GenAI features off*: Turn off all AI features.
 
 . Select *Save changes*.
 
