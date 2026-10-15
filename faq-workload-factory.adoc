@@ -2,10 +2,9 @@
 sidebar: sidebar
 permalink: faq-workload-factory.html
 keywords: faq, frequently asked questions, frequently asked questions about workload factory, setup, administration, credentials, permissions, links, codebox, cloudshell, notifications, service accounts, ai features, custom dashboards, fsx for ontap
-summary: "Frequently asked questions about setting up and administering NetApp Workload Factory."
+summary: "Find answers to common questions about Workload Factory accounts, credentials, permissions, Links, Codebox, CloudShell, notifications, service accounts, and AI features."
 ---
-
-= FAQ for NetApp Workload Factory setup and administration
+= Setup and administration FAQ for NetApp Workload Factory
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -13,7 +12,7 @@ summary: "Frequently asked questions about setting up and administering NetApp W
 :imagesdir: ./media/
 
 [.lead]
-This FAQ answers common questions about setting up and administering NetApp Workload Factory. It focuses on concepts, terminology, behavior, and constraints that are useful when you plan your account, credentials, Links, and automation tools.
+When you set up and administer NetApp Workload Factory, you likely have common questions about concepts, terminology, behavior, and constraints for your account, credentials, Links, and automation tools.
 
 == Overview and costs
 
@@ -41,7 +40,7 @@ Select the GovCloud (US) option if you need an account that uses only GovCloud (
 
 .How do I invite other users to my Workload Factory account?
 
-Account management is possible only from the NetApp Console. An account admin adds members there, and the invited user receives an email with instructions to join. See link:sign-up-and-log-in.html[Sign up and log in].
+You can manage your account only from the NetApp Console. An account admin adds members there, and the invited user receives an email with instructions to join. See link:sign-up-and-log-in.html[Sign up and log in].
 
 == Credentials and permissions
 
@@ -63,7 +62,7 @@ Permission policies are bundled by workload. For Storage, the choices are *View,
 
 .What does the automatic permissions check do, and should I keep it?
 
-When you select *Enable automatic permissions check*, `iam:SimulatePrincipalPolicy` is added to your permission policies so Workload Factory can confirm that you have the required AWS permissions before it completes operations. You can remove it after adding credentials, but keeping it is recommended. It prevents resource creation for partially successful operations and saves you from manual resource cleanup. See link:add-credentials.html[Add credentials].
+Selecting *Enable automatic permissions check* adds `iam:SimulatePrincipalPolicy` to your permission policies so Workload Factory can confirm that you have the required AWS permissions before it completes operations. You can remove it after adding credentials, but keeping it is recommended. It prevents resource creation for partially successful operations and saves you from manual resource cleanup. See link:add-credentials.html[Add credentials].
 
 .Can I delete credentials that I no longer need?
 
@@ -124,7 +123,7 @@ Codebox is an Infrastructure as Code co-pilot that generates the code to run any
 
 .Can I edit the code in Codebox, and does generated code expire?
 
-Codebox Viewer is read-only. You can only copy the code, save it to the Automation Catalog, or download it for some formats. You can edit downloaded code to adapt it to other AWS accounts. CloudFormation YAML code expires after 7 days for security reasons. See link:use-codebox.html[Use Codebox].
+Codebox Viewer is read-only. You can only copy the code, save it to the Automation Catalog, or download it for some formats. You can edit downloaded code to adapt it to other AWS accounts. CloudFormation YAML code expires after seven days for security reasons. See link:use-codebox.html[Use Codebox].
 
 == CloudShell
 
@@ -172,7 +171,7 @@ Yes. With NetApp-managed Bedrock, each account has a monthly spending limit for 
 
 .Can AI agents change my AWS or ONTAP resources?
 
-By default, agents run in read-only mode and can't change resources. In the optional read-write mode, agents summarize each action and take it only after you approve, using the credentials you selected. Agents can access only resources within your current scope and the credentials chosen in Agents settings, and selecting a credential doesn't grant additional AWS permissions. See link:learn-agent.html[Learn about AI agents] and link:manage-agent-settings.html[Manage agents settings].
+By default, agents run in read-only mode and can't change resources. In the optional read/write mode, agents summarize each action and take it only after you approve, using the credentials you selected. Agents can access only resources within your current scope and the credentials chosen in Agents settings, and selecting a credential doesn't grant additional AWS permissions. See link:learn-agent.html[Learn about AI agents] and link:manage-agent-settings.html[Manage agents settings].
 
 == Custom dashboards
 
@@ -182,4 +181,4 @@ New dashboards are private to the creator. Sharing makes a dashboard public to e
 
 .What do I need in place to create and use custom dashboards?
 
-AI features must be enabled by your account admin. You need AWS credentials with read access to the services you want to monitor. A Link is required to connect to FSx for ONTAP file systems. Dashboards are read-only and can't change your storage or workload settings. See link:learn-custom-dashboards.html[Learn about custom dashboards].
+Your account admin must enable AI features. You need AWS credentials with read access to the services you want to monitor. You need a Link to connect to FSx for ONTAP file systems. Dashboards are read-only and can't change your storage or workload settings. See link:learn-custom-dashboards.html[Learn about custom dashboards].
