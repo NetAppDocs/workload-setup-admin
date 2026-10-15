@@ -14,7 +14,7 @@ Manage your custom dashboards from the dashboard catalog. From there, you can vi
 
 .About this task
 
-You can view and manage custom dashboards from the dashboard catalog. Private dashboards are only visible to you, while public dashboards are visible to all users in your Workload Factory account. Each dashboard shows basic details such as the creator’s name, the creation date, and a visibility label (Private or Public).
+You can view and manage custom dashboards from the dashboard catalog. Private dashboards are only visible to you, while public dashboards are visible to all users in your Workload Factory account. Each dashboard shows basic details such as the creator's name, the creation date, and a visibility label (Private or Public).
 
 Custom dashboards are read-only. They cannot change your storage or workload settings.
 
