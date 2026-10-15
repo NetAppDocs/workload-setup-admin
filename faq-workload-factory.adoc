@@ -12,13 +12,13 @@ summary: "Find answers to common questions about Workload Factory accounts, cred
 :imagesdir: ./media/
 
 [.lead]
-Find answers to common questions about Workload Factory accounts, credentials, permissions, Links, Codebox, CloudShell, notifications, service accounts, and AI features.
+When you set up and administer NetApp Workload Factory, you likely have common questions about concepts, terminology, behavior, and constraints for your account, credentials, Links, and automation tools.
 
 == Overview and costs
 
 .What is Workload Factory and what does it cost?
 
-Workload Factory is a lifecycle management platform for optimizing workloads, such as databases, VMware migrations, and EDA projects that run on FSx for ONTAP file systems. Workload Factory itself is free to use. You pay AWS for the services you deploy, such as FSx for ONTAP file systems, VMware Cloud on AWS infrastructure, and other AWS services. 
+Workload Factory is a lifecycle management platform for optimizing workloads, such as databases, VMware migrations, and EDA projects, which run on FSx for ONTAP file systems. Workload Factory itself is free to use. You pay AWS for the services you deploy, such as FSx for ONTAP file systems, VMware Cloud on AWS infrastructure, and other AWS services. 
 
 link:workload-factory-overview.html[Learn about Workload Factory].
 
@@ -26,7 +26,7 @@ link:workload-factory-overview.html[Learn about Workload Factory].
 
 Workload Factory works in all commercial regions where FSx for ONTAP is supported, but not in China regions, Secret Cloud, or Top Secret Cloud. 
 
-https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported Amazon regions.^]
+https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported AWS regions.^]
 
 == Accounts and sign-in
 
@@ -38,13 +38,13 @@ link:console-experiences.html[Decide which console to use].
 
 .How do I sign up, and what happens when I create my first account?
 
-Sign up with your NetApp Support Site (NSS) credentials or create a NetApp cloud login. For a cloud login, you must verify your email address before you can log in. At first login you create an account, which organizes your resources, workloads, and credentials, and you become the account admin with access to all Workload Factory functionality. If you already use NetApp Console, then you already belong to an account because Workload Factory uses NetApp accounts. 
+Sign up with your NetApp Support Site (NSS) credentials or create a NetApp cloud login. For a cloud login, you must verify your email address before you can log in. At first login you create an account, which organizes your resources, workloads, and credentials, and you become the account admin with access to all Workload Factory functionality. If you already use the NetApp Console, you already belong to an account because Workload Factory uses NetApp accounts. 
 
 link:sign-up-and-log-in.html[Sign up and log in].
 
 .Should I make my account an AWS GovCloud (US) account, and can I change that later?
 
-Select the GovCloud (US) option if you need an account that uses only GovCloud (US) endpoints and regions, with credentials and secrets staying in GovCloud. This selection is permanent. GovCloud accounts must add credentials and create links manually. 
+Select the GovCloud (US) option if you need an account that uses only GovCloud (US) endpoints and regions, with credentials and secrets staying in GovCloud. This selection is permanent. GovCloud accounts must add credentials and create Links manually. 
 
 .How do I invite other users to my Workload Factory account?
 
@@ -93,15 +93,15 @@ link:manage-credentials.html[Remove credentials].
 
 == Links
 
-.What is a link, and do I need one?
+.What is a Link, and do I need one?
 
-A link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. Links use AWS Lambda so you can monitor and manage features through ONTAP REST API calls that the Amazon FSx for ONTAP API doesn't provide. You don't need a link to get started, but you need one to unlock all Workload Factory features.
+A Link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. Links use AWS Lambda so you can monitor and manage features through ONTAP REST API calls that the Amazon FSx for ONTAP API doesn't provide. You don't need a Link to get started, but you need one to unlock all Workload Factory features.
 
-link:links-overview.html[Learn more about links].
+link:links-overview.html[Learn more about Links].
 
 .Which features require a Link?
 
-Features that require a link include but are not limited to:
+Features that require a Link include:
 
 * Well-architected status for FSx for ONTAP
 * ONTAP EMS event monitoring
@@ -114,43 +114,43 @@ Features that require a link include but are not limited to:
 * Clone creation
 * Extra ONTAP metrics and LIF details
 
-If you try an operation that needs a link and none is associated, Workload Factory tells you. See link:links-overview.html[Learn more about links].
+If you try an operation that needs a Link and none is associated, Workload Factory tells you. See link:links-overview.html[Learn more about Links].
 
-.Do links add cost?
+.Do Links add cost?
 
 Yes. Each Lambda transaction incurs an AWS charge. Because Lambda acts as a proxy, you are charged when it sends a request to the ONTAP REST API on a file system and again when it sends the response back to Workload Factory. 
 
-link:links-overview.html[Learn more about links].
+link:links-overview.html[Learn more about Links].
 
-.Can a file system be associated with more than one link?
+.Can a file system be associated with more than one Link?
 
-One link can be associated with many FSx for ONTAP file systems. Each file system can be associated with only one link in the same NetApp account. If you have multiple NetApp accounts, a file system can be associated with additional links under different accounts. See link:links-overview.html[Learn more about links].
+One Link can be associated with many FSx for ONTAP file systems. Each file system can be associated with only one Link in the same NetApp account. If you have multiple NetApp accounts, a file system can be associated with additional Links under different accounts. See link:links-overview.html[Learn more about Links].
 
-.Should I create a link automatically or manually?
+.Should I create a Link automatically or manually?
 
-Automatic creation registers the link through Workload Factory, but it uses tokens for Workload Factory automation and its CloudFormation code can be used for only up to six hours. Manual creation uses CloudFormation or Terraform from Codebox, and the code persists. This is useful when teams such as Security and DevOps must first grant permissions. GovCloud accounts must create links manually. 
+Automatic creation registers the Link through Workload Factory, but it uses tokens for Workload Factory automation and its CloudFormation code can be used for only up to six hours. Manual creation uses CloudFormation or Terraform from Codebox, and the code persists. This is useful when teams such as Security and DevOps must first grant permissions. GovCloud accounts must create Links manually. 
 
-link:create-link.html[Create a link].
+link:create-link.html[Create a Link].
 
-.What do I need in place before I create a link?
+.What do I need in place before I create a Link?
 
-You also need the required ports open in the file system's security group, the ability for the link to reach `\https://api.workloads.netapp.com`, and sufficient AWS permissions to create CloudFormation stacks. 
+You need the required ports open in the file system's security group, the ability for the Link to reach `\https://api.workloads.netapp.com`, and sufficient AWS permissions to create CloudFormation stacks. 
 
-link:create-link.html[Learn about the complete list of prerequisites to create a link].
+link:create-link.html[Learn about the complete list of prerequisites to create a Link].
 
-.Can I change how a link authenticates, or edit a link after it is created?
+.Can I change how a Link authenticates, or edit a Link after it is created?
 
-No. A link supports only one authentication method, either Workload Factory credentials or AWS Secrets Manager, and you can't change it later. 
+No. A Link supports only one authentication method, either Workload Factory credentials or AWS Secrets Manager, and you can't change it later. 
 
-You can't edit a link in the interface. To change one, create a new link and associate it with the file system. Changing the Lambda network configuration in AWS is not recommended because it can cause connectivity issues. 
+You can't edit a Link in the interface. To change one, create a new Link and associate it with the file system. Changing the Lambda network configuration in AWS is not recommended because it can cause connectivity issues. 
 
-link:manage-links.html[Manage links].
+link:manage-links.html[Manage Links].
 
-.What happens when I remove a link?
+.What happens when I remove a Link?
 
-File systems and other resources that used the link can no longer use functionality that depends on it. The link is deleted only from Workload Factory, not from AWS, so you must also delete the Lambda function in your AWS account. 
+File systems and other resources that used the Link can no longer use functionality that depends on it. The Link is deleted only from Workload Factory, not from AWS, so you must also delete the Lambda function in your AWS account. 
 
-link:manage-links.html[Remove a link].
+link:manage-links.html[Remove a Link].
 
 == Codebox
 
@@ -178,7 +178,7 @@ link:use-cloudshell.html[Use CloudShell].
 
 .Where can Workload Factory send notifications, and who controls them?
 
-Workload Factory can send notifications as NetApp Console alerts, as email to addresses associated with the account, or to an Amazon SNS topic. Console alerts appear when you have a Console agent or link deployed. When you configure notifications in the NetApp Console, it takes ownership of delivery and the Workload Factory console notification options become read-only. 
+Workload Factory can send notifications as NetApp Console alerts, as email to addresses associated with the account, or to an Amazon SNS topic. Console alerts appear when you have a Console agent or Link deployed. When you configure notifications in the NetApp Console, it takes ownership of delivery and the Workload Factory console notification options become read-only. 
 
 link:configure-notifications.html[Configure notifications].
 
@@ -198,9 +198,9 @@ link:manage-service-accounts.html[Manage service accounts].
 
 == Well-architected analysis
 
-.How does the well-architected analysis work, and does it require a link?
+.How does the well-architected analysis work, and does it require a Link?
 
-Workload Factory scans FSx for ONTAP file systems daily. It rates configurations as optimized or not optimized, provides recommendations, and can fix some issues automatically, while others need manual steps. You can dismiss checks that don't apply to your environment, or create custom rules in plain language. For a comprehensive analysis of your file systems, you'll need to create and associate a link with them. 
+Workload Factory scans FSx for ONTAP file systems daily. It rates configurations as optimized or not optimized, provides recommendations, and can fix some issues automatically, while others need manual steps. You can dismiss checks that don't apply to your environment, or create custom rules in plain language. For a comprehensive analysis of your file systems, you'll need to create and associate a Link with them. 
 
 link:well-architected-workloads.html[Learn more about the well-architected analysis].
 
@@ -242,6 +242,6 @@ New dashboards are private to the creator. Sharing makes a dashboard public to e
 
 .What do I need in place to create and use custom dashboards?
 
-Your account admin must enable AI features. You need AWS credentials with read access to the services you want to monitor. You need a link to connect to FSx for ONTAP file systems. Dashboards are read-only and can't change your storage or workload settings. 
+Your account admin should enable AI features. You need AWS credentials with read access to the services you want to monitor. You need a Link to connect to FSx for ONTAP file systems. Dashboards are read-only and can't change your storage or workload settings. 
 
 link:learn-custom-dashboards.html[Learn about custom dashboards].
