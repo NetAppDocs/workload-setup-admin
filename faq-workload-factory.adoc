@@ -1,0 +1,247 @@
+---
+sidebar: sidebar
+permalink: faq-workload-factory.html
+keywords: faq, frequently asked questions, frequently asked questions about workload factory, setup, administration, credentials, permissions, links, codebox, cloudshell, notifications, service accounts, ai features, custom dashboards, fsx for ontap
+summary: "Find answers to common questions about Workload Factory accounts, credentials, permissions, Links, Codebox, CloudShell, notifications, service accounts, and AI features."
+---
+= Setup and administration FAQ for NetApp Workload Factory
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+When you set up and administer NetApp Workload Factory, you likely have common questions about concepts, terminology, behavior, and constraints for your account, credentials, Links, and automation tools.
+
+== Overview and costs
+
+.What is Workload Factory and what does it cost?
+
+Workload Factory is a lifecycle management platform for optimizing workloads, such as databases, VMware migrations, and EDA projects, which run on FSx for ONTAP file systems. Workload Factory itself is free to use. You pay AWS for the services you deploy, such as FSx for ONTAP file systems, VMware Cloud on AWS infrastructure, and other AWS services. 
+
+link:workload-factory-overview.html[Learn about Workload Factory].
+
+.In which AWS regions is Workload Factory available?
+
+Workload Factory works in all commercial regions where FSx for ONTAP is supported, but not in China regions, Secret Cloud, or Top Secret Cloud. 
+
+https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/[View supported AWS regions.^]
+
+== Accounts and sign-in
+
+.What is the difference between the Workload Factory console and the NetApp Console?
+
+Both are web-based consoles that give you access to Workload Factory. The NetApp Console offers a hybrid experience where you manage FSx for ONTAP file systems and workloads in one place alongside other data services. The Workload Factory console is a dedicated experience focused on workloads running on FSx for ONTAP. 
+
+link:console-experiences.html[Decide which console to use].
+
+.How do I sign up, and what happens when I create my first account?
+
+Sign up with your NetApp Support Site (NSS) credentials or create a NetApp cloud login. For a cloud login, you must verify your email address before you can log in. At first login you create an account, which organizes your resources, workloads, and credentials, and you become the account admin with access to all Workload Factory functionality. If you already use the NetApp Console, you already belong to an account because Workload Factory uses NetApp accounts. 
+
+link:sign-up-and-log-in.html[Sign up and log in].
+
+.Should I make my account an AWS GovCloud (US) account, and can I change that later?
+
+Select the GovCloud (US) option if you need an account that uses only GovCloud (US) endpoints and regions, with credentials and secrets staying in GovCloud. This selection is permanent. GovCloud accounts must add credentials and create Links manually. 
+
+.How do I invite other users to my Workload Factory account?
+
+You can manage your account only from the NetApp Console. An account admin adds members there, and the invited user receives an email with instructions to join. 
+
+link:sign-up-and-log-in.html[Invite other users to your account].
+
+== Credentials and permissions
+
+.Do I have to add AWS credentials to use Workload Factory?
+
+Adding credentials is optional to get started, so you can use Workload Factory without accessing your AWS account. However, to create and manage FSx for ONTAP file systems and to deploy and manage workloads such as databases, Workload Factory needs credentials. 
+
+* link:quick-start.html[Get started with Workload Factory]. 
+* link:add-credentials.html[Add credentials].
+
+.How do Workload Factory credentials work?
+
+Credentials use an AWS assume role flow. Each set of credentials consists of one or more IAM policies, based on the workload capabilities and permission levels you select, and an IAM role that Workload Factory assumes. You can add more capabilities later at any time.
+
+link:add-credentials.html[Add credentials].
+
+.Should I add credentials manually or by using CloudFormation?
+
+With the manual method, you create the IAM policies and IAM role in the AWS Management Console, copying the policy JSON from Codebox. With the automatic method, you select capabilities and a CloudFormation stack creates the IAM policies and IAM role for you. GovCloud (US) credentials must be added manually, because CloudFormation isn't supported there. 
+
+link:add-credentials.html[Add credentials].
+
+.What permission levels can I choose, and how do I decide which to grant?
+
+Permission policies are bundled by workload. For Storage, the choices are *View, planning, and analysis*, *Operations and remediation*, and *File system creation and deletion*. Database workloads offer *View, planning, and analysis*, *Operations and remediation*, and *Database host creation*. The policies let you assign incremental trust based on your IT policies. Select only the capabilities you plan to use now.  
+
+link:permissions-reference.html[Permissions reference].
+
+.What does the automatic permissions check do, and should I keep it enabled?
+
+Selecting *Enable automatic permissions check* adds `iam:SimulatePrincipalPolicy` to your permission policies so Workload Factory can confirm that you have the required AWS permissions before it completes operations. You can remove it after adding credentials, but keeping it is recommended. It prevents resource creation for partially successful operations and saves you from manual resource cleanup. 
+
+link:add-credentials.html[Enable the automatic permissions check when you add credentials].
+
+.Can I delete credentials that I no longer need?
+
+You can delete credentials only if they aren't associated with an FSx for ONTAP file system. Use *Remove* in the Workload Factory console or *Delete* in the NetApp Console. 
+
+link:manage-credentials.html[Remove credentials].
+
+== Links
+
+.What is a Link, and do I need one?
+
+A Link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. Links use AWS Lambda so you can monitor and manage features through ONTAP REST API calls that the Amazon FSx for ONTAP API doesn't provide. You don't need a Link to get started, but you need one to unlock all Workload Factory features.
+
+link:links-overview.html[Learn more about Links].
+
+.Which features require a Link?
+
+Features that require a Link include:
+
+* Well-architected status for FSx for ONTAP
+* ONTAP EMS event monitoring
+* Autonomous Ransomware Protection with AI (ARP/AI)
+* Volume and storage VM replication
+* SMB/CIFS shares and NFS export policies
+* iSCSI volume management
+* Snapshot policies
+* Volume autogrow and inode management
+* Clone creation
+* Extra ONTAP metrics and LIF details
+
+If you try an operation that needs a Link and none is associated, Workload Factory tells you. See link:links-overview.html[Learn more about Links].
+
+.Do Links add cost?
+
+Yes. Each Lambda transaction incurs an AWS charge. Because Lambda acts as a proxy, you are charged when it sends a request to the ONTAP REST API on a file system and again when it sends the response back to Workload Factory. 
+
+link:links-overview.html[Learn more about Links].
+
+.Can a file system be associated with more than one Link?
+
+One Link can be associated with many FSx for ONTAP file systems. Each file system can be associated with only one Link in the same NetApp account. If you have multiple NetApp accounts, a file system can be associated with additional Links under different accounts. See link:links-overview.html[Learn more about Links].
+
+.Should I create a Link automatically or manually?
+
+Automatic creation registers the Link through Workload Factory, but it uses tokens for Workload Factory automation and its CloudFormation code can be used for only up to six hours. Manual creation uses CloudFormation or Terraform from Codebox, and the code persists. This is useful when teams such as Security and DevOps must first grant permissions. GovCloud accounts must create Links manually. 
+
+link:create-link.html[Create a Link].
+
+.What do I need in place before I create a Link?
+
+You need the required ports open in the file system's security group, the ability for the Link to reach `\https://api.workloads.netapp.com`, and sufficient AWS permissions to create CloudFormation stacks. 
+
+link:create-link.html[Learn about the complete list of prerequisites to create a Link].
+
+.Can I change how a Link authenticates, or edit a Link after it is created?
+
+No. A Link supports only one authentication method, either Workload Factory credentials or AWS Secrets Manager, and you can't change it later. 
+
+You can't edit a Link in the interface. To change one, create a new Link and associate it with the file system. Changing the Lambda network configuration in AWS is not recommended because it can cause connectivity issues. 
+
+link:manage-links.html[Manage Links].
+
+.What happens when I remove a Link?
+
+File systems and other resources that used the Link can no longer use functionality that depends on it. The Link is deleted only from Workload Factory, not from AWS, so you must also delete the Lambda function in your AWS account. 
+
+link:manage-links.html[Remove a Link].
+
+== Codebox
+
+.What is Codebox and which code formats does it generate?
+
+Codebox is an Infrastructure as Code co-pilot that generates the code to run any operation that Workload Factory supports. It supports Workload Factory REST APIs, AWS CLI, AWS CloudFormation, and Terraform. Codebox Viewer shows code generated from your wizard entries, and the Automation Catalog stores saved jobs as reusable templates.
+
+link:codebox-automation.html[Learn more about Codebox].
+
+.Can I edit the code in Codebox, and does generated code expire?
+
+Codebox Viewer is read-only. You can only copy the code, save it to the Automation Catalog, or download it for some formats. You can edit downloaded code to adapt it to other AWS accounts. CloudFormation YAML code expires after seven days for security reasons. 
+
+link:use-codebox.html[Use Codebox].
+
+== CloudShell
+
+.What can I do in CloudShell, and what are its limitations?
+
+CloudShell runs AWS CLI and ONTAP CLI commands in a browser-based shell, proxied through the Workload Factory backend, by using the AWS and ONTAP credentials you provided. It requires at least one AWS credential. Shell operators such as pipe `|`, background `&`, and redirection `>` aren't supported, and commands that include them fail. AWS commands succeed only if the selected credentials have permissions in the chosen region.
+
+link:use-cloudshell.html[Use CloudShell].
+
+== Notifications
+
+.Where can Workload Factory send notifications, and who controls them?
+
+Workload Factory can send notifications as NetApp Console alerts, as email to addresses associated with the account, or to an Amazon SNS topic. Console alerts appear when you have a Console agent or Link deployed. When you configure notifications in the NetApp Console, it takes ownership of delivery and the Workload Factory console notification options become read-only. 
+
+link:configure-notifications.html[Configure notifications].
+
+.What should I know before I use Amazon SNS for critical alerts?
+
+Workload Factory supports only the Standard SNS topic type, which doesn't guarantee that notifications reach subscribers in the order received. Consider this for critical or emergency notifications. A subscriber receives all notifications on the topic by default, so use an SNS filter policy (by resource type, workload, priority, or notification type) to receive only what you need. 
+
+link:configure-notifications.html[Configure notifications].
+
+== Service accounts
+
+.When should I use a service account, and what should I know about its secret?
+
+Use a service account for API-only automation so scripts don't depend on a person's user account. The client secret is shown only once and Workload Factory doesn't store it, so copy or download it when you create the service account. Access tokens generated from the client ID and secret are short-lived and last only several hours. In the Workload Factory console you can only create or delete service accounts. To get a new secret, delete the service account and create a new one. 
+
+link:manage-service-accounts.html[Manage service accounts].
+
+== Well-architected analysis
+
+.How does the well-architected analysis work, and does it require a Link?
+
+Workload Factory scans FSx for ONTAP file systems daily. It rates configurations as optimized or not optimized, provides recommendations, and can fix some issues automatically, while others need manual steps. You can dismiss checks that don't apply to your environment, or create custom rules in plain language. For a comprehensive analysis of your file systems, you'll need to create and associate a Link with them. 
+
+link:well-architected-workloads.html[Learn more about the well-architected analysis].
+
+== Tracker
+
+.What is Tracker, how long does it keep job history, and what can I do with failed jobs?
+
+Tracker is the monitoring tool in Workload Factory and keeps events in the user interface for 30 days. You can filter by time frame, workload, status, and user, and download the jobs table as a CSV file. For a failed operation, you can retry it, or edit its parameters and retry. The number of retries allowed for a failed operation is limited.
+
+link:monitor-operations.html[Monitor operations with Tracker].
+
+== AI features
+
+.How do I control AI features, and what happens if I turn them off?
+
+On the AI settings page, an admin can choose NetApp-managed Bedrock (recommended) or turn all AI features off. NetApp-managed Bedrock doesn't use your data to train models and needs no extra AWS setup. Turning AI features off makes Ask Me, AI agents, custom dashboards, rules builder, analyzers, and AI error responses in CloudShell unavailable. AI features use AWS Bedrock in public AWS regions, which can matter for GovCloud accounts. 
+
+link:manage-genai-features.html[Manage AI features].
+
+.Is there a limit on AI usage?
+
+Yes. With NetApp-managed Bedrock, each account has a monthly spending limit for each AI feature. When the limit is reached, Workload Factory turns off AI features, grays out the related parts of the interface, and shows a tooltip. To get more credits, contact your NetApp representative. 
+
+.Can AI agents change my AWS or ONTAP resources?
+
+By default, agents run in read-only mode and can't change resources. In the optional read/write mode, agents summarize each action and take it only after you approve, using the credentials you selected. Agents can access only resources within your current scope and the credentials chosen in Agents settings, and selecting a credential doesn't grant additional AWS permissions. 
+
+* link:learn-agent.html[Learn about AI agents]. 
+* link:manage-agent-settings.html[Manage agents settings].
+
+== Custom dashboards
+
+.Who can see, edit, or delete a custom dashboard?
+
+New dashboards are private to the creator. Sharing makes a dashboard public to everyone in your Workload Factory account, and you can't share outside the account. Only the creator can edit a dashboard, but all users in the account can delete one. Deletion is permanent and removes the dashboard for everyone, so coordinate with your team. 
+
+* link:learn-custom-dashboards.html[Learn about custom dashboards].
+* link:manage-custom-dashboards.html[Manage custom dashboards].
+
+.What do I need in place to create and use custom dashboards?
+
+Your account admin should enable AI features. You need AWS credentials with read access to the services you want to monitor. You need a Link to connect to FSx for ONTAP file systems. Dashboards are read-only and can't change your storage or workload settings. 
+
+link:learn-custom-dashboards.html[Learn about custom dashboards].
