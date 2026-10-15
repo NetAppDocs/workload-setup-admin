@@ -2,7 +2,7 @@
 sidebar: sidebar
 permalink: faq-workload-factory.html
 keywords: faq, frequently asked questions, frequently asked questions about workload factory, setup, administration, credentials, permissions, links, codebox, cloudshell, notifications, service accounts, ai features, custom dashboards, fsx for ontap
-summary: "Find answers to common questions about Workload Factory accounts, credentials, permissions, Links, Codebox, CloudShell, notifications, service accounts, and AI features."
+summary: "Find answers to common questions about Workload Factory accounts, credentials, permissions, links, Codebox, CloudShell, notifications, service accounts, and AI features."
 ---
 = Setup and administration FAQ for NetApp Workload Factory
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: "Find answers to common questions about Workload Factory accounts, cred
 :imagesdir: ./media/
 
 [.lead]
-When you set up and administer NetApp Workload Factory, you likely have common questions about concepts, terminology, behavior, and constraints for your account, credentials, Links, and automation tools.
+When you set up and administer NetApp Workload Factory, you likely have common questions about concepts, terminology, behavior, and constraints for your account, credentials, links, and automation tools. 
 
 == Overview and costs
 

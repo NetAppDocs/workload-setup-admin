@@ -9,6 +9,7 @@ summary: "Track FSx for ONTAP, credentials, and link operations and monitor job 
 :imagesdir: ./media/
 
 [.lead]
+Tracker in NetApp Workload Factory lets you monitor and track the progress and status of FSx for ONTAP, credentials, and link operations, so you can review task and subtask details and diagnose issues or failures. You can filter and search jobs, download a jobs report, and retry or edit a failed operation directly from Tracker.
 
 // Refer to include file monitor-operations.doc for content. This content is reused in the workload-fsx-ontap repo. 
 include::_include/monitor-operations.adoc[]
