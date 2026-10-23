@@ -16,7 +16,7 @@ Custom dashboards use AI to create personalized views of your Workload Factory e
 
 Everyone in your Workload Factory account can view all custom dashboards. This shared setup helps teams collaborate and see the same operational information across your organization.
 
-NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to create dashboards. Contact your administrator or link:manage-genai-features.html[learn about AI administration].
+NOTE: If your account admin has turned off AI features, you'll see a message and won't be able to create or edit dashboards.  Contact your administrator or link:manage-genai-features.html[learn about AI administration].
 
 == Why use custom dashboards
 
@@ -36,6 +36,10 @@ During setup, the AI-guided dialog helps you define:
 * Time ranges and periods to compare  
 * Views by region, workload, or other categories  
 * Rules or requirements you need to track and show
+
+You can edit dashboards from the catalog, and update the dashboard name, description, category, or monitoring request before deciding whether to save the revised version.
+
+NOTE: Only the dashboard creator can edit the dashboard. While you are editing, other users cannot see your changes until you save them.
 
 == View and share dashboards
 
