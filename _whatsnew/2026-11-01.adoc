@@ -1,0 +1,3 @@
+=== Link creation improvements
+
+Workload Factory has updated Codebox output for link creation by replacing inline Lambda permissions with the IAM policy for the CloudFormation template and Terraform.
