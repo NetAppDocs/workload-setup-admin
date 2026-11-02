@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar
 permalink: manage-custom-dashboards.html
-keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog
+keywords: manage dashboards, delete dashboard, refresh dashboard, dashboard catalog, refresh data, load data, last updated
 summary: "Access your dashboard catalog to view, refresh, and delete custom dashboards in Workload Factory."
 ---
 
@@ -52,10 +52,30 @@ The dashboard updates immediately. The visibility label on the dashboard card sh
 
 == Refresh dashboard data
 
-Dashboard data loads when you open a dashboard. You can refresh it to see the latest information.
+Check when your dashboard was last refreshed and request an on-demand scan when you need current data.
 
-The dashboard reloads data from your workloads. 
-//The last updated time changes to show when the data was refreshed.
+.About this task
+
+The *Refresh data* tooltip shows a *Last Updated* timestamp with the date and time when the dashboard was last refreshed. This timestamp refers to the collected data, not the last time the dashboard configuration was changed.
+
+Selecting *Refresh data* starts a new scan. While a scan is running, the button is disabled and its tooltip indicates that a scan is in progress.
+
+Workload Factory records an event in Tracker when you select either *Refresh data* or *Load it now*. link:monitor-operations.html[Learn about monitoring operations with Tracker].
+
+.Steps
+
+. From the dashboard catalog, open the dashboard you want to view.
+. Hover over *Refresh data* to check the *Last Updated* date and time.
+. To request updated metrics, select *Refresh data*.
++
+A banner indicates that a scan has started. Wait for the scan to complete.
+
+. When new data is available, a banner displays this message: "New data is available. Load it now, or click Refresh data anytime to update the view."
+. Select *Load it now* in the banner to load the available data into the dashboard. Alternatively, select *Refresh data* to update the view.
+
+.Result
+
+The dashboard displays the updated metrics.
 
 == Edit dashboards
 
