@@ -15,3 +15,9 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards
 Custom dashboards now ask you to choose one or more regions if your request does not include them. Dashboard data is limited to the regions you select.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html[Learn how to create a custom dashboard]
+
+=== IAM policy for link creation
+
+The CloudFormation template and Terraform code for creating links now use an IAM policy instead of inline Lambda permissions.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html[Learn how to create a link]
