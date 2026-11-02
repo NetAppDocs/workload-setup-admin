@@ -29,3 +29,7 @@ You can now use Tracker to review changes to AI agent settings and, in read-writ
 Resource changes made through Workload Factory APIs are logged by the Workload Factory service that performs the operation.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/learn-agent.html#audit-and-tracking-for-agent-actions[Learn about audit and tracking for agent actions]
+
+=== Link creation improvements
+
+Workload Factory has updated Codebox output for link creation by replacing inline Lambda permissions with the IAM policy for the CloudFormation template and Terraform.
