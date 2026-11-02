@@ -52,6 +52,14 @@ Each dashboard card shows whether the dashboard is private or public, so you can
 
 link:manage-custom-dashboards.html#change-dashboard-visibility[Learn how to change dashboard visibility].
 
+== Check if the data is up to date
+
+You can check when your dashboard data was last updated and request a refresh at any time. A tooltip shows the last update date and time.
+
+Select *Refresh data* to start a new scan. The button is unavailable while a scan is in progress. When new data is ready, a banner appears with an option to update the dashboard.
+
+link:manage-custom-dashboards.html#refresh-dashboard-data[Learn how to refresh dashboard data].
+
 == Considerations and limitations
 
 === AWS credentials and permissions

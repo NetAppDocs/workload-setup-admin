@@ -220,6 +220,12 @@ On the AI settings page, an admin can choose NetApp-managed Bedrock (recommended
 
 link:manage-genai-features.html[Manage AI features].
 
+.Where do agent settings and actions appear for auditing?
+
+Tracker records changes to agent settings and, in read-write mode, each approval request, including the agent's question and the user's answer. Resource changes made through Workload Factory APIs are logged by the Workload Factory service that performs the operation.
+
+link:manage-agent-settings.html#audit-and-tracking-for-agent-actions[Learn about audit and tracking for agent actions].
+
 .Is there a limit on AI usage?
 
 Yes. With NetApp-managed Bedrock, each account has a monthly spending limit for each AI feature. When the limit is reached, Workload Factory turns off AI features, grays out the related parts of the interface, and shows a tooltip. To get more credits, contact your NetApp representative. 
