@@ -15,3 +15,11 @@ link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards
 Custom dashboards now ask you to choose one or more regions if your request does not include them. Dashboard data is limited to the regions you select.
 
 link:https://docs.netapp.com/us-en/workload-setup-admin/create-custom-dashboard.html[Learn how to create a custom dashboard]
+
+=== Audit and tracking for AI agent actions
+
+You can now use Tracker to review changes to AI agent settings and, in read-write mode, each approval request, including the agent's question and the user's answer.
+
+Resource changes made through Workload Factory APIs are logged by the Workload Factory service that performs the operation.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/learn-agent.html#audit-and-tracking-for-agent-actions[Learn about audit and tracking for agent actions]
