@@ -4,7 +4,6 @@ permalink: manage-agent-settings.html
 keywords: agents settings, aiops, agent configuration, ai agent, agent mode, credentials, read-only, read-write, custom prompt, verbose, slack integration
 summary: "Set up AI agents settings such as operating mode, access permissions, custom instructions, and response detail levels to control how agents work in your Workload Factory environment."
 ---
-
 = Manage AI agents settings in NetApp Workload Factory
 :hardbreaks:
 :nofooter:

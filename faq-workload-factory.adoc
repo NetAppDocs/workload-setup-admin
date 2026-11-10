@@ -224,7 +224,7 @@ link:manage-genai-features.html[Manage AI features].
 
 Tracker records changes to agent settings and, in read-write mode, each approval request, including the agent's question and the user's answer. Resource changes made through Workload Factory APIs are logged by the Workload Factory service that performs the operation.
 
-link:manage-agent-settings.html#audit-and-tracking-for-agent-actions[Learn about audit and tracking for agent actions].
+link:learn-agent.html[Learn about audit and tracking for agent actions].
 
 .Is there a limit on AI usage?
 
