@@ -4,7 +4,6 @@ permalink: learn-agent.html
 keywords: agent, ai agent, aiops, ask me, explore agent, ai assistant, environment-aware, read-only, read, write, agents settings
 summary: "Learn how AI agents for Workload Factory can analyze your environment, identify risks and ways to improve performance, and take actions for you with your approval."
 ---
-
 = Learn about the AI agents in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
