@@ -79,8 +79,6 @@ This approval process applies to all agent experiences, including Slack integrat
 
 In read-write mode, Tracker records each approval request, including the agent's question and the user's answer. Resource changes made through Workload Factory APIs are logged by the Workload Factory service that performs the operation. For example, a volume created through Workload Factory appears under the *Storage* service tag, not *Agent*.
 
-link:manage-agent-settings.html[Learn about audit and tracking for agent actions].
-
 == What users see when AI agents have no data or activity
 
 If agents don't have credentials, they can still provide general guidance. However, they can't review your resources or give insights specific to your environment.
