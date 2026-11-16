@@ -538,6 +538,108 @@ s3tables:GetNamespace
 
 ====
 
+==== Impacts of removing permissions from Storage IAM policies
+For security reasons, you may want to remove some permissions from the Storage IAM policies. The following tables describe the impact of removing permissions from each policy.
+
+[%collapsible]
+.View, planning, and analysis permissions
+====
+
+[cols="2,3,3",options="header"]
+|===
+|Permission |Purpose |Impact if removed
+|fsx:DescribeFileSystems |Discover and display file system configuration |No file systems visible
+|fsx:DescribeVolumes |List volumes and their properties |Volumes not displayed
+|fsx:DescribeStorageVirtualMachines |List storage VMs, protocols, DNS configuration |SVMs not shown
+|fsx:DescribeBackups |List available backups |Backup information unavailable
+|fsx:ListTagsForResource |Display resource tags |Tags missing
+|fsx:DescribeSharedVpcConfigurations |Detect shared VPC deployments |Shared VPC info unavailable
+|fsx:DescribeS3AccessPointAttachments |List S3 access points on volumes |S3 access point info missing
+|s3:GetAccessPoint |Retrieve S3 access point details |Access point details unavailable
+|cloudwatch:GetMetricData |Retrieve performance and capacity metrics |Dashboards and charts empty
+|cloudwatch:GetMetricStatistics |Capacity utilization monitoring |Capacity management features disabled
+|ec2:DescribeInstances |Discover compute workloads using FSx storage |Workload topology incomplete
+|ec2:DescribeVolumes |EBS volume discovery for storage comparison |Savings analysis incomplete
+|ec2:DescribeVpcs |VPC enumeration for network context |VPC selection unavailable
+|ec2:DescribeSubnets |Subnet enumeration for placement decisions |Subnet selection unavailable
+|ec2:DescribeSecurityGroups |Security group discovery and validation |Security group info missing
+|ec2:DescribeRouteTables |Network route mapping |Route information unavailable
+|ec2:DescribeNetworkInterfaces |Network interface discovery |Connectivity checks degraded
+|elasticfilesystem:DescribeFileSystems |EFS discovery for migration and savings analysis |EFS not included in savings
+|ce:GetCostAndUsage |Cost data for savings calculations |Cost analysis unavailable
+|ce:GetTags |Cost allocation tag queries |Tag-based cost views fail
+|===
+
+Resource scope: All resources (`*`). These are read-only Describe/Get/List actions.
+====
+
+[%collapsible]
+.Operations and remediation permissions
+==== 
+
+Operations and remediation permissions enable volume lifecycle, backup management, S3 access points, metadata catalog, and AI-powered event analysis.
+
+Resource scope: All resources (`*`), except CloudTrail actions conditioned on tag `netapp-fsxs3-metadata=journal`.
+
+NOTE: AI inference runs in your AWS account using your Bedrock inference profiles. No data is sent outside your account for AI diagnostics.
+
+[cols="2,3,3",options="header"]
+|===
+|Permission |Purpose |Impact if removed
+|fsx:CreateVolume |Create new volumes |Volume creation unavailable
+|fsx:DeleteVolume |Delete volumes |Volume deletion unavailable
+|fsx:UpdateFileSystem |Modify throughput and storage capacity |File system updates and auto-capacity management disabled
+|fsx:UpdateStorageVirtualMachine |Modify SVM settings |SVM configuration changes unavailable
+|fsx:UpdateVolume |Modify volume size, tiering, and QoS |Volume modifications unavailable
+|fsx:CreateBackup |Create on-demand backups |Manual backup creation unavailable
+|fsx:CreateVolumeFromBackup |Restore a volume from backup |Restore from backup unavailable
+|fsx:DeleteBackup |Remove backups |Backup deletion unavailable
+|fsx:TagResource / fsx:UntagResource |Manage FSx resource tags |Tagging operations fail
+|fsx:CreateAndAttachS3AccessPoint |Create an S3 access point on a volume |S3 access point creation unavailable
+|fsx:DetachAndDeleteS3AccessPoint |Remove an S3 access point from a volume |S3 access point removal unavailable
+|s3:CreateAccessPoint / s3:DeleteAccessPoint |S3 access point lifecycle |S3 access point operations fail
+|s3:TagResource / s3:UntagResource / s3:ListTagsForResource |S3 resource tagging |S3 tag operations fail
+|s3:GetObjectTagging / s3:ListBucket |Query metadata catalog content |Metadata catalog queries degraded
+|bedrock:InvokeModel / bedrock:InvokeModelWithResponseStream |AI-powered analysis and diagnostics |AI analysis features unavailable
+|bedrock:ListInferenceProfiles / bedrock:GetInferenceProfile |Enumerate available AI models |Cannot configure AI features
+|s3tables:CreateTableBucket / s3tables:CreateTable / s3tables:CreateNamespace |Create metadata catalog structures |Metadata catalog creation fails
+|s3tables:GetTable / s3tables:GetTableBucket / s3tables:GetNamespace / s3tables:GetTableMetadataLocation |Read metadata catalog configuration |Metadata catalog reads fail
+|s3tables:PutTableData / s3tables:GetTableData |Write and read metadata catalog entries |Metadata catalog operations fail
+|s3tables:ListTables / s3tables:ListNamespaces / s3tables:ListTableBuckets |Enumerate metadata catalog objects |Metadata catalog navigation fails
+|s3tables:UpdateTableMetadataLocation |Update catalog metadata pointers |Catalog location updates fail
+|s3tables:ListTagsForResource / s3tables:TagResource |Metadata catalog tagging |Catalog tag operations fail
+|cloudtrail:PutEventSelectors / cloudtrail:GetEventSelectors |Metadata catalog change journaling |Catalog journaling unavailable
+|===
+====
+
+[%collapsible]
+.File system creation permissions
+==== 
+
+File system creation permissions enable provisioning and deprovisioning of FSx for ONTAP file systems and storage VMs.
+
+[cols="2,3,3",options="header"]
+|===
+|Permission |Purpose |Impact if removed
+|fsx:CreateFileSystem |Provision new FSx for ONTAP file systems |File system creation unavailable
+|fsx:DeleteFileSystem |Delete file systems |File system deletion unavailable
+|fsx:CreateStorageVirtualMachine |Create storage VMs |SVM creation unavailable
+|fsx:DeleteStorageVirtualMachine |Delete storage VMs |SVM deletion unavailable
+|fsx:TagResource / fsx:UntagResource |Tag resources during creation |Created resources untagged
+|kms:CreateGrant |Allow FSx to use your KMS key for encryption at rest |Encrypted file system creation fails
+|kms:DescribeKey / kms:ListKeys / kms:ListAliases |Enumerate available KMS keys for selection |KMS key picker empty
+|iam:CreateServiceLinkedRole |Create the FSx service-linked role (one-time) |First file system creation fails if role doesn't exist
+|ec2:CreateSecurityGroup / ec2:CreateTags |Create security group for new file system |File system creation fails
+|ec2:DescribeVolumeStatus |Verify underlying storage health |Health checks degraded
+|ec2:AuthorizeSecurityGroupEgress / ec2:AuthorizeSecurityGroupIngress |Configure security group rules for ONTAP access |Network rules not applied
+|ec2:RevokeSecurityGroupEgress / ec2:RevokeSecurityGroupIngress |Clean up security group rules on deletion |Stale rules remain
+|ec2:DeleteSecurityGroup |Remove security group on file system deletion |Orphaned security groups
+|===
+
+Resource scope: Security group modification actions (Authorize, Revoke, Delete) are restricted to resources tagged `AppCreator=NetappFSxWF`.
+
+====
+
 === Permissions for Database workloads
 The IAM policies available for Database workloads provide the permissions that Workload Factory needs to manage resources and processes within your public cloud environment.
 
