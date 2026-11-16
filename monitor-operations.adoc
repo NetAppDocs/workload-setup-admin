@@ -1,0 +1,14 @@
+---
+sidebar: sidebar
+permalink: monitor-operations.html 
+keywords: monitor databases, monitor jobs, track storage jobs, track jobs
+summary: "Track FSx for ONTAP, credentials, and link operations and monitor job progress with Tracker in NetApp Workload Factory for Storage."  
+---
+= Monitor operations with Tracker in NetApp Workload Factory
+:icons: font
+:imagesdir: ./media/
+
+[.lead]
+
+// Refer to include file monitor-operations.doc for content. This content is reused in the workload-fsx-ontap repo. 
+include::_include/monitor-operations.adoc[]

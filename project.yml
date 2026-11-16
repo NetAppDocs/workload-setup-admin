@@ -28,7 +28,7 @@ sidebar:
               url: /permissions-reference.html  
         - title: Quick start
           url: /quick-start.html
-        - title: Sign up to Workload Factory
+        - title: Sign up and log in to Workload Factory
           url: /sign-up-saas.html
         - title: Add AWS credentials
           url: /add-credentials.html
@@ -36,16 +36,30 @@ sidebar:
           url: /whats-next.html
     - title: Administer Workload Factory
       entries:
-        - title: Log in to Workload Factory
-          url: /log-in.html
+        - title: Links
+          entries: 
+            - title: Learn about links
+              url: /links-overview.html
+            - title: Connect to a file system with a link
+              url: /create-link.html
+            - title: Manage links
+              url: /manage-links.html 
         - title: Manage service accounts
           url: /manage-service-accounts.html
         - title: Build and operate well-architected workloads
           url: /well-architected-workloads.html  
         - title: Configure notifications
           url: /configure-notifications.html
+        - title: Monitor operations
+          url: /monitor-operations.html
         - title: Manage AI features
           url: /manage-genai-features.html
+        - title: Workload Factory AIOps
+          entries:
+            - title: Learn about AI agents
+              url: /learn-agent.html
+            - title: Manage AI agents settings
+              url: /manage-agent-settings.html
         - title: Custom dashboards
           entries:
             - title: Learn about custom dashboards
@@ -66,6 +80,8 @@ sidebar:
           url: /use-cloudshell.html
         - title: Remove credentials
           url: /manage-credentials.html
+    - title: FAQ
+      url: /faq-workload-factory.html
     - title: Knowledge and support
       entries:
         - title: Register for support

@@ -5,7 +5,7 @@ keywords: what you can do
 summary: "After you've logged in and set up NetApp Workload Factory, you can create and manage FSx for ONTAP file systems, and use other Workload Factory capabilities."
 ---
 
-= Optimize workloads with NetApp Workload Factory
+= Workload capabilities in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
