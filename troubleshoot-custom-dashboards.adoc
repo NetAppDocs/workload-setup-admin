@@ -5,7 +5,7 @@ keywords: troubleshooting, dashboard errors, dashboard issues, failed creation, 
 summary: "Fix common problems with custom dashboards, including setup failures, data loading issues, and access problems."
 ---
 
-= Troubleshoot custom dashboards
+= Troubleshoot custom dashboards in NetApp Workload Factory
 :icons: font
 :imagesdir: ./media/
 
@@ -48,20 +48,6 @@ Use this information to resolve common issues you might encounter when creating 
 * **Refresh your browser:** Try refreshing the page to see if the dashboard loads correctly.
 * **Clear your browser cache and cookies:** This can help resolve loading issues caused by outdated or corrupted data.
 * **Wait and try again:** If the problem continues, wait a few minutes and try again.
-
-////
-== Cannot edit dashboard
-
-**Problem:** When you try to edit a dashboard, you see the message "Currently being edited by [user name]."
-
-**Cause:** Another user in your Workload Factory account is editing the dashboard. Only one user can edit a dashboard at a time.
-
-**Solution:**
-
-* Wait for the other user to finish and save their changes.
-* Contact the person shown in the message to coordinate editing.
-* If the user is no longer editing but the lock remains, ask them to close the edit window to release the lock.
-////
 
 == Missing dashboards
 
