@@ -1,0 +1,5 @@
+=== Edit a custom dashboard title and description
+
+You can edit a custom dashboard's title and description from the dashboard catalog or the dashboard view to keep them accurate as the dashboard changes. Both fields are required, and two dashboards can have the same title.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html[Learn how to manage custom dashboards]
