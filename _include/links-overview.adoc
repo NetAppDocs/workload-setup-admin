@@ -3,9 +3,9 @@ A NetApp Workload Factory link creates a trust relationship and connectivity bet
 You don't need a link to get started with Workload Factory, but in some cases you'll need to create a link to unlock all Workload Factory features and workload capabilities. 
 
 == Why links are beneficial
-Links are beneficial because they allow Workload Factory to perform operations that are not natively available through the Amazon FSx for ONTAP API. Links enable advanced ONTAP capabilities and automations, which enhance the management of FSx for ONTAP file systems.
+Links allow Workload Factory to perform operations that aren't natively available through the Amazon FSx for ONTAP API. Links enable advanced ONTAP capabilities and automations, which enhance the management of FSx for ONTAP file systems.
 
-Here are some benefits of using links:
+Links provide these benefits:
  
 * Links enable the NetApp Console to send ONTAP commands directly to your FSx for ONTAP file system, providing advanced ONTAP features beyond what AWS offers natively.
 * Links use AWS Lambda to run code in response to events. This serverless approach removes the dependency on an instance running in your VPC.
