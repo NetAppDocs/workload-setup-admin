@@ -14,9 +14,9 @@ Here are some benefits of using links:
 
 Links use AWS Lambda. Lambda executes code in response to events and automatically manages the computing resources required by that code. The links that you create are part of your NetApp account and are associated with an AWS account.
 
-After creating a link, you can associate it with one or more FSx for ONTAP file systems. Each file system can be associated with only one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
+After creating a link, you can associate it with one or more FSx for ONTAP file systems. You can select multiple file systems and associate them with a new or existing link in one operation, even if the link already has associated file systems. Each file system can be associated with only one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
 
-You create and associate links from the Storage workload in Workload Factory. 
+You create and associate links from the Links page in the Administration menu in Workload Factory. 
 
 You can authenticate links by using credentials stored in the Workload Factory credentials service or in AWS Secrets Manager. Workload Factory doesn't support changing authentication modes.
 

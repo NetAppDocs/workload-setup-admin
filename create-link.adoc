@@ -4,7 +4,6 @@ permalink: create-link.html
 keywords: connect, connection, link, lambda link, associate link, create link, authenticate link
 summary: "You can create and manage links to provide a trust relationship and connectivity between a NetApp Workload Factory account and one or more FSx for ONTAP file systems."
 ---
-
 = Connect to an FSx for ONTAP file system with a Lambda link
 :icons: font
 :imagesdir: ./media/
@@ -199,28 +198,28 @@ After you create a link, associate it with one or more FSx for ONTAP file system
 
 .Steps
 . Log in using one of the link:https://docs.netapp.com/us-en/workload-setup-admin/console-experiences.html[console experiences^].
-. Select the menu image:workloads-menu-icon.png[The hamburger menu icon is used to navigate to workloads like storage, eda, ai, databases, vmware, and administration.] and then select *Storage*.
-. From the Storage menu, select *FSx for ONTAP*. 
-. From *FSx for ONTAP*, select the actions menu of the file system to associate a link to and then select *Associate link*. 
-. In the Associate link page, select *Associate an existing link*, select the link, and select *Continue*.
-. Select the authentication mode. 
-* Workload Factory: enter the password twice. 
-* AWS Secrets Manager: enter the secret ARN.
-+
-Verify that the secret ARN contains the following key-value pairs, though the _filesystemID_ is optional.
-
-** filesystemID = FSx_filesystem_id (optional)
-** user = FSx_user
-** password = user_password
-+
-NOTE: Authentication with AWS Secrets Manager requires a user, either the _FSx_user_ that you provide or another user that was created on the FSx for ONTAP file system. The default user is `fsxadmin` if you don't provide a user.
-
-. Select *Apply*. 
+. Select the menu image:workloads-menu-icon.png[The hamburger menu icon is used to navigate to workloads like storage, eda, ai, databases, vmware, and administration.] and then select *Administration*.
+. From the Administration menu, select *Links*. 
+. From the Links page, select *Create & associate link*. 
+. In the Associate link dialog, provide the following for step 1 out of 3: 
+* *AWS account*: Select the AWS account to associate the link with.
+* *Region*: Select the region for the link.
+* *VPC*: Select the VPC to associate the link with.
+* *FSx for ONTAP file systems*: Select one or more file systems to associate with the link.
+. Select *Continue* to step 2 out of 3.
+. Provide the following for step 2 out of 3:
+* Select *Associate an existing link*.
+* *Link name*: Select the link. 
+. Select *Continue* to step 3 out of 3.
+. Select the authentication mode. Enter the authentication mode details for each file system.
+* *Workload Factory*: enter the password twice. 
+* *AWS Secrets Manager*: enter the secret ARN.
+. Select *Authenticate*. 
 
 
 .Result
 
-The link is associated with the FSx for ONTAP file system. You can perform advanced ONTAP operations.
+The link is associated with the FSx for ONTAP file system(s). You can perform advanced ONTAP operations.
 
 .Related information
 
