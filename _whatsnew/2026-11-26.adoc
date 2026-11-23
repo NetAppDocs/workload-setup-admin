@@ -1,5 +1,5 @@
 === Associate multiple FSx for ONTAP file systems with a link
 
-You can now associate multiple FSx for ONTAP file systems with a new or existing link in one workflow, instead of repeating the association for each file system. You can authenticate the link by entering ONTAP credentials for each file system, or apply the same credentials to multiple file systems.
+You can now associate multiple FSx for ONTAP file systems with a new or existing link in one workflow, instead of repeating the association for each file system. You can authenticate the link by entering ONTAP credentials for each file system or by applying the same credentials to multiple file systems.
  
 link:https://docs.netapp.com/us-en/workload-setup-admin/create-link.html[Learn how to associate a link with FSx for ONTAP file systems]
