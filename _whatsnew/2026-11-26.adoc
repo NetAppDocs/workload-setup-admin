@@ -1,3 +1,8 @@
+=== Edit a custom dashboard title and description
+
+You can edit a custom dashboard's title and description from the dashboard catalog or the dashboard view to keep them accurate as the dashboard changes. Both fields are required, and two dashboards can have the same title.
+
+link:https://docs.netapp.com/us-en/workload-setup-admin/manage-custom-dashboards.html[Learn how to manage custom dashboards]
 === Associate multiple FSx for ONTAP file systems with a link
 
 You can now associate multiple FSx for ONTAP file systems with a new or existing link in one workflow, instead of repeating the association for each file system. You can authenticate the link by entering ONTAP credentials for each file system or by applying the same credentials to multiple file systems.

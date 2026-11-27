@@ -15,6 +15,10 @@ Learn about new and enhanced administration features in NetApp Workload Factory,
 
 include::_whatsnew/2026-11-26.adoc[]
 
+== 26 November 2026
+
+include::_whatsnew/2026-11-26.adoc[]
+
 == 01 November 2026
 
 include::_whatsnew/2026-11-01.adoc[]
