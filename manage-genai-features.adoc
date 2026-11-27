@@ -17,7 +17,7 @@ Control access to AI features in Workload Factory. You can turn off AI features 
 
 == About AI features
 
-Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, AI agents, custom dashboards, Rule builder, and analyzers for EMS, database logs, and latency.
+Workload Factory includes several AI-powered features that enhance your experience such as Ask Me, AI agents, custom dashboards, custom rules, and analyzers for EMS, database logs, and latency.
 
 As a Workload Factory administrator, you can control how these features use AI on the AI settings page.
 
