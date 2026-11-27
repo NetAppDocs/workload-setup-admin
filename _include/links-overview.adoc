@@ -1,30 +1,30 @@
-A NetApp Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. This allows you to monitor and manage certain file system features directly from the ONTAP REST API calls that are not available through the Amazon FSx for ONTAP API.
+A NetApp Workload Factory link creates a trust relationship and connectivity between a Workload Factory account and one or more FSx for ONTAP file systems. A link lets you monitor and manage certain file system features directly through ONTAP REST API calls that aren't available through the Amazon FSx for ONTAP API.
 
 You don't need a link to get started with Workload Factory, but in some cases you'll need to create a link to unlock all Workload Factory features and workload capabilities. 
 
 == Why links are beneficial
-Links are beneficial because they allow Workload Factory to perform operations that are not natively available through the Amazon FSx for ONTAP API. Links enable advanced ONTAP capabilities and automations, which enhance the management of FSx for ONTAP file systems.
+Links allow Workload Factory to perform operations that aren't natively available through the Amazon FSx for ONTAP API. Links enable advanced ONTAP capabilities and automations, which enhance the management of FSx for ONTAP file systems.
 
-Here are some benefits of using links:
+Links provide these benefits:
  
-* The link enables the NetApp Console to send ONTAP commands directly to your FSx for ONTAP file system, bringing advanced ONTAP features beyond what AWS offers natively.
-* Links leverage AWS Lambda to execute code in response to events. This serverless approach removes the dependency of an instance running in your VPC.
+* Links enable the NetApp Console to send ONTAP commands directly to your FSx for ONTAP file system, providing advanced ONTAP features beyond what AWS offers natively.
+* Links use AWS Lambda to run code in response to events. This serverless approach removes the dependency on an instance running in your VPC.
 
 == How links work
 
-Links leverage AWS Lambda. Lambda executes code in response to events and automatically manages the computing resources required by that code. The links that you create are part of your NetApp account and they are associated with an AWS account.
+Links use AWS Lambda. Lambda executes code in response to events and automatically manages the computing resources required by that code. The links that you create are part of your NetApp account and are associated with an AWS account.
 
-After creating a link, you can associate it with one, or many, FSx for ONTAP file systems. Each file system can be associated only to one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
+After creating a link, you can associate it with one or more FSx for ONTAP file systems. You can select multiple file systems and associate them with a new or existing link in one operation, even if the link already has associated file systems. Each file system can be associated with only one link in the same NetApp account. If you have multiple NetApp accounts, a single file system can be associated with additional links under different NetApp accounts.
 
-You create and associate links from the Storage workload in Workload Factory. 
+You create and associate links from the Links page in the Administration menu in Workload Factory. 
 
-You can authenticate links using credentials stored in the Workload Factory credentials service or with your credentials stored in AWS Secrets Manager. Workload factory doesn't support changing authentication modes.
+You can authenticate links by using credentials stored in the Workload Factory credentials service or in AWS Secrets Manager. Workload Factory doesn't support changing authentication modes.
 
-Link connectivity for GovCloud accounts is supported. Workload Factory uses GovCloud authentication keys, allowing secure, agentless access to FSx for ONTAP operations through GovCloud-approved mechanisms.
+Workload Factory supports link connectivity for GovCloud accounts. Workload Factory uses GovCloud authentication keys, allowing secure, agentless access to FSx for ONTAP operations through GovCloud-approved mechanisms.
 
 == Costs
 
-Each transaction that Lambda performs incurs a charge. Because Lambda acts as a proxy between the two systems, there is a charge when Lambda sends a request to the ONTAP REST API on a file system, and when it sends the response back to Workload Factory.
+Each transaction that Lambda performs incurs a charge. Because Lambda acts as a proxy between Workload Factory and the file system, you're charged when Lambda sends a request to the ONTAP REST API on a file system and when it sends the response back to Workload Factory.
 
 link:https://aws.amazon.com/lambda/pricing/[Learn more about the costs related to using AWS Lambda^]
 
@@ -44,9 +44,9 @@ The features that require a link include:
 * Creation and management of snapshot policies for custom protection SLA
 * Inode management enhancements for automatic capacity management
 * Volume autogrow for elastic scaling
-* Clone creation and management, for instant, in-place, data cloning
-* Displaying additional metrics directly from ONTAP such as the ONTAP version
-* Displaying storage VM and cluster LIF details including roles, endpoints, nodes, IP addresses, and status
+* Clone creation and management for instant, in-place data cloning
+* Additional metrics directly from ONTAP, such as the ONTAP version
+* Storage VM and cluster LIF details, including roles, endpoints, nodes, IP addresses, and status
 * Component breakdown for latency events
 
 == Related information
