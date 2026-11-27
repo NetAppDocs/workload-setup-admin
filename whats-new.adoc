@@ -2,15 +2,18 @@
 sidebar: sidebar
 permalink: whats-new.html
 keywords: what's new, features, new, release notes, enhancements, fixes
-summary: "Learn what's new with Workload Factory administration features like cloud provider credentials, Codebox enhancements, and more."
+summary: "Review new features and enhancements for NetApp Workload Factory administration, including cloud provider credentials and Codebox updates."
 ---
-
-= What's new with NetApp Workload Factory administration features
+= What's new in NetApp Workload Factory administration
 :icons: font
 :imagesdir: ./media/
 
 [.lead]
-Learn what's new with Workload Factory administration features like cloud provider credentials, Codebox enhancements, and more.
+Learn about new and enhanced administration features in NetApp Workload Factory, such as cloud provider credentials and Codebox, so you can take advantage of new capabilities when you set up and manage Workload Factory.
+
+== 26 November 2026
+
+include::_whatsnew/2026-11-26.adoc[]
 
 == 26 November 2026
 
